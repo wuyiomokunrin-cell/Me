@@ -1,0 +1,202 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-pro-latest",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH",
+    "enableImageSearch": false,
+    "enableGoogleMaps": false,
+    "enableAgentThinkingSummariesControl": false,
+    "enableAgentVisualizationControl": false,
+    "enableAgentCollaborativePlanningControl": false
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1rkouSN54zN7IMXyBKg3I9JxW_NLqfWiK"
+      },
+      "role": "user",
+      "tokenCount": 1045,
+      "createTime": "2026-05-05T20:33:49.432Z"
+    }, {
+      "text": "weird I clossed the game and its sitll a process in task manager and eating my resources. Lazer latest update btw, is there any knowledge around this. i found a thread 12 years ago mentioning some kind of persistent process, but no actual fix or probable cause that makes the task persistent beyond close. I have my PC open over the night so whenever I want to reenter osu again, I have to close the osu process first before I can access the osu! session again. it gets really inconvenient and its kind of bleh cuz I expect it to close all processes when it says it closes not when I perosnally havve to kill the process. ",
+      "role": "user",
+      "tokenCount": 139,
+      "createTime": "2026-05-05T20:33:49.432Z"
+    }, {
+      "text": "**Analyzing the Problem**\n\nI\u0027ve homed in on the core issue: osu!(lazer) is stubbornly staying active even after the user closes it, as demonstrated by persistent background processes. This is likely the root of the problem. I\u0027m now digging into potential causes – perhaps a faulty exit routine or a lingering background service. I intend to identify the reason, so I can try to find a solution.\n\n\n**Investigating the Data**\n\nI\u0027ve examined the Task Manager image. I can see `osu!(lazer)` is consuming substantial resources (2.6GB memory, 8.8% CPU) even when \"closed\". The disk and network usage are also non-zero. This strongly suggests a persistent process. I\u0027m focusing my investigation on the game\u0027s termination behavior and the potential for lingering processes.\n\n\n**Analyzing Persistent Processes**\n\nI\u0027ve been digging into reports of `osu!lazer` lingering as a background process after exiting. Issue #10067 is particularly interesting; it describes a persistent process with 0% CPU usage, yet a user confirms reproducibility. My focus is now on identifying the root cause of this hanging behavior.\n\n\n**Analyzing the Issue**\n\nI\u0027ve pinpointed the user\u0027s problem: `osu!lazer` lingering in Task Manager, consuming resources even after closure. Issue #10067 on the ppy/osu GitHub page meticulously documents this behavior. It seems like the core issue lies in the application not fully terminating its processes.\n\n\n**Investigating Persistent Processes**\n\nI\u0027m now diving deeper into the root causes. I see the CPU usage inconsistency: sometimes dropping to zero, other times stubbornly persisting. Infinite loops, especially in beatmap conversion (mania on zero-length sliders are a particular worry), are high on my list, as are unfinished operations blocking termination. Issue #15955 adds further data, describing CPU usage up to 12% after quitting. Background downloads and imports are also prime suspects. The user’s question regarding knowledge is answered: it\u0027s documented.\n\n\n**Exploring Termination Glitches**\n\nI\u0027m now focusing on specific causes of these lingering processes. I suspect infinite loops during beatmap conversion, importing, or potentially audio/graphics driver issues as the primary culprits. The existing workarounds seem to address these, offering practical solutions like pre-exit checks.\n\n\n**Testing Termination Methods**\n\nI\u0027m now thinking about how to get the game to shut down properly. I\u0027ll advise them to test the in-game exit button versus the window close button. I\u0027ll provide a `.bat` script workaround the user can create, along with the process names, as well as a quick kill shortcut `taskkill /f /fi \"imagename eq osu*\"`. I\u0027m also planning to emphasize the importance of updated graphics/audio drivers, since those are frequent causes.\n\n\n**Refining Shutdown Solutions**\n\nI understand the inconvenience and will remind the user that `osu!lazer` is in active development. I\u0027ll suggest they submit a bug report with logs, which could include the contents of `%AppData%/osu/logs`, to assist the developers. To simplify process termination, I\u0027ll provide a refined batch script, specifically a desktop shortcut: `taskkill /f /im \"osu!.exe\"` (and also add `osu!(lazer).exe`). I\u0027ll emphasize checking the exact executable name. It\u0027s usually `osu!.exe` in the osulazer folder.\n\n\n**Summarizing Background Processes**\n\nI\u0027m now understanding the root causes more clearly. The main reason `osu!lazer` lingers is due to asynchronous tasks running in the background, keeping the game smooth. Closing the window instantly doesn\u0027t terminate these tasks. I have identified a few situations: infinite loops during beatmap processing, unfinished imports, and driver hangs, as the biggest culprits. The current workarounds suggest avoiding closing during those states and returning to the main menu first. I\u0027ll provide an easier one-click solution via a shortcut to kill these processes immediately, while suggesting that the user submits their `performance.log`.\n\n\n**Gathering Necessary Information**\n\nI\u0027m now focusing on gathering essential diagnostic information. To help the developers pinpoint the issue, I\u0027ll advise submitting the `performance.log` and `runtime.log` (found within `%AppData%/osu/logs`) to the GitHub repository. It addresses the user\u0027s questions definitively. I can confirm this is documented, the likely cause is those stubborn background threads, and I have a workaround solution. The taskkill command is correct.",
+      "role": "model",
+      "tokenCount": 400,
+      "isThought": true,
+      "parts": [{
+        "text": "**Analyzing the Problem**\n\nI\u0027ve homed in on the core issue: osu!(lazer) is stubbornly staying active even after the user closes it, as demonstrated by persistent background processes. This is likely the root of the problem. I\u0027m now digging into potential causes – perhaps a faulty exit routine or a lingering background service. I intend to identify the reason, so I can try to find a solution.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Investigating the Data**\n\nI\u0027ve examined the Task Manager image. I can see `osu!(lazer)` is consuming substantial resources (2.6GB memory, 8.8% CPU) even when \"closed\". The disk and network usage are also non-zero. This strongly suggests a persistent process. I\u0027m focusing my investigation on the game\u0027s termination behavior and the potential for lingering processes.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Analyzing Persistent Processes**\n\nI\u0027ve been digging into reports of `osu!lazer` lingering as a background process after exiting. Issue #10067 is particularly interesting; it describes a persistent process with 0% CPU usage, yet a user confirms reproducibility. My focus is now on identifying the root cause of this hanging behavior.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Analyzing the Issue**\n\nI\u0027ve pinpointed the user\u0027s problem: `osu!lazer` lingering in Task Manager, consuming resources even after closure. Issue #10067 on the ppy/osu GitHub page meticulously documents this behavior. It seems like the core issue lies in the application not fully terminating its processes.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Investigating Persistent Processes**\n\nI\u0027m now diving deeper into the root causes. I see the CPU usage inconsistency: sometimes dropping to zero, other times stubbornly persisting. Infinite loops, especially in beatmap conversion (mania on zero-length sliders are a particular worry), are high on my list, as are unfinished operations blocking termination. Issue #15955 adds further data, describing CPU usage up to 12% after quitting. Background downloads and imports are also prime suspects. The user’s question regarding knowledge is answered: it\u0027s documented.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Exploring Termination Glitches**\n\nI\u0027m now focusing on specific causes of these lingering processes. I suspect infinite loops during beatmap conversion, importing, or potentially audio/graphics driver issues as the primary culprits. The existing workarounds seem to address these, offering practical solutions like pre-exit checks.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Testing Termination Methods**\n\nI\u0027m now thinking about how to get the game to shut down properly. I\u0027ll advise them to test the in-game exit button versus the window close button. I\u0027ll provide a `.bat` script workaround the user can create, along with the process names, as well as a quick kill shortcut `taskkill /f /fi \"imagename eq osu*\"`. I\u0027m also planning to emphasize the importance of updated graphics/audio drivers, since those are frequent causes.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Refining Shutdown Solutions**\n\nI understand the inconvenience and will remind the user that `osu!lazer` is in active development. I\u0027ll suggest they submit a bug report with logs, which could include the contents of `%AppData%/osu/logs`, to assist the developers. To simplify process termination, I\u0027ll provide a refined batch script, specifically a desktop shortcut: `taskkill /f /im \"osu!.exe\"` (and also add `osu!(lazer).exe`). I\u0027ll emphasize checking the exact executable name. It\u0027s usually `osu!.exe` in the osulazer folder.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Summarizing Background Processes**\n\nI\u0027m now understanding the root causes more clearly. The main reason `osu!lazer` lingers is due to asynchronous tasks running in the background, keeping the game smooth. Closing the window instantly doesn\u0027t terminate these tasks. I have identified a few situations: infinite loops during beatmap processing, unfinished imports, and driver hangs, as the biggest culprits. The current workarounds suggest avoiding closing during those states and returning to the main menu first. I\u0027ll provide an easier one-click solution via a shortcut to kill these processes immediately, while suggesting that the user submits their `performance.log`.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Gathering Necessary Information**\n\nI\u0027m now focusing on gathering essential diagnostic information. To help the developers pinpoint the issue, I\u0027ll advise submitting the `performance.log` and `runtime.log` (found within `%AppData%/osu/logs`) to the GitHub repository. It addresses the user\u0027s questions definitively. I can confirm this is documented, the likely cause is those stubborn background threads, and I have a workaround solution. The taskkill command is correct.",
+        "thought": true
+      }],
+      "createTime": "2026-05-05T20:33:49.432Z"
+    }, {
+      "text": "\n\n\nYes, this is actually a known and actively tracked bug for **osu!lazer**, and it\u0027s quite different from the 12-year-old thread you found regarding osu!stable. \n\nLooking at your screenshot, the process is using **8.8% CPU**. On a modern multi-core processor, ~8% usually means that exactly **one single CPU core is maxed out at 100% capacity**. This perfectly aligns with the findings from the osu! development team. \n\nHere is the current knowledge around what is causing this, and how you can make dealing with it much less annoying.\n\n### The Probable Cause\nBecause osu!lazer is built to be extremely seamless, it runs a lot of operations asynchronously (in the background) so your menus don\u0027t freeze. \n\nAccording to developers on the official osu! GitHub (specifically under Bug Issues #10067 and #15955), when you close the game, the visual window shuts down instantly. However, if a background thread gets stuck in an **infinite loop**, the process refuses to terminate and stays active in Task Manager. \n\nThe most common triggers for this \"zombie process\" are:\n*   **Stuck Beatmap Conversions:** Calculating star ratings or converting standard maps to other modes (especially Mania) on maps with buggy or zero-length sliders.\n*   **Unfinished Background Tasks:** Exiting the game while a beatmap is importing, downloading, or processing audio. \n*   **Driver Hangs:** An audio or graphics driver failing to release the game gracefully when the window closes.\n\n### Workarounds to Prevent It\n*   **Don\u0027t Alt+F4 from Song Select:** Try to build a habit of backing all the way out to the absolute main menu before hitting exit. This gives background beatmap calculations a moment to safely pause.\n*   **Let it finish thinking:** If you notice the star rating of a map is struggling to load or continuously calculating, do not close the game right then. Switch to a different map to break the loop, and *then* exit.\n\n### The \"Quality of Life\" Fix \nSince you leave your PC on overnight and dealing with Task Manager every time you want to play is incredibly tedious, you can create a **One-Click Kill Switch** on your desktop to instantly wipe the ghost process.\n\n1. Right-click anywhere on your Windows Desktop and select **New \u003e Shortcut**.\n2. In the location box, paste the following exact command:\n   `taskkill /F /IM \"osu!.exe\" /T`\n   *(Note: Depending on your installation, if this doesn\u0027t work, change it to `taskkill /F /IM \"osu-lazer.exe\" /T`)*\n3. Click **Next**, name the shortcut something like \"Kill osu!\", and click **Finish**.\n4. *(Optional)* Right-click the new shortcut, go to **Properties \u003e Shortcut \u003e Advanced**, and check **Run as administrator** to ensure it always works. \n\nNow, whenever you want to play osu! after leaving your PC on, just double-click that shortcut. A quick black command box will flash, the stuck process will be instantly terminated, and you can open your game normally without ever opening Task Manager.\n\n**Long-term:** Since Lazer is heavily in development, the devs are constantly trying to patch out the specific files causing these loops. If you ever feel like helping out, immediately after you have to kill the process, you can grab your `performance.log` and `runtime.log` from `%AppData%/osu/logs` and submit them to the ppy/osu GitHub.",
+      "role": "model",
+      "grounding": {
+        "corroborationSegments": [{
+          "index": 1008,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEHYL0Zgy_cSKZKGouyDSL6efrgzDBG5RceBygYj0MwEVs2YRLKz9IDMBaDSj7icbLG4VE62f4ynhqkFlCsguT2-cHwlagd1o0b_FJuzKfkmxzcKq3XELOd4-EQXcbVkRiqnQ%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 1008,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEq4Mc5rNh0vPRi8nT84fvjAjnTKqbAIbxXavMGqdkSMZt5tx_9_vhRTfPd4Pi3-v-HpUjsPETjPnX6G12MI2Z4VFyqxnKNlyhJESny8L-K2VL14nnB0rDjbVXBfZOUaCRkp7vwfoQG",
+          "footnoteNumber": 2
+        }, {
+          "index": 1463,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHjnaFfoY5dLoJSpXMrXBuG7a7UTVZHHM5YFmvOntF2SYgPxx2vEBb9_CEtY9G6BhLEOKj2aVbv6ve8oGo0xNEbGUoAEyTtnU2WFKzS5vvZ2UlkukEwg7dg5yyBDJV61C2lqQ%3D%3D",
+          "footnoteNumber": 3
+        }, {
+          "index": 1463,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHlAk38KL1sX6qBfkKkDViCktNE8X1ryg8ui_maF1euE9bJ_EqIkiSwWr4XTRVDTQLN5UzPZMsuwbCEDDxG5VNKxIlN7LxA19CQwuSdhOB6zsTp9F01tOdThjZJ_a9yvTa5wA3wKTR-",
+          "footnoteNumber": 4
+        }],
+        "webSearchQueries": ["\"osu lazer\" hangs on exit github ppy/osu", "\"osu lazer\" running in background after close github ppy/osu", " \"process\" \"close\" background OR task manager", "\"osu lazer\" process won\u0027t close", "\"osu lazer\" running in background", "\"osu lazer\" process won\u0027t close OR \"not closing\""],
+        "groundingSources": [{
+          "referenceNumber": 1,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEHYL0Zgy_cSKZKGouyDSL6efrgzDBG5RceBygYj0MwEVs2YRLKz9IDMBaDSj7icbLG4VE62f4ynhqkFlCsguT2-cHwlagd1o0b_FJuzKfkmxzcKq3XELOd4-EQXcbVkRiqnQ%3D%3D",
+          "title": "github.com"
+        }, {
+          "referenceNumber": 2,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEq4Mc5rNh0vPRi8nT84fvjAjnTKqbAIbxXavMGqdkSMZt5tx_9_vhRTfPd4Pi3-v-HpUjsPETjPnX6G12MI2Z4VFyqxnKNlyhJESny8L-K2VL14nnB0rDjbVXBfZOUaCRkp7vwfoQG",
+          "title": "github.com"
+        }, {
+          "referenceNumber": 3,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHjnaFfoY5dLoJSpXMrXBuG7a7UTVZHHM5YFmvOntF2SYgPxx2vEBb9_CEtY9G6BhLEOKj2aVbv6ve8oGo0xNEbGUoAEyTtnU2WFKzS5vvZ2UlkukEwg7dg5yyBDJV61C2lqQ%3D%3D",
+          "title": "github.com"
+        }, {
+          "referenceNumber": 4,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHlAk38KL1sX6qBfkKkDViCktNE8X1ryg8ui_maF1euE9bJ_EqIkiSwWr4XTRVDTQLN5UzPZMsuwbCEDDxG5VNKxIlN7LxA19CQwuSdhOB6zsTp9F01tOdThjZJ_a9yvTa5wA3wKTR-",
+          "title": "github.com"
+        }]
+      },
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "\n\n\nYes, this is actually a known and actively tracked bug for **osu!"
+      }, {
+        "text": "lazer**, and it\u0027s quite different from the 12-year-old thread you found regarding osu!stable."
+      }, {
+        "text": " \n\nLooking at your screenshot, the process is using **8.8% CPU**. On a modern multi-core processor, ~"
+      }, {
+        "text": "8% usually means that exactly **one single CPU core is maxed out at 100% capacity**. This perfectly aligns with the"
+      }, {
+        "text": " findings from the osu! development team. \n\nHere is the current knowledge around what is causing this, and how you can make"
+      }, {
+        "text": " dealing with it much less annoying.\n\n### The Probable Cause\nBecause osu!lazer is built to be extremely seamless"
+      }, {
+        "text": ", it runs a lot of operations asynchronously (in the background) so your menus don\u0027t freeze. \n\nAccording"
+      }, {
+        "text": " to developers on the official osu! GitHub (specifically under Bug Issues #10067 and #15955), when"
+      }, {
+        "text": " you close the game, the visual window shuts down instantly. However, if a background thread gets stuck in an **infinite loop**, the process"
+      }, {
+        "text": " refuses to terminate and stays active in Task Manager. \n\nThe most common triggers"
+      }, {
+        "text": " for this \"zombie process\" are:\n*   **Stuck Beatmap Conversions:** Calculating star ratings or"
+      }, {
+        "text": " converting standard maps to other modes (especially Mania) on maps with buggy or zero-length sliders.\n*   **Unfinished Background"
+      }, {
+        "text": " Tasks:** Exiting the game while a beatmap is importing, downloading, or processing audio. \n*   **Driver"
+      }, {
+        "text": " Hangs:** An audio or graphics driver failing to release the game gracefully when the window closes."
+      }, {
+        "text": "\n\n### Workarounds to Prevent It\n*   **Don\u0027t Alt+F4 from Song Select:** Try to build"
+      }, {
+        "text": " a habit of backing all the way out to the absolute main menu before hitting exit. This gives background beatmap calculations a moment"
+      }, {
+        "text": " to safely pause.\n*   **Let it finish thinking:** If you notice the star rating of a map is struggling to load"
+      }, {
+        "text": " or continuously calculating, do not close the game right then. Switch to a different map to break the loop, and *"
+      }, {
+        "text": "then* exit.\n\n### The \"Quality of Life\" Fix \nSince you leave your PC on overnight and dealing"
+      }, {
+        "text": " with Task Manager every time you want to play is incredibly tedious, you can create a **One-Click Kill Switch** on your desktop to instantly"
+      }, {
+        "text": " wipe the ghost process.\n\n1. Right-click anywhere on your Windows Desktop and select **New \u003e Shortcut**."
+      }, {
+        "text": "\n2. In the location box, paste the following exact command:\n   `taskkill /F /IM \"osu!.exe\""
+      }, {
+        "text": " /T`\n   *(Note: Depending on your installation, if this doesn\u0027t work, change it to `taskkill /"
+      }, {
+        "text": "F /IM \"osu-lazer.exe\" /T`)*\n3. Click **Next**, name the shortcut something"
+      }, {
+        "text": " like \"Kill osu!\", and click **Finish**.\n4. *(Optional)* Right-click the new shortcut, go to **"
+      }, {
+        "text": "Properties \u003e Shortcut \u003e Advanced**, and check **Run as administrator** to ensure it always works. \n\nNow, whenever you want to play"
+      }, {
+        "text": " osu! after leaving your PC on, just double-click that shortcut. A quick black command box will flash, the stuck"
+      }, {
+        "text": " process will be instantly terminated, and you can open your game normally without ever opening Task Manager.\n\n**Long-term:** Since L"
+      }, {
+        "text": "azer is heavily in development, the devs are constantly trying to patch out the specific files causing these loops. If you ever"
+      }, {
+        "text": " feel like helping out, immediately after you have to kill the process, you can grab your `performance.log` and `runtime"
+      }, {
+        "text": ".log` from `%AppData%/osu/logs` and submit them to the ppy/osu GitHub."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-05-05T20:34:26.449Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

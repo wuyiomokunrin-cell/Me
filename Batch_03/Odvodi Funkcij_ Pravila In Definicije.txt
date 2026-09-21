@@ -1,0 +1,332 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1D8Ej0M2jUJ1DIO_l6lpC-9x6HvUOXHCi"
+      },
+      "role": "user",
+      "tokenCount": 81713
+    }, {
+      "driveAudio": {
+        "id": "1HIXvkrRf-qm521uhVYG8n34KUjtouCm4"
+      },
+      "role": "user",
+      "tokenCount": 195133
+    }, {
+      "driveImage": {
+        "id": "1r16uw810Iq6kriLJZw97Z3ICCKEJJo1p"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1WVBfsdR0Aee03RFIOF_VUQoNlIdTL5sU"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1S45HJ3OFoGKJFgLPbcGbVSLlGmkusmuB"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1C_RUPOzjlI9X2pdantzdkxEorZCW6SaH"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1KzHaFqyLfAJGpEQnnYEWlNyNKU-3qkOJ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1WFhx-ROzcWr-1mqKWLGsXiGuXJEHvaPQ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1hb2vS3y-Knx8mAA0K8GRzsL1Psqcdi-E"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1gMBmZS7d7hfWbiTwTM2hppGC87oTRRso"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "**Processing The Data**\n\nI\u0027m currently focused on the audio transcript and handwritten notes. The transcript covers derivatives of elementary functions, starting with cyclometric functions. I need to figure out how to best integrate this with the handwritten notes for a coherent analysis. The goal is to fully understand the material.\n\n\n**Reviewing the Derivatives**\n\nI\u0027m now revisiting the transcript of the lecture. I\u0027ve finished the derivation of arcsin, arccos, and arctan, confirming my earlier understanding. The methods used are familiar and straightforward: the inverse function theorem is key, along with trigonometric identities. I\u0027m focusing on solidifying these concepts with the handwritten notes.\n\n\n\n**Organizing The Derivations**\n\nI\u0027m now in the process of thoroughly integrating the audio transcript\u0027s derivations with my notes. I\u0027ve covered the derivatives of arcsin, arccos, arctan, arccot, exponential functions, logarithmic functions, hyperbolic functions, and the general power function. I\u0027m focusing on creating a cohesive structure, ensuring all details are captured and understood before moving forward to higher-order derivatives.\n\n\n**Consolidating \u0026 Extending**\n\nI\u0027ve been working through the audio transcript and my notes, making good progress. I\u0027ve finished integrating the details from the transcript, covering inverse trigonometric, exponential, logarithmic, hyperbolic, and power functions. The handwritten notes provide helpful context and supplemental derivations, particularly the limit definition. Currently, I\u0027m analyzing the geometric interpretation of the derivative and tangent lines, preparing for the more complex concepts of higher-order derivatives.\n\n\n**Structuring the Knowledge**\n\nI\u0027m now analyzing the contents of the transcript and handwritten notes. The transcript contains the derivations for the derivatives of elementary functions like inverse trigonometric, exponential, logarithmic, hyperbolic, and general power functions, alongside their geometric interpretation. The notes provide a review of fundamental rules, the limit definition, and the continuity vs. differentiability relationship. I need to integrate these to build a complete picture, ensuring that each topic is solidly understood. Currently, I am structuring the lecture content from the transcript with the context provided by the notes.\n\n\n**Combining Resources**\n\nI\u0027m now integrating the transcript and handwritten notes. The transcript covers derivatives, beginning with cyclometric functions, following the same functions and order as the notes. The handwritten notes provide proofs using the limit definition, product, quotient, and chain rules, along with continuity and differentiability relationships. I\u0027m focusing on synthesizing these, ensuring all details are understood and connected for a comprehensive analysis.\n\n\n**Refining Integration Plan**\n\nI\u0027m now focusing on refining the integration strategy. The audio transcript\u0027s derivations will complement the structure of the notes. I\u0027m prioritizing the handwritten notes\u0027 logical framework and adding details from the audio. I\u0027ll include the derivative justifications, especially those relying on the theorem, along with any relevant context, ensuring a complete and accurate synthesis. I\u0027ll pay attention to the geometric interpretation.\n\n\n**Combining and Refining**\n\nI\u0027ve been working on integrating the two sources, focusing on creating a complete, structured analysis. The transcript\u0027s derivations nicely complement the notes, providing detailed explanations. I\u0027m prioritizing the logical framework from the notes, adding justifications and clarifying any ambiguities from the transcript. The aim is to build a well-organized resource for future review and reference.\n\n\n**Integrating Sources**\n\nI\u0027m now cross-referencing the transcript\u0027s derivations with the limit definition and the product, quotient, and chain rules from my notes. I\u0027m focusing on synthesizing them. The audio provides clear examples and the notes\u0027 concise proofs are vital. I\u0027m prioritizing accuracy and conceptual clarity, using both resources to refine the current structure of the information.\n\n\n**Progressing with Structure**\n\nI\u0027m currently working to integrate the two resources, focusing on creating a well-structured and comprehensive guide. I\u0027m leveraging the notes\u0027 logical flow and incorporating the detailed derivations from the transcript. My goal is to synthesize the information in a clear and organized manner, ensuring that each concept is fully explained and justified for future reference.\n\n\n**Refining Integration Plan**\n\nNow I\u0027m finalizing the integration strategy. The lecture transcript\u0027s comprehensive derivations will enhance the existing structure of the handwritten notes. I\u0027ll prioritize the logical framework in the notes, adding detailed explanations from the audio. The derivatives from the theorem will be emphasized. I\u0027ll include the geometric implications too.\n\n\n**Developing a Structure**\n\nI\u0027ve crafted a comprehensive plan for integrating the audio transcript and handwritten notes. The structure will follow the logical flow of the notes, enriched with explanations from the transcript. Detailed derivations, particularly those utilizing the inverse function theorem, will be emphasized. The goal is to produce a well-organized, complete resource.\n\n\n",
+      "role": "model",
+      "tokenCount": 3422,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Processing The Data**\n\nI\u0027m currently focused on the audio transcript and handwritten notes. The transcript covers derivatives of elementary functions, starting with cyclometric functions. I need to figure out how to best integrate this with the handwritten notes for a coherent analysis. The goal is to fully understand the material.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Reviewing the Derivatives**\n\nI\u0027m now revisiting the transcript of the lecture. I\u0027ve finished the derivation of arcsin, arccos, and arctan, confirming my earlier understanding. The methods used are familiar and straightforward: the inverse function theorem is key, along with trigonometric identities. I\u0027m focusing on solidifying these concepts with the handwritten notes.\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing The Derivations**\n\nI\u0027m now in the process of thoroughly integrating the audio transcript\u0027s derivations with my notes. I\u0027ve covered the derivatives of arcsin, arccos, arctan, arccot, exponential functions, logarithmic functions, hyperbolic functions, and the general power function. I\u0027m focusing on creating a cohesive structure, ensuring all details are captured and understood before moving forward to higher-order derivatives.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Consolidating \u0026 Extending**\n\nI\u0027ve been working through the audio transcript and my notes, making good progress. I\u0027ve finished integrating the details from the transcript, covering inverse trigonometric, exponential, logarithmic, hyperbolic, and power functions. The handwritten notes provide helpful context and supplemental derivations, particularly the limit definition. Currently, I\u0027m analyzing the geometric interpretation of the derivative and tangent lines, preparing for the more complex concepts of higher-order derivatives.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Knowledge**\n\nI\u0027m now analyzing the contents of the transcript and handwritten notes. The transcript contains the derivations for the derivatives of elementary functions like inverse trigonometric, exponential, logarithmic, hyperbolic, and general power functions, alongside their geometric interpretation. The notes provide a review of fundamental rules, the limit definition, and the continuity vs. differentiability relationship. I need to integrate these to build a complete picture, ensuring that each topic is solidly understood. Currently, I am structuring the lecture content from the transcript with the context provided by the notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Combining Resources**\n\nI\u0027m now integrating the transcript and handwritten notes. The transcript covers derivatives, beginning with cyclometric functions, following the same functions and order as the notes. The handwritten notes provide proofs using the limit definition, product, quotient, and chain rules, along with continuity and differentiability relationships. I\u0027m focusing on synthesizing these, ensuring all details are understood and connected for a comprehensive analysis.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Integration Plan**\n\nI\u0027m now focusing on refining the integration strategy. The audio transcript\u0027s derivations will complement the structure of the notes. I\u0027m prioritizing the handwritten notes\u0027 logical framework and adding details from the audio. I\u0027ll include the derivative justifications, especially those relying on the theorem, along with any relevant context, ensuring a complete and accurate synthesis. I\u0027ll pay attention to the geometric interpretation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Combining and Refining**\n\nI\u0027ve been working on integrating the two sources, focusing on creating a complete, structured analysis. The transcript\u0027s derivations nicely complement the notes, providing detailed explanations. I\u0027m prioritizing the logical framework from the notes, adding justifications and clarifying any ambiguities from the transcript. The aim is to build a well-organized resource for future review and reference.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Sources**\n\nI\u0027m now cross-referencing the transcript\u0027s derivations with the limit definition and the product, quotient, and chain rules from my notes. I\u0027m focusing on synthesizing them. The audio provides clear examples and the notes\u0027 concise proofs are vital. I\u0027m prioritizing accuracy and conceptual clarity, using both resources to refine the current structure of the information.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Progressing with Structure**\n\nI\u0027m currently working to integrate the two resources, focusing on creating a well-structured and comprehensive guide. I\u0027m leveraging the notes\u0027 logical flow and incorporating the detailed derivations from the transcript. My goal is to synthesize the information in a clear and organized manner, ensuring that each concept is fully explained and justified for future reference.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Integration Plan**\n\nNow I\u0027m finalizing the integration strategy. The lecture transcript\u0027s comprehensive derivations will enhance the existing structure of the handwritten notes. I\u0027ll prioritize the logical framework in the notes, adding detailed explanations from the audio. The derivatives from the theorem will be emphasized. I\u0027ll include the geometric implications too.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing a Structure**\n\nI\u0027ve crafted a comprehensive plan for integrating the audio transcript and handwritten notes. The structure will follow the logical flow of the notes, enriched with explanations from the transcript. Detailed derivations, particularly those utilizing the inverse function theorem, will be emphasized. The goal is to produce a well-organized, complete resource.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "\u003e **Note to Self:** The lecturer mentioned she forgot the attendance list at the beginning of the session.\n\n# [[Odvodi Funkcij]]\n\nThis lecture covers the derivation of derivatives for elementary functions, starting from the fundamental definition and applying key theorems like the rule for inverse functions and the chain rule.\n\n## [[Definicija Odvoda]]\n\nThe derivative of a function $f(x)$ at a point $a$, denoted as $f\u0027(a)$, is defined by the limit of the difference quotient:\n\n$$\nf\u0027(a) \u003d \\lim_{x \\to a} \\frac{f(x) - f(a)}{x - a}\n$$\n\nAlternatively, by setting $x \u003d a + h$, the definition can be written as the limit when $h$ approaches zero, which is often more practical for derivations:\n\n$$\nf\u0027(a) \u003d \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}\n$$\n\nThis value, $f\u0027(a)$, represents the slope of the tangent line to the graph of the function $f(x)$ at the point $(a, f(a))$.\n\n### [[Zveza med Odvedljivostjo in Zveznostjo]]\n\nAn important theorem states that every differentiable (odvedljiva) function at a point is also continuous (zvezna) at that point.\n\n$$\n\\text{f je odvedljiva} \\implies \\text{f je zvezna}\n$$\n\n\u003e **Warning Note:** The converse is not true. A function can be continuous at a point but not differentiable. The classic example is the absolute value function, $f(x) \u003d |x|$, which is continuous at $x\u003d0$ but has a \"sharp corner\" (špica) and is therefore not differentiable at that point. The left-sided and right-sided limits of the difference quotient are not equal.\n\n## [[Pravila za Odvajanje]]\n\nThese are fundamental rules for differentiating combinations of functions.\n\n### [[Odvod Vsote]]\n\nThe derivative of a sum of two functions is the sum of their derivatives.\n\n$$\n(f+g)\u0027(a) \u003d f\u0027(a) + g\u0027(a)\n$$\n\n### [[Odvod Produkta]]\n\nThe derivative of the product of two functions follows the product rule:\n\n$$\n(f \\cdot g)\u0027(a) \u003d f\u0027(a)g(a) + f(a)g\u0027(a)\n$$\n\n### [[Odvod Kvocienta]]\n\nThe derivative of the quotient of two functions follows the quotient rule, which can be derived from the product rule.\n\n$$\n\\left(\\frac{f}{g}\\right)\u0027(x) \u003d \\frac{f\u0027(x)g(x) - f(x)g\u0027(x)}{[g(x)]^2}\n$$\n\n### [[Verižno Pravilo (Odvod Kompozituma)]]\n\nThe chain rule is used for differentiating composite functions, i.e., a function of a function.\n\n$$\n(f \\circ g)\u0027(x) \u003d f\u0027(g(x)) \\cdot g\u0027(x)\n$$\n\n\u003e **Note to Self:** This is one of the most crucial rules. You differentiate the \"outer\" function $f$ while keeping the \"inner\" function $g(x)$ as its argument, and then multiply by the derivative of the \"inner\" function $g$.\n\n## [[Odvodi Elementarnih Funkcij]]\n\n### [[Konstanta in Potenčne Funkcije]]\n\n-   **Konstantna funkcija:** $f(x) \u003d c \\implies f\u0027(x) \u003d 0$\n-   **Linearna funkcija:** $f(x) \u003d x \\implies f\u0027(x) \u003d 1$\n-   **Splošna potenčna funkcija:** $f(x) \u003d x^r$, where $r \\in \\mathbb{R}$\n    $$\n    (x^r)\u0027 \u003d r \\cdot x^{r-1}\n    $$\n    \u003e **Critical Analysis:** This general rule is derived by rewriting $x^r$ as $e^{r \\ln(x)}$ and applying the chain rule. This method is powerful because it works for any real exponent $r$, not just integers.\n\n### [[Trigonometrične Funkcije]]\n\n-   $(\\sin x)\u0027 \u003d \\cos x$\n-   $(\\cos x)\u0027 \u003d -\\sin x$\n-   $(\\tan x)\u0027 \u003d \\frac{1}{\\cos^2 x} \u003d 1 + \\tan^2 x$\n-   $(\\cot x)\u0027 \u003d -\\frac{1}{\\sin^2 x}$\n\n### [[Ciklometrične (Inverzne Trigonometrične) Funkcije]]\n\nThe derivatives of inverse functions are derived using the theorem:\n$$\n(f^{-1})\u0027(x) \u003d \\frac{1}{f\u0027(f^{-1}(x))}\n$$\n\n#### **Odvod `arcsin(x)`**\n\nLet $f(x) \u003d \\sin x$, so $f^{-1}(x) \u003d \\arcsin x$ and $f\u0027(x) \u003d \\cos x$.\n\n$$\n(\\arcsin x)\u0027 \u003d \\frac{1}{\\cos(\\arcsin x)}\n$$\n\nTo simplify $\\cos(\\arcsin x)$, we use the identity $\\sin^2 y + \\cos^2 y \u003d 1$. Let $y \u003d \\arcsin x$. This implies $\\sin y \u003d x$.\nThen $\\cos y \u003d \\sqrt{1 - \\sin^2 y} \u003d \\sqrt{1 - x^2}$.\n\n\u003e **Note to Self:** We take the positive square root because the range of $\\arcsin x$ is $[-\\pi/2, \\pi/2]$, where the cosine function is non-negative.\n\nThus, the final derivative is:\n$$\n(\\arcsin x)\u0027 \u003d \\frac{1}{\\sqrt{1-x^2}}\n$$\nThis is defined for $x \\in (-1, 1)$.\n\n#### **Odvod `arccos(x)`**\n\nThis is derived using the identity $\\arcsin x + \\arccos x \u003d \\frac{\\pi}{2}$. Differentiating both sides gives:\n$$\n(\\arccos x)\u0027 \u003d -(\\arcsin x)\u0027 \u003d -\\frac{1}{\\sqrt{1-x^2}}\n$$\n\n#### **Odvod `arctan(x)`**\n\nLet $f(x) \u003d \\tan x$, so $f\u0027(x) \u003d 1 + \\tan^2 x$.\n$$\n(\\arctan x)\u0027 \u003d \\frac{1}{1 + \\tan^2(\\arctan x)} \u003d \\frac{1}{1 + x^2}\n$$\n\n#### **Odvod `arccot(x)`**\n\nUsing the identity $\\arctan x + \\arccot x \u003d \\frac{\\pi}{2}$:\n$$\n(\\arccot x)\u0027 \u003d -(\\arctan x)\u0027 \u003d -\\frac{1}{1+x^2}\n$$\n\n### [[Eksponentne in Logaritemske Funkcije]]\n\n-   $(a^x)\u0027 \u003d a^x \\ln a$\n-   **Special case:** $(e^x)\u0027 \u003d e^x \\ln e \u003d e^x$\n-   $(\\log_a x)\u0027 \u003d \\frac{1}{x \\ln a}$\n-   **Special case:** $(\\ln x)\u0027 \u003d \\frac{1}{x \\ln e} \u003d \\frac{1}{x}$\n\n### [[Hiperbolične Funkcije]]\n\n-   $(\\sinh x)\u0027 \u003d \\cosh x$\n-   $(\\cosh x)\u0027 \u003d \\sinh x$\n\n## [[Višji Odvodi]]\n\nHigher-order derivatives are obtained by repeatedly differentiating a function.\n-   **Drugi odvod:** $f\u0027\u0027(x) \u003d (f\u0027(x))\u0027$\n-   **Tretji odvod:** $f\u0027\u0027\u0027(x) \u003d (f\u0027\u0027(x))\u0027$\n-   **n-ti odvod:** $f^{(n)}(x)$\n\n**Primer:** Let $f(x) \u003d x^3 - 2x$.\n-   $f\u0027(x) \u003d 3x^2 - 2$\n-   $f\u0027\u0027(x) \u003d 6x$\n-   $f\u0027\u0027\u0027(x) \u003d 6$\n-   $f^{(4)}(x) \u003d 0$\n-   $f^{(k)}(x) \u003d 0$ for all $k \\ge 4$.\n\n## [[Geometrijski Pomen Odvoda]]\n\nThe value of the derivative $f\u0027(a)$ is the **smerni koeficient (slope)** of the tangent line to the function\u0027s graph at the point $(a, f(a))$.\n\nThe equation of the tangent line is given by:\n$$\ny - f(a) \u003d f\u0027(a)(x - a)\n$$\n\n**Primer:** Find the tangent to $f(x) \u003d \\sin x$ at $a \u003d \\frac{\\pi}{2}$.\n1.  **Točka (Point):** $f(\\frac{\\pi}{2}) \u003d \\sin(\\frac{\\pi}{2}) \u003d 1$. The point is $(\\frac{\\pi}{2}, 1)$.\n2.  **Smerni koeficient (Slope):** $f\u0027(x) \u003d \\cos x$. So, $f\u0027(\\frac{\\pi}{2}) \u003d \\cos(\\frac{\\pi}{2}) \u003d 0$.\n3.  **Enačba (Equation):** $y - 1 \u003d 0 \\cdot (x - \\frac{\\pi}{2}) \\implies y\u003d1$.\nThe tangent line is the horizontal line $y\u003d1$.\n\n\u003e **Warning Note:** A common misconception is that a tangent line touches a curve at only one point. As seen in this example, the line $y\u003d1$ is tangent to $\\sin x$ at $x\u003d\\pi/2$, but it also intersects the sine curve at infinitely many other points (e.g., $x \u003d \\frac{5\\pi}{2}$, etc.). The formal definition relates to the limit of secant lines in the immediate vicinity of the point of tangency.\n\n## [[Tabela Splošnih Formul za Odvajanje]]\n\n| Funkcija $f(x)$ | Odvod $f\u0027(x)$ |\n| :--- | :--- |\n| $c$ (konstanta) | $0$ |\n| $x^r$ ($r \\in \\mathbb{R}$) | $r \\cdot x^{r-1}$ |\n| $\\sin x$ | $\\cos x$ |\n| $\\cos x$ | $-\\sin x$ |\n| $\\tan x$ | $\\frac{1}{\\cos^2 x}$ |\n| $\\cot x$ | $-\\frac{1}{\\sin^2 x}$ |\n| $\\arcsin x$ | $\\frac{1}{\\sqrt{1-x^2}}$ |\n| $\\arccos x$ | $-\\frac{1}{\\sqrt{1-x^2}}$ |\n| $\\arctan x$ | $\\frac{1}{1+x^2}$ |\n| $\\arccot x$ | $-\\frac{1}{1+x^2}$ |\n| $a^x$ | $a^x \\ln a$ |\n| $e^x$ | $e^x$ |\n| $\\log_a x$ | $\\frac{1}{x \\ln a}$ |\n| $\\ln x$ | $\\frac{1}{x}$ |\n| $\\sinh x$ | $\\cosh x$ |\n| $\\cosh x$ | $\\sinh x$ |",
+      "role": "model",
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "\u003e **Note to Self:** The lecturer mentioned she forgot the attendance list at the beginning of the session.\n\n# [[Odvodi Funkcij]]\n\nThis lecture covers the derivation of derivatives for elementary functions, starting from the fundamental definition and applying"
+      }, {
+        "text": " key theorems like the rule for inverse functions and the chain rule.\n\n## [[Definicija Odvoda]]\n\nThe"
+      }, {
+        "text": " derivative of a function $f(x)$ at a point $a$, denoted as $f\u0027(a)$, is defined by"
+      }, {
+        "text": " the limit of the difference quotient:\n\n$$\nf\u0027(a) \u003d \\lim_{x \\to a} \\frac{f"
+      }, {
+        "text": "(x) - f(a)}{x - a}\n$$\n\nAlternatively, by setting $x \u003d a + h"
+      }, {
+        "text": "$, the definition can be written as the limit when $h$ approaches zero, which is often more practical for derivations:\n\n$$\n"
+      }, {
+        "text": "f\u0027(a) \u003d \\lim_{h \\to 0} \\frac{f(a+h) -"
+      }, {
+        "text": " f(a)}{h}\n$$\n\nThis value, $f\u0027(a)$, represents the slope of the tangent line"
+      }, {
+        "text": " to the graph of the function $f(x)$ at the point $(a, f(a))$.\n\n### [[Zveza med Odvedljivostjo in Zveznostjo]]\n\nAn important theorem states that every differentiable ("
+      }, {
+        "text": "odvedljiva) function at a point is also continuous (zvezna) at that point.\n\n$$\n\\"
+      }, {
+        "text": "text{f je odvedljiva} \\implies \\text{f je zvezna}\n$$\n\n\u003e"
+      }, {
+        "text": " **Warning Note:** The converse is not true. A function can be continuous at a point but not differentiable. The classic"
+      }, {
+        "text": " example is the absolute value function, $f(x) \u003d |x|$, which is continuous at $x\u003d0$"
+      }, {
+        "text": " but has a \"sharp corner\" (špica) and is therefore not differentiable at that point. The left-"
+      }, {
+        "text": "sided and right-sided limits of the difference quotient are not equal.\n\n## [[Pravila za Odvajanje]]\n\n"
+      }, {
+        "text": "These are fundamental rules for differentiating combinations of functions.\n\n### [[Odvod Vsote]]\n\nThe derivative of a sum of"
+      }, {
+        "text": " two functions is the sum of their derivatives.\n\n$$\n(f+g)\u0027(a) \u003d f\u0027(a) +"
+      }, {
+        "text": " g\u0027(a)\n$$\n\n### [[Odvod Produkta]]\n\nThe derivative of the product of two functions follows"
+      }, {
+        "text": " the product rule:\n\n$$\n(f \\cdot g)\u0027(a) \u003d f\u0027(a)g(a) +"
+      }, {
+        "text": " f(a)g\u0027(a)\n$$\n\n### [[Odvod Kvocienta]]\n\nThe derivative of the"
+      }, {
+        "text": " quotient of two functions follows the quotient rule, which can be derived from the product rule.\n\n$$\n\\left(\\frac{"
+      }, {
+        "text": "f}{g}\\right)\u0027(x) \u003d \\frac{f\u0027(x)g(x) - f("
+      }, {
+        "text": "x)g\u0027(x)}{[g(x)]^2}\n$$\n\n### [[Verižno Pravilo (Odvod Kompozituma)]]\n\nThe chain rule is used for differentiating composite functions, i.e., a function of"
+      }, {
+        "text": " a function.\n\n$$\n(f \\circ g)\u0027(x) \u003d f\u0027(g(x)) \\cdot"
+      }, {
+        "text": " g\u0027(x)\n$$\n\n\u003e **Note to Self:** This is one of the most crucial rules. You differentiate"
+      }, {
+        "text": " the \"outer\" function $f$ while keeping the \"inner\" function $g(x)$ as its argument,"
+      }, {
+        "text": " and then multiply by the derivative of the \"inner\" function $g$.\n\n## [[Odvodi Elementarnih Funkcij]]"
+      }, {
+        "text": "\n\n### [[Konstanta in Potenčne Funkcije]]\n\n-   **Konstantna funkcija:** $f(x"
+      }, {
+        "text": ") \u003d c \\implies f\u0027(x) \u003d 0$\n-   **Linearna funkcija:** $f(x"
+      }, {
+        "text": ") \u003d x \\implies f\u0027(x) \u003d 1$\n-   **Splošna potenčna funkcija:**"
+      }, {
+        "text": " $f(x) \u003d x^r$, where $r \\in \\mathbb{R}$\n    $$\n"
+      }, {
+        "text": "    (x^r)\u0027 \u003d r \\cdot x^{r-1}\n    $$\n    \u003e **Critical"
+      }, {
+        "text": " Analysis:** This general rule is derived by rewriting $x^r$ as $e^{r \\ln(x)}$ and applying"
+      }, {
+        "text": " the chain rule. This method is powerful because it works for any real exponent $r$, not just integers.\n\n### [[Trigonometrične Funkcije]]\n\n-   $(\\sin x)\u0027 \u003d \\cos x$\n-   $(\\cos x)\u0027 \u003d"
+      }, {
+        "text": " -\\sin x$\n-   $(\\tan x)\u0027 \u003d \\frac{1}{\\cos^2 x} \u003d "
+      }, {
+        "text": "1 + \\tan^2 x$\n-   $(\\cot x)\u0027 \u003d -\\frac{1}{\\sin^2"
+      }, {
+        "text": " x}$\n\n### [[Ciklometrične (Inverzne Trigonometrične) Funkcije]]\n\nThe derivatives of"
+      }, {
+        "text": " inverse functions are derived using the theorem:\n$$\n(f^{-1})\u0027(x) \u003d \\frac{1"
+      }, {
+        "text": "}{f\u0027(f^{-1}(x))}\n$$\n\n#### **Odvod `arcsin(x)`**\n\n"
+      }, {
+        "text": "Let $f(x) \u003d \\sin x$, so $f^{-1}(x) \u003d \\arcsin x$ and $"
+      }, {
+        "text": "f\u0027(x) \u003d \\cos x$.\n\n$$\n(\\arcsin x)\u0027 \u003d \\frac{1}{\\cos(\\arcsin"
+      }, {
+        "text": " x)}\n$$\n\nTo simplify $\\cos(\\arcsin x)$, we use the identity $\\sin^2 y + \\cos^"
+      }, {
+        "text": "2 y \u003d 1$. Let $y \u003d \\arcsin x$. This implies $\\sin y \u003d x$.\nThen"
+      }, {
+        "text": " $\\cos y \u003d \\sqrt{1 - \\sin^2 y} \u003d \\sqrt{1 - x^2}$.\n\n"
+      }, {
+        "text": "\u003e **Note to Self:** We take the positive square root because the range of $\\arcsin x$ is $[-\\pi/2, \\pi/2]$, where the cosine function is non-negative.\n\nThus, the final derivative is:\n$$"
+      }, {
+        "text": "\n(\\arcsin x)\u0027 \u003d \\frac{1}{\\sqrt{1-x^2}}\n$$\nThis is defined for"
+      }, {
+        "text": " $x \\in (-1, 1)$.\n\n#### **Odvod `arccos(x)`**\n\nThis is derived using the"
+      }, {
+        "text": " identity $\\arcsin x + \\arccos x \u003d \\frac{\\pi}{2}$. Differentiating both sides gives:\n"
+      }, {
+        "text": "$$\n(\\arccos x)\u0027 \u003d -(\\arcsin x)\u0027 \u003d -\\frac{1}{\\sqrt{1-x^"
+      }, {
+        "text": "2}}\n$$\n\n#### **Odvod `arctan(x)`**\n\nLet $f(x) \u003d \\"
+      }, {
+        "text": "tan x$, so $f\u0027(x) \u003d 1 + \\tan^2 x$.\n$$\n(\\arctan"
+      }, {
+        "text": " x)\u0027 \u003d \\frac{1}{1 + \\tan^2(\\arctan x)} \u003d \\frac{1}{"
+      }, {
+        "text": "1 + x^2}\n$$\n\n#### **Odvod `arccot(x)`**\n\nUsing the"
+      }, {
+        "text": " identity $\\arctan x + \\arccot x \u003d \\frac{\\pi}{2}$:\n$$\n(\\arcc"
+      }, {
+        "text": "ot x)\u0027 \u003d -(\\arctan x)\u0027 \u003d -\\frac{1}{1+x^2}\n$$\n\n### [[Eksponentne in Logaritemske Funkcije]]\n\n-   $(a^x)\u0027 \u003d a^x \\"
+      }, {
+        "text": "ln a$\n-   **Special case:** $(e^x)\u0027 \u003d e^x \\ln e \u003d e"
+      }, {
+        "text": "^x$\n-   $(\\log_a x)\u0027 \u003d \\frac{1}{x \\ln a}$\n-   **"
+      }, {
+        "text": "Special case:** $(\\ln x)\u0027 \u003d \\frac{1}{x \\ln e} \u003d \\frac{1}{x"
+      }, {
+        "text": "}$\n\n### [[Hiperbolične Funkcije]]\n\n-   $(\\sinh x)\u0027 \u003d \\cosh x$\n-"
+      }, {
+        "text": "   $(\\cosh x)\u0027 \u003d \\sinh x$\n\n## [[Višji Odvodi]]\n\nHigher-order derivatives are"
+      }, {
+        "text": " obtained by repeatedly differentiating a function.\n-   **Drugi odvod:** $f\u0027\u0027(x) \u003d (f\u0027(x))"
+      }, {
+        "text": "\u0027$\n-   **Tretji odvod:** $f\u0027\u0027\u0027(x) \u003d (f\u0027\u0027(x))\u0027$"
+      }, {
+        "text": "\n-   **n-ti odvod:** $f^{(n)}(x)$\n\n**Primer:** Let $f(x"
+      }, {
+        "text": ") \u003d x^3 - 2x$.\n-   $f\u0027(x) \u003d 3x^2"
+      }, {
+        "text": " - 2$\n-   $f\u0027\u0027(x) \u003d 6x$\n-   $f\u0027\u0027\u0027("
+      }, {
+        "text": "x) \u003d 6$\n-   $f^{(4)}(x) \u003d 0$\n-   $"
+      }, {
+        "text": "f^{(k)}(x) \u003d 0$ for all $k \\ge 4$.\n\n## [[Geometrijski Pomen Odvoda]]\n\nThe value of the derivative $f\u0027(a)$ is the **smerni koeficient (slope"
+      }, {
+        "text": ")** of the tangent line to the function\u0027s graph at the point $(a, f(a))$.\n\nThe equation of the tangent"
+      }, {
+        "text": " line is given by:\n$$\ny - f(a) \u003d f\u0027(a)(x - a)\n$$\n\n**"
+      }, {
+        "text": "Primer:** Find the tangent to $f(x) \u003d \\sin x$ at $a \u003d \\frac{\\pi}{2}$."
+      }, {
+        "text": "\n1.  **Točka (Point):** $f(\\frac{\\pi}{2}) \u003d \\sin(\\frac"
+      }, {
+        "text": "{\\pi}{2}) \u003d 1$. The point is $(\\frac{\\pi}{2}, 1)$.\n2."
+      }, {
+        "text": "  **Smerni koeficient (Slope):** $f\u0027(x) \u003d \\cos x$. So, $f\u0027"
+      }, {
+        "text": "(\\frac{\\pi}{2}) \u003d \\cos(\\frac{\\pi}{2}) \u003d 0$.\n3."
+      }, {
+        "text": "  **Enačba (Equation):** $y - 1 \u003d 0 \\cdot (x - \\frac{\\pi"
+      }, {
+        "text": "}{2}) \\implies y\u003d1$.\nThe tangent line is the horizontal line $y\u003d1$.\n\n\u003e **Warning"
+      }, {
+        "text": " Note:** A common misconception is that a tangent line touches a curve at only one point. As seen in this example, the line"
+      }, {
+        "text": " $y\u003d1$ is tangent to $\\sin x$ at $x\u003d\\pi/2$, but it also intersects the"
+      }, {
+        "text": " sine curve at infinitely many other points (e.g., $x \u003d \\frac{5\\pi}{2}$, etc.)."
+      }, {
+        "text": " The formal definition relates to the limit of secant lines in the immediate vicinity of the point of tangency.\n\n## [[Tabela Splošnih Formul za Odvajanje]]\n\n| Funkcija $f(x)$ | Odvod $f\u0027("
+      }, {
+        "text": "x)$ |\n| :--- | :--- |\n| $c$ (konstanta) | $0$ |\n"
+      }, {
+        "text": "| $x^r$ ($r \\in \\mathbb{R}$) | $r \\cdot x^{r-1"
+      }, {
+        "text": "}$ |\n| $\\sin x$ | $\\cos x$ |\n| $\\cos x$ | $-\\sin x"
+      }, {
+        "text": "$ |\n| $\\tan x$ | $\\frac{1}{\\cos^2 x}$ |\n| $\\cot x$ |"
+      }, {
+        "text": " $-\\frac{1}{\\sin^2 x}$ |\n| $\\arcsin x$ | $\\frac{1}{\\"
+      }, {
+        "text": "sqrt{1-x^2}}$ |\n| $\\arccos x$ | $-\\frac{1}{\\sqrt{1"
+      }, {
+        "text": "-x^2}}$ |\n| $\\arctan x$ | $\\frac{1}{1+x^2}$"
+      }, {
+        "text": " |\n| $\\arccot x$ | $-\\frac{1}{1+x^2}$ |\n|"
+      }, {
+        "text": " $a^x$ | $a^x \\ln a$ |\n| $e^x$ | $e^x"
+      }, {
+        "text": "$ |\n| $\\log_a x$ | $\\frac{1}{x \\ln a}$ |\n|"
+      }, {
+        "text": " $\\ln x$ | $\\frac{1}{x}$ |\n| $\\sinh x$ | $\\cosh x$ |\n"
+      }, {
+        "text": "| $\\cosh x$ | $\\sinh x$ |"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

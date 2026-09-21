@@ -1,0 +1,583 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3.1-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "16nHZrrP5kprJ2kVybUGlXlertE48IlKs"
+      },
+      "role": "user",
+      "tokenCount": 1072
+    }, {
+      "text": "it keeps doing that in my multiplayer world and i keep fucking losing items because of it, so much shit gets lost because I keep crashing for no reason ",
+      "role": "user",
+      "tokenCount": 32,
+      "createTime": "2026-02-21T02:06:46.531Z"
+    }, {
+      "text": "**Outlining the Problem**\n\nI\u0027m now zeroing in on the core issue: frequent crashes in the user\u0027s multiplayer tModLoader world, and the resulting loss of items. This suggests the priority should be stability and data preservation in the troubleshooting process.\n\n\n**Interpreting the Error**\n\nI\u0027ve examined the error log image. The \"Main engine crash\" coupled with the `System.InvalidOperationException` points towards a graphics rendering issue within tModLoader. The stack trace highlights a potential conflict or bug in how a mod handles rendering hooks, which likely causes the error. The tip suggests a targeted approach of disabling mods individually.\n\n\n**Tracing the Code**\n\nI\u0027ve traced the crash through the call stack. The crash occurs within `SpriteBatch.Begin`, a core graphics engine component. The stack reveals that the base game handles drawing the map and heads. Crucially, I see dynamically generated methods likely injected by mods. I\u0027ve pinpointed specific mods involved: Calamity Mod, GravityDontFlipScreen, and HighFPSSupport. They are each hooking into the drawing process.\n\n\n**Pinpointing the Culprit**\n\nI\u0027ve determined the crash is a rendering conflict, specifically a missing `SpriteBatch.End`. The stack trace confirms Calamity Mod, GravityDontFlipScreen, and HighFPSSupport all hook into the main draw loop at the point of the crash. My reasoning is that these mods are likely fighting for rendering priority, or that one has a bug which causes a failure to close a `SpriteBatch`. For immediate relief, I\u0027ll suggest autosave or manual saving. Then I will recommend disabling those mods. I\u0027ll recommend they start with the smaller utility mods.\n\n\n**Prioritizing Mod Conflict**\n\nI\u0027m now focusing on mod conflicts, since it is a crucial area for diagnosis. HighFPS Support is my leading suspect, given its reputation for rendering conflicts, particularly with large mods. GravityDontFlipScreen is another candidate, modifying the rendering process in a similar manner. If targeted fixes fail, I will fall back to binary searches and update checks. I will also make sure to highlight the importance of synchronized mod lists and versions between the host and clients, since this is multiplayer.\n\n\n",
+      "role": "model",
+      "tokenCount": 1445,
+      "isThought": true,
+      "parts": [{
+        "text": "**Outlining the Problem**\n\nI\u0027m now zeroing in on the core issue: frequent crashes in the user\u0027s multiplayer tModLoader world, and the resulting loss of items. This suggests the priority should be stability and data preservation in the troubleshooting process.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Interpreting the Error**\n\nI\u0027ve examined the error log image. The \"Main engine crash\" coupled with the `System.InvalidOperationException` points towards a graphics rendering issue within tModLoader. The stack trace highlights a potential conflict or bug in how a mod handles rendering hooks, which likely causes the error. The tip suggests a targeted approach of disabling mods individually.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Tracing the Code**\n\nI\u0027ve traced the crash through the call stack. The crash occurs within `SpriteBatch.Begin`, a core graphics engine component. The stack reveals that the base game handles drawing the map and heads. Crucially, I see dynamically generated methods likely injected by mods. I\u0027ve pinpointed specific mods involved: Calamity Mod, GravityDontFlipScreen, and HighFPSSupport. They are each hooking into the drawing process.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Pinpointing the Culprit**\n\nI\u0027ve determined the crash is a rendering conflict, specifically a missing `SpriteBatch.End`. The stack trace confirms Calamity Mod, GravityDontFlipScreen, and HighFPSSupport all hook into the main draw loop at the point of the crash. My reasoning is that these mods are likely fighting for rendering priority, or that one has a bug which causes a failure to close a `SpriteBatch`. For immediate relief, I\u0027ll suggest autosave or manual saving. Then I will recommend disabling those mods. I\u0027ll recommend they start with the smaller utility mods.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Prioritizing Mod Conflict**\n\nI\u0027m now focusing on mod conflicts, since it is a crucial area for diagnosis. HighFPS Support is my leading suspect, given its reputation for rendering conflicts, particularly with large mods. GravityDontFlipScreen is another candidate, modifying the rendering process in a similar manner. If targeted fixes fail, I will fall back to binary searches and update checks. I will also make sure to highlight the importance of synchronized mod lists and versions between the host and clients, since this is multiplayer.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-02-21T02:06:46.532Z"
+    }, {
+      "text": "I completely understand your frustration. Losing progress and items in Terraria because of random crashes is incredibly annoying. \n\nBased on the error log you provided, I can tell you exactly what is happening and which mods are causing it. \n\n**The Problem:**\nThe error `Begin has been called before calling End` is a graphics rendering crash. It means a mod tried to start drawing something on your screen but forgot to \"close\" its drawing sequence, causing the game\u0027s graphics engine to trip over itself and crash.\n\n**The Culprits:**\nIf you look closely at the middle of the text in your image, you can see the game lists the specific mods that were modifying the graphics right as the crash happened. The mods fighting with each other are:\n\n1.  **HighFPSSupport** (High FPS Support)\n2.  **GravityDontFlipScreen** (Gravity Doesn\u0027t Flip Screen)\n3.  **Calamity Mod**\n\n### How to fix it:\n\nSince you probably don\u0027t want to disable Calamity (as it\u0027s a massive content mod), the crash is almost certainly a conflict between Calamity and one of those two utility mods.\n\n**Step 1: Disable \"High FPS Support\"**\nI highly recommend disabling this mod first. Mods that uncap or force high framerates in Terraria notoriously break the game\u0027s rendering engine and frequently cause this exact `SpriteBatch` crash, especially in multiplayer and when combined with heavy mods like Calamity.\n\n**Step 2: Disable \"Gravity Doesn\u0027t Flip Screen\" (If Step 1 didn\u0027t work)**\nIf disabling the High FPS mod doesn\u0027t stop the crashing, disable the Gravity mod next. Because this mod specifically changes how the screen renders, it is heavily modifying the same graphics code that Calamity uses.\n\n**Step 3: Test in Multiplayer**\nMake sure **both you and the server host** (if you aren\u0027t the host) disable these mods, reload, and try playing again. \n\n### How to stop losing items while you test:\nWhile you are trying to figure out which mod is doing this, I recommend downloading a mod called **\"Auto Save\"** or **\"Helpful Hotkeys\"** (which has a quick-save hotkey). You can set it to save your player data every few minutes so that if a crash *does* happen, you only lose a minute or two of inventory management instead of everything.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 518,
+      "parts": [{
+        "text": "I"
+      }, {
+        "text": " completely understand your frustration. Losing progress and items in Terraria because of random crashes is incredibly annoying. \n\nBased on the error log"
+      }, {
+        "text": " you provided, I can tell you exactly what is happening and which mods are causing it. \n\n**The Problem:**\nThe error"
+      }, {
+        "text": " `Begin has been called before calling End` is a graphics rendering crash. It means a mod tried to start drawing something on your"
+      }, {
+        "text": " screen but forgot to \"close\" its drawing sequence, causing the game\u0027s graphics engine to trip over itself and crash."
+      }, {
+        "text": "\n\n**The Culprits:**\nIf you look closely at the middle of the text in your image, you can see the game"
+      }, {
+        "text": " lists the specific mods that were modifying the graphics right as the crash happened. The mods fighting with each other are:\n\n1.  "
+      }, {
+        "text": "**HighFPSSupport** (High FPS Support)\n2.  **GravityDontFlipScreen** (Gravity Doesn\u0027t Flip"
+      }, {
+        "text": " Screen)\n3.  **Calamity Mod**\n\n### How to fix it:\n\nSince you probably don\u0027t want"
+      }, {
+        "text": " to disable Calamity (as it\u0027s a massive content mod), the crash is almost certainly a conflict between Calam"
+      }, {
+        "text": "ity and one of those two utility mods.\n\n**Step 1: Disable \"High FPS Support\"**\nI"
+      }, {
+        "text": " highly recommend disabling this mod first. Mods that uncap or force high framerates in Terraria notoriously break the game\u0027s"
+      }, {
+        "text": " rendering engine and frequently cause this exact `SpriteBatch` crash, especially in multiplayer and when combined with heavy mods like Calam"
+      }, {
+        "text": "ity.\n\n**Step 2: Disable \"Gravity Doesn\u0027t Flip Screen\" (If Step 1 didn\u0027"
+      }, {
+        "text": "t work)**\nIf disabling the High FPS mod doesn\u0027t stop the crashing, disable the Gravity mod next. Because this"
+      }, {
+        "text": " mod specifically changes how the screen renders, it is heavily modifying the same graphics code that Calamity uses.\n\n**Step"
+      }, {
+        "text": " 3: Test in Multiplayer**\nMake sure **both you and the server host** (if you aren\u0027t"
+      }, {
+        "text": " the host) disable these mods, reload, and try playing again. \n\n### How to stop losing items while you test:"
+      }, {
+        "text": "\nWhile you are trying to figure out which mod is doing this, I recommend downloading a mod called **\"Auto Save"
+      }, {
+        "text": "\"** or **\"Helpful Hotkeys\"** (which has a quick-save hotkey). You can set"
+      }, {
+        "text": " it to save your player data every few minutes so that if a crash *does* happen, you only lose a minute"
+      }, {
+        "text": " or two of inventory management instead of everything."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }, {
+      "driveImage": {
+        "id": "1ZxMFYaLoi8kVz977dx69ByKiPBmmg5cT"
+      },
+      "role": "user",
+      "tokenCount": 1057
+    }, {
+      "text": "did everything and still this shit happens, ",
+      "role": "user",
+      "tokenCount": 10,
+      "createTime": "2026-02-21T02:20:55.019Z"
+    }, {
+      "text": "**Diagnosing Fatal Error**\n\nOkay, I\u0027m now focused on the provided screenshot of the tModLoader fatal error, alongside the user\u0027s frustrated text. The context of their previous error is also relevant. I need to understand what\u0027s triggering this new issue, given they\u0027ve already tried several steps. It seems like the user is stuck, which tells me the problem is likely an unusual one.\n\n\n**Re-Analyzing the Trace**\n\nI\u0027m now diving back into this persistent error, focusing on the new stack trace alongside the user\u0027s report of trying \"everything.\" The InvalidOperationException is the same, but this time Calamity Mod is the only one explicitly implicated in the new trace. I also see calls to render targets related to the Calamity Mod. This makes me consider a deeper interaction between that and the rendering process.\n\n\n**Pinpointing The Calamity Error**\n\nI see significant progress! I\u0027ve eliminated the `HighFPSSupport` and `GravityDontFlipScreen` stack calls, thanks to the user\u0027s actions. However, the Calamity Mod error is persistent and now *isolated* in `RenderTargetPool_DoDrawHook`, specifically with `MapHeadRenderer`. It seems a map-related graphics rendering issue with Calamity is the root of the problem.\n\n\n**Investigating Common Errors**\n\nI\u0027m focusing now on the common \"Begin called before End\" FNA/SpriteBatch rendering error. Search results point to mod conflicts or interrupted render sequences as frequent causes. I\u0027m drilling down into the specifics of these situations to pinpoint the most likely culprit.\n\n\n**Analyzing the Render Chain**\n\nI\u0027ve traced the crash to Calamity Mod\u0027s `RenderTargetPool` hook within the Map Head rendering process. Specifically, I see `SpriteBatch.Begin` failing during `MapHeadRenderer.PrepareRenderTarget`. The fact that removing `HighFPS` and `Gravity` didn\u0027t solve it is frustrating. I\u0027m now looking at Calamity\u0027s multiplayer-specific map head rendering issues. I\u0027m investigating buggy map heads from other players, \"Boss Checklist\" mod conflicts, or tModLoader memory leaks.\n\n\n**Analyzing Calamity\u0027s Hooks**\n\nI\u0027ve discovered the hook pertains to the vanilla draw loop, specifically Calamity\u0027s integration. `BuffersLoadingSystem::RenderTargetPool_DoDrawHook` acts as Calamity\u0027s wrapper for managing graphics buffers during Terraria\u0027s drawing process. It seems this is where the custom graphics buffer management originates.\n\n\n**Pinpointing the Cause**\n\nI\u0027ve zeroed in on the problematic stack trace, specifically: `Terraria.GameContent.AnOutlinedDrawRenderTargetContent.HandleUseReqest` leading to `MapHeadRenderer.PrepareRenderTarget`. The provided link from AnswerOverflow seems highly relevant, and I\u0027m diving deeper into the specifics of that discussion.\n\n\n**Isolating the Map-Related Issue**\n\nI\u0027m now focusing on the corruption/crimson desert-related crashes, the common denominator, as suggested. Given the \"SpriteBatch Begin called before End\" error during `MapHeadRenderer`, and the user\u0027s focus on multiplayer, I\u0027m leaning toward a conflict with another map-related mod. Calamity Mod may be merely the facilitator of the crash, triggered by something else. Potential culprits may be: another UI/Map-related mod, or a Calamity setting.\n\n\n**Analyzing Potential Solutions**\n\nMy focus has shifted to potential remedies. The crash now seems fundamentally linked to Calamity\u0027s RenderTargetPool and its interaction with Terraria\u0027s map head rendering. I\u0027m exploring three potential solutions: isolating a faulty vanity item/modded NPC (especially in multiplayer), identifying a conflicting map-sharing/checklist mod, or investigating a memory leak issue stemming from numerous map heads or Calamity particles. I will be asking for further information from the user.\n\n\n**Investigating Mod Conflicts**\n\nI\u0027m now investigating potential conflicts, as I suspected. I\u0027ve asked the user to consider map/UI mods like Boss Checklist or Shared Map. Alternatively, I\u0027m prepared to suggest a workaround: disabling Calamity\u0027s custom map features or disabling other map/UI mods to circumvent the issue. I am also planning on suggesting they check for specific player interactions triggering the crash.\n\n\n",
+      "role": "model",
+      "tokenCount": 2713,
+      "isThought": true,
+      "parts": [{
+        "text": "**Diagnosing Fatal Error**\n\nOkay, I\u0027m now focused on the provided screenshot of the tModLoader fatal error, alongside the user\u0027s frustrated text. The context of their previous error is also relevant. I need to understand what\u0027s triggering this new issue, given they\u0027ve already tried several steps. It seems like the user is stuck, which tells me the problem is likely an unusual one.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Re-Analyzing the Trace**\n\nI\u0027m now diving back into this persistent error, focusing on the new stack trace alongside the user\u0027s report of trying \"everything.\" The InvalidOperationException is the same, but this time Calamity Mod is the only one explicitly implicated in the new trace. I also see calls to render targets related to the Calamity Mod. This makes me consider a deeper interaction between that and the rendering process.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Pinpointing The Calamity Error**\n\nI see significant progress! I\u0027ve eliminated the `HighFPSSupport` and `GravityDontFlipScreen` stack calls, thanks to the user\u0027s actions. However, the Calamity Mod error is persistent and now *isolated* in `RenderTargetPool_DoDrawHook`, specifically with `MapHeadRenderer`. It seems a map-related graphics rendering issue with Calamity is the root of the problem.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Investigating Common Errors**\n\nI\u0027m focusing now on the common \"Begin called before End\" FNA/SpriteBatch rendering error. Search results point to mod conflicts or interrupted render sequences as frequent causes. I\u0027m drilling down into the specifics of these situations to pinpoint the most likely culprit.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Render Chain**\n\nI\u0027ve traced the crash to Calamity Mod\u0027s `RenderTargetPool` hook within the Map Head rendering process. Specifically, I see `SpriteBatch.Begin` failing during `MapHeadRenderer.PrepareRenderTarget`. The fact that removing `HighFPS` and `Gravity` didn\u0027t solve it is frustrating. I\u0027m now looking at Calamity\u0027s multiplayer-specific map head rendering issues. I\u0027m investigating buggy map heads from other players, \"Boss Checklist\" mod conflicts, or tModLoader memory leaks.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Calamity\u0027s Hooks**\n\nI\u0027ve discovered the hook pertains to the vanilla draw loop, specifically Calamity\u0027s integration. `BuffersLoadingSystem::RenderTargetPool_DoDrawHook` acts as Calamity\u0027s wrapper for managing graphics buffers during Terraria\u0027s drawing process. It seems this is where the custom graphics buffer management originates.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Pinpointing the Cause**\n\nI\u0027ve zeroed in on the problematic stack trace, specifically: `Terraria.GameContent.AnOutlinedDrawRenderTargetContent.HandleUseReqest` leading to `MapHeadRenderer.PrepareRenderTarget`. The provided link from AnswerOverflow seems highly relevant, and I\u0027m diving deeper into the specifics of that discussion.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Isolating the Map-Related Issue**\n\nI\u0027m now focusing on the corruption/crimson desert-related crashes, the common denominator, as suggested. Given the \"SpriteBatch Begin called before End\" error during `MapHeadRenderer`, and the user\u0027s focus on multiplayer, I\u0027m leaning toward a conflict with another map-related mod. Calamity Mod may be merely the facilitator of the crash, triggered by something else. Potential culprits may be: another UI/Map-related mod, or a Calamity setting.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Potential Solutions**\n\nMy focus has shifted to potential remedies. The crash now seems fundamentally linked to Calamity\u0027s RenderTargetPool and its interaction with Terraria\u0027s map head rendering. I\u0027m exploring three potential solutions: isolating a faulty vanity item/modded NPC (especially in multiplayer), identifying a conflicting map-sharing/checklist mod, or investigating a memory leak issue stemming from numerous map heads or Calamity particles. I will be asking for further information from the user.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Investigating Mod Conflicts**\n\nI\u0027m now investigating potential conflicts, as I suspected. I\u0027ve asked the user to consider map/UI mods like Boss Checklist or Shared Map. Alternatively, I\u0027m prepared to suggest a workaround: disabling Calamity\u0027s custom map features or disabling other map/UI mods to circumvent the issue. I am also planning on suggesting they check for specific player interactions triggering the crash.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-02-21T02:20:55.019Z"
+    }, {
+      "text": "It is incredibly frustrating when you fix one thing and the game just finds another way to break. \n\nThe good news is that you **did** do it right. The previous two mods (`HighFPSSupport` and `GravityDontFlipScreen`) are completely gone from this new error log. \n\nThe bad news is that the error has unmasked the final conflict. If you look at the new log, the crash is happening specifically at `MapHeadRenderer.PrepareRenderTarget` and is being intercepted by Calamity Mod\u0027s `RenderTargetPool_DoDrawHook`.\n\n### What this actually means:\nThe game\u0027s graphics engine is crashing the exact moment it tries to draw the little **\"Heads\" (Player icons, Town NPC icons, or Boss icons) on your minimap or fullscreen map**. Because Calamity heavily modifies how the game renders graphics, its code is getting tangled up with the map icons and crashing your game.\n\nSince this is happening in **Multiplayer**, here is exactly how to stop this specific map crash:\n\n**1. The \"Bugged Armor/Vanity\" Issue (Most Likely in Multiplayer)**\nIn modded multiplayer, if you or your friend equips a specific piece of modded armor, vanity item, or pet that has a corrupted or missing \"Map Head\" icon, it will crash the game for anyone who looks at the map or gets near them. \n*   **The Fix:** Have everyone on the server completely unequip their vanity items and put on standard vanilla armor for a few minutes. See if the crashing immediately stops. If it does, one of the items you were wearing is bugged.\n\n**2. Disable other Map or UI Mods**\nCalamity is a \"jealous\" mod when it comes to graphics. If you have any other mods that change the map or UI, they will fight Calamity and cause this `Spritebatch` crash. Check your mod list for, and temporarily disable:\n*   **Boss Checklist** (Notoriously causes Map Head crashes when it tries to draw boss icons on the map alongside Calamity).\n*   **Lan\u0027s Shared Map** (or any mod that shares map exploration).\n*   **Better Zoom** or any Camera modifiers.\n\n**3. Tweak Calamity\u0027s Config**\nIf you don\u0027t have any other map mods, Calamity itself might be tripping over its own feet. \n*   Go to **Settings \u003e Mod Configuration \u003e Calamity Mod**.\n*   Look for settings related to **Boss Health Bars**, **UI changes**, or **Map Icons**, and try toggling them off.\n\n**A temporary band-aid:** Try turning off your minimap entirely (press Tab until it disappears) while you test these fixes. If the game stops crashing while the minimap is hidden, you know 100% for a fact it\u0027s a map-icon bug causing your item loss.",
+      "role": "model",
+      "grounding": {
+        "corroborationSegments": [{
+          "index": 505,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 505,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 505,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }, {
+          "index": 713,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 713,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 713,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }, {
+          "index": 852,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 1248,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 1248,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 1248,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }, {
+          "index": 1481,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 1481,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 1481,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }, {
+          "index": 1573,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 1573,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 1573,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }, {
+          "index": 1930,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 1930,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 1930,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }, {
+          "index": 1975,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 1975,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 1975,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }, {
+          "index": 2098,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 2098,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 2098,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }, {
+          "index": 2158,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 2158,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 2158,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }, {
+          "index": 2274,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "footnoteNumber": 1
+        }, {
+          "index": 2274,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "footnoteNumber": 2
+        }, {
+          "index": 2274,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "footnoteNumber": 3
+        }],
+        "webSearchQueries": ["\"Begin has been called before calling End\" Calamity multiplayer crash", "\"RenderTargetPool_DoDrawHook\" crash tmodloader", "\"AnOutlinedDrawRenderTargetContent\" \"Begin has been called before calling End\""],
+        "groundingSources": [{
+          "referenceNumber": 1,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFJ5lYVTTxKTaMkpd9AgyUK0gZHK7jGMsReHhGLWY4-jS_O7mBrE_IYmrnvUkh1yvjlkZFDB1_r0k-fFhiGIl11BtTnhZiuBEWs9g9OzZU_0VeBZ1RhzYjoLMLtoBZNsPsD-UMXobK8w-mxPNmb0OeGSYsbiLWBRSwdZBBPJv6D1x8YXCP7aWTcschlLR2HXMFR475WSRJQ",
+          "title": "reddit.com"
+        }, {
+          "referenceNumber": 2,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5916jdm4pzUu7PVD5v-g6BpO1gKWDNqg9_8uJVpz_NLsm4wHwjYWK4MYKOoB-ojrdpY6us-cpMvsNlNb1HQX6XYuq1L_kCqgDEQhy7IASc-LT4zuzzBbG3tuK4hiqSRZYJiTuvLEletuGey-ZlELY6zwD1Z8lF-OkwZeecW9e2IvPD1AfBd7usmAn3KDL",
+          "title": "terraria.org"
+        }, {
+          "referenceNumber": 3,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGxrJFA1IE-kDTyuuEnpZr9mYNoXORRBN6ZuRKZB54OPYdnz-sKkJ3xikHZ2z6AqkflHvCjb2kjOaVYJ3d7rJNnomkc_b0u-uOW-Iw39iSEF2RvHwVjnIFfrPGzOAWiHo4vrHqX446o32_1AJKlPcuVR5F_D1vBelWJe8nFiyemppjzEgF2SYXbHZZ-kGQYOGeMf0RY_zArNXaH_QxOn2zLMthzlWGN2AV74qQl",
+          "title": "terraria.org"
+        }]
+      },
+      "finishReason": "STOP",
+      "tokenCount": 614,
+      "parts": [{
+        "text": "It is incredibly frustrating when you fix one thing and the game just finds another way to break"
+      }, {
+        "text": ". \n\nThe good news is that you **did** do it right. The previous two mods (`HighFPSSupport"
+      }, {
+        "text": "` and `GravityDontFlipScreen`) are completely gone from this new error log. \n\nThe bad news is that the"
+      }, {
+        "text": " error has unmasked the final conflict. If you look at the new log, the crash is happening specifically at `MapHead"
+      }, {
+        "text": "Renderer.PrepareRenderTarget` and is being intercepted by Calamity Mod\u0027s `RenderTargetPool_DoDrawHook`.\n\n"
+      }, {
+        "text": "### What this actually means:\nThe game\u0027s graphics engine is crashing the exact moment it tries to draw the little"
+      }, {
+        "text": " **\"Heads\" (Player icons, Town NPC icons, or Boss icons) on your minimap or fullscreen map**. Because Cal"
+      }, {
+        "text": "amity heavily modifies how the game renders graphics, its code is getting tangled up with the map icons and crashing your game.\n\nSince"
+      }, {
+        "text": " this is happening in **Multiplayer**, here is exactly how to stop this specific map crash:\n\n**1. The \""
+      }, {
+        "text": "Bugged Armor/Vanity\" Issue (Most Likely in Multiplayer)**\nIn modded multiplayer, if you or your friend equips"
+      }, {
+        "text": " a specific piece of modded armor, vanity item, or pet that has a corrupted or missing \"Map Head\" icon, it"
+      }, {
+        "text": " will crash the game for anyone who looks at the map or gets near them. \n*   **The Fix:** Have"
+      }, {
+        "text": " everyone on the server completely unequip their vanity items and put on standard vanilla armor for a few minutes. See if the crashing"
+      }, {
+        "text": " immediately stops. If it does, one of the items you were wearing is bugged.\n\n**2. Disable other"
+      }, {
+        "text": " Map or UI Mods**\nCalamity is a \"jealous\" mod when it comes to graphics. If you have any other"
+      }, {
+        "text": " mods that change the map or UI, they will fight Calamity and cause this `Spritebatch` crash. Check"
+      }, {
+        "text": " your mod list for, and temporarily disable:\n*   **Boss Checklist** (Notoriously causes Map Head crashes when it"
+      }, {
+        "text": " tries to draw boss icons on the map alongside Calamity).\n*   **Lan\u0027s Shared Map** ("
+      }, {
+        "text": "or any mod that shares map exploration).\n*   **Better Zoom** or any Camera modifiers.\n\n**3. T"
+      }, {
+        "text": "weak Calamity\u0027s Config**\nIf you don\u0027t have any other map mods, Calamity itself might"
+      }, {
+        "text": " be tripping over its own feet. \n*   Go to **Settings \u003e Mod Configuration \u003e Calamity Mod**."
+      }, {
+        "text": "\n*   Look for settings related to **Boss Health Bars**, **UI changes**, or **Map Icons**, and try togg"
+      }, {
+        "text": "ling them off.\n\n**A temporary band-aid:** Try turning off your minimap entirely (press Tab until it disappears) while"
+      }, {
+        "text": " you test these fixes. If the game stops crashing while the minimap is hidden, you know 100%"
+      }, {
+        "text": " for a fact it\u0027s a map-icon bug causing your item loss."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }, {
+      "driveImage": {
+        "id": "1F67kyud1o-fUNYxxCaJC-mVdJ5TS-dd0"
+      },
+      "role": "user",
+      "tokenCount": 1089
+    }, {
+      "text": "worked until now, what\u0027s wrong this time ",
+      "role": "user",
+      "tokenCount": 12,
+      "createTime": "2026-02-21T04:02:40.843Z"
+    }, {
+      "text": "**Diagnosing the New Crash**\n\nI\u0027m currently focused on the latest tModLoader crash log provided. The user indicates that prior solutions were effective, but a new issue has emerged. My primary objective is to pinpoint the root cause of this fresh crash and determine what has changed since the previous fixes were implemented. I\u0027m carefully analyzing the log to identify the specific error and its context.\n\n\n**Pinpointing the Calamity Issue**\n\nI\u0027ve identified the \"Main engine crash\" as the same `SpriteBatch` problem as before. The stack trace points squarely at Calamity Mod. I\u0027m focusing on the `BuffersLoadingSystem::RenderTargetPool_DoDrawHook` call within Calamity to understand the rendering state conflict. This is my new avenue for isolating the issue, hoping to pinpoint how Calamity triggers this specific bug.\n\n\n**Revisiting the Crash Data**\n\nI\u0027m making a direct comparison between the previous crash logs and the current one, since the core stack trace looks identical, all pointing towards the `MapHeadRenderer` and then `CalamityMod`. Specifically, `Terraria.Graphics.Renderers.MapHeadRenderer.PrepareRenderTarget(...)` is still the trigger. I\u0027m carefully re-examining the stack for any subtle clues about the Calamity hook and its interactions within the `DoDraw` method, focusing on any differences that might explain this recurring issue. I\u0027ve noted that `HighFPSSupport` and `GravityDontFlipScreen` are not present as potential conflicts anymore.\n\n\n**Analyzing the Recurrence**\n\nI\u0027ve determined this is the exact same underlying error from before, involving `CalamityMod` and `MapHeadRenderer` in a multiplayer setting. The only difference is the randomly-generated DMD ID. This confirms the vulnerability isn\u0027t fixed, but its triggering conditions are transient. I\u0027m now investigating what external factors, such as player join events, vanity items, or pets, might act as triggers, making the crash intermittent.\n\n\n**Identifying Potential Triggers**\n\nI\u0027m now zeroing in on specific in-game events that might trigger the crash. The core error remains, Calamity and map-head rendering in multiplayer. I\u0027m considering scenarios like a minion with a map icon, a boss or town NPC drawing on the map, or someone opening the fullscreen map during a specific entity\u0027s activity. The goal is to pinpoint what changed to reactivate the bug.\n\n\n**Clarifying the Calamity Problem**\n\nI\u0027m now emphasizing a few more points. I need to stress the notorious Boss Checklist issue in conjunction with Calamity in multiplayer - it\u0027s a known culprit. Also, I\u0027m instructing them to check players\u0027 vanity and armor, looking for any items from other mods that might lack proper map icons. I need to make sure they\u0027re re-tweaking Calamity\u0027s visual settings. Finally, I\u0027m proposing the \"nuclear option\": requesting the `client.log` file to pinpoint the exact failing asset. I\u0027ll make sure the user sees how to use this log.\n\n\n",
+      "role": "model",
+      "tokenCount": 1640,
+      "isThought": true,
+      "parts": [{
+        "text": "**Diagnosing the New Crash**\n\nI\u0027m currently focused on the latest tModLoader crash log provided. The user indicates that prior solutions were effective, but a new issue has emerged. My primary objective is to pinpoint the root cause of this fresh crash and determine what has changed since the previous fixes were implemented. I\u0027m carefully analyzing the log to identify the specific error and its context.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Pinpointing the Calamity Issue**\n\nI\u0027ve identified the \"Main engine crash\" as the same `SpriteBatch` problem as before. The stack trace points squarely at Calamity Mod. I\u0027m focusing on the `BuffersLoadingSystem::RenderTargetPool_DoDrawHook` call within Calamity to understand the rendering state conflict. This is my new avenue for isolating the issue, hoping to pinpoint how Calamity triggers this specific bug.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Revisiting the Crash Data**\n\nI\u0027m making a direct comparison between the previous crash logs and the current one, since the core stack trace looks identical, all pointing towards the `MapHeadRenderer` and then `CalamityMod`. Specifically, `Terraria.Graphics.Renderers.MapHeadRenderer.PrepareRenderTarget(...)` is still the trigger. I\u0027m carefully re-examining the stack for any subtle clues about the Calamity hook and its interactions within the `DoDraw` method, focusing on any differences that might explain this recurring issue. I\u0027ve noted that `HighFPSSupport` and `GravityDontFlipScreen` are not present as potential conflicts anymore.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Recurrence**\n\nI\u0027ve determined this is the exact same underlying error from before, involving `CalamityMod` and `MapHeadRenderer` in a multiplayer setting. The only difference is the randomly-generated DMD ID. This confirms the vulnerability isn\u0027t fixed, but its triggering conditions are transient. I\u0027m now investigating what external factors, such as player join events, vanity items, or pets, might act as triggers, making the crash intermittent.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Identifying Potential Triggers**\n\nI\u0027m now zeroing in on specific in-game events that might trigger the crash. The core error remains, Calamity and map-head rendering in multiplayer. I\u0027m considering scenarios like a minion with a map icon, a boss or town NPC drawing on the map, or someone opening the fullscreen map during a specific entity\u0027s activity. The goal is to pinpoint what changed to reactivate the bug.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Clarifying the Calamity Problem**\n\nI\u0027m now emphasizing a few more points. I need to stress the notorious Boss Checklist issue in conjunction with Calamity in multiplayer - it\u0027s a known culprit. Also, I\u0027m instructing them to check players\u0027 vanity and armor, looking for any items from other mods that might lack proper map icons. I need to make sure they\u0027re re-tweaking Calamity\u0027s visual settings. Finally, I\u0027m proposing the \"nuclear option\": requesting the `client.log` file to pinpoint the exact failing asset. I\u0027ll make sure the user sees how to use this log.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-02-21T04:02:40.844Z"
+    }, {
+      "text": "I know you\u0027re going to hate hearing this, but... **this is actually the exact same error as the second one.** \n\nThe log is identical. The crash is still happening at `MapHeadRenderer` colliding with `CalamityMod`\u0027s graphics rendering. \n\nIf it was working perfectly for a while and suddenly crashed again with this same error, it means you successfully removed the mods that were making it crash *constantly*, but **the specific trigger for the map-head crash just happened again in your game.**\n\nHere is what you need to ask yourself and your friends, because one of these things happened right before the game crashed:\n\n### 1. \"What changed in the 10 seconds before the crash?\"\nBecause this specifically crashes when drawing \"Heads\" on the minimap/fullscreen map, think about what just appeared in your world:\n*   **Did a new Town NPC move in?** (Sometimes modded Town NPCs have bugged map icons).\n*   **Did you or a friend change armor, vanity, or put on a new dye?** \n*   **Did you summon a specific Boss?**\n*   **Did a friend just join the server or teleport to you?**\n*   **Did someone just equip a new pet or summon a minion?**\n\nIf someone equipped a new item from a smaller mod, and that item doesn\u0027t have a properly coded \"Map Head\" icon, the moment the game tries to draw their face on the minimap, Calamity\u0027s graphics engine trips and crashes everyone.\n\n### 2. The \"Boss Checklist\" Mod\nI mentioned this in the last message, but I want to double-check: **Are you using the Boss Checklist mod?** \nThere is a massive, highly documented bug between Calamity, Boss Checklist, and Multiplayer right now. Boss Checklist tries to draw boss faces on the map, Calamity tries to draw boss faces on the map, they fight over the code, and it results in this *exact* `Begin has been called before calling End` crash. If you have it, turn it off for now.\n\n### 3. How to find the EXACT broken item:\nIf you are tired of guessing which item/NPC is causing this, the game actually wrote down exactly what broke, but it\u0027s in a different file. \n\nLook at the bottom of your screenshot. It says:\n`A client.log file containing error information has been generated in C:\\Program Files (x86)\\Steam\\steamapps\\common\\tModLoader\\tModLoader-Logs`\n\n1. Go to that folder on your computer.\n2. Open the file named **`client.log`** (you can open it with standard Notepad).\n3. Scroll all the way to the very bottom where the crash happened. \n4. Look at the lines *immediately* above the crash text. It will usually say something like `\"Failed to load texture...\"` or it will name the specific Mod, Item, or NPC that it was trying to load right before it died. \n\nIf you can find that specific item or NPC in the log, you\u0027ve found your culprit!",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 673,
+      "parts": [{
+        "text": "I know you\u0027re going to hate hearing this, but... **this is actually the exact same error as the second one"
+      }, {
+        "text": ".** \n\nThe log is identical. The crash is still happening at `MapHeadRenderer` colliding with `CalamityMod"
+      }, {
+        "text": "`\u0027s graphics rendering. \n\nIf it was working perfectly for a while and suddenly crashed again with this same error, it means"
+      }, {
+        "text": " you successfully removed the mods that were making it crash *constantly*, but **the specific trigger for the map-head crash"
+      }, {
+        "text": " just happened again in your game.**\n\nHere is what you need to ask yourself and your friends, because one of these"
+      }, {
+        "text": " things happened right before the game crashed:\n\n### 1. \"What changed in the 10 seconds before the"
+      }, {
+        "text": " crash?\"\nBecause this specifically crashes when drawing \"Heads\" on the minimap/fullscreen map, think about what just"
+      }, {
+        "text": " appeared in your world:\n*   **Did a new Town NPC move in?** (Sometimes modded Town NPCs have bug"
+      }, {
+        "text": "ged map icons).\n*   **Did you or a friend change armor, vanity, or put on a new dye?** "
+      }, {
+        "text": "\n*   **Did you summon a specific Boss?**\n*   **Did a friend just join the server or teleport to you"
+      }, {
+        "text": "?**\n*   **Did someone just equip a new pet or summon a minion?**\n\nIf someone equipped"
+      }, {
+        "text": " a new item from a smaller mod, and that item doesn\u0027t have a properly coded \"Map Head\" icon,"
+      }, {
+        "text": " the moment the game tries to draw their face on the minimap, Calamity\u0027s graphics engine trips and crashes everyone"
+      }, {
+        "text": ".\n\n### 2. The \"Boss Checklist\" Mod\nI mentioned this in the last message, but I want"
+      }, {
+        "text": " to double-check: **Are you using the Boss Checklist mod?** \nThere is a massive, highly documented bug between"
+      }, {
+        "text": " Calamity, Boss Checklist, and Multiplayer right now. Boss Checklist tries to draw boss faces on the map, Calamity tries"
+      }, {
+        "text": " to draw boss faces on the map, they fight over the code, and it results in this *exact* `Begin"
+      }, {
+        "text": " has been called before calling End` crash. If you have it, turn it off for now.\n\n### 3. How"
+      }, {
+        "text": " to find the EXACT broken item:\nIf you are tired of guessing which item/NPC is causing this, the game actually"
+      }, {
+        "text": " wrote down exactly what broke, but it\u0027s in a different file. \n\nLook at the bottom of your screenshot"
+      }, {
+        "text": ". It says:\n`A client.log file containing error information has been generated in C:\\Program Files (x86"
+      }, {
+        "text": ")\\Steam\\steamapps\\common\\tModLoader\\tModLoader-Logs`\n\n1. Go to that"
+      }, {
+        "text": " folder on your computer.\n2. Open the file named **`client.log`** (you can open it with"
+      }, {
+        "text": " standard Notepad).\n3. Scroll all the way to the very bottom where the crash happened. \n4. Look"
+      }, {
+        "text": " at the lines *immediately* above the crash text. It will usually say something like `\"Failed to load texture...\"` or it"
+      }, {
+        "text": " will name the specific Mod, Item, or NPC that it was trying to load right before it died. \n\nIf"
+      }, {
+        "text": " you can find that specific item or NPC in the log, you\u0027ve found your culprit!"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }, {
+      "driveDocument": {
+        "id": "1Jy1EGoei1CgQGWQ9y5Eoh4hpLdUsnBBy"
+      },
+      "role": "user",
+      "tokenCount": 54113
+    }, {
+      "text": "**Investigating Terraria Crash**\n\nI\u0027m currently focused on analyzing the provided `client.log` from the Terraria tModLoader instance. The user reported a recurring \"Begin has been called before calling End\" error, seemingly linked to `MapHeadRenderer` and possibly Calamity mod components in multiplayer. I\u0027m cross-referencing this error message with known tModLoader issues and mod interactions. I\u0027ll need to pinpoint the exact sequence of events leading up to this crash.\n\n\n**Tracing the Exceptions**\n\nI\u0027ve located `System.IndexOutOfRangeException` errors at `05:03:57.829` and `05:03:58.547` in the log. I\u0027m following the stack trace, starting with the `Terraria.Player.GetModPlayer` call, proceeding through `CalamityMod.NPCs.CalamityGlobalNPC`, `InfernumMode.Core.ILEditingStuff`, and ultimately arriving at the drawing of NPCs. It appears the issue stems from an array access violation during NPC drawing, potentially related to Calamity and InfernumMode\u0027s interactions.\n\n\n**Analyzing Drawing Interruption**\n\nI\u0027m now focusing on a `CreditsRollSky.Draw` call, which is intriguing. The stack trace points through `SkyManager`, `DrawSurfaceBG`, and finally arrives at an InfernumMode method. I see this error is silently caught, which makes the problem tricky, as it may not be an immediate crash. It seems the `System.IndexOutOfRangeException` is interrupting the `SpriteBatch` sequence and leaving it in an invalid state. I\u0027m investigating how this orphaned `SpriteBatch` state affects subsequent drawing operations, as a failure during drawing could cause downstream issues.\n\n\n**Pinpointing the SpriteBatch Issue**\n\nI\u0027ve traced the issue to `CreditsRollSky.Draw` which is called during a silent exception. This is particularly insightful. The root cause appears to be the `InfernumMode.Core.ILEditingStuff.OverrideSystemHooks::CalGlobalNPCPredrawDetourMethod` method, wrapping `CalamityGlobalNPC:PreDraw`. Specifically, an exception occurs in `InfernumMode.Core.ILEditingStuff.DrawVoidBackgroundDuringMLFightHook.PrepareShaderForBG`. It looks like Infernum is trying to draw the Void background during an interesting sequence. Crucially, the corrupted SpriteBatch state then leads to the crash we see with the `MapHeadRenderer` and the \"Begin has been called before calling End\" error. Now, the question is what\u0027s the correct order of operations, and why is this occurring?\n\n\n**Connecting Multiplayer \u0026 Crash**\n\nI\u0027m now zeroing in on the multiplayer aspect. It appears the crash stems from `CreditsRollSky` being invoked, likely related to InfernumMode and CalamityMod, specifically during the title screen or credits. The error might relate to a bug with Infernum and Calamity in multiplayer where background/sky or NPC drawing fails, and a `DrawSurfaceBG` call is made. I suspect an invalid player index is accessed, likely in the main menu/credits.\n\n\n**Confirming Infernum Conflict**\n\nI\u0027m now certain InfernumMode\u0027s background drawing hooks are the core issue. I\u0027ve re-examined the loaded mods. It\u0027s clear: Infernum\u0027s background drawing hooks cause crashes due to a invalid player index. It seems to be triggered by `CreditsRollSky` during title screens, where `InfernumMode` attempts background processing, ultimately failing due to CalamityMod\u0027s interaction, causing the `IndexOutOfRangeException`. This is exacerbated by the `InfernumMultiplayerPatch`.\n\n\n**Clarifying the Root Cause**\n\nI\u0027ve realized the crash isn\u0027t directly related to the `MapHeadRenderer`. It\u0027s a symptom, not the cause. A silent exception during drawing in `InfernumMode` breaks the `SpriteBatch`. Since it\u0027s caught, the `SpriteBatch.End()` call is skipped, and later the game crashes when drawing the map. It\u0027s Infernum\u0027s interaction with Calamity\u0027s drawing code that results in the silent exception. This is likely during a custom background draw, such as the Moon Lord void background.\n\n\n**Formulating the Fix**\n\nI\u0027ve got a clearer picture: an out-of-bounds player index leads to the `IndexOutOfRangeException` within `Player.GetModPlayer`, which is being caused by `InfernumMode.Core.ILEditingStuff.DrawVoidBackgroundDuringMLFightHook`. It seems highly likely the problem lies in InfernumMode and its interaction with Moon Lord-related triggers, particularly in a multiplayer environment. My next step will be to explore how to best advise the user. I\u0027ll recommend they try disabling InfernumMode.\n\n\n",
+      "role": "model",
+      "tokenCount": 2141,
+      "isThought": true,
+      "parts": [{
+        "text": "**Investigating Terraria Crash**\n\nI\u0027m currently focused on analyzing the provided `client.log` from the Terraria tModLoader instance. The user reported a recurring \"Begin has been called before calling End\" error, seemingly linked to `MapHeadRenderer` and possibly Calamity mod components in multiplayer. I\u0027m cross-referencing this error message with known tModLoader issues and mod interactions. I\u0027ll need to pinpoint the exact sequence of events leading up to this crash.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Tracing the Exceptions**\n\nI\u0027ve located `System.IndexOutOfRangeException` errors at `05:03:57.829` and `05:03:58.547` in the log. I\u0027m following the stack trace, starting with the `Terraria.Player.GetModPlayer` call, proceeding through `CalamityMod.NPCs.CalamityGlobalNPC`, `InfernumMode.Core.ILEditingStuff`, and ultimately arriving at the drawing of NPCs. It appears the issue stems from an array access violation during NPC drawing, potentially related to Calamity and InfernumMode\u0027s interactions.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Drawing Interruption**\n\nI\u0027m now focusing on a `CreditsRollSky.Draw` call, which is intriguing. The stack trace points through `SkyManager`, `DrawSurfaceBG`, and finally arrives at an InfernumMode method. I see this error is silently caught, which makes the problem tricky, as it may not be an immediate crash. It seems the `System.IndexOutOfRangeException` is interrupting the `SpriteBatch` sequence and leaving it in an invalid state. I\u0027m investigating how this orphaned `SpriteBatch` state affects subsequent drawing operations, as a failure during drawing could cause downstream issues.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Pinpointing the SpriteBatch Issue**\n\nI\u0027ve traced the issue to `CreditsRollSky.Draw` which is called during a silent exception. This is particularly insightful. The root cause appears to be the `InfernumMode.Core.ILEditingStuff.OverrideSystemHooks::CalGlobalNPCPredrawDetourMethod` method, wrapping `CalamityGlobalNPC:PreDraw`. Specifically, an exception occurs in `InfernumMode.Core.ILEditingStuff.DrawVoidBackgroundDuringMLFightHook.PrepareShaderForBG`. It looks like Infernum is trying to draw the Void background during an interesting sequence. Crucially, the corrupted SpriteBatch state then leads to the crash we see with the `MapHeadRenderer` and the \"Begin has been called before calling End\" error. Now, the question is what\u0027s the correct order of operations, and why is this occurring?\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Connecting Multiplayer \u0026 Crash**\n\nI\u0027m now zeroing in on the multiplayer aspect. It appears the crash stems from `CreditsRollSky` being invoked, likely related to InfernumMode and CalamityMod, specifically during the title screen or credits. The error might relate to a bug with Infernum and Calamity in multiplayer where background/sky or NPC drawing fails, and a `DrawSurfaceBG` call is made. I suspect an invalid player index is accessed, likely in the main menu/credits.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Confirming Infernum Conflict**\n\nI\u0027m now certain InfernumMode\u0027s background drawing hooks are the core issue. I\u0027ve re-examined the loaded mods. It\u0027s clear: Infernum\u0027s background drawing hooks cause crashes due to a invalid player index. It seems to be triggered by `CreditsRollSky` during title screens, where `InfernumMode` attempts background processing, ultimately failing due to CalamityMod\u0027s interaction, causing the `IndexOutOfRangeException`. This is exacerbated by the `InfernumMultiplayerPatch`.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Clarifying the Root Cause**\n\nI\u0027ve realized the crash isn\u0027t directly related to the `MapHeadRenderer`. It\u0027s a symptom, not the cause. A silent exception during drawing in `InfernumMode` breaks the `SpriteBatch`. Since it\u0027s caught, the `SpriteBatch.End()` call is skipped, and later the game crashes when drawing the map. It\u0027s Infernum\u0027s interaction with Calamity\u0027s drawing code that results in the silent exception. This is likely during a custom background draw, such as the Moon Lord void background.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Fix**\n\nI\u0027ve got a clearer picture: an out-of-bounds player index leads to the `IndexOutOfRangeException` within `Player.GetModPlayer`, which is being caused by `InfernumMode.Core.ILEditingStuff.DrawVoidBackgroundDuringMLFightHook`. It seems highly likely the problem lies in InfernumMode and its interaction with Moon Lord-related triggers, particularly in a multiplayer environment. My next step will be to explore how to best advise the user. I\u0027ll recommend they try disabling InfernumMode.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-02-21T04:04:28.073Z"
+    }, {
+      "text": "This log file is exactly what we needed. We finally have the smoking gun, and it proves that the game was actually lying to us in those error screenshots. \n\nThe `MapHeadRenderer` crash you were seeing was a **red herring**. It was the *victim*, not the cause.\n\n### The Real Culprit: Infernum Mode (and a silent crash)\n\nIf you scroll to the very bottom of the text you just pasted, you\u0027ll see a `Silently Caught Exception` happening repeatedly right before the game dies:\n`at InfernumMode.Core.ILEditingStuff.DrawVoidBackgroundDuringMLFightHook.PrepareShaderForBG`\n`at InfernumMode...CalGlobalNPCPredrawDetourMethod`\n\n**Here is exactly what is happening behind the scenes:**\n1. **Infernum Mode** is trying to draw a custom background effect (the code specifically mentions the Moon Lord \"Void Background\" or the Credits sky).\n2. While drawing this background, Infernum tells **Calamity Mod** to draw an NPC. \n3. Calamity tries to check a Player\u0027s stats to see how it should draw the NPC... but because you are in Multiplayer, a slight connection desync causes it to look for a Player that isn\u0027t currently loaded.\n4. This causes a silent `IndexOutOfRangeException` (an invisible crash). \n5. Because the game \"crashed\" in the middle of drawing the background, it **forgot to turn off its drawing tool** (it never called `SpriteBatch.End`).\n6. A microsecond later, the game tries to draw your Minimap. It tries to turn on the drawing tool, realizes the tool is *already* turned on and broken from Infernum\u0027s silent crash, and **fatally crashes your entire game.**\n\n### How to fix it:\n\nThe crash is directly tied to **Infernum Mode** failing to render graphics properly in a multiplayer environment. \n\n**Step 1: The \"Moon Lord / Void\" Trigger**\nThe code specifically mentions `DrawVoidBackgroundDuringMLFightHook`. \n* Are you or your friends currently fighting the Moon Lord?\n* Did someone just equip a Moon Lord pet, relic, or vanity item that might be tricking the game into thinking the Moon Lord background should be active?\n* Did someone just beat the game and trigger the Credits roll? \nWhatever is causing that specific background to try and load is your immediate trigger. Have everyone take off their pets/vanity to see if it stops.\n\n**Step 2: Disable Infernum Mode (The hard truth)**\nI see you have the `InfernumMultiplayerPatch` installed. The harsh reality of modded Terraria is that **Infernum Mode is notoriously broken in multiplayer.** Even with patches, its custom boss AIs and heavy graphical background changes constantly cause desyncs and `SpriteBatch` crashes like the one you are experiencing. \n* If you want to stop losing your items, you will likely need to disable **Infernum Mode** and the **Infernum Multiplayer Patch** and play standard Calamity Death/Revengeance mode. \n\n**Step 3: A potential setting fix (If you refuse to disable Infernum)**\nIf you absolutely *must* play Infernum, you might be able to stop the crash by disabling its custom backgrounds.\n* Go to **Settings \u003e Mod Configuration \u003e Infernum Mode**.\n* Look for settings related to **Custom Boss Backgrounds**, **Void Skies**, or **Screen Shaders**. Turn them all **OFF**. This will prevent Infernum from trying to draw the buggy background that is causing the invisible crash.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 766,
+      "parts": [{
+        "text": "This log file is exactly what we needed. We finally have the smoking"
+      }, {
+        "text": " gun, and it proves that the game was actually lying to us in those error screenshots. \n\nThe `MapHeadRenderer` crash"
+      }, {
+        "text": " you were seeing was a **red herring**. It was the *victim*, not the cause.\n\n### The Real Culprit"
+      }, {
+        "text": ": Infernum Mode (and a silent crash)\n\nIf you scroll to the very bottom of the text you just pasted"
+      }, {
+        "text": ", you\u0027ll see a `Silently Caught Exception` happening repeatedly right before the game dies:\n`at Infer"
+      }, {
+        "text": "numMode.Core.ILEditingStuff.DrawVoidBackgroundDuringMLFightHook.PrepareShaderForBG`\n"
+      }, {
+        "text": "`at InfernumMode...CalGlobalNPCPredrawDetourMethod`\n\n**Here is exactly what is happening behind"
+      }, {
+        "text": " the scenes:**\n1. **Infernum Mode** is trying to draw a custom background effect (the code specifically mentions the Moon Lord"
+      }, {
+        "text": " \"Void Background\" or the Credits sky).\n2. While drawing this background, Infernum tells **Calamity Mod"
+      }, {
+        "text": "** to draw an NPC. \n3. Calamity tries to check a Player\u0027s stats to see how it"
+      }, {
+        "text": " should draw the NPC... but because you are in Multiplayer, a slight connection desync causes it to look for a Player"
+      }, {
+        "text": " that isn\u0027t currently loaded.\n4. This causes a silent `IndexOutOfRangeException` (an invisible crash). "
+      }, {
+        "text": "\n5. Because the game \"crashed\" in the middle of drawing the background, it **forgot to turn off its drawing"
+      }, {
+        "text": " tool** (it never called `SpriteBatch.End`).\n6. A microsecond later, the game tries to draw"
+      }, {
+        "text": " your Minimap. It tries to turn on the drawing tool, realizes the tool is *already* turned on and broken"
+      }, {
+        "text": " from Infernum\u0027s silent crash, and **fatally crashes your entire game.**\n\n### How to fix it:\n\nThe"
+      }, {
+        "text": " crash is directly tied to **Infernum Mode** failing to render graphics properly in a multiplayer environment. \n\n**Step"
+      }, {
+        "text": " 1: The \"Moon Lord / Void\" Trigger**\nThe code specifically mentions `DrawVoidBackgroundDuringMLFightHook`."
+      }, {
+        "text": " \n* Are you or your friends currently fighting the Moon Lord?\n* Did someone just equip a Moon Lord pet"
+      }, {
+        "text": ", relic, or vanity item that might be tricking the game into thinking the Moon Lord background should be active?\n*"
+      }, {
+        "text": " Did someone just beat the game and trigger the Credits roll? \nWhatever is causing that specific background to try and load is your"
+      }, {
+        "text": " immediate trigger. Have everyone take off their pets/vanity to see if it stops.\n\n**Step 2:"
+      }, {
+        "text": " Disable Infernum Mode (The hard truth)**\nI see you have the `InfernumMultiplayerPatch` installed."
+      }, {
+        "text": " The harsh reality of modded Terraria is that **Infernum Mode is notoriously broken in multiplayer.** Even with patches, its"
+      }, {
+        "text": " custom boss AIs and heavy graphical background changes constantly cause desyncs and `SpriteBatch` crashes like the one you"
+      }, {
+        "text": " are experiencing. \n* If you want to stop losing your items, you will likely need to disable **Infernum Mode**"
+      }, {
+        "text": " and the **Infernum Multiplayer Patch** and play standard Calamity Death/Revengeance mode. \n\n**Step "
+      }, {
+        "text": "3: A potential setting fix (If you refuse to disable Infernum)**\nIf you absolutely *must* play Infer"
+      }, {
+        "text": "num, you might be able to stop the crash by disabling its custom backgrounds.\n* Go to **Settings \u003e Mod Configuration"
+      }, {
+        "text": " \u003e Infernum Mode**.\n* Look for settings related to **Custom Boss Backgrounds**, **Void Skies**, or **Screen"
+      }, {
+        "text": " Shaders**. Turn them all **OFF**. This will prevent Infernum from trying to draw the buggy background that is causing"
+      }, {
+        "text": " the invisible crash."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

@@ -1,0 +1,448 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes to know:\n1. The user\u0027s files (metadata) are chronologically labeled, so the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other, given the topic.\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT PROTOCOL**\n\n1.  **Initial Output Protocol:** Begin your response *only* with the content note itself. Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The foundational structure of the notes must accurately reflect the material presented (what was said/seen). Your first duty is to record the lecturer\u0027s content and the user\u0027s notes, **as they are**. Minimal AI interjection should occur in the main body; use dedicated analytical sections for added insight.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  **Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5.  **Conceptual Strengthening Tasks (NEW):** At the conclusion of the synthesized notes, generate a section of \u0027Conceptual Strengthening Tasks\u0027. These tasks must:\n    *   Mimic the structure and difficulty of the examples/problems presented in the current lecture material.\n    *   Include \u0027Challenges\u0027 designed to connect the current university concepts with foundational knowledge from high school or prior courses, forcing the user to utilize a broad, integrated understanding.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a highly knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1s_s-Ix4T8DMXy2kj6nKqtakqot2H6JMm"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1nRn-1Q2q4i1tX8Q1ChZnWJFxWCFUVWkx"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Kchw7UOi-Y12I9IIhL7hG7r745P9kkne"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ljV4Vje2yhlbOA1yu6_saE_98FKN6-5r"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1e8l8u2RYi7F6qq5msREvyGwGbWwNjyJn"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1BxYww3G-qEN2JCqwwNpPFFTE98ytaMj3"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1hd18I57o8U1iukrqwENl-vsBjH2Hzk50"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "17k99sH_6JUeDcsOBEl5xeob4KV9oCPrG"
+      },
+      "role": "user",
+      "tokenCount": 79431
+    }, {
+      "driveAudio": {
+        "id": "17N9eHwtK1bhnEfSLrEoDj-5qaamVHUi-"
+      },
+      "role": "user",
+      "tokenCount": 80854
+    }, {
+      "driveAudio": {
+        "id": "1Y7bsRdnyq1-1RzW9bfJFbYp9LenNM5Za"
+      },
+      "role": "user",
+      "tokenCount": 93121
+    }, {
+      "text": "FIZ 1 3. predavanje TEORIJA. SAMO Korpar. \nRelativno gibanje, sile, skripci in podlage.",
+      "role": "user",
+      "tokenCount": 36
+    }, {
+      "text": "**Commencing Analysis of Notes**\n\nI\u0027m now diving into the user\u0027s physics lecture notes. I\u0027m focusing on aligning the visual elements with the accompanying audio. Currently, I\u0027m examining the first image, which seems to depict equilibrium on an inclined plane. My next step will be to connect the visual with what was said.\n\n\n**Unpacking Physics Concepts**\n\nI\u0027m now fully immersed in the physics lecture\u0027s content. I\u0027ve successfully linked the first image with its audio, clarifying the equilibrium and inclined plane concepts. Moving forward, I am carefully dissecting the remaining images and their corresponding audio. My objective is to create a detailed mapping of all visuals with their explanations and equations, including friction, rolling friction, and Hooke\u0027s law.\n\n\n**Structuring Physics Knowledge**\n\nI\u0027ve completed the initial analysis of the user\u0027s physics notes.  Now, I\u0027m organizing the lecture\u0027s core content into distinct topics.  I\u0027m cataloging each image\u0027s associated equations, including forces on inclined planes, friction (static, kinetic, rolling), Hooke\u0027s Law, and Galilean transformations. I\u0027m focusing on creating a structured outline, including Newton\u0027s laws and the basic equation of motion, and laying the groundwork for how these topics fit together.\n\n\n**Consolidating Physics Insights**\n\nI\u0027m now integrating the user\u0027s physics notes, focusing on the core concepts. I\u0027ve categorized the information into key areas: Newton\u0027s Laws, types of forces (spring, gravity, friction), inclined planes, and Galilean transformations. I\u0027m prioritizing the creation of a clear outline, ensuring a logical flow, including the definitions of mass and force, and the corresponding equations. This includes a robust look at Newton\u0027s laws and the basic equations of motion. I\u0027m now concentrating on organizing the lecture structure.\n\n\n**Developing a Comprehensive Structure**\n\nI\u0027m now fully immersed in the process of structuring the user\u0027s physics notes. I am meticulously analyzing the lecture content. The lecture covers a broad range of topics, so I am concentrating on the most recent notes, focusing on the core concepts, specifically Newton\u0027s laws of motion, various force types (spring, gravity, friction), inclined planes, and Galilean transformations. I will be sure to add critical analysis notes as well. I\u0027m prioritizing accuracy in transcribing the equations and diagrams.\n\n\n**Formulating Comprehensive Outline**\n\nI\u0027m presently building the structure for the comprehensive physics notes. I am carefully organizing the key sections, including Newton\u0027s Laws, types of forces, inclined planes, and Galilean transformations, and will be adding critical analysis. My plan is to start with the main concepts and build to more complex topics. I need to make the equations in LaTeX and wikilink all headers and concepts for better structure.\n\n\n**Formulating Detailed Physics Outline**\n\nI\u0027ve completed my initial pass through the user\u0027s physics notes. Now, I am structuring the information and creating links. I\u0027m focusing on key physics concepts, including Newton\u0027s Laws and various types of forces (spring, gravity, friction), and will add analytical comments where relevant, as well as ensure formatting of LaTeX equations and wikilinking of topics for organization. I will be sure to add Matplotlib code for visual representations.\n\n\n**Analyzing Lecture Content**\n\nI\u0027m now focusing on synthesizing the user\u0027s physics notes, meticulously dissecting the various physics concepts discussed.  I\u0027ve successfully identified and categorized several key topics. These encompass Newton\u0027s Laws, spring force, gravitational force, friction, inclined planes, and Galilean transformations. I will soon integrate Matplotlib visualizations and critical analysis.\n\n**Summarizing Lecture Content**\n\nI\u0027m presently building out my understanding of the user\u0027s physics notes.  I\u0027ve initiated a note structure draft, incorporating the identified topics.  This includes headers for Mass and Force, Newton\u0027s Laws of Motion, and various forces. I\u0027m focusing on providing concise definitions, adding equations in LaTeX, and including critical analysis to ensure the content is comprehensive and well-structured.\n\n\n**Constructing Comprehensive Notes**\n\nI\u0027m presently building the structure for the user\u0027s physics notes. I am carefully organizing the key sections, including Newton\u0027s Laws, types of forces, inclined planes, and Galilean transformations. I will be sure to add critical analysis notes as well. I\u0027m prioritizing accuracy in transcribing the equations and diagrams.\n\n\n**Formulating Detailed Physics Outline**\n\nI\u0027ve completed my initial pass through the user\u0027s physics notes.  Now, I am structuring the information and creating links. I\u0027m focusing on key physics concepts, including Newton\u0027s Laws and various types of forces (spring, gravity, friction), and will add analytical comments where relevant, as well as ensure formatting of LaTeX equations and wikilinking of topics for organization. I will be sure to add Matplotlib code for visual representations.\n\n\n",
+      "role": "model",
+      "tokenCount": 2768,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Commencing Analysis of Notes**\n\nI\u0027m now diving into the user\u0027s physics lecture notes. I\u0027m focusing on aligning the visual elements with the accompanying audio. Currently, I\u0027m examining the first image, which seems to depict equilibrium on an inclined plane. My next step will be to connect the visual with what was said.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Unpacking Physics Concepts**\n\nI\u0027m now fully immersed in the physics lecture\u0027s content. I\u0027ve successfully linked the first image with its audio, clarifying the equilibrium and inclined plane concepts. Moving forward, I am carefully dissecting the remaining images and their corresponding audio. My objective is to create a detailed mapping of all visuals with their explanations and equations, including friction, rolling friction, and Hooke\u0027s law.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Physics Knowledge**\n\nI\u0027ve completed the initial analysis of the user\u0027s physics notes.  Now, I\u0027m organizing the lecture\u0027s core content into distinct topics.  I\u0027m cataloging each image\u0027s associated equations, including forces on inclined planes, friction (static, kinetic, rolling), Hooke\u0027s Law, and Galilean transformations. I\u0027m focusing on creating a structured outline, including Newton\u0027s laws and the basic equation of motion, and laying the groundwork for how these topics fit together.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Consolidating Physics Insights**\n\nI\u0027m now integrating the user\u0027s physics notes, focusing on the core concepts. I\u0027ve categorized the information into key areas: Newton\u0027s Laws, types of forces (spring, gravity, friction), inclined planes, and Galilean transformations. I\u0027m prioritizing the creation of a clear outline, ensuring a logical flow, including the definitions of mass and force, and the corresponding equations. This includes a robust look at Newton\u0027s laws and the basic equations of motion. I\u0027m now concentrating on organizing the lecture structure.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing a Comprehensive Structure**\n\nI\u0027m now fully immersed in the process of structuring the user\u0027s physics notes. I am meticulously analyzing the lecture content. The lecture covers a broad range of topics, so I am concentrating on the most recent notes, focusing on the core concepts, specifically Newton\u0027s laws of motion, various force types (spring, gravity, friction), inclined planes, and Galilean transformations. I will be sure to add critical analysis notes as well. I\u0027m prioritizing accuracy in transcribing the equations and diagrams.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating Comprehensive Outline**\n\nI\u0027m presently building the structure for the comprehensive physics notes. I am carefully organizing the key sections, including Newton\u0027s Laws, types of forces, inclined planes, and Galilean transformations, and will be adding critical analysis. My plan is to start with the main concepts and build to more complex topics. I need to make the equations in LaTeX and wikilink all headers and concepts for better structure.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating Detailed Physics Outline**\n\nI\u0027ve completed my initial pass through the user\u0027s physics notes. Now, I am structuring the information and creating links. I\u0027m focusing on key physics concepts, including Newton\u0027s Laws and various types of forces (spring, gravity, friction), and will add analytical comments where relevant, as well as ensure formatting of LaTeX equations and wikilinking of topics for organization. I will be sure to add Matplotlib code for visual representations.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Lecture Content**\n\nI\u0027m now focusing on synthesizing the user\u0027s physics notes, meticulously dissecting the various physics concepts discussed.  I\u0027ve successfully identified and categorized several key topics. These encompass Newton\u0027s Laws, spring force, gravitational force, friction, inclined planes, and Galilean transformations. I will soon integrate Matplotlib visualizations and critical analysis.\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing Lecture Content**\n\nI\u0027m presently building out my understanding of the user\u0027s physics notes.  I\u0027ve initiated a note structure draft, incorporating the identified topics.  This includes headers for Mass and Force, Newton\u0027s Laws of Motion, and various forces. I\u0027m focusing on providing concise definitions, adding equations in LaTeX, and including critical analysis to ensure the content is comprehensive and well-structured.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing Comprehensive Notes**\n\nI\u0027m presently building the structure for the user\u0027s physics notes. I am carefully organizing the key sections, including Newton\u0027s Laws, types of forces, inclined planes, and Galilean transformations. I will be sure to add critical analysis notes as well. I\u0027m prioritizing accuracy in transcribing the equations and diagrams.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating Detailed Physics Outline**\n\nI\u0027ve completed my initial pass through the user\u0027s physics notes.  Now, I am structuring the information and creating links. I\u0027m focusing on key physics concepts, including Newton\u0027s Laws and various types of forces (spring, gravity, friction), and will add analytical comments where relevant, as well as ensure formatting of LaTeX equations and wikilinking of topics for organization. I will be sure to add Matplotlib code for visual representations.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Dinamika in Newtonovi Zakoni]]\n\n## [[Masa in Sila]]\n\n### [[Vztrajnostna in Težnostna Masa]]\n\u003e **Memorialization Note:** Predavatelj je omenil zgodovinsko razliko med vztrajnostno maso (upor telesa pospeševanju) in težnostno maso (ki določa gravitacijsko silo). Newton je v svojih zakonih privzel, da sta enaki, kar se je eksperimentalno potrdilo z veliko natančnostjo. Einstein je to enakost (načelo ekvivalentnosti) postavil za enega od temeljev svoje splošne teorije relativnosti, kjer je pospešek neločljivo povezan z gravitacijo.\n\n**Kritična Analiza:** Konceptualno gledano, ni očitnega razloga, zakaj bi se lastnost telesa, ki se upira spremembi gibanja (vztrajnost), morala natančno ujemati z lastnostjo, ki določa, kako močno ga privlači drugo telo (gravitacija). Dejstvo, da sta ekvivalentni, je globoko spoznanje o naravi prostora, časa in gravitacije.\n\n### [[Vztrajnostna Masa (m)]]\nLastnost telesa, ki določa njegov upor proti pospeševanju, ko nanj deluje sila.\n-   **Enota:** kilogram `[kg]`\n-   **Aditivna lastnost:** V klasični mehaniki je skupna masa sistema vsota mas njegovih delov.\n    $$ m_{skupna} \u003d m_1 + m_2 $$\n\n### [[Sila (F)]]\nVpliv, ki povzroči, da telo pospešuje (spreminja svojo hitrost). Sila je vektorska količina.\n-   **Enota:** Newton `[N]`\n    $$ 1 N \u003d 1 kg \\cdot \\frac{m}{s^2} $$\n-   **Vektorska narava:** Sile se seštevajo vektorsko. Rezultanta sil je vektorska vsota vseh sil, ki delujejo na telo.\n    $$ \\vec{F}_{rez} \u003d \\vec{F}_1 + \\vec{F}_2 $$\n\n## [[Newtonovi Zakoni Gibanja]]\n\n### [[Newtonov Prvi Zakon (Zakon o Vztrajnosti)]]\n\u003e Telo miruje ali se giblje premo enakomerno, če nanj ne deluje nobena zunanja sila, oziroma če je vsota vseh zunanjih sil, ki delujejo nanj, enaka nič.\n\n**Kritična Analiza:** Ta zakon definira **inercialni opazovalni sistem**. To je sistem, v katerem velja zakon o vztrajnosti. Vsak sistem, ki se glede na inercialni sistem giblje premo enakomerno, je prav tako inercialni sistem. Sistem, ki pospešuje, ni inercialen.\n\n### [[Newtonov Drugi Zakon (Osnovni Zakon Gibanja)]]\n\u003e Pospešek telesa je premo sorazmeren z rezultanto sil, ki deluje na telo, in obratno sorazmeren z maso telesa. Smer pospeška je enaka smeri rezultante sil.\n\n$$ \\sum \\vec{F} \u003d m \\cdot \\vec{a} $$\n\nTo je temeljna enačba dinamike, ki povezuje vzrok (sila) s posledico (pospešek).\n\n### [[Newtonov Tretji Zakon (Zakon o Vzajemnem Učinku)]]\n\u003e Če prvo telo deluje na drugo telo z neko silo (akcija), potem tudi drugo telo deluje na prvo z enako veliko, a nasprotno usmerjeno silo (reakcija).\n\n$$ \\vec{F}_{12} \u003d - \\vec{F}_{21} $$\n\n**Opozorilo:** Sili akcije in reakcije vedno delujeta na **različni** telesi. Zato se v diagramu prostih sil za eno samo telo nikoli ne izničita.\n\n## [[Pogoste Sile v Mehaniki]]\n\n### [[Sila Teže (F_g)]]\nSila, s katero Zemlja (ali drugo masivno nebesno telo) privlači telo. Vedno je usmerjena vertikalno navzdol.\n$$ \\vec{F}_g \u003d m \\cdot \\vec{g} $$\n\n### [[Prožna Sila (Hookov Zakon)]]\nSila, ki jo povzroči raztegnjena ali stisnjena vzmet. Je sila popravka, ki vedno deluje v smeri proti ravnovesni legi.\n$$ F_{vz} \u003d -k \\cdot x $$\n-   $k$: konstanta vzmeti `[N/m]`, ki pove, kako trda je vzmet.\n-   $x$: odmik od ravnovesne lege.\n-   Negativni predznak označuje, da sila deluje v nasprotni smeri od odmika.\n\n### [[Sila Vrvice (Napetost)]]\nSila, ki se prenaša po napeti vrvici.\n-   Vedno deluje vzdolž vrvice.\n-   Vrvica lahko samo vleče, ne more potiskati.\n-   **Predpostavka idealne vrvice:** Njena masa je zanemarljiva in se ne razteza.\n\n### [[Sila Podlage (Kontaktna Sila)]]\nSila, ki deluje med dvema telesoma v stiku. Razdelimo jo na dve komponenti:\n\n#### [[Normalna Sila (F_N)]]\nKomponenta kontaktne sile, ki je **pravokotna** na stično ploskev. To je reakcijska sila, ki preprečuje, da bi se telesi prodrli eno skozi drugo. Njena velikost **ni vedno** enaka $m \\cdot g$.\n\n#### [[Sila Trenja in Lepenja (F_t, F_l)]]\nKomponenta kontaktne sile, ki je **vzporedna** s stično ploskvijo in nasprotuje gibanju ali težnji po gibanju.\n-   **Sila lepenja (statično trenje):** Nasprotuje začetku gibanja. Njena velikost je lahko od nič do maksimalne vrednosti.\n    $$ F_l \\le k_l \\cdot F_N $$\n    kjer je $k_l$ koeficient lepenja. Telo miruje, dokler vlečna sila ne preseže $F_{l,max} \u003d k_l \\cdot F_N$.\n-   **Sila trenja (kinetično trenje):** Nasprotuje gibanju, ko telo že drsi.\n    $$ F_t \u003d k_t \\cdot F_N $$\n    kjer je $k_t$ koeficient trenja. Značilno je, da velja $k_t \u003c k_l$.\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nF_applied \u003d np.linspace(0, 15, 100)\nF_l_max \u003d 10.0\nF_t \u003d 8.0\nF_friction \u003d np.zeros_like(F_applied)\n\nfor i, F in enumerate(F_applied):\n    if F \u003c F_l_max:\n        F_friction[i] \u003d F  # Static friction matches applied force\n    else:\n        F_friction[i] \u003d F_t # Kinetic friction is constant once moving\n\nplt.figure(figsize\u003d(8, 6))\nplt.plot(F_applied, F_friction, label\u003d\u0027Sila trenja/lepenja\u0027)\nplt.plot([F_l_max, F_l_max], [0, F_l_max], \u0027r--\u0027, label\u003df\u0027$F_{{l,max}}$\u0027)\nplt.plot([F_l_max, 15], [F_t, F_t], \u0027g--\u0027, label\u003df\u0027$F_t$\u0027)\n\nplt.xlabel(\u0027Vlečna sila $F_{vlečna}$ [N]\u0027)\nplt.ylabel(\u0027Sila trenja/lepenja $F_{t,l}$ [N]\u0027)\nplt.title(\u0027Odvisnost sile trenja/lepenja od vlečne sile\u0027)\nplt.grid(True)\nplt.legend()\nplt.ylim(0, 12)\nplt.xlim(0, 15)\nplt.text(F_l_max / 2, F_l_max / 2 + 0.5, \u0027Lepanje (mirovanje)\u0027, ha\u003d\u0027center\u0027)\nplt.text(12.5, F_t + 0.5, \u0027Trenje (drsenje)\u0027, ha\u003d\u0027center\u0027)\nplt.show()\n```\n\n## [[Uporaba Newtonovih Zakonov]]\n\n### [[Klanec]]\nAnaliza telesa na klancu je klasičen primer uporabe Newtonovih zakonov.\n\n#### [[Ravnovesje na Klancu]]\nTelo na klancu miruje, ko je vsota vseh sil, ki delujejo nanj, enaka nič.\n1.  **Diagram sil:** Narišemo silo teže ($F_g$), normalno silo ($F_N$) in silo lepenja ($F_l$).\n2.  **Koordinatni sistem:** Najugodneje je postaviti koordinatni sistem tako, da je os x vzporedna s klancem in os y pravokotna nanj.\n3.  **Razstavitev sile teže:** Silo teže razstavimo na komponenti:\n    -   Vzporedna s klancem (vleče telo navzdol): $F_{gx} \u003d mg \\sin\\alpha$\n    -   Pravokotna na klanec: $F_{gy} \u003d mg \\cos\\alpha$\n4.  **Uporaba pogojev za ravnovesje:**\n    -   $\\sum F_y \u003d 0 \\implies F_N - F_{gy} \u003d 0 \\implies F_N \u003d mg \\cos\\alpha$\n    -   $\\sum F_x \u003d 0 \\implies F_{gx} - F_l \u003d 0 \\implies F_l \u003d mg \\sin\\alpha$\n5.  **Mejni pogoj:** Telo bo zdrsnilo, ko sila lepenja doseže maksimalno vrednost $F_{l,max} \u003d k_l F_N$. Iz tega sledi:\n    $$ mg \\sin\\alpha \u003d k_l \\cdot mg \\cos\\alpha $$\n    $$ k_l \u003d \\frac{\\sin\\alpha}{\\cos\\alpha} \u003d \\tan\\alpha $$\n    **Kritična Analiza:** Telo bo mirovalo, dokler je $\\tan\\alpha \\le k_l$. Ko kot preseže to vrednost, telo zdrsne.\n\n#### [[Gibanje po Klancu s Trenjem]]\nKo telo drsi, nanj deluje sila trenja $F_t \u003d k_t F_N$.\n1.  **Uporaba 2. Newtonovega zakona:**\n    -   Smer y: Gibanja ni, zato je ravnovesje: $F_N \u003d mg \\cos\\alpha$.\n    -   Smer x: Obstaja pospešek `a`. Sila $F_{gx}$ vleče telo navzdol, sila trenja $F_t$ pa nasprotuje gibanju (kaže navzgor po klancu).\n        $$ \\sum F_x \u003d F_{gx} - F_t \u003d ma $$\n2.  **Izpeljava pospeška:**\n    $$ mg \\sin\\alpha - k_t F_N \u003d ma $$\n    Vstavimo $F_N \u003d mg \\cos\\alpha$:\n    $$ mg \\sin\\alpha - k_t mg \\cos\\alpha \u003d ma $$\n    Pokrajšamo maso $m$:\n    $$ a \u003d g(\\sin\\alpha - k_t \\cos\\alpha) $$\n\n### [[Sistemi s Škripcem]]\nŠkripec je priprava, ki (v idealnem primeru) samo spremeni smer delovanja sile (napetosti v vrvici), ne pa tudi njene velikosti.\n\n**Analiza sistema dveh mas:**\nRazmislimo o sistemu z maso $m_1$ na gladki podlagi in maso $m_2$, ki visi preko škripca.\n1.  **Diagrami sil:**\n    -   Za maso $m_1$: deluje napetost vrvice $T$ v desno.\n    -   Za maso $m_2$: deluje sila teže $F_{g2} \u003d m_2g$ navzdol in napetost vrvice $T$ navzgor.\n2.  **Koordinatni sistem in zveza med pospeški:**\n    -   Za $m_1$ izberemo pozitivno smer x v desno.\n    -   Za $m_2$ izberemo pozitivno smer y navzdol.\n    -   Ker sta telesi povezani z neraztegljivo vrvico, se morata gibati z enako velikim pospeškom: $a_1 \u003d a_2 \u003d a$.\n3.  **2. Newtonov zakon za vsako telo:**\n    -   Telo 1: $ \\sum F_x \u003d T \u003d m_1 a $\n    -   Telo 2: $ \\sum F_y \u003d m_2g - T \u003d m_2 a $\n4.  **Reševanje sistema enačb:**\n    -   Iz prve enačbe izrazimo $T$ in ga vstavimo v drugo:\n        $$ m_2g - (m_1 a) \u003d m_2 a $$\n        $$ m_2g \u003d a(m_1 + m_2) $$\n    -   Rešitev za pospešek sistema:\n        $$ a \u003d \\frac{m_2}{m_1 + m_2}g $$\n\n## [[Relativno Gibanje]]\n\n### [[Galilejeva Transformacija]]\nOpisuje, kako se koordinate, hitrosti in pospeški transformirajo med dvema **inercialnima** opazovalnima sistemoma.\n-   **Sistem S:** Naš \"mirujoči\" sistem.\n-   **Sistem S\u0027**: Sistem, ki se giblje s konstantno hitrostjo $\\vec{v}_0$ glede na S.\n-   **Transformacijske enačbe (v vektorski obliki):**\n    -   **Lega:** $\\vec{r} \u003d \\vec{r}_0 + \\vec{r}\u0027$ (kjer je $\\vec{r}_0$ lega izhodišča S\u0027 v S)\n    -   **Hitrost:** $\\vec{v} \u003d \\vec{v}_0 + \\vec{v}\u0027$\n    -   **Pospešek:** $\\vec{a} \u003d \\vec{a}\u0027$ (ker je $\\vec{v}_0$ konstanten)\n\n**Kritična Analiza:** Dejstvo, da je pospešek **invarianta** pri Galilejevi transformaciji, je ključnega pomena. Ker Newtonov drugi zakon ($F\u003dma$) povezuje sile s pospeškom, to pomeni, da imajo fizikalni zakoni (v klasični mehaniki) enako obliko v vseh inercialnih opazovalnih sistemih.\n\n---\n\n## [[Naloge za utrjevanje konceptov]]\n\n1.  **Problem s Klancem:** Telo z maso 5 kg miruje na klancu z naklonskim kotom 30°. Koeficient lepenja je 0.7, koeficient trenja pa 0.5.\n    a) Ali telo miruje? Utemeljite z izračunom.\n    b) Zatem na telo začnemo delovati z dodatno silo 10 N, ki vleče telo navzdol vzdolž klanca. Kolikšen je pospešek telesa?\n\n2.  **Sistem dveh Teles:** Telo z maso $m_A \u003d 4$ kg leži na vodoravni mizi. Koeficient trenja med telesom in mizo je $k_t \u003d 0.2$. Telo A je z vrvico preko lahkega škripca povezano s telesom B z maso $m_B \u003d 2$ kg, ki prosto visi. Izračunajte pospešek sistema in napetost vrvice.\n\n3.  **Izziv (Povezovanje znanja):** Letalo leti vodoravno s hitrostjo 150 m/s na višini 2000 m. Iz letala spustijo paket (brez začetne vertikalne hitrosti glede na letalo).\n    a) Koliko časa paket pada?\n    b) Kakšno vodoravno razdaljo prepotuje, preden pade na tla?\n    c) Zapišite vektor hitrosti paketa tik preden zadene tla v koordinatnem sistemu, ki je vezan na mirujočega opazovalca na tleh. (Upor zraka zanemarite).",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3955,
+      "parts": [{
+        "text": "# [[Dinamika in Newtonovi Zakoni]]\n\n## [[Masa in Sila]]\n\n### [[Vztrajnostna in Težnostna Masa]]\n\u003e **Memorialization Note:** Predavatelj je omenil zgod"
+      }, {
+        "text": "ovinsko razliko med vztrajnostno maso (upor telesa pospeševanju) in tež"
+      }, {
+        "text": "nostno maso (ki določa gravitacijsko silo). Newton je v svojih zakonih privzel, da sta enaki"
+      }, {
+        "text": ", kar se je eksperimentalno potrdilo z veliko natančnostjo. Einstein je to enakost (nač"
+      }, {
+        "text": "elo ekvivalentnosti) postavil za enega od temeljev svoje splošne teorije relativnosti, kjer je pos"
+      }, {
+        "text": "pešek neločljivo povezan z gravitacijo.\n\n**Kritična Analiza:** Konceptualno gled"
+      }, {
+        "text": "ano, ni očitnega razloga, zakaj bi se lastnost telesa, ki se upira spremem"
+      }, {
+        "text": "bi gibanja (vztrajnost), morala natančno ujemati z lastnostjo, ki d"
+      }, {
+        "text": "oloča, kako močno ga privlači drugo telo (gravitacija). Dejstvo, da sta ek"
+      }, {
+        "text": "vivalentni, je globoko spoznanje o naravi prostora, časa in gravitacije.\n\n###"
+      }, {
+        "text": " [[Vztrajnostna Masa (m)]]\nLastnost telesa, ki določa njegov upor proti"
+      }, {
+        "text": " pospeševanju, ko nanj deluje sila.\n-   **Enota:** kilogram `[kg]`\n"
+      }, {
+        "text": "-   **Aditivna lastnost:** V klasični mehaniki je skupna masa sistema vsota mas"
+      }, {
+        "text": " njegovih delov.\n    $$ m_{skupna} \u003d m_1 + m_2 $$\n\n"
+      }, {
+        "text": "### [[Sila (F)]]\nVpliv, ki povzroči, da telo pospeš"
+      }, {
+        "text": "uje (spreminja svojo hitrost). Sila je vektorska količina.\n-   **Enota:**"
+      }, {
+        "text": " Newton `[N]`\n    $$ 1 N \u003d 1 kg \\cdot \\frac{m}{s^2} $$"
+      }, {
+        "text": "\n-   **Vektorska narava:** Sile se seštevajo vektorsko. Rezultanta"
+      }, {
+        "text": " sil je vektorska vsota vseh sil, ki delujejo na telo.\n    $$ \\vec{F"
+      }, {
+        "text": "}_{rez} \u003d \\vec{F}_1 + \\vec{F}_2 $$\n\n## [[Newtonovi Zakoni Gibanja]]\n\n### [[Newtonov Prvi Zakon (Zakon o Vztrajnosti)]]\n\u003e T"
+      }, {
+        "text": "elo miruje ali se giblje premo enakomerno, če nanj ne deluje nobena zunanja sila,"
+      }, {
+        "text": " oziroma če je vsota vseh zunanjih sil, ki delujejo nanj, enaka"
+      }, {
+        "text": " nič.\n\n**Kritična Analiza:** Ta zakon definira **inercialni opazovalni sistem**."
+      }, {
+        "text": " To je sistem, v katerem velja zakon o vztrajnosti. Vsak sistem, ki se glede na in"
+      }, {
+        "text": "ercialni sistem giblje premo enakomerno, je prav tako inercialni sistem. Sistem, ki"
+      }, {
+        "text": " pospešuje, ni inercialen.\n\n### [[Newtonov Drugi Zakon (Osnovni Zakon Gibanja)]]\n\u003e Pospešek telesa je premo sorazmeren z rezultanto sil"
+      }, {
+        "text": ", ki deluje na telo, in obratno sorazmeren z maso telesa. Smer pospeška je"
+      }, {
+        "text": " enaka smeri rezultante sil.\n\n$$ \\sum \\vec{F} \u003d m \\cdot \\vec{"
+      }, {
+        "text": "a} $$\n\nTo je temeljna enačba dinamike, ki povezuje vzrok (sila) s posledico (pos"
+      }, {
+        "text": "pešek).\n\n### [[Newtonov Tretji Zakon (Zakon o Vzajemnem Učinku)]]\n\u003e Če prvo telo deluje na drugo telo z neko silo (akcija), potem tudi drugo telo deluje na prvo"
+      }, {
+        "text": " z enako veliko, a nasprotno usmerjeno silo (reakcija).\n\n$$ \\vec{F}_{1"
+      }, {
+        "text": "2} \u003d - \\vec{F}_{21} $$\n\n**Opozorilo:** Sili akcije in reak"
+      }, {
+        "text": "cije vedno delujeta na **različni** telesi. Zato se v diagramu prostih sil za"
+      }, {
+        "text": " eno samo telo nikoli ne izničita.\n\n## [[Pogoste Sile v Mehaniki]]\n\n"
+      }, {
+        "text": "### [[Sila Teže (F_g)]]\nSila, s katero Zemlja (ali drugo"
+      }, {
+        "text": " masivno nebesno telo) privlači telo. Vedno je usmerjena vertikalno navzdol"
+      }, {
+        "text": ".\n$$ \\vec{F}_g \u003d m \\cdot \\vec{g} $$\n\n### [[Prožna Sila (Hookov Zakon)]]\nSila, ki jo povzroči raztegnjena ali st"
+      }, {
+        "text": "isnjena vzmet. Je sila popravka, ki vedno deluje v smeri proti ravnovesni leg"
+      }, {
+        "text": "i.\n$$ F_{vz} \u003d -k \\cdot x $$\n-   $k$: konstanta vz"
+      }, {
+        "text": "meti `[N/m]`, ki pove, kako trda je vzmet.\n-   $x$: od"
+      }, {
+        "text": "mik od ravnovesne lege.\n-   Negativni predznak označuje, da sila deluje v nas"
+      }, {
+        "text": "protni smeri od odmika.\n\n### [[Sila Vrvice (Napetost)]]\nSila,"
+      }, {
+        "text": " ki se prenaša po napeti vrvici.\n-   Vedno deluje vzdolž vrvice.\n"
+      }, {
+        "text": "-   Vrvica lahko samo vleče, ne more potiskati.\n-   **Predpostavka ideal"
+      }, {
+        "text": "ne vrvice:** Njena masa je zanemarljiva in se ne razteza.\n\n### [[Sila Podlage (Kontaktna Sila)]]\nSila, ki deluje med dvema telesoma v stiku. Raz"
+      }, {
+        "text": "delimo jo na dve komponenti:\n\n#### [[Normalna Sila (F_N)]]\nKomponenta kontakt"
+      }, {
+        "text": "ne sile, ki je **pravokotna** na stično ploskev. To je reakcijska sila,"
+      }, {
+        "text": " ki preprečuje, da bi se telesi prodrli eno skozi drugo. Njena velikost **"
+      }, {
+        "text": "ni vedno** enaka $m \\cdot g$.\n\n#### [[Sila Trenja in Lepenja (F_t, F_l)]]\nKomponenta kontaktne sile, ki je **vzporedna** s stično plos"
+      }, {
+        "text": "kvijo in nasprotuje gibanju ali težnji po gibanju.\n-   **Sila lepenja"
+      }, {
+        "text": " (statično trenje):** Nasprotuje začetku gibanja. Njena velikost je lahko od nič do maksimal"
+      }, {
+        "text": "ne vrednosti.\n    $$ F_l \\le k_l \\cdot F_N $$\n    k"
+      }, {
+        "text": "jer je $k_l$ koeficient lepenja. Telo miruje, dokler vlečna sila ne"
+      }, {
+        "text": " preseže $F_{l,max} \u003d k_l \\cdot F_N$.\n-   **Sila"
+      }, {
+        "text": " trenja (kinetično trenje):** Nasprotuje gibanju, ko telo že drsi.\n    $$ F"
+      }, {
+        "text": "_t \u003d k_t \\cdot F_N $$\n    kjer je $k_t$ koef"
+      }, {
+        "text": "icient trenja. Značilno je, da velja $k_t \u003c k_l$.\n\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nF_applied \u003d np.linspace(0, "
+      }, {
+        "text": "15, 100)\nF_l_max \u003d 10.0\nF_t \u003d 8"
+      }, {
+        "text": ".0\nF_friction \u003d np.zeros_like(F_applied)\n\nfor i, F in enumerate(F_"
+      }, {
+        "text": "applied):\n    if F \u003c F_l_max:\n        F_friction[i] \u003d F  "
+      }, {
+        "text": "# Static friction matches applied force\n    else:\n        F_friction[i] \u003d F_t # Kinetic friction is"
+      }, {
+        "text": " constant once moving\n\nplt.figure(figsize\u003d(8, 6))\nplt.plot(F_applied, F_friction"
+      }, {
+        "text": ", label\u003d\u0027Sila trenja/lepenja\u0027)\nplt.plot([F_l_max, F_l_max], [0, F_l_max], \u0027r--\u0027, label\u003df\u0027$F_{{"
+      }, {
+        "text": "l,max}}$\u0027)\nplt.plot([F_l_max, 15], [F_t, F_t], \u0027g--\u0027, label\u003df\u0027$F_t$\u0027)\n\nplt.xlabel(\u0027Vlečna sila $"
+      }, {
+        "text": "F_{vlečna}$ [N]\u0027)\nplt.ylabel(\u0027Sila trenja/lepenja $F_{t"
+      }, {
+        "text": ",l}$ [N]\u0027)\nplt.title(\u0027Odvisnost sile trenja/lepenja od vlečne sile\u0027)\n"
+      }, {
+        "text": "plt.grid(True)\nplt.legend()\nplt.ylim(0, 12)\nplt.xlim("
+      }, {
+        "text": "0, 15)\nplt.text(F_l_max / 2, F_l_max"
+      }, {
+        "text": " / 2 + 0.5, \u0027Lepanje (mirovanje)\u0027, ha\u003d\u0027center\u0027)\nplt."
+      }, {
+        "text": "text(12.5, F_t + 0.5, \u0027Trenje (drsenje)\u0027, ha\u003d\u0027center"
+      }, {
+        "text": "\u0027)\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n## [[Uporaba Newtonovih Zakonov]]\n\n### [[Klanec]]"
+      }, {
+        "text": "\nAnaliza telesa na klancu je klasičen primer uporabe Newtonovih zakonov.\n\n#### [[Ravnovesje na Klancu]]\nTelo na klancu miruje, ko je vsota v"
+      }, {
+        "text": "seh sil, ki delujejo nanj, enaka nič.\n1.  **Diagram sil:** Narišemo silo"
+      }, {
+        "text": " teže ($F_g$), normalno silo ($F_N$) in silo lepenja ($F_l$).\n"
+      }, {
+        "text": "2.  **Koordinatni sistem:** Najugodneje je postaviti koordinatni sistem tako, da je"
+      }, {
+        "text": " os x vzporedna s klancem in os y pravokotna nanj.\n3.  **Raz"
+      }, {
+        "text": "stavitev sile teže:** Silo teže razstavimo na komponenti:\n    -   Vzpored"
+      }, {
+        "text": "na s klancem (vleče telo navzdol): $F_{gx} \u003d mg \\sin\\alpha$"
+      }, {
+        "text": "\n    -   Pravokotna na klanec: $F_{gy} \u003d mg \\cos\\alpha$"
+      }, {
+        "text": "\n4.  **Uporaba pogojev za ravnovesje:**\n    -   $\\sum F"
+      }, {
+        "text": "_y \u003d 0 \\implies F_N - F_{gy} \u003d 0 \\implies F_N \u003d"
+      }, {
+        "text": " mg \\cos\\alpha$\n    -   $\\sum F_x \u003d 0 \\implies F_{gx}"
+      }, {
+        "text": " - F_l \u003d 0 \\implies F_l \u003d mg \\sin\\alpha$\n5.  **"
+      }, {
+        "text": "Mejni pogoj:** Telo bo zdrsnilo, ko sila lepenja doseže maksimalno vrednost $"
+      }, {
+        "text": "F_{l,max} \u003d k_l F_N$. Iz tega sledi:\n    $$ mg \\sin"
+      }, {
+        "text": "\\alpha \u003d k_l \\cdot mg \\cos\\alpha $$\n    $$ k_l \u003d \\frac{\\"
+      }, {
+        "text": "sin\\alpha}{\\cos\\alpha} \u003d \\tan\\alpha $$\n    **Kritična Analiza:** T"
+      }, {
+        "text": "elo bo mirovalo, dokler je $\\tan\\alpha \\le k_l$. Ko kot preseže to vrednost, telo"
+      }, {
+        "text": " zdrsne.\n\n#### [[Gibanje po Klancu s Trenjem]]\nKo telo drsi, n"
+      }, {
+        "text": "anj deluje sila trenja $F_t \u003d k_t F_N$.\n1.  **Uporaba "
+      }, {
+        "text": "2. Newtonovega zakona:**\n    -   Smer y: Gibanja ni, zato je ravnovesje:"
+      }, {
+        "text": " $F_N \u003d mg \\cos\\alpha$.\n    -   Smer x: Obstaja pospešek "
+      }, {
+        "text": "`a`. Sila $F_{gx}$ vleče telo navzdol, sila trenja $F_t$"
+      }, {
+        "text": " pa nasprotuje gibanju (kaže navzgor po klancu).\n        $$ \\sum F_x"
+      }, {
+        "text": " \u003d F_{gx} - F_t \u003d ma $$\n2.  **Izpeljava pospeška:**\n"
+      }, {
+        "text": "    $$ mg \\sin\\alpha - k_t F_N \u003d ma $$\n    Vstavimo $F"
+      }, {
+        "text": "_N \u003d mg \\cos\\alpha$:\n    $$ mg \\sin\\alpha - k_t mg \\cos\\alpha"
+      }, {
+        "text": " \u003d ma $$\n    Pokrajšamo maso $m$:\n    $$ a \u003d g(\\sin\\alpha -"
+      }, {
+        "text": " k_t \\cos\\alpha) $$\n\n### [[Sistemi s Škripcem]]\nŠkri"
+      }, {
+        "text": "pec je priprava, ki (v idealnem primeru) samo spremeni smer delovanja sile (napetosti v"
+      }, {
+        "text": " vrvici), ne pa tudi njene velikosti.\n\n**Analiza sistema dveh mas:**\nRazmis"
+      }, {
+        "text": "limo o sistemu z maso $m_1$ na gladki podlagi in maso $m_"
+      }, {
+        "text": "2$, ki visi preko škripca.\n1.  **Diagrami sil:**\n    -   Za mas"
+      }, {
+        "text": "o $m_1$: deluje napetost vrvice $T$ v desno.\n    -   "
+      }, {
+        "text": "Za maso $m_2$: deluje sila teže $F_{g2} \u003d m_2g$ navzd"
+      }, {
+        "text": "ol in napetost vrvice $T$ navzgor.\n2.  **Koordinatni sistem in"
+      }, {
+        "text": " zveza med pospeški:**\n    -   Za $m_1$ izberemo pozitivno smer x v"
+      }, {
+        "text": " desno.\n    -   Za $m_2$ izberemo pozitivno smer y navzdol.\n"
+      }, {
+        "text": "    -   Ker sta telesi povezani z neraztegljivo vrvico, se morata gibati z"
+      }, {
+        "text": " enako velikim pospeškom: $a_1 \u003d a_2 \u003d a$.\n3.  "
+      }, {
+        "text": "**2. Newtonov zakon za vsako telo:**\n    -   Telo 1: $ \\sum F_x"
+      }, {
+        "text": " \u003d T \u003d m_1 a $\n    -   Telo 2: $ \\sum F_y \u003d"
+      }, {
+        "text": " m_2g - T \u003d m_2 a $\n4.  **Reševanje sistema enačb:**\n"
+      }, {
+        "text": "    -   Iz prve enačbe izrazimo $T$ in ga vstavimo v drugo:\n        "
+      }, {
+        "text": "$$ m_2g - (m_1 a) \u003d m_2 a $$\n        $$ m_2g \u003d a"
+      }, {
+        "text": "(m_1 + m_2) $$\n    -   Rešitev za pospešek sistema:\n        $$"
+      }, {
+        "text": " a \u003d \\frac{m_2}{m_1 + m_2}g $$\n\n## [[Relativno Gibanje]]\n\n### [[Galilejeva Transformacija]]\nOpisuje, kako se koordinate, hit"
+      }, {
+        "text": "rosti in pospeški transformirajo med dvema **inercialnima** opazovalnima sistem"
+      }, {
+        "text": "oma.\n-   **Sistem S:** Naš \"mirujoči\" sistem.\n-   **Sistem S\u0027"
+      }, {
+        "text": "**: Sistem, ki se giblje s konstantno hitrostjo $\\vec{v}_0$ glede na S"
+      }, {
+        "text": ".\n-   **Transformacijske enačbe (v vektorski obliki):**\n    -   **Lega:**"
+      }, {
+        "text": " $\\vec{r} \u003d \\vec{r}_0 + \\vec{r}\u0027$ (kjer je $\\"
+      }, {
+        "text": "vec{r}_0$ lega izhodišča S\u0027 v S)\n    -   **Hitrost:**"
+      }, {
+        "text": " $\\vec{v} \u003d \\vec{v}_0 + \\vec{v}\u0027$\n    -   **"
+      }, {
+        "text": "Pospešek:** $\\vec{a} \u003d \\vec{a}\u0027$ (ker je $\\vec{v}_"
+      }, {
+        "text": "0$ konstanten)\n\n**Kritična Analiza:** Dejstvo, da je pospešek **in"
+      }, {
+        "text": "varianta** pri Galilejevi transformaciji, je ključnega pomena. Ker Newtonov drugi zakon ($F\u003d"
+      }, {
+        "text": "ma$) povezuje sile s pospeškom, to pomeni, da imajo fizikalni zakoni ("
+      }, {
+        "text": "v klasični mehaniki) enako obliko v vseh inercialnih opazovalnih sistem"
+      }, {
+        "text": "ih.\n\n---\n\n## [[Naloge za utrjevanje konceptov]]\n\n1.  **Problem"
+      }, {
+        "text": " s Klancem:** Telo z maso 5 kg miruje na klancu z naklonskim kotom "
+      }, {
+        "text": "30°. Koeficient lepenja je 0.7, koeficient trenja pa 0.5.\n"
+      }, {
+        "text": "    a) Ali telo miruje? Utemeljite z izračunom.\n    b) Zatem"
+      }, {
+        "text": " na telo začnemo delovati z dodatno silo 10 N, ki vleče telo navzdol vzd"
+      }, {
+        "text": "olž klanca. Kolikšen je pospešek telesa?\n\n2.  **Sistem dveh Teles"
+      }, {
+        "text": ":** Telo z maso $m_A \u003d 4$ kg leži na vodoravni mizi."
+      }, {
+        "text": " Koeficient trenja med telesom in mizo je $k_t \u003d 0.2$. Telo A"
+      }, {
+        "text": " je z vrvico preko lahkega škripca povezano s telesom B z maso $m_B \u003d"
+      }, {
+        "text": " 2$ kg, ki prosto visi. Izračunajte pospešek sistema in napetost vrv"
+      }, {
+        "text": "ice.\n\n3.  **Izziv (Povezovanje znanja):** Letalo leti v"
+      }, {
+        "text": "odoravno s hitrostjo 150 m/s na višini 2000 m. Iz"
+      }, {
+        "text": " letala spustijo paket (brez začetne vertikalne hitrosti glede na letalo).\n"
+      }, {
+        "text": "    a) Koliko časa paket pada?\n    b) Kakšno vodoravno razdaljo prepot"
+      }, {
+        "text": "uje, preden pade na tla?\n    c) Zapišite vektor hitrosti paketa tik pre"
+      }, {
+        "text": "den zadene tla v koordinatnem sistemu, ki je vezan na mirujočega opazovalca na"
+      }, {
+        "text": " tleh. (Upor zraka zanemarite)."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

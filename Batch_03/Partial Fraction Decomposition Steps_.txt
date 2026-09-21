@@ -1,0 +1,198 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-flash-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH",
+    "enableImageSearch": false
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "1/(x^3(x-1)) to partial fraction step by step",
+      "role": "user",
+      "tokenCount": 17,
+      "createTime": "2026-03-07T13:43:12.720Z"
+    }, {
+      "text": "**Analyzing the Expression**\n\nI\u0027ve realized the initial search was misdirected. My focus has shifted to the correct expression: 1/(x^3(x-1)). I am currently performing the partial fraction decomposition for *this* specific form. The previous search results weren\u0027t relevant.\n\n\n**Decomposing the Expression**\n\nI have successfully decomposed the expression into partial fractions. I found the constants A, B, C, and D: A \u003d -1, B \u003d -1, C \u003d -1, and D \u003d 1. I\u0027ve double checked the expansion of the expression to verify the calculations. The decomposition is: 1/(x^3(x-1)) \u003d -1/x - 1/x^2 - 1/x^3 + 1/(x-1). This step is now complete.\n\n\n",
+      "role": "model",
+      "tokenCount": 978,
+      "isThought": true,
+      "parts": [{
+        "text": ""
+      }, {
+        "text": "**Analyzing the Expression**\n\nI\u0027ve realized the initial search was misdirected. My focus has shifted to the correct expression: 1/(x^3(x-1)). I am currently performing the partial fraction decomposition for *this* specific form. The previous search results weren\u0027t relevant.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Decomposing the Expression**\n\nI have successfully decomposed the expression into partial fractions. I found the constants A, B, C, and D: A \u003d -1, B \u003d -1, C \u003d -1, and D \u003d 1. I\u0027ve double checked the expansion of the expression to verify the calculations. The decomposition is: 1/(x^3(x-1)) \u003d -1/x - 1/x^2 - 1/x^3 + 1/(x-1). This step is now complete.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-03-07T13:43:12.720Z"
+    }, {
+      "text": "To decompose the rational expression $\\frac{1}{x^3(x-1)}$ into partial fractions, follow these steps:\n\n### 1. Set up the partial fraction form\nSince the denominator contains a repeated linear factor $x^3$ and a simple linear factor $(x-1)$, we write the decomposition as:\n$$\\frac{1}{x^3(x-1)} \u003d \\frac{A}{x} + \\frac{B}{x^2} + \\frac{C}{x^3} + \\frac{D}{x-1}$$\n\n### 2. Clear the denominator\nMultiply both sides of the equation by the common denominator $x^3(x-1)$:\n$$1 \u003d Ax^2(x-1) + Bx(x-1) + C(x-1) + Dx^3$$\n\n### 3. Solve for the constants\nWe can find the constants by substituting specific values for $x$ or by expanding and comparing coefficients.\n\n**Method: Substituting zeros of the denominator**\n*   **Let $x \u003d 0$:**\n    $$1 \u003d A(0) + B(0) + C(0 - 1) + D(0)$$\n    $$1 \u003d -C \\implies \\mathbf{C \u003d -1}$$\n*   **Let $x \u003d 1$:**\n    $$1 \u003d A(0) + B(0) + C(0) + D(1^3)$$\n    $$1 \u003d D \\implies \\mathbf{D \u003d 1}$$\n\n**Method: Comparing coefficients**\nExpand the right side of the equation:\n$$1 \u003d A(x^3 - x^2) + B(x^2 - x) + C(x - 1) + Dx^3$$\n$$1 \u003d (A + D)x^3 + (B - A)x^2 + (C - B)x - C$$\n\nNow, match the coefficients of both sides:\n*   **Constant term:** $-C \u003d 1 \\implies \\mathbf{C \u003d -1}$ (Matches our previous finding)\n*   **Coefficient of $x$:** $C - B \u003d 0 \\implies B \u003d C \\implies \\mathbf{B \u003d -1}$\n*   **Coefficient of $x^2$:** $B - A \u003d 0 \\implies A \u003d B \\implies \\mathbf{A \u003d -1}$\n*   **Coefficient of $x^3$:** $A + D \u003d 0 \\implies -1 + 1 \u003d 0$ (This confirms our values are correct)\n\n### 4. Write the final answer\nSubstitute the values of $A, B, C,$ and $D$ back into the original partial fraction setup:\n$$\\frac{1}{x^3(x-1)} \u003d \\frac{-1}{x} + \\frac{-1}{x^2} + \\frac{-1}{x^3} + \\frac{1}{x-1}$$\n\n**Final simplified form:**\n$$\\frac{1}{x^3(x-1)} \u003d \\frac{1}{x-1} - \\frac{1}{x} - \\frac{1}{x^2} - \\frac{1}{x^3}$$",
+      "role": "model",
+      "grounding": {
+        "corroborationSegments": [{
+          "index": 356,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGRTEaCyo-mkWgmbQwfT01lxFnNNMjwfjTtMbrRE6AvBaSVwbVgTox0bvH85VzW4-pkmIvsDfHQO_8qrBYIvBl5hjgKlieCyRele5NieWOqSXrcn1j2jruwP8BnAH5EwkyMq_RAJE_ICWoUwlAIXMKzBIddOSRcrXuPcCqKa2NLMwb3DTyLMT0ie2ekdcg%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 356,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGwx-BVCXrtz9ijI2XrGOnVzN7Bu3F_C-mW6vKVbMxRYJD7rJjHDKjjjo_BS7LOn_z46FWVSP4x_6w9u10e8ofimNNsAtDMESaIzwNy4cyjddyAHhnW_65FhT6dMGrIM1C01dWUE2EtNoV52BgbwYLH3Cq4RJ4r",
+          "footnoteNumber": 2
+        }, {
+          "index": 356,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGkW6k5BPhPFSArU3wP-BAImrwKIGpu-uCVrvsneoZDURPdIfJNuu1dT7mIZEs1qO_wB_xbPpUyZPHSXCPsZANNIZq77OiChYKrOIAc9_ryT5Cf3Mni397qBeVuQPeWIG7B8mGdom9-67-A2I4TTvg1kLeIMw%3D%3D",
+          "footnoteNumber": 3
+        }, {
+          "index": 356,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE-u9k_0ScBgoPGO8Ka4ZrLA7mT87yJvsZLbx_-2vnipxmdFr3UsHnwil1tBcyP4ZyyKDhn3rCl-nug-G_p08I7KUVYhNYUeH4gbFVaVKfeXMhKQyz198UejdOboxi0ovvyiHm3Mdw%3D",
+          "footnoteNumber": 4
+        }, {
+          "index": 504,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGRTEaCyo-mkWgmbQwfT01lxFnNNMjwfjTtMbrRE6AvBaSVwbVgTox0bvH85VzW4-pkmIvsDfHQO_8qrBYIvBl5hjgKlieCyRele5NieWOqSXrcn1j2jruwP8BnAH5EwkyMq_RAJE_ICWoUwlAIXMKzBIddOSRcrXuPcCqKa2NLMwb3DTyLMT0ie2ekdcg%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 1073,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGRTEaCyo-mkWgmbQwfT01lxFnNNMjwfjTtMbrRE6AvBaSVwbVgTox0bvH85VzW4-pkmIvsDfHQO_8qrBYIvBl5hjgKlieCyRele5NieWOqSXrcn1j2jruwP8BnAH5EwkyMq_RAJE_ICWoUwlAIXMKzBIddOSRcrXuPcCqKa2NLMwb3DTyLMT0ie2ekdcg%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 1285,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGGwQZ0hSpJvSHom30zrJjoiG0gnc1Nb1Tsc1qBpgiWIqszVMv4TGjLPmHPzadV0g8HDSgMjj9v_fMmoIKeRMkRcS25ftrNuuLRnZRR_elQZ-4zwK-Bh4xSDam5xeiGwgiB-FZFez8%3D",
+          "footnoteNumber": 5
+        }, {
+          "index": 1678,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGRTEaCyo-mkWgmbQwfT01lxFnNNMjwfjTtMbrRE6AvBaSVwbVgTox0bvH85VzW4-pkmIvsDfHQO_8qrBYIvBl5hjgKlieCyRele5NieWOqSXrcn1j2jruwP8BnAH5EwkyMq_RAJE_ICWoUwlAIXMKzBIddOSRcrXuPcCqKa2NLMwb3DTyLMT0ie2ekdcg%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 1678,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGwx-BVCXrtz9ijI2XrGOnVzN7Bu3F_C-mW6vKVbMxRYJD7rJjHDKjjjo_BS7LOn_z46FWVSP4x_6w9u10e8ofimNNsAtDMESaIzwNy4cyjddyAHhnW_65FhT6dMGrIM1C01dWUE2EtNoV52BgbwYLH3Cq4RJ4r",
+          "footnoteNumber": 2
+        }, {
+          "index": 1678,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE-u9k_0ScBgoPGO8Ka4ZrLA7mT87yJvsZLbx_-2vnipxmdFr3UsHnwil1tBcyP4ZyyKDhn3rCl-nug-G_p08I7KUVYhNYUeH4gbFVaVKfeXMhKQyz198UejdOboxi0ovvyiHm3Mdw%3D",
+          "footnoteNumber": 4
+        }, {
+          "index": 1678,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGGwQZ0hSpJvSHom30zrJjoiG0gnc1Nb1Tsc1qBpgiWIqszVMv4TGjLPmHPzadV0g8HDSgMjj9v_fMmoIKeRMkRcS25ftrNuuLRnZRR_elQZ-4zwK-Bh4xSDam5xeiGwgiB-FZFez8%3D",
+          "footnoteNumber": 5
+        }],
+        "webSearchQueries": ["partial fraction decomposition of 1/(x^3(x-1)) step by step"],
+        "groundingSources": [{
+          "referenceNumber": 1,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGRTEaCyo-mkWgmbQwfT01lxFnNNMjwfjTtMbrRE6AvBaSVwbVgTox0bvH85VzW4-pkmIvsDfHQO_8qrBYIvBl5hjgKlieCyRele5NieWOqSXrcn1j2jruwP8BnAH5EwkyMq_RAJE_ICWoUwlAIXMKzBIddOSRcrXuPcCqKa2NLMwb3DTyLMT0ie2ekdcg%3D",
+          "title": "askfilo.com"
+        }, {
+          "referenceNumber": 2,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGwx-BVCXrtz9ijI2XrGOnVzN7Bu3F_C-mW6vKVbMxRYJD7rJjHDKjjjo_BS7LOn_z46FWVSP4x_6w9u10e8ofimNNsAtDMESaIzwNy4cyjddyAHhnW_65FhT6dMGrIM1C01dWUE2EtNoV52BgbwYLH3Cq4RJ4r",
+          "title": "mathway.com"
+        }, {
+          "referenceNumber": 3,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGkW6k5BPhPFSArU3wP-BAImrwKIGpu-uCVrvsneoZDURPdIfJNuu1dT7mIZEs1qO_wB_xbPpUyZPHSXCPsZANNIZq77OiChYKrOIAc9_ryT5Cf3Mni397qBeVuQPeWIG7B8mGdom9-67-A2I4TTvg1kLeIMw%3D%3D",
+          "title": "mathsisfun.com"
+        }, {
+          "referenceNumber": 4,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE-u9k_0ScBgoPGO8Ka4ZrLA7mT87yJvsZLbx_-2vnipxmdFr3UsHnwil1tBcyP4ZyyKDhn3rCl-nug-G_p08I7KUVYhNYUeH4gbFVaVKfeXMhKQyz198UejdOboxi0ovvyiHm3Mdw%3D",
+          "title": "youtube.com"
+        }, {
+          "referenceNumber": 5,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGGwQZ0hSpJvSHom30zrJjoiG0gnc1Nb1Tsc1qBpgiWIqszVMv4TGjLPmHPzadV0g8HDSgMjj9v_fMmoIKeRMkRcS25ftrNuuLRnZRR_elQZ-4zwK-Bh4xSDam5xeiGwgiB-FZFez8%3D",
+          "title": "youtube.com"
+        }]
+      },
+      "finishReason": "STOP",
+      "tokenCount": 697,
+      "parts": [{
+        "text": "To decompose the rational"
+      }, {
+        "text": " expression $\\frac{1}{x^3(x-1)}$ into partial fractions, follow these steps:\n\n### "
+      }, {
+        "text": "1. Set up the partial fraction form\nSince the denominator contains a repeated linear factor $x^3$ and a simple linear"
+      }, {
+        "text": " factor $(x-1)$, we write the decomposition as:\n$$\\frac{1}{x^3(x-"
+      }, {
+        "text": "1)} \u003d \\frac{A}{x} + \\frac{B}{x^2} + \\frac{"
+      }, {
+        "text": "C}{x^3} + \\frac{D}{x-1}$$\n\n### 2. Clear the denominator"
+      }, {
+        "text": "\nMultiply both sides of the equation by the common denominator $x^3(x-1)$:\n$$1 \u003d"
+      }, {
+        "text": " Ax^2(x-1) + Bx(x-1) + C(x-1) + Dx"
+      }, {
+        "text": "^3$$\n\n### 3. Solve for the constants\nWe can find the constants by substituting specific values for $x$ or"
+      }, {
+        "text": " by expanding and comparing coefficients.\n\n**Method: Substituting zeros of the denominator**\n*   **Let $x \u003d "
+      }, {
+        "text": "0$:**\n    $$1 \u003d A(0) + B(0) + C(0 - 1"
+      }, {
+        "text": ") + D(0)$$\n    $$1 \u003d -C \\implies \\mathbf{C \u003d -1}$$\n"
+      }, {
+        "text": "*   **Let $x \u003d 1$:**\n    $$1 \u003d A(0) + B(0"
+      }, {
+        "text": ") + C(0) + D(1^3)$$\n    $$1 \u003d D \\implies \\mathbf{"
+      }, {
+        "text": "D \u003d 1}$$\n\n**Method: Comparing coefficients**\nExpand the right side of the equation:\n$$1"
+      }, {
+        "text": " \u003d A(x^3 - x^2) + B(x^2 - x) + C(x - "
+      }, {
+        "text": "1) + Dx^3$$\n$$1 \u003d (A + D)x^3 + (B - A)x"
+      }, {
+        "text": "^2 + (C - B)x - C$$\n\nNow, match the coefficients of both sides:\n*   **"
+      }, {
+        "text": "Constant term:** $-C \u003d 1 \\implies \\mathbf{C \u003d -1}$ (Matches our previous finding)"
+      }, {
+        "text": "\n*   **Coefficient of $x$:** $C - B \u003d 0 \\implies B \u003d C \\implies"
+      }, {
+        "text": " \\mathbf{B \u003d -1}$\n*   **Coefficient of $x^2$:** $B - A"
+      }, {
+        "text": " \u003d 0 \\implies A \u003d B \\implies \\mathbf{A \u003d -1}$\n*   **Coefficient of"
+      }, {
+        "text": " $x^3$:** $A + D \u003d 0 \\implies -1 + 1 \u003d 0$"
+      }, {
+        "text": " (This confirms our values are correct)\n\n### 4. Write the final answer\nSubstitute the values of $A, B"
+      }, {
+        "text": ", C,$ and $D$ back into the original partial fraction setup:\n$$\\frac{1}{x^3(x"
+      }, {
+        "text": "-1)} \u003d \\frac{-1}{x} + \\frac{-1}{x^2} + \\frac{-"
+      }, {
+        "text": "1}{x^3} + \\frac{1}{x-1}$$\n\n**Final simplified form:**\n$$\\"
+      }, {
+        "text": "frac{1}{x^3(x-1)} \u003d \\frac{1}{x-1} - \\frac{"
+      }, {
+        "text": "1}{x} - \\frac{1}{x^2} - \\frac{1}{x^3}$$"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-03-07T13:43:21.332Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

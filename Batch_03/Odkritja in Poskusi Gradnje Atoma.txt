@@ -1,0 +1,598 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1ap3p8IPVbeIioSGwA4PyR6_-sz6ngMXf"
+      },
+      "role": "user",
+      "tokenCount": 98873
+    }, {
+      "driveAudio": {
+        "id": "1fu2cEY46EGVaFKBBLqizvs9QNiM9aLK6"
+      },
+      "role": "user",
+      "tokenCount": 126935
+    }, {
+      "driveImage": {
+        "id": "1QzCU5SoWYKpUHVI5QH0JRsvd8_fkBv6N"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1NS0HvAbil6bhDIHtvJBwlBEs5sfiA5Bf"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1r8CXC0TtxUCfx39PAF0UkBPp285NT3Gy"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1QvQkIot5ueROyEBsWtF_L7ZtS4xtiEk-"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1J0BOnjOO88Ad8_LwL-ODRINLDw488tP5"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1g-iIyy31yLx0jgLSSaTkk2nWBOUfX91k"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "**Beginning Synthesis Efforts**\n\nI\u0027ve initiated the process of integrating the lecture audio and handwritten notes. My focus is on synthesizing these disparate academic materials into a coherent markdown note. This endeavor is moving beyond simple transcription; I\u0027m striving for a structured format optimized for Obsidian.\n\n\n**Establishing Output Standards**\n\nI\u0027m now concretizing my output guidelines. My focus is crystallizing technical formatting standards, especially for formulas, visualizations, and chemical structures. I\u0027m prioritizing accuracy in reflecting lecture content and chronologically organizing the markdown note. The objective is to make this note a comprehensive and structured reference within Obsidian. I\u0027m establishing the groundwork for future in-depth justifications and error-handling capabilities.\n\n\n**Outlining Core Structure**\n\nI\u0027m now solidifying the Obsidian markdown note\u0027s fundamental structure. I\u0027ve defined sections for Theory, Problems, and Solving Methods, and I\u0027m prioritizing chronological accuracy. The goal is a comprehensive and structured resource, incorporating LaTeX for formulas, Matplotlib for plots, and SMILES where appropriate. I\u0027m also establishing an \"Academic Tutoring\" layer: I will add justifications and error-handling capabilities to enhance understanding.\n\n\n**Finalizing Note Architecture**\n\nI\u0027m now fully immersed in the core structure. My latest focus is on the crucial academic tutoring elements, including justifications for every step, error-handling capabilities, and clarifications for ambiguous points. I\u0027m also establishing navigational links and a mindmap expansion protocol within the markdown note to enhance its utility. I have now completed the entire outline, and I\u0027m prepared to transition to content population.\n\n\n**Defining Processing Protocol**\n\nI\u0027ve established a structured protocol for handling the provided materials. My focus is on the  transcript and images. I aim to create a comprehensive markdown note within Obsidian.  I will organize it into sections dedicated to theory, problems, and solving methods, maintaining chronological accuracy. This note is the foundation of an \"Academic Assistant\".\n\n\n**Refining Content Acquisition**\n\nI\u0027m now fully immersed in the raw data. I\u0027m prioritizing the transcript and images, organizing them into sections for theory, problems, and methods. Chronological accuracy remains paramount, establishing a robust \"Academic Assistant\" framework.\n\n\n**Defining Integration Strategy**\n\nI\u0027m now integrating the provided materials: the lecture transcript and handwritten notes. The current focus is a seamless markdown note, specifically formatted for Obsidian. I\u0027m prioritizing chronological accuracy and clear sections for theory, problems, and solutions. I\u0027m also implementing the academic tutoring framework.\n\n\n**Expanding Material Acquisition**\n\nI\u0027m now expanding my acquisition process to the `09_handwritten_notes_6.jpg` file. I will analyze its content and integrate it into the existing structure within Obsidian, focusing on comprehensive synthesis. The core focus is to  comprehensively understand and incorporate the \"Orbital\" concept and the rest of the file.\n\n\n**Synthesizing New Information**\n\nI\u0027m now integrating the remaining handwritten notes and refining the note\u0027s structure. My focus is on ensuring comprehensive coverage of topics, especially the \"Orbital\" concept. I\u0027ll maintain the established chronological and structural integrity, adding justifications and navigational links as needed. I\u0027m prioritizing clarity and the \"Academic Assistant\" framework.\n\n\n**Refining Content Acquisition**\n\nI\u0027m presently focused on the transcript and images, organizing them into sections for theory, problems, and methods, maintaining chronological accuracy. This establishes a strong \"Academic Assistant\" structure.\n\n\n**Expanding Note\u0027s Framework**\n\nI\u0027ve established the core structure of the markdown note, including foundational elements like subatomic particles and historic atomic models. Now, I will integrate content regarding atomic spectroscopy, incorporating equations and detailed explanations. The \"Academic Assistant\" framework is in place to enhance clarity and comprehension.\n\n\n**Establishing Foundational Elements**\n\nI\u0027m presently building the atomic structure note, establishing vital groundwork like subatomic particles and historical models. My focus is accurately reflecting the lecture content. I\u0027ll integrate equations and detailed explanations of atomic spectroscopy. The academic assistant framework is in place to enhance clarity and comprehension.\n\n\n**Integrating Detailed Explanations**\n\nI\u0027m now in the process of incorporating detailed explanations for each step and formula. My current focus is refining the explanations for atomic structure models. I\u0027m prioritizing the inclusion of visualizations for complex concepts within the markdown note.\n\n\n**Expanding Note\u0027s Framework**\n\nI\u0027ve established the core structure of the note, covering subatomic particles and historical atomic models. Now, I\u0027ll dive into atomic spectroscopy with detailed equations and explanations. This \"Academic Assistant\" framework is essential for enhanced comprehension.\n\n\n**Beginning Expansion of Content**\n\nI\u0027m now integrating the raw data into the prepared note structure. My latest update involves populating the section on subatomic particles, including details on radioactive isotopes and radiation types. I\u0027ll maintain a chronological and logical flow.\n\n\n",
+      "role": "model",
+      "tokenCount": 4016,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Beginning Synthesis Efforts**\n\nI\u0027ve initiated the process of integrating the lecture audio and handwritten notes. My focus is on synthesizing these disparate academic materials into a coherent markdown note. This endeavor is moving beyond simple transcription; I\u0027m striving for a structured format optimized for Obsidian.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Establishing Output Standards**\n\nI\u0027m now concretizing my output guidelines. My focus is crystallizing technical formatting standards, especially for formulas, visualizations, and chemical structures. I\u0027m prioritizing accuracy in reflecting lecture content and chronologically organizing the markdown note. The objective is to make this note a comprehensive and structured reference within Obsidian. I\u0027m establishing the groundwork for future in-depth justifications and error-handling capabilities.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining Core Structure**\n\nI\u0027m now solidifying the Obsidian markdown note\u0027s fundamental structure. I\u0027ve defined sections for Theory, Problems, and Solving Methods, and I\u0027m prioritizing chronological accuracy. The goal is a comprehensive and structured resource, incorporating LaTeX for formulas, Matplotlib for plots, and SMILES where appropriate. I\u0027m also establishing an \"Academic Tutoring\" layer: I will add justifications and error-handling capabilities to enhance understanding.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing Note Architecture**\n\nI\u0027m now fully immersed in the core structure. My latest focus is on the crucial academic tutoring elements, including justifications for every step, error-handling capabilities, and clarifications for ambiguous points. I\u0027m also establishing navigational links and a mindmap expansion protocol within the markdown note to enhance its utility. I have now completed the entire outline, and I\u0027m prepared to transition to content population.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining Processing Protocol**\n\nI\u0027ve established a structured protocol for handling the provided materials. My focus is on the  transcript and images. I aim to create a comprehensive markdown note within Obsidian.  I will organize it into sections dedicated to theory, problems, and solving methods, maintaining chronological accuracy. This note is the foundation of an \"Academic Assistant\".\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Content Acquisition**\n\nI\u0027m now fully immersed in the raw data. I\u0027m prioritizing the transcript and images, organizing them into sections for theory, problems, and methods. Chronological accuracy remains paramount, establishing a robust \"Academic Assistant\" framework.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining Integration Strategy**\n\nI\u0027m now integrating the provided materials: the lecture transcript and handwritten notes. The current focus is a seamless markdown note, specifically formatted for Obsidian. I\u0027m prioritizing chronological accuracy and clear sections for theory, problems, and solutions. I\u0027m also implementing the academic tutoring framework.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding Material Acquisition**\n\nI\u0027m now expanding my acquisition process to the `09_handwritten_notes_6.jpg` file. I will analyze its content and integrate it into the existing structure within Obsidian, focusing on comprehensive synthesis. The core focus is to  comprehensively understand and incorporate the \"Orbital\" concept and the rest of the file.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing New Information**\n\nI\u0027m now integrating the remaining handwritten notes and refining the note\u0027s structure. My focus is on ensuring comprehensive coverage of topics, especially the \"Orbital\" concept. I\u0027ll maintain the established chronological and structural integrity, adding justifications and navigational links as needed. I\u0027m prioritizing clarity and the \"Academic Assistant\" framework.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Content Acquisition**\n\nI\u0027m presently focused on the transcript and images, organizing them into sections for theory, problems, and methods, maintaining chronological accuracy. This establishes a strong \"Academic Assistant\" structure.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding Note\u0027s Framework**\n\nI\u0027ve established the core structure of the markdown note, including foundational elements like subatomic particles and historic atomic models. Now, I will integrate content regarding atomic spectroscopy, incorporating equations and detailed explanations. The \"Academic Assistant\" framework is in place to enhance clarity and comprehension.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Establishing Foundational Elements**\n\nI\u0027m presently building the atomic structure note, establishing vital groundwork like subatomic particles and historical models. My focus is accurately reflecting the lecture content. I\u0027ll integrate equations and detailed explanations of atomic spectroscopy. The academic assistant framework is in place to enhance clarity and comprehension.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Detailed Explanations**\n\nI\u0027m now in the process of incorporating detailed explanations for each step and formula. My current focus is refining the explanations for atomic structure models. I\u0027m prioritizing the inclusion of visualizations for complex concepts within the markdown note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding Note\u0027s Framework**\n\nI\u0027ve established the core structure of the note, covering subatomic particles and historical atomic models. Now, I\u0027ll dive into atomic spectroscopy with detailed equations and explanations. This \"Academic Assistant\" framework is essential for enhanced comprehension.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Beginning Expansion of Content**\n\nI\u0027m now integrating the raw data into the prepared note structure. My latest update involves populating the section on subatomic particles, including details on radioactive isotopes and radiation types. I\u0027ll maintain a chronological and logical flow.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Pregled Zgodovinskih Modelov Atoma in Uvod v Kvantno Mehaniko]]\n\n## [[Zgodovinski Eksperimenti in Odkritja]]\nPregled ključnih poskusov, ki so postopoma razkrili zgradbo atoma in vodili od klasičnih do kvantnih modelov.\n\n### [[Električna prevodnost plinov in Geisslerjeva cev]]\n*   **Poskus:** Prevajanje elektrike skozi pline pri znižanem tlaku v Geisslerjevi cevi.\n*   **Opažanje:** Pojav svetlobe in prevodnosti.\n*   **Zaključek:** Električno polje povzroči razpad molekul plina na pozitivne in negativne delce, kar omogoča prevajanje toka.\n\n### [[Katodni žarki (Snop elektronov)]]\n*   **Opredelitev:** Katodni žarki so snop elektronov, ki potujejo od katode (negativni pol) proti anodi (pozitivni pol) v katodni cevi.\n*   **Pomen:** Predstavljajo odkritje prvega subatomskega delca – elektrona.\n\n### [[Thomsonov Eksperiment (Razmerje e/m)]]\n*   **Cilj:** Določitev razmerja med nabojem ($e$) in maso ($m$) elektrona.\n*   **Metoda:** Opazovanje odklona katodnih žarkov v električnem in magnetnem polju.\n*   **Rezultat:** Določeno je bilo specifično razmerje $e/m$, kar je potrdilo, da so elektroni delci z določeno maso in nabojem. To je bil ključen korak k odkritju elektrona.\n\n### [[Millikanov Eksperiment (Naboj elektrona)]]\n*   **Cilj:** Določitev osnovnega naboja elektrona ($e$).\n*   **Metoda:** Poskus z oljnimi kapljicami, ki so lebdele v električnem polju. Z uravnoteženjem gravitacijske in električne sile na kapljice je bilo mogoče izračunati njihov naboj.\n*   **Rezultat:** Ugotovljeno je bilo, da je naboj vsake kapljice mnogokratnik osnovnega naboja, $e \u003d 1.602 \\times 10^{-19} C$. S poznavanjem razmerja $e/m$ iz Thomsonovega poskusa je bila nato izračunana tudi masa elektrona ($m_e$).\n\n### [[Kanalski žarki (Pozitivni ioni)]]\n*   **Odkritje:** Leta 1912 (pripisano Thomsonu) so bili odkriti žarki, ki potujejo v nasprotni smeri od katodnih žarkov.\n*   **Narava:** To so pozitivni ioni, ki nastanejo, ko elektroni iz katodnih žarkov trčijo z molekulami plina in jim izbijejo elektrone. Ti ioni so nato pospešeni proti negativni katodi.\n\n### [[Rutherfordov Eksperiment (Odkritje jedra)]]\n*   **Poskus:** Bombardiranje tanke zlate folije z delci alfa ($\\alpha$).\n*   **Opažanja:**\n    1.  Velika večina delcev alfa je šla skozi folijo nemoteno.\n    2.  Majhen delež delcev je bil odklonjen pod majhnimi koti.\n    3.  Zelo majhen delež (približno 1 na 8000) se je odbil nazaj proti viru.\n*   **Zaključki:**\n    1.  Atom je večinoma prazen prostor.\n    2.  Skoraj vsa masa in ves pozitivni naboj atoma sta zbrana v izjemno majhnem, gostem središču, imenovanem **atomsko jedro**.\n*   **Pomen:** Ta poskus je ovrgel Thomsonov model in postavil temelje za planetarni model atoma.\n\n### [[Röntgenovi žarki (X-žarki)]]\n*   **Odkritje:** Wilhelm Röntgen je odkril, da pri trku katodnih žarkov (elektronov) v kovinsko anodo nastane visokoenergijsko, prodorno sevanje.\n*   **Lastnosti:**\n    *   So elektromagnetno valovanje z visoko energijo in kratko valovno dolžino.\n    *   Ne odklanjajo se v električnem ali magnetnem polju.\n    *   Uklanjajo se na kristalnih mrežah, kar omogoča določanje strukture trdnih snovi (rentgenska kristalografija).\n\n## [[Osnovni delci atoma (Subatomski delci)]]\nAtom je sestavljen iz treh osnovnih (elementarnih) delcev:\n\n*   ### [[Elektron (e⁻)]]\n    *   **Naboj:** Negativen ($-1.602 \\times 10^{-19} C$).\n    *   **Masa:** Zelo majhna ($9.109 \\times 10^{-31} kg$).\n    *   **Lokacija:** Kroži okoli jedra v elektronskem oblaku (orbitalah).\n*   ### [[Proton (p⁺)]]\n    *   **Naboj:** Pozitiven ($+1.602 \\times 10^{-19} C$).\n    *   **Masa:** Približno 1836-krat večja od mase elektrona.\n    *   **Lokacija:** V atomskem jedru. Število protonov (vrstno število, Z) določa kemijski element.\n*   ### [[Nevtron (n⁰)]]\n    *   **Naboj:** Nevtralen (0).\n    *   **Masa:** Zelo podobna masi protona.\n    *   **Lokacija:** V atomskem jedru. Skupaj s protoni tvori nukleone.\n\n### [[Izotopi]]\n*   **Definicija:** Atomi istega elementa (enako število protonov), ki se razlikujejo v številu nevtronov in posledično v masnem številu (A).\n*   **Vrste:**\n    *   **Stabilni:** Jedra ne razpadajo.\n    *   **Nestabilni (Radioaktivni):** Jedra spontano razpadajo in pri tem oddajajo sevanje.\n    *   **Naravni vs. Umetni:** Večina elementov ima naravne izotope; umetne pridobimo z jedrskimi reakcijami.\n\n### [[Radioaktivnost in vrste sevanja]]\nRadioaktivnost je proces, pri katerem nestabilna atomska jedra razpadejo in sevajo energijo v obliki delcev ali valovanja.\n\n*   **Alfa žarki ($\\alpha$):**\n    *   **Sestava:** Jedra helija ($^4_2He^{2+}$).\n    *   **Lastnosti:** Pozitivno nabiti, relativno težki. Imajo majhen domet in jih zaustavi že list papirja.\n*   **Beta žarki ($\\beta$):**\n    *   **Sestava:** Elektroni ($^0_{-1}e$) ali pozitroni, ki nastanejo pri pretvorbi nevtrona v proton v jedru.\n    *   **Lastnosti:** Negativno nabiti, lažji od delcev $\\alpha$. Imajo večji domet, zaustavi jih tanka plast aluminija.\n*   **Gama žarki ($\\gamma$):**\n    *   **Sestava:** Visokoenergijsko elektromagnetno valovanje (fotoni).\n    *   **Lastnosti:** Nevtralni, nimajo mase. So zelo prodorni in za zaščito je potrebna debela plast svinca. Pogosto spremljajo $\\alpha$ in $\\beta$ razpad.\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Deflection in Electric Field Visualization\nplt.figure(figsize\u003d(8, 5))\nplt.title(\"Odklon sevanja v električnem polju\")\n\n# Electric field plates\nplt.hlines(1, -1, 1, colors\u003d\u0027blue\u0027, lw\u003d5)\nplt.text(1.1, 1, \u0027+ pol\u0027, va\u003d\u0027center\u0027, color\u003d\u0027blue\u0027)\nplt.hlines(-1, -1, 1, colors\u003d\u0027red\u0027, lw\u003d5)\nplt.text(1.1, -1, \u0027- pol\u0027, va\u003d\u0027center\u0027, color\u003d\u0027red\u0027)\n\n# Paths of radiation\nx \u003d np.linspace(-3, -1, 100)\n# Gamma (no deflection)\nplt.plot(np.linspace(-3, 2, 100), np.zeros(100), \u0027g--\u0027, label\u003d\u0027γ žarki (nevtralni)\u0027)\n# Alpha (deflected towards negative)\nalpha_x \u003d np.linspace(-1, 2, 100)\nalpha_y \u003d -0.2 * (alpha_x + 1)**2\nplt.plot(np.concatenate((x, alpha_x)), np.concatenate((np.zeros(100), alpha_y)), \u0027r-\u0027, label\u003d\u0027α žarki (pozitivni)\u0027)\n# Beta (deflected towards positive)\nbeta_x \u003d np.linspace(-1, 2, 100)\nbeta_y \u003d 0.8 * (beta_x + 1)**2\nplt.plot(np.concatenate((x, beta_x)), np.concatenate((np.zeros(100), beta_y)), \u0027b-\u0027, label\u003d\u0027β žarki (negativni)\u0027)\n\n# Source\nplt.plot(-3, 0, \u0027ks\u0027, markersize\u003d10)\nplt.text(-3.5, 0, \u0027Vir\u0027, va\u003d\u0027center\u0027)\n\nplt.xlim(-4, 2)\nplt.ylim(-2, 2)\nplt.xlabel(\"Smer potovanja\")\nplt.yticks([])\nplt.legend()\nplt.grid(True, linestyle\u003d\u0027:\u0027)\nplt.show()\n```\n\n## [[Klasični Modeli Zgradbe Atoma]]\n\n### [[Thomsonov Model (Model rozinovega pudinga)]]\n*   **Leto:** 1904.\n*   **Opis:** Atom je predstavljen kot krogla s enakomerno porazdeljenim pozitivnim nabojem (\"puding\"), v kateri so negativno nabiti elektroni (\"rozine\") razporejeni tako, da je celoten atom navzven nevtralen.\n*   **Status:** Ovržen z Rutherfordovim eksperimentom.\n\n### [[Rutherfordov Planetarni Model]]\n*   **Leto:** Približno 1911.\n*   **Opis:** Na podlagi poskusa z zlato folijo je Rutherford predlagal model, kjer:\n    1.  V središču atoma je majhno, gosto, pozitivno nabito jedro.\n    2.  Elektroni krožijo okoli jedra po določenih tirnicah, podobno kot planeti okoli Sonca.\n\n#### [[Slabosti in Težave Planetarnega Modela]]\nKljub napredku je imel model resne pomanjkljivosti, ki jih klasična fizika ni mogla pojasniti:\n1.  **Nestabilnost atoma:** Po klasični elektrodinamiki bi moral elektron, ki kroži in je pospešen delec, nenehno oddajati energijo v obliki elektromagnetnega valovanja. Zaradi izgube energije bi njegova tirnica postajala vse manjša, dokler ne bi v delčku sekunde padel v jedro. Atomi pa so očitno stabilni.\n2.  **Atomski spektri:** Model ni mogel pojasniti, zakaj atomi sevajo svetlobo le pri točno določenih, diskretnih valovnih dolžinah (črtasti spektri). Po klasični teoriji bi moral spekter sevanja biti zvezen (kontinuiran), saj bi elektron spiralno padal proti jedru.\n\n\u003e **Note to Self:** Te nerešene težave so bile glavni motivator za razvoj nove teorije – kvantne mehanike. Klasična fizika na atomskem nivoju očitno ni več veljala.\n\n## [[Pot k Kvantni Mehaniki: Svetloba in Energija]]\n\n### [[Atomska Spektroskopija kot Orodje]]\n*   **Princip:** Analiza svetlobe, ki jo snov oddaja (emisija) ali absorbira (absorpcija), razkrije informacije o njeni elektronski strukturi.\n*   **Atomski spektri:**\n    *   **Kontinuiran spekter:** Vsebuje vse valovne dolžine vidne svetlobe (mavrica). Oddajajo ga segreta trdna telesa.\n    *   **Črtast (linijski) spekter:** Sestavljen iz posameznih ostrih črt pri točno določenih valovnih dolžinah. Značilen je za vzbujene atome v plinastem stanju in deluje kot \"prstni odtis\" za vsak element.\n\n### [[Balmerjeva serija za Vodikov Atom]]\n*   **Odkritje:** Johann Balmer je odkril matematično zvezo, ki opisuje valovne dolžine črt v vidnem delu spektra vodikovega atoma.\n*   **Formula:**\n    $$\n    \\frac{1}{\\lambda} \u003d R_H \\left( \\frac{1}{2^2} - \\frac{1}{n^2} \\right) \\quad \\text{kjer je } n \u003d 3, 4, 5, \\dots\n    $$\n    *   $R_H$ je Rydbergova konstanta.\n\n### [[Planckova Kvantna Hipoteza]]\n*   **Problem:** Klasična fizika ni mogla pojasniti spektra sevanja črnega telesa.\n*   **Planckova rešitev (1900):** Energija se ne more oddajati ali sprejemati zvezno, ampak le v diskretnih paketkih, imenovanih **kvanti**.\n*   **Formula:** Energija enega kvanta je sorazmerna s frekvenco valovanja.\n    $$\n    E \u003d h \\cdot \\nu\n    $$\n    *   $E$ je energija kvanta.\n    *   $h$ je Planckova konstanta ($6.626 \\times 10^{-34} Js$).\n    *   $\\nu$ (ni) je frekvenca valovanja.\n\n### [[Fotoelektrični Efekt in Foton]]\n*   **Pojav:** Ko svetloba z dovolj visoko frekvenco obsije kovinsko površino, iz nje izbija elektrone.\n*   **Einsteinova razlaga (1905):** Svetloba ni samo valovanje, ampak je sestavljena tudi iz delcev – **fotonov**. Vsak foton nosi kvant energije $E \u003d h\\nu$. Elektron je izbit le, če energija fotona preseže izstopno delo kovine.\n*   **Pomen:** Utrditev ideje o kvantizaciji energije in uvedba koncepta valovno-delčne dvojnosti za svetlobo.\n\n### [[De Broglieva Hipoteza (Valovno-delčna Dvojnost)]]\n*   **Ideja (1924):** Če ima lahko valovanje (svetloba) lastnosti delcev (fotoni), imajo lahko tudi delci (npr. elektroni) lastnosti valovanja.\n*   **Formula:** Vsakemu delcu z gibalno količino $p \u003d mv$ pripada valovanje z valovno dolžino $\\lambda$.\n    $$\n    \\lambda \u003d \\frac{h}{mv}\n    $$\n*   **Pomen:** Ta koncept je bil ključen za razvoj valovno-mehaničnega modela atoma, saj elektrona ne obravnavamo več kot kroglico na tirnici, ampak kot stojno valovanje okoli jedra.\n\n### [[Heisenbergov Princip Nedoločenosti]]\n*   **Princip (1927):** Hkrati ni mogoče z absolutno natančnostjo poznati tako lege ($\\Delta x$) kot gibalne količine ($\\Delta p \u003d \\Delta(mv)$) delca.\n*   **Formula:**\n    $$\n    \\Delta x \\cdot \\Delta p \\geq \\frac{h}{4\\pi}\n    $$\n*   **Posledica:** Bolj natančno kot poznamo lego elektrona, manj natančno poznamo njegovo gibalno količino (in s tem smer potovanja) in obratno. To dokončno pokoplje idejo o točno določenih tirnicah iz Rutherfordovega in Bohrovega modela in uvede koncept verjetnosti.\n\n## [[Valovno-Mehanični Model Atoma]]\nSodoben model atoma, ki temelji na kvantni mehaniki.\n\n### [[Schrödingerjeva Enačba]]\n*   **Pomen:** Osnovna enačba valovne mehanike, ki opisuje obnašanje delcev, kot so elektroni, v atomu.\n*   **Rešitev:** Rešitve Schrödingerjeve enačbe za atom so **valovne funkcije ($\\psi$)** in pripadajoče **energije (E)**. Rešitve so mogoče le za diskretne (kvantizirane) vrednosti energije.\n\n### [[Valovna Funkcija ($\\psi$) in Verjetnost Nahajanja Elektrona ($\\psi^2$)]]\n*   **Valovna funkcija ($\\psi$):** Matematična funkcija, ki opisuje valovne lastnosti elektrona. Sama po sebi nima neposrednega fizikalnega pomena.\n*   **Gostota verjetnosti ($\\psi^2$):** Kvadrat valovne funkcije je sorazmeren z verjetnostjo, da v določeni točki prostora najdemo elektron.\n\n### [[Atomska Orbitala]]\n*   **Definicija:** Področje v prostoru okoli atomskega jedra, kjer je verjetnost nahajanja elektrona največja (običajno definirano kot 90-95%).\n*   **Kritična analiza:** Orbitala **ni** tirnica. Ne opisuje poti elektrona, temveč porazdelitev verjetnosti njegovega nahajanja.\n\n### [[Kvantna Števila]]\nVsak elektron v atomu je opisan z nizom štirih kvantnih števil, ki so rešitve Schrödingerjeve enačbe in določajo stanje elektrona (njegovo energijo, obliko in orientacijo orbitale).\n\n*   #### [[Glavno Kvantno Število (n)]]\n    *   **Vrednosti:** Celo število ($n \u003d 1, 2, 3, \\dots$).\n    *   **Pomen:** Določa glavno energijsko raven (lupino) in velikost orbitale. Višji kot je $n$, večja je energija in oddaljenost elektrona od jedra.\n*   #### [[Stransko (Vrtilno) Kvantno Število (l)]]\n    *   **Vrednosti:** Od $0$ do $n-1$.\n    *   **Pomen:** Določa obliko atomske orbitale in podlupino.\n        *   $l\u003d0 \\rightarrow$ **s** orbitala (okrogla)\n        *   $l\u003d1 \\rightarrow$ **p** orbitala (oblika osmice)\n        *   $l\u003d2 \\rightarrow$ **d** orbitala (kompleksnejša)\n        *   $l\u003d3 \\rightarrow$ **f** orbitala (še kompleksnejša)\n*   #### [[Magnetno Kvantno Število ($m_l$)]]\n    *   **Vrednosti:** Od $-l$ do $+l$, vključno z 0.\n    *   **Pomen:** Določa orientacijo orbitale v prostoru. Število možnih vrednosti $m_l$ (enako $2l+1$) pove, koliko enakoenergijskih (degeneriranih) orbital je v dani podlupini.\n        *   Če je $l\u003d1$ (p-podlupina), so $m_l \u003d -1, 0, +1$. Obstajajo tri p-orbitale ($p_x, p_y, p_z$).\n*   #### [[Spinsko Kvantno Število ($m_s$)]]\n    *   **Vrednosti:** $+1/2$ (\"spin up\") ali $-1/2$ (\"spin down\").\n    *   **Pomen:** Opisuje notranjo lastnost elektrona, imenovano spin (lastna vrtilna količina). V vsaki orbitali sta lahko največ dva elektrona, ki se morata razlikovati v spinu (Pavlijevo izključitveno načelo).\n\n### [[Radialna porazdelitev verjetnosti]]\n*   **Opis:** Graf, ki prikazuje verjetnost nahajanja elektrona na določeni razdalji ($r$) od jedra.\n*   **Primer (vodikov atom):**\n    *   **1s orbitala:** Verjetnost je največja na določeni razdalji od jedra (Bohrov radij), v samem jedru pa je nič.\n    *   **2s orbitala:** Ima dva vrhova. To pomeni, da obstajata dve področji z večjo verjetnostjo nahajanja, med njima pa je \"vozel\" (angl. node) – področje z ničelno verjetnostjo.\n\n## [[Periodičnost Lastnosti Atomov]]\nLastnosti elementov se periodično spreminjajo po periodnem sistemu, kar je posledica njihove elektronske konfiguracije.\n\n### [[Atomski in lonski Radij]]\n*   **Trendi atomskega radija:**\n    *   **Po skupini navzdol narašča:** Dodajajo se nove elektronske lupine ($n$ se veča).\n    *   **Po periodi v desno upada:** Povečuje se naboj jedra, ki močneje privlači elektrone v isti lupini.\n*   **Ionski radij:**\n    *   **Kationi (pozitivni ioni):** So **manjši** od svojih nevtralnih atomov, ker imajo manj elektronov, preostale pa jedro močneje privlači.\n    *   **Anioni (negativni ioni):** So **večji** od svojih nevtralnih atomov, ker dodan elektron poveča medsebojno odbojnost v elektronski ovojnici.\n\n### [[Efektivni Naboj Jedra ($Z_{eff}$)]]\n*   **Definicija:** Dejanski privlak, ki ga čuti valenčni elektron s strani jedra. Ta privlak je zmanjšan zaradi \"senčenja\" s strani notranjih elektronov.\n*   **Formula:**\n    $$\n    Z_{eff} \u003d Z - S\n    $$\n    *   $Z$ je vrstno število (dejanski naboj jedra).\n    *   $S$ je konstanta senčenja.\n*   **Trend:** **Narašča po periodi v desno**, ker dodani protoni v jedru povečajo privlak močneje, kot dodatni elektron v isti lupini poveča senčenje.\n\n### [[Ionizacijska Energija (I)]]\n*   **Definicija:** Energija, potrebna za odstranitev najbolj zunanjega elektrona iz osamljenega atoma v plinastem stanju.\n    $$\n    X(g) \\rightarrow X^+(g) + e^-(g)\n    $$\n*   **Trendi:**\n    *   **Po periodi v desno narašča:** Zaradi večjega $Z_{eff}$ je elektron močneje vezan in je potrebno več energije za njegovo odstranitev.\n    *   **Po skupini navzdol upada:** Zunanji elektron je v višji lupini, dlje od jedra in slabše vezan.\n*   **Zaporedne ionizacijske energije:** $I_1 \u003c I_2 \u003c I_3 \\dots$. Odstranjevanje elektrona iz pozitivnega iona je vedno težje.\n\n### [[Elektronska Afiniteta ($E_{ea}$)]]\n*   **Definicija:** Energijska sprememba, ko osamljen atom v plinastem stanju sprejme elektron in tvori anion.\n    $$\n    X(g) + e^-(g) \\rightarrow X^-(g)\n    $$\n*   **Vrednosti:** Ponavadi je proces eksotermen (energija se sprosti, $E_{ea}$ je negativna), še posebej pri halogenih, ki z dodatnim elektronom dosežejo stabilno konfiguracijo žlahtnega plina.\n\n### [[Elektronegativnost ($\\chi$)]]\n*   **Definicija (Pauling):** Sposobnost ali sila, s katero atom v molekuli privlači elektrone iz kemijske vezi k sebi.\n*   **Trendi:**\n    *   **Po periodi v desno narašča.**\n    *   **Po skupini navzdol upada.**\n*   **Najbolj elektronegativni elementi:** Fluor (F), kisik (O), dušik (N), klor (Cl). Nahajajo se v zgornjem desnem kotu periodnega sistema.\n*   **Mullikenova definicija:** Elektronegativnost je definirana kot povprečje ionizacijske energije in elektronske afinitete.\n    $$\n    \\chi \u003d \\frac{I_1 + E_{ea}}{2}\n    $$\n\n## [[Splošne Formule in Definicije]]\n\n*   **Energija kvanta (Planck):** $$ E \u003d h \\cdot \\nu $$\n*   **Valovna dolžina delca (de Broglie):** $$ \\lambda \u003d \\frac{h}{mv} $$\n*   **Heisenbergov princip nedoločenosti:** $$ \\Delta x \\cdot \\Delta p \\geq \\frac{h}{4\\pi} $$\n*   **Efektivni naboj jedra:** $$ Z_{eff} \u003d Z - S $$\n*   **Elektronegativnost (Mulliken):** $$ \\chi \u003d \\frac{I_1 + E_{ea}}{2} $$\n*   **Balmerjeva serija (vodik):** $$ \\frac{1}{\\lambda} \u003d R_H \\left( \\frac{1}{2^2} - \\frac{1}{n^2} \\right) $$",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 6190,
+      "parts": [{
+        "text": "# [[Pregled Zgodovinskih Modelov Atoma in Uvod v Kvantno Mehaniko]]\n\n"
+      }, {
+        "text": "## [[Zgodovinski Eksperimenti in Odkritja]]\nPregled ključnih poskusov, ki"
+      }, {
+        "text": " so postopoma razkrili zgradbo atoma in vodili od klasičnih do kvantnih modelov"
+      }, {
+        "text": ".\n\n### [[Električna prevodnost plinov in Geisslerjeva cev]]\n*   **Poskus"
+      }, {
+        "text": ":** Prevajanje elektrike skozi pline pri znižanem tlaku v Geisslerjevi cevi."
+      }, {
+        "text": "\n*   **Opažanje:** Pojav svetlobe in prevodnosti.\n*   **Zaključek:**"
+      }, {
+        "text": " Električno polje povzroči razpad molekul plina na pozitivne in negativne delce,"
+      }, {
+        "text": " kar omogoča prevajanje toka.\n\n### [[Katodni žarki (Snop elektronov)]]\n*"
+      }, {
+        "text": "   **Opredelitev:** Katodni žarki so snop elektronov, ki potujejo od katode ("
+      }, {
+        "text": "negativni pol) proti anodi (pozitivni pol) v katodni cevi.\n*   **"
+      }, {
+        "text": "Pomen:** Predstavljajo odkritje prvega subatomskega delca – elektrona.\n\n### [[Thomsonov Eksperiment (Razmerje e/m)]]\n*   **Cilj:** Določitev"
+      }, {
+        "text": " razmerja med nabojem ($e$) in maso ($m$) elektrona.\n*   **Metoda:** Op"
+      }, {
+        "text": "azovanje odklona katodnih žarkov v električnem in magnetnem polju.\n*   **"
+      }, {
+        "text": "Rezultat:** Določeno je bilo specifično razmerje $e/m$, kar je potrdilo,"
+      }, {
+        "text": " da so elektroni delci z določeno maso in nabojem. To je bil ključen korak k"
+      }, {
+        "text": " odkritju elektrona.\n\n### [[Millikanov Eksperiment (Naboj elektrona)]]\n*   "
+      }, {
+        "text": "**Cilj:** Določitev osnovnega naboja elektrona ($e$).\n*   **Metoda:** Pos"
+      }, {
+        "text": "kus z oljnimi kapljicami, ki so lebdele v električnem polju. Z uravnoteženjem"
+      }, {
+        "text": " gravitacijske in električne sile na kapljice je bilo mogoče izračunati njihov naboj.\n"
+      }, {
+        "text": "*   **Rezultat:** Ugotovljeno je bilo, da je naboj vsake kapljice mnog"
+      }, {
+        "text": "okratnik osnovnega naboja, $e \u003d 1.602 \\times 10^{-19}"
+      }, {
+        "text": " C$. S poznavanjem razmerja $e/m$ iz Thomsonovega poskusa je bila nato"
+      }, {
+        "text": " izračunana tudi masa elektrona ($m_e$).\n\n### [[Kanalski žarki (Pozitivni ioni)]]\n*   **Odkritje:** Leta 1912 (pripisano Thomsonu)"
+      }, {
+        "text": " so bili odkriti žarki, ki potujejo v nasprotni smeri od katodnih žark"
+      }, {
+        "text": "ov.\n*   **Narava:** To so pozitivni ioni, ki nastanejo, ko elektroni iz kat"
+      }, {
+        "text": "odnih žarkov trčijo z molekulami plina in jim izbijejo elektrone. Ti"
+      }, {
+        "text": " ioni so nato pospešeni proti negativni katodi.\n\n### [[Rutherfordov Eksperiment (Odkritje jedra)]]\n*   **Poskus:** Bombardiranje tanke zlate folije z delci alfa"
+      }, {
+        "text": " ($\\alpha$).\n*   **Opažanja:**\n    1.  Velika večina delcev alfa je š"
+      }, {
+        "text": "la skozi folijo nemoteno.\n    2.  Majhen delež delcev je bil odklonjen pod"
+      }, {
+        "text": " majhnimi koti.\n    3.  Zelo majhen delež (približno 1 na 8"
+      }, {
+        "text": "000) se je odbil nazaj proti viru.\n*   **Zaključki:**\n    "
+      }, {
+        "text": "1.  Atom je večinoma prazen prostor.\n    2.  Skoraj vsa masa in ves"
+      }, {
+        "text": " pozitivni naboj atoma sta zbrana v izjemno majhnem, gostem središču, imen"
+      }, {
+        "text": "ovanem **atomsko jedro**.\n*   **Pomen:** Ta poskus je ovrgel Thomsonov model in"
+      }, {
+        "text": " postavil temelje za planetarni model atoma.\n\n### [[Röntgenovi žarki (X-žarki)]]"
+      }, {
+        "text": "\n*   **Odkritje:** Wilhelm Röntgen je odkril, da pri trku katodnih žark"
+      }, {
+        "text": "ov (elektronov) v kovinsko anodo nastane visokoenergijsko, prodorno sevanje."
+      }, {
+        "text": "\n*   **Lastnosti:**\n    *   So elektromagnetno valovanje z visoko energijo in kratko valovno dol"
+      }, {
+        "text": "žino.\n    *   Ne odklanjajo se v električnem ali magnetnem polju.\n    "
+      }, {
+        "text": "*   Uklanjajo se na kristalnih mrežah, kar omogoča določanje strukture tr"
+      }, {
+        "text": "dnih snovi (rentgenska kristalografija).\n\n## [[Osnovni delci atoma (Subatomski delci)]]\nAtom je sestavljen iz treh osnovnih (elementarnih) delcev:\n\n*"
+      }, {
+        "text": "   ### [[Elektron (e⁻)]]\n    *   **Naboj:** Negativen ($-1."
+      }, {
+        "text": "602 \\times 10^{-19} C$).\n    *   **Masa:** Zelo"
+      }, {
+        "text": " majhna ($9.109 \\times 10^{-31} kg$).\n    *   **"
+      }, {
+        "text": "Lokacija:** Kroži okoli jedra v elektronskem oblaku (orbitalah).\n*   ### [[Proton (p⁺)]]\n    *   **Naboj:** Pozitiven ($+1.602 \\times"
+      }, {
+        "text": " 10^{-19} C$).\n    *   **Masa:** Približno 1836-"
+      }, {
+        "text": "krat večja od mase elektrona.\n    *   **Lokacija:** V atomskem jedru. Š"
+      }, {
+        "text": "tevilo protonov (vrstno število, Z) določa kemijski element.\n*   ### [[Nevtron (n⁰)]]\n    *   **Naboj:** Nevtralen (0).\n    *   **M"
+      }, {
+        "text": "asa:** Zelo podobna masi protona.\n    *   **Lokacija:** V atomskem jedru. Sk"
+      }, {
+        "text": "upaj s protoni tvori nukleone.\n\n### [[Izotopi]]\n*   **Definicija:** At"
+      }, {
+        "text": "omi istega elementa (enako število protonov), ki se razlikujejo v številu nev"
+      }, {
+        "text": "tronov in posledično v masnem številu (A).\n*   **Vrste:**\n    *"
+      }, {
+        "text": "   **Stabilni:** Jedra ne razpadajo.\n    *   **Nestabilni (Radioaktivni):"
+      }, {
+        "text": "** Jedra spontano razpadajo in pri tem oddajajo sevanje.\n    *   **Naravni vs"
+      }, {
+        "text": ". Umetni:** Večina elementov ima naravne izotope; umetne pridobimo z jedrskimi reak"
+      }, {
+        "text": "cijami.\n\n### [[Radioaktivnost in vrste sevanja]]\nRadioaktivnost je proces, pri katerem nest"
+      }, {
+        "text": "abilna atomska jedra razpadejo in sevajo energijo v obliki delcev ali valovanja.\n\n*   "
+      }, {
+        "text": "**Alfa žarki ($\\alpha$):**\n    *   **Sestava:** Jedra helija ($^4_2"
+      }, {
+        "text": "He^{2+}$).\n    *   **Lastnosti:** Pozitivno nabiti, relativno težki."
+      }, {
+        "text": " Imajo majhen domet in jih zaustavi že list papirja.\n*   **Beta žarki ($\\beta"
+      }, {
+        "text": "$):**\n    *   **Sestava:** Elektroni ($^0_{-1}e$) ali pozit"
+      }, {
+        "text": "roni, ki nastanejo pri pretvorbi nevtrona v proton v jedru.\n    *   **"
+      }, {
+        "text": "Lastnosti:** Negativno nabiti, lažji od delcev $\\alpha$. Imajo večji domet,"
+      }, {
+        "text": " zaustavi jih tanka plast aluminija.\n*   **Gama žarki ($\\gamma$):**\n    *   "
+      }, {
+        "text": "**Sestava:** Visokoenergijsko elektromagnetno valovanje (fotoni).\n    *   **Last"
+      }, {
+        "text": "nosti:** Nevtralni, nimajo mase. So zelo prodorni in za zaščito je potrebna deb"
+      }, {
+        "text": "ela plast svinca. Pogosto spremljajo $\\alpha$ in $\\beta$ razpad.\n\n"
+      }, {
+        "text": "```python"
+      }, {
+        "text": "\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Deflection in Electric Field Visualization\nplt.figure"
+      }, {
+        "text": "(figsize\u003d(8, 5))\nplt.title(\"Odklon sevanja v električnem polju"
+      }, {
+        "text": "\")\n\n# Electric field plates\nplt.hlines(1, -1, 1, colors\u003d\u0027blue\u0027, lw\u003d5"
+      }, {
+        "text": ")\nplt.text(1.1, 1, \u0027+ pol\u0027, va\u003d\u0027center\u0027, color\u003d\u0027blue\u0027)\nplt."
+      }, {
+        "text": "hlines(-1, -1, 1, colors\u003d\u0027red\u0027, lw\u003d5)\nplt.text("
+      }, {
+        "text": "1.1, -1, \u0027- pol\u0027, va\u003d\u0027center\u0027, color\u003d\u0027red\u0027)\n\n# Paths of radiation\nx"
+      }, {
+        "text": " \u003d np.linspace(-3, -1, 100)\n# Gamma (no deflection)\nplt"
+      }, {
+        "text": ".plot(np.linspace(-3, 2, 100), np.zeros(100),"
+      }, {
+        "text": " \u0027g--\u0027, label\u003d\u0027γ žarki (nevtralni)\u0027)\n# Alpha (deflected towards negative)\nalpha"
+      }, {
+        "text": "_x \u003d np.linspace(-1, 2, 100)\nalpha_y \u003d -0.2 *"
+      }, {
+        "text": " (alpha_x + 1)**2\nplt.plot(np.concatenate((x, alpha_x)), np"
+      }, {
+        "text": ".concatenate((np.zeros(100), alpha_y)), \u0027r-\u0027, label\u003d\u0027α žarki ("
+      }, {
+        "text": "pozitivni)\u0027)\n# Beta (deflected towards positive)\nbeta_x \u003d np.linspace(-1, "
+      }, {
+        "text": "2, 100)\nbeta_y \u003d 0.8 * (beta_x + 1"
+      }, {
+        "text": ")**2\nplt.plot(np.concatenate((x, beta_x)), np.concatenate((np.zeros"
+      }, {
+        "text": "(100), beta_y)), \u0027b-\u0027, label\u003d\u0027β žarki (negativni)\u0027)\n\n# Source\n"
+      }, {
+        "text": "plt.plot(-3, 0, \u0027ks\u0027, markersize\u003d10)\nplt.text(-3."
+      }, {
+        "text": "5, 0, \u0027Vir\u0027, va\u003d\u0027center\u0027)\n\nplt.xlim(-4, 2)\nplt.ylim"
+      }, {
+        "text": "(-2, 2)\nplt.xlabel(\"Smer potovanja\")\nplt.yticks([])\nplt."
+      }, {
+        "text": "legend()\nplt.grid(True, linestyle\u003d\u0027:\u0027)\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n## [[Klasični Modeli Zgradbe Atoma]]\n\n### [[Thomsonov Model (Model rozinovega pudinga)]]\n"
+      }, {
+        "text": "*   **Leto:** 1904.\n*   **Opis:** Atom je predstavljen kot k"
+      }, {
+        "text": "rogla s enakomerno porazdeljenim pozitivnim nabojem (\"puding\"), v kateri so negativ"
+      }, {
+        "text": "no nabiti elektroni (\"rozine\") razporejeni tako, da je celoten atom navzven nevtralen.\n"
+      }, {
+        "text": "*   **Status:** Ovržen z Rutherfordovim eksperimentom.\n\n### [[Rutherfordov Planetarni Model]]"
+      }, {
+        "text": "\n*   **Leto:** Približno 1911.\n*   **Opis:** Na"
+      }, {
+        "text": " podlagi poskusa z zlato folijo je Rutherford predlagal model, kjer:\n    1.  V sred"
+      }, {
+        "text": "išču atoma je majhno, gosto, pozitivno nabito jedro.\n    2.  Ele"
+      }, {
+        "text": "ktroni krožijo okoli jedra po določenih tirnicah, podobno kot planeti okoli Son"
+      }, {
+        "text": "ca.\n\n#### [[Slabosti in Težave Planetarnega Modela]]\nKljub napredku je im"
+      }, {
+        "text": "el model resne pomanjkljivosti, ki jih klasična fizika ni mogla pojasniti:"
+      }, {
+        "text": "\n1.  **Nestabilnost atoma:** Po klasični elektrodinamiki bi moral elektron, ki kro"
+      }, {
+        "text": "ži in je pospešen delec, nenehno oddajati energijo v obliki elektromagnetnega valovanja. Zar"
+      }, {
+        "text": "adi izgube energije bi njegova tirnica postajala vse manjša, dokler ne bi v delčku sekunde pad"
+      }, {
+        "text": "el v jedro. Atomi pa so očitno stabilni.\n2.  **Atomski spektri:** Model"
+      }, {
+        "text": " ni mogel pojasniti, zakaj atomi sevajo svetlobo le pri točno določen"
+      }, {
+        "text": "ih, diskretnih valovnih dolžinah (črtasti spektri). Po klasični teoriji bi moral spe"
+      }, {
+        "text": "kter sevanja biti zvezen (kontinuiran), saj bi elektron spiralno padal proti jedru.\n\n\u003e"
+      }, {
+        "text": " **Note to Self:** Te nerešene težave so bile glavni motivator za razvoj nove teorije – kvantne mehanike"
+      }, {
+        "text": ". Klasična fizika na atomskem nivoju očitno ni več veljala.\n\n## [[Pot k Kvantni Mehaniki: Svetloba in Energija]]\n\n### [[Atomska Spektroskopija kot Orodje]]\n*   **Princip:** Analiza svetlobe, ki jo snov oddaja (emisija) ali absorb"
+      }, {
+        "text": "ira (absorpcija), razkrije informacije o njeni elektronski strukturi.\n*   **Atomski spektri:**"
+      }, {
+        "text": "\n    *   **Kontinuiran spekter:** Vsebuje vse valovne dolžine vidne svetlobe ("
+      }, {
+        "text": "mavrica). Oddajajo ga segreta trdna telesa.\n    *   **Črtast (lin"
+      }, {
+        "text": "ijski) spekter:** Sestavljen iz posameznih ostrih črt pri točno določen"
+      }, {
+        "text": "ih valovnih dolžinah. Značilen je za vzbujene atome v plinastem stanju"
+      }, {
+        "text": " in deluje kot \"prstni odtis\" za vsak element.\n\n### [[Balmerjeva serija za Vodikov Atom]]\n*   **Odkritje:** Johann Balmer je odkril matematično zvezo,"
+      }, {
+        "text": " ki opisuje valovne dolžine črt v vidnem delu spektra vodikovega atoma.\n*   "
+      }, {
+        "text": "**Formula:**\n    $$\n    \\frac{1}{\\lambda} \u003d R_H \\left( \\frac{1}{"
+      }, {
+        "text": "2^2} - \\frac{1}{n^2} \\right) \\quad \\text{kjer je"
+      }, {
+        "text": " } n \u003d 3, 4, 5, \\dots\n    $$\n    *   $R_"
+      }, {
+        "text": "H$ je Rydbergova konstanta.\n\n### [[Planckova Kvantna Hipoteza]]\n*   **"
+      }, {
+        "text": "Problem:** Klasična fizika ni mogla pojasniti spektra sevanja črnega telesa.\n"
+      }, {
+        "text": "*   **Planckova rešitev (1900):** Energija se ne more oddajati ali spre"
+      }, {
+        "text": "jemati zvezno, ampak le v diskretnih paketkih, imenovanih **kvanti**.\n"
+      }, {
+        "text": "*   **Formula:** Energija enega kvanta je sorazmerna s frekvenco valovanja.\n    $$\n"
+      }, {
+        "text": "    E \u003d h \\cdot \\nu\n    $$\n    *   $E$ je energija kvanta.\n    "
+      }, {
+        "text": "*   $h$ je Planckova konstanta ($6.626 \\times 10^{-34"
+      }, {
+        "text": "} Js$).\n    *   $\\nu$ (ni) je frekvenca valovanja.\n\n### [[Fotoelektrični Efekt in Foton]]\n*   **Pojav:** Ko svetloba z dovolj"
+      }, {
+        "text": " visoko frekvenco obsije kovinsko površino, iz nje izbija elektrone.\n*   **Einstein"
+      }, {
+        "text": "ova razlaga (1905):** Svetloba ni samo valovanje, ampak je sestavljena tudi"
+      }, {
+        "text": " iz delcev – **fotonov**. Vsak foton nosi kvant energije $E \u003d h\\nu"
+      }, {
+        "text": "$. Elektron je izbit le, če energija fotona preseže izstopno delo kovine.\n*"
+      }, {
+        "text": "   **Pomen:** Utrditev ideje o kvantizaciji energije in uvedba koncepta valovno-delčne dvoj"
+      }, {
+        "text": "nosti za svetlobo.\n\n### [[De Broglieva Hipoteza (Valovno-delčna Dvojnost)]]\n*   **Ideja (1924):** Če ima lahko valovanje (svetloba) last"
+      }, {
+        "text": "nosti delcev (fotoni), imajo lahko tudi delci (npr. elektroni) lastnosti valovanja."
+      }, {
+        "text": "\n*   **Formula:** Vsakemu delcu z gibalno količino $p \u003d mv$ pripada"
+      }, {
+        "text": " valovanje z valovno dolžino $\\lambda$.\n    $$\n    \\lambda \u003d \\frac{h}{mv"
+      }, {
+        "text": "}\n    $$\n*   **Pomen:** Ta koncept je bil ključen za razvoj valovno-mehanične"
+      }, {
+        "text": "ga modela atoma, saj elektrona ne obravnavamo več kot kroglico na tirnici, ampak"
+      }, {
+        "text": " kot stojno valovanje okoli jedra.\n\n### [[Heisenbergov Princip Nedoločenosti]]\n*   **"
+      }, {
+        "text": "Princip (1927):** Hkrati ni mogoče z absolutno natančnostjo poznati tako"
+      }, {
+        "text": " lege ($\\Delta x$) kot gibalne količine ($\\Delta p \u003d \\Delta(mv)$) delca.\n*   "
+      }, {
+        "text": "**Formula:**\n    $$\n    \\Delta x \\cdot \\Delta p \\geq \\frac{h}{4\\pi}"
+      }, {
+        "text": "\n    $$\n*   **Posledica:** Bolj natančno kot poznamo lego elektrona, manj nat"
+      }, {
+        "text": "ančno poznamo njegovo gibalno količino (in s tem smer potovanja) in obratno. To"
+      }, {
+        "text": " dokončno pokoplje idejo o točno določenih tirnicah iz Rutherfordovega in Bohrove"
+      }, {
+        "text": "ga modela in uvede koncept verjetnosti.\n\n## [[Valovno-Mehanični Model Atoma]]\nS"
+      }, {
+        "text": "odoben model atoma, ki temelji na kvantni mehaniki.\n\n### [[Schrödingerjeva Enačba]]\n*   **Pomen:** Osnovna enačba valovne mehanike, ki opis"
+      }, {
+        "text": "uje obnašanje delcev, kot so elektroni, v atomu.\n*   **Rešitev:** Re"
+      }, {
+        "text": "šitve Schrödingerjeve enačbe za atom so **valovne funkcije ($\\psi$)** in pripadajoče **"
+      }, {
+        "text": "energije (E)**. Rešitve so mogoče le za diskretne (kvantizirane)"
+      }, {
+        "text": " vrednosti energije.\n\n### [[Valovna Funkcija ($\\psi$) in Verjetnost Nahajanja Elektrona ($\\psi^2$)]]\n*   **Valovna funkcija ($\\psi$):** Matematična funkcija, ki opisuje"
+      }, {
+        "text": " valovne lastnosti elektrona. Sama po sebi nima neposrednega fizikalnega pomena.\n*"
+      }, {
+        "text": "   **Gostota verjetnosti ($\\psi^2$):** Kvadrat valovne funkcije je sor"
+      }, {
+        "text": "azmeren z verjetnostjo, da v določeni točki prostora najdemo elektron.\n\n### [[Atomska Orbitala]]\n*   **Definicija:** Področje v prostoru okoli atomskega jedra"
+      }, {
+        "text": ", kjer je verjetnost nahajanja elektrona največja (običajno definirano kot 90"
+      }, {
+        "text": "-95%).\n*   **Kritična analiza:** Orbitala **ni** tirnica. Ne opis"
+      }, {
+        "text": "uje poti elektrona, temveč porazdelitev verjetnosti njegovega nahajanja.\n\n### [[Kvantna Števila]]\nVsak elektron v atomu je opisan z nizom štirih kvantnih števil"
+      }, {
+        "text": ", ki so rešitve Schrödingerjeve enačbe in določajo stanje elektrona (njegovo energijo,"
+      }, {
+        "text": " obliko in orientacijo orbitale).\n\n*   #### [[Glavno Kvantno Število (n)]]\n    *   **Vrednosti:** Celo število ($n \u003d 1, 2, 3"
+      }, {
+        "text": ", \\dots$).\n    *   **Pomen:** Določa glavno energijsko raven (lupino"
+      }, {
+        "text": ") in velikost orbitale. Višji kot je $n$, večja je energija in oddaljenost elektr"
+      }, {
+        "text": "ona od jedra.\n*   #### [[Stransko (Vrtilno) Kvantno Število (l)]]\n    *   **Vrednosti:** Od $0$ do $n-1$."
+      }, {
+        "text": "\n    *   **Pomen:** Določa obliko atomske orbitale in podlupino.\n"
+      }, {
+        "text": "        *   $l\u003d0 \\rightarrow$ **s** orbitala (okrogla)\n        *   $"
+      }, {
+        "text": "l\u003d1 \\rightarrow$ **p** orbitala (oblika osmice)\n        *   $l\u003d2 \\rightarrow"
+      }, {
+        "text": "$ **d** orbitala (kompleksnejša)\n        *   $l\u003d3 \\rightarrow$"
+      }, {
+        "text": " **f** orbitala (še kompleksnejša)\n*   #### [[Magnetno Kvantno Število ($m_l$)]]\n    *   **Vrednosti:** Od $-l$ do $+l$,"
+      }, {
+        "text": " vključno z 0.\n    *   **Pomen:** Določa orientacijo orbitale v prostoru."
+      }, {
+        "text": " Število možnih vrednosti $m_l$ (enako $2l+1$) pove, koliko en"
+      }, {
+        "text": "akoenergijskih (degeneriranih) orbital je v dani podlupini.\n        *   Č"
+      }, {
+        "text": "e je $l\u003d1$ (p-podlupina), so $m_l \u003d -1, "
+      }, {
+        "text": "0, +1$. Obstajajo tri p-orbitale ($p_x, p_y, p_z$)."
+      }, {
+        "text": "\n*   #### [[Spinsko Kvantno Število ($m_s$)]]\n    *"
+      }, {
+        "text": "   **Vrednosti:** $+1/2$ (\"spin up\") ali $-1/2$ (\"spin down"
+      }, {
+        "text": "\").\n    *   **Pomen:** Opisuje notranjo lastnost elektrona, imenovano spin"
+      }, {
+        "text": " (lastna vrtilna količina). V vsaki orbitali sta lahko največ dva elektrona, ki se"
+      }, {
+        "text": " morata razlikovati v spinu (Pavlijevo izključitveno načelo).\n\n### [[Radialna porazdelitev verjetnosti]]\n*   **Opis:** Graf, ki prikazuje verjetnost nahajanja elektrona"
+      }, {
+        "text": " na določeni razdalji ($r$) od jedra.\n*   **Primer (vodikov atom):**"
+      }, {
+        "text": "\n    *   **1s orbitala:** Verjetnost je največja na določeni razdalji od jedra"
+      }, {
+        "text": " (Bohrov radij), v samem jedru pa je nič.\n    *   **2s orbitala:** Ima"
+      }, {
+        "text": " dva vrhova. To pomeni, da obstajata dve področji z večjo verjetnostjo nahaj"
+      }, {
+        "text": "anja, med njima pa je \"vozel\" (angl. node) – področje z ničelno verjetnost"
+      }, {
+        "text": "jo.\n\n## [[Periodičnost Lastnosti Atomov]]\nLastnosti elementov se periodično spreminj"
+      }, {
+        "text": "ajo po periodnem sistemu, kar je posledica njihove elektronske konfiguracije.\n\n### [[Atomski in lonski Radij]]\n*   **Trendi atomskega radija:**\n    *   **Po skup"
+      }, {
+        "text": "ini navzdol narašča:** Dodajajo se nove elektronske lupine ($n$ se veča)."
+      }, {
+        "text": "\n    *   **Po periodi v desno upada:** Povečuje se naboj jedra,"
+      }, {
+        "text": " ki močneje privlači elektrone v isti lupini.\n*   **Ionski radij:**\n    *   "
+      }, {
+        "text": "**Kationi (pozitivni ioni):** So **manjši** od svojih nevtralnih atomov"
+      }, {
+        "text": ", ker imajo manj elektronov, preostale pa jedro močneje privlači.\n    *   "
+      }, {
+        "text": "**Anioni (negativni ioni):** So **večji** od svojih nevtralnih atomov, ker dod"
+      }, {
+        "text": "an elektron poveča medsebojno odbojnost v elektronski ovojnici.\n\n### [[Efektivni Naboj Jedra ($Z_{eff}$)]]\n*   **Definicija:** Dejanski privlak, ki ga č"
+      }, {
+        "text": "uti valenčni elektron s strani jedra. Ta privlak je zmanjšan zaradi \"senčenja\" s"
+      }, {
+        "text": " strani notranjih elektronov.\n*   **Formula:**\n    $$\n    Z_{eff} \u003d Z -"
+      }, {
+        "text": " S\n    $$\n    *   $Z$ je vrstno število (dejanski naboj jed"
+      }, {
+        "text": "ra).\n    *   $S$ je konstanta senčenja.\n*   **Trend:** **Narašča po"
+      }, {
+        "text": " periodi v desno**, ker dodani protoni v jedru povečajo privlak močneje, kot dodat"
+      }, {
+        "text": "ni elektron v isti lupini poveča senčenje.\n\n### [[Ionizacijska Energija (I)]]\n*   "
+      }, {
+        "text": "**Definicija:** Energija, potrebna za odstranitev najbolj zunanjega elektrona iz os"
+      }, {
+        "text": "amljenega atoma v plinastem stanju.\n    $$\n    X(g) \\rightarrow X^+("
+      }, {
+        "text": "g) + e^-(g)\n    $$\n*   **Trendi:**\n    *   **Po period"
+      }, {
+        "text": "i v desno narašča:** Zaradi večjega $Z_{eff}$ je elektron močneje vezan"
+      }, {
+        "text": " in je potrebno več energije za njegovo odstranitev.\n    *   **Po skupini navzdol up"
+      }, {
+        "text": "ada:** Zunanji elektron je v višji lupini, dlje od jedra in slabše vezan."
+      }, {
+        "text": "\n*   **Zaporedne ionizacijske energije:** $I_1 \u003c I_2 \u003c I_"
+      }, {
+        "text": "3 \\dots$. Odstranjevanje elektrona iz pozitivnega iona je vedno težje.\n\n### [[Elektronska Afiniteta ($E_{ea}$)]]\n*   **Definicija:** Energijska sprememba,"
+      }, {
+        "text": " ko osamljen atom v plinastem stanju sprejme elektron in tvori anion.\n    $$"
+      }, {
+        "text": "\n    X(g) + e^-(g) \\rightarrow X^-(g)\n    $$\n*"
+      }, {
+        "text": "   **Vrednosti:** Ponavadi je proces eksotermen (energija se sprosti, $E_{ea}$"
+      }, {
+        "text": " je negativna), še posebej pri halogenih, ki z dodatnim elektronom dosežejo stabilno konfiguracijo"
+      }, {
+        "text": " žlahtnega plina.\n\n### [[Elektronegativnost ($\\chi$)]]\n*   **Definicija"
+      }, {
+        "text": " (Pauling):** Sposobnost ali sila, s katero atom v molekuli privlači elektrone iz"
+      }, {
+        "text": " kemijske vezi k sebi.\n*   **Trendi:**\n    *   **Po periodi v desno"
+      }, {
+        "text": " narašča.**\n    *   **Po skupini navzdol upada.**\n*   **Najbol"
+      }, {
+        "text": "j elektronegativni elementi:** Fluor (F), kisik (O), dušik (N), klor ("
+      }, {
+        "text": "Cl). Nahajajo se v zgornjem desnem kotu periodnega sistema.\n*   **Mull"
+      }, {
+        "text": "ikenova definicija:** Elektronegativnost je definirana kot povprečje ionizacijske energije in elektr"
+      }, {
+        "text": "onske afinitete.\n    $$\n    \\chi \u003d \\frac{I_1 + E_{ea}}{2}"
+      }, {
+        "text": "\n    $$\n\n## [[Splošne Formule in Definicije]]\n\n*   **Energija kvanta ("
+      }, {
+        "text": "Planck):** $$ E \u003d h \\cdot \\nu $$\n*   **Valovna dolžina delca (de"
+      }, {
+        "text": " Broglie):** $$ \\lambda \u003d \\frac{h}{mv} $$\n*   **Heisenbergov princip"
+      }, {
+        "text": " nedoločenosti:** $$ \\Delta x \\cdot \\Delta p \\geq \\frac{h}{4\\pi} $$\n"
+      }, {
+        "text": "*   **Efektivni naboj jedra:** $$ Z_{eff} \u003d Z - S $$\n*   **"
+      }, {
+        "text": "Elektronegativnost (Mulliken):** $$ \\chi \u003d \\frac{I_1 + E_{ea}}{2"
+      }, {
+        "text": "} $$\n*   **Balmerjeva serija (vodik):** $$ \\frac{1}{\\lambda} \u003d R"
+      }, {
+        "text": "_H \\left( \\frac{1}{2^2} - \\frac{1}{n^2}"
+      }, {
+        "text": " \\right) $$"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

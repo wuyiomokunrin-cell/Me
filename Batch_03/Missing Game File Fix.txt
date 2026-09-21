@@ -1,0 +1,117 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "15g5R0TLhh1NQ4dcjmEZdFGQqwKSi2yyR"
+      },
+      "role": "user",
+      "tokenCount": 1084
+    }, {
+      "text": "what do i do with this?\n",
+      "role": "user",
+      "tokenCount": 9
+    }, {
+      "text": "**Interpreting the Error**\n\nI\u0027m zeroing in on the user\u0027s problem. The image confirms a system error related to \"nw\\_elf.dll\" within a game. The error message indicates a dependency issue, with the execution halted due to a missing or corrupted DLL. I\u0027m focusing on \"nw\\_elf.dll\" as the core issue for diagnosis.\n\n\n**Pinpointing the Cause**\n\nI\u0027ve identified the core issue: a missing `nw_elf.dll` prevents the game from launching. I\u0027ve determined that \"NW\" likely points to NW.js, a web-based framework, commonly used to create indie games, and its related `elf` component. The root cause possibilities are taking shape, and are focused on antivirus software or, less likely, a corrupted file. I\u0027ll need to explore these angles.\n\n\n**Formulating a Strategy**\n\nI\u0027m now formulating a step-by-step troubleshooting strategy. My initial thought is to begin with the most likely scenario: incomplete file extraction. Then, I will address antivirus interference, given the nature of indie games. I\u0027ll include download corruption as a final consideration. The focus is to address the issue methodically.\n\n\n**Devising a Response**\n\nI\u0027m currently drafting the response to the user, refining each proposed solution. I\u0027ll clearly acknowledge the error and explain the `nw_elf.dll`\u0027s role in the NW.js game engine. The first solution covers incomplete file extraction, advising the user to extract the game from the ZIP archive. I\u0027m also including steps to address potential antivirus interference. Finally, I\u0027ll advise a fresh reinstall, as a last resort. For Steam users, I plan to suggest file integrity verification.\n\n\n",
+      "role": "model",
+      "tokenCount": 1172,
+      "isThought": true,
+      "parts": [{
+        "text": "**Interpreting the Error**\n\nI\u0027m zeroing in on the user\u0027s problem. The image confirms a system error related to \"nw\\_elf.dll\" within a game. The error message indicates a dependency issue, with the execution halted due to a missing or corrupted DLL. I\u0027m focusing on \"nw\\_elf.dll\" as the core issue for diagnosis.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Pinpointing the Cause**\n\nI\u0027ve identified the core issue: a missing `nw_elf.dll` prevents the game from launching. I\u0027ve determined that \"NW\" likely points to NW.js, a web-based framework, commonly used to create indie games, and its related `elf` component. The root cause possibilities are taking shape, and are focused on antivirus software or, less likely, a corrupted file. I\u0027ll need to explore these angles.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating a Strategy**\n\nI\u0027m now formulating a step-by-step troubleshooting strategy. My initial thought is to begin with the most likely scenario: incomplete file extraction. Then, I will address antivirus interference, given the nature of indie games. I\u0027ll include download corruption as a final consideration. The focus is to address the issue methodically.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Devising a Response**\n\nI\u0027m currently drafting the response to the user, refining each proposed solution. I\u0027ll clearly acknowledge the error and explain the `nw_elf.dll`\u0027s role in the NW.js game engine. The first solution covers incomplete file extraction, advising the user to extract the game from the ZIP archive. I\u0027m also including steps to address potential antivirus interference. Finally, I\u0027ll advise a fresh reinstall, as a last resort. For Steam users, I plan to suggest file integrity verification.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "This error message means that a file required to run the game (**nw_elf.dll**) is missing from the folder where `Game.exe` is located. This file is part of **NW.js**, a framework used by many indie games (often those made with RPG Maker MV/MZ or Construct).\n\nHere are the three most likely reasons this happened and how to fix them:\n\n### 1. You are running the game directly from a ZIP file\nThis is the most common cause. If you downloaded the game as a `.zip` or `.rar` file and double-clicked `Game.exe` without extracting it first, the game cannot \"see\" the other files in the package.\n\n*   **The Fix:** Close the error. Go back to the downloaded file, **Right-click** the ZIP file, and select **\"Extract All...\"** or **\"Extract Here.\"** Once extracted, open the *new* folder and run `Game.exe` from there.\n\n### 2. Your Antivirus ate the file\nBecause `nw_elf.dll` is a file that executes code (scripts), Windows Defender or other antivirus software often mistakenly flags it as a virus (a \"false positive\") and quarantines it.\n\n*   **The Fix:**\n    *   Open your antivirus software (or **Windows Security** \u003e **Virus \u0026 threat protection**).\n    *   Look for **\"Protection History\"** or **\"Quarantine.\"**\n    *   If you see `nw_elf.dll` listed there, select it and choose **\"Restore\"** or **\"Allow.\"**\n    *   To prevent this from happening again, you may need to add the game\u0027s folder to your antivirus \"Exclusion\" or \"Exception\" list.\n\n### 3. The download was corrupted or incomplete\nIf the download was interrupted, the file might simply not be there.\n\n*   **The Fix:** Delete the current game folder, download the game again, and ensure the download finishes completely before extracting it.\n\n---\n\n**⚠️ IMPORTANT:** Do **NOT** try to download `nw_elf.dll` from random \"DLL download\" websites. Those files can contain malware or be the wrong version for your specific game. Only get the file by extracting the original game download or restoring it from your antivirus.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 487,
+      "parts": [{
+        "text": "This error message means that a file required to run the game (**nw_elf."
+      }, {
+        "text": "dll**) is missing from the folder where `Game.exe` is located. This file is part of **NW.js**,"
+      }, {
+        "text": " a framework used by many indie games (often those made with RPG Maker MV/MZ or Construct).\n\nHere are the three"
+      }, {
+        "text": " most likely reasons this happened and how to fix them:\n\n### 1. You are running the game directly from a ZIP file"
+      }, {
+        "text": "\nThis is the most common cause. If you downloaded the game as a `.zip` or `.rar` file and"
+      }, {
+        "text": " double-clicked `Game.exe` without extracting it first, the game cannot \"see\" the other files in the package"
+      }, {
+        "text": ".\n\n*   **The Fix:** Close the error. Go back to the downloaded file, **Right-click** the"
+      }, {
+        "text": " ZIP file, and select **\"Extract All...\"** or **\"Extract Here.\"** Once extracted, open the *"
+      }, {
+        "text": "new* folder and run `Game.exe` from there.\n\n### 2. Your Antivirus ate the file\n"
+      }, {
+        "text": "Because `nw_elf.dll` is a file that executes code (scripts), Windows Defender or other antivirus software often mistakenly flags"
+      }, {
+        "text": " it as a virus (a \"false positive\") and quarantines it.\n\n*   **The Fix:**\n    *   Open"
+      }, {
+        "text": " your antivirus software (or **Windows Security** \u003e **Virus \u0026 threat protection**).\n    *   Look for **"
+      }, {
+        "text": "\"Protection History\"** or **\"Quarantine.\"**\n    *   If you see `nw_elf."
+      }, {
+        "text": "dll` listed there, select it and choose **\"Restore\"** or **\"Allow.\"**\n    *   To prevent"
+      }, {
+        "text": " this from happening again, you may need to add the game\u0027s folder to your antivirus \"Exclusion\" or \"Exception"
+      }, {
+        "text": "\" list.\n\n### 3. The download was corrupted or incomplete\nIf the download was interrupted, the file might simply"
+      }, {
+        "text": " not be there.\n\n*   **The Fix:** Delete the current game folder, download the game again, and ensure"
+      }, {
+        "text": " the download finishes completely before extracting it.\n\n---\n\n**⚠️ IMPORTANT:** Do **NOT** try to download `nw"
+      }, {
+        "text": "_elf.dll` from random \"DLL download\" websites. Those files can contain malware or be the wrong version for your"
+      }, {
+        "text": " specific game. Only get the file by extracting the original game download or restoring it from your antivirus."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}
