@@ -1,0 +1,530 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ code blocks rather than explicit ```()``` mention. \n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1B-a751voyHEJXqIVFoD7JdRB-TZqtrAd"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1x4Y4UUtf5yC5Lgv6IRgbljDMsvsBN0sT"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1N2csgrPE8We88Ld23jeFt5WVmU8VAHFM"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1zHQMPhAkWNJwxP9-FgbXT5vpirLgUpzr"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1oRl-bkbUlaWLsnp6oV41zlzC5PHvyRim"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ktRIwmvupxiV-OtooO6IegMbJoxakb-h"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1so__rINBmjAeOTQtWd4klIHcEVSQSrs2"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Hwpa3yL4pvp1jWjt6744HCUxx5xHgbZg"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1uFZHaMbeqyhP_P6qwMECS9UO0Zbm43n7"
+      },
+      "role": "user",
+      "tokenCount": 80249
+    }, {
+      "driveAudio": {
+        "id": "1-CTWZ9txqtIU1Vl2YWr-cDgwPN5mEbcM"
+      },
+      "role": "user",
+      "tokenCount": 165394
+    }, {
+      "text": "**Defining the Scope**\n\nI\u0027m currently focused on defining the initial scope of this task. I need to understand the structure of the lecture notes and transcript. My goal is to extract key concepts, reactions, and diagrams to build a well-organized Obsidian markdown note. I’ll prioritize key details and connections.\n\n\n**Outlining the Structure**\n\nThe lecture notes are broken down into pages detailing specific concepts: ideal and real gases, critical conditions, and the kinetic theory of gases. I\u0027m focusing on extracting key equations like the ideal gas law and Van der Waals equation, and defining critical parameters. I also need to incorporate the examples, paying close attention to how they demonstrate the calculations and the implications of these chemical physics principles.\n\n\n**Capturing the Content**\n\nI\u0027ve made a structured outline of the handwritten notes. I\u0027m focusing on the calculations and key formulas. I plan to organize the content based on the original lecture structure. The examples provided a framework for extracting the numerical data and connections between various physical chemistry concepts.  I have defined each page\u0027s key topics and equations.\n\n\n**Structuring the Data**\n\nI\u0027m currently working on structuring the incoming data, which consists of handwritten notes and an audio transcript from a chemistry lecture. My plan is to start with a structured markdown note in Obsidian based on these sources. First, I will outline the key topics, equations, and examples from the notes. I need to make sure I am extracting the most important information to create a very useful resource. The lecture is a demonstration about diffusion and effusion, which will require some integration with the equations from the notes.\n\n\n**Synthesizing the Data**\n\nI\u0027ve been meticulously analyzing the lecture notes and audio transcript, focusing on the core chemistry concepts. The handwritten notes outline equations for ideal and real gases, critical conditions, and kinetic theory. The lecture demonstrates Graham\u0027s Law of effusion, and the audio reinforces the principles of molar mass and diffusion rates. I need to integrate these elements to create a structured markdown note suitable for your expertise. I\u0027ll need to define clear connections between the derivations and the practical implications as seen in the examples.\n\n\n**Organizing the Lecture Material**\n\nI\u0027ve been going through the handwritten notes and the audio transcript of the lecture. My plan is to structure the Obsidian note around the topics covered, including ideal and real gas laws, critical conditions, and the kinetic theory of gases. I am focusing on the key equations, diagrams, and example calculations. Graham\u0027s Law and its derivation will be integrated using the transcript. The examples will be particularly useful for demonstrating the application of the formulas.\n\n\n**Prioritizing Structure**\n\nI\u0027m now prioritizing the structure of the Obsidian note, based on the detailed analysis of both the handwritten notes and the audio transcript. I plan to use the sections defined in the notes, such as ideal/real gas laws and kinetic theory, as the foundation for headings and sub-headings. Equations and examples from both sources will be integrated to create a cohesive learning resource for the user.\n\n\n**Analyzing Lecture Data**\n\nI\u0027ve meticulously broken down the handwritten notes and the corresponding audio transcript. The notes, covering ideal/real gas laws, critical conditions, and kinetic theory, are now cross-referenced with the lecture\u0027s demonstrations and calculations, especially regarding Graham\u0027s Law and molecular speeds. Key equations and examples are being organized into a coherent structure.\n\n\n**Organizing Lecture Data**\n\nI\u0027ve carefully examined the notes and transcript to start building the Obsidian structure. The content includes ideal/real gas laws, kinetic theory, Graham\u0027s Law, and speed calculations. The plan is to create sections for real gases and kinetic theory, and then integrate the equations and examples, providing explanations for each with links to diagrams.\n\n\n**Organizing Key Concepts**\n\nI\u0027m now integrating the notes and transcript to craft a cohesive Obsidian structure. The content will be logically organized, covering real and ideal gases, critical conditions, and the kinetic theory with a special focus on Graham\u0027s Law. Diagrams and equations from the notes and examples will all be incorporated.\n\n\n**Structuring the Content**\n\nI\u0027m now integrating the user\u0027s handwritten notes, the lecture transcript, and the lecture slides to build the Obsidian markdown note. I will focus on a structured note containing equations and examples from the original lecture material. This will give the user a clear resource. The lecture transcript\u0027s Graham\u0027s Law example and associated derivations will be included.\n\n\n**Analyzing Initial Data**\n\nI\u0027ve been occupied by the raw data, and am focused on analyzing the handwritten notes and the audio transcript. My priority is extracting key concepts and equations. I\u0027m building a markdown structure that will include critical conditions, the kinetic theory of gases, and the examples with related diagrams.\n\n\n**Prioritizing Code Synthesis**\n\nI\u0027ve been working on converting the user\u0027s instructions into Python code. I am focusing on the specific formatting requirements: wikilinks, headers, LaTeX equations, and matplotlib diagrams. My main goal is to generate a fully functioning Markdown note using the provided information, with additional warnings and critical analysis where appropriate.\n\n\n**Organizing the Content**\n\nI\u0027m now fully immersed in the raw data, meticulously organizing the structure of the Obsidian note. I\u0027ve begun integrating equations and examples with explanatory text. The plan is to create a well-organized and easy-to-understand resource for the user. I\u0027ll make sure to integrate wikilinks, Latex equations, and Matplotlib diagrams.\n\n\n**Implementing the Plan**\n\nI\u0027ve meticulously analyzed the user\u0027s handwritten notes, the lecture transcript, and the lecture slides, building a detailed and structured framework for the Obsidian note. I\u0027m prioritizing integrating the key equations, diagrams, and examples within the outlined structure. The core objective is to synthesize this information into a cohesive, user-friendly resource, including the lecture\u0027s example of the diffusion experiment and molar mass calculations.\n\n\n",
+      "role": "model",
+      "tokenCount": 4449,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Defining the Scope**\n\nI\u0027m currently focused on defining the initial scope of this task. I need to understand the structure of the lecture notes and transcript. My goal is to extract key concepts, reactions, and diagrams to build a well-organized Obsidian markdown note. I’ll prioritize key details and connections.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining the Structure**\n\nThe lecture notes are broken down into pages detailing specific concepts: ideal and real gases, critical conditions, and the kinetic theory of gases. I\u0027m focusing on extracting key equations like the ideal gas law and Van der Waals equation, and defining critical parameters. I also need to incorporate the examples, paying close attention to how they demonstrate the calculations and the implications of these chemical physics principles.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Capturing the Content**\n\nI\u0027ve made a structured outline of the handwritten notes. I\u0027m focusing on the calculations and key formulas. I plan to organize the content based on the original lecture structure. The examples provided a framework for extracting the numerical data and connections between various physical chemistry concepts.  I have defined each page\u0027s key topics and equations.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Data**\n\nI\u0027m currently working on structuring the incoming data, which consists of handwritten notes and an audio transcript from a chemistry lecture. My plan is to start with a structured markdown note in Obsidian based on these sources. First, I will outline the key topics, equations, and examples from the notes. I need to make sure I am extracting the most important information to create a very useful resource. The lecture is a demonstration about diffusion and effusion, which will require some integration with the equations from the notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing the Data**\n\nI\u0027ve been meticulously analyzing the lecture notes and audio transcript, focusing on the core chemistry concepts. The handwritten notes outline equations for ideal and real gases, critical conditions, and kinetic theory. The lecture demonstrates Graham\u0027s Law of effusion, and the audio reinforces the principles of molar mass and diffusion rates. I need to integrate these elements to create a structured markdown note suitable for your expertise. I\u0027ll need to define clear connections between the derivations and the practical implications as seen in the examples.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Lecture Material**\n\nI\u0027ve been going through the handwritten notes and the audio transcript of the lecture. My plan is to structure the Obsidian note around the topics covered, including ideal and real gas laws, critical conditions, and the kinetic theory of gases. I am focusing on the key equations, diagrams, and example calculations. Graham\u0027s Law and its derivation will be integrated using the transcript. The examples will be particularly useful for demonstrating the application of the formulas.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Prioritizing Structure**\n\nI\u0027m now prioritizing the structure of the Obsidian note, based on the detailed analysis of both the handwritten notes and the audio transcript. I plan to use the sections defined in the notes, such as ideal/real gas laws and kinetic theory, as the foundation for headings and sub-headings. Equations and examples from both sources will be integrated to create a cohesive learning resource for the user.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Lecture Data**\n\nI\u0027ve meticulously broken down the handwritten notes and the corresponding audio transcript. The notes, covering ideal/real gas laws, critical conditions, and kinetic theory, are now cross-referenced with the lecture\u0027s demonstrations and calculations, especially regarding Graham\u0027s Law and molecular speeds. Key equations and examples are being organized into a coherent structure.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing Lecture Data**\n\nI\u0027ve carefully examined the notes and transcript to start building the Obsidian structure. The content includes ideal/real gas laws, kinetic theory, Graham\u0027s Law, and speed calculations. The plan is to create sections for real gases and kinetic theory, and then integrate the equations and examples, providing explanations for each with links to diagrams.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing Key Concepts**\n\nI\u0027m now integrating the notes and transcript to craft a cohesive Obsidian structure. The content will be logically organized, covering real and ideal gases, critical conditions, and the kinetic theory with a special focus on Graham\u0027s Law. Diagrams and equations from the notes and examples will all be incorporated.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Content**\n\nI\u0027m now integrating the user\u0027s handwritten notes, the lecture transcript, and the lecture slides to build the Obsidian markdown note. I will focus on a structured note containing equations and examples from the original lecture material. This will give the user a clear resource. The lecture transcript\u0027s Graham\u0027s Law example and associated derivations will be included.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Initial Data**\n\nI\u0027ve been occupied by the raw data, and am focused on analyzing the handwritten notes and the audio transcript. My priority is extracting key concepts and equations. I\u0027m building a markdown structure that will include critical conditions, the kinetic theory of gases, and the examples with related diagrams.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Prioritizing Code Synthesis**\n\nI\u0027ve been working on converting the user\u0027s instructions into Python code. I am focusing on the specific formatting requirements: wikilinks, headers, LaTeX equations, and matplotlib diagrams. My main goal is to generate a fully functioning Markdown note using the provided information, with additional warnings and critical analysis where appropriate.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Content**\n\nI\u0027m now fully immersed in the raw data, meticulously organizing the structure of the Obsidian note. I\u0027ve begun integrating equations and examples with explanatory text. The plan is to create a well-organized and easy-to-understand resource for the user. I\u0027ll make sure to integrate wikilinks, Latex equations, and Matplotlib diagrams.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing the Plan**\n\nI\u0027ve meticulously analyzed the user\u0027s handwritten notes, the lecture transcript, and the lecture slides, building a detailed and structured framework for the Obsidian note. I\u0027m prioritizing integrating the key equations, diagrams, and examples within the outlined structure. The core objective is to synthesize this information into a cohesive, user-friendly resource, including the lecture\u0027s example of the diffusion experiment and molar mass calculations.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Plini]]\n\n## [[Realni Plini in Kritični Pogoji]]\nRealni plini odstopajo od obnašanja idealnih plinov, predvsem pri visokih tlakih in nizkih temperaturah. Ta odstopanja so posledica dveh dejavnikov, ki jih idealna plinska enačba zanemarja:\n1.  **Lastna prostornina molekul:** Molekule realnih plinov imajo končno prostornino.\n2.  **Medmolekulske privlačne sile:** Med molekulami realnih plinov delujejo privlačne sile (Van der Waalsove sile).\n\n### [[Van der Waalsova Enačba]]\nZa bolj natančen opis realnih plinov je Johannes Diderik van der Waals predlagal prilagojeno plinsko enačbo, ki vključuje korekcijska faktorja `a` in `b`.\n\n$$\n\\left(p + \\frac{an^2}{V^2}\\right)(V - nb) \u003d nRT\n$$\n\n-   **Korekcijski faktor `a`**: Upošteva medmolekulske privlačne sile. Te sile zmanjšajo tlak, ki ga plin izvaja na steno posode, saj molekule v notranjosti privlačijo tiste, ki se približujejo steni. Zato se realnemu tlaku prišteje korekcijski člen `an²/V²`, da dobimo tlak, ki bi ga plin imel brez teh sil. Večja kot je konstanta `a`, močnejše so privlačne sile med molekulami.\n-   **Korekcijski faktor `b`**: Upošteva lastno prostornino (volumen) molekul plina. Dejanska prostornina, ki je na voljo za gibanje molekul, je manjša od volumna posode za vrednost `nb`. Večja kot je konstanta `b`, večje so molekule plina.\n\n### [[Kritični Pogoji]]\nPri stiskanju in ohlajanju plina se molekule približujejo in njihove privlačne sile postanejo pomembnejše. Obstaja točka, imenovana **kritična točka**, kjer prehod med plinastim in tekočim stanjem preneha biti razločen.\n\n-   **[[Kritična Temperatura (Tk)]]**: Najvišja temperatura, pri kateri je plin še mogoče utekočiniti s povečanjem tlaka. Nad to temperaturo plin ne more obstajati v tekočem stanju, ne glede na to, kako visok je tlak.\n-   **[[Kritični Tlak (Pk)]]**: Najmanjši tlak, ki je potreben za utekočinjenje plina pri kritični temperaturi.\n-   **[[Kritični Volumen (Vk)]]**: Volumen, ki ga zavzema en mol snovi pri kritični temperaturi in tlaku.\n\n#### [[Superkritična Faza]]\nSnov, ki je nad svojo kritično temperaturo in tlakom, se nahaja v **superkritični fazi**. V tem stanju snov ni ne plin ne tekočina, ampak ima lastnosti obeh. Ima gostoto, podobno tekočini, in viskoznost ter difuzivnost, podobno plinu.\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# P-T fazni diagram\nT \u003d np.linspace(0, 1.5, 400)\n# Placeholder curves for visualization\nT_triple \u003d 0.5\nP_triple \u003d 0.3\nT_crit \u003d 1.0\nP_crit \u003d 1.0\n\n# Sublimacijska krivulja\nT_sub \u003d np.linspace(0, T_triple, 100)\nP_sub \u003d P_triple * np.exp(10 * (T_sub / T_triple - 1))\n\n# Talilna krivulja\nT_melt \u003d np.linspace(T_triple, 1.4, 100)\nP_melt \u003d P_triple + 1.5 * (T_melt - T_triple)\n\n# Vrelna krivulja\nT_vap \u003d np.linspace(T_triple, T_crit, 100)\nP_vap \u003d P_triple * np.exp(5 * (1 - T_triple / T_vap))\n\nplt.figure(figsize\u003d(8, 6))\nplt.plot(T_sub, P_sub, \u0027k-\u0027)\nplt.plot(T_melt, P_melt, \u0027k-\u0027)\nplt.plot(T_vap, P_vap, \u0027k-\u0027)\n\n# Supercritical fluid region\nT_supercrit \u003d np.linspace(T_crit, 1.5, 100)\nP_supercrit_line \u003d np.full_like(T_supercrit, P_crit)\nplt.plot(T_supercrit, P_supercrit_line, \u0027r--\u0027)\nplt.plot([T_crit, T_crit], [P_crit, plt.ylim()[1]], \u0027b--\u0027)\n\nplt.fill_betweenx(np.linspace(P_crit, plt.ylim()[1], 100), T_crit, 1.5, color\u003d\u0027gray\u0027, alpha\u003d0.3, label\u003d\u0027Superkritična Faza\u0027)\nplt.text(1.1, 1.1, \u0027Superkritična Faza\u0027, fontsize\u003d12)\nplt.text(0.2, 0.1, \u0027Trdno\u0027, fontsize\u003d12)\nplt.text(0.7, 0.2, \u0027Tekoče\u0027, fontsize\u003d12)\nplt.text(0.8, 0.8, \u0027Plinasto\u0027, fontsize\u003d12)\nplt.plot(T_crit, P_crit, \u0027ro\u0027, label\u003d\u0027Kritična točka\u0027)\nplt.plot(T_triple, P_triple, \u0027bo\u0027, label\u003d\u0027Trojna točka\u0027)\n\n\nplt.xlabel(\u0027Temperatura (T)\u0027)\nplt.ylabel(\u0027Tlak (P)\u0027)\nplt.title(\u0027P-T Fazni Diagram\u0027)\nplt.legend()\nplt.grid(True)\nplt.xlim(0, 1.5)\nplt.ylim(0, 1.5)\nplt.show()\n\n```\n\n---\n## [[Kinetična Teorija Plinov]]\nTo je fizikalna teorija, ki pojasnjuje makroskopske lastnosti idealnih plinov (tlak, temperatura, volumen) na podlagi gibanja njihovih mikroskopskih delcev (atomov ali molekul).\n\n**Osnovne predpostavke:**\n1.  Plin je sestavljen iz velikega števila delcev, ki se gibljejo naključno in neprestano.\n2.  Prostornina samih delcev je zanemarljivo majhna v primerjavi s prostornino, ki jo plin zavzema.\n3.  Med delci ni privlačnih ali odbojnih sil, razen med trki.\n4.  Trki med delci in med delci ter steno posode so popolnoma prožni (elastični), kar pomeni, da se ohranja celotna kinetična energija.\n5.  Povprečna kinetična energija delcev je sorazmerna z absolutno temperaturo plina.\n\n### [[Difuzija in Efuzija]]\n-   **Difuzija**: Proces spontanega mešanja dveh ali več snovi zaradi naključnega gibanja njihovih delcev. Plini se mešajo, dokler ne dosežejo homogene zmesi (iz območja višje v območje nižje koncentracije).\n-   **Efuzija**: Proces, pri katerem plin uhaja skozi majhno odprtino v vakuum ali v prostor z nižjim tlakom.\n\n\u003e **Note to self (Memorialization):** V predavanju je bil prikazan poskus z amonijakom (NH₃) in klorovodikovo kislino (HCl) v stekleni cevi. Na enem koncu je bila kapljica raztopine NH₃, na drugem pa HCl. Plina sta difundirala proti sredini cevi in na mestu, kjer sta se srečala, je nastal bel obroč amonijevega klorida (NH₄Cl). Obroč je nastal bližje koncu s HCl, ker so lažje molekule NH₃ (M ≈ 17 g/mol) difundirale hitreje od težjih molekul HCl (M ≈ 36.5 g/mol).\n\n#### [[Grahamov Zakon]]\nŠkotski kemik Thomas Graham je ugotovil, da je hitrost efuzije (ali difuzije) plina obratno sorazmerna s kvadratnim korenom njegove molske mase. Za dva plina A in B pri enaki temperaturi in tlaku velja:\n\n$$\n\\frac{\\text{čas}_A}{\\text{čas}_B} \u003d \\frac{\\text{hitrost}_B}{\\text{hitrost}_A} \u003d \\sqrt{\\frac{M_A}{M_B}}\n$$\n\nKjer je `M` molska masa. Lažji plini difundirajo/efundirajo hitreje.\n\n### [[Porazdelitev Molekularnih Hitrosti]]\nMolekule v plinu se ne gibljejo vse z enako hitrostjo; njihove hitrosti so porazdeljene po **Maxwell-Boltzmannovi porazdelitvi**.\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ndef maxwell_boltzmann(v, M, T):\n    R \u003d 8.314\n    M_kg \u003d M / 1000  # pretvorba g/mol v kg/mol\n    return (4 * np.pi * (M_kg / (2 * np.pi * R * T))**1.5 * v**2 * np.exp(-M_kg * v**2 / (2 * R * T)))\n\nv \u003d np.linspace(0, 2500, 1000)  # m/s\nM_N2 \u003d 28.0  # g/mol\nT1 \u003d 300  # K\nT2 \u003d 1000 # K\n\nplt.figure(figsize\u003d(10, 6))\nplt.plot(v, maxwell_boltzmann(v, M_N2, T1), label\u003df\u0027Dušik (N2) pri {T1} K\u0027)\nplt.plot(v, maxwell_boltzmann(v, M_N2, T2), label\u003df\u0027Dušik (N2) pri {T2} K\u0027)\n\nplt.xlabel(\u0027Hitrost molekul (m/s)\u0027)\nplt.ylabel(\u0027Delež molekul\u0027)\nplt.title(\u0027Maxwell-Boltzmannova porazdelitev hitrosti\u0027)\nplt.legend()\nplt.grid(True)\nplt.show()\n\n```\n**Opazovanje:** Z višanjem temperature se krivulja porazdelitve razširi in splošči, vrh pa se premakne proti višjim hitrostim. To pomeni, da ima pri višji temperaturi večji delež molekul višje hitrosti.\n\n#### Tipi Hitrosti\nIz porazdelitve lahko izpeljemo tri pomembne hitrosti:\n\n1.  **[[Najverjetnejša Hitrost (Ump)]]**: Hitrost, ki jo ima največje število molekul. To je vrh Maxwell-Boltzmannove krivulje.\n    $$ U_{mp} \u003d \\sqrt{\\frac{2RT}{M}} $$\n2.  **[[Povprečna Hitrost (Uav)]]**: Aritmetično povprečje hitrosti vseh molekul.\n    $$ U_{av} \u003d \\sqrt{\\frac{8RT}{\\pi M}} $$\n3.  **[[Povprečna Kvadratna Hitrost (Urms)]]**: Kvadratni koren povprečja kvadratov hitrosti vseh molekul. Ta hitrost je neposredno povezana s kinetično energijo plina.\n    $$ U_{rms} \u003d \\sqrt{\\frac{3RT}{M}} $$\n\n\u003e **Critical Analysis:** Vedno velja razmerje: **`Urms \u003e Uav \u003e Ump`**. To je posledica asimetrične oblike porazdelitvene krivulje, ki ima \"rep\" pri visokih hitrostih. Majhno število zelo hitrih molekul močneje vpliva na povprečje (še posebej na povprečje kvadratov), zato sta `Uav` in `Urms` večja od najverjetnejše hitrosti `Ump`.\n\n\u003e **Warning:** Pri izračunu hitrosti (še posebej `Urms`) je ključnega pomena pravilna uporaba enot.\n\u003e - **Plinska konstanta (R)** mora biti v SI enotah: **`R \u003d 8.314 J/(mol·K)`**.\n\u003e - **Molska masa (M)** mora biti pretvorjena v **`kg/mol`**.\n\u003e Le tako se bodo enote pravilno pokrajšale in bo rezultat v `m/s`.\n\u003e $$\n\u003e \\sqrt{\\frac{J}{mol \\cdot K} \\cdot \\frac{K}{1} \\cdot \\frac{mol}{kg}} \u003d \\sqrt{\\frac{J}{kg}} \u003d \\sqrt{\\frac{kg \\cdot m^2/s^2}{kg}} \u003d \\sqrt{\\frac{m^2}{s^2}} \u003d \\frac{m}{s}\n\u003e $$\n\n---\n### [[Splošne Formule]]\n-   **Van der Waalsova Enačba**: $$ \\left(p + \\frac{an^2}{V^2}\\right)(V - nb) \u003d nRT $$\n-   **Povezave med konstantami**:\n    $$ p_k \u003d \\frac{a}{27b^2} \\quad T_k \u003d \\frac{8a}{27Rb} \\quad V_k \u003d 3b $$\n-   **Grahamov Zakon**: $$ \\frac{\\text{hitrost}_B}{\\text{hitrost}_A} \u003d \\sqrt{\\frac{M_A}{M_B}} $$\n-   **Povprečna Kvadratna Hitrost**: $$ U_{rms} \u003d \\sqrt{\\frac{3RT}{M}} $$\n\n---\n### [[Naloge]]\n\n**Naloga 1: Izračun Tlaka (Idealni vs. Realni Plin)**\nIzračunaj tlak za 2,95 mol CO₂(g) v 600 mL posodi pri 30°C.\nPodatki: `a(CO₂) \u003d 363.7 kPa·L²·mol⁻²`, `b(CO₂) \u003d 0.0427 L·mol⁻¹`.\n(Opomba: V zapiskih je `a` podan z neobičajnimi enotami; uporabljen je standardni pretvorjen podatek.)\n\n-   **Podatki:**\n    -   n \u003d 2,95 mol\n    -   V \u003d 0,6 L\n    -   T \u003d 30°C \u003d 303,15 K\n    -   R \u003d 8,314 kPa·L·mol⁻¹·K⁻¹\n\na) **Idealni plin**\n$$\np \u003d \\frac{nRT}{V} \u003d \\frac{(2.95 \\, \\text{mol})(8.314 \\, \\frac{\\text{kPa} \\cdot \\text{L}}{\\text{mol} \\cdot \\text{K}})(303.15 \\, \\text{K})}{0.6 \\, \\text{L}} \u003d 12396 \\, \\text{kPa} \\approx 12.4 \\, \\text{MPa}\n$$\nUporabnikov izračun `12.385 kPa` je pravilen (uporabil je T\u003d303K).\n\nb) **Realni plin (Van der Waalsova enačba)**\n$$\np \u003d \\frac{nRT}{V - nb} - \\frac{an^2}{V^2}\n$$\n$$\np \u003d \\frac{(2.95)(8.314)(303.15)}{0.6 - (2.95)(0.0427)} - \\frac{(363.7)(2.95)^2}{(0.6)^2}\n$$\n$$\np \u003d \\frac{7441.7}{0.6 - 0.126} - \\frac{(363.7)(8.7025)}{0.36}\n$$\n$$\np \u003d \\frac{7441.7}{0.474} - \\frac{3164.8}{0.36} \u003d 15699.8 - 8791.1 \u003d 6908.7 \\, \\text{kPa} \\approx 6.91 \\, \\text{MPa}\n$$\n\u003e **Warning:** V zapiskih je izračunan tlak 6.098 kPa. Ta rezultat je napačen, verjetno zaradi napake pri računanju ali uporabi napačnih vrednosti za konstanto `a`. Pravilni rezultat ob upoštevanju privlačnih sil in volumna molekul je `6.91 MPa`. Tlak realnega plina je v tem primeru znatno nižji od tlaka idealnega plina.\n\n**Naloga 2: Izračun Povprečne Kvadratne Hitrosti (Vrms)**\nIzračunajte `Vrms` za atome He, molekule O₂ in atome Xe pri 298 K.\n\n-   **Podatki:**\n    -   T \u003d 298 K\n    -   R \u003d 8,314 J·mol⁻¹·K⁻¹\n    -   M(He) \u003d 4,00 g/mol \u003d 0,0040 kg/mol\n    -   M(O₂) \u003d 32,00 g/mol \u003d 0,0320 kg/mol\n    -   M(Xe) \u003d 131,29 g/mol \u003d 0,1313 kg/mol\n-   **Formula:** $$ U_{rms} \u003d \\sqrt{\\frac{3RT}{M}} $$\n-   **Rešitev:**\n    -   He: $$ U_{rms} \u003d \\sqrt{\\frac{3 \\cdot 8.314 \\cdot 298}{0.0040}} \u003d 1363 \\, \\text{m/s} $$\n    -   O₂: $$ U_{rms} \u003d \\sqrt{\\frac{3 \\cdot 8.314 \\cdot 298}{0.0320}} \u003d 482 \\, \\text{m/s} $$\n    -   Xe: $$ U_{rms} \u003d \\sqrt{\\frac{3 \\cdot 8.314 \\cdot 298}{0.1313}} \u003d 238 \\, \\text{m/s} $$\nRezultati se ujemajo z izračuni v zapiskih.\n\n**Naloga 3: Molska Masa iz Grahamovega Zakona**\nHitrost efuzije neznanega plina je 0,355-kratnik hitrosti efuzije O₂ pri isti temperaturi. Določite molsko maso neznanega plina.\n\n-   **Podatki:**\n    -   `hitrost(neznan) \u003d 0.355 * hitrost(O₂)`\n    -   `M(O₂) \u003d 32.0 g/mol`\n-   **Formula:** $$ \\frac{\\text{hitrost}(\\text{neznan})}{\\text{hitrost}(O_2)} \u003d \\sqrt{\\frac{M(O_2)}{M(\\text{neznan})}} $$\n-   **Rešitev:**\n    $$ 0.355 \u003d \\sqrt{\\frac{32.0}{M(\\text{neznan})}} $$\n    $$ (0.355)^2 \u003d \\frac{32.0}{M(\\text{neznan})} $$\n    $$ M(\\text{neznan}) \u003d \\frac{32.0}{(0.355)^2} \u003d \\frac{32.0}{0.126} \u003d 253.9 \\, \\text{g/mol} $$\nRezultat se ujema z izračunom v zapiskih (253,92 g/mol).",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 4765,
+      "parts": [{
+        "text": "# [[Plini]]\n\n## [[Realni Plini in Kritični Pogoji]]\nRealni plini"
+      }, {
+        "text": " odstopajo od obnašanja idealnih plinov, predvsem pri visokih tlakih in nizkih temperaturah"
+      }, {
+        "text": ". Ta odstopanja so posledica dveh dejavnikov, ki jih idealna plinska enačba zanemarja"
+      }, {
+        "text": ":\n1.  **Lastna prostornina molekul:** Molekule realnih plinov imajo končno"
+      }, {
+        "text": " prostornino.\n2.  **Medmolekulske privlačne sile:** Med molekulami realnih pl"
+      }, {
+        "text": "inov delujejo privlačne sile (Van der Waalsove sile).\n\n### [[Van der Waalsova Enačba]]\nZa bolj natančen opis realnih plinov je Johannes Diderik van der Waals predlagal"
+      }, {
+        "text": " prilagojeno plinsko enačbo, ki vključuje korekcijska faktorja `a` in"
+      }, {
+        "text": " `b`.\n\n$$\n\\left(p + \\frac{an^2}{V^2}\\right)(V -"
+      }, {
+        "text": " nb) \u003d nRT\n$$\n\n-   **Korekcijski faktor `a`**: Upošteva med"
+      }, {
+        "text": "molekulske privlačne sile. Te sile zmanjšajo tlak, ki ga plin izvaja na st"
+      }, {
+        "text": "eno posode, saj molekule v notranjosti privlačijo tiste, ki se približujejo"
+      }, {
+        "text": " steni. Zato se realnemu tlaku prišteje korekcijski člen `an²/V²"
+      }, {
+        "text": "`, da dobimo tlak, ki bi ga plin imel brez teh sil. Večja kot je konstanta `a`,"
+      }, {
+        "text": " močnejše so privlačne sile med molekulami.\n-   **Korekcijski faktor `b"
+      }, {
+        "text": "`**: Upošteva lastno prostornino (volumen) molekul plina. Dejanska prostornina,"
+      }, {
+        "text": " ki je na voljo za gibanje molekul, je manjša od volumna posode za vrednost `nb"
+      }, {
+        "text": "`. Večja kot je konstanta `b`, večje so molekule plina.\n\n### [[Kritični Pogoji]]\nPri stiskanju in ohlajanju plina se molekule približujejo in njih"
+      }, {
+        "text": "ove privlačne sile postanejo pomembnejše. Obstaja točka, imenovana **kritična točka"
+      }, {
+        "text": "**, kjer prehod med plinastim in tekočim stanjem preneha biti razločen.\n\n-"
+      }, {
+        "text": "   **[[Kritična Temperatura (Tk)]]**: Najvišja temperatura, pri kateri je pl"
+      }, {
+        "text": "in še mogoče utekočiniti s povečanjem tlaka. Nad to temperaturo plin ne more obstajati"
+      }, {
+        "text": " v tekočem stanju, ne glede na to, kako visok je tlak.\n-   **[[Kritični Tlak (Pk)]]**: Najmanjši tlak, ki je potreben za utekočin"
+      }, {
+        "text": "jenje plina pri kritični temperaturi.\n-   **[[Kritični Volumen (Vk)]]"
+      }, {
+        "text": "**: Volumen, ki ga zavzema en mol snovi pri kritični temperaturi in tlaku.\n\n####"
+      }, {
+        "text": " [[Superkritična Faza]]\nSnov, ki je nad svojo kritično temperaturo in tlakom, se nah"
+      }, {
+        "text": "aja v **superkritični fazi**. V tem stanju snov ni ne plin ne tekočina,"
+      }, {
+        "text": " ampak ima lastnosti obeh. Ima gostoto, podobno tekočini, in viskoznost ter"
+      }, {
+        "text": " difuzivnost, podobno plinu.\n\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt\nimport numpy as"
+      }, {
+        "text": " np\n\n# P-T fazni diagram\nT \u003d np.linspace(0, 1.5, 4"
+      }, {
+        "text": "00)\n# Placeholder curves for visualization\nT_triple \u003d 0.5\nP_triple \u003d "
+      }, {
+        "text": "0.3\nT_crit \u003d 1.0\nP_crit \u003d 1.0\n\n# Sub"
+      }, {
+        "text": "limacijska krivulja\nT_sub \u003d np.linspace(0, T_triple, 100)\n"
+      }, {
+        "text": "P_sub \u003d P_triple * np.exp(10 * (T_sub / T_triple - "
+      }, {
+        "text": "1))\n\n# Talilna krivulja\nT_melt \u003d np.linspace(T_triple, "
+      }, {
+        "text": "1.4, 100)\nP_melt \u003d P_triple + 1.5 * (T_"
+      }, {
+        "text": "melt - T_triple)\n\n# Vrelna krivulja\nT_vap \u003d np.linspace(T_triple"
+      }, {
+        "text": ", T_crit, 100)\nP_vap \u003d P_triple * np.exp(5"
+      }, {
+        "text": " * (1 - T_triple / T_vap))\n\nplt.figure(figsize\u003d(8, 6))"
+      }, {
+        "text": "\nplt.plot(T_sub, P_sub, \u0027k-\u0027)\nplt.plot(T_"
+      }, {
+        "text": "melt, P_melt, \u0027k-\u0027)\nplt.plot(T_vap, P_vap, \u0027k"
+      }, {
+        "text": "-\u0027)\n\n# Supercritical fluid region\nT_supercrit \u003d np.linspace(T_crit, 1.5"
+      }, {
+        "text": ", 100)\nP_supercrit_line \u003d np.full_like(T_supercrit, P"
+      }, {
+        "text": "_crit)\nplt.plot(T_supercrit, P_supercrit_line, \u0027r--\u0027)"
+      }, {
+        "text": "\nplt.plot([T_crit, T_crit], [P_crit, plt.ylim()[1]],"
+      }, {
+        "text": " \u0027b--\u0027)\n\nplt.fill_betweenx(np.linspace(P_crit, plt.ylim()[1], 100), T_crit, 1.5, color\u003d\u0027gray\u0027, alpha\u003d0.3, label\u003d\u0027"
+      }, {
+        "text": "Superkritična Faza\u0027)\nplt.text(1.1, 1.1, \u0027Superkritična"
+      }, {
+        "text": " Faza\u0027, fontsize\u003d12)\nplt.text(0.2, 0.1, \u0027Tr"
+      }, {
+        "text": "dno\u0027, fontsize\u003d12)\nplt.text(0.7, 0.2, \u0027Tekoče"
+      }, {
+        "text": "\u0027, fontsize\u003d12)\nplt.text(0.8, 0.8, \u0027Plinasto"
+      }, {
+        "text": "\u0027, fontsize\u003d12)\nplt.plot(T_crit, P_crit, \u0027ro\u0027, label\u003d\u0027Kritič"
+      }, {
+        "text": "na točka\u0027)\nplt.plot(T_triple, P_triple, \u0027bo\u0027, label\u003d\u0027Trojna točka"
+      }, {
+        "text": "\u0027)\n\n\nplt.xlabel(\u0027Temperatura (T)\u0027)\nplt.ylabel(\u0027Tlak (P)\u0027)\nplt.title"
+      }, {
+        "text": "(\u0027P-T Fazni Diagram\u0027)\nplt.legend()\nplt.grid(True)\nplt.xlim(0"
+      }, {
+        "text": ", 1.5)\nplt.ylim(0, 1.5)\nplt.show()\n\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n---\n## [[Kinetična Teorija Plinov]]\nTo je fizikalna teorija, ki po"
+      }, {
+        "text": "jasnjuje makroskopske lastnosti idealnih plinov (tlak, temperatura, volumen) na podlagi gib"
+      }, {
+        "text": "anja njihovih mikroskopskih delcev (atomov ali molekul).\n\n**Osnovne predpostavke"
+      }, {
+        "text": ":**\n1.  Plin je sestavljen iz velikega števila delcev, ki se gibljejo nak"
+      }, {
+        "text": "ljučno in neprestano.\n2.  Prostornina samih delcev je zanemarlj"
+      }, {
+        "text": "ivo majhna v primerjavi s prostornino, ki jo plin zavzema.\n3.  Med"
+      }, {
+        "text": " delci ni privlačnih ali odbojnih sil, razen med trki.\n4.  Trki med delci"
+      }, {
+        "text": " in med delci ter steno posode so popolnoma prožni (elastični), kar pomeni,"
+      }, {
+        "text": " da se ohranja celotna kinetična energija.\n5.  Povprečna kinetična energija"
+      }, {
+        "text": " delcev je sorazmerna z absolutno temperaturo plina.\n\n### [[Difuzija in Efuzija]]\n"
+      }, {
+        "text": "-   **Difuzija**: Proces spontanega mešanja dveh ali več snovi zaradi naključnega gib"
+      }, {
+        "text": "anja njihovih delcev. Plini se mešajo, dokler ne dosežejo homogene zmesi (iz"
+      }, {
+        "text": " območja višje v območje nižje koncentracije).\n-   **Efuzija"
+      }, {
+        "text": "**: Proces, pri katerem plin uhaja skozi majhno odprtino v vakuum ali v prostor z"
+      }, {
+        "text": " nižjim tlakom.\n\n\u003e **Note to self (Memorialization):** V predavanju je bil prikazan pos"
+      }, {
+        "text": "kus z amonijakom (NH₃) in klorovodikovo kislino (HCl) v"
+      }, {
+        "text": " stekleni cevi. Na enem koncu je bila kapljica raztopine NH₃, na drugem pa HCl"
+      }, {
+        "text": ". Plina sta difundirala proti sredini cevi in na mestu, kjer sta se srečala, je"
+      }, {
+        "text": " nastal bel obroč amonijevega klorida (NH₄Cl). Obroč je nastal bližje kon"
+      }, {
+        "text": "cu s HCl, ker so lažje molekule NH₃ (M ≈ 17 g/mol) difundirale hit"
+      }, {
+        "text": "reje od težjih molekul HCl (M ≈ 36.5 g/mol).\n\n#### [[Grahamov Zakon]]\nŠkotski kemik Thomas Graham je ugotovil, da je hitrost efuzije ("
+      }, {
+        "text": "ali difuzije) plina obratno sorazmerna s kvadratnim korenom njegove molske mase. Za"
+      }, {
+        "text": " dva plina A in B pri enaki temperaturi in tlaku velja:\n\n$$\n\\frac{\\text{čas}_"
+      }, {
+        "text": "A}{\\text{čas}_B} \u003d \\frac{\\text{hitrost}_B}{\\text{hitrost}_A}"
+      }, {
+        "text": " \u003d \\sqrt{\\frac{M_A}{M_B}}\n$$\n\nKjer je `M` mols"
+      }, {
+        "text": "ka masa. Lažji plini difundirajo/efundirajo hitreje.\n\n### [[Porazdelitev Molekularnih Hitrosti]]\nMolekule v plinu se ne gibljejo vse z enako"
+      }, {
+        "text": " hitrostjo; njihove hitrosti so porazdeljene po **Maxwell-Boltzmannovi porazdelitvi**.\n\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ndef maxwell_boltzmann(v, M"
+      }, {
+        "text": ", T):\n    R \u003d 8.314\n    M_kg \u003d M / 100"
+      }, {
+        "text": "0  # pretvorba g/mol v kg/mol\n    return (4 * np.pi * (M_"
+      }, {
+        "text": "kg / (2 * np.pi * R * T))**1.5 * v**2 * np.exp(-M"
+      }, {
+        "text": "_kg * v**2 / (2 * R * T)))\n\nv \u003d np.linspace(0, "
+      }, {
+        "text": "2500, 1000)  # m/s\nM_N2 \u003d 2"
+      }, {
+        "text": "8.0  # g/mol\nT1 \u003d 300  # K\nT2 \u003d 10"
+      }, {
+        "text": "00 # K\n\nplt.figure(figsize\u003d(10, 6))\nplt.plot(v, maxwell_"
+      }, {
+        "text": "boltzmann(v, M_N2, T1), label\u003df\u0027Dušik (N2) pri {"
+      }, {
+        "text": "T1} K\u0027)\nplt.plot(v, maxwell_boltzmann(v, M_N2"
+      }, {
+        "text": ", T2), label\u003df\u0027Dušik (N2) pri {T2} K\u0027)\n\nplt"
+      }, {
+        "text": ".xlabel(\u0027Hitrost molekul (m/s)\u0027)\nplt.ylabel(\u0027Delež molekul\u0027)\nplt"
+      }, {
+        "text": ".title(\u0027Maxwell-Boltzmannova porazdelitev hitrosti\u0027)\nplt.legend()\nplt.grid"
+      }, {
+        "text": "(True)\nplt.show()\n\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n**Opazovanje:** Z višanjem temperature se krivulja porazdel"
+      }, {
+        "text": "itve razširi in splošči, vrh pa se premakne proti višjim hitrostim. To pomeni,"
+      }, {
+        "text": " da ima pri višji temperaturi večji delež molekul višje hitrosti.\n\n#### Tipi Hitrosti\n"
+      }, {
+        "text": "Iz porazdelitve lahko izpeljemo tri pomembne hitrosti:\n\n1.  **"
+      }, {
+        "text": "[[Najverjetnejša Hitrost (Ump)]]**: Hitrost, ki jo ima največje število mole"
+      }, {
+        "text": "kul. To je vrh Maxwell-Boltzmannove krivulje.\n    $$ U_{mp} \u003d \\sqrt{\\frac"
+      }, {
+        "text": "{2RT}{M}} $$\n2.  **[[Povprečna Hitrost (Uav)]]**: A"
+      }, {
+        "text": "ritmetično povprečje hitrosti vseh molekul.\n    $$ U_{av} \u003d \\"
+      }, {
+        "text": "sqrt{\\frac{8RT}{\\pi M}} $$\n3.  **[[Povprečna Kvadratna Hitrost (Urms)]]**: Kvadratni koren povprečja kvadratov hitrosti v"
+      }, {
+        "text": "seh molekul. Ta hitrost je neposredno povezana s kinetično energijo plina.\n    "
+      }, {
+        "text": "$$ U_{rms} \u003d \\sqrt{\\frac{3RT}{M}} $$\n\n\u003e **Critical Analysis:** Ved"
+      }, {
+        "text": "no velja razmerje: **`Urms \u003e Uav \u003e Ump`**. To je posledica as"
+      }, {
+        "text": "imetrične oblike porazdelitvene krivulje, ki ima \"rep\" pri visokih hitrostih"
+      }, {
+        "text": ". Majhno število zelo hitrih molekul močneje vpliva na povprečje ("
+      }, {
+        "text": "še posebej na povprečje kvadratov), zato sta `Uav` in `Urms` večja"
+      }, {
+        "text": " od najverjetnejše hitrosti `Ump`.\n\n\u003e **Warning:** Pri izračunu hitrosti ("
+      }, {
+        "text": "še posebej `Urms`) je ključnega pomena pravilna uporaba enot.\n\u003e - **"
+      }, {
+        "text": "Plinska konstanta (R)** mora biti v SI enotah: **`R \u003d 8.314"
+      }, {
+        "text": " J/(mol·K)`**.\n\u003e - **Molska masa (M)** mora biti pretvorjena v **"
+      }, {
+        "text": "`kg/mol`**.\n\u003e Le tako se bodo enote pravilno pokrajšale in bo rezultat v "
+      }, {
+        "text": "`m/s`.\n\u003e $$\n\u003e \\sqrt{\\frac{J}{mol \\cdot K} \\cdot \\"
+      }, {
+        "text": "frac{K}{1} \\cdot \\frac{mol}{kg}} \u003d \\sqrt{\\frac{J}{kg}} \u003d \\"
+      }, {
+        "text": "sqrt{\\frac{kg \\cdot m^2/s^2}{kg}} \u003d \\sqrt{\\frac{m"
+      }, {
+        "text": "^2}{s^2}} \u003d \\frac{m}{s}\n\u003e $$\n\n---\n### [[Splošne Formule]]\n-   **Van der Waalsova Enačba**: $$ \\left(p"
+      }, {
+        "text": " + \\frac{an^2}{V^2}\\right)(V - nb) \u003d nRT $$\n-"
+      }, {
+        "text": "   **Povezave med konstantami**:\n    $$ p_k \u003d \\frac{a}{27b^"
+      }, {
+        "text": "2} \\quad T_k \u003d \\frac{8a}{27Rb} \\quad V_k \u003d "
+      }, {
+        "text": "3b $$\n-   **Grahamov Zakon**: $$ \\frac{\\text{hitrost}_B}{\\text{hit"
+      }, {
+        "text": "rost}_A} \u003d \\sqrt{\\frac{M_A}{M_B}} $$\n-   **Pov"
+      }, {
+        "text": "prečna Kvadratna Hitrost**: $$ U_{rms} \u003d \\sqrt{\\frac{3RT}{M}}"
+      }, {
+        "text": " $$\n\n---\n### [[Naloge]]\n\n**Naloga 1: Izračun Tlaka ("
+      }, {
+        "text": "Idealni vs. Realni Plin)**\nIzračunaj tlak za 2,95 mol CO₂("
+      }, {
+        "text": "g) v 600 mL posodi pri 30°C.\nPodatki: `a"
+      }, {
+        "text": "(CO₂) \u003d 363.7 kPa·L²·mol⁻²`, `b(CO₂) \u003d 0"
+      }, {
+        "text": ".0427 L·mol⁻¹`.\n(Opomba: V zapiskih je `a"
+      }, {
+        "text": "` podan z neobičajnimi enotami; uporabljen je standardni pretvorjen podatek.)"
+      }, {
+        "text": "\n\n-   **Podatki:**\n    -   n \u003d 2,95 mol\n    -   V"
+      }, {
+        "text": " \u003d 0,6 L\n    -   T \u003d 30°C \u003d 303,15 K\n"
+      }, {
+        "text": "    -   R \u003d 8,314 kPa·L·mol⁻¹·K⁻¹\n\na"
+      }, {
+        "text": ") **Idealni plin**\n$$\np \u003d \\frac{nRT}{V} \u003d \\frac{(2"
+      }, {
+        "text": ".95 \\, \\text{mol})(8.314 \\, \\frac{\\text{kPa} \\cdot \\"
+      }, {
+        "text": "text{L}}{\\text{mol} \\cdot \\text{K}})(303.15 \\, \\"
+      }, {
+        "text": "text{K})}{0.6 \\, \\text{L}} \u003d 12396 \\, \\text{"
+      }, {
+        "text": "kPa} \\approx 12.4 \\, \\text{MPa}\n$$\nUporabnikov izračun "
+      }, {
+        "text": "`12.385 kPa` je pravilen (uporabil je T\u003d303K).\n\nb"
+      }, {
+        "text": ") **Realni plin (Van der Waalsova enačba)**\n$$\np \u003d \\frac{nRT"
+      }, {
+        "text": "}{V - nb} - \\frac{an^2}{V^2}\n$$\n$$\np \u003d \\frac"
+      }, {
+        "text": "{(2.95)(8.314)(303.15)}{0.6 - ("
+      }, {
+        "text": "2.95)(0.0427)} - \\frac{(363.7)(2."
+      }, {
+        "text": "95)^2}{(0.6)^2}\n$$\n$$\np \u003d \\frac{744"
+      }, {
+        "text": "1.7}{0.6 - 0.126} - \\frac{(363.7)(8."
+      }, {
+        "text": "7025)}{0.36}\n$$\n$$\np \u003d \\frac{7441"
+      }, {
+        "text": ".7}{0.474} - \\frac{3164.8}{0.36} \u003d"
+      }, {
+        "text": " 15699.8 - 8791.1 \u003d 6908.7 \\, \\"
+      }, {
+        "text": "text{kPa} \\approx 6.91 \\, \\text{MPa}\n$$\n\u003e **Warning:** V"
+      }, {
+        "text": " zapiskih je izračunan tlak 6.098 kPa. Ta rezultat je napačen, ver"
+      }, {
+        "text": "jetno zaradi napake pri računanju ali uporabi napačnih vrednosti za konstanto `a`. Prav"
+      }, {
+        "text": "ilni rezultat ob upoštevanju privlačnih sil in volumna molekul je `6.91 MPa"
+      }, {
+        "text": "`. Tlak realnega plina je v tem primeru znatno nižji od tlaka idealnega plina."
+      }, {
+        "text": "\n\n**Naloga 2: Izračun Povprečne Kvadratne Hitrosti (Vrms)**\nIz"
+      }, {
+        "text": "računajte `Vrms` za atome He, molekule O₂ in atome Xe pri 298 K"
+      }, {
+        "text": ".\n\n-   **Podatki:**\n    -   T \u003d 298 K\n    -   R"
+      }, {
+        "text": " \u003d 8,314 J·mol⁻¹·K⁻¹\n    -   M(He) \u003d"
+      }, {
+        "text": " 4,00 g/mol \u003d 0,0040 kg/mol\n    -   M("
+      }, {
+        "text": "O₂) \u003d 32,00 g/mol \u003d 0,0320 kg/mol\n"
+      }, {
+        "text": "    -   M(Xe) \u003d 131,29 g/mol \u003d 0,1313"
+      }, {
+        "text": " kg/mol\n-   **Formula:** $$ U_{rms} \u003d \\sqrt{\\frac{3RT}{M}} $$"
+      }, {
+        "text": "\n-   **Rešitev:**\n    -   He: $$ U_{rms} \u003d \\sqrt{\\frac{"
+      }, {
+        "text": "3 \\cdot 8.314 \\cdot 298}{0.0040}} \u003d"
+      }, {
+        "text": " 1363 \\, \\text{m/s} $$\n    -   O₂: $$ U_{rms} \u003d"
+      }, {
+        "text": " \\sqrt{\\frac{3 \\cdot 8.314 \\cdot 298}{0.0"
+      }, {
+        "text": "320}} \u003d 482 \\, \\text{m/s} $$\n    -   Xe:"
+      }, {
+        "text": " $$ U_{rms} \u003d \\sqrt{\\frac{3 \\cdot 8.314 \\cdot 2"
+      }, {
+        "text": "98}{0.1313}} \u003d 238 \\, \\text{m/s} $$\nRez"
+      }, {
+        "text": "ultati se ujemajo z izračuni v zapiskih.\n\n**Naloga 3: M"
+      }, {
+        "text": "olska Masa iz Grahamovega Zakona**\nHitrost efuzije neznanega plina je 0"
+      }, {
+        "text": ",355-kratnik hitrosti efuzije O₂ pri isti temperaturi. Določite mol"
+      }, {
+        "text": "sko maso neznanega plina.\n\n-   **Podatki:**\n    -   `hitrost("
+      }, {
+        "text": "neznan) \u003d 0.355 * hitrost(O₂)`\n    -   `M"
+      }, {
+        "text": "(O₂) \u003d 32.0 g/mol`\n-   **Formula:** $$ \\frac{\\text{hit"
+      }, {
+        "text": "rost}(\\text{neznan})}{\\text{hitrost}(O_2)} \u003d \\sqrt{\\frac{M("
+      }, {
+        "text": "O_2)}{M(\\text{neznan})}} $$\n-   **Rešitev:**\n    "
+      }, {
+        "text": "$$ 0.355 \u003d \\sqrt{\\frac{32.0}{M(\\text{nezn"
+      }, {
+        "text": "an})}} $$\n    $$ (0.355)^2 \u003d \\frac{32.0}{"
+      }, {
+        "text": "M(\\text{neznan})} $$\n    $$ M(\\text{neznan}) \u003d \\frac{"
+      }, {
+        "text": "32.0}{(0.355)^2} \u003d \\frac{32.0}{0."
+      }, {
+        "text": "126} \u003d 253.9 \\, \\text{g/mol} $$\nRezultat se uj"
+      }, {
+        "text": "ema z izračunom v zapiskih (253,92 g/mol)."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-flash-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH",
+    "enableImageSearch": false
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "im retarded how do i delete the unnecessary underline in google sheets",
+      "role": "user",
+      "tokenCount": 13,
+      "createTime": "2026-03-05T17:25:11.532Z"
+    }, {
+      "role": "user",
+      "inlineImage": {
+        "mimeType": "image/png",
+        "data": "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"
+      },
+      "tokenCount": 1074,
+      "createTime": "2026-03-05T17:25:14.525Z"
+    }, {
+      "text": "**Analyzing Cell Borders**\n\nI\u0027m focusing on the visual distinctions between cell borders and font underlines in the provided Google Sheets image. Specifically, I\u0027m noting the differences in line behavior, particularly those that span the entire cell width. My analysis suggests these are likely cell borders rather than font underlines, based on their extent.\n\n\n",
+      "role": "model",
+      "tokenCount": 366,
+      "isThought": true,
+      "parts": [{
+        "text": "**Analyzing Cell Borders**\n\nI\u0027m focusing on the visual distinctions between cell borders and font underlines in the provided Google Sheets image. Specifically, I\u0027m noting the differences in line behavior, particularly those that span the entire cell width. My analysis suggests these are likely cell borders rather than font underlines, based on their extent.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-03-05T17:25:14.525Z"
+    }, {
+      "text": "Those lines look like **cell borders**, not text underlines. Because they span the width of the cell and are a different color, you can remove them using the border tool.\n\nHere is how to fix it:\n\n1.  **Select the cells** that have the lines under them.\n2.  In the top toolbar, look for the **Borders icon** (it looks like a small square grid).\n3.  Click that icon, and then select the **\"Clear borders\"** option (the icon that looks like an empty square with no lines inside).\n\n---\n\n**If that doesn\u0027t work and it actually is a text underline:**\n1.  **Select the cells** with the text.\n2.  Press **`Ctrl + U`** (Windows) or **`Cmd + U`** (Mac) on your keyboard.\n3.  Alternatively, go to the menu: **Format \u003e Text \u003e Underline** to toggle it off.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 203,
+      "parts": [{
+        "text": "Those lines"
+      }, {
+        "text": " look like **cell borders**, not text underlines. Because they span the width of the cell and are a different color, you"
+      }, {
+        "text": " can remove them using the border tool.\n\nHere is how to fix it:\n\n1.  **Select the cells"
+      }, {
+        "text": "** that have the lines under them.\n2.  In the top toolbar, look for the **Borders icon"
+      }, {
+        "text": "** (it looks like a small square grid).\n3.  Click that icon, and then select the **\"Clear"
+      }, {
+        "text": " borders\"** option (the icon that looks like an empty square with no lines inside).\n\n---\n\n**If that doesn\u0027"
+      }, {
+        "text": "t work and it actually is a text underline:**\n1.  **Select the cells** with the text.\n2.  "
+      }, {
+        "text": "Press **`Ctrl + U`** (Windows) or **`Cmd + U`** (Mac) on your"
+      }, {
+        "text": " keyboard.\n3.  Alternatively, go to the menu: **Format \u003e Text \u003e Underline** to toggle it off."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-03-05T17:25:18.102Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

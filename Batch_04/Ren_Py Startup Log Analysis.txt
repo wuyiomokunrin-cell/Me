@@ -1,0 +1,131 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3.8-flash",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "thinkingLevel": "THINKING_MEDIUM",
+    "enableImageSearch": false,
+    "enableGoogleMaps": false,
+    "enableAgentThinkingSummariesControl": false,
+    "enableAgentVisualizationControl": false,
+    "enableAgentCollaborativePlanningControl": false,
+    "enableWordTimestamps": false,
+    "enableSpeakerDiarization": false,
+    "enablePolishedTranscript": false
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "log.txt: \nMon Sep 14 15:18:48 2026\nWindows-10-10.0.26200\nRen\u0027Py 8.1.3.23091805\n \n\nBootstrap to the start of init.init. took 0.03s\nEarly init. took 0.00s\nLoader init. took 0.01s\nLoading error handling. took 0.02s\nLoading script. took 0.08s\nLoading save slot metadata. took 0.02s\nLoading persistent. took 0.00s\nSet script version to: None (alternate path)\n\u003cResponse [503]\u003e\n - Init at script.rpyc:239 took 5.93071 s.\nRunning init code. took 6.08s\nLoading analysis data. took 0.01s\nAnalyze and compile ATL. took 0.00s\nReloading save slot metadata. took 0.01s\nIndex archives took 0.00s\nDump and make backups. took 0.00s\nCleaning cache. took 0.00s\nMaking clean stores. took 0.00s\nInitial gc. took 0.02s\nDPI scale factor: 1.000000\nnvdrs: Loaded, about to disable thread optimizations.\nnvdrs: Disabled thread optimizations.\nCreating interface object. took 0.28s\nCleaning stores took 0.00s\nInit translation took 0.04s\nBuild styles took 0.00s\nLoad screen analysis took 0.03s\nAnalyze screens took 0.00s\nSave screen analysis took 0.00s\nPrepare screens took 0.07s\nSave pyanalysis. took 0.00s\nSave bytecode. took 0.00s\nRunning _start took 0.00s\nPerformance test:\nInterface start. took 0.09s\n\nInitializing gl2 renderer:\nprimary display bounds: (0, 0, 1920, 1080)\nswap interval: 1 frames\nWindowed mode.\nVendor: \"b\u0027NVIDIA Corporation\u0027\"\nRenderer: b\u0027NVIDIA GeForce RTX 2050/PCIe/SSE2\u0027\nVersion: b\u00274.6.0 NVIDIA 616.56\u0027\nDisplay Info: None\nScreen sizes: virtual\u003d(200, 100) physical\u003d(800, 400) drawable\u003d(800, 400)\nMaximum texture size: 4096x4096\ncontroller: \u002703000000e33100003012000000007200\u0027 \u0027Controller (Wooting Two HE (ARM))\u0027 1\ncontroller: \u002703000000e33100003012000000007200\u0027 \u0027Controller (Wooting Two HE (ARM))\u0027 1\n",
+      "role": "user",
+      "tokenCount": 721,
+      "createTime": "2026-09-14T13:19:20.114Z"
+    }, {
+      "text": "**Begin Analyzing the Log**\n\nI\u0027ve started to dissect the provided log snippet. The focus is now on extracting key data points, such as the operating system (Windows 10, specifically build 10.0.26200), and I\u0027ve identified the Ren\u0027Py engine as its core.\n\n\n**Pinpointing Critical Delays**\n\nI\u0027ve uncovered some notable anomalies within the log. There\u0027s a 503 error, suggesting a server-side issue with a web request, and a significant delay – almost 6 seconds – specifically tied to script.rpyc line 239, which seems to contain initialization code that includes the web request. Further, the virtual screen size is very small, which seems odd. Finally, a Wooting Two HE keyboard is being detected as a controller, which could be relevant.\n\n\n**Investigating Connection Failures**\n\nI\u0027ve determined the cause of the delay is a `503 Service Unavailable` status, a server-side problem. The game is likely trying to connect to an external server but the request is failing. Further, the Wooting keyboard is detected as a gamepad, which can cause unexpected inputs. The resolution settings are unusually low. The GPU is an NVIDIA GeForce RTX 2050.\n\n\n",
+      "role": "model",
+      "tokenCount": 971,
+      "isThought": true,
+      "parts": [{
+        "text": "**Begin Analyzing the Log**\n\nI\u0027ve started to dissect the provided log snippet. The focus is now on extracting key data points, such as the operating system (Windows 10, specifically build 10.0.26200), and I\u0027ve identified the Ren\u0027Py engine as its core.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Pinpointing Critical Delays**\n\nI\u0027ve uncovered some notable anomalies within the log. There\u0027s a 503 error, suggesting a server-side issue with a web request, and a significant delay – almost 6 seconds – specifically tied to script.rpyc line 239, which seems to contain initialization code that includes the web request. Further, the virtual screen size is very small, which seems odd. Finally, a Wooting Two HE keyboard is being detected as a controller, which could be relevant.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Investigating Connection Failures**\n\nI\u0027ve determined the cause of the delay is a `503 Service Unavailable` status, a server-side problem. The game is likely trying to connect to an external server but the request is failing. Further, the Wooting keyboard is detected as a gamepad, which can cause unexpected inputs. The resolution settings are unusually low. The GPU is an NVIDIA GeForce RTX 2050.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-09-14T13:19:20.114Z"
+    }, {
+      "text": "Based on your `log.txt`, the game successfully reached the rendering stage and did not crash in this log, but there are a few notable anomalies and potential issues:\n\n---\n\n### 1. HTTP Request Failure (`\u003cResponse [503]\u003e`) \u0026 6-Second Freeze\n* **Log line:**\n  ```text\n  \u003cResponse [503]\u003e\n   - Init at script.rpyc:239 took 5.93071 s.\n  ```\n* **What it means:** Around line 239 of `script.rpy`, the game makes a network request (likely checking for updates, verifying Patreon/supporter perks, or sending analytics).\n* **The issue:** The remote server returned **HTTP 503 (Service Unavailable)**. This caused the game startup to hang/freeze for nearly **6 seconds** while waiting for the network response.\n* **Fix/Impact:** The game handled it and continued booting, but if your game feels slow to launch, this network timeout is the reason. If you are developing this game, consider running network calls in a background thread or adding a shorter timeout.\n\n---\n\n### 2. Keyboard Detected as Gamepad (Wooting Two HE)\n* **Log line:**\n  ```text\n  controller: \u002703000000e33100003012000000007200\u0027 \u0027Controller (Wooting Two HE (ARM))\u0027 1\n  ```\n* **What it means:** Because your **Wooting Two HE** uses analog switches, Windows/Ren\u0027Py recognizes it as an analog controller/gamepad.\n* **Potential problem:** In Ren\u0027Py games, this frequently causes **phantom inputs** (such as dialogue skipping automatically, menus auto-scrolling, or the game ignoring mouse clicks).\n* **Fix (if you experience input issues):**\n  * Open **Wootility** and turn off **Gamepad / Controller Mode** on your active profile while playing Ren\u0027Py games.\n  * Alternatively, inside Ren\u0027Py\u0027s preferences, disable gamepad/joystick support.\n\n---\n\n### 3. Virtual Resolution\n* **Log line:**\n  ```text\n  Screen sizes: virtual\u003d(200, 100) physical\u003d(800, 400) drawable\u003d(800, 400)\n  ```\n* The defined virtual resolution (`gui.init(200, 100)`) is unusually tiny (a 2:1 aspect ratio at 200x100 pixels). Unless this is an intentional retro pixel-art style or a launcher utility, check `gui.rpy` to ensure your resolution is set correctly (e.g., `gui.init(1920, 1080)` or `gui.init(1280, 720)`).\n\n---\n\nIf the game closed or crashed right after this log, check if a **`traceback.txt`** or **`errors.txt`** file was generated in the game folder.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 674,
+      "parts": [{
+        "text": "Based on your `log.txt`, the game successfully reached the rendering stage and did"
+      }, {
+        "text": " not crash in this log, but there are a few notable anomalies and potential issues:\n\n---\n\n### 1. HTTP Request Failure"
+      }, {
+        "text": " (`\u003cResponse [503]\u003e`) \u0026 6-Second Freeze\n* **Log line:**\n  ```text\n  "
+      }, {
+        "text": "\u003cResponse [503]\u003e\n   - Init at script.rpyc:239 took 5."
+      }, {
+        "text": "93071 s.\n  ```\n* **What it means:** Around line 239 of"
+      }, {
+        "text": " `script.rpy`, the game makes a network request (likely checking for updates, verifying Patreon/supporter perks"
+      }, {
+        "text": ", or sending analytics).\n* **The issue:** The remote server returned **HTTP 503 (Service Unavailable)**."
+      }, {
+        "text": " This caused the game startup to hang/freeze for nearly **6 seconds** while waiting for the network response.\n* **Fix"
+      }, {
+        "text": "/Impact:** The game handled it and continued booting, but if your game feels slow to launch, this network timeout is the reason"
+      }, {
+        "text": ". If you are developing this game, consider running network calls in a background thread or adding a shorter timeout.\n\n---\n\n### 2."
+      }, {
+        "text": " Keyboard Detected as Gamepad (Wooting Two HE)\n* **Log line:**\n  ```text\n  controller"
+      }, {
+        "text": ": \u002703000000e331000030120000000"
+      }, {
+        "text": "07200\u0027 \u0027Controller (Wooting Two HE (ARM))\u0027 1\n  ```\n"
+      }, {
+        "text": "* **What it means:** Because your **Wooting Two HE** uses analog switches, Windows/Ren\u0027Py recognizes it as an"
+      }, {
+        "text": " analog controller/gamepad.\n* **Potential problem:** In Ren\u0027Py games, this frequently causes **phantom inputs"
+      }, {
+        "text": "** (such as dialogue skipping automatically, menus auto-scrolling, or the game ignoring mouse clicks).\n* **Fix ("
+      }, {
+        "text": "if you experience input issues):**\n  * Open **Wootility** and turn off **Gamepad / Controller Mode"
+      }, {
+        "text": "** on your active profile while playing Ren\u0027Py games.\n  * Alternatively, inside Ren\u0027Py\u0027s preferences"
+      }, {
+        "text": ", disable gamepad/joystick support.\n\n---\n\n### 3. Virtual Resolution\n* **Log line:**\n  "
+      }, {
+        "text": "```text\n  Screen sizes: virtual\u003d(200, 100) physical\u003d(800, "
+      }, {
+        "text": "400) drawable\u003d(800, 400)\n  ```\n* The defined virtual resolution (`gui.init"
+      }, {
+        "text": "(200, 100)`) is unusually tiny (a 2:1 aspect ratio at 200x100"
+      }, {
+        "text": " pixels). Unless this is an intentional retro pixel-art style or a launcher utility, check `gui.rpy` to"
+      }, {
+        "text": " ensure your resolution is set correctly (e.g., `gui.init(1920, 1080)` or"
+      }, {
+        "text": " `gui.init(1280, 720)`).\n\n---\n\nIf the game closed or crashed right"
+      }, {
+        "text": " after this log, check if a **`traceback.txt`** or **`errors.txt`** file was generated in the game"
+      }, {
+        "text": " folder."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-09-14T13:19:24.629Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

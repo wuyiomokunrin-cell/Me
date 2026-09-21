@@ -1,0 +1,449 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "17pLqvR0Vey4AHJy7ZV8_oyBOfoJxomDY"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1tD9lzeb4qYMdv9UeOGQhy1JqBSQY_GUr"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1UI3uUNBAinnDadJtQiUs0RHt6G3w3hIb"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1_ExUHsKuLLlic3DoVZmpC7xYDiPOjFRi"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "146hPduLynr1Xzx4YHbsVZEz4SIgDFbqo"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1TSnSoaiTHX35K_4QzbwQD9t3wKfnPZ3K"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1niyMgX2mjgBLuRS2p9slMc5715PnWy8Y"
+      },
+      "role": "user",
+      "tokenCount": 71861
+    }, {
+      "driveAudio": {
+        "id": "1LUz9SXAOMv_bOtkHADVY6RGGICkeWld1"
+      },
+      "role": "user",
+      "tokenCount": 88885
+    }, {
+      "driveAudio": {
+        "id": "1CHDTCdIgda-2wT15c_alqhASGfOnjm8Z"
+      },
+      "role": "user",
+      "tokenCount": 87648
+    }, {
+      "text": "**Developing the Obsidian Note**\n\nI\u0027m currently working on building a robust system to process those user inputs into a useful Obsidian note. The structure will have defined headings and links for easy navigation. I\u0027m focusing on parsing both the handwritten notes and the audio transcript in order to integrate them. The goal is a highly functional system that streamlines knowledge consolidation.\n\n\n**Constructing Note Sections**\n\nI\u0027m now diving into the specifics of structuring the Obsidian note. I\u0027m prioritizing the creation of distinct sections for theory, example problems, and solution methods based on the nature of the user\u0027s materials. The focus is on a chronological representation of the lecture, so all sections must be linked and logically correct. I\u0027m integrating guidelines for formula rendering in LaTeX format. I am also working on linking each part of the note so I can navigate through it with ease.\n\n\n**Outlining Note Components**\n\nI\u0027m presently building the essential building blocks for the Obsidian note. I\u0027m focusing on parsing the handwritten notes, like those on rocket propulsion and angular momentum, along with the audio transcript. I\u0027m aiming to create specific sections for core theory, example problems (in Slovenian) and problem-solving methodologies, all chronologically ordered. My plan is to include sections for general formulas and define them in LaTeX format. I am currently working on implementing navigational linking within the note using the Wikilinks format, to support thorough exploration.\n\n\n**Integrating Core Concepts**\n\nI\u0027m now focused on fleshing out the core academic concepts. I\u0027m prioritizing the integration of topics like rocket propulsion, angular momentum, and rigid bodies into distinct, linked sections. My approach involves translating the user\u0027s handwritten notes into markdown, while also drawing relevant insights from the audio transcript to build a cohesive narrative. I\u0027m paying specific attention to using LaTeX for formula representation. I\u0027m structuring the knowledge into understandable sections, so the user can easily review the materials.\n\n\n**Prioritizing Content Integration**\n\nI\u0027m now focusing on integrating the user\u0027s materials into a cohesive structure. I\u0027m prioritizing the creation of a chronological and logically structured Obsidian note. Key concepts like rocket propulsion, angular momentum, and rigid bodies are being woven into the narrative, reflecting the lecture\u0027s progression. Formulae will be rendered using LaTeX.\n\n\n**Refining Content Integration**\n\nI\u0027m presently building the Obsidian note with a strong emphasis on integrating content. I\u0027m prioritizing creating a chronological and logically sound structure. I\u0027ve begun parsing the raw data, and am focusing on building the core sections: theory, general formulas, and solved problems. I\u0027ll translate all the Slovenian examples and formulas. I\u0027m also now implementing the navigational linking using Wikilinks.\n\n\n**Refining the Note Structure**\n\nI\u0027ve been working on refining the structure of the Obsidian note. I\u0027m prioritizing building clear sections, focusing on theory, formulas, and solved problems, linking all elements to create an organized learning tool. I am currently working on the formulas and deriving equations using LaTeX formatting. I am aiming to ensure that all the Slovenian examples are translated and the logic is sound.\n\n\n**Transforming Input Data**\n\nI\u0027m now diving into the user\u0027s materials, starting with the handwritten notes and audio transcript. My focus is on synthesizing them into the Obsidian note. I\u0027m prioritizing building a theoretical foundation before moving to example problems, and I\u0027ll include the necessary LaTeX formatting.\n\n\n**Constructing the Core Sections**\n\nI\u0027ve been working on creating the essential sections for the Obsidian note. I\u0027ve successfully transcribed the handwritten notes and have started to incorporate the relevant audio transcript excerpts. My current focus lies in developing the sections for theory, general formulas, and solved problems. These building blocks will lay the groundwork for a structured learning tool. I am now working on translating the Slovenian text from the user\u0027s materials.\n\n\n**Developing Note Sections**\n\nI\u0027ve begun translating the user\u0027s handwritten notes, focusing on formulas and key terms. I\u0027m building out separate sections for theory, general formulas, and example problems. I\u0027m prioritizing accuracy in representing the content chronologically, and I\u0027ll include critical analysis sections. I\u0027m now integrating LaTeX for formula rendering and implementing Wikilinks for note navigation. I am making sure the language is Slovenian.\n\n\n**Evolving Note Content**\n\nI\u0027m currently building the Obsidian note structure, with sections for theory, formulas, and solved problems. I\u0027m focusing on parsing the user\u0027s handwritten notes on topics like rocket propulsion and angular momentum, ensuring the logic is chronologically sound and all formulas are represented using LaTeX. I\u0027ve begun to integrate Wikilinks for note navigation and am including translations of all Slovenian examples.\n\n\n**Transforming Academic Concepts**\n\nI\u0027m now building out the sections, using the lecture and handwritten notes to integrate the core concepts. The emphasis is on building a comprehensive overview, starting with rocket propulsion, progressing through angular momentum, and finally covering rigid bodies. Formulae will be rendered using LaTeX.\n\n\n**Integrating Input Materials**\n\nI\u0027ve been occupied in reviewing the lecture materials, ensuring a smooth integration of the handwritten notes and audio transcript.  The objective is a comprehensive Obsidian note, focusing on clear and accurate translations of all Slovenian content. I will  make sure that the translations are in context with the academic concepts.\n\n\n**Refining Note Integration**\n\nI\u0027m translating the raw data, incorporating Slovenian terms like \"Raketni pogon\" and formula translations. I am building distinct sections for theory, formulas, and solved examples using LaTeX for formula rendering. I am focusing on the chronological lecture order. I am also implementing Wikilinks for note navigation and analysis comments.\n\n\n",
+      "role": "model",
+      "tokenCount": 3900,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Developing the Obsidian Note**\n\nI\u0027m currently working on building a robust system to process those user inputs into a useful Obsidian note. The structure will have defined headings and links for easy navigation. I\u0027m focusing on parsing both the handwritten notes and the audio transcript in order to integrate them. The goal is a highly functional system that streamlines knowledge consolidation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing Note Sections**\n\nI\u0027m now diving into the specifics of structuring the Obsidian note. I\u0027m prioritizing the creation of distinct sections for theory, example problems, and solution methods based on the nature of the user\u0027s materials. The focus is on a chronological representation of the lecture, so all sections must be linked and logically correct. I\u0027m integrating guidelines for formula rendering in LaTeX format. I am also working on linking each part of the note so I can navigate through it with ease.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining Note Components**\n\nI\u0027m presently building the essential building blocks for the Obsidian note. I\u0027m focusing on parsing the handwritten notes, like those on rocket propulsion and angular momentum, along with the audio transcript. I\u0027m aiming to create specific sections for core theory, example problems (in Slovenian) and problem-solving methodologies, all chronologically ordered. My plan is to include sections for general formulas and define them in LaTeX format. I am currently working on implementing navigational linking within the note using the Wikilinks format, to support thorough exploration.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Core Concepts**\n\nI\u0027m now focused on fleshing out the core academic concepts. I\u0027m prioritizing the integration of topics like rocket propulsion, angular momentum, and rigid bodies into distinct, linked sections. My approach involves translating the user\u0027s handwritten notes into markdown, while also drawing relevant insights from the audio transcript to build a cohesive narrative. I\u0027m paying specific attention to using LaTeX for formula representation. I\u0027m structuring the knowledge into understandable sections, so the user can easily review the materials.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Prioritizing Content Integration**\n\nI\u0027m now focusing on integrating the user\u0027s materials into a cohesive structure. I\u0027m prioritizing the creation of a chronological and logically structured Obsidian note. Key concepts like rocket propulsion, angular momentum, and rigid bodies are being woven into the narrative, reflecting the lecture\u0027s progression. Formulae will be rendered using LaTeX.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Content Integration**\n\nI\u0027m presently building the Obsidian note with a strong emphasis on integrating content. I\u0027m prioritizing creating a chronological and logically sound structure. I\u0027ve begun parsing the raw data, and am focusing on building the core sections: theory, general formulas, and solved problems. I\u0027ll translate all the Slovenian examples and formulas. I\u0027m also now implementing the navigational linking using Wikilinks.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Note Structure**\n\nI\u0027ve been working on refining the structure of the Obsidian note. I\u0027m prioritizing building clear sections, focusing on theory, formulas, and solved problems, linking all elements to create an organized learning tool. I am currently working on the formulas and deriving equations using LaTeX formatting. I am aiming to ensure that all the Slovenian examples are translated and the logic is sound.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Transforming Input Data**\n\nI\u0027m now diving into the user\u0027s materials, starting with the handwritten notes and audio transcript. My focus is on synthesizing them into the Obsidian note. I\u0027m prioritizing building a theoretical foundation before moving to example problems, and I\u0027ll include the necessary LaTeX formatting.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing the Core Sections**\n\nI\u0027ve been working on creating the essential sections for the Obsidian note. I\u0027ve successfully transcribed the handwritten notes and have started to incorporate the relevant audio transcript excerpts. My current focus lies in developing the sections for theory, general formulas, and solved problems. These building blocks will lay the groundwork for a structured learning tool. I am now working on translating the Slovenian text from the user\u0027s materials.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Note Sections**\n\nI\u0027ve begun translating the user\u0027s handwritten notes, focusing on formulas and key terms. I\u0027m building out separate sections for theory, general formulas, and example problems. I\u0027m prioritizing accuracy in representing the content chronologically, and I\u0027ll include critical analysis sections. I\u0027m now integrating LaTeX for formula rendering and implementing Wikilinks for note navigation. I am making sure the language is Slovenian.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Evolving Note Content**\n\nI\u0027m currently building the Obsidian note structure, with sections for theory, formulas, and solved problems. I\u0027m focusing on parsing the user\u0027s handwritten notes on topics like rocket propulsion and angular momentum, ensuring the logic is chronologically sound and all formulas are represented using LaTeX. I\u0027ve begun to integrate Wikilinks for note navigation and am including translations of all Slovenian examples.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Transforming Academic Concepts**\n\nI\u0027m now building out the sections, using the lecture and handwritten notes to integrate the core concepts. The emphasis is on building a comprehensive overview, starting with rocket propulsion, progressing through angular momentum, and finally covering rigid bodies. Formulae will be rendered using LaTeX.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Input Materials**\n\nI\u0027ve been occupied in reviewing the lecture materials, ensuring a smooth integration of the handwritten notes and audio transcript.  The objective is a comprehensive Obsidian note, focusing on clear and accurate translations of all Slovenian content. I will  make sure that the translations are in context with the academic concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Note Integration**\n\nI\u0027m translating the raw data, incorporating Slovenian terms like \"Raketni pogon\" and formula translations. I am building distinct sections for theory, formulas, and solved examples using LaTeX for formula rendering. I am focusing on the chronological lecture order. I am also implementing Wikilinks for note navigation and analysis comments.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Vrtilna Količina in Gibanje Togih Teles]]\n\n## [[Teorija]]\n\n### [[Raketni pogon (Princip potisne sile curka)]]\nRaketni pogon temelji na tretjem Newtonovem zakonu (zakon o akciji in reakciji) in zakonu o ohranitvi gibalne količine. Raketa pridobiva hitrost tako, da z veliko relativno hitrostjo izmeta maso (izgorele pline) v nasprotni smeri.\n\n**Izpeljava Raketne Enačbe (Ciolkovski):**\nPredpostavimo, da se raketa giblje v prostoru brez zunanjih sil (npr. gravitacije ali zračnega upora).\nCelotna gibalna količina sistema (raketa + gorivo) se ohranja.\n\nV opazovalnem sistemu, ki se giblje z raketo, opazujemo izmet majhnega delca goriva z maso $dm_c$ in relativno hitrostjo $v\u0027$. Sprememba gibalne količine tega delca povzroči silo na raketo, $F_c$.\n\nSila potiska, $F_c$, je enaka spremembi gibalne količine izpušnih plinov na časovno enoto:\n$$ F_c \u003d \\frac{dp_{izmet}}{dt} \u003d \\frac{dm_c}{dt} v\u0027 $$\nMasa izpuščenih plinov $dm_c$ je enaka negativni spremembi mase rakete $dm_r$:\n$$ dm_c \u003d -dm_r $$\nSila na raketo je torej:\n$$ F_c \u003d -\\frac{dm_r}{dt} v\u0027 $$\nTa sila pospešuje raketo z maso $m_r$:\n$$ F_c \u003d m_r \\cdot a \u003d m_r \\frac{dv}{dt} $$\nKo izenačimo obe enačbi za silo, dobimo:\n$$ m_r \\frac{dv}{dt} \u003d -\\frac{dm_r}{dt} v\u0027 $$\nLočimo spremenljivke:\n$$ dv \u003d -v\u0027 \\frac{dm_r}{m_r} $$\nTo enačbo integriramo od začetnega stanja (masa $m_0$, hitrost $v_0\u003d0$) do končnega stanja (masa $m_t$, hitrost $v$):\n$$ \\int_{0}^{v} dv \u003d -v\u0027 \\int_{m_0}^{m_t} \\frac{dm_r}{m_r} $$\n$$ v \\Big|_0^v \u003d -v\u0027 \\left[ \\ln(m_r) \\right]_{m_0}^{m_t} $$\n$$ v \u003d -v\u0027 (\\ln(m_t) - \\ln(m_0)) $$\n$$ v \u003d v\u0027 (\\ln(m_0) - \\ln(m_t)) $$\nKončna enačba za hitrost rakete je:\n$$ v \u003d v\u0027 \\ln\\left(\\frac{m_0}{m_t}\\right) $$\n\n### [[Vrtilna količina in Navor]]\n\n#### [[Točkasto Telo]]\n**Vrtilna količina** ($\\vec{\\Gamma}$) je vektorska količina, ki opisuje \"količino vrtenja\" telesa okoli izbranega osišča. Za točkasto telo z gibalno količino $\\vec{G} \u003d m\\vec{v}$ in krajevnim vektorjem $\\vec{r}$ glede na osišče je definirana kot:\n$$ \\vec{\\Gamma} \u003d \\vec{r} \\times \\vec{G} \u003d \\vec{r} \\times (m\\vec{v}) $$\n**Navor** ($\\vec{M}$) je vektorska količina, ki opisuje, kako zunanja sila $\\vec{F}$ povzroča vrtenje telesa okoli osišča:\n$$ \\vec{M} \u003d \\vec{r} \\times \\vec{F} $$\n**Izrek o vrtilni količini** povezuje navor s časovno spremembo vrtilne količine in je rotacijska analogija drugega Newtonovega zakona:\n$$ \\vec{M} \u003d \\frac{d\\vec{\\Gamma}}{dt} $$\nČe navor deluje v nekem časovnem intervalu, je njegov sunek enak spremembi vrtilne količine:\n$$ \\int_{t_1}^{t_2} \\vec{M} dt \u003d \\vec{\\Gamma}_2 - \\vec{\\Gamma}_1 $$\nZa kroženje točkastega telesa, kjer sta $\\vec{r}$ in $\\vec{v}$ pravokotna, je velikost vrtilne količine $\\Gamma \u003d mvr \u003d m(\\omega r)r \u003d (mr^2)\\omega \u003d J\\omega$.\n\n#### [[Sistem Točkastih Teles]]\nZa sistem več točkastih teles je skupna vrtilna količina vektorska vsota posameznih vrtilnih količin, enako velja za skupni navor:\n$$ \\vec{\\Gamma}_{skupna} \u003d \\sum_i \\vec{\\Gamma}_i \u003d \\sum_i m_i (\\vec{r}_i \\times \\vec{v}_i) $$\n$$ \\vec{M}_{skupni} \u003d \\sum_i \\vec{M}_i \u003d \\sum_i (\\vec{r}_i \\times \\vec{F}_i) $$\n\n#### [[Togo Telo]]\nZa togo telo, ki je zvezna porazdelitev mase, vsote preidejo v integrale:\n$$ \\vec{\\Gamma} \u003d \\int d\\vec{\\Gamma} \u003d \\int (\\vec{r} \\times \\vec{v}) dm $$\n$$ \\vec{M} \u003d \\int d\\vec{M} \u003d \\int (\\vec{r} \\times d\\vec{F}) $$\n\n### [[Vrtenje Toga Telesa Okoli Nepremične Osi]]\nPri vrtenju togega telesa okoli fiksne osi (npr. osi z) ima vsak delec mase $dm$ hitrost $\\vec{v}$, ki je pravokotna na razdaljo $r\u0027$ do osi vrtenja.\nKomponenta vrtilne količine v smeri osi vrtenja je:\n$$ d\\Gamma_z \u003d (r\u0027 dm v) \u003d r\u0027 dm (\\omega r\u0027) \u003d \\omega (r\u0027^2 dm) $$\nKer je $dJ_z \u003d r\u0027^2 dm$ prispevek k vztrajnostnemu momentu glede na os z, dobimo:\n$$ d\\Gamma_z \u003d \\omega \\cdot dJ_z $$\nZ integracijo po celem telesu dobimo:\n$$ \\Gamma_z \u003d \\omega J_z $$\n\u003e **Pomembno**: V splošnem primeru asimetričnega telesa vektor skupne vrtilne količine $\\vec{\\Gamma}$ **ni** nujno vzporeden z vektorjem kotne hitrosti $\\vec{\\omega}$. Zgornja enačba velja le za komponento vzdolž osi vrtenja.\n\n### [[Ohranitev Vrtilne Količine]]\nIz izreka o vrtilni količini ($\\vec{M} \u003d d\\vec{\\Gamma}/dt$) sledi, da če je vsota vseh zunanjih navorov na sistem enaka nič, se skupna vrtilna količina sistema ohranja:\n$$ \\sum \\vec{M}_{zun} \u003d 0 \\implies \\frac{d\\vec{\\Gamma}}{dt} \u003d 0 \\implies \\vec{\\Gamma} \u003d \\text{konst.} $$\nPrimer je drsalka, ki se vrti: ko skrči roke, zmanjša svoj vztrajnostni moment ($J\u0027 \u003c J$). Ker se mora vrtilna količina ($\\Gamma \u003d J\\omega$) ohraniti, se ji kotna hitrost poveča ($\\omega\u0027 \u003e \\omega$).\n\n### [[Gibanje v Težiščnem Sistemu (Gibajoče Osišče)]]\nSkupno vrtilno količino $\\vec{\\Gamma}$ togega telesa lahko razdelimo na dva dela:\n1.  **Tirna (orbitalna) vrtilna količina** ($\\vec{\\Gamma}_0$): Vrtilna količina težišča telesa okoli zunanjega osišča, kot da bi bila vsa masa zbrana v težišču.\n2.  **Lastna (spinska) vrtilna količina** ($\\vec{\\Gamma}^*$): Vrtilna količina telesa zaradi vrtenja okoli osi, ki poteka skozi njegovo težišče.\n$$ \\vec{\\Gamma} \u003d \\vec{\\Gamma}_0 + \\vec{\\Gamma}^* $$\nKjer je:\n$$ \\vec{\\Gamma}_0 \u003d M_{skupna}(\\vec{r}^* \\times \\vec{v}^*) \\quad \\text{in} \\quad \\vec{\\Gamma}^* \u003d \\int (\\vec{r}\u0027 \\times \\vec{v}\u0027) dm $$\n$\\vec{r}^*$ in $\\vec{v}^*$ sta lega in hitrost težišča, $\\vec{r}\u0027$ in $\\vec{v}\u0027$ pa sta relativna lega in hitrost delca glede na težišče.\n\n### [[Kotaljenje po Klancu]]\n\n#### [[Kotaljenje brez drsenja]]\nPri kotaljenju brez drsenja sta translacijsko in rotacijsko gibanje povezana preko pogoja $a^* \u003d \\alpha^* R$.\nEnačbi gibanja sta:\n1.  Translacija težišča: $m g \\sin\\beta - F_p \u003d m a^*$\n2.  Rotacija okoli težišča: $M^* \u003d R \\cdot F_p \u003d J^* \\alpha^*$\n\nRešitev sistema enačb da pospešek težišča:\n$$ a^* \u003d \\frac{g \\sin\\beta}{1 + \\frac{J^*}{mR^2}} $$\n\n#### [[Kotaljenje z drsenjem]]\nČe telo drsi, sila lepenja postane sila trenja ($F_{tr} \u003d k_d \\cdot F_N$). Translacija in rotacija nista več neposredno povezani z $a\u003d\\alpha R$.\n1.  Translacija težišča: $m g \\sin\\beta - k_d m g \\cos\\beta \u003d m a^*$\n2.  Rotacija okoli težišča: $M^* \u003d R \\cdot F_{tr} \u003d J^* \\alpha^*$\n\n## [[Splošne Formule]]\n- **Raketna Enačba**: $v \u003d v\u0027 \\ln\\left(\\frac{m_0}{m_t}\\right)$\n- **Vrtilna Količina (točka)**: $\\vec{\\Gamma} \u003d \\vec{r} \\times m\\vec{v}$\n- **Navor (točka)**: $\\vec{M} \u003d \\vec{r} \\times \\vec{F}$\n- **2. Newtonov Zakon za Vrtenje**: $\\vec{M}_{rez} \u003d \\frac{d\\vec{\\Gamma}}{dt}$\n- **Vrtilna Količina (togo telo, os z)**: $\\Gamma_z \u003d J_z \\omega$\n- **Ohranitev Vrtilne Količine**: Če $\\vec{M}_{zun} \u003d 0$, potem $\\vec{\\Gamma} \u003d \\text{konstanta}$.\n- **Kotaljenje brez drsenja (pogoj)**: $v^* \u003d \\omega R$, $a^* \u003d \\alpha R$\n- **Pospešek pri kotaljenju brez drsenja**: $a^* \u003d \\frac{g \\sin\\beta}{1 + \\frac{J^*}{mR^2}}$\n\n## [[Problemi in Primeri]]\n\n### [[Neuravnotežen rotor]]\nPrimer iz predavanja: Dve masi na lahki palici, ki se vrti okoli osi, ki ni njena simetrijska os. Čeprav je kotna hitrost $\\vec{\\omega}$ konstantna, se smer vektorja vrtilne količine $\\vec{\\Gamma}$ spreminja (kroži okoli osi vrtenja). Ker je $\\vec{M} \u003d d\\vec{\\Gamma}/dt$, je za ohranjanje takega vrtenja potreben zunanji navor, ki ga zagotavljajo ležaji osi. To je princip, zakaj je treba centrirati kolesa na avtomobilu (`vulkanizerji`), da se prepreči tresenje.\n\n### [[Ohranitev Vrtilne Količine: Človek na Vrtljivem Stolu]]\nPrimer prikazuje ohranitev vrtilne količine. Oseba sedi na vrtljivem stolu in drži vrteče se kolo (kolo ima vrtilno količino $\\vec{\\Gamma}_0$). Sistem (oseba + stol + kolo) je na začetku v mirovanju glede na podlago, zato je skupna vrtilna količina enaka $\\vec{\\Gamma}_{skupna} \u003d \\vec{\\Gamma}_0$.\nČe oseba obrne kolo na glavo, se smer vrtilne količine kolesa obrne ($\\vec{\\Gamma}\u0027_{kolo} \u003d -\\vec{\\Gamma}_0$).\nDa bi se ohranila skupna vrtilna količina, se mora sistem (oseba + stol) začeti vrteti z vrtilno količino $\\vec{\\Gamma}_{oseba}$:\n$$ \\vec{\\Gamma}_{skupna, zacetek} \u003d \\vec{\\Gamma}_0 $$\n$$ \\vec{\\Gamma}_{skupna, konec} \u003d \\vec{\\Gamma}_{oseba} + \\vec{\\Gamma}\u0027_{kolo} \u003d \\vec{\\Gamma}_{oseba} - \\vec{\\Gamma}_0 $$\nKer mora biti $\\vec{\\Gamma}_{skupna, zacetek} \u003d \\vec{\\Gamma}_{skupna, konec}$:\n$$ \\vec{\\Gamma}_0 \u003d \\vec{\\Gamma}_{oseba} - \\vec{\\Gamma}_0 \\implies \\vec{\\Gamma}_{oseba} \u003d 2\\vec{\\Gamma}_0 $$\nOseba in stol se začneta vrteti v prvotni smeri kolesa z dvakratno začetno vrtilno količino kolesa.\n\n## [[Kritična Analiza in Pripombe]]\n\n\u003e #### **Warning: Napaka v zapiskih pri kotaljenju**\n\u003e V zapiskih je pri izpeljavi pospeška za kotaljenje po klancu brez drsenja prišlo do napake v imenovalcu. Pravilna izpeljava je:\n\u003e $$ m g \\sin\\beta - F_p \u003d ma^* $$\n\u003e $$ F_p \u003d \\frac{J^* \\alpha^*}{R} \u003d \\frac{J^* (a^*/R)}{R} \u003d \\frac{J^* a^*}{R^2} $$\n\u003e Vstavimo $F_p$ v prvo enačbo:\n\u003e $$ mg \\sin\\beta - \\frac{J^* a^*}{R^2} \u003d ma^* $$\n\u003e $$ mg \\sin\\beta \u003d a^* \\left(m + \\frac{J^*}{R^2}\\right) $$\n\u003e $$ a^* \u003d \\frac{mg \\sin\\beta}{m(1 + \\frac{J^*}{mR^2})} \u003d \\frac{g \\sin\\beta}{1 + \\frac{J^*}{mR^2}} $$\n\u003e V zapiskih je v imenovalcu $1+mR^2$, kar je dimenzijsko napačno. Zgornja formula je pravilna.\n\n\u003e #### **Note to Self: Vektorska narava vrtilne količine**\n\u003e Vrtilna količina in navor sta vektorja. Njuna smer je ključna za razumevanje ohranitvenih zakonov. Smer se določi s pravilom desne roke. Pri primeru z vrtečim kolesom na stolu je ohranitev vektorske količine tista, ki pojasni gibanje.\n\n\u003e #### **Kritična Analiza: Splošna oblika $\\vec{\\Gamma}$ in $\\vec{\\omega}$**\n\u003e Predavanje in zapiski pravilno poudarjajo, da za splošno togo telo vektorja $\\vec{\\Gamma}$ in $\\vec{\\omega}$ nista nujno vzporedna. Enačba $\\vec{\\Gamma} \u003d J \\vec{\\omega}$ v vektorski obliki velja le za vrtenje okoli glavnih osi simetrije. V splošnem velja $\\vec{\\Gamma} \u003d \\mathbf{J} \\vec{\\omega}$, kjer je $\\mathbf{J}$ tenzor vztrajnosti. Enačba $\\Gamma_z \u003d J_z \\omega$ je skalarna oblika, ki velja za komponento vzdolž osi vrtenja in je tista, ki se najpogosteje uporablja pri problemih v tem kontekstu.\n\n\u003e #### **Memorialization: Demonstracije v živo**\n\u003e Predavatelj je za ponazoritev ohranitve vrtilne količine uporabil demonstracijo z vrtljivim stolom, utežmi (ponazoritev drsalke) in vrtečim se kolesom. To so klasični in zelo nazorni primeri, ki pomagajo pri vizualizaciji sicer abstraktnih konceptov.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3968,
+      "parts": [{
+        "text": "# [[Vrtilna Količina in Gibanje Togih Teles]]\n\n## [[Teorija]]\n\n###"
+      }, {
+        "text": " [[Raketni pogon (Princip potisne sile curka)]]\nRaketni pogon temelji na"
+      }, {
+        "text": " tretjem Newtonovem zakonu (zakon o akciji in reakciji) in zakonu o ohranitvi gib"
+      }, {
+        "text": "alne količine. Raketa pridobiva hitrost tako, da z veliko relativno hitrostjo izmeta mas"
+      }, {
+        "text": "o (izgorele pline) v nasprotni smeri.\n\n**Izpeljava Raketne Enač"
+      }, {
+        "text": "be (Ciolkovski):**\nPredpostavimo, da se raketa giblje v prostoru brez zunanjih sil"
+      }, {
+        "text": " (npr. gravitacije ali zračnega upora).\nCelotna gibalna količina sistema ("
+      }, {
+        "text": "raketa + gorivo) se ohranja.\n\nV opazovalnem sistemu, ki se giblje z"
+      }, {
+        "text": " raketo, opazujemo izmet majhnega delca goriva z maso $dm_c$ in"
+      }, {
+        "text": " relativno hitrostjo $v\u0027$. Sprememba gibalne količine tega delca povzroči silo na"
+      }, {
+        "text": " raketo, $F_c$.\n\nSila potiska, $F_c$, je enaka spremem"
+      }, {
+        "text": "bi gibalne količine izpušnih plinov na časovno enoto:\n$$ F_c \u003d \\"
+      }, {
+        "text": "frac{dp_{izmet}}{dt} \u003d \\frac{dm_c}{dt} v\u0027 $$\nM"
+      }, {
+        "text": "asa izpuščenih plinov $dm_c$ je enaka negativni spremembi mase rakete $"
+      }, {
+        "text": "dm_r$:\n$$ dm_c \u003d -dm_r $$\nSila na raketo je torej:"
+      }, {
+        "text": "\n$$ F_c \u003d -\\frac{dm_r}{dt} v\u0027 $$\nTa sila pospeš"
+      }, {
+        "text": "uje raketo z maso $m_r$:\n$$ F_c \u003d m_r \\cdot a \u003d m_r"
+      }, {
+        "text": " \\frac{dv}{dt} $$\nKo izenačimo obe enačbi za silo, dobimo:"
+      }, {
+        "text": "\n$$ m_r \\frac{dv}{dt} \u003d -\\frac{dm_r}{dt} v\u0027 $$\nLo"
+      }, {
+        "text": "čimo spremenljivke:\n$$ dv \u003d -v\u0027 \\frac{dm_r}{m_r"
+      }, {
+        "text": "} $$\nTo enačbo integriramo od začetnega stanja (masa $m_0$, hitrost $"
+      }, {
+        "text": "v_0\u003d0$) do končnega stanja (masa $m_t$, hitrost $v$"
+      }, {
+        "text": "):\n$$ \\int_{0}^{v} dv \u003d -v\u0027 \\int_{m_0}^{m_t} \\"
+      }, {
+        "text": "frac{dm_r}{m_r} $$\n$$ v \\Big|_0^v \u003d -v\u0027"
+      }, {
+        "text": " \\left[ \\ln(m_r) \\right]_{m_0}^{m_t} $$\n$$ v \u003d"
+      }, {
+        "text": " -v\u0027 (\\ln(m_t) - \\ln(m_0)) $$\n$$ v \u003d v\u0027 (\\"
+      }, {
+        "text": "ln(m_0) - \\ln(m_t)) $$\nKončna enačba za hitrost rakete je"
+      }, {
+        "text": ":\n$$ v \u003d v\u0027 \\ln\\left(\\frac{m_0}{m_t}\\right)"
+      }, {
+        "text": " $$\n\n### [[Vrtilna količina in Navor]]\n\n#### [[Točkasto Telo]]\n**"
+      }, {
+        "text": "Vrtilna količina** ($\\vec{\\Gamma}$) je vektorska količina, ki opisuje \"k"
+      }, {
+        "text": "oličino vrtenja\" telesa okoli izbranega osišča. Za točkasto telo z gib"
+      }, {
+        "text": "alno količino $\\vec{G} \u003d m\\vec{v}$ in krajevnim vektorjem $\\vec{r}$"
+      }, {
+        "text": " glede na osišče je definirana kot:\n$$ \\vec{\\Gamma} \u003d \\vec{r}"
+      }, {
+        "text": " \\times \\vec{G} \u003d \\vec{r} \\times (m\\vec{v}) $$\n**"
+      }, {
+        "text": "Navor** ($\\vec{M}$) je vektorska količina, ki opisuje, kako zunanja sila $\\"
+      }, {
+        "text": "vec{F}$ povzroča vrtenje telesa okoli osišča:\n$$ \\vec{M} \u003d"
+      }, {
+        "text": " \\vec{r} \\times \\vec{F} $$\n**Izrek o vrtilni količini**"
+      }, {
+        "text": " povezuje navor s časovno spremembo vrtilne količine in je rotacijska analogija drugega Newtonovega"
+      }, {
+        "text": " zakona:\n$$ \\vec{M} \u003d \\frac{d\\vec{\\Gamma}}{dt} $$\nČe"
+      }, {
+        "text": " navor deluje v nekem časovnem intervalu, je njegov sunek enak spremembi vrtilne količine"
+      }, {
+        "text": ":\n$$ \\int_{t_1}^{t_2} \\vec{M} dt \u003d \\vec{\\Gamma}_2"
+      }, {
+        "text": " - \\vec{\\Gamma}_1 $$\nZa kroženje točkastega telesa, kjer sta $\\vec{r"
+      }, {
+        "text": "}$ in $\\vec{v}$ pravokotna, je velikost vrtilne količine $\\Gamma \u003d mvr"
+      }, {
+        "text": " \u003d m(\\omega r)r \u003d (mr^2)\\omega \u003d J\\omega$.\n\n#### [[Sistem Točkastih Teles]]\nZa sistem več točkastih teles je skupna vrtilna količina vektorska vs"
+      }, {
+        "text": "ota posameznih vrtilnih količin, enako velja za skupni navor:\n$$ \\vec{\\"
+      }, {
+        "text": "Gamma}_{skupna} \u003d \\sum_i \\vec{\\Gamma}_i \u003d \\sum_i m_i (\\"
+      }, {
+        "text": "vec{r}_i \\times \\vec{v}_i) $$\n$$ \\vec{M}_{skup"
+      }, {
+        "text": "ni} \u003d \\sum_i \\vec{M}_i \u003d \\sum_i (\\vec{r}_i"
+      }, {
+        "text": " \\times \\vec{F}_i) $$\n\n#### [[Togo Telo]]\nZa togo telo, ki"
+      }, {
+        "text": " je zvezna porazdelitev mase, vsote preidejo v integrale:\n$$ \\vec{\\Gamma}"
+      }, {
+        "text": " \u003d \\int d\\vec{\\Gamma} \u003d \\int (\\vec{r} \\times \\vec{v}) dm"
+      }, {
+        "text": " $$\n$$ \\vec{M} \u003d \\int d\\vec{M} \u003d \\int (\\vec{r"
+      }, {
+        "text": "} \\times d\\vec{F}) $$\n\n### [[Vrtenje Toga Telesa Okoli Nepremične Osi]]\nPri vrtenju togega telesa okoli fiksne osi (npr."
+      }, {
+        "text": " osi z) ima vsak delec mase $dm$ hitrost $\\vec{v}$, ki je pravok"
+      }, {
+        "text": "otna na razdaljo $r\u0027$ do osi vrtenja.\nKomponenta vrtilne količine v"
+      }, {
+        "text": " smeri osi vrtenja je:\n$$ d\\Gamma_z \u003d (r\u0027 dm v) \u003d r\u0027"
+      }, {
+        "text": " dm (\\omega r\u0027) \u003d \\omega (r\u0027^2 dm) $$\nKer je $dJ_z \u003d"
+      }, {
+        "text": " r\u0027^2 dm$ prispevek k vztrajnostnemu momentu glede na os z, dobimo:\n$$"
+      }, {
+        "text": " d\\Gamma_z \u003d \\omega \\cdot dJ_z $$\nZ integracijo po celem telesu dob"
+      }, {
+        "text": "imo:\n$$ \\Gamma_z \u003d \\omega J_z $$\n\u003e **Pomembno**: V spl"
+      }, {
+        "text": "ošnem primeru asimetričnega telesa vektor skupne vrtilne količine $\\vec{\\Gamma}$ **"
+      }, {
+        "text": "ni** nujno vzporeden z vektorjem kotne hitrosti $\\vec{\\omega}$. Zgornja enač"
+      }, {
+        "text": "ba velja le za komponento vzdolž osi vrtenja.\n\n### [[Ohranitev Vrtilne Količine]]\nIz izreka o vrtilni količini ($\\vec{M} \u003d d\\vec{\\Gamma"
+      }, {
+        "text": "}/dt$) sledi, da če je vsota vseh zunanjih navorov na sistem enaka nič,"
+      }, {
+        "text": " se skupna vrtilna količina sistema ohranja:\n$$ \\sum \\vec{M}_{zun} \u003d 0"
+      }, {
+        "text": " \\implies \\frac{d\\vec{\\Gamma}}{dt} \u003d 0 \\implies \\vec{\\Gamma} \u003d"
+      }, {
+        "text": " \\text{konst.} $$\nPrimer je drsalka, ki se vrti: ko skrči roke,"
+      }, {
+        "text": " zmanjša svoj vztrajnostni moment ($J\u0027 \u003c J$). Ker se mora vrtilna količina ($\\"
+      }, {
+        "text": "Gamma \u003d J\\omega$) ohraniti, se ji kotna hitrost poveča ($\\omega\u0027 \u003e \\omega$)."
+      }, {
+        "text": "\n\n### [[Gibanje v Težiščnem Sistemu (Gibajoče Osišče)]]\nSk"
+      }, {
+        "text": "upno vrtilno količino $\\vec{\\Gamma}$ togega telesa lahko razdelimo na dva dela:\n"
+      }, {
+        "text": "1.  **Tirna (orbitalna) vrtilna količina** ($\\vec{\\Gamma}_0$):"
+      }, {
+        "text": " Vrtilna količina težišča telesa okoli zunanjega osišča, kot da"
+      }, {
+        "text": " bi bila vsa masa zbrana v težišču.\n2.  **Lastna (spinska) vrtil"
+      }, {
+        "text": "na količina** ($\\vec{\\Gamma}^*$): Vrtilna količina telesa zaradi vrtenja okoli"
+      }, {
+        "text": " osi, ki poteka skozi njegovo težišče.\n$$ \\vec{\\Gamma} \u003d \\"
+      }, {
+        "text": "vec{\\Gamma}_0 + \\vec{\\Gamma}^* $$\nKjer je:\n$$ \\vec{\\Gamma}_"
+      }, {
+        "text": "0 \u003d M_{skupna}(\\vec{r}^* \\times \\vec{v}^*) \\quad \\text{"
+      }, {
+        "text": "in} \\quad \\vec{\\Gamma}^* \u003d \\int (\\vec{r}\u0027 \\times \\vec{v}\u0027)"
+      }, {
+        "text": " dm $$\n$\\vec{r}^*$ in $\\vec{v}^*$ sta lega in hitrost težišča,"
+      }, {
+        "text": " $\\vec{r}\u0027$ in $\\vec{v}\u0027$ pa sta relativna lega in hitrost delca glede"
+      }, {
+        "text": " na težišče.\n\n### [[Kotaljenje po Klancu]]\n\n#### [[Kotaljenje brez drsenja]]\nPri kotaljenju brez drsenja sta translacijsko in rotacijsko gibanje pove"
+      }, {
+        "text": "zana preko pogoja $a^* \u003d \\alpha^* R$.\nEnačbi gibanja sta:\n1."
+      }, {
+        "text": "  Translacija težišča: $m g \\sin\\beta - F_p \u003d m a^*$\n2."
+      }, {
+        "text": "  Rotacija okoli težišča: $M^* \u003d R \\cdot F_p \u003d J^* \\alpha^*$"
+      }, {
+        "text": "\n\nRešitev sistema enačb da pospešek težišča:\n$$ a^* \u003d \\frac{"
+      }, {
+        "text": "g \\sin\\beta}{1 + \\frac{J^*}{mR^2}} $$\n\n#### [[Kotaljenje z drsenjem]]\nČe telo drsi, sila lepenja postane sila trenja ($"
+      }, {
+        "text": "F_{tr} \u003d k_d \\cdot F_N$). Translacija in rotacija nista več neposredno pove"
+      }, {
+        "text": "zani z $a\u003d\\alpha R$.\n1.  Translacija težišča: $m g \\sin\\"
+      }, {
+        "text": "beta - k_d m g \\cos\\beta \u003d m a^*$\n2.  Rotacija okoli težiš"
+      }, {
+        "text": "ča: $M^* \u003d R \\cdot F_{tr} \u003d J^* \\alpha^*$\n\n## [[Splošne Formule]]\n- **Raketna Enačba**: $v \u003d v\u0027 \\ln\\left(\\frac{m_"
+      }, {
+        "text": "0}{m_t}\\right)$\n- **Vrtilna Količina (točka)**: $\\"
+      }, {
+        "text": "vec{\\Gamma} \u003d \\vec{r} \\times m\\vec{v}$\n- **Navor (to"
+      }, {
+        "text": "čka)**: $\\vec{M} \u003d \\vec{r} \\times \\vec{F}$\n- **"
+      }, {
+        "text": "2. Newtonov Zakon za Vrtenje**: $\\vec{M}_{rez} \u003d \\frac{d\\vec{\\"
+      }, {
+        "text": "Gamma}}{dt}$\n- **Vrtilna Količina (togo telo, os z)**: $\\Gamma"
+      }, {
+        "text": "_z \u003d J_z \\omega$\n- **Ohranitev Vrtilne Količine**: Če"
+      }, {
+        "text": " $\\vec{M}_{zun} \u003d 0$, potem $\\vec{\\Gamma} \u003d \\text{konstanta"
+      }, {
+        "text": "}$.\n- **Kotaljenje brez drsenja (pogoj)**: $v^* \u003d \\omega R"
+      }, {
+        "text": "$, $a^* \u003d \\alpha R$\n- **Pospešek pri kotaljenju brez drsenja**:"
+      }, {
+        "text": " $a^* \u003d \\frac{g \\sin\\beta}{1 + \\frac{J^*}{mR^"
+      }, {
+        "text": "2}}$\n\n## [[Problemi in Primeri]]\n\n### [[Neuravnotežen rotor]]\nPrimer iz predavanja:"
+      }, {
+        "text": " Dve masi na lahki palici, ki se vrti okoli osi, ki ni njena sim"
+      }, {
+        "text": "etrijska os. Čeprav je kotna hitrost $\\vec{\\omega}$ konstantna, se smer vektorja vrt"
+      }, {
+        "text": "ilne količine $\\vec{\\Gamma}$ spreminja (kroži okoli osi vrtenja). Ker"
+      }, {
+        "text": " je $\\vec{M} \u003d d\\vec{\\Gamma}/dt$, je za ohranjanje takega vrtenja"
+      }, {
+        "text": " potreben zunanji navor, ki ga zagotavljajo ležaji osi. To je princip,"
+      }, {
+        "text": " zakaj je treba centrirati kolesa na avtomobilu (`vulkanizerji`), da se prepreči"
+      }, {
+        "text": " tresenje.\n\n### [[Ohranitev Vrtilne Količine: Človek na Vrtljivem Stolu]]\nPrimer prikazuje ohranitev vrtilne količine. Oseba sedi na vrtlj"
+      }, {
+        "text": "ivem stolu in drži vrteče se kolo (kolo ima vrtilno količino $\\vec{\\Gamma"
+      }, {
+        "text": "}_0$). Sistem (oseba + stol + kolo) je na začetku v mirovanju glede na pod"
+      }, {
+        "text": "lago, zato je skupna vrtilna količina enaka $\\vec{\\Gamma}_{skupna} \u003d \\vec{\\"
+      }, {
+        "text": "Gamma}_0$.\nČe oseba obrne kolo na glavo, se smer vrtilne količine k"
+      }, {
+        "text": "olesa obrne ($\\vec{\\Gamma}\u0027_{kolo} \u003d -\\vec{\\Gamma}_0$).\nDa bi"
+      }, {
+        "text": " se ohranila skupna vrtilna količina, se mora sistem (oseba + stol) začeti vrteti z"
+      }, {
+        "text": " vrtilno količino $\\vec{\\Gamma}_{oseba}$:\n$$ \\vec{\\Gamma}_{skupna, z"
+      }, {
+        "text": "acetek} \u003d \\vec{\\Gamma}_0 $$\n$$ \\vec{\\Gamma}_{skupna, konec} \u003d \\"
+      }, {
+        "text": "vec{\\Gamma}_{oseba} + \\vec{\\Gamma}\u0027_{kolo} \u003d \\vec{\\Gamma}_{ose"
+      }, {
+        "text": "ba} - \\vec{\\Gamma}_0 $$\nKer mora biti $\\vec{\\Gamma}_{skupna, zacet"
+      }, {
+        "text": "ek} \u003d \\vec{\\Gamma}_{skupna, konec}$:\n$$ \\vec{\\Gamma}_0 \u003d"
+      }, {
+        "text": " \\vec{\\Gamma}_{oseba} - \\vec{\\Gamma}_0 \\implies \\vec{\\Gamma}_{oseba} \u003d"
+      }, {
+        "text": " 2\\vec{\\Gamma}_0 $$\nOseba in stol se začneta vrteti v prvotni smeri"
+      }, {
+        "text": " kolesa z dvakratno začetno vrtilno količino kolesa.\n\n## [[Kritična Analiza in Pripombe]]\n\n\u003e #### **Warning: Napaka v zapiskih pri kotaljenju**"
+      }, {
+        "text": "\n\u003e V zapiskih je pri izpeljavi pospeška za kotaljenje po klancu brez"
+      }, {
+        "text": " drsenja prišlo do napake v imenovalcu. Pravilna izpeljava je:\n\u003e $$ m"
+      }, {
+        "text": " g \\sin\\beta - F_p \u003d ma^* $$\n\u003e $$ F_p \u003d \\frac{J^*"
+      }, {
+        "text": " \\alpha^*}{R} \u003d \\frac{J^* (a^*/R)}{R} \u003d \\frac{J^*"
+      }, {
+        "text": " a^*}{R^2} $$\n\u003e Vstavimo $F_p$ v prvo enačbo:\n\u003e"
+      }, {
+        "text": " $$ mg \\sin\\beta - \\frac{J^* a^*}{R^2} \u003d ma^* $$\n\u003e"
+      }, {
+        "text": " $$ mg \\sin\\beta \u003d a^* \\left(m + \\frac{J^*}{R^2}\\right"
+      }, {
+        "text": ") $$\n\u003e $$ a^* \u003d \\frac{mg \\sin\\beta}{m(1 + \\frac{J"
+      }, {
+        "text": "^*}{mR^2})} \u003d \\frac{g \\sin\\beta}{1 + \\frac{J^*"
+      }, {
+        "text": "}{mR^2}} $$\n\u003e V zapiskih je v imenovalcu $1+mR^2"
+      }, {
+        "text": "$, kar je dimenzijsko napačno. Zgornja formula je pravilna.\n\n\u003e #### **Note to Self"
+      }, {
+        "text": ": Vektorska narava vrtilne količine**\n\u003e Vrtilna količina in navor sta vektor"
+      }, {
+        "text": "ja. Njuna smer je ključna za razumevanje ohranitvenih zakonov. Smer se"
+      }, {
+        "text": " določi s pravilom desne roke. Pri primeru z vrtečim kolesom na stolu je"
+      }, {
+        "text": " ohranitev vektorske količine tista, ki pojasni gibanje.\n\n\u003e #### **Kritična Anal"
+      }, {
+        "text": "iza: Splošna oblika $\\vec{\\Gamma}$ in $\\vec{\\omega}$**\n\u003e Predavanje in"
+      }, {
+        "text": " zapiski pravilno poudarjajo, da za splošno togo telo vektorja $\\vec{\\Gamma}$"
+      }, {
+        "text": " in $\\vec{\\omega}$ nista nujno vzporedna. Enačba $\\vec{\\Gamma} \u003d"
+      }, {
+        "text": " J \\vec{\\omega}$ v vektorski obliki velja le za vrtenje okoli glavnih osi sim"
+      }, {
+        "text": "etrije. V splošnem velja $\\vec{\\Gamma} \u003d \\mathbf{J} \\vec{\\omega}$, kjer"
+      }, {
+        "text": " je $\\mathbf{J}$ tenzor vztrajnosti. Enačba $\\Gamma_z \u003d J_z \\omega"
+      }, {
+        "text": "$ je skalarna oblika, ki velja za komponento vzdolž osi vrtenja in je t"
+      }, {
+        "text": "ista, ki se najpogosteje uporablja pri problemih v tem kontekstu.\n\n\u003e #### **Memorialization"
+      }, {
+        "text": ": Demonstracije v živo**\n\u003e Predavatelj je za ponazoritev ohranitve vrtilne količine"
+      }, {
+        "text": " uporabil demonstracijo z vrtljivim stolom, utežmi (ponazoritev drsalke) in vr"
+      }, {
+        "text": "tečim se kolesom. To so klasični in zelo nazorni primeri, ki pomagajo pri viz"
+      }, {
+        "text": "ualizaciji sicer abstraktnih konceptov."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

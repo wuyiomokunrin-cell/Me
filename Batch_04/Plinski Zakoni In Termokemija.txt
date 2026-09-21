@@ -1,0 +1,540 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1vseGCBhubTp0nTJTYRMMSQoFiElNNkfd"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "16_x-Lm4jxHcxZHM2eGJ7cGJy8u3tIbt8"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1kiBIdSD7F7CvcLbLy0KBKhAIobgxt3JL"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1S-KM2J3-KkteqVpMvW9OzeRNKxZz-FYd"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1A0L1XLBDsP22VZpq_xHO3Qw6Xaj6VTCw"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1zB8VAwTg18JF8p5X40MygPshNwelbFSF"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1Wbs1-Lmut9l2kk9vPFK0X42dENvUfJL6"
+      },
+      "role": "user",
+      "tokenCount": 73698
+    }, {
+      "driveAudio": {
+        "id": "1jfflm-NPLLB3VTi9D0mnGyRRa24KzU19"
+      },
+      "role": "user",
+      "tokenCount": 188568
+    }, {
+      "text": "**Defining the Task**\n\nI\u0027m currently focused on defining the project\u0027s scope. My initial thoughts are centered on processing handwritten notes and an audio transcript from a chemistry lecture. My goal is to synthesize these into a well-organized Obsidian markdown note. I\u0027m prioritizing structuring the data so that it is easily analyzable later.\n\n\n**Refining the Approach**\n\nI\u0027ve made a leap in understanding the data. Analyzing the handwritten notes revealed the focus: a Born-Haber cycle equation and gas laws. Problem 9, comparing H2 and CO2, is key. I\u0027m now crafting a structured markdown note focusing on these core concepts.\n\n\n**Identifying Key Concepts**\n\nMy focus has shifted toward specific problems and concepts from the notes. I\u0027m prioritizing problems 9, 10, and 13, which deal with gas laws, kinetic energy, effusion, and the van der Waals equation. I\u0027ve also identified key thermochemical concepts. I\u0027ll need to link these concepts when creating the markdown.\n\n\n**Structuring the Content**\n\nI\u0027m now prioritizing the structure of the Obsidian markdown note, aiming for analytical accessibility.  I will be organizing the content around the identified problems and key concepts. I\u0027m focusing on creating clear sections for each problem and linking related thermochemical and gas law concepts.\n\n\n**Organizing the Input**\n\n\\n\\nI\u0027m now focusing on organizing the chemistry lecture notes and audio transcript. Analyzing the handwritten notes revealed key problems and concepts I will need to structure in the markdown note. I will emphasize the problems and key concepts, adding links where necessary, and making a streamlined, usable document. The audio transcript offers additional context.\n\n\n**Expanding the Scope**\n\nI\u0027m now expanding my scope to encompass the entire chemistry lecture content. I\u0027ve analyzed more problems: 1, 2, 3, 4, and 5, using thermochemistry principles, and the calculations align with those in the audio transcript. I\u0027ll need to create distinct sections within my markdown note. The next lecture section is about bond enthalpy.\n\n\n**Analyzing the Data**\n\nI\u0027m now diving deep into the content. I\u0027ve broken down the lecture notes and transcript, identifying key problems. My focus is on synthesizing them, integrating calculations for standard enthalpy, and constructing an organized, usable markdown document. I\u0027ll need to link related gas law and thermochemical concepts.\n\n\n**Refining the Structure**\n\n\\n\\nI\u0027m now prioritizing the note\u0027s structure, dividing it into sections for theory, problems, and solutions.  I\u0027ll start with gas laws, then the van der Waals equation, and thermochemistry, keeping the problems separated. I am syncing with the audio transcript. I\u0027ll need to create a clear link between these sections for analytical accessibility.  \n\n\n**Reorganizing the Sections**\n\nI\u0027ve reorganized the planned markdown structure to enhance clarity. Theory now comes first, followed by problems, and finally detailed solutions, improving the flow. I will start the markdown construction.\n\n\n**Expanding the Structure**\n\nI\u0027m now expanding the note structure to include a \"Critical Analysis\" section for each problem, as I think it\u0027ll improve the analytical accessibility of the content. I\u0027ll provide detailed step-by-step solutions with justifications, linking problems and theories for deeper understanding. The aim is to build a helpful study resource.\n\n\n**Organizing the Structure**\n\nI\u0027m currently finalizing the structure, creating sections for theory, problems, and solutions. Each problem will have a detailed breakdown, incorporating the lecturer\u0027s insights from the audio transcript. I am adding justifications for each step in solutions, and critical analysis to enhance the note\u0027s analytical value. My focus is still making this a helpful study aid.\n\n\n**Finalizing Structure and Content**\n\nI\u0027m now prioritizing the completion of the markdown note, incorporating all sections: theory, problems, solutions, and critical analysis. I\u0027m leveraging the full audio transcript to ensure comprehensive explanations, particularly for problems 4 and 5. I\u0027m focusing on LaTeX formatting for equations and adding links for cross-referencing concepts.\n\n\n**Expanding Solution Details**\n\nI\u0027ve made significant progress organizing and structuring the content. I\u0027m now crafting the \"Metode Reševanja in Rešitve\" (Solution Methods \u0026 Solutions) section. I\u0027m carefully incorporating the lecturer\u0027s insights from the audio transcript into each problem\u0027s step-by-step solution. My focus is on clear justifications and explanations. The next step involves LaTeX formatting for equations and adding critical analysis.\n\n\n",
+      "role": "model",
+      "tokenCount": 3765,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Defining the Task**\n\nI\u0027m currently focused on defining the project\u0027s scope. My initial thoughts are centered on processing handwritten notes and an audio transcript from a chemistry lecture. My goal is to synthesize these into a well-organized Obsidian markdown note. I\u0027m prioritizing structuring the data so that it is easily analyzable later.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Approach**\n\nI\u0027ve made a leap in understanding the data. Analyzing the handwritten notes revealed the focus: a Born-Haber cycle equation and gas laws. Problem 9, comparing H2 and CO2, is key. I\u0027m now crafting a structured markdown note focusing on these core concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Identifying Key Concepts**\n\nMy focus has shifted toward specific problems and concepts from the notes. I\u0027m prioritizing problems 9, 10, and 13, which deal with gas laws, kinetic energy, effusion, and the van der Waals equation. I\u0027ve also identified key thermochemical concepts. I\u0027ll need to link these concepts when creating the markdown.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Content**\n\nI\u0027m now prioritizing the structure of the Obsidian markdown note, aiming for analytical accessibility.  I will be organizing the content around the identified problems and key concepts. I\u0027m focusing on creating clear sections for each problem and linking related thermochemical and gas law concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Input**\n\n\\n\\nI\u0027m now focusing on organizing the chemistry lecture notes and audio transcript. Analyzing the handwritten notes revealed key problems and concepts I will need to structure in the markdown note. I will emphasize the problems and key concepts, adding links where necessary, and making a streamlined, usable document. The audio transcript offers additional context.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding the Scope**\n\nI\u0027m now expanding my scope to encompass the entire chemistry lecture content. I\u0027ve analyzed more problems: 1, 2, 3, 4, and 5, using thermochemistry principles, and the calculations align with those in the audio transcript. I\u0027ll need to create distinct sections within my markdown note. The next lecture section is about bond enthalpy.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Data**\n\nI\u0027m now diving deep into the content. I\u0027ve broken down the lecture notes and transcript, identifying key problems. My focus is on synthesizing them, integrating calculations for standard enthalpy, and constructing an organized, usable markdown document. I\u0027ll need to link related gas law and thermochemical concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Structure**\n\n\\n\\nI\u0027m now prioritizing the note\u0027s structure, dividing it into sections for theory, problems, and solutions.  I\u0027ll start with gas laws, then the van der Waals equation, and thermochemistry, keeping the problems separated. I am syncing with the audio transcript. I\u0027ll need to create a clear link between these sections for analytical accessibility.  \n\n\n",
+        "thought": true
+      }, {
+        "text": "**Reorganizing the Sections**\n\nI\u0027ve reorganized the planned markdown structure to enhance clarity. Theory now comes first, followed by problems, and finally detailed solutions, improving the flow. I will start the markdown construction.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding the Structure**\n\nI\u0027m now expanding the note structure to include a \"Critical Analysis\" section for each problem, as I think it\u0027ll improve the analytical accessibility of the content. I\u0027ll provide detailed step-by-step solutions with justifications, linking problems and theories for deeper understanding. The aim is to build a helpful study resource.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Structure**\n\nI\u0027m currently finalizing the structure, creating sections for theory, problems, and solutions. Each problem will have a detailed breakdown, incorporating the lecturer\u0027s insights from the audio transcript. I am adding justifications for each step in solutions, and critical analysis to enhance the note\u0027s analytical value. My focus is still making this a helpful study aid.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing Structure and Content**\n\nI\u0027m now prioritizing the completion of the markdown note, incorporating all sections: theory, problems, solutions, and critical analysis. I\u0027m leveraging the full audio transcript to ensure comprehensive explanations, particularly for problems 4 and 5. I\u0027m focusing on LaTeX formatting for equations and adding links for cross-referencing concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding Solution Details**\n\nI\u0027ve made significant progress organizing and structuring the content. I\u0027m now crafting the \"Metode Reševanja in Rešitve\" (Solution Methods \u0026 Solutions) section. I\u0027m carefully incorporating the lecturer\u0027s insights from the audio transcript into each problem\u0027s step-by-step solution. My focus is on clear justifications and explanations. The next step involves LaTeX formatting for equations and adding critical analysis.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Plini in Termokemija]]\n\n# [[Teorija]]\n\n## [[Plinski Zakoni]]\n\n### [[Boyle-Mariottov Zakon]]\nOpisuje razmerje med tlakom in prostornino plina pri konstantni temperaturi ($T\u003dkonst.$).\n$$ P_1 V_1 \u003d P_2 V_2 \\quad \\text{ali} \\quad P \\cdot V \u003d \\text{konstanta} $$\n*   **Razlaga:** Če se prostornina plina zmanjša, se število trkov delcev ob steno posode poveča, kar posledično poveča tlak. Obratno velja, če se prostornina poveča. Tlak in prostornina sta v obratnem sorazmerju.\n\n### [[Gay-Lussacov Zakon]]\nOpisuje razmerje med tlakom in temperaturo plina pri konstantni prostornini ($V\u003dkonst.$).\n$$ \\frac{P_1}{T_1} \u003d \\frac{P_2}{T_2} \\quad \\text{ali} \\quad \\frac{P}{T} \u003d \\text{konstanta} $$\n*   **Razlaga:** S povečanjem temperature se poveča kinetična energija delcev, kar vodi do močnejših in pogostejših trkov ob steno posode. Posledično tlak naraste. Tlak in absolutna temperatura sta v premem sorazmerju.\n\n### [[Kinetična Teorija Plinov]]\n*   Hitrost delcev je povezana z višanjem temperature. Višja kot je temperatura, hitreje se gibljejo delci.\n*   Pri višji temperaturi se mora volumen povečati, da ohranimo konstanten tlak (ker hitrejši delci povzročajo večji tlak).\n*   Če pa se pri višji temperaturi volumen ne more povečati (konstantna prostornina), se tlak poveča.\n\n## [[Realni Plini - Van der Waalsova Enačba]]\nIdealna plinska enačba ($PV\u003dnRT$) ne upošteva lastnega volumna delcev in medmolekulskih sil. Van der Waalsova enačba to popravi.\n$$ \\left( P + \\frac{a \\cdot n^2}{V^2} \\right) (V - n \\cdot b) \u003d nRT $$\n*   **Korekcijski faktor `a`:** Upošteva privlačne sile med molekulami, ki zmanjšujejo tlak, ki bi ga plin sicer imel.\n*   **Korekcijski faktor `b`:** Upošteva lastni volumen molekul plina, ki zmanjšuje efektivno prostornino, v kateri se lahko gibljejo.\n\n## [[Termokemija]]\n\n### [[Entalpija (H)]]\nEntalpija je merilo za celotno toplotno vsebnost sistema. Sprememba entalpije ($\\Delta H$) je toplota, ki se sprosti ali porabi med procesom pri konstantnem tlaku.\n\n### [[Standardna Reakcijska Entalpija (ΔH°r)]]\nJe sprememba entalpije, ko reaktanti v standardnih stanjih v celoti reagirajo v produkte v standardnih stanjih. Izračuna se kot razlika med vsoto standardnih tvorbenih entalpij produktov in vsoto standardnih tvorbenih entalpij reaktantov, upoštevajoč stehiometrične koeficiente.\n$$ \\Delta H_{r}^{\\circ} \u003d \\sum \\Delta H_{f}^{\\circ}(\\text{produkti}) - \\sum \\Delta H_{f}^{\\circ}(\\text{reaktanti}) $$\n\n### [[Eksotermne in Endotermne Reakcije]]\n*   **Endotermna reakcija:** Sistem porablja toploto iz okolice. $\\Delta H \u003e 0$.\n*   **Eksotermna reakcija:** Sistem sprošča toploto v okolico. $\\Delta H \u003c 0$.\n\n### [[Hesov Zakon]]\nCelotna sprememba entalpije za določeno reakcijo je neodvisna od poti reakcije in je enaka vsoti sprememb entalpij posameznih korakov, v katere lahko reakcijo razdelimo.\n\n## [[Vezna in Mrežna Entalpija]]\n\n### [[Vezna Entalpija]]\n*To je nova tema, ki jo bomo razširili v ločeni datoteki.*\n\n### [[Mrežna Entalpija (Born-Habrov Cikel)]]\nMrežna entalpija ($\\Delta H_{mrežna}$ ali $\\Delta H_{LATTICE}$) je sprememba entalpije, ko iz plinastih ionov nastane en mol ionskega kristala. Povezana je z ostalimi entalpijskimi spremembami preko Born-Habrovega cikla:\n$$ \\Delta H_{L} + \\Delta H_{hydr} \u003d \\Delta H_{sub} + I_{ion} + \\Delta H_{dissoc} + E_{el. af.} $$\n\n---\n\n# [[Naloge]]\n\n*   **Naloga 1:** Izračunajte $\\Delta H_{r}^{\\circ}$ za reakcijo: $C_2H_5OH(l) + 3O_2(g) \\rightarrow 2CO_2(g) + 3H_2O(g)$. Podatki: $\\Delta H_{f}^{\\circ}(C_2H_5OH) \u003d -277,6 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(O_2) \u003d 0 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(CO_2) \u003d -393,1 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(H_2O) \u003d -241,8 \\, \\text{kJ/mol}$.\n*   **Naloga 2:** Izračunajte $\\Delta H_{f}^{\\circ}$ za metan ($CH_4$) na podlagi naslednjih reakcij:\n    1. $C(s) + O_2(g) \\rightarrow CO_2(g) \\quad \\Delta H \u003d -393,5 \\, \\text{kJ/mol}$\n    2. $H_2(g) + \\frac{1}{2}O_2(g) \\rightarrow H_2O(l) \\quad \\Delta H \u003d -285,8 \\, \\text{kJ/mol}$\n    3. $CH_4(g) + 2O_2(g) \\rightarrow CO_2(g) + 2H_2O(l) \\quad \\Delta H \u003d -890,3 \\, \\text{kJ/mol}$\n*   **Naloga 3:** Katero gorivo je bolj učinkovito, hidrazin ($N_2H_4$) ali dimetilhidrazin ($N_2H_2(CH_3)_2$)? Podatki: $\\Delta H_{f}^{\\circ}(N_2H_4) \u003d +50,6 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(N_2H_2(CH_3)_2) \u003d +42 \\, \\text{kJ/mol}$ (ocena), $\\Delta H_{f}^{\\circ}(CO_2) \u003d -394 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(H_2O) \u003d -242 \\, \\text{kJ/mol}$.\n*   **Naloga 4:** Za reakcijo $CO(g) + H_2O(g) \\rightarrow CO_2(g) + H_2(g)$ je podana $\\Delta H_{r} \u003d -40,9 \\, \\text{kJ/mol}$. Izračunajte standardno tvorbeno entalpijo ogljikovega monoksida. Podatki: $\\Delta H_{f}^{\\circ}(H_2O) \u003d -241,8 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(CO_2) \u003d -393,5 \\, \\text{kJ/mol}$.\n*   **Naloga 5:** Koliko toplote (Q) v kJ se sprosti, če popolnoma zgori 10 g metanola ($CH_3OH$)? Podatki: $\\Delta H_{f}^{\\circ}(CH_3OH) \u003d -238,6 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(CO_2) \u003d -393,5 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(H_2O) \u003d -241,8 \\, \\text{kJ/mol}$.\n*   **Naloga 9:** V dveh enakih posodah sta plina $H_2$ in $CO_2$ pri $0^\\circ C$. Tlak vodika je $100 \\, kPa$, tlak ogljikovega dioksida pa $200 \\, kPa$. Primerjajte: a) povprečno kinetično energijo molekul, b) povprečno hitrost molekul, c) število molekul v posodah.\n*   **Naloga 10:** V enakih posodah so pri isti temperaturi enake množine plinov: $H_2, He, O_2, CO_2, SF_6, CH_4$. Ugotovite, kateri plin ima: a) največjo gostoto, b) najpočasnejšo efuzijo, c) najmanj delcev v steni posode, d) kateri plin je najhitrejši, e) kateri ima največjo $W_k$ (kinetično energijo).\n*   **Naloga 13:** Za 1 mol $CO_2$ pri $48^\\circ C$ je molska prostornina $V_m \u003d 1,32 \\, L$. Izračunajte tlak po Van der Waalsovi in idealni plinski enačbi. Podatki: $a \u003d 3,59 \\, \\text{atm} \\cdot L^2/\\text{mol}^2$, $b \u003d 0,0427 \\, L/\\text{mol}$.\n\n---\n# [[Metode Reševanja in Rešitve]]\n\n## [[Rešitev Naloge 9]]\n**Podatki:** $V_1 \u003d V_2$, $T_1 \u003d T_2 \u003d 0^\\circ C$, $P(H_2) \u003d 100 \\, \\text{kPa}$, $P(CO_2) \u003d 200 \\, \\text{kPa}$.\n*   **a) Povprečna kinetična energija ($E_k$)**:\n    *   **Metoda:** Kinetična energija plinskih molekul je odvisna **samo** od absolutne temperature.\n    *   **Rešitev:** Ker sta oba plina pri enaki temperaturi ($T(H_2) \u003d T(CO_2)$), je njuna povprečna kinetična energija **enaka**. ($E_k(H_2) \u003d E_k(CO_2)$).\n*   **b) Povprečna hitrost molekul ($v$)**:\n    *   **Metoda:** Povprečna hitrost je odvisna od temperature in molske mase ($v_{rms} \u003d \\sqrt{\\frac{3RT}{M}}$). Pri enaki temperaturi imajo lažje molekule višjo povprečno hitrost.\n    *   **Rešitev:** Molska masa $CO_2$ ($44 \\, \\text{g/mol}$) je večja od molske mase $H_2$ ($2 \\, \\text{g/mol}$). Zato se molekule $H_2$ gibljejo **hitreje**.\n*   **c) Število molekul ($n$)**:\n    *   **Metoda:** Uporabimo idealno plinsko enačbo $PV\u003dnRT$. Izrazimo število molov: $n \u003d \\frac{PV}{RT}$.\n    *   **Rešitev:** Ker sta $V$, $R$ in $T$ za obe posodi enaka, je število molov odvisno le od tlaka.\n      $$ \\frac{n(CO_2)}{n(H_2)} \u003d \\frac{P(CO_2)}{P(H_2)} \u003d \\frac{200 \\, \\text{kPa}}{100 \\, \\text{kPa}} \u003d 2 $$\n      V posodi z ogljikovim dioksidom je **dvakrat več** molekul kot v posodi z vodikom.\n\n## [[Rešitev Naloge 13]]\n**Podatki:** $n\u003d1 \\, \\text{mol}$, $T\u003d48^\\circ C \u003d 321 \\, K$, $V\u003d1,32 \\, L$, $a\u003d3,59 \\, \\text{atm} \\cdot L^2/\\text{mol}^2$, $b\u003d0,0427 \\, L/\\text{mol}$.\n*   **a) Van der Waalsova enačba**:\n    *   **Metoda:** Preuredimo enačbo, da izrazimo tlak $P$.\n      $$ P \u003d \\frac{nRT}{V-nb} - \\frac{an^2}{V^2} $$\n    *   **Rešitev:** Vstavimo vrednosti:\n      $$ P \u003d \\frac{1 \\cdot 0,08207 \\cdot 321}{1,32 - 1 \\cdot 0,0427} - \\frac{3,59 \\cdot 1^2}{1,32^2} \\approx 18,56 \\, \\text{atm} $$\n*   **b) Idealna plinska enačba**:\n    *   **Metoda:** Uporabimo osnovno obliko $PV\u003dnRT$.\n      $$ P \u003d \\frac{nRT}{V} $$\n    *   **Rešitev:** Vstavimo vrednosti:\n      $$ P \u003d \\frac{1 \\cdot 0,08207 \\cdot 321}{1,32} \\approx 19,958 \\, \\text{atm} $$\n*   **[[Kritična Analiza]]**: Tlak, izračunan po Van der Waalsovi enačbi, je nižji od idealnega. To je smiselno, saj pri teh pogojih (relativno visok tlak in nizka temperatura) medmolekulske privlačne sile ($a$ faktor) zmanjšajo dejanski tlak, ki ga plin izvaja na stene posode.\n\n## [[Rešitev Naloge 1]]\n**Reakcija:** $C_2H_5OH(l) + 3O_2(g) \\rightarrow 2CO_2(g) + 3H_2O(g)$\n*   **Metoda:** Uporabimo formulo za izračun standardne reakcijske entalpije.\n    $$ \\Delta H_{r}^{\\circ} \u003d \\left[ 2 \\cdot \\Delta H_{f}^{\\circ}(CO_2) + 3 \\cdot \\Delta H_{f}^{\\circ}(H_2O) \\right] - \\left[ 1 \\cdot \\Delta H_{f}^{\\circ}(C_2H_5OH) + 3 \\cdot \\Delta H_{f}^{\\circ}(O_2) \\right] $$\n*   **Rešitev:**\n    $$ \\Delta H_{r}^{\\circ} \u003d [2(-393,1) + 3(-241,8)] - [1(-277,6) + 3(0)] $$\n    $$ \\Delta H_{r}^{\\circ} \u003d [-786,2 - 725,4] - [-277,6] \u003d -1511,6 + 277,6 \u003d -1234 \\, \\text{kJ/mol} $$\n    *V zapiskih je uporabljen $\\Delta H_{f}^{\\circ}(CO_2) \u003d -393.1$, kar je točneje. Rezultat v zapiskih je pravilen glede na uporabljene vrednosti.*\n\n## [[Rešitev Naloge 2]]\n**Ciljna reakcija:** $C(s) + 2H_2(g) \\rightarrow CH_4(g)$\n*   **Metoda:** Uporabimo Hesov zakon. Podane reakcije bomo seštevali in obračali tako, da bo njihova vsota enaka ciljni reakciji.\n    1. $C(s) + O_2(g) \\rightarrow CO_2(g) \\quad (\\Delta H \u003d -393,5)$\n    2. $H_2(g) + \\frac{1}{2}O_2(g) \\rightarrow H_2O(l) \\quad (\\Delta H \u003d -285,8)$\n    3. $CH_4(g) + 2O_2(g) \\rightarrow CO_2(g) + 2H_2O(l) \\quad (\\Delta H \u003d -890,3)$\n*   **Koraki reševanja:**\n    1. Reakcijo (1) pustimo nespremenjeno.\n    2. Reakcijo (2) pomnožimo z 2, ker v ciljni reakciji potrebujemo $2H_2$. Tudi $\\Delta H$ se pomnoži z 2.\n    3. Reakcijo (3) obrnemo, ker mora biti $CH_4$ produkt, ne reaktant. Predznak $\\Delta H$ se spremeni.\n*   **Seštevanje:**\n    $C(s) + O_2(g) \\rightarrow CO_2(g) \\quad (\\Delta H \u003d -393,5)$\n    $2H_2(g) + O_2(g) \\rightarrow 2H_2O(l) \\quad (\\Delta H \u003d 2 \\cdot -285,8 \u003d -571,6)$\n    $CO_2(g) + 2H_2O(l) \\rightarrow CH_4(g) + 2O_2(g) \\quad (\\Delta H \u003d +890,3)$\n    ------------------------------------------------------------------\n    **Vsota:** $C(s) + 2H_2(g) \\rightarrow CH_4(g)$\n    **$\\Delta H_{f}^{\\circ}(CH_4)$**: $-393,5 - 571,6 + 890,3 \u003d -74,8 \\, \\text{kJ/mol}$\n    *V zapiskih je majhna napaka pri računanju (uporabljen je -285.5 namesto -285.8), ampak postopek je pravilen.*\n\n## [[Rešitev Naloge 4]]\n*   **Kontekst iz avdia:** Predavateljica razlaga to nalogo. Poudari, da je $\\Delta H_f$ za elemente v standardnem stanju (kot je $H_2(g)$) enaka nič.\n*   **Reakcija:** $CO(g) + H_2O(g) \\rightarrow CO_2(g) + H_2(g), \\quad \\Delta H_r \u003d -40,9 \\, \\text{kJ/mol}$\n*   **Metoda:** Uporabimo formulo za $\\Delta H_r$ in jo preuredimo, da izrazimo neznano tvorbeno entalpijo $\\Delta H_f(CO)$, ki jo označimo z $x$.\n    $$ \\Delta H_r \u003d \\left[\\Delta H_f(CO_2) + \\Delta H_f(H_2)\\right] - \\left[\\Delta H_f(CO) + \\Delta H_f(H_2O)\\right] $$\n*   **Rešitev:**\n    $$ -40,9 \u003d \\left[(-393,5) + 0\\right] - \\left[x + (-241,8)\\right] $$\n    $$ -40,9 \u003d -393,5 - x + 241,8 $$\n    $$ x \u003d -393,5 + 241,8 + 40,9 \u003d -110,8 \\, \\text{kJ/mol} $$\n\n## [[Rešitev Naloge 5]]\n*   **Kontekst iz avdia:** Predavateljica razloži, da moramo najprej izračunati standardno entalpijo zgorevanja za **en mol** metanola, nato pa to vrednost uporabiti za izračun sproščene toplote za 10g.\n*   **1. korak: Izračun $\\Delta H_{r}^{\\circ}$ za 1 mol metanola**\n    *   Reakcija: $CH_3OH(l) + \\frac{3}{2}O_2(g) \\rightarrow CO_2(g) + 2H_2O(g)$\n    *   $\\Delta H_{r}^{\\circ} \u003d [\\Delta H_f(CO_2) + 2 \\cdot \\Delta H_f(H_2O)] - [\\Delta H_f(CH_3OH) + \\frac{3}{2}\\Delta H_f(O_2)]$\n    *   $\\Delta H_{r}^{\\circ} \u003d [-393,5 + 2(-241,8)] - [-238,6 + 0] \u003d -638,5 \\, \\text{kJ/mol}$\n*   **2. korak: Izračun množine 10g metanola**\n    *   Molska masa $M(CH_3OH) \u003d 12,01 + 4(1,01) + 16,00 \u003d 32,05 \\, \\text{g/mol}$ (v zapiskih je 32)\n    *   $n(CH_3OH) \u003d \\frac{m}{M} \u003d \\frac{10 \\, \\text{g}}{32 \\, \\text{g/mol}} \u003d 0,3125 \\, \\text{mol}$\n*   **3. korak: Izračun sproščene toplote (Q)**\n    *   $Q \u003d n \\cdot \\Delta H_{r}^{\\circ}$\n    *   $Q \u003d 0,3125 \\, \\text{mol} \\cdot (-638,5 \\, \\text{kJ/mol}) \u003d -199,53 \\, \\text{kJ}$\n    *   Sprosti se $199,53 \\, \\text{kJ}$ toplote.\n\n---\n# [[Splošne Formule]]\n*   **Boyle-Mariottov Zakon:** $P_1V_1 \u003d P_2V_2$\n*   **Gay-Lussacov Zakon:** $\\frac{P_1}{T_1} \u003d \\frac{P_2}{T_2}$\n*   **Idealna Plinska Enačba:** $PV \u003d nRT$\n*   **Van der Waalsova Enačba:** $\\left( P + \\frac{an^2}{V^2} \\right) (V - nb) \u003d nRT$\n*   **Povprečna Kinetična Energija:** $E_k \u003d \\frac{1}{2}mv^2$\n*   **RMS Hitrost:** $v_{rms} \u003d \\sqrt{\\frac{3RT}{M}}$\n*   **Standardna Reakcijska Entalpija:** $\\Delta H_{r}^{\\circ} \u003d \\sum \\Delta H_{f}^{\\circ}(\\text{produkti}) - \\sum \\Delta H_{f}^{\\circ}(\\text{reaktanti})$\n*   **Toplota Reakcije:** $Q \u003d n \\cdot \\Delta H_r$",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 5484,
+      "parts": [{
+        "text": "# [[Plini in Termokemija]]\n\n# [[Teorija]]\n\n## [[Plinski Zakoni]]\n\n"
+      }, {
+        "text": "### [[Boyle-Mariottov Zakon]]\nOpisuje razmerje med tlakom in prostornino pl"
+      }, {
+        "text": "ina pri konstantni temperaturi ($T\u003dkonst.$).\n$$ P_1 V_1 \u003d P_"
+      }, {
+        "text": "2 V_2 \\quad \\text{ali} \\quad P \\cdot V \u003d \\text{konstanta} $$"
+      }, {
+        "text": "\n*   **Razlaga:** Če se prostornina plina zmanjša, se število tr"
+      }, {
+        "text": "kov delcev ob steno posode poveča, kar posledično poveča tlak. Obratno velja, če se"
+      }, {
+        "text": " prostornina poveča. Tlak in prostornina sta v obratnem sorazmerju.\n\n### [[Gay-Lussacov Zakon]]\nOpisuje razmerje med tlakom in temperaturo plina"
+      }, {
+        "text": " pri konstantni prostornini ($V\u003dkonst.$).\n$$ \\frac{P_1}{T_"
+      }, {
+        "text": "1} \u003d \\frac{P_2}{T_2} \\quad \\text{ali} \\quad \\frac{P"
+      }, {
+        "text": "}{T} \u003d \\text{konstanta} $$\n*   **Razlaga:** S povečanjem temperature se"
+      }, {
+        "text": " poveča kinetična energija delcev, kar vodi do močnejših in pogostejših tr"
+      }, {
+        "text": "kov ob steno posode. Posledično tlak naraste. Tlak in absolutna temperatura sta v premem"
+      }, {
+        "text": " sorazmerju.\n\n### [[Kinetična Teorija Plinov]]\n*   Hitrost delcev je"
+      }, {
+        "text": " povezana z višanjem temperature. Višja kot je temperatura, hitreje se gibljejo delci."
+      }, {
+        "text": "\n*   Pri višji temperaturi se mora volumen povečati, da ohranimo konstanten tlak (ker hit"
+      }, {
+        "text": "rejši delci povzročajo večji tlak).\n*   Če pa se pri višji temperaturi"
+      }, {
+        "text": " volumen ne more povečati (konstantna prostornina), se tlak poveča.\n\n## [[Realni Plini - Van der Waalsova Enačba]]\nIdealna plinska enačba ($PV\u003dnRT$) ne up"
+      }, {
+        "text": "ošteva lastnega volumna delcev in medmolekulskih sil. Van der Waalsova enačba to"
+      }, {
+        "text": " popravi.\n$$ \\left( P + \\frac{a \\cdot n^2}{V^2} \\right)"
+      }, {
+        "text": " (V - n \\cdot b) \u003d nRT $$\n*   **Korekcijski faktor `a`:** U"
+      }, {
+        "text": "pošteva privlačne sile med molekulami, ki zmanjšujejo tlak, ki bi ga pl"
+      }, {
+        "text": "in sicer imel.\n*   **Korekcijski faktor `b`:** Upošteva last"
+      }, {
+        "text": "ni volumen molekul plina, ki zmanjšuje efektivno prostornino, v kateri se lahko gibljejo"
+      }, {
+        "text": ".\n\n## [[Termokemija]]\n\n### [[Entalpija (H)]]\nEntalpija je mer"
+      }, {
+        "text": "ilo za celotno toplotno vsebnost sistema. Sprememba entalpije ($\\Delta H$) je topl"
+      }, {
+        "text": "ota, ki se sprosti ali porabi med procesom pri konstantnem tlaku.\n\n### [[Standardna Reakcijska Entalpija (ΔH°r)]]\nJe sprememba entalpije, ko reaktanti v"
+      }, {
+        "text": " standardnih stanjih v celoti reagirajo v produkte v standardnih stanjih. Izračuna se kot"
+      }, {
+        "text": " razlika med vsoto standardnih tvorbenih entalpij produktov in vsoto standardnih tvorbenih entalp"
+      }, {
+        "text": "ij reaktantov, upoštevajoč stehiometrične koeficiente.\n$$ \\Delta H"
+      }, {
+        "text": "_{r}^{\\circ} \u003d \\sum \\Delta H_{f}^{\\circ}(\\text{produkti}) - \\sum"
+      }, {
+        "text": " \\Delta H_{f}^{\\circ}(\\text{reaktanti}) $$\n\n### [[Eksotermne in Endotermne Reakcije]]\n*   **Endotermna reakcija:** Sistem porablja toploto iz"
+      }, {
+        "text": " okolice. $\\Delta H \u003e 0$.\n*   **Eksotermna reakcija:** Sistem sp"
+      }, {
+        "text": "rošča toploto v okolico. $\\Delta H \u003c 0$.\n\n### [[Hesov Zakon]]"
+      }, {
+        "text": "\nCelotna sprememba entalpije za določeno reakcijo je neodvisna od poti reak"
+      }, {
+        "text": "cije in je enaka vsoti sprememb entalpij posameznih korakov, v katere lahko reak"
+      }, {
+        "text": "cijo razdelimo.\n\n## [[Vezna in Mrežna Entalpija]]\n\n### [[Vezna Entalpija]]\n*To je nova tema, ki jo bomo razširili v ločeni dat"
+      }, {
+        "text": "oteki.*\n\n### [[Mrežna Entalpija (Born-Habrov Cikel)]]\nMrežna entalp"
+      }, {
+        "text": "ija ($\\Delta H_{mrežna}$ ali $\\Delta H_{LATTICE}$) je sprememba entalp"
+      }, {
+        "text": "ije, ko iz plinastih ionov nastane en mol ionskega kristala. Povezana je z ost"
+      }, {
+        "text": "alimi entalpijskimi spremembami preko Born-Habrovega cikla:\n$$ \\Delta H_{L}"
+      }, {
+        "text": " + \\Delta H_{hydr} \u003d \\Delta H_{sub} + I_{ion} + \\Delta H_{"
+      }, {
+        "text": "dissoc} + E_{el. af.} $$\n\n---\n\n# [[Naloge]]\n\n*   **N"
+      }, {
+        "text": "aloga 1:** Izračunajte $\\Delta H_{r}^{\\circ}$ za reakcijo: $C_2"
+      }, {
+        "text": "H_5OH(l) + 3O_2(g) \\rightarrow 2CO_2("
+      }, {
+        "text": "g) + 3H_2O(g)$. Podatki: $\\Delta H_{f}^{\\circ}(C"
+      }, {
+        "text": "_2H_5OH) \u003d -277,6 \\, \\text{kJ/mol}$, $\\Delta H"
+      }, {
+        "text": "_{f}^{\\circ}(O_2) \u003d 0 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ"
+      }, {
+        "text": "}(CO_2) \u003d -393,1 \\, \\text{kJ/mol}$, $\\Delta H_{"
+      }, {
+        "text": "f}^{\\circ}(H_2O) \u003d -241,8 \\, \\text{kJ/mol}$."
+      }, {
+        "text": "\n*   **Naloga 2:** Izračunajte $\\Delta H_{f}^{\\circ}$ za metan"
+      }, {
+        "text": " ($CH_4$) na podlagi naslednjih reakcij:\n    1. $C(s) + O_2"
+      }, {
+        "text": "(g) \\rightarrow CO_2(g) \\quad \\Delta H \u003d -393,5 \\, \\text{"
+      }, {
+        "text": "kJ/mol}$\n    2. $H_2(g) + \\frac{1}{2}O"
+      }, {
+        "text": "_2(g) \\rightarrow H_2O(l) \\quad \\Delta H \u003d -285,8"
+      }, {
+        "text": " \\, \\text{kJ/mol}$\n    3. $CH_4(g) + 2O_2("
+      }, {
+        "text": "g) \\rightarrow CO_2(g) + 2H_2O(l) \\quad \\Delta"
+      }, {
+        "text": " H \u003d -890,3 \\, \\text{kJ/mol}$\n*   **Naloga 3:**"
+      }, {
+        "text": " Katero gorivo je bolj učinkovito, hidrazin ($N_2H_4$) ali dimetilhid"
+      }, {
+        "text": "razin ($N_2H_2(CH_3)_2$)? Podatki: $\\Delta H_{f"
+      }, {
+        "text": "}^{\\circ}(N_2H_4) \u003d +50,6 \\, \\text{kJ/mol}$,"
+      }, {
+        "text": " $\\Delta H_{f}^{\\circ}(N_2H_2(CH_3)_2) \u003d +4"
+      }, {
+        "text": "2 \\, \\text{kJ/mol}$ (ocena), $\\Delta H_{f}^{\\circ}(CO_2"
+      }, {
+        "text": ") \u003d -394 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(H_2O"
+      }, {
+        "text": ") \u003d -242 \\, \\text{kJ/mol}$.\n*   **Naloga 4:**"
+      }, {
+        "text": " Za reakcijo $CO(g) + H_2O(g) \\rightarrow CO_2(g)"
+      }, {
+        "text": " + H_2(g)$ je podana $\\Delta H_{r} \u003d -40,9 \\, \\"
+      }, {
+        "text": "text{kJ/mol}$. Izračunajte standardno tvorbeno entalpijo ogljikovega monoksida."
+      }, {
+        "text": " Podatki: $\\Delta H_{f}^{\\circ}(H_2O) \u003d -241,8"
+      }, {
+        "text": " \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(CO_2) \u003d -39"
+      }, {
+        "text": "3,5 \\, \\text{kJ/mol}$.\n*   **Naloga 5:** Koliko topl"
+      }, {
+        "text": "ote (Q) v kJ se sprosti, če popolnoma zgori 10 g metanola ($CH_"
+      }, {
+        "text": "3OH$)? Podatki: $\\Delta H_{f}^{\\circ}(CH_3OH) \u003d -2"
+      }, {
+        "text": "38,6 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(CO_2)"
+      }, {
+        "text": " \u003d -393,5 \\, \\text{kJ/mol}$, $\\Delta H_{f}^{\\circ}(H"
+      }, {
+        "text": "_2O) \u003d -241,8 \\, \\text{kJ/mol}$.\n*   **N"
+      }, {
+        "text": "aloga 9:** V dveh enakih posodah sta plina $H_2$ in $CO_2"
+      }, {
+        "text": "$ pri $0^\\circ C$. Tlak vodika je $100 \\, kPa$, tlak ogljikovega"
+      }, {
+        "text": " dioksida pa $200 \\, kPa$. Primerjajte: a) povprečno kinetično energijo"
+      }, {
+        "text": " molekul, b) povprečno hitrost molekul, c) število molekul v posodah.\n"
+      }, {
+        "text": "*   **Naloga 10:** V enakih posodah so pri isti temperaturi enake množine"
+      }, {
+        "text": " plinov: $H_2, He, O_2, CO_2, SF_6, CH_4$. U"
+      }, {
+        "text": "gotovite, kateri plin ima: a) največjo gostoto, b) najpočasnejšo"
+      }, {
+        "text": " efuzijo, c) najmanj delcev v steni posode, d) kateri plin je najhit"
+      }, {
+        "text": "rejši, e) kateri ima največjo $W_k$ (kinetično energijo).\n*   "
+      }, {
+        "text": "**Naloga 13:** Za 1 mol $CO_2$ pri $48^\\circ C"
+      }, {
+        "text": "$ je molska prostornina $V_m \u003d 1,32 \\, L$. Izračunajte tlak po"
+      }, {
+        "text": " Van der Waalsovi in idealni plinski enačbi. Podatki: $a \u003d 3,59"
+      }, {
+        "text": " \\, \\text{atm} \\cdot L^2/\\text{mol}^2$, $b \u003d 0,"
+      }, {
+        "text": "0427 \\, L/\\text{mol}$.\n\n---\n# [[Metode Reševanja in Rešitve]]\n\n## [[Rešitev Naloge 9]]\n**Podatki:** $V_1 \u003d V_2$,"
+      }, {
+        "text": " $T_1 \u003d T_2 \u003d 0^\\circ C$, $P(H_2) \u003d 10"
+      }, {
+        "text": "0 \\, \\text{kPa}$, $P(CO_2) \u003d 200 \\, \\text{kPa"
+      }, {
+        "text": "}$.\n*   **a) Povprečna kinetična energija ($E_k$)**:\n    *"
+      }, {
+        "text": "   **Metoda:** Kinetična energija plinskih molekul je odvisna **samo** od absolut"
+      }, {
+        "text": "ne temperature.\n    *   **Rešitev:** Ker sta oba plina pri enaki temperaturi ($T("
+      }, {
+        "text": "H_2) \u003d T(CO_2)$), je njuna povprečna kinetična energija **"
+      }, {
+        "text": "enaka**. ($E_k(H_2) \u003d E_k(CO_2)$).\n*   **b"
+      }, {
+        "text": ") Povprečna hitrost molekul ($v$)**:\n    *   **Metoda:** Povprečna hitrost je od"
+      }, {
+        "text": "visna od temperature in molske mase ($v_{rms} \u003d \\sqrt{\\frac{3RT}{M}}$). Pri"
+      }, {
+        "text": " enaki temperaturi imajo lažje molekule višjo povprečno hitrost.\n    *   **Re"
+      }, {
+        "text": "šitev:** Molska masa $CO_2$ ($44 \\, \\text{g/mol}$) je večja"
+      }, {
+        "text": " od molske mase $H_2$ ($2 \\, \\text{g/mol}$). Zato se molekule $H"
+      }, {
+        "text": "_2$ gibljejo **hitreje**.\n*   **c) Število molekul ($n"
+      }, {
+        "text": "$)**:\n    *   **Metoda:** Uporabimo idealno plinsko enačbo $PV\u003dnRT"
+      }, {
+        "text": "$. Izrazimo število molov: $n \u003d \\frac{PV}{RT}$.\n    *   **Reš"
+      }, {
+        "text": "itev:** Ker sta $V$, $R$ in $T$ za obe posodi enaka, je število mol"
+      }, {
+        "text": "ov odvisno le od tlaka.\n      $$ \\frac{n(CO_2)}{n(H_2)}"
+      }, {
+        "text": " \u003d \\frac{P(CO_2)}{P(H_2)} \u003d \\frac{200 \\,"
+      }, {
+        "text": " \\text{kPa}}{100 \\, \\text{kPa}} \u003d 2 $$\n      V posodi z"
+      }, {
+        "text": " ogljikovim dioksidom je **dvakrat več** molekul kot v posodi z vodikom.\n\n##"
+      }, {
+        "text": " [[Rešitev Naloge 13]]\n**Podatki:** $n\u003d1 \\, \\text{mol}$,"
+      }, {
+        "text": " $T\u003d48^\\circ C \u003d 321 \\, K$, $V\u003d1,32 \\, L$, $"
+      }, {
+        "text": "a\u003d3,59 \\, \\text{atm} \\cdot L^2/\\text{mol}^2$, $b"
+      }, {
+        "text": "\u003d0,0427 \\, L/\\text{mol}$.\n*   **a) Van der Waalsova enač"
+      }, {
+        "text": "ba**:\n    *   **Metoda:** Preuredimo enačbo, da izrazimo tlak $P$."
+      }, {
+        "text": "\n      $$ P \u003d \\frac{nRT}{V-nb} - \\frac{an^2}{V"
+      }, {
+        "text": "^2} $$\n    *   **Rešitev:** Vstavimo vrednosti:\n      $$ P \u003d \\frac"
+      }, {
+        "text": "{1 \\cdot 0,08207 \\cdot 321}{1,32 - 1 \\"
+      }, {
+        "text": "cdot 0,0427} - \\frac{3,59 \\cdot 1^2}{"
+      }, {
+        "text": "1,32^2} \\approx 18,56 \\, \\text{atm} $$\n*   **b"
+      }, {
+        "text": ") Idealna plinska enačba**:\n    *   **Metoda:** Uporabimo osnovno ob"
+      }, {
+        "text": "liko $PV\u003dnRT$.\n      $$ P \u003d \\frac{nRT}{V} $$\n    *   **"
+      }, {
+        "text": "Rešitev:** Vstavimo vrednosti:\n      $$ P \u003d \\frac{1 \\cdot 0,"
+      }, {
+        "text": "08207 \\cdot 321}{1,32} \\approx 19,9"
+      }, {
+        "text": "58 \\, \\text{atm} $$\n*   **[[Kritična Analiza]]**: Tlak,"
+      }, {
+        "text": " izračunan po Van der Waalsovi enačbi, je nižji od idealnega. To je smiselno,"
+      }, {
+        "text": " saj pri teh pogojih (relativno visok tlak in nizka temperatura) medmolekulske privlačne"
+      }, {
+        "text": " sile ($a$ faktor) zmanjšajo dejanski tlak, ki ga plin izvaja na stene posode.\n\n"
+      }, {
+        "text": "## [[Rešitev Naloge 1]]\n**Reakcija:** $C_2H_5OH(l"
+      }, {
+        "text": ") + 3O_2(g) \\rightarrow 2CO_2(g) + 3H"
+      }, {
+        "text": "_2O(g)$\n*   **Metoda:** Uporabimo formulo za izračun standardne"
+      }, {
+        "text": " reakcijske entalpije.\n    $$ \\Delta H_{r}^{\\circ} \u003d \\left[ 2 \\cdot \\Delta H_{f}^{\\circ}(CO_2) + 3 \\cdot \\Delta H_{f}^{\\circ}(H_2O) \\right] - \\left[ 1 \\cdot \\Delta H_{f}^{\\circ}(C_2H_5OH) + 3 \\cdot \\Delta H_{f}^{\\circ}(O_2) \\right] $$\n*   **Rešitev:**\n    $$ \\Delta H_{r}^{\\circ}"
+      }, {
+        "text": " \u003d [2(-393,1) + 3(-241,8)] - [1(-277,6) + 3(0)] $$\n    $$ \\Delta H_{r}^{\\circ}"
+      }, {
+        "text": " \u003d [-786,2 - 725,4] - [-277,6] \u003d -"
+      }, {
+        "text": "1511,6 + 277,6 \u003d -1234 \\, \\text{kJ/mol}"
+      }, {
+        "text": " $$\n    *V zapiskih je uporabljen $\\Delta H_{f}^{\\circ}(CO_2) \u003d"
+      }, {
+        "text": " -393.1$, kar je točneje. Rezultat v zapiskih je pravilen glede na uporab"
+      }, {
+        "text": "ljene vrednosti.*\n\n## [[Rešitev Naloge 2]]\n**Ciljna reakcija:** $"
+      }, {
+        "text": "C(s) + 2H_2(g) \\rightarrow CH_4(g)$\n*   "
+      }, {
+        "text": "**Metoda:** Uporabimo Hesov zakon. Podane reakcije bomo seštevali in obračali tako,"
+      }, {
+        "text": " da bo njihova vsota enaka ciljni reakciji.\n    1. $C(s) + O_2"
+      }, {
+        "text": "(g) \\rightarrow CO_2(g) \\quad (\\Delta H \u003d -393,5)$"
+      }, {
+        "text": "\n    2. $H_2(g) + \\frac{1}{2}O_2(g"
+      }, {
+        "text": ") \\rightarrow H_2O(l) \\quad (\\Delta H \u003d -285,8)$\n"
+      }, {
+        "text": "    3. $CH_4(g) + 2O_2(g) \\rightarrow CO_2"
+      }, {
+        "text": "(g) + 2H_2O(l) \\quad (\\Delta H \u003d -890,"
+      }, {
+        "text": "3)$\n*   **Koraki reševanja:**\n    1. Reakcijo (1) pustimo"
+      }, {
+        "text": " nespremenjeno.\n    2. Reakcijo (2) pomnožimo z 2, ker"
+      }, {
+        "text": " v ciljni reakciji potrebujemo $2H_2$. Tudi $\\Delta H$ se pomnoži z "
+      }, {
+        "text": "2.\n    3. Reakcijo (3) obrnemo, ker mora biti $CH_4"
+      }, {
+        "text": "$ produkt, ne reaktant. Predznak $\\Delta H$ se spremeni.\n*   **Seštevanje:**\n"
+      }, {
+        "text": "    $C(s) + O_2(g) \\rightarrow CO_2(g) \\quad (\\Delta"
+      }, {
+        "text": " H \u003d -393,5)$\n    $2H_2(g) + O_2("
+      }, {
+        "text": "g) \\rightarrow 2H_2O(l) \\quad (\\Delta H \u003d 2 \\cdot -285"
+      }, {
+        "text": ",8 \u003d -571,6)$\n    $CO_2(g) + 2H_2O("
+      }, {
+        "text": "l) \\rightarrow CH_4(g) + 2O_2(g) \\quad (\\Delta H"
+      }, {
+        "text": " \u003d +890,3)$\n    ------------------------------------------------------------------\n    **Vsota:** $C(s) +"
+      }, {
+        "text": " 2H_2(g) \\rightarrow CH_4(g)$\n    **$\\Delta H_{f"
+      }, {
+        "text": "}^{\\circ}(CH_4)$**: $-393,5 - 571,6 + 890,"
+      }, {
+        "text": "3 \u003d -74,8 \\, \\text{kJ/mol}$\n    *V zapiskih je maj"
+      }, {
+        "text": "hna napaka pri računanju (uporabljen je -285.5 namesto -28"
+      }, {
+        "text": "5.8), ampak postopek je pravilen.*\n\n## [[Rešitev Naloge 4]]\n*   "
+      }, {
+        "text": "**Kontekst iz avdia:** Predavateljica razlaga to nalogo. Poudari, da je $\\"
+      }, {
+        "text": "Delta H_f$ za elemente v standardnem stanju (kot je $H_2(g)$) en"
+      }, {
+        "text": "aka nič.\n*   **Reakcija:** $CO(g) + H_2O(g)"
+      }, {
+        "text": " \\rightarrow CO_2(g) + H_2(g), \\quad \\Delta H_r \u003d -40,"
+      }, {
+        "text": "9 \\, \\text{kJ/mol}$\n*   **Metoda:** Uporabimo formulo za $\\"
+      }, {
+        "text": "Delta H_r$ in jo preuredimo, da izrazimo neznano tvorbeno entalpijo $\\Delta H"
+      }, {
+        "text": "_f(CO)$, ki jo označimo z $x$.\n    $$ \\Delta H_r \u003d \\left[\\Delta H_f(CO_2) + \\Delta H_f(H_2)\\right] - \\"
+      }, {
+        "text": "left[\\Delta H_f(CO) + \\Delta H_f(H_2O)\\right] $$"
+      }, {
+        "text": "\n*   **Rešitev:**\n    $$ -40,9 \u003d \\left[(-393,5) + 0\\right] - \\left[x + (-241,8)\\right] $$\n"
+      }, {
+        "text": "    $$ -40,9 \u003d -393,5 - x + 241,8 $$\n    $$"
+      }, {
+        "text": " x \u003d -393,5 + 241,8 + 40,9 \u003d -1"
+      }, {
+        "text": "10,8 \\, \\text{kJ/mol} $$\n\n## [[Rešitev Naloge 5]]\n*"
+      }, {
+        "text": "   **Kontekst iz avdia:** Predavateljica razloži, da moramo najprej"
+      }, {
+        "text": " izračunati standardno entalpijo zgorevanja za **en mol** metanola, nato pa to vred"
+      }, {
+        "text": "nost uporabiti za izračun sproščene toplote za 10g.\n*   **1. kor"
+      }, {
+        "text": "ak: Izračun $\\Delta H_{r}^{\\circ}$ za 1 mol metanola**\n    *   "
+      }, {
+        "text": "Reakcija: $CH_3OH(l) + \\frac{3}{2}O_2(g) \\"
+      }, {
+        "text": "rightarrow CO_2(g) + 2H_2O(g)$\n    *   $\\Delta H"
+      }, {
+        "text": "_{r}^{\\circ} \u003d [\\Delta H_f(CO_2) + 2 \\cdot \\Delta H_f(H_2O)] - [\\Delta H_f(CH_3OH) + \\frac{3}{2}\\Delta H_f(O_2)]$\n    *   $\\Delta H_{r}^{\\circ} \u003d [-393,5 + 2(-241,8)] - [-238,6 + 0] \u003d -638,5 \\, \\text{kJ/mol}$\n*   **2. korak"
+      }, {
+        "text": ": Izračun množine 10g metanola**\n    *   Molska masa $M(CH_3"
+      }, {
+        "text": "OH) \u003d 12,01 + 4(1,01) + 16,00"
+      }, {
+        "text": " \u003d 32,05 \\, \\text{g/mol}$ (v zapiskih je 32)"
+      }, {
+        "text": "\n    *   $n(CH_3OH) \u003d \\frac{m}{M} \u003d \\frac{10 \\,"
+      }, {
+        "text": " \\text{g}}{32 \\, \\text{g/mol}} \u003d 0,3125 \\,"
+      }, {
+        "text": " \\text{mol}$\n*   **3. korak: Izračun sproščene toplote ("
+      }, {
+        "text": "Q)**\n    *   $Q \u003d n \\cdot \\Delta H_{r}^{\\circ}$\n    *   "
+      }, {
+        "text": "$Q \u003d 0,3125 \\, \\text{mol} \\cdot (-638,5"
+      }, {
+        "text": " \\, \\text{kJ/mol}) \u003d -199,53 \\, \\text{kJ}$\n    *   S"
+      }, {
+        "text": "prosti se $199,53 \\, \\text{kJ}$ toplote.\n\n---\n# [[Splošne Formule]]\n*   **Boyle-Mariottov Zakon:** $P_1V_1"
+      }, {
+        "text": " \u003d P_2V_2$\n*   **Gay-Lussacov Zakon:** $\\frac{P_"
+      }, {
+        "text": "1}{T_1} \u003d \\frac{P_2}{T_2}$\n*   **Idealna"
+      }, {
+        "text": " Plinska Enačba:** $PV \u003d nRT$\n*   **Van der Waalsova Enačba"
+      }, {
+        "text": ":** $\\left( P + \\frac{an^2}{V^2} \\right) (V - nb) \u003d n"
+      }, {
+        "text": "RT$\n*   **Povprečna Kinetična Energija:** $E_k \u003d \\frac{1}{"
+      }, {
+        "text": "2}mv^2$\n*   **RMS Hitrost:** $v_{rms} \u003d \\sqrt{\\frac"
+      }, {
+        "text": "{3RT}{M}}$\n*   **Standardna Reakcijska Entalpija:** $\\Delta H_{"
+      }, {
+        "text": "r}^{\\circ} \u003d \\sum \\Delta H_{f}^{\\circ}(\\text{produkti}) - \\sum \\"
+      }, {
+        "text": "Delta H_{f}^{\\circ}(\\text{reaktanti})$\n*   **Toplota Reakcije:** $"
+      }, {
+        "text": "Q \u003d n \\cdot \\Delta H_r$"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

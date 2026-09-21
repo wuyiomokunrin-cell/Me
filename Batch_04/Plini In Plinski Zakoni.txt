@@ -1,0 +1,507 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes to know:\n1. The user\u0027s files (metadata) are chronologically labeled, so the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other, given the topic.\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT PROTOCOL**\n\n1.  **Initial Output Protocol:** Begin your response *only* with the content note itself. Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The foundational structure of the notes must accurately reflect the material presented (what was said/seen). Your first duty is to record the lecturer\u0027s content and the user\u0027s notes, **as they are**. Minimal AI interjection should occur in the main body; use dedicated analytical sections for added insight.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  **Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5.  **Conceptual Strengthening Tasks (NEW):** At the conclusion of the synthesized notes, generate a section of \u0027Conceptual Strengthening Tasks\u0027. These tasks must:\n    *   Mimic the structure and difficulty of the examples/problems presented in the current lecture material.\n    *   Include \u0027Challenges\u0027 designed to connect the current university concepts with foundational knowledge from high school or prior courses, forcing the user to utilize a broad, integrated understanding.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a highly knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1LJSugahyLXH3nLXPl0HKAtPWu9WOisq1"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1oebODDZSvlpXzVuG4Wrh3wKUIYj5qnkD"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveDocument": {
+        "id": "11CwBqKNTXBNkD_QVrzUcFs9qVWBVuZJ4"
+      },
+      "role": "user",
+      "tokenCount": 2839
+    }, {
+      "driveAudio": {
+        "id": "1dN7cWa_bwQbruNLNt32iiFSF5M4DWJJO"
+      },
+      "role": "user",
+      "tokenCount": 139368
+    }, {
+      "text": "3. Predavanje Splosna kemija Seminar. janja stergar. \nPlini\nnote: I left early. so fill in the blanks.",
+      "role": "user",
+      "tokenCount": 34
+    }, {
+      "text": "**Dissecting the Query**\n\nI\u0027ve been breaking down the user\u0027s request. My focus now is on extracting the core information from the chemistry content. I\u0027m prioritizing the identification of key concepts related to gases and gas laws within the provided materials.\n\n\n**Identifying Key Components**\n\nI\u0027m currently identifying the critical components of the user\u0027s request, focusing on the various source materials. I\u0027m prioritizing understanding how the lecture slides, handwritten notes, and audio transcript relate, to create a structured outline. This includes recognizing the mathematical equations and concepts.\n\n\n**Formulating the Structure**\n\nCurrently, I\u0027m working to organize the information. My latest focus is on the lecture slides and handwritten notes. I\u0027ve begun transcribing the slides into a structured outline within the Obsidian format. I\u0027m also carefully integrating the handwritten calculations as examples that illustrate the concepts presented in the slides, ensuring LaTeX formatting for all formulas and equations.\n\n\n**Integrating Example Problems**\n\nI\u0027m currently focused on integrating the handwritten notes into the Obsidian outline. I\u0027m prioritizing adding example problems to illustrate the core concepts from the lecture slides. The goal is to create a seamless flow between theory and application, with clear, step-by-step explanations of the calculations. I\u0027m ensuring all formulas use LaTeX for consistency.\n\n\n**Initiating Note Construction**\n\nI\u0027m now starting to build the Obsidian note itself, drawing from the user\u0027s request. My focus now is on organizing the lecture slide content and integrating the example problems from the handwritten notes, ensuring proper LaTeX formatting for all formulas and equations. I\u0027m also planning to highlight any areas where the handwritten calculations deviate from precise values, and I\u0027ll include the memorialization note within the appropriate section.\n\n\n**Constructing Obsidian Note**\n\nI\u0027m now implementing the note structure in Obsidian, starting with the lecture slides as the organizational framework. I\u0027m focusing on transcribing and ensuring proper LaTeX formatting for all equations and formulas. I will incorporate the handwritten examples as illustrations under relevant sections, ensuring clear explanations for each step. The memorialization note will be integrated as appropriate. I\u0027m planning to use wikilinks for all headers.\n\n\n**Developing the Obsidian Note**\n\nI\u0027ve initiated the direct construction of the Obsidian note. My current focus is integrating the core content from the lecture slides, organizing it into a structured outline using wikilinks for all headers and subheaders. I\u0027m prioritizing the LaTeX formatting of all formulas and equations, and I\u0027ll include the memorialization note as appropriate. I\u0027m also planning to create the new example problems.\n\n\n**Implementing the Plan**\n\nI\u0027m now putting my plan into action. I\u0027ve started constructing the Obsidian note, beginning with the main title and the memorialization note. I\u0027m focusing on processing the lecture slides, transcribing the content and formulas into LaTeX, and then integrating the handwritten notes as illustrative examples. I\u0027ll include \u0027Note to Self\u0027 or \u0027Warning\u0027 blocks when calculations deviate.\n\n\n",
+      "role": "model",
+      "tokenCount": 1922,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Dissecting the Query**\n\nI\u0027ve been breaking down the user\u0027s request. My focus now is on extracting the core information from the chemistry content. I\u0027m prioritizing the identification of key concepts related to gases and gas laws within the provided materials.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Identifying Key Components**\n\nI\u0027m currently identifying the critical components of the user\u0027s request, focusing on the various source materials. I\u0027m prioritizing understanding how the lecture slides, handwritten notes, and audio transcript relate, to create a structured outline. This includes recognizing the mathematical equations and concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Structure**\n\nCurrently, I\u0027m working to organize the information. My latest focus is on the lecture slides and handwritten notes. I\u0027ve begun transcribing the slides into a structured outline within the Obsidian format. I\u0027m also carefully integrating the handwritten calculations as examples that illustrate the concepts presented in the slides, ensuring LaTeX formatting for all formulas and equations.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Example Problems**\n\nI\u0027m currently focused on integrating the handwritten notes into the Obsidian outline. I\u0027m prioritizing adding example problems to illustrate the core concepts from the lecture slides. The goal is to create a seamless flow between theory and application, with clear, step-by-step explanations of the calculations. I\u0027m ensuring all formulas use LaTeX for consistency.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Initiating Note Construction**\n\nI\u0027m now starting to build the Obsidian note itself, drawing from the user\u0027s request. My focus now is on organizing the lecture slide content and integrating the example problems from the handwritten notes, ensuring proper LaTeX formatting for all formulas and equations. I\u0027m also planning to highlight any areas where the handwritten calculations deviate from precise values, and I\u0027ll include the memorialization note within the appropriate section.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing Obsidian Note**\n\nI\u0027m now implementing the note structure in Obsidian, starting with the lecture slides as the organizational framework. I\u0027m focusing on transcribing and ensuring proper LaTeX formatting for all equations and formulas. I will incorporate the handwritten examples as illustrations under relevant sections, ensuring clear explanations for each step. The memorialization note will be integrated as appropriate. I\u0027m planning to use wikilinks for all headers.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Obsidian Note**\n\nI\u0027ve initiated the direct construction of the Obsidian note. My current focus is integrating the core content from the lecture slides, organizing it into a structured outline using wikilinks for all headers and subheaders. I\u0027m prioritizing the LaTeX formatting of all formulas and equations, and I\u0027ll include the memorialization note as appropriate. I\u0027m also planning to create the new example problems.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing the Plan**\n\nI\u0027m now putting my plan into action. I\u0027ve started constructing the Obsidian note, beginning with the main title and the memorialization note. I\u0027m focusing on processing the lecture slides, transcribing the content and formulas into LaTeX, and then integrating the handwritten notes as illustrative examples. I\u0027ll include \u0027Note to Self\u0027 or \u0027Warning\u0027 blocks when calculations deviate.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "*Note to self: Left early, so need to fill in the blanks from the lecture.*\n\n# [[Plini in Plinski Zakoni]]\n\n## [[Definicija Plina]]\nPlin je množica molekul, ki z različnimi hitrostmi potujejo po prostoru in pri tem trkajo v druge molekule ter v stene posode.\n\n### [[Spremenljivke Stanja Plina]]\nZa opis stanja plina so ključne tri glavne spremenljivke:\n-   **[[Temperatura (T)]]**: Merilo povprečne kinetične energije molekul.\n-   **[[Tlak (p)]]**: Sila, s katero molekule pritiskajo na steno posode na enoto površine.\n-   **[[Prostornina (V)]]**: Prostor, ki ga plin zaseda.\n\n## [[Plinski Zakoni]]\n\n### [[Boyle-Mariottov Zakon (Izotermna Sprememba)]]\nPri konstantni temperaturi sta tlak in prostornina plina v obratnem sorazmerju.\n-   **Pogoj**: $T \u003d \\text{konst.}$\n-   **Formula**: $p \\cdot V \u003d \\text{konst.}$\n-   **Za primerjavo dveh stanj**: $p_1 \\cdot V_1 \u003d p_2 \\cdot V_2$\n\n\u003e **Analiza**: Če pri nespremenjeni temperaturi prostornino plina zmanjšamo (stisnemo plin), se bo število trkov delcev ob stene posode povečalo, kar zaznamo kot povečanje tlaka.\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Vizualizacija Boyle-Mariottovega zakona (Izoterma)\nV \u003d np.linspace(1, 10, 100) # Volumen od 1 do 10 L\nk \u003d 10 # konstanta (p*V)\np \u003d k / V # Tlak\n\nplt.figure(figsize\u003d(8, 6))\nplt.plot(V, p, label\u003df\u0027Izoterma pri T \u003d konst. (p*V \u003d {k})\u0027)\nplt.title(\u0027Boyle-Mariottov Zakon: Odvisnost Tlaka od Prostornine\u0027)\nplt.xlabel(\u0027Prostornina (V) [L]\u0027)\nplt.ylabel(\u0027Tlak (p) [enote tlaka]\u0027)\nplt.grid(True)\nplt.legend()\nplt.show()\n```\n\n### [[Gay-Lussacov Zakon]]\n\n#### [[1. Gay-Lussacov Zakon (Izobarna Sprememba)]]\nPri konstantnem tlaku se s spreminjanjem temperature spreminja prostornina plina. Sta v premem sorazmerju.\n-   **Pogoj**: $p \u003d \\text{konst.}$\n-   **Formula**: $\\frac{V}{T} \u003d \\text{konst.}$\n-   **Za primerjavo dveh stanj**: $\\frac{V_1}{T_1} \u003d \\frac{V_2}{T_2}$\n\n\u003e **Analiza**: Če pri konstantnem tlaku temperaturo povečamo, se kinetična energija delcev poveča. Da bi tlak ostal enak (enako število trkov na enoto površine), se mora prostornina povečati, kar delcem omogoči več prostora za gibanje.\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Vizualizacija 1. Gay-Lussacovega zakona (Izobara)\n# Temperatura mora biti v Kelvinih!\nT_K \u003d np.linspace(1, 500, 100) # Temperatura od 1K do 500K\nk \u003d 0.05 # konstanta (V/T)\nV \u003d k * T_K # Volumen\n\nplt.figure(figsize\u003d(8, 6))\nplt.plot(T_K, V, label\u003df\u0027Izobara pri p \u003d konst. (V/T \u003d {k})\u0027)\nplt.title(\u00271. Gay-Lussacov Zakon: Odvisnost Prostornine od Temperature\u0027)\nplt.xlabel(\u0027Temperatura (T) [K]\u0027)\nplt.ylabel(\u0027Prostornina (V) [enote prostornine]\u0027)\nplt.grid(True)\nplt.axvline(x\u003d0, color\u003d\u0027r\u0027, linestyle\u003d\u0027--\u0027, label\u003d\u0027Absolutna ničla (0 K)\u0027)\nplt.legend()\nplt.show()\n```\n\n#### [[2. Gay-Lussacov Zakon (Izohorna Sprememba)]]\nPri konstantni prostornini se s spreminjanjem temperature spreminja tlak plina. Sta v premem sorazmerju.\n-   **Pogoj**: $V \u003d \\text{konst.}$\n-   **Formula**: $\\frac{p}{T} \u003d \\text{konst.}$\n-   **Za primerjavo dveh stanj**: $\\frac{p_1}{T_1} \u003d \\frac{p_2}{T_2}$\n\n\u003e **Analiza**: Če pri konstantni prostornini povečamo temperaturo, se poveča hitrost delcev. Ker imajo na voljo enak prostor, bodo pogosteje in z večjo silo trkali ob stene posode, kar povzroči povečanje tlaka.\n\n### [[Splošna Plinska Enačba (Idealni Plin)]]\nPovezuje vse tri plinske zakone in opisuje stanje idealnega plina.\n-   **Združena oblika**: $\\frac{p \\cdot V}{T} \u003d \\text{konst.}$\n-   **Za primerjavo dveh stanj**: $\\frac{p_1 \\cdot V_1}{T_1} \u003d \\frac{p_2 \\cdot V_2}{T_2}$\n\nČe v enačbo vključimo še množino snovi ($n$), dobimo splošno plinsko enačbo:\n$p \\cdot V \u003d n \\cdot R \\cdot T$\n-   $p$: tlak\n-   $V$: prostornina\n-   $n$: množina snovi (v molih)\n-   $R$: splošna plinska konstanta\n-   $T$: absolutna temperatura (v Kelvinih)\n\n### [[Normalni Pogoji (PNP)]]\nStandardiziran set pogojev za primerjavo lastnosti plinov.\n-   **Tlak ($p_0$)**: $1 \\, \\text{atm} \u003d 101325 \\, \\text{Pa} \\approx 101.3 \\, \\text{kPa}$\n-   **Temperatura ($T_0$)**: $0^\\circ\\text{C} \u003d 273.15 \\, \\text{K}$\n-   **Formula za pretvorbo temperature**: $T(\\text{K}) \u003d T(^\\circ\\text{C}) + 273.15$\n-   **Normalna molska prostornina ($V_m^0$)**: Prostornina enega mola idealnega plina pri PNP je $22.4 \\, \\frac{\\text{L}}{\\text{mol}}$.\n\n### [[Plinska Konstanta (R)]]\nVrednost konstante je odvisna od uporabljenih enot za tlak in prostornino.\n-   $R \u003d 8.314 \\, \\frac{\\text{J}}{\\text{mol} \\cdot \\text{K}}$\n-   $R \u003d 8.314 \\, \\frac{\\text{kPa} \\cdot \\text{L}}{\\text{mol} \\cdot \\text{K}}$ ali $\\frac{\\text{kPa} \\cdot \\text{dm}^3}{\\text{mol} \\cdot \\text{K}}$\n-   $R \u003d 0.08206 \\, \\frac{\\text{atm} \\cdot \\text{L}}{\\text{mol} \\cdot \\text{K}}$\n\n## [[Primeri Izračunov (Plinski Zakoni)]]\nTo so naloge iz zapiskov, rešene in analizirane korak za korakom.\n\n**Začetni podatki:**\n-   $V_1 \u003d 5 \\, \\text{L}$\n-   $T_1 \u003d 23^\\circ\\text{C} \u003d 23 + 273.15 \u003d 296.15 \\, \\text{K}$\n-   $p_1 \u003d 1.32 \\times 10^5 \\, \\text{Pa} \u003d 132 \\, \\text{kPa}$\n\nSplošna plinska enačba za primerjavo dveh stanj (ker se množina plina ne spreminja):\n$\\frac{p_1 V_1}{T_1} \u003d \\frac{p_2 V_2}{T_2}$\n\n---\n\n### [[Naloga a)]]\n*Stiskanje plina pri konstantni temperaturi.*\n-   **Sprememba**: Plin stisnemo na $V_2 \u003d 1 \\, \\text{L}$.\n-   **Pogoj**: Temperatura je konstantna, $T_1 \u003d T_2$. Gre za **izotermno spremembo**.\n\n**Analiza in izračun:**\nKer je $T_1 \u003d T_2$, lahko temperaturo v splošni plinski enačbi krajšamo, kar nas pripelje do **Boyle-Mariottovega zakona**:\n$p_1 V_1 \u003d p_2 V_2$\nIzrazimo iskani tlak $p_2$:\n$p_2 \u003d \\frac{p_1 V_1}{V_2}$\n$p_2 \u003d \\frac{132 \\, \\text{kPa} \\cdot 5 \\, \\text{L}}{1 \\, \\text{L}} \u003d 660 \\, \\text{kPa}$\n\nV zapiskih je rezultat $p \u003d 660 \\, \\text{kPa}$, kar je pravilno.\n\n---\n\n### [[Naloga b)]]\n*Segrevanje plina pri konstantni prostornini.*\n-   **Sprememba**: Temperaturo povečamo za $\\Delta T \u003d 30 \\, \\text{K}$.\n-   **Pogoj**: Prostornina je konstantna, $V_1 \u003d V_2$. Gre za **izohorno spremembo**.\n\n**Analiza in izračun:**\nNova temperatura $T_2$ je:\n$T_2 \u003d T_1 + \\Delta T \u003d 296.15 \\, \\text{K} + 30 \\, \\text{K} \u003d 326.15 \\, \\text{K}$\n\nKer je $V_1 \u003d V_2$, lahko prostornino v splošni plinski enačbi krajšamo, kar nas pripelje do **2. Gay-Lussacovega zakona**:\n$\\frac{p_1}{T_1} \u003d \\frac{p_2}{T_2}$\nIzrazimo iskani tlak $p_2$:\n$p_2 \u003d \\frac{p_1 \\cdot T_2}{T_1}$\n$p_2 \u003d \\frac{132 \\, \\text{kPa} \\cdot 326.15 \\, \\text{K}}{296.15 \\, \\text{K}} \\approx 145.4 \\, \\text{kPa}$\n\n\u003e **Warning Note**: V zapiskih je rezultat $p \u003d 148.9 \\, \\text{kPa}$. Ta rezultat je napačen. Ponovni izračun z natančnimi vrednostmi da $145.4 \\, \\text{kPa}$. Napaka v zapiskih je verjetno posledica napačnega vnosa številk v kalkulator ali napačnega zaokroževanja med postopkom. Pravilen pristop je uporaba absolutnih temperatur (Kelvin) in reševanje po končni enačbi.\n\n---\n\n### [[Naloga c)]]\n*Segrevanje plina pri konstantnem tlaku.*\n-   **Sprememba**: Temperaturo povečamo za $\\Delta T \u003d 100 \\, \\text{K}$.\n-   **Pogoj**: Tlak je konstanten, $p_1 \u003d p_2$. Gre za **izobarno spremembo**.\n\n**Analiza in izračun:**\nNova temperatura $T_2$ je:\n$T_2 \u003d T_1 + \\Delta T \u003d 296.15 \\, \\text{K} + 100 \\, \\text{K} \u003d 396.15 \\, \\text{K}$\n\nKer je $p_1 \u003d p_2$, lahko tlak v splošni plinski enačbi krajšamo, kar nas pripelje do **1. Gay-Lussacovega zakona**:\n$\\frac{V_1}{T_1} \u003d \\frac{V_2}{T_2}$\nIzrazimo iskano prostornino $V_2$:\n$V_2 \u003d \\frac{V_1 \\cdot T_2}{T_1}$\n$V_2 \u003d \\frac{5 \\, \\text{L} \\cdot 396.15 \\, \\text{K}}{296.15 \\, \\text{K}} \\approx 6.7 \\, \\text{L}$\n\nV zapiskih je rezultat $V \u003d 6.71 \\, \\text{L}$, kar je pravilno.\n\n---\n\n### [[Naloga d)]]\n*Sprememba vseh treh spremenljivk.*\n-   **Sprememba**: Prostornina se poveča na $V_2 \u003d 10 \\, \\text{L}$, temperatura pa se spremeni na $T_2 \u003d 10^\\circ\\text{C}$.\n\n**Analiza in izračun:**\nNova temperatura $T_2$ v Kelvinih je:\n$T_2 \u003d 10 + 273.15 \u003d 283.15 \\, \\text{K}$\n\nUporabimo splošno plinsko enačbo, saj se spreminjajo vse tri spremenljivke:\n$\\frac{p_1 V_1}{T_1} \u003d \\frac{p_2 V_2}{T_2}$\nIzrazimo iskani tlak $p_2$:\n$p_2 \u003d \\frac{p_1 V_1 T_2}{T_1 V_2}$\n$p_2 \u003d \\frac{132 \\, \\text{kPa} \\cdot 5 \\, \\text{L} \\cdot 283.15 \\, \\text{K}}{296.15 \\, \\text{K} \\cdot 10 \\, \\text{L}} \\approx 63.0 \\, \\text{kPa}$\n\n\u003e **Warning Note**: V zapiskih je rezultat $p \u003d 53.1 \\, \\text{kPa}$. Ta rezultat je napačen. Do te vrednosti bi prišli, če bi napačno uporabili temperaturo v Celzijih namesto v Kelvinih za eno od vrednosti, ali pa je prišlo do druge računske napake. **Vedno je nujno uporabljati absolutno temperaturo (Kelvin) v plinskih zakonih.**\n\n## [[Plinske Zmesi]]\nLastnosti plinskih zmesi so odvisne od njihove sestave, ki jo lahko izrazimo z:\n-   **[[Masni delež ($w_j$)]]**: $w_j \u003d \\frac{m_j}{m_{\\text{skupno}}}$\n-   **[[Množinski delež ($x_j$)]]**: $x_j \u003d \\frac{n_j}{n_{\\text{skupno}}}$\n-   **[[Prostorninski delež ($\\phi_j$)]]**: $\\phi_j \u003d \\frac{V_j}{V_{\\text{skupno}}}$\n-   **Avogadrov zakon**: V plinskih zmeseh sta množinski in prostorninski delež komponente enaka: $x_j \u003d \\phi_j$.\n\n### [[Daltonov Zakon o Parcialnih Tlakih]]\nCelotni tlak plinske zmesi je enak vsoti parcialnih (delnih) tlakov posameznih plinov v zmesi.\n-   **Celotni tlak**: $p \u003d \\sum p_j \u003d p_1 + p_2 + \\dots$\n-   **Parcialni tlak**: Tlak, ki bi ga imela posamezna komponenta, če bi sama zasedala celotno prostornino zmesi pri isti temperaturi.\n-   **Povezava z množinskim deležem**: $p_j \u003d x_j \\cdot p$\n\n### [[Primer Izračuna (Plinska Zmes)]]\nNaloga iz zapiskov: V 100g zmesi kalijevega klorida (KCl) in natrijevega klorida (NaCl) je $3.0 \\times 10^{23}$ kalijevih ionov (K$^+$). Izračunaj masni delež NaCl v zmesi.\n\n**Podatki:**\n-   $m(\\text{zmes}) \u003d 100 \\, \\text{g}$\n-   $N(\\text{K}^+) \u003d 3.0 \\times 10^{23}$\n-   Avogadrova konstanta: $N_A \\approx 6.022 \\times 10^{23} \\, \\text{mol}^{-1}$\n-   Molska masa KCl: $M(\\text{KCl}) \\approx 74.55 \\, \\frac{\\text{g}}{\\text{mol}}$\n\n**Analiza in izračun:**\n1.  **Poišči povezavo med K$^+$ ioni in KCl.**\n    Kalijev klorid (KCl) je ionska spojina, ki v raztopini ali talini disociira na K$^+$ in Cl$^-$ ione. Razmerje med KCl in K$^+$ je 1:1.\n    $n(\\text{K}^+) \u003d n(\\text{KCl})$\n\n2.  **Izračunaj množino K$^+$ ionov (in s tem KCl).**\n    Uporabimo formulo, ki povezuje število delcev ($N$) in množino ($n$).\n    $n(\\text{K}^+) \u003d \\frac{N(\\text{K}^+)}{N_A} \u003d \\frac{3.0 \\times 10^{23}}{6.022 \\times 10^{23} \\, \\text{mol}^{-1}} \\approx 0.498 \\, \\text{mol}$\n    Torej je $n(\\text{KCl}) \\approx 0.498 \\, \\text{mol}$.\n\n3.  **Izračunaj maso KCl v zmesi.**\n    $m(\\text{KCl}) \u003d n(\\text{KCl}) \\cdot M(\\text{KCl}) \u003d 0.498 \\, \\text{mol} \\cdot 74.55 \\, \\frac{\\text{g}}{\\text{mol}} \\approx 37.13 \\, \\text{g}$\n\n    *Note to Self*: Izračun v zapiskih `(3.0e23 * 74.55) / 6.023e23` da `37.133 g`. Razlika je minimalna in posledica uporabe rahlo drugačne vrednosti za $N_A$. Končni rezultat je praktično enak.\n\n4.  **Izračunaj maso NaCl v zmesi.**\n    Zmes je sestavljena samo iz KCl in NaCl.\n    $m(\\text{NaCl}) \u003d m(\\text{zmes}) - m(\\text{KCl}) \u003d 100 \\, \\text{g} - 37.13 \\, \\text{g} \u003d 62.87 \\, \\text{g}$\n\n5.  **Izračunaj masni delež NaCl.**\n    $w(\\text{NaCl}) \u003d \\frac{m(\\text{NaCl})}{m(\\text{zmes})} \u003d \\frac{62.87 \\, \\text{g}}{100 \\, \\text{g}} \u003d 0.6287$\n    $w(\\text{NaCl}) \u003d 62.87 \\%$\n\nIzračun se ujema z zapiski.\n\n---\n## [[Conceptual Strengthening Tasks]]\n\n### [[Naloga 1: Sprememba Stanja Plina]]\nPosoda s prostornino $4 \\, \\text{L}$ vsebuje kisik ($O_2$) pri tlaku $200 \\, \\text{kPa}$ in temperaturi $25^\\circ\\text{C}$. Plin nato ohladimo na $-10^\\circ\\text{C}$, prostornino pa zmanjšamo na $2.5 \\, \\text{L}$. Kakšen je končni tlak kisika v posodi? (Predpostavi idealno obnašanje).\n\n### [[Naloga 2: Sestava Plinske Zmesi]]\nZmes plinov vsebuje $20 \\, \\text{g}$ dušika ($N_2$) in neznano maso argona ($Ar$). Celotni tlak zmesi je $150 \\, \\text{kPa}$. Parcialni tlak dušika je $105 \\, \\text{kPa}$. Izračunaj maso argona v zmesi.\n(Pomoč: $p_{N_2} \u003d x_{N_2} \\cdot p_{\\text{skupno}}$)\n\n### [[Challenge: Povezovanje Konceptov]]\nV posodi s prostornino $10 \\, \\text{L}$ pri $298 \\, \\text{K}$ se nahaja zmes iz **Naloge 2** (dušik in argon).\na) Izračunaj parcialni tlak argona.\nb) Izračunaj celotno množino plina v zmesi z uporabo splošne plinske enačbe.\nc) Preveri, ali se tvoj izračun celotne množine ujema z vsoto posameznih množin dušika in argona, ki si jih izračunal/a v **Nalogi 2**.\n($M(N_2) \\approx 28 \\, \\text{g/mol}$, $M(Ar) \\approx 40 \\, \\text{g/mol}$)",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 5097,
+      "parts": [{
+        "text": "*Note to self: Left early, so need to fill in the blanks from the lecture.*\n\n# [[Plini in Plinski Zakoni]]\n\n## [[Definicija Plina]]\nPlin je množica molekul, ki z"
+      }, {
+        "text": " različnimi hitrostmi potujejo po prostoru in pri tem trkajo v druge molekule ter v stene pos"
+      }, {
+        "text": "ode.\n\n### [[Spremenljivke Stanja Plina]]\nZa opis stanja plina so ključne tri"
+      }, {
+        "text": " glavne spremenljivke:\n-   **[[Temperatura (T)]]**: Merilo povprečne kinet"
+      }, {
+        "text": "ične energije molekul.\n-   **[[Tlak (p)]]**: Sila, s katero mole"
+      }, {
+        "text": "kule pritiskajo na steno posode na enoto površine.\n-   **[[Prostornina (V)]]**: Prostor, ki ga plin zaseda.\n\n## [[Plinski Zakoni]]\n\n### [[Boyle-Mariottov Zakon (Izotermna Sprememba)]]\nPri konstantni temperaturi"
+      }, {
+        "text": " sta tlak in prostornina plina v obratnem sorazmerju.\n-   **Pogoj**:"
+      }, {
+        "text": " $T \u003d \\text{konst.}$\n-   **Formula**: $p \\cdot V \u003d \\text{konst.}$"
+      }, {
+        "text": "\n-   **Za primerjavo dveh stanj**: $p_1 \\cdot V_1 \u003d p_2 \\"
+      }, {
+        "text": "cdot V_2$\n\n\u003e **Analiza**: Če pri nespremenjeni temperaturi prostornino plina z"
+      }, {
+        "text": "manjšamo (stisnemo plin), se bo število trkov delcev ob stene posode pove"
+      }, {
+        "text": "čalo, kar zaznamo kot povečanje tlaka.\n\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt\nimport numpy"
+      }, {
+        "text": " as np\n\n# Vizualizacija Boyle-Mariottovega zakona (Izoterma)\nV \u003d"
+      }, {
+        "text": " np.linspace(1, 10, 100) # Volumen od 1 do 10 L\n"
+      }, {
+        "text": "k \u003d 10 # konstanta (p*V)\np \u003d k / V # Tlak\n\nplt."
+      }, {
+        "text": "figure(figsize\u003d(8, 6))\nplt.plot(V, p, label\u003df\u0027Izoterma pri"
+      }, {
+        "text": " T \u003d konst. (p*V \u003d {k})\u0027)\nplt.title(\u0027Boyle-Mariottov Zakon"
+      }, {
+        "text": ": Odvisnost Tlaka od Prostornine\u0027)\nplt.xlabel(\u0027Prostornina (V) [L]\u0027)\nplt.ylabel(\u0027Tlak (p) [enote tlaka]\u0027)\nplt.grid(True)\nplt."
+      }, {
+        "text": "legend()\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n### [[Gay-Lussacov Zakon]]\n\n#### [[1. Gay-Lussacov Zakon (Izobarna Sprememba)]]\nPri konstantnem tlaku se s"
+      }, {
+        "text": " spreminjanjem temperature spreminja prostornina plina. Sta v premem sorazmerju.\n-   "
+      }, {
+        "text": "**Pogoj**: $p \u003d \\text{konst.}$\n-   **Formula**: $\\frac{V}{"
+      }, {
+        "text": "T} \u003d \\text{konst.}$\n-   **Za primerjavo dveh stanj**: $\\frac{V_"
+      }, {
+        "text": "1}{T_1} \u003d \\frac{V_2}{T_2}$\n\n\u003e **Analiza**:"
+      }, {
+        "text": " Če pri konstantnem tlaku temperaturo povečamo, se kinetična energija delcev poveča. Da"
+      }, {
+        "text": " bi tlak ostal enak (enako število trkov na enoto površine), se mora prostornina pove"
+      }, {
+        "text": "čati, kar delcem omogoči več prostora za gibanje.\n\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt"
+      }, {
+        "text": "\nimport numpy as np\n\n# Vizualizacija 1. Gay-Lussacovega zakona ("
+      }, {
+        "text": "Izobara)\n# Temperatura mora biti v Kelvinih!\nT_K \u003d np.linspace(1"
+      }, {
+        "text": ", 500, 100) # Temperatura od 1K do 500K\nk"
+      }, {
+        "text": " \u003d 0.05 # konstanta (V/T)\nV \u003d k * T_K # Volumen\n\nplt."
+      }, {
+        "text": "figure(figsize\u003d(8, 6))\nplt.plot(T_K, V, label\u003df\u0027Iz"
+      }, {
+        "text": "obara pri p \u003d konst. (V/T \u003d {k})\u0027)\nplt.title(\u00271. Gay-L"
+      }, {
+        "text": "ussacov Zakon: Odvisnost Prostornine od Temperature\u0027)\nplt.xlabel(\u0027Temperatura (T) [K]\u0027)\nplt.ylabel(\u0027Prostornina (V) [enote prostornine]\u0027)\nplt.grid("
+      }, {
+        "text": "True)\nplt.axvline(x\u003d0, color\u003d\u0027r\u0027, linestyle\u003d\u0027--\u0027, label\u003d\u0027Absolutna nič"
+      }, {
+        "text": "la (0 K)\u0027)\nplt.legend()\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n#### [[2. Gay-Lussacov Zakon (Izohorna Sprememba)]]\nPri konstantni prostornini se s spreminjanjem"
+      }, {
+        "text": " temperature spreminja tlak plina. Sta v premem sorazmerju.\n-   **Pogoj**: $"
+      }, {
+        "text": "V \u003d \\text{konst.}$\n-   **Formula**: $\\frac{p}{T} \u003d \\text{konst"
+      }, {
+        "text": ".}$\n-   **Za primerjavo dveh stanj**: $\\frac{p_1}{T_1"
+      }, {
+        "text": "} \u003d \\frac{p_2}{T_2}$\n\n\u003e **Analiza**: Če pri konstantni prost"
+      }, {
+        "text": "ornini povečamo temperaturo, se poveča hitrost delcev. Ker imajo na voljo enak prostor"
+      }, {
+        "text": ", bodo pogosteje in z večjo silo trkali ob stene posode, kar povzroči poveč"
+      }, {
+        "text": "anje tlaka.\n\n### [[Splošna Plinska Enačba (Idealni Plin)]]\nP"
+      }, {
+        "text": "ovezuje vse tri plinske zakone in opisuje stanje idealnega plina.\n-   **Združena"
+      }, {
+        "text": " oblika**: $\\frac{p \\cdot V}{T} \u003d \\text{konst.}$\n-   **"
+      }, {
+        "text": "Za primerjavo dveh stanj**: $\\frac{p_1 \\cdot V_1}{T_1"
+      }, {
+        "text": "} \u003d \\frac{p_2 \\cdot V_2}{T_2}$\n\nČe v enačbo vključ"
+      }, {
+        "text": "imo še množino snovi ($n$), dobimo splošno plinsko enačbo:\n$"
+      }, {
+        "text": "p \\cdot V \u003d n \\cdot R \\cdot T$\n-   $p$: tlak\n-   $V"
+      }, {
+        "text": "$: prostornina\n-   $n$: množina snovi (v molih)\n-   $R"
+      }, {
+        "text": "$: splošna plinska konstanta\n-   $T$: absolutna temperatura (v Kelvinih)"
+      }, {
+        "text": "\n\n### [[Normalni Pogoji (PNP)]]\nStandardiziran set pogojev za primerjavo"
+      }, {
+        "text": " lastnosti plinov.\n-   **Tlak ($p_0$)**: $1 \\, \\text{atm"
+      }, {
+        "text": "} \u003d 101325 \\, \\text{Pa} \\approx 101.3 \\,"
+      }, {
+        "text": " \\text{kPa}$\n-   **Temperatura ($T_0$)**: $0^\\circ\\text{C} \u003d "
+      }, {
+        "text": "273.15 \\, \\text{K}$\n-   **Formula za pretvorbo temperature**: $"
+      }, {
+        "text": "T(\\text{K}) \u003d T(^\\circ\\text{C}) + 273.15$"
+      }, {
+        "text": "\n-   **Normalna molska prostornina ($V_m^0$)**: Prostornina enega m"
+      }, {
+        "text": "ola idealnega plina pri PNP je $22.4 \\, \\frac{\\text{L}}{\\text{mol"
+      }, {
+        "text": "}}$.\n\n### [[Plinska Konstanta (R)]]\nVrednost konstante je odvisna od upor"
+      }, {
+        "text": "abljenih enot za tlak in prostornino.\n-   $R \u003d 8.314 \\,"
+      }, {
+        "text": " \\frac{\\text{J}}{\\text{mol} \\cdot \\text{K}}$\n-   $R \u003d 8"
+      }, {
+        "text": ".314 \\, \\frac{\\text{kPa} \\cdot \\text{L}}{\\text{mol} \\cdot \\"
+      }, {
+        "text": "text{K}}$ ali $\\frac{\\text{kPa} \\cdot \\text{dm}^3}{\\text{mol"
+      }, {
+        "text": "} \\cdot \\text{K}}$\n-   $R \u003d 0.08206 \\, \\frac{\\"
+      }, {
+        "text": "text{atm} \\cdot \\text{L}}{\\text{mol} \\cdot \\text{K}}$\n\n##"
+      }, {
+        "text": " [[Primeri Izračunov (Plinski Zakoni)]]\nTo so naloge iz zapiskov, re"
+      }, {
+        "text": "šene in analizirane korak za korakom.\n\n**Začetni podatki:**\n-   $V"
+      }, {
+        "text": "_1 \u003d 5 \\, \\text{L}$\n-   $T_1 \u003d 23^\\circ"
+      }, {
+        "text": "\\text{C} \u003d 23 + 273.15 \u003d 296.1"
+      }, {
+        "text": "5 \\, \\text{K}$\n-   $p_1 \u003d 1.32 \\times 10^"
+      }, {
+        "text": "5 \\, \\text{Pa} \u003d 132 \\, \\text{kPa}$\n\nSplošna pl"
+      }, {
+        "text": "inska enačba za primerjavo dveh stanj (ker se množina plina ne spreminja):"
+      }, {
+        "text": "\n$\\frac{p_1 V_1}{T_1} \u003d \\frac{p_2 V_2"
+      }, {
+        "text": "}{T_2}$\n\n---\n\n### [[Naloga a)]]\n*Stiskanje plina"
+      }, {
+        "text": " pri konstantni temperaturi.*\n-   **Sprememba**: Plin stisnemo na $V_"
+      }, {
+        "text": "2 \u003d 1 \\, \\text{L}$.\n-   **Pogoj**: Temperatura je konstantna, $T_1"
+      }, {
+        "text": " \u003d T_2$. Gre za **izotermno spremembo**.\n\n**Analiza in izračun:**\n"
+      }, {
+        "text": "Ker je $T_1 \u003d T_2$, lahko temperaturo v splošni plinski enačbi kraj"
+      }, {
+        "text": "šamo, kar nas pripelje do **Boyle-Mariottovega zakona**:\n$p_1 V"
+      }, {
+        "text": "_1 \u003d p_2 V_2$\nIzrazimo iskani tlak $p_2$:\n$"
+      }, {
+        "text": "p_2 \u003d \\frac{p_1 V_1}{V_2}$\n$p_2 \u003d \\frac{"
+      }, {
+        "text": "132 \\, \\text{kPa} \\cdot 5 \\, \\text{L}}{1 \\, \\text{"
+      }, {
+        "text": "L}} \u003d 660 \\, \\text{kPa}$\n\nV zapiskih je rezultat $p \u003d 660"
+      }, {
+        "text": " \\, \\text{kPa}$, kar je pravilno.\n\n---\n\n### [[Naloga b)]]\n*Seg"
+      }, {
+        "text": "revanje plina pri konstantni prostornini.*\n-   **Sprememba**: Temperaturo poveč"
+      }, {
+        "text": "amo za $\\Delta T \u003d 30 \\, \\text{K}$.\n-   **Pogoj**: Prostornina je"
+      }, {
+        "text": " konstantna, $V_1 \u003d V_2$. Gre za **izohorno spremembo**.\n\n**Analiza"
+      }, {
+        "text": " in izračun:**\nNova temperatura $T_2$ je:\n$T_2 \u003d T_1 + \\Delta"
+      }, {
+        "text": " T \u003d 296.15 \\, \\text{K} + 30 \\, \\text{K"
+      }, {
+        "text": "} \u003d 326.15 \\, \\text{K}$\n\nKer je $V_1 \u003d V"
+      }, {
+        "text": "_2$, lahko prostornino v splošni plinski enačbi krajšamo, kar nas pripel"
+      }, {
+        "text": "je do **2. Gay-Lussacovega zakona**:\n$\\frac{p_1}{T"
+      }, {
+        "text": "_1} \u003d \\frac{p_2}{T_2}$\nIzrazimo iskani tlak $p"
+      }, {
+        "text": "_2$:\n$p_2 \u003d \\frac{p_1 \\cdot T_2}{T_1"
+      }, {
+        "text": "}$\n$p_2 \u003d \\frac{132 \\, \\text{kPa} \\cdot 326.1"
+      }, {
+        "text": "5 \\, \\text{K}}{296.15 \\, \\text{K}} \\approx 14"
+      }, {
+        "text": "5.4 \\, \\text{kPa}$\n\n\u003e **Warning Note**: V zapiskih je rezultat $p \u003d 1"
+      }, {
+        "text": "48.9 \\, \\text{kPa}$. Ta rezultat je napačen. Ponovni izračun z natanč"
+      }, {
+        "text": "nimi vrednostmi da $145.4 \\, \\text{kPa}$. Napaka v zapiskih je"
+      }, {
+        "text": " verjetno posledica napačnega vnosa številk v kalkulator ali napačnega zaokrožev"
+      }, {
+        "text": "anja med postopkom. Pravilen pristop je uporaba absolutnih temperatur (Kelvin) in reševanje po"
+      }, {
+        "text": " končni enačbi.\n\n---\n\n### [[Naloga c)]]\n*Segrevanje plina pri"
+      }, {
+        "text": " konstantnem tlaku.*\n-   **Sprememba**: Temperaturo povečamo za $\\Delta T"
+      }, {
+        "text": " \u003d 100 \\, \\text{K}$.\n-   **Pogoj**: Tlak je konstanten, $p"
+      }, {
+        "text": "_1 \u003d p_2$. Gre za **izobarno spremembo**.\n\n**Analiza in izrač"
+      }, {
+        "text": "un:**\nNova temperatura $T_2$ je:\n$T_2 \u003d T_1 + \\Delta"
+      }, {
+        "text": " T \u003d 296.15 \\, \\text{K} + 100 \\, \\text{"
+      }, {
+        "text": "K} \u003d 396.15 \\, \\text{K}$\n\nKer je $p_1 \u003d"
+      }, {
+        "text": " p_2$, lahko tlak v splošni plinski enačbi krajšamo, kar nas pripelje do **"
+      }, {
+        "text": "1. Gay-Lussacovega zakona**:\n$\\frac{V_1}{T_1}"
+      }, {
+        "text": " \u003d \\frac{V_2}{T_2}$\nIzrazimo iskano prostornino $V"
+      }, {
+        "text": "_2$:\n$V_2 \u003d \\frac{V_1 \\cdot T_2}{T_1"
+      }, {
+        "text": "}$\n$V_2 \u003d \\frac{5 \\, \\text{L} \\cdot 396."
+      }, {
+        "text": "15 \\, \\text{K}}{296.15 \\, \\text{K}} \\approx 6"
+      }, {
+        "text": ".7 \\, \\text{L}$\n\nV zapiskih je rezultat $V \u003d 6.71 \\, \\text"
+      }, {
+        "text": "{L}$, kar je pravilno.\n\n---\n\n### [[Naloga d)]]\n*Sprememba v"
+      }, {
+        "text": "seh treh spremenljivk.*\n-   **Sprememba**: Prostornina se poveča na $"
+      }, {
+        "text": "V_2 \u003d 10 \\, \\text{L}$, temperatura pa se spremeni na $T_2 \u003d "
+      }, {
+        "text": "10^\\circ\\text{C}$.\n\n**Analiza in izračun:**\nNova temperatura $T_2$"
+      }, {
+        "text": " v Kelvinih je:\n$T_2 \u003d 10 + 273.15 \u003d"
+      }, {
+        "text": " 283.15 \\, \\text{K}$\n\nUporabimo splošno plinsko enač"
+      }, {
+        "text": "bo, saj se spreminjajo vse tri spremenljivke:\n$\\frac{p_1 V_1"
+      }, {
+        "text": "}{T_1} \u003d \\frac{p_2 V_2}{T_2}$\nIzrazimo"
+      }, {
+        "text": " iskani tlak $p_2$:\n$p_2 \u003d \\frac{p_1 V_1 T_"
+      }, {
+        "text": "2}{T_1 V_2}$\n$p_2 \u003d \\frac{132 \\, \\text"
+      }, {
+        "text": "{kPa} \\cdot 5 \\, \\text{L} \\cdot 283.15 \\, \\"
+      }, {
+        "text": "text{K}}{296.15 \\, \\text{K} \\cdot 10 \\, \\text"
+      }, {
+        "text": "{L}} \\approx 63.0 \\, \\text{kPa}$\n\n\u003e **Warning Note**: V zap"
+      }, {
+        "text": "iskih je rezultat $p \u003d 53.1 \\, \\text{kPa}$. Ta rezultat je napačen"
+      }, {
+        "text": ". Do te vrednosti bi prišli, če bi napačno uporabili temperaturo v Celzijih namesto v"
+      }, {
+        "text": " Kelvinih za eno od vrednosti, ali pa je prišlo do druge računske napake."
+      }, {
+        "text": " **Vedno je nujno uporabljati absolutno temperaturo (Kelvin) v plinskih zakonih.**"
+      }, {
+        "text": "\n\n## [[Plinske Zmesi]]\nLastnosti plinskih zmesi so odvisne od njihove sestave,"
+      }, {
+        "text": " ki jo lahko izrazimo z:\n-   **[[Masni delež ($w_j$)]]"
+      }, {
+        "text": "**: $w_j \u003d \\frac{m_j}{m_{\\text{skupno}}}$\n-   "
+      }, {
+        "text": "**[[Množinski delež ($x_j$)]]**: $x_j \u003d \\frac{"
+      }, {
+        "text": "n_j}{n_{\\text{skupno}}}$\n-   **[[Prostorninski delež ($\\phi_j$)]]**: $\\phi_j \u003d \\frac{V_j}{V_{\\text{sk"
+      }, {
+        "text": "upno}}}$\n-   **Avogadrov zakon**: V plinskih zmeseh sta množinski in prostorninski"
+      }, {
+        "text": " delež komponente enaka: $x_j \u003d \\phi_j$.\n\n### [[Daltonov Zakon o Parcialnih Tlakih]]\nCelotni tlak plinske zmesi je enak vsoti parcialnih (del"
+      }, {
+        "text": "nih) tlakov posameznih plinov v zmesi.\n-   **Celotni tlak**: $"
+      }, {
+        "text": "p \u003d \\sum p_j \u003d p_1 + p_2 + \\dots$\n-   **Par"
+      }, {
+        "text": "cialni tlak**: Tlak, ki bi ga imela posamezna komponenta, če bi sama zasedala cel"
+      }, {
+        "text": "otno prostornino zmesi pri isti temperaturi.\n-   **Povezava z množinskim deležem**:"
+      }, {
+        "text": " $p_j \u003d x_j \\cdot p$\n\n### [[Primer Izračuna (Plinska Zmes)]]\n"
+      }, {
+        "text": "Naloga iz zapiskov: V 100g zmesi kalijevega klorida (KCl) in nat"
+      }, {
+        "text": "rijevega klorida (NaCl) je $3.0 \\times 10^{23}$ kalijevih ionov"
+      }, {
+        "text": " (K$^+$). Izračunaj masni delež NaCl v zmesi.\n\n**Podatki:**"
+      }, {
+        "text": "\n-   $m(\\text{zmes}) \u003d 100 \\, \\text{g}$\n-   $"
+      }, {
+        "text": "N(\\text{K}^+) \u003d 3.0 \\times 10^{23}$\n-   Av"
+      }, {
+        "text": "ogadrova konstanta: $N_A \\approx 6.022 \\times 10^{2"
+      }, {
+        "text": "3} \\, \\text{mol}^{-1}$\n-   Molska masa KCl: $M(\\text{KCl})"
+      }, {
+        "text": " \\approx 74.55 \\, \\frac{\\text{g}}{\\text{mol}}$\n\n**Analiza in izrač"
+      }, {
+        "text": "un:**\n1.  **Poišči povezavo med K$^+$ ioni in KCl.**\n    Kalijev"
+      }, {
+        "text": " klorid (KCl) je ionska spojina, ki v raztopini ali talini disociira na"
+      }, {
+        "text": " K$^+$ in Cl$^-$ ione. Razmerje med KCl in K$^+$ je 1:1."
+      }, {
+        "text": "\n    $n(\\text{K}^+) \u003d n(\\text{KCl})$\n\n2.  **Izračunaj"
+      }, {
+        "text": " množino K$^+$ ionov (in s tem KCl).**\n    Uporabimo formulo, ki povezuje š"
+      }, {
+        "text": "tevilo delcev ($N$) in množino ($n$).\n    $n(\\text{K}^+) \u003d \\"
+      }, {
+        "text": "frac{N(\\text{K}^+)}{N_A} \u003d \\frac{3.0 \\times 10"
+      }, {
+        "text": "^{23}}{6.022 \\times 10^{23} \\, \\text{mol}^{-1}} \\"
+      }, {
+        "text": "approx 0.498 \\, \\text{mol}$\n    Torej je $n(\\text{KCl}) \\"
+      }, {
+        "text": "approx 0.498 \\, \\text{mol}$.\n\n3.  **Izračunaj maso"
+      }, {
+        "text": " KCl v zmesi.**\n    $m(\\text{KCl}) \u003d n(\\text{KCl}) \\cdot M"
+      }, {
+        "text": "(\\text{KCl}) \u003d 0.498 \\, \\text{mol} \\cdot 74.55"
+      }, {
+        "text": " \\, \\frac{\\text{g}}{\\text{mol}} \\approx 37.13 \\, \\text{"
+      }, {
+        "text": "g}$\n\n    *Note to Self*: Izračun v zapiskih `(3.0e23 *"
+      }, {
+        "text": " 74.55) / 6.023e23` da `37.1"
+      }, {
+        "text": "33 g`. Razlika je minimalna in posledica uporabe rahlo drugačne vrednosti za $N_A$."
+      }, {
+        "text": " Končni rezultat je praktično enak.\n\n4.  **Izračunaj maso NaCl v zmesi.**\n    Z"
+      }, {
+        "text": "mes je sestavljena samo iz KCl in NaCl.\n    $m(\\text{NaCl}) \u003d m(\\text{z"
+      }, {
+        "text": "mes}) - m(\\text{KCl}) \u003d 100 \\, \\text{g} - 37"
+      }, {
+        "text": ".13 \\, \\text{g} \u003d 62.87 \\, \\text{g}$\n\n5"
+      }, {
+        "text": ".  **Izračunaj masni delež NaCl.**\n    $w(\\text{NaCl}) \u003d \\frac"
+      }, {
+        "text": "{m(\\text{NaCl})}{m(\\text{zmes})} \u003d \\frac{62.87 \\,"
+      }, {
+        "text": " \\text{g}}{100 \\, \\text{g}} \u003d 0.6287$\n    $"
+      }, {
+        "text": "w(\\text{NaCl}) \u003d 62.87 \\%$\n\nIzračun se ujema z zapiski."
+      }, {
+        "text": "\n\n---\n## [[Conceptual Strengthening Tasks]]\n\n### [[Naloga 1: Sprememba Stanja Plina]]"
+      }, {
+        "text": "\nPosoda s prostornino $4 \\, \\text{L}$ vsebuje kisik ($O_2$) pri"
+      }, {
+        "text": " tlaku $200 \\, \\text{kPa}$ in temperaturi $25^\\circ\\text{C}$."
+      }, {
+        "text": " Plin nato ohladimo na $-10^\\circ\\text{C}$, prostornino pa zmanjšamo na"
+      }, {
+        "text": " $2.5 \\, \\text{L}$. Kakšen je končni tlak kisika v posodi? (Predpostavi ideal"
+      }, {
+        "text": "no obnašanje).\n\n### [[Naloga 2: Sestava Plinske Zmesi]]\n"
+      }, {
+        "text": "Zmes plinov vsebuje $20 \\, \\text{g}$ dušika ($N_2$) in"
+      }, {
+        "text": " neznano maso argona ($Ar$). Celotni tlak zmesi je $150 \\, \\text{kPa}$."
+      }, {
+        "text": " Parcialni tlak dušika je $105 \\, \\text{kPa}$. Izračunaj maso argona v"
+      }, {
+        "text": " zmesi.\n(Pomoč: $p_{N_2} \u003d x_{N_2} \\cdot p_{\\"
+      }, {
+        "text": "text{skupno}}$)\n\n### [[Challenge: Povezovanje Konceptov]]\nV posodi"
+      }, {
+        "text": " s prostornino $10 \\, \\text{L}$ pri $298 \\, \\text{K}$ se nahaja"
+      }, {
+        "text": " zmes iz **Naloge 2** (dušik in argon).\na) Izračunaj parcial"
+      }, {
+        "text": "ni tlak argona.\nb) Izračunaj celotno množino plina v zmesi z uporabo spl"
+      }, {
+        "text": "ošne plinske enačbe.\nc) Preveri, ali se tvoj izračun celotne množ"
+      }, {
+        "text": "ine ujema z vsoto posameznih množin dušika in argona, ki si jih izračunal"
+      }, {
+        "text": "/a v **Nalogi 2**.\n($M(N_2) \\approx 28 \\,"
+      }, {
+        "text": " \\text{g/mol}$, $M(Ar) \\approx 40 \\, \\text{g/mol"
+      }, {
+        "text": "}$)"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

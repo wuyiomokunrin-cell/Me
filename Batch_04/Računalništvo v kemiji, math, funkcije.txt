@@ -1,0 +1,551 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": false,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes to know:\n1. The user\u0027s files (metadata) are chronologically labeled, so the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other, given the topic.\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT PROTOCOL**\n\n1.  **Initial Output Protocol:** Begin your response *only* with the content note itself. Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The foundational structure of the notes must accurately reflect the material presented (what was said/seen). Your first duty is to record the lecturer\u0027s content and the user\u0027s notes, **as they are**. Minimal AI interjection should occur in the main body; use dedicated analytical sections for added insight.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  **Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5.  **Conceptual Strengthening Tasks (NEW):** At the conclusion of the synthesized notes, generate a section of \u0027Conceptual Strengthening Tasks\u0027. These tasks must:\n    *   Mimic the structure and difficulty of the examples/problems presented in the current lecture material.\n    *   Include \u0027Challenges\u0027 designed to connect the current university concepts with foundational knowledge from high school or prior courses, forcing the user to utilize a broad, integrated understanding.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a highly knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveDocument": {
+        "id": "1yq-fHYqpNWMyNYqHNRCxYcru3I1-4udP"
+      },
+      "role": "user",
+      "tokenCount": 62206
+    }, {
+      "driveDocument": {
+        "id": "1gLlZgjyD9o9wITRTwwK0eClEzEWylv6s"
+      },
+      "role": "user",
+      "tokenCount": 6040
+    }, {
+      "text": "Racunalnistvo v Kemiji. 3. predavanje \nmath knjiznica funkcije, separacije, exception module...",
+      "role": "user",
+      "tokenCount": 29
+    }, {
+      "text": "**Consolidating Data Sources**\n\nI\u0027ve begun processing the first Jupyter Notebook, RvK_Poglavje5.ipynb, focusing on the data section. I am mapping the data structures and considering the best methods to integrate this chapter\u0027s information with data from RvK_Poglavje6.ipynb into a unified Obsidian note.\n\n\n**Analyzing Chapter Structure**\n\nI\u0027m now diving deeper into the content of RvK_Poglavje5.ipynb. It covers core Python input/output with the print command, variables, strings, arithmetic operations, user input using `input()`, and some very basic error handling using `try-except`. I\u0027m starting to visualize how the structure will integrate with the information in chapter 6, and I am noting the crucial topics to prioritize in the unified note.\n\n\n**Synthesizing File Content**\n\nI\u0027ve been meticulously reviewing the content of `RvK_Poglavje5.ipynb`, focusing on the `print` command, its variations, and the introduction to file handling. I\u0027m now comparing and contrasting how this material on input/output intersects with the data formatting techniques in `RvK_Poglavje6.ipynb`. The goal is a seamless Obsidian note, emphasizing the practical application of both data acquisition and presentation. I\u0027m noting areas where the two notebooks overlap, like variables, to develop a well-structured outline.\n\n\n**Unifying Chapter Content**\n\nI\u0027m now fully immersed in the content of both notebooks. I\u0027ve begun integrating the details from RvK_Poglavje5.ipynb, focusing on the print function, input methods, and file handling, with RvK_Poglavje6.ipynb, which covers formatting techniques. My primary objective remains the creation of a well-organized and seamless single Obsidian note, emphasizing the practical applications of data input, processing, and presentation, and I will be prioritizing an outline that covers these topics.\n\n\n**Structuring the Obsidian Note**\n\nI\u0027m now fully immersed in the content of the Jupyter notebooks, focusing on the planned structure of the Obsidian note. I will combine the two chapters sequentially. I\u0027m carefully translating the Jupyter notebook Markdown cells into Obsidian-compatible Markdown, retaining the original Slovene text and converting code cells into Python code blocks. I\u0027m incorporating the user\u0027s task prompts as comments within the code blocks and surrounding text. I am adding analytical sections for a tutor-persona. For example, I will add more detail about the `print()` function\u0027s `sep` and `end` parameters.\n\n\n**Structuring I/O Integration**\n\nI\u0027ve been meticulously reviewing the content and have the structure of the Obsidian note well-defined. I\u0027ll translate Jupyter Markdown into Obsidian, preserving the Slovene text and integrating code with user prompts as comments. I\u0027m adding analytical sections for a tutor-persona, emphasizing the utility of print parameters, input error handling, and the benefits of f-strings, as well as the important use of best practices to ensure code readability, resource management, and robust error management.\n\n\n**Synthesizing Knowledge Flow**\n\nI\u0027ve been planning the structure of the unified Obsidian note. I\u0027m focusing on merging Chapter 5, covering input/output fundamentals, with Chapter 6, which deals with formatting techniques. I\u0027ll translate the Jupyter Markdown to Obsidian, keep Slovene text, and use Python code blocks. I will include the user\u0027s task prompts as comments and incorporate analytical sections.\n\n\n**Structuring Task-Based Challenges**\n\nI\u0027ve been planning the challenges. I\u0027ll include a task that combines data input/output and formatting, another for error handling and output consolidation, and a chemistry-based challenge linked to file input/output and user input. The goal is to reinforce concepts across both chapters in a progressive manner.\n\n\n**Structuring Note and Tasks**\n\nI\u0027m developing a structured note that will merge content from the two notebooks into one unified source. My focus is on translating Markdown to Obsidian-compatible format, and I\u0027ll include user prompts as code comments. I\u0027ll also add a \u0027tutor\u0027 section for detailed analyses, and am designing task-based challenges.\n\n\n",
+      "role": "model",
+      "tokenCount": 1978,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Consolidating Data Sources**\n\nI\u0027ve begun processing the first Jupyter Notebook, RvK_Poglavje5.ipynb, focusing on the data section. I am mapping the data structures and considering the best methods to integrate this chapter\u0027s information with data from RvK_Poglavje6.ipynb into a unified Obsidian note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Chapter Structure**\n\nI\u0027m now diving deeper into the content of RvK_Poglavje5.ipynb. It covers core Python input/output with the print command, variables, strings, arithmetic operations, user input using `input()`, and some very basic error handling using `try-except`. I\u0027m starting to visualize how the structure will integrate with the information in chapter 6, and I am noting the crucial topics to prioritize in the unified note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing File Content**\n\nI\u0027ve been meticulously reviewing the content of `RvK_Poglavje5.ipynb`, focusing on the `print` command, its variations, and the introduction to file handling. I\u0027m now comparing and contrasting how this material on input/output intersects with the data formatting techniques in `RvK_Poglavje6.ipynb`. The goal is a seamless Obsidian note, emphasizing the practical application of both data acquisition and presentation. I\u0027m noting areas where the two notebooks overlap, like variables, to develop a well-structured outline.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Unifying Chapter Content**\n\nI\u0027m now fully immersed in the content of both notebooks. I\u0027ve begun integrating the details from RvK_Poglavje5.ipynb, focusing on the print function, input methods, and file handling, with RvK_Poglavje6.ipynb, which covers formatting techniques. My primary objective remains the creation of a well-organized and seamless single Obsidian note, emphasizing the practical applications of data input, processing, and presentation, and I will be prioritizing an outline that covers these topics.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Obsidian Note**\n\nI\u0027m now fully immersed in the content of the Jupyter notebooks, focusing on the planned structure of the Obsidian note. I will combine the two chapters sequentially. I\u0027m carefully translating the Jupyter notebook Markdown cells into Obsidian-compatible Markdown, retaining the original Slovene text and converting code cells into Python code blocks. I\u0027m incorporating the user\u0027s task prompts as comments within the code blocks and surrounding text. I am adding analytical sections for a tutor-persona. For example, I will add more detail about the `print()` function\u0027s `sep` and `end` parameters.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring I/O Integration**\n\nI\u0027ve been meticulously reviewing the content and have the structure of the Obsidian note well-defined. I\u0027ll translate Jupyter Markdown into Obsidian, preserving the Slovene text and integrating code with user prompts as comments. I\u0027m adding analytical sections for a tutor-persona, emphasizing the utility of print parameters, input error handling, and the benefits of f-strings, as well as the important use of best practices to ensure code readability, resource management, and robust error management.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Knowledge Flow**\n\nI\u0027ve been planning the structure of the unified Obsidian note. I\u0027m focusing on merging Chapter 5, covering input/output fundamentals, with Chapter 6, which deals with formatting techniques. I\u0027ll translate the Jupyter Markdown to Obsidian, keep Slovene text, and use Python code blocks. I will include the user\u0027s task prompts as comments and incorporate analytical sections.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Task-Based Challenges**\n\nI\u0027ve been planning the challenges. I\u0027ll include a task that combines data input/output and formatting, another for error handling and output consolidation, and a chemistry-based challenge linked to file input/output and user input. The goal is to reinforce concepts across both chapters in a progressive manner.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Note and Tasks**\n\nI\u0027m developing a structured note that will merge content from the two notebooks into one unified source. My focus is on translating Markdown to Obsidian-compatible format, and I\u0027ll include user prompts as code comments. I\u0027ll also add a \u0027tutor\u0027 section for detailed analyses, and am designing task-based challenges.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Računalništvo v Kemiji - Predavanje 3: Vnos, Izpis in Oblikovanje Podatkov]]\n\nTa zapisek združuje vsebino iz poglavij 5 in 6, ki pokrivata temeljne operacije za vnos in izpis podatkov v Pythonu ter naprednejše tehnike za oblikovanje izpisa.\n\n---\n# [[5 Izpis in vnos podatkov]]\nV tem poglavju se osredotočamo na fundamentalne načine, kako program komunicira z uporabnikom in zunanjimi viri podatkov.\n\n## [[5.1 Ukaz print]]\nV prejšnjih poglavjih smo že uporabili ukaz `print` za enostavno izpisovanje vrednosti spremenljivk. V tem poglavju je prikazanih še nekaj drugih načinov uporabe tega ukaza. Poleg vrednosti posameznih spremenljivk lahko izpišemo tudi vrednosti računskih izrazov, besedilo ali združimo izpis besedil in števil. Pri tem mora biti tekst, ki ga želimo izpisati, v narekovajih. Uporabimo lahko enojni ali dvojni narekovaj.\n\n### [[Primer 5-1:]]\nKaj se izpiše?\n\n```python\nprint(12)\nprint(3*3)\nprint(\"Število atomov je\", 3*2)\n\n# Naloga: Predelajte program tako, da se bodo v print stavkih nahajale spremenljivke, ne aritmetični izrazi.\n# Rešitev:\nst_atomov_na_molekulo \u003d 2\nst_molekul \u003d 3\nskupno_st_atomov \u003d st_atomov_na_molekulo * st_molekul\nprint(\"Število atomov je\", skupno_st_atomov)\n```\n\u003e #### [[Critical Analysis]]\n\u003e Ukaz `print()` je vsestranska funkcija. V tretji vrstici opazimo, da Python avtomatsko pretvori numerični rezultat izraza `3*2` v niz (string) za namene izpisa. Vejica `,` med argumenti v `print()` funkciji avtomatsko doda presledek med izpisane elemente. To je privzeto obnašanje separatorja.\n\n### [[Primer 5-2:]]\nČe v Pythonu uporabimo ukaz `print` z več argumenti, v izpisu privzeto vstavi med argumente en presledek.\nKaj se izpiše?\n```python\na \u003d 3\nb \u003d 4\nc \u003d a*b**2\nprint(\"Vrednosti so:\", a, b, c)\n```\n\u003e #### [[Note to Self]]\n\u003e Izpis bo: `Vrednosti so: 3 4 48`. Upoštevan je vrstni red operacij (potenciranje pred množenjem), torej $c \u003d 3 \\times 4^2 \u003d 3 \\times 16 \u003d 48$.\n\n#### [[Varianta 1]]\nČe želimo, da so vrednosti izpisane vsaka v svoji vrstici, lahko za vsako spremenljivko uporabimo svoj ukaz `print` ali uporabimo ubežni znak `\u0027\\\\n\u0027` (newline character).\n\n```python\na \u003d 3\nb \u003d 4\nc \u003d 48\n# Možnost 1: Več print klicev\nprint(\"Vrednosti so:\")\nprint(a)\nprint(b)\nprint(c)\n\n# Možnost 2: Uporaba \u0027\\n\u0027\nprint(\"Vrednosti so:\", \u0027\\n\u0027, a, \u0027\\n\u0027, b, \u0027\\n\u0027, c)\n\n# Možnost 3: Uporaba argumenta \u0027sep\u0027 (separator)\nprint(\"Vrednosti so:\", a, b, c, sep\u003d\u0027\\n\u0027)\n```\n\n#### [[Varianta 2]]\nČe želimo, da so vrednosti zapisane v isti vrstici s presledkom treh mest, zapišemo:\n```python\na \u003d 3\nb \u003d 4\nc \u003d 48\nd \u003d 14 # Dodana spremenljivka za nalogo\nprint(\"Vrednosti so:\", a, b, c, d, sep\u003d\"   \")\n```\n\u003e #### [[Critical Analysis]]\n\u003e Argument `sep` v funkciji `print()` je izjemno uporaben za kontrolirano oblikovanje izpisa. Privzeta vrednost je en presledek (`sep\u003d\u0027 \u0027`). Z eksplicitno določitvijo `sep` lahko ustvarimo izpise, ki so primerni za formate kot je CSV (Comma-Separated Values), kjer bi uporabili `sep\u003d\u0027,\u0027`.\n\n### [[Primer 5-3:]]\nNaslednji primer prikazuje koristnost uporabe spremenljivk. Če namreč vrednosti spremenljivk spremenimo na enem mestu v programu, se sprememba uveljavi povsod v programu, kjer nastopa ime te spremenljivke.\n```python\noseba_ime\u003d\u0027Ana\u0027\noseba_starost\u003d\u002732\u0027 # Pozor: to je niz (string), ne število!\nprint(\u0027Oseba se imenuje\u0027, oseba_ime)\nprint(\u0027in je stara\u0027, oseba_starost, \u0027let.\u0027)\nprint(\u0027Vsec ji je ime\u0027, oseba_ime,\u0027.\u0027)\n\n# Spremenjena koda\noseba_ime \u003d \u0027Peter\u0027\noseba_starost \u003d \u002745\u0027\nprint(\u0027Oseba se imenuje\u0027, oseba_ime)\nprint(\u0027in je stara\u0027, oseba_starost, \u0027let.\u0027)\nprint(\u0027Vsec ji je ime\u0027, oseba_ime,\u0027.\u0027)\n```\nV stavku `print` lahko namesto vejic uporabimo tudi znak `+` za spajanje nizov (concatenation).\n```python\noseba_ime \u003d \u0027Ana\u0027\noseba_starost \u003d \u002732\u0027\nprint(\u0027in je stara \u0027 + oseba_starost + \u0027 let.\u0027)\n```\n\u003e #### [[Warning]]\n\u003e Pri uporabi operatorja `+` za spajanje morajo biti **vsi elementi nizi (string)**. Če poskušamo združiti niz in število, bo Python javil napako `TypeError`.\n\u003e \n\u003e Spodnja koda bo povzročila napako:\n\u003e ```python\n\u003e # NAPAČNA KODA\n\u003e oseba_starost \u003d 32 # To je sedaj število (int)\n\u003e # print(\u0027in je stara \u0027 + oseba_starost + \u0027 let.\u0027) # To bo javilo TypeError\n\u003e ```\n\u003e \n\u003e **Pravilna rešitev** je eksplicitna pretvorba števila v niz s funkcijo `str()`:\n\u003e ```python\n\u003e # PRAVILNA KODA\n\u003e oseba_starost \u003d 32 # int\n\u003e print(\u0027in je stara \u0027 + str(oseba_starost) + \u0027 let.\u0027)\n\u003e ```\n\u003e Vejica `,` v `print` funkciji to pretvorbo opravi avtomatsko, medtem ko operator `+` zahteva, da to storimo sami.\n\n## [[5.2 Vrstni red izvajanja aritmetičnih operacij]]\nAritmetični vnos podatkov pomeni, da spremenljivki pripišemo vrednost s prireditvenim stavkom, ki je del programa. To pomeni, da če želi uporabnik spremeniti vrednost spremenljivke, mora poseči neposredno v program.\n\n### [[Primer 5-4:]]\nKaj se izpiše?\n```python\nime \u003d \"Ana\"\nPi \u003d 3.14159\nprint(ime, Pi)\n```\n\u003e #### [[Note to Self]]\n\u003e To je primer statičnega prirejanja vrednosti. Izpis bo `Ana 3.14159`.\n\n## [[5.3 Interaktivni vnos]]\nUporabnik lahko vstavi vrednosti spremenljivk interaktivno prek ekrana z ukazom `input`. Ta način pomeni, da uporabnik ob vstavljanju podatkov ne posega v program. Slabost tega pristopa je, da lahko postane nepregleden v primeru velikega števila podatkov.\n\n### [[Primer 5-5:]]\nKaj se izpiše, ko uporabnik vstavi svoje ime?\n```python\nime \u003d input(\"Vstavite svoje ime: \")\nprint(\"Zdravo, \" + ime + \"!\")\n```\n\n\u003e #### [[Warning]]\n\u003e **Vnos z ukazom `input` vedno privzame, da so vstavljene vrednosti nizi (string)!**\n\u003e Če jih v programu želimo uporabljati kot numerične vrednosti (števila), jih moramo eksplicitno pretvoriti s funkcijami `int()` za cela števila in `float()` za realna števila. Temu procesu pravimo [[Type Casting]] (pretvarjanje tipov).\n\n### [[Primer 5-6:]]\n```python\nx_str \u003d input(\"Vnesi prvo celo število: \")\ny_str \u003d input(\"Vnesi drugo celo število: \")\n\n# Pretvorba iz niza v celo število\nx_int \u003d int(x_str)\ny_int \u003d int(y_str)\n\nrezultat \u003d x_int + y_int\nprint(rezultat)\n```\n\u003e #### [[Critical Analysis]]\n\u003e - **Kaj se zgodi, če uporabnik pomotoma vnese realno število (npr. \u00273.14\u0027)?** Program se bo ustavil z napako `ValueError`, ker `int()` ne more pretvoriti niza, ki vsebuje decimalno piko.\n\u003e - **Kaj se zgodi brez `int()`?** Če bi napisali `rezultat \u003d x_str + y_str`, bi Python združil niza. Za vnos \u00275\u0027 in \u00273\u0027 bi bil rezultat \u002753\u0027, ne 8. To je pogosta napaka začetnikov.\n\n### [[Primer 5-7:]]\n```python\nx_str \u003d input(\"Vnesi prvo realno število: \")\ny_str \u003d input(\"Vnesi drugo realno število: \")\nrezultat \u003d float(x_str) + float(y_str)\nprint(rezultat)\n```\n\u003e #### [[Note to Self]]\n\u003e Funkcija `float()` je bolj prilagodljiva kot `int()`. Če uporabnik vnese celo število (npr. \u00277\u0027), ga bo `float()` uspešno pretvoril v realno število (7.0).\n\n### [[Primer 5-9: Obravnava napak s try-except]]\nČe želimo preprečiti neustrezen vnos uporabnika in posledično sesutje programa, uporabimo strukturo `try-except`.\n```python\ntry:\n    vnos \u003d input(\"Vnesi celo stevilo: \")\n    stevilo \u003d int(vnos)\n    print(\"Vnesli ste število:\", stevilo)\nexcept ValueError:\n    print(\"Napačen vnos! Vpisati morate celo število.\")\n```\n\u003e #### [[Critical Analysis]]\n\u003e [[try-except block|Blok `try-except`]] je temelj robustnega programiranja.\n\u003e 1.  **`try`**: Python poskuša izvesti kodo znotraj tega bloka.\n\u003e 2.  **`except ValueError`**: Če med izvajanjem `try` bloka pride do napake tipa `ValueError` (kot pri `int(\u0027tekst\u0027)`), se izvajanje `try` bloka takoj prekine in skoči v `except` blok.\n\u003e 3.  Program se ne sesuje, ampak elegantno obravnava napako in nadaljuje z izvajanjem.\n\n## [[5.4 Branje podatkov iz datoteke]]\nV primeru velikega števila vhodnih podatkov, ki se pogosto spreminjajo, je najugodnejši vnos iz datoteke. Na ta način uporabnik spreminja samo tekstovno datoteko s podatki in ne posega v programsko kodo.\n\n`[Image illustrating data flow from a file into a Python program]`\n\n### [[5.4.1 Tvorjenje datoteke s podatki]]\nDatoteko s podatki (npr. `Podatki.txt`) ustvarimo s poljubnim urejevalnikom besedil (Beležnica, VS Code, IDLE) in jo shranimo v isti direktorij kot našo Python skripto.\n\n`[Image showing file save dialog in an editor]`\n\n### [[5.4.2 Povezava podatkovne datoteke s programsko datoteko]]\nZa delo z datotekami uporabimo funkcijo `open()`.\n```python\n# Splošna oblika\ndatoteka \u003d open(\"ime_datoteke.txt\", \"način_dostopa\")\n# ... delo z datoteko ...\ndatoteka.close()\n```\n**Načini dostopa:**\n*   `\"r\"`: (read) Samo branje.\n*   `\"r+\"`: Branje in pisanje.\n\n**Metode za branje:**\n*   `datoteka.read()`: Prebere celotno vsebino kot en sam niz. Primerno za majhne datoteke.\n*   `datoteka.readline()`: Prebere eno samo vrstico.\n*   `datoteka.readlines()`: Prebere vse vrstice in jih vrne kot seznam (list) nizov.\n\n\u003e #### [[Note to Self]]\n\u003e **Boljša praksa:** Vedno uporabljaj `with` stavek za delo z datotekami. Ta avtomatsko poskrbi za zapiranje datoteke, tudi če pride do napake.\n\u003e ```python\n\u003e # Priporočen način\n\u003e try:\n\u003e     with open(\"Podatki.txt\", \"r\") as vsebina:\n\u003e         f \u003d vsebina.readlines()\n\u003e     # Datoteka je tukaj že avtomatsko zaprta\n\u003e     temperatura \u003d float(f[0])\n\u003e     tlak \u003d float(f[1])\n\u003e     R \u003d float(f[2])\n\u003e     print(temperatura, tlak, R)\n\u003e except FileNotFoundError:\n\u003e     print(\"Napaka: Datoteka \u0027Podatki.txt\u0027 ne obstaja.\")\n\u003e except IndexError:\n\u003e     print(\"Napaka: Datoteka ne vsebuje dovolj vrstic.\")\n\u003e except ValueError:\n\u003e     print(\"Napaka: Podatki v datoteki niso v pravilnem numeričnem formatu.\")\n\u003e ```\n\n### [[Primer 5-10: Branje vrstic s `readlines`]]\nVsebina `Podatki.txt`:\n```\n23\n1.025\n8.314\n```\nKoda:\n```python\nwith open(\"Podatki.txt\", \"r\") as vsebina:\n    vrstice \u003d vsebina.readlines()\n\n# vsaka vrstica v seznamu \u0027vrstice\u0027 ima na koncu znak za novo vrstico \u0027\\n\u0027\n# float() ga ignorira, a pri nizih je to lahko moteče\ntemperatura \u003d float(vrstice[0])\ntlak \u003d float(vrstice[1])\nR \u003d float(vrstice[2])\nprint(temperatura, tlak, R)\n```\n### [[Primer 5-11: Branje in razdeljevanje vrstice]]\nVsebina `Podatki2.txt`:\n```\nIrena 165 62.3\n```\nKoda:\n```python\nwith open(\"Podatki2.txt\", \"r\") as vsebina:\n    # readline() prebere prvo vrstico\n    # split() jo razdeli glede na presledke v seznam [\u0027Irena\u0027, \u0027165\u0027, \u002762.3\u0027]\n    podatki \u003d vsebina.readline().split() \n\nime \u003d podatki[0]\nvisina \u003d float(podatki[1])\nmasa \u003d float(podatki[2])\nprint(ime, visina, masa)\n```\n### [[Primer 5-13: Odstranjevanje `\\n`]]\n`readlines()` ohrani znak za novo vrstico `\\n`. Odstranimo ga z metodo `strip()`.\n```python\nwith open(\u0027testread.txt\u0027, \u0027r\u0027) as fp:\n    vrstice_surove \u003d fp.readlines()\n\n# Uporaba izpeljanega seznama (list comprehension) za čiščenje\nvrstice_ciste \u003d [vrstica.strip() for vrstica in vrstice_surove]\nprint(vrstice_ciste)\n```\n\n## [[5.5 Izpis podatkov v datoteko]]\n`[Image illustrating data flow from Python program to an output file]`\n\nUporabimo `open()` z načinom za pisanje.\n*   `\"w\"`: (write) Pisanje. **Prepiše obstoječo datoteko!** Če ne obstaja, jo ustvari.\n*   `\"a\"`: (append) Dodajanje. Doda vsebino na konec obstoječe datoteke. Če ne obstaja, jo ustvari.\n\n### [[Primer 5-14:]]\n```python\na \u003d 3\nwith open(\"Rezultati.txt\", \"w\") as datoteka:\n    # Uporabimo argument \u0027file\u0027 v print funkciji\n    print(\u0027Halo\u0027, file\u003ddatoteka)\n    print(a, file\u003ddatoteka)\n\n# Preverjanje vsebine (v Colab ali terminalu)\n# !cat Rezultati.txt\n```\n\u003e #### [[Critical Analysis]]\n\u003e Metoda `print(..., file\u003ddatoteka)` je priročna, ker lahko uporabimo vse njene zmožnosti (npr. `sep`), le da je izpis preusmerjen v datoteko. Alternativno bi lahko uporabili metodo `datoteka.write()`, ki pa sprejme samo en argument tipa niz.\n\u003e ```python\n\u003e with open(\"Rezultati.txt\", \"w\") as datoteka:\n\u003e     datoteka.write(\"Halo\\n\") # Ročno moramo dodati \u0027\\n\u0027\n\u003e     datoteka.write(str(a) + \"\\n\") # Ročno moramo pretvoriti v niz\n\u003e ```\n\u003e Uporaba `print` je pogosto bolj berljiva in enostavnejša.\n\n---\n# [[6 Oblikovanje izpisa]]\nKo imamo rezultate, jih je pomembno predstaviti na jasen, berljiv in estetski način. [[f-string|F-stringi]] (formatirani nizi) so moderen in močan način za to.\n\n## [[6.1 Število decimalnih mest]]\n\n### [[6.1.1 Skupno število števk v številu]]\nSplošna oblika: `f\"{spremenljivka:.n}\"`, kjer `n` določa število pomembnih mest (significant figures).\n```python\nx \u003d 4863.4363091\n\n# Izpis s 6 pomembnimi mesti\nprint(f\"{x:.6} je rezultat.\") # Izpis: 4863.44 je rezultat.\n\n# Izpis s 3 pomembnimi mesti (preklopi v eksponentni zapis)\nprint(f\"{x:.3}\") # Izpis: 4.86e+03\n```\n\n### [[6.1.2 Število decimalnih mest]]\nSplošna oblika: `f\"{spremenljivka:.nf}\"`, kjer `n` določa število mest za decimalno piko.\n```python\nx \u003d 4863.4363091\nprint(f\"{x:.3f}\") # Izpis: 4863.436\n```\n## [[6.2 Ločevanje tisočic]]\nUporabimo vejico pred določilom za decimalna mesta.\n```python\nx \u003d 4863.4363091\nprint(f\"{x:,.3f}\") # Izpis: 4,863.436\n```\n## [[6.3 Oblikovanje števil kot odstotki]]\nUporabimo znak `%`. Python število avtomatsko pomnoži s 100.\n```python\nx \u003d 0.34567\nprint(f\"{x:.2%}\") # Izpis: 34.57%\n```\n## [[6.4 Poravnava]]\n*   `:\u003cn`: Leva poravnava na `n` mest.\n*   `:\u003en`: Desna poravnava na `n` mest.\n*   `:^n`: Sredinska poravnava na `n` mest.\n```python\nprint(f\"{\u0027etanol\u0027:\u003c15}{\u0027metanol\u0027:\u003c15}{\u0027formaldehid\u0027:\u003c15}\")\nprint(f\"{12.345:\u003e15.2f}\")\nprint(f\"{5.678:\u003e15.2f}\")\n```\n## [[6.6 Komentarji]]\nKomentarji so ključni za razumljivost in vzdrževanje kode.\n*   Enojni komentarji se začnejo z `#`.\n*   Večvrstični komentarji (oz. dokumentacijski nizi) so obdani s `\u0027\u0027\u0027` ali `\"\"\"`.\n```python\n# To je enovrstični komentar\n\n\u0027\u0027\u0027\nTo je večvrstični komentar, ki pojasni delovanje\nnaslednjega bloka kode. Uporaben je za daljše razlage.\n\u0027\u0027\u0027\nx \u003d 10 # Komentar je lahko tudi na koncu vrstice\n```\n---\n\n# [[Conceptual Strengthening Tasks]]\n\n1.  **Vaja (Vnos, Obračun, Oblikovan izpis):**\n    *   Ustvari datoteko `mase_volumni.txt` z naslednjo vsebino (spojina, masa [g], volumen [cm³]):\n        ```\n        voda 997 1000\n        etanol 789 1000\n        živo_srebro 13534 1000\n        ```\n    *   Napiši Python program, ki prebere to datoteko.\n    *   Za vsako vrstico izračunaj gostoto ($\\rho \u003d \\frac{m}{V}$) v g/cm³.\n    *   Izpiši rezultate v obliki lepo poravnane tabele na zaslon. Ime spojine naj bo poravnano levo na 15 mest, gostota pa desno na 10 mest, izpisana na 3 decimalna mesta.\n\n2.  **Vaja (Robusten interaktivni vnos):**\n    *   Napiši program, ki uporabnika vpraša po temperaturi v stopinjah Celzija.\n    *   Program naj bo odporen na napake: če uporabnik vnese besedilo ali neveljavno število, naj program izpiše prijazno sporočilo o napaki in se ne sesuje (uporabi `try-except`).\n    *   Če je vnos uspešen, naj program izračuna temperaturo v Kelvinih ($T_K \u003d T_C + 273.15$) in jo zapiše v datoteko `temperature.log` v formatu: `\"Vnos (C): [vrednost], Rezultat (K): [vrednost]\"`. Vsak nov zagon programa naj doda novo vrstico v datoteko.\n\n3.  **Izziv (Povezovanje s kemijo):**\n    *   Ustvari datoteko `atomske_mase.txt`:\n        ```\n        H 1.008\n        O 16.00\n        C 12.01\n        ```\n    *   Napiši program, ki najprej prebere to datoteko in shrani podatke v primerno strukturo (namig: slovar bi bil idealen, a zaenkrat lahko tudi ročno iščeš).\n    *   Program naj interaktivno vpraša uporabnika za formulo preproste molekule, npr. \"H2O\".\n    *   **(Težji del, po želji):** Razčleni formulo (npr. \"H2O\" -\u003e 2 atoma H, 1 atom O).\n    *   **(Lažji del):** Program naj vpraša: \"Vnesi število H atomov:\", \"Vnesi število O atomov:\", \"Vnesi število C atomov:\".\n    *   Izračunaj in izpiši molekulsko maso spojine, zaokroženo na dve decimalni mesti. Primer izpisa: `Molekulska masa H2O je 18.02 g/mol.`",
+      "role": "model",
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "# [[Računalništvo v Kemiji - Predavanje 3: Vnos, Izpis in Oblikovanje Pod"
+      }, {
+        "text": "atkov]]\n\nTa zapisek združuje vsebino iz poglavij 5 in 6, ki pok"
+      }, {
+        "text": "rivata temeljne operacije za vnos in izpis podatkov v Pythonu ter naprednejše tehnike za"
+      }, {
+        "text": " oblikovanje izpisa.\n\n---\n# [[5 Izpis in vnos podatkov]]\nV tem poglavju"
+      }, {
+        "text": " se osredotočamo na fundamentalne načine, kako program komunicira z uporabnikom in zunanjimi vir"
+      }, {
+        "text": "i podatkov.\n\n## [[5.1 Ukaz print]]\nV prejšnjih poglavjih smo že"
+      }, {
+        "text": " uporabili ukaz `print` za enostavno izpisovanje vrednosti spremenljivk. V tem poglavju"
+      }, {
+        "text": " je prikazanih še nekaj drugih načinov uporabe tega ukaza. Poleg vrednosti posameznih spremen"
+      }, {
+        "text": "ljivk lahko izpišemo tudi vrednosti računskih izrazov, besedilo ali združimo iz"
+      }, {
+        "text": "pis besedil in števil. Pri tem mora biti tekst, ki ga želimo izpisati, v nare"
+      }, {
+        "text": "kovajih. Uporabimo lahko enojni ali dvojni narekovaj.\n\n### [[Primer"
+      }, {
+        "text": " 5-1:]]\nKaj se izpiše?\n\n```python\nprint(12)\n"
+      }, {
+        "text": "print(3*3)\nprint(\"Število atomov je\", 3*2)\n\n# Nal"
+      }, {
+        "text": "oga: Predelajte program tako, da se bodo v print stavkih nahajale spremenljivke, ne"
+      }, {
+        "text": " aritmetični izrazi.\n# Rešitev:\nst_atomov_na_molekulo"
+      }, {
+        "text": " \u003d 2\nst_molekul \u003d 3\nskupno_st_atomov \u003d st_atomov"
+      }, {
+        "text": "_na_molekulo * st_molekul\nprint(\"Število atomov je\", skupno_st_"
+      }, {
+        "text": "atomov)\n```\n\u003e #### [[Critical Analysis]]\n\u003e Ukaz `print()` je vsestranska funk"
+      }, {
+        "text": "cija. V tretji vrstici opazimo, da Python avtomatsko pretvori numerični rezultat izra"
+      }, {
+        "text": "za `3*2` v niz (string) za namene izpisa. Vejica `,` med argument"
+      }, {
+        "text": "i v `print()` funkciji avtomatsko doda presledek med izpisane elemente. To je priv"
+      }, {
+        "text": "zeto obnašanje separatorja.\n\n### [[Primer 5-2:]]\nČe v Pythonu uporabimo"
+      }, {
+        "text": " ukaz `print` z več argumenti, v izpisu privzeto vstavi med argumente en presledek."
+      }, {
+        "text": "\nKaj se izpiše?\n```python\na \u003d 3\nb \u003d 4\nc \u003d a"
+      }, {
+        "text": "*b**2\nprint(\"Vrednosti so:\", a, b, c)\n```\n\u003e #### [["
+      }, {
+        "text": "Note to Self]]\n\u003e Izpis bo: `Vrednosti so: 3 4 48`. U"
+      }, {
+        "text": "poštevan je vrstni red operacij (potenciranje pred množenjem), torej $c \u003d "
+      }, {
+        "text": "3 \\times 4^2 \u003d 3 \\times 16 \u003d 48$.\n\n#### [[Vari"
+      }, {
+        "text": "anta 1]]\nČe želimo, da so vrednosti izpisane vsaka v svoji vrstici"
+      }, {
+        "text": ", lahko za vsako spremenljivko uporabimo svoj ukaz `print` ali uporabimo ubežni znak `\u0027\\\\"
+      }, {
+        "text": "n\u0027` (newline character).\n\n```python\na \u003d 3\nb \u003d 4\nc \u003d 48\n#"
+      }, {
+        "text": " Možnost 1: Več print klicev\nprint(\"Vrednosti so:\")\nprint(a"
+      }, {
+        "text": ")\nprint(b)\nprint(c)\n\n# Možnost 2: Uporaba \u0027\\n\u0027\n"
+      }, {
+        "text": "print(\"Vrednosti so:\", \u0027\\n\u0027, a, \u0027\\n\u0027, b, \u0027\\n\u0027, c)\n\n#"
+      }, {
+        "text": " Možnost 3: Uporaba argumenta \u0027sep\u0027 (separator)\nprint(\"Vrednosti so:\", a,"
+      }, {
+        "text": " b, c, sep\u003d\u0027\\n\u0027)\n```\n\n#### [[Varianta 2]]\nČe želimo, da so vred"
+      }, {
+        "text": "nosti zapisane v isti vrstici s presledkom treh mest, zapišemo:\n```python\na"
+      }, {
+        "text": " \u003d 3\nb \u003d 4\nc \u003d 48\nd \u003d 14 # Dodana sprem"
+      }, {
+        "text": "enljivka za nalogo\nprint(\"Vrednosti so:\", a, b, c, d, sep\u003d\""
+      }, {
+        "text": "   \")\n```\n\u003e #### [[Critical Analysis]]\n\u003e Argument `sep` v funkciji `print()` je"
+      }, {
+        "text": " izjemno uporaben za kontrolirano oblikovanje izpisa. Privzeta vrednost je en presledek (`"
+      }, {
+        "text": "sep\u003d\u0027 \u0027`). Z eksplicitno določitvijo `sep` lahko ustvarimo izpise,"
+      }, {
+        "text": " ki so primerni za formate kot je CSV (Comma-Separated Values), kjer bi uporabili `sep\u003d"
+      }, {
+        "text": "\u0027,\u0027`.\n\n### [[Primer 5-3:]]\nNaslednji primer prikazuje koristnost uporabe sprem"
+      }, {
+        "text": "enljivk. Če namreč vrednosti spremenljivk spremenimo na enem mestu v programu, se"
+      }, {
+        "text": " sprememba uveljavi povsod v programu, kjer nastopa ime te spremenljivke.\n"
+      }, {
+        "text": "```python\noseba_ime\u003d\u0027Ana\u0027\noseba_starost\u003d\u002732\u0027 # Pozor:"
+      }, {
+        "text": " to je niz (string), ne število!\nprint(\u0027Oseba se imenuje\u0027, oseba_ime)"
+      }, {
+        "text": "\nprint(\u0027in je stara\u0027, oseba_starost, \u0027let.\u0027)\nprint(\u0027Vsec ji je ime"
+      }, {
+        "text": "\u0027, oseba_ime,\u0027.\u0027)\n\n# Spremenjena koda\noseba_ime \u003d \u0027Peter\u0027\noseba"
+      }, {
+        "text": "_starost \u003d \u002745\u0027\nprint(\u0027Oseba se imenuje\u0027, oseba_ime)\nprint(\u0027"
+      }, {
+        "text": "in je stara\u0027, oseba_starost, \u0027let.\u0027)\nprint(\u0027Vsec ji je ime\u0027, oseba"
+      }, {
+        "text": "_ime,\u0027.\u0027)\n```\nV stavku `print` lahko namesto vejic uporabimo tudi znak `+` za"
+      }, {
+        "text": " spajanje nizov (concatenation).\n```python\noseba_ime \u003d \u0027Ana\u0027\noseba"
+      }, {
+        "text": "_starost \u003d \u002732\u0027\nprint(\u0027in je stara \u0027 + oseba_starost + \u0027 let"
+      }, {
+        "text": ".\u0027)\n```\n\u003e #### [[Warning]]\n\u003e Pri uporabi operatorja `+` za spajanje mor"
+      }, {
+        "text": "ajo biti **vsi elementi nizi (string)**. Če poskušamo združiti niz in število,"
+      }, {
+        "text": " bo Python javil napako `TypeError`.\n\u003e \n\u003e Spodnja koda bo povzročila nap"
+      }, {
+        "text": "ako:\n\u003e ```python\n\u003e # NAPAČNA KODA\n\u003e oseba_starost \u003d 32"
+      }, {
+        "text": " # To je sedaj število (int)\n\u003e # print(\u0027in je stara \u0027 + oseba_starost"
+      }, {
+        "text": " + \u0027 let.\u0027) # To bo javilo TypeError\n\u003e ```\n\u003e \n\u003e **Pravilna rešitev**"
+      }, {
+        "text": " je eksplicitna pretvorba števila v niz s funkcijo `str()`:\n\u003e ```python\n\u003e"
+      }, {
+        "text": " # PRAVILNA KODA\n\u003e oseba_starost \u003d 32 # int\n\u003e print(\u0027"
+      }, {
+        "text": "in je stara \u0027 + str(oseba_starost) + \u0027 let.\u0027)\n\u003e ```\n\u003e Vejica `,"
+      }, {
+        "text": "` v `print` funkciji to pretvorbo opravi avtomatsko, medtem ko operator `+` zaht"
+      }, {
+        "text": "eva, da to storimo sami.\n\n## [[5.2 Vrstni red izvajanja aritmetičnih operacij"
+      }, {
+        "text": "]]\nAritmetični vnos podatkov pomeni, da spremenljivki pripišemo vred"
+      }, {
+        "text": "nost s prireditvenim stavkom, ki je del programa. To pomeni, da če želi uporabnik sprem"
+      }, {
+        "text": "eniti vrednost spremenljivke, mora poseči neposredno v program.\n\n### [[Primer 5"
+      }, {
+        "text": "-4:]]\nKaj se izpiše?\n```python\nime \u003d \"Ana\"\nPi \u003d 3."
+      }, {
+        "text": "14159\nprint(ime, Pi)\n```\n\u003e #### [[Note to Self]]\n\u003e To"
+      }, {
+        "text": " je primer statičnega prirejanja vrednosti. Izpis bo `Ana 3.14159`.\n\n##"
+      }, {
+        "text": " [[5.3 Interaktivni vnos]]\nUporabnik lahko vstavi vrednosti spremenljivk inter"
+      }, {
+        "text": "aktivno prek ekrana z ukazom `input`. Ta način pomeni, da uporabnik ob vstavljanju"
+      }, {
+        "text": " podatkov ne posega v program. Slabost tega pristopa je, da lahko postane nepregleden v"
+      }, {
+        "text": " primeru velikega števila podatkov.\n\n### [[Primer 5-5:]]\nKaj se iz"
+      }, {
+        "text": "piše, ko uporabnik vstavi svoje ime?\n```python\nime \u003d input(\"Vstavite svoje ime: \")\n"
+      }, {
+        "text": "print(\"Zdravo, \" + ime + \"!\")\n```\n\n\u003e #### [[Warning]]\n\u003e **Vnos z"
+      }, {
+        "text": " ukazom `input` vedno privzame, da so vstavljene vrednosti nizi (string)!**\n"
+      }, {
+        "text": "\u003e Če jih v programu želimo uporabljati kot numerične vrednosti (števila), jih moramo eks"
+      }, {
+        "text": "plicitno pretvoriti s funkcijami `int()` za cela števila in `float()` za realna štev"
+      }, {
+        "text": "ila. Temu procesu pravimo [[Type Casting]] (pretvarjanje tipov).\n\n### [[Primer 5"
+      }, {
+        "text": "-6:]]\n```python\nx_str \u003d input(\"Vnesi prvo celo število: \")\ny"
+      }, {
+        "text": "_str \u003d input(\"Vnesi drugo celo število: \")\n\n# Pretvorba iz niza v cel"
+      }, {
+        "text": "o število\nx_int \u003d int(x_str)\ny_int \u003d int(y_str)\n\n"
+      }, {
+        "text": "rezultat \u003d x_int + y_int\nprint(rezultat)\n```\n\u003e #### [[Critical Analysis]]"
+      }, {
+        "text": "\n\u003e - **Kaj se zgodi, če uporabnik pomotoma vnese realno število ("
+      }, {
+        "text": "npr. \u00273.14\u0027)?** Program se bo ustavil z napako `ValueError`, ker"
+      }, {
+        "text": " `int()` ne more pretvoriti niza, ki vsebuje decimalno piko.\n\u003e - **Kaj se zg"
+      }, {
+        "text": "odi brez `int()`?** Če bi napisali `rezultat \u003d x_str + y_str`, bi Python"
+      }, {
+        "text": " združil niza. Za vnos \u00275\u0027 in \u00273\u0027 bi bil rezultat \u002753\u0027, ne"
+      }, {
+        "text": " 8. To je pogosta napaka začetnikov.\n\n### [[Primer 5-7:]]\n```python"
+      }, {
+        "text": "\nx_str \u003d input(\"Vnesi prvo realno število: \")\ny_str \u003d input(\"Vnesi drugo"
+      }, {
+        "text": " realno število: \")\nrezultat \u003d float(x_str) + float(y_str)"
+      }, {
+        "text": "\nprint(rezultat)\n```\n\u003e #### [[Note to Self]]\n\u003e Funkcija `float()` je"
+      }, {
+        "text": " bolj prilagodljiva kot `int()`. Če uporabnik vnese celo število (npr. \u00277"
+      }, {
+        "text": "\u0027), ga bo `float()` uspešno pretvoril v realno število (7.0).\n\n### [["
+      }, {
+        "text": "Primer 5-9: Obravnava napak s try-except]]\nČe želimo preprečiti ne"
+      }, {
+        "text": "ustrezen vnos uporabnika in posledično sesutje programa, uporabimo strukturo `try-except`.\n"
+      }, {
+        "text": "```python\ntry:\n    vnos \u003d input(\"Vnesi celo stevilo: \")\n    stevilo \u003d int("
+      }, {
+        "text": "vnos)\n    print(\"Vnesli ste število:\", stevilo)\nexcept ValueError:\n    print"
+      }, {
+        "text": "(\"Napačen vnos! Vpisati morate celo število.\")\n```\n\u003e #### [[Critical Analysis]]"
+      }, {
+        "text": "\n\u003e [[try-except block|Blok `try-except`]] je temelj robustnega programiranja."
+      }, {
+        "text": "\n\u003e 1.  **`try`**: Python poskuša izvesti kodo znotraj tega bl"
+      }, {
+        "text": "oka.\n\u003e 2.  **`except ValueError`**: Če med izvajanjem `try` bloka"
+      }, {
+        "text": " pride do napake tipa `ValueError` (kot pri `int(\u0027tekst\u0027)`), se izvajanje `"
+      }, {
+        "text": "try` bloka takoj prekine in skoči v `except` blok.\n\u003e 3.  Program se"
+      }, {
+        "text": " ne sesuje, ampak elegantno obravnava napako in nadaljuje z izvajanjem.\n\n## [[5"
+      }, {
+        "text": ".4 Branje podatkov iz datoteke]]\nV primeru velikega števila vhodnih podatkov,"
+      }, {
+        "text": " ki se pogosto spreminjajo, je najugodnejši vnos iz datoteke. Na ta način uporab"
+      }, {
+        "text": "nik spreminja samo tekstovno datoteko s podatki in ne posega v programsko kodo.\n\n`"
+      }, {
+        "text": "[Image illustrating data flow from a file into a Python program]`\n\n### [[5.4.1 Tvorjenje dat"
+      }, {
+        "text": "oteke s podatki]]\nDatoteko s podatki (npr. `Podatki.txt`) ustvar"
+      }, {
+        "text": "imo s poljubnim urejevalnikom besedil (Beležnica, VS Code, IDLE) in jo"
+      }, {
+        "text": " shranimo v isti direktorij kot našo Python skripto.\n\n`[Image showing file save dialog in"
+      }, {
+        "text": " an editor]`\n\n### [[5.4.2 Povezava podatkovne datoteke s programsko dat"
+      }, {
+        "text": "oteko]]\nZa delo z datotekami uporabimo funkcijo `open()`.\n```python\n# Spl"
+      }, {
+        "text": "ošna oblika\ndatoteka \u003d open(\"ime_datoteke.txt\", \"način_d"
+      }, {
+        "text": "ostopa\")\n# ... delo z datoteko ...\ndatoteka.close()\n```\n**"
+      }, {
+        "text": "Načini dostopa:**\n*   `\"r\"`: (read) Samo branje.\n*   `"
+      }, {
+        "text": "\"r+\"`: Branje in pisanje.\n\n**Metode za branje:**\n*   `datoteka.read"
+      }, {
+        "text": "()`: Prebere celotno vsebino kot en sam niz. Primerno za majhne datoteke."
+      }, {
+        "text": "\n*   `datoteka.readline()`: Prebere eno samo vrstico.\n*   `"
+      }, {
+        "text": "datoteka.readlines()`: Prebere vse vrstice in jih vrne kot seznam (list) nizov.\n\n\u003e"
+      }, {
+        "text": " #### [[Note to Self]]\n\u003e **Boljša praksa:** Vedno uporabljaj `with` stave"
+      }, {
+        "text": "k za delo z datotekami. Ta avtomatsko poskrbi za zapiranje datoteke,"
+      }, {
+        "text": " tudi če pride do napake.\n\u003e ```python\n\u003e # Priporočen način\n\u003e try:\n\u003e"
+      }, {
+        "text": "     with open(\"Podatki.txt\", \"r\") as vsebina:\n\u003e         f \u003d vsebina."
+      }, {
+        "text": "readlines()\n\u003e     # Datoteka je tukaj že avtomatsko zaprta\n\u003e     temperatura"
+      }, {
+        "text": " \u003d float(f[0])\n\u003e     tlak \u003d float(f[1])\n\u003e     R \u003d float(f"
+      }, {
+        "text": "[2])\n\u003e     print(temperatura, tlak, R)\n\u003e except FileNotFoundError:\n\u003e     print(\"Nap"
+      }, {
+        "text": "aka: Datoteka \u0027Podatki.txt\u0027 ne obstaja.\")\n\u003e except IndexError:\n\u003e     print(\"Nap"
+      }, {
+        "text": "aka: Datoteka ne vsebuje dovolj vrstic.\")\n\u003e except ValueError:\n\u003e     print(\"Napaka"
+      }, {
+        "text": ": Podatki v datoteki niso v pravilnem numeričnem formatu.\")\n\u003e ```\n\n### [[Primer"
+      }, {
+        "text": " 5-10: Branje vrstic s `readlines`]]\nVsebina `Podatki."
+      }, {
+        "text": "txt`:\n```\n23\n1.025\n8.314\n```\nKoda:\n```"
+      }, {
+        "text": "python\nwith open(\"Podatki.txt\", \"r\") as vsebina:\n    vrstice \u003d vseb"
+      }, {
+        "text": "ina.readlines()\n\n# vsaka vrstica v seznamu \u0027vrstice\u0027 ima na koncu znak za"
+      }, {
+        "text": " novo vrstico \u0027\\n\u0027\n# float() ga ignorira, a pri nizih je to lahko moteče\n"
+      }, {
+        "text": "temperatura \u003d float(vrstice[0])\ntlak \u003d float(vrstice[1])\nR \u003d"
+      }, {
+        "text": " float(vrstice[2])\nprint(temperatura, tlak, R)\n```\n### [[Primer "
+      }, {
+        "text": "5-11: Branje in razdeljevanje vrstice]]\nVsebina `Podatki2.txt`:"
+      }, {
+        "text": "\n```\nIrena 165 62.3\n```\nKoda:\n```python\nwith open(\""
+      }, {
+        "text": "Podatki2.txt\", \"r\") as vsebina:\n    # readline() prebere prvo vrstico\n"
+      }, {
+        "text": "    # split() jo razdeli glede na presledke v seznam [\u0027Irena\u0027, \u0027165\u0027,"
+      }, {
+        "text": " \u002762.3\u0027]\n    podatki \u003d vsebina.readline().split() \n\nime \u003d podat"
+      }, {
+        "text": "ki[0]\nvisina \u003d float(podatki[1])\nmasa \u003d float(podatki[2"
+      }, {
+        "text": "])\nprint(ime, visina, masa)\n```\n### [[Primer 5-13: Od"
+      }, {
+        "text": "stranjevanje `\\n`]]\n`readlines()` ohrani znak za novo vrstico `\\n`. Od"
+      }, {
+        "text": "stranimo ga z metodo `strip()`.\n```python\nwith open(\u0027testread.txt\u0027, \u0027r\u0027) as fp"
+      }, {
+        "text": ":\n    vrstice_surove \u003d fp.readlines()\n\n# Uporaba izpeljanega se"
+      }, {
+        "text": "znama (list comprehension) za čiščenje\nvrstice_ciste \u003d [vrstica.strip() for vrst"
+      }, {
+        "text": "ica in vrstice_surove]\nprint(vrstice_ciste)\n```\n\n## [[5"
+      }, {
+        "text": ".5 Izpis podatkov v datoteko]]\n`[Image illustrating data flow from Python program to an output file]`\n\n"
+      }, {
+        "text": "Uporabimo `open()` z načinom za pisanje.\n*   `\"w\"`: (write) P"
+      }, {
+        "text": "isanje. **Prepiše obstoječo datoteko!** Če ne obstaja, jo ustvari."
+      }, {
+        "text": "\n*   `\"a\"`: (append) Dodajanje. Doda vsebino na konec obstoje"
+      }, {
+        "text": "če datoteke. Če ne obstaja, jo ustvari.\n\n### [[Primer 5-14:]"
+      }, {
+        "text": "]\n```python\na \u003d 3\nwith open(\"Rezultati.txt\", \"w\") as dat"
+      }, {
+        "text": "oteka:\n    # Uporabimo argument \u0027file\u0027 v print funkciji\n    print(\u0027Halo\u0027, file"
+      }, {
+        "text": "\u003ddatoteka)\n    print(a, file\u003ddatoteka)\n\n# Preverjanje vsebine ("
+      }, {
+        "text": "v Colab ali terminalu)\n# !cat Rezultati.txt\n```\n\u003e #### [[Critical Analysis]]\n\u003e"
+      }, {
+        "text": " Metoda `print(..., file\u003ddatoteka)` je priročna, ker lahko uporabimo vse njene z"
+      }, {
+        "text": "možnosti (npr. `sep`), le da je izpis preusmerjen v datoteko."
+      }, {
+        "text": " Alternativno bi lahko uporabili metodo `datoteka.write()`, ki pa sprejme samo en argument"
+      }, {
+        "text": " tipa niz.\n\u003e ```python\n\u003e with open(\"Rezultati.txt\", \"w\") as datot"
+      }, {
+        "text": "eka:\n\u003e     datoteka.write(\"Halo\\n\") # Ročno moramo dodati \u0027\\n\u0027\n\u003e"
+      }, {
+        "text": "     datoteka.write(str(a) + \"\\n\") # Ročno moramo pretvoriti v niz"
+      }, {
+        "text": "\n\u003e ```\n\u003e Uporaba `print` je pogosto bolj berljiva in enostavnejša"
+      }, {
+        "text": ".\n\n---\n# [[6 Oblikovanje izpisa]]\nKo imamo rezultate, jih je pom"
+      }, {
+        "text": "embno predstaviti na jasen, berljiv in estetski način. [[f-string|F-stringi]]"
+      }, {
+        "text": " (formatirani nizi) so moderen in močan način za to.\n\n## [[6.1 Število decimal"
+      }, {
+        "text": "nih mest]]\n\n### [[6.1.1 Skupno število števk v številu]]\nS"
+      }, {
+        "text": "plošna oblika: `f\"{spremenljivka:.n}\"`, kjer `n` določa štev"
+      }, {
+        "text": "ilo pomembnih mest (significant figures).\n```python\nx \u003d 4863.4363"
+      }, {
+        "text": "091\n\n# Izpis s 6 pomembnimi mesti\nprint(f\"{x:.6} je rezultat"
+      }, {
+        "text": ".\") # Izpis: 4863.44 je rezultat.\n\n# Izpis s 3 pomembnimi"
+      }, {
+        "text": " mesti (preklopi v eksponentni zapis)\nprint(f\"{x:.3}\") # Izpis: "
+      }, {
+        "text": "4.86e+03\n```\n\n### [[6.1.2 Število decimalnih mest]]\nS"
+      }, {
+        "text": "plošna oblika: `f\"{spremenljivka:.nf}\"`, kjer `n` določa število"
+      }, {
+        "text": " mest za decimalno piko.\n```python\nx \u003d 4863.4363091"
+      }, {
+        "text": "\nprint(f\"{x:.3f}\") # Izpis: 4863.436\n```\n##"
+      }, {
+        "text": " [[6.2 Ločevanje tisočic]]\nUporabimo vejico pred določil"
+      }, {
+        "text": "om za decimalna mesta.\n```python\nx \u003d 4863.436309"
+      }, {
+        "text": "1\nprint(f\"{x:,.3f}\") # Izpis: 4,863.436\n"
+      }, {
+        "text": "```\n## [[6.3 Oblikovanje števil kot odstotki]]\nUporabimo znak `%`. Python"
+      }, {
+        "text": " število avtomatsko pomnoži s 100.\n```python\nx \u003d 0"
+      }, {
+        "text": ".34567\nprint(f\"{x:.2%}\") # Izpis: 34.57"
+      }, {
+        "text": "%\n```\n## [[6.4 Poravnava]]\n*   `:\u003cn`: Leva poravnava"
+      }, {
+        "text": " na `n` mest.\n*   `:\u003en`: Desna poravnava na `n` mest.\n*"
+      }, {
+        "text": "   `:^n`: Sredinska poravnava na `n` mest.\n```python\nprint(f\"{"
+      }, {
+        "text": "\u0027etanol\u0027:\u003c15}{\u0027metanol\u0027:\u003c15}{\u0027formaldehid\u0027:\u003c15"
+      }, {
+        "text": "}\")\nprint(f\"{12.345:\u003e15.2f}\")\nprint(f\"{5"
+      }, {
+        "text": ".678:\u003e15.2f}\")\n```\n## [[6.6 Komentarji]]\nK"
+      }, {
+        "text": "omentarji so ključni za razumljivost in vzdrževanje kode.\n*   Enojni"
+      }, {
+        "text": " komentarji se začnejo z `#`.\n*   Večvrstični komentarji (oz. dokument"
+      }, {
+        "text": "acijski nizi) so obdani s `\u0027\u0027\u0027` ali `\"\"\"`.\n```python\n# To je en"
+      }, {
+        "text": "ovrstični komentar\n\n\u0027\u0027\u0027\nTo je večvrstični komentar, ki pojasni delovanje\n"
+      }, {
+        "text": "naslednjega bloka kode. Uporaben je za daljše razlage.\n\u0027\u0027\u0027\nx \u003d 10"
+      }, {
+        "text": " # Komentar je lahko tudi na koncu vrstice\n```\n---\n\n# [[Conceptual Strengthening Tasks]]\n\n1.  **"
+      }, {
+        "text": "Vaja (Vnos, Obračun, Oblikovan izpis):**\n    *   Ustvari dat"
+      }, {
+        "text": "oteko `mase_volumni.txt` z naslednjo vsebino (spojina, masa ["
+      }, {
+        "text": "g], volumen [cm³]):\n        ```\n        voda 997 1000\n"
+      }, {
+        "text": "        etanol 789 1000\n        živo_srebro 1353"
+      }, {
+        "text": "4 1000\n        ```\n    *   Napiši Python program, ki prebere to datoteko."
+      }, {
+        "text": "\n    *   Za vsako vrstico izračunaj gostoto ($\\rho \u003d \\frac{m}{V"
+      }, {
+        "text": "}$) v g/cm³.\n    *   Izpiši rezultate v obliki lepo poravnane tabele na"
+      }, {
+        "text": " zaslon. Ime spojine naj bo poravnano levo na 15 mest, gostota pa des"
+      }, {
+        "text": "no na 10 mest, izpisana na 3 decimalna mesta.\n\n2.  **Vaja"
+      }, {
+        "text": " (Robusten interaktivni vnos):**\n    *   Napiši program, ki uporabnika vpraša"
+      }, {
+        "text": " po temperaturi v stopinjah Celzija.\n    *   Program naj bo odporen na napake:"
+      }, {
+        "text": " če uporabnik vnese besedilo ali neveljavno število, naj program izpiše prijaz"
+      }, {
+        "text": "no sporočilo o napaki in se ne sesuje (uporabi `try-except`).\n    *   Č"
+      }, {
+        "text": "e je vnos uspešen, naj program izračuna temperaturo v Kelvinih ($T_K \u003d T_"
+      }, {
+        "text": "C + 273.15$) in jo zapiše v datoteko `temperature.log` v formatu"
+      }, {
+        "text": ": `\"Vnos (C): [vrednost], Rezultat (K): [vrednost]\"`. Vsak nov z"
+      }, {
+        "text": "agon programa naj doda novo vrstico v datoteko.\n\n3.  **Izziv (Povezovanje"
+      }, {
+        "text": " s kemijo):**\n    *   Ustvari datoteko `atomske_mase.txt`:\n        ```\n"
+      }, {
+        "text": "        H 1.008\n        O 16.00\n        C 12.01"
+      }, {
+        "text": "\n        ```\n    *   Napiši program, ki najprej prebere to datoteko in shr"
+      }, {
+        "text": "ani podatke v primerno strukturo (namig: slovar bi bil idealen, a zaenkrat lahko"
+      }, {
+        "text": " tudi ročno iščeš).\n    *   Program naj interaktivno vpraša uporabnika za formulo pre"
+      }, {
+        "text": "proste molekule, npr. \"H2O\".\n    *   **(Težji del,"
+      }, {
+        "text": " po želji):** Razčleni formulo (npr. \"H2O\" -\u003e 2 atoma H, "
+      }, {
+        "text": "1 atom O).\n    *   **(Lažji del):** Program naj vpraša: \"V"
+      }, {
+        "text": "nesi število H atomov:\", \"Vnesi število O atomov:\", \"Vnesi število"
+      }, {
+        "text": " C atomov:\".\n    *   Izračunaj in izpiši molekulsko maso spojine,"
+      }, {
+        "text": " zaokroženo na dve decimalni mesti. Primer izpisa: `Molekulska masa H2O je"
+      }, {
+        "text": " 18.02 g/mol.`"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

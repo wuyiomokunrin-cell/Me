@@ -1,0 +1,367 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1b9FYHsoAIIIAgC-lnOer_Daij3jI30-7"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1AzY9hI1LGtyHw9R2dr0BzodlI-I2RXif"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "11aycwT3OsvwO3Zsexvz9--2w89622SS6"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1GzkYNAgCjzr1F7i0XNgD0SYS2Hm5JT52"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveAudio": {
+        "id": "1B63M3mV8IZF2cQ2NIy3_Uh-iPUGxUZWI"
+      },
+      "role": "user",
+      "tokenCount": 88431
+    }, {
+      "driveAudio": {
+        "id": "1tlCkbtL_whtCTVrJ85pgNNzfeA1IFmZe"
+      },
+      "role": "user",
+      "tokenCount": 97634
+    }, {
+      "text": "**Charting Rotational Dynamics**\n\nI\u0027ve begun dissecting the rotational motion material. The image series is key to understanding the lecture\u0027s structure. I\u0027m focusing on identifying the core concepts and how they build upon each other. My goal is to extract the key equations, definitions, and any visual aids that help explain the physics of rotation.\n\n\n**Examining Rotational Forces**\n\nI\u0027m now diving into the specifics of rotational dynamics, with a focus on moment of inertia and how Newton\u0027s laws apply. I\u0027ve begun tackling pulley systems and the cart-on-a-loop scenarios. I\u0027m prioritizing the equations and their derivations, aiming to understand the underlying principles before moving on. The goal is to fully understand how these principles fit together. I\u0027m focusing on the first example of the cart on the loop and how its motion is related to gravity and normal forces.\n\n\n**Analyzing Rotational Systems**\n\nI\u0027ve just begun integrating the new material on effective gravity and Earth\u0027s rotation. I\u0027ve re-examined the images and calculations regarding the -0.34% change at the equator due to centrifugal force. It\u0027s now expanded to the mechanics of a massive pulley system. Now focused on how the moment of inertia ($J^*$) impacts the system with masses $m$ and $M$. I\u0027ll now start examining image 2 at the bottom, and image 3.\n\n\n**Dissecting Pulley Systems**\n\nI\u0027m now focusing on the detailed workings of these pulley systems. I\u0027ve broken down the forces and torques involved in the first image, including friction, gravity, and tension. I\u0027m focusing on the equations and handwritten notes, especially the \"Težko šrkipca?\" (Heavy pulley?) question. I\u0027m analyzing Image 4\u0027s rolling motion with moment of inertia. Now working on solving for the acceleration formula in Image 5, and creating an understanding of the system of 3 equations, after I create an understanding of the system in Image 4.\n\n\n**Evaluating Vertical Loop Dynamics**\n\nI\u0027m now fully immersed in the cart\u0027s journey over the hill. The focus is pinpointing when the normal force hits zero. I\u0027m examining how variables like velocity and radius interact, particularly under the condition where $F_N \u003d 0$. I\u0027m also now comparing my prior equations with the provided constants. I\u0027m now also starting to analyze Image 7, which will help determine the final $a \u003d .../...$ equation.\n\n\n**Revisiting Pulley Mechanics**\n\nI\u0027m now fully immersed in the pulley systems, specifically focusing on the moment of inertia and its impact. I\u0027ve begun to break down the equations for the hanging mass, paying close attention to the tension and acceleration. I\u0027m focusing on the translation of the original notation, $F_v$ and $J^*$, for clarity and consistency. The key derivation steps for the Earth rotation problem are now under review. I\u0027m now transitioning into an analysis of the rolling motion and general formulas. The plan now involves integrating this information into a cohesive understanding of the pulley mechanics.\n\n\n**Addressing Equation Derivation**\n\nI\u0027m now clarifying the algebraic manipulation of the pulley system equations. I will be sure that the addition of the equations results in the expected cancellation of forces. My plan now includes translating Slovenian terms as needed and integrating unit checks. I\u0027ll make sure the units are consistent throughout, and then move on.\n\n\n**Evaluating Circular Motion Parameters**\n\nI\u0027m now zeroing in on the problematic velocity value in Image 6. The 105 m/s value raises a red flag; it seems unrealistic for a lab cart. I\u0027m carefully re-examining the units and context to identify the source of the discrepancy. It is now evident the value should be $105 km/h$. I\u0027m now also considering a few other options if the handwriting is difficult to read. I\u0027m focusing on clarifying this ambiguity and noting potential sources of error. Also, I am now focused on the parameters in Image 8 and how they relate.\n\n\n**Summarizing Key Principles**\n\nI\u0027m now consolidating the key concepts and equations derived, ensuring they align with the problem\u0027s guidelines. The goal is a clear, concise summary encompassing each section: Earth\u0027s rotation and effective gravity, the heavy pulley system\u0027s three-equation solution, rolling/sliding dynamics, and the cart-on-a-hill analysis. I\u0027m focusing on preserving original notation while using consistent English explanations, and making certain I address the key assumptions.\n\n\n**Formulating Final Equations**\n\nI\u0027m now generating the final Markdown output. I am incorporating the cart\u0027s mass and the pulley\u0027s radius into the relevant equations. I will be sure that the output clearly defines each variable and its role. The equations are now in their final form, ready to be presented. I\u0027m focusing on ensuring accuracy and readability.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Charting Rotational Dynamics**\n\nI\u0027ve begun dissecting the rotational motion material. The image series is key to understanding the lecture\u0027s structure. I\u0027m focusing on identifying the core concepts and how they build upon each other. My goal is to extract the key equations, definitions, and any visual aids that help explain the physics of rotation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Examining Rotational Forces**\n\nI\u0027m now diving into the specifics of rotational dynamics, with a focus on moment of inertia and how Newton\u0027s laws apply. I\u0027ve begun tackling pulley systems and the cart-on-a-loop scenarios. I\u0027m prioritizing the equations and their derivations, aiming to understand the underlying principles before moving on. The goal is to fully understand how these principles fit together. I\u0027m focusing on the first example of the cart on the loop and how its motion is related to gravity and normal forces.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Rotational Systems**\n\nI\u0027ve just begun integrating the new material on effective gravity and Earth\u0027s rotation. I\u0027ve re-examined the images and calculations regarding the -0.34% change at the equator due to centrifugal force. It\u0027s now expanded to the mechanics of a massive pulley system. Now focused on how the moment of inertia ($J^*$) impacts the system with masses $m$ and $M$. I\u0027ll now start examining image 2 at the bottom, and image 3.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Dissecting Pulley Systems**\n\nI\u0027m now focusing on the detailed workings of these pulley systems. I\u0027ve broken down the forces and torques involved in the first image, including friction, gravity, and tension. I\u0027m focusing on the equations and handwritten notes, especially the \"Težko šrkipca?\" (Heavy pulley?) question. I\u0027m analyzing Image 4\u0027s rolling motion with moment of inertia. Now working on solving for the acceleration formula in Image 5, and creating an understanding of the system of 3 equations, after I create an understanding of the system in Image 4.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Evaluating Vertical Loop Dynamics**\n\nI\u0027m now fully immersed in the cart\u0027s journey over the hill. The focus is pinpointing when the normal force hits zero. I\u0027m examining how variables like velocity and radius interact, particularly under the condition where $F_N \u003d 0$. I\u0027m also now comparing my prior equations with the provided constants. I\u0027m now also starting to analyze Image 7, which will help determine the final $a \u003d .../...$ equation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Revisiting Pulley Mechanics**\n\nI\u0027m now fully immersed in the pulley systems, specifically focusing on the moment of inertia and its impact. I\u0027ve begun to break down the equations for the hanging mass, paying close attention to the tension and acceleration. I\u0027m focusing on the translation of the original notation, $F_v$ and $J^*$, for clarity and consistency. The key derivation steps for the Earth rotation problem are now under review. I\u0027m now transitioning into an analysis of the rolling motion and general formulas. The plan now involves integrating this information into a cohesive understanding of the pulley mechanics.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Addressing Equation Derivation**\n\nI\u0027m now clarifying the algebraic manipulation of the pulley system equations. I will be sure that the addition of the equations results in the expected cancellation of forces. My plan now includes translating Slovenian terms as needed and integrating unit checks. I\u0027ll make sure the units are consistent throughout, and then move on.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Evaluating Circular Motion Parameters**\n\nI\u0027m now zeroing in on the problematic velocity value in Image 6. The 105 m/s value raises a red flag; it seems unrealistic for a lab cart. I\u0027m carefully re-examining the units and context to identify the source of the discrepancy. It is now evident the value should be $105 km/h$. I\u0027m now also considering a few other options if the handwriting is difficult to read. I\u0027m focusing on clarifying this ambiguity and noting potential sources of error. Also, I am now focused on the parameters in Image 8 and how they relate.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing Key Principles**\n\nI\u0027m now consolidating the key concepts and equations derived, ensuring they align with the problem\u0027s guidelines. The goal is a clear, concise summary encompassing each section: Earth\u0027s rotation and effective gravity, the heavy pulley system\u0027s three-equation solution, rolling/sliding dynamics, and the cart-on-a-hill analysis. I\u0027m focusing on preserving original notation while using consistent English explanations, and making certain I address the key assumptions.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating Final Equations**\n\nI\u0027m now generating the final Markdown output. I am incorporating the cart\u0027s mass and the pulley\u0027s radius into the relevant equations. I will be sure that the output clearly defines each variable and its role. The equations are now in their final form, ready to be presented. I\u0027m focusing on ensuring accuracy and readability.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Here are the digitized, structured, and analyzed notes based on the provided lecture material. The notes cover **Rotational Dynamics**, **Circular Motion**, and **System Dynamics with Moments of Inertia**.\n\nThe source material is in Slovenian; I have retained the original variable notation (e.g., $F_v$ for rope force/tension, $F_{tr}$ for friction) but provided English explanations and derivations.\n\n***\n\n# [[Rotational Dynamics]] \u0026 Systems of Particles\n\n**Date:** 2025-11-20\n**Tags:** #physics #mechanics #rotation #newtons-laws #derivations\n**Source Material:** Lecture Notes (Images 1-8)\n\n---\n\n## 1. Vertical Circular Motion (The Loop)\n\nThe lecture begins with an object moving in a vertical circle (e.g., a roller coaster loop or a stone on a string).\n\n### **Physical Model**\n*   **Top of the loop:** Gravity ($F_g$) and Normal Force ($F_N$) both point downward (towards the center).\n*   **Bottom of the loop:** Gravity points down (outward), Normal Force points up (inward).\n\n### **Key Equations**\nFrom [[Newton\u0027s Second Law]] ($\\sum \\vec{F} \u003d m\\vec{a}$):\n\n1.  **Centripetal Acceleration:**\n    $$ a_{cp} \u003d \\omega^2 r \u003d \\frac{v^2}{r} $$\n    Where:\n    *   $\\omega$ \u003d angular velocity\n    *   $v$ \u003d tangential velocity\n    *   $r$ \u003d radius\n\n2.  **Force Balance at the Top (Critical Point):**\n    $$ F_N + F_g \u003d m a_{cp} \u003d m \\omega^2 r $$\n    *Condition for weightlessness (losing contact):* $F_N \u003d 0$.\n    $$ F_g \u003d m \\omega^2 r \\implies mg \u003d m \\omega^2 r \\implies g \u003d \\omega^2 r $$\n\n### **Derivation of Coefficient $k_l$**\nThe notes calculate a coefficient $k_l$, likely relating the centripetal force to the gravitational force (a \"g-force\" factor).\n\n$$ k_l \u003d \\frac{\\omega^2 r_{max}}{g} $$\n\n**From the notes:**\nGiven: $t_0 \u003d 3.14 s$ (Period $T$), $r \u003d 0.1m$? (The handwriting implies $r\u003d10cm\u003d0.1m$).\n$$ \\omega \u003d \\frac{2\\pi}{T} \\approx 2 \\, \\text{rad/s} $$\n$$ k_l \u003d \\frac{(2\\,s^{-1})^2 \\cdot 0.1\\,m}{9.81\\,m/s^2} \\approx 0.0408 $$\n\n\u003e [!NOTE] **Tutor\u0027s Insight:**\n\u003e The value $k_l \\approx 0.04$ is very small. This implies the rotation is quite slow for the given radius, or the radius is small. If this were a roller coaster, the passengers would fall out at the top because $a_{cp} \u003c g$. For the passengers to stay in, we need $a_{cp} \\geq g$, or $k_l \\geq 1$.\n\n---\n\n## 2. [[Earth\u0027s Rotation]] and Effective Gravity\n\nThe lecture moves to the effect of Earth\u0027s rotation on the perceived acceleration due to gravity ($g$).\n\n### **Setup**\n*   **Radius of Earth ($R_z$):** $6400 \\, \\text{km} \u003d 6.4 \\times 10^6 \\, \\text{m}$\n*   **Standard Gravity ($g_0$):** $9.83 \\, \\text{m/s}^2$ (at poles)\n*   **Period ($t_0$):** 1 day ($86400 \\, \\text{s}$)\n\n### **Analysis**\nAt the equator, the Earth spins, creating a \"centrifugal\" effect that counters gravity. The measured weight is the Normal force ($F_N$).\n\n$$ \\sum F \u003d m a_{cp} $$\n$$ F_g - F_N \u003d m a_{cp} $$\n$$ F_N \u003d F_g - m a_{cp} $$\n\nThe **Effective Gravity** ($g\u0027$) is defined by $F_N \u003d m g\u0027$:\n$$ m g\u0027 \u003d m g_0 - m \\omega_z^2 R_z $$\n$$ g\u0027 \u003d g_0 - \\omega_z^2 R_z $$\n\n### **Calculation of Relative Change ($\\frac{\\Delta g}{g_0}$)**\nAngular velocity of Earth:\n$$ \\omega_z \u003d \\frac{2\\pi}{86400\\,s} \\approx 7.27 \\times 10^{-5} \\, \\text{s}^{-1} $$\n\nCentripetal acceleration at equator:\n$$ a_{cp} \u003d \\omega_z^2 R_z \\approx (7.27 \\times 10^{-5})^2 \\cdot (6.4 \\times 10^6) \\approx 0.034 \\, \\text{m/s}^2 $$\n\nRelative change:\n$$ \\frac{\\Delta g}{g_0} \u003d \\frac{g_{eff} - g_0}{g_0} \u003d -\\frac{\\omega_z^2 R_z}{g_0} $$\n$$ \\frac{\\Delta g}{g_0} \\approx -\\frac{0.034}{9.83} \\approx -0.0034 \u003d -0.34\\% $$\n\n\u003e [!success] **Conclusion**\n\u003e Objects weigh approximately **0.34% less** at the equator than at the poles due to Earth\u0027s rotation.\n\n---\n\n## 3. Dynamics of Machinery (The Heavy [[Pulley System]])\n\nThis section solves a coupled system involving translation and rotation.\n\n### **System Diagram**\n*   **Body 1 ($m$):** Hanging mass ($1 \\, \\text{kg}$).\n*   **Body 2 ($M$):** Mass on horizontal surface ($3 \\, \\text{kg}$).\n*   **Pulley (Škripec):** Has mass and [[Moment of Inertia]] ($J^* \u003d 10^{-2} \\, \\text{kg m}^2$). Radius $R \u003d 10 \\, \\text{cm} \u003d 0.1 \\, \\text{m}$.\n*   **Friction:** Coefficient $k_t \u003d 0.1$.\n\n### **Equations of Motion**\nWe apply Newton\u0027s 2nd Law for translation and rotation. We must treat the tension in the rope as **different** on either side of the massive pulley ($F_{v1} \\neq F_{v2}$).\n\n1.  **Body 2 (Horizontal Motion):**\n    $$ F_{v1} - F_{tr} \u003d M \\cdot a $$\n    Where friction $F_{tr} \u003d k_t \\cdot M \\cdot g$.\n    $$ \\Rightarrow F_{v1} - k_t Mg \u003d Ma $$\n\n2.  **Pulley (Rotational Motion):**\n    $$ \\sum M \u003d J^* \\cdot \\alpha $$\n    The torque is caused by the difference in tensions.\n    $$ (F_{v2} - F_{v1}) \\cdot R \u003d J^* \\cdot \\alpha $$\n    *Constraint:* Linear acceleration $a \u003d R \\cdot \\alpha \\implies \\alpha \u003d \\frac{a}{R}$.\n    $$ F_{v2} - F_{v1} \u003d \\frac{J^* a}{R^2} $$\n\n3.  **Body 1 (Vertical Motion):**\n    $$ F_g - F_{v2} \u003d m \\cdot a $$\n    $$ m \\cdot g - F_{v2} \u003d m \\cdot a $$\n\n### **Solving the System**\nTo find acceleration $a$, we sum the equations effectively to eliminate internal tensions ($F_{v1}, F_{v2}$).\n\n**Step 1: Isolate Tensions**\n*   From (1): $F_{v1} \u003d Ma + k_t Mg$\n*   From (3): $F_{v2} \u003d mg - ma$\n\n**Step 2: Substitute into Torque Equation (2)**\n$$ (mg - ma) - (Ma + k_t Mg) \u003d \\frac{J^* a}{R^2} $$\n\n**Step 3: Group terms with $a$**\n$$ mg - k_t Mg \u003d ma + Ma + \\frac{J^*}{R^2} a $$\n$$ g(m - k_t M) \u003d a \\left( m + M + \\frac{J^*}{R^2} \\right) $$\n\n**Step 4: Final Formula for Acceleration**\n$$ a \u003d g \\cdot \\frac{m - k_t M}{m + M + \\frac{J^*}{R^2}} $$\n\n\u003e [!tldr] **Interpretation of the Result**\n\u003e The numerator represents the **net driving force** (Gravity on hanging mass minus Friction on sliding mass).\n\u003e The denominator represents the **total inertia** of the system (Mass 1 + Mass 2 + Effective mass of the pulley $\\frac{J^*}{R^2}$).\n\n**Calculation (from notes):**\n$$ a \u003d 9.81 \\cdot \\frac{1 - 0.1(3)}{1 + 3 + \\frac{0.01}{0.1^2}} \u003d 9.81 \\cdot \\frac{0.7}{4 + 1} \u003d 9.81 \\cdot \\frac{0.7}{5} \\approx 1.37 \\, \\text{m/s}^2 $$\n*(Note: The student\u0027s note calculation resulted in 5.8. Let\u0027s check the student\u0027s specific values. In the image, the result is $a\u003d5.8$, but checking the math: $\\frac{J^*}{R^2} \u003d \\frac{10^{-2}}{10^{-2}} \u003d 1$. Denom is $1+3+1 \u003d 5$. Numerator $1 - 0.3 \u003d 0.7$. $0.7/5 \\cdot 10 \u003d 1.4$. The student likely used different mass values later or made a calculation error. **Warning: Check inputs.**)*\n\n---\n\n## 4. Rolling Motion and Moment of Inertia\n\nCalculation of Moment of Inertia for a specific cylinder/wheel setup.\n\n*   **Given:** $a_t \u003d 0.16 \\, \\text{m/s}^2$ (Tangential acceleration?), Force $F\u003d10N$, $m\u003d10kg$, $R\u003d0.3m$.\n*   **Equation:** $F_t \\cdot R \u003d J^* \\cdot \\alpha \u003d J^* \\frac{a_t}{R}$\n*   **Result:** $J^* \u003d \\frac{F_t R^2}{a_t}$\n*   **Calculation in notes:**\n    $$ J^* \u003d \\frac{4N \\cdot 0.09m^2}{0.6} \u003d 0.6 \\, \\text{kg m}^2 $$\n    *(Note: Here $F_t$ is derived as $F - ma$, likely the net force causing torque).*\n\n---\n\n## 5. Comprehensive System Solution (Summary Strategy)\n\nThe final part of the notes (Images 7 \u0026 8) formalizes the \"System of Equations\" approach. Instead of substitution, you can write the equations vertically and sum them.\n\n$$\n\\begin{align}\n\\text{Eq 1 (Sliding):} \u0026 \\quad F_{v1} - F_{tr} \u003d M a \\\\\n\\text{Eq 2 (Pulley):} \u0026 \\quad F_{v2} - F_{v1} \u003d \\frac{J^*}{R^2} a \\\\\n\\text{Eq 3 (Hanging):} \u0026 \\quad m g - F_{v2} \u003d m a\n\\end{align}\n$$\n\n**Summing Left and Right sides:**\nThe internal tensions $+F_{v1}, -F_{v1}$ and $+F_{v2}, -F_{v2}$ cancel out perfectly.\n\n$$ m g - F_{tr} \u003d a \\left( M + \\frac{J^*}{R^2} + m \\right) $$\n\nThis confirms the derivation in Section 3 and is a faster method for solving these problems during exams.\n\n### **Specific Example: Cart on a Hill**\n*   **Scenario:** A cart (10kg) with force 10N acts on it. Radius 0.3m.\n*   **Condition:** Moving over a hill.\n*   **Question:** Centrifugal force vs Gravity.\n*   The notes calculate the relationship between tangential force and inertia.\n\n---\n\n# Critical Analysis \u0026 Warnings\n\n1.  **Notation confusion ($J$ vs $I$):** The notes use $J^*$ for Moment of Inertia. In standard US/UK textbooks, this is $I$. Be careful not to confuse $J$ with Impulse or Joules.\n2.  **Effective Mass:** The term $\\frac{J^*}{R^2}$ acts exactly like a mass in the linear acceleration equation. It represents the \"resistance to linear motion\" caused by the need to spin up the heavy pulley.\n3.  **Ambiguity in Calculation (Image 3):** The student calculated $a\u003d5.8 m/s^2$. Based on the visible numbers ($m\u003d1, M\u003d3, k\u003d0.1$), the acceleration should be much lower ($\\approx 1.4 m/s^2$).\n    *   *Hypothesis:* Perhaps the hanging mass was heavier (e.g., $m\u003d10kg$)? If $m\u003d10$, num \u003d $10 - 0.3 \u003d 9.7$. Denom \u003d $10+3+1 \u003d 14$. Still not 5.8.\n    *   *Warning:* Always re-calculate numerical results; do not trust the handwritten \"final answer\" blindly.\n\n### **Useful Glossary (Slovenian -\u003e English)**\n*   *Vrvica* \u003d String/Rope\n*   *Sila teže* \u003d Force of gravity (Weight)\n*   *Škripec* \u003d Pulley\n*   *Kotaljenje* \u003d Rolling\n*   *Drsenje* \u003d Sliding/Slipping\n*   *Težišče* \u003d Center of Mass / Center of Gravity",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3230,
+      "parts": [{
+        "text": "Here are the digitized, structured, and analyzed notes based on the provided lecture material. The notes cover **Rotational Dynamics**, **"
+      }, {
+        "text": "Circular Motion**, and **System Dynamics with Moments of Inertia**.\n\nThe source material is in Slovenian; I have retained"
+      }, {
+        "text": " the original variable notation (e.g., $F_v$ for rope force/tension, $F_{tr}$"
+      }, {
+        "text": " for friction) but provided English explanations and derivations.\n\n***\n\n# [[Rotational Dynamics]] \u0026 Systems of Particles\n\n**"
+      }, {
+        "text": "Date:** 2025-11-20\n**Tags:** #physics #mechanics #rotation #new"
+      }, {
+        "text": "tons-laws #derivations\n**Source Material:** Lecture Notes (Images 1-8)\n\n---\n\n## 1. Vertical Circular Motion"
+      }, {
+        "text": " (The Loop)\n\nThe lecture begins with an object moving in a vertical circle (e.g., a roller coaster"
+      }, {
+        "text": " loop or a stone on a string).\n\n### **Physical Model**\n*   **Top of the loop:** Gravity"
+      }, {
+        "text": " ($F_g$) and Normal Force ($F_N$) both point downward (towards the center).\n*   **Bottom"
+      }, {
+        "text": " of the loop:** Gravity points down (outward), Normal Force points up (inward).\n\n### **Key Equations**\nFrom"
+      }, {
+        "text": " [[Newton\u0027s Second Law]] ($\\sum \\vec{F} \u003d m\\vec{a}$):\n\n1.  **Centrip"
+      }, {
+        "text": "etal Acceleration:**\n    $$ a_{cp} \u003d \\omega^2 r \u003d \\frac{v^2}{"
+      }, {
+        "text": "r} $$\n    Where:\n    *   $\\omega$ \u003d angular velocity\n    *   $v$ \u003d tangential"
+      }, {
+        "text": " velocity\n    *   $r$ \u003d radius\n\n2.  **Force Balance at the Top (Critical Point):**\n    $$"
+      }, {
+        "text": " F_N + F_g \u003d m a_{cp} \u003d m \\omega^2 r $$\n    *"
+      }, {
+        "text": "Condition for weightlessness (losing contact):* $F_N \u003d 0$.\n    $$ F_g \u003d m \\omega^2"
+      }, {
+        "text": " r \\implies mg \u003d m \\omega^2 r \\implies g \u003d \\omega^2 r $$\n\n### **Derivation of Coefficient"
+      }, {
+        "text": " $k_l$**\nThe notes calculate a coefficient $k_l$, likely relating the centripetal force to"
+      }, {
+        "text": " the gravitational force (a \"g-force\" factor).\n\n$$ k_l \u003d \\frac{\\omega^2 r_{max}}{g"
+      }, {
+        "text": "} $$\n\n**From the notes:**\nGiven: $t_0 \u003d 3.14 s$ (Period"
+      }, {
+        "text": " $T$), $r \u003d 0.1m$? (The handwriting implies $r\u003d10cm\u003d0.1m$).\n$$"
+      }, {
+        "text": " \\omega \u003d \\frac{2\\pi}{T} \\approx 2 \\, \\text{rad/s} $$"
+      }, {
+        "text": "\n$$ k_l \u003d \\frac{(2\\,s^{-1})^2 \\cdot 0.1\\,m}{9.81\\,m"
+      }, {
+        "text": "/s^2} \\approx 0.0408 $$\n\n\u003e [!NOTE] **Tutor\u0027s Insight"
+      }, {
+        "text": ":**\n\u003e The value $k_l \\approx 0.04$ is very small. This implies the rotation"
+      }, {
+        "text": " is quite slow for the given radius, or the radius is small. If this were a roller coaster, the passengers would fall out"
+      }, {
+        "text": " at the top because $a_{cp} \u003c g$. For the passengers to stay in, we need $a_{cp} \\geq"
+      }, {
+        "text": " g$, or $k_l \\geq 1$.\n\n---\n\n## 2. [[Earth\u0027s Rotation]]"
+      }, {
+        "text": " and Effective Gravity\n\nThe lecture moves to the effect of Earth\u0027s rotation on the perceived acceleration due to gravity ($g$).\n\n### **"
+      }, {
+        "text": "Setup**\n*   **Radius of Earth ($R_z$):** $6400 \\, \\text{km}"
+      }, {
+        "text": " \u003d 6.4 \\times 10^6 \\, \\text{m}$\n*   **Standard Gravity"
+      }, {
+        "text": " ($g_0$):** $9.83 \\, \\text{m/s}^2$ (at"
+      }, {
+        "text": " poles)\n*   **Period ($t_0$):** 1 day ($86400 \\, \\text"
+      }, {
+        "text": "{s}$)\n\n### **Analysis**\nAt the equator, the Earth spins, creating a \"centrifugal\" effect that counters"
+      }, {
+        "text": " gravity. The measured weight is the Normal force ($F_N$).\n\n$$ \\sum F \u003d m a_{cp}"
+      }, {
+        "text": " $$\n$$ F_g - F_N \u003d m a_{cp} $$\n$$ F_N \u003d F"
+      }, {
+        "text": "_g - m a_{cp} $$\n\nThe **Effective Gravity** ($g\u0027$) is defined by $F_N \u003d m"
+      }, {
+        "text": " g\u0027$:\n$$ m g\u0027 \u003d m g_0 - m \\omega_z^2 R_z $$\n"
+      }, {
+        "text": "$$ g\u0027 \u003d g_0 - \\omega_z^2 R_z $$\n\n### **Calculation of Relative"
+      }, {
+        "text": " Change ($\\frac{\\Delta g}{g_0}$)**\nAngular velocity of Earth:\n$$ \\omega_z \u003d \\frac{2\\"
+      }, {
+        "text": "pi}{86400\\,s} \\approx 7.27 \\times 10^{-5"
+      }, {
+        "text": "} \\, \\text{s}^{-1} $$\n\nCentripetal acceleration at equator:\n$$ a_{cp} \u003d \\omega_"
+      }, {
+        "text": "z^2 R_z \\approx (7.27 \\times 10^{-5})^2 \\cdot (6.4 \\times "
+      }, {
+        "text": "10^6) \\approx 0.034 \\, \\text{m/s}^2 $$\n\n"
+      }, {
+        "text": "Relative change:\n$$ \\frac{\\Delta g}{g_0} \u003d \\frac{g_{eff} -"
+      }, {
+        "text": " g_0}{g_0} \u003d -\\frac{\\omega_z^2 R_z}{g_0"
+      }, {
+        "text": "} $$\n$$ \\frac{\\Delta g}{g_0} \\approx -\\frac{0.034}{9.83"
+      }, {
+        "text": "} \\approx -0.0034 \u003d -0.34\\% $$\n\n\u003e [!success] **Conclusion"
+      }, {
+        "text": "**\n\u003e Objects weigh approximately **0.34% less** at the equator than at the poles due to Earth\u0027s rotation.\n\n---\n\n"
+      }, {
+        "text": "## 3. Dynamics of Machinery (The Heavy [[Pulley System]])\n\nThis section solves a coupled system involving translation"
+      }, {
+        "text": " and rotation.\n\n### **System Diagram**\n*   **Body 1 ($m$):** Hanging mass ($"
+      }, {
+        "text": "1 \\, \\text{kg}$).\n*   **Body 2 ($M$):** Mass on horizontal surface ($"
+      }, {
+        "text": "3 \\, \\text{kg}$).\n*   **Pulley (Škripec):** Has mass and [[Moment of Inertia]]"
+      }, {
+        "text": " ($J^* \u003d 10^{-2} \\, \\text{kg m}^2$). Radius $R \u003d "
+      }, {
+        "text": "10 \\, \\text{cm} \u003d 0.1 \\, \\text{m}$.\n*   **F"
+      }, {
+        "text": "riction:** Coefficient $k_t \u003d 0.1$.\n\n### **Equations of Motion**\nWe apply Newton\u0027s 2nd Law for"
+      }, {
+        "text": " translation and rotation. We must treat the tension in the rope as **different** on either side of the massive pulley ($F_{v1}"
+      }, {
+        "text": " \\neq F_{v2}$).\n\n1.  **Body 2 (Horizontal Motion):**\n    $$ F_{v1} - F_{"
+      }, {
+        "text": "tr} \u003d M \\cdot a $$\n    Where friction $F_{tr} \u003d k_t \\cdot M"
+      }, {
+        "text": " \\cdot g$.\n    $$ \\Rightarrow F_{v1} - k_t Mg \u003d Ma $$\n\n2.  **Pul"
+      }, {
+        "text": "ley (Rotational Motion):**\n    $$ \\sum M \u003d J^* \\cdot \\alpha $$\n    The torque is"
+      }, {
+        "text": " caused by the difference in tensions.\n    $$ (F_{v2} - F_{v1}) \\cdot"
+      }, {
+        "text": " R \u003d J^* \\cdot \\alpha $$\n    *Constraint:* Linear acceleration $a \u003d R \\cdot \\alpha \\"
+      }, {
+        "text": "implies \\alpha \u003d \\frac{a}{R}$.\n    $$ F_{v2} - F_{v1} \u003d \\"
+      }, {
+        "text": "frac{J^* a}{R^2} $$\n\n3.  **Body 1 (Vertical Motion):**\n    $$"
+      }, {
+        "text": " F_g - F_{v2} \u003d m \\cdot a $$\n    $$ m \\cdot g - F_{v2"
+      }, {
+        "text": "} \u003d m \\cdot a $$\n\n### **Solving the System**\nTo find acceleration $a$, we sum the"
+      }, {
+        "text": " equations effectively to eliminate internal tensions ($F_{v1}, F_{v2}$).\n\n**Step 1: Is"
+      }, {
+        "text": "olate Tensions**\n*   From (1): $F_{v1} \u003d Ma + k_t Mg$"
+      }, {
+        "text": "\n*   From (3): $F_{v2} \u003d mg - ma$\n\n**Step 2:"
+      }, {
+        "text": " Substitute into Torque Equation (2)**\n$$ (mg - ma) - (Ma + k_t Mg) \u003d \\frac{"
+      }, {
+        "text": "J^* a}{R^2} $$\n\n**Step 3: Group terms with $a$**\n$$"
+      }, {
+        "text": " mg - k_t Mg \u003d ma + Ma + \\frac{J^*}{R^2} a $$\n"
+      }, {
+        "text": "$$ g(m - k_t M) \u003d a \\left( m + M + \\frac{J^*}{R^2} \\"
+      }, {
+        "text": "right) $$\n\n**Step 4: Final Formula for Acceleration**\n$$ a \u003d g \\cdot \\frac{m - k_t"
+      }, {
+        "text": " M}{m + M + \\frac{J^*}{R^2}} $$\n\n\u003e [!tldr] **Interpretation"
+      }, {
+        "text": " of the Result**\n\u003e The numerator represents the **net driving force** (Gravity on hanging mass minus Friction on sliding"
+      }, {
+        "text": " mass).\n\u003e The denominator represents the **total inertia** of the system (Mass 1 + Mass 2 + Effective mass"
+      }, {
+        "text": " of the pulley $\\frac{J^*}{R^2}$).\n\n**Calculation (from notes):**\n$$ a \u003d 9"
+      }, {
+        "text": ".81 \\cdot \\frac{1 - 0.1(3)}{1 + 3 + \\frac"
+      }, {
+        "text": "{0.01}{0.1^2}} \u003d 9.81 \\cdot \\frac{0.7}{4"
+      }, {
+        "text": " + 1} \u003d 9.81 \\cdot \\frac{0.7}{5} \\approx 1.37"
+      }, {
+        "text": " \\, \\text{m/s}^2 $$\n*(Note: The student\u0027s note calculation resulted in 5.8."
+      }, {
+        "text": " Let\u0027s check the student\u0027s specific values. In the image, the result is $a\u003d5.8$,"
+      }, {
+        "text": " but checking the math: $\\frac{J^*}{R^2} \u003d \\frac{10^{-2}}{1"
+      }, {
+        "text": "0^{-2}} \u003d 1$. Denom is $1+3+1 \u003d 5$. Numerator $1 -"
+      }, {
+        "text": " 0.3 \u003d 0.7$. $0.7/5 \\cdot 10 \u003d 1.4"
+      }, {
+        "text": "$. The student likely used different mass values later or made a calculation error. **Warning: Check inputs.**)*\n\n---\n\n## 4."
+      }, {
+        "text": " Rolling Motion and Moment of Inertia\n\nCalculation of Moment of Inertia for a specific cylinder/wheel setup.\n\n*   **Given"
+      }, {
+        "text": ":** $a_t \u003d 0.16 \\, \\text{m/s}^2$ (Tangential acceleration?),"
+      }, {
+        "text": " Force $F\u003d10N$, $m\u003d10kg$, $R\u003d0.3m$.\n*   **Equation:** $"
+      }, {
+        "text": "F_t \\cdot R \u003d J^* \\cdot \\alpha \u003d J^* \\frac{a_t}{R}$\n"
+      }, {
+        "text": "*   **Result:** $J^* \u003d \\frac{F_t R^2}{a_t}$\n*   **"
+      }, {
+        "text": "Calculation in notes:**\n    $$ J^* \u003d \\frac{4N \\cdot 0.09m^2}{0.6}"
+      }, {
+        "text": " \u003d 0.6 \\, \\text{kg m}^2 $$\n    *(Note: Here $F_t$ is"
+      }, {
+        "text": " derived as $F - ma$, likely the net force causing torque).*\n\n---\n\n## 5. Comprehensive System Solution"
+      }, {
+        "text": " (Summary Strategy)\n\nThe final part of the notes (Images 7 \u0026 8) formalizes the \"System"
+      }, {
+        "text": " of Equations\" approach. Instead of substitution, you can write the equations vertically and sum them.\n\n$$\n\\begin{align}\n\\text"
+      }, {
+        "text": "{Eq 1 (Sliding):} \u0026 \\quad F_{v1} - F_{tr} \u003d M a"
+      }, {
+        "text": " \\\\\n\\text{Eq 2 (Pulley):} \u0026 \\quad F_{v2} - F_{"
+      }, {
+        "text": "v1} \u003d \\frac{J^*}{R^2} a \\\\\n\\text{Eq 3 ("
+      }, {
+        "text": "Hanging):} \u0026 \\quad m g - F_{v2} \u003d m a\n\\end{align}\n$$\n\n"
+      }, {
+        "text": "**Summing Left and Right sides:**\nThe internal tensions $+F_{v1}, -F_{v1}$ and $+"
+      }, {
+        "text": "F_{v2}, -F_{v2}$ cancel out perfectly.\n\n$$ m g - F_{tr} \u003d a"
+      }, {
+        "text": " \\left( M + \\frac{J^*}{R^2} + m \\right) $$\n\nThis confirms the derivation in"
+      }, {
+        "text": " Section 3 and is a faster method for solving these problems during exams.\n\n### **Specific Example: Cart on a Hill**\n*   "
+      }, {
+        "text": "**Scenario:** A cart (10kg) with force 10N acts on it. Radius 0.3m.\n*   "
+      }, {
+        "text": "**Condition:** Moving over a hill.\n*   **Question:** Centrifugal force vs Gravity.\n*   The notes"
+      }, {
+        "text": " calculate the relationship between tangential force and inertia.\n\n---\n\n# Critical Analysis \u0026 Warnings\n\n1.  **Notation confusion"
+      }, {
+        "text": " ($J$ vs $I$):** The notes use $J^*$ for Moment of Inertia. In standard US"
+      }, {
+        "text": "/UK textbooks, this is $I$. Be careful not to confuse $J$ with Impulse or Joules.\n2.  **"
+      }, {
+        "text": "Effective Mass:** The term $\\frac{J^*}{R^2}$ acts exactly like a mass in the linear acceleration"
+      }, {
+        "text": " equation. It represents the \"resistance to linear motion\" caused by the need to spin up the heavy pulley.\n3.  "
+      }, {
+        "text": "**Ambiguity in Calculation (Image 3):** The student calculated $a\u003d5.8 m/s^2$. Based"
+      }, {
+        "text": " on the visible numbers ($m\u003d1, M\u003d3, k\u003d0.1$), the acceleration should be much"
+      }, {
+        "text": " lower ($\\approx 1.4 m/s^2$).\n    *   *Hypothesis:* Perhaps the hanging mass was heavier"
+      }, {
+        "text": " (e.g., $m\u003d10kg$)? If $m\u003d10$, num \u003d $10 -"
+      }, {
+        "text": " 0.3 \u003d 9.7$. Denom \u003d $10+3+1 \u003d 14$. Still"
+      }, {
+        "text": " not 5.8.\n    *   *Warning:* Always re-calculate numerical results; do not trust the"
+      }, {
+        "text": " handwritten \"final answer\" blindly.\n\n### **Useful Glossary (Slovenian -\u003e English)**\n*   *Vrvica* \u003d String"
+      }, {
+        "text": "/Rope\n*   *Sila teže* \u003d Force of gravity (Weight)\n*   *Š"
+      }, {
+        "text": "kripec* \u003d Pulley\n*   *Kotaljenje* \u003d Rolling\n*   *Drsenje* \u003d Sliding"
+      }, {
+        "text": "/Slipping\n*   *Težišče* \u003d Center of Mass / Center of Gravity"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1SK9dJJmpTaxQJhReNMoi8JWFcaFfDWJT"
+      },
+      "role": "user",
+      "tokenCount": 116430
+    }, {
+      "driveImage": {
+        "id": "1i9OXk83ovi7xzy5tp1M_2eqwRVQ0KYsE"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1uTQ9gQ-Ou3WWCuOUke6SQOT6_KaBMfS_"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1eV_BAKGKb8QggXrVwa9Kia7DA6dNVYg6"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1muRsjiJc8Sa1KZ7Z2JDz9WPgP7L0rmLc"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "text": "**Considering the Input**\n\nI\u0027ve been meticulously analyzing the input material – the audio transcript from that chemistry seminar and the handwritten notes. I\u0027m focusing on identifying the core concepts discussed and the problem-solving approaches used. Currently, I\u0027m working to extract the key stoichiometric principles and reactions covered.\n\n\n**Refining the Approach**\n\nI\u0027m now fully immersed in the academic context, understanding I\u0027m crafting Obsidian notes from a Slovenian chemistry session, structured chronologically. The constraints are clearly defined: LaTeX for formulas, SMILES for structures, a critical tutor\u0027s perspective, and separation of theory, problems, and solutions using Obsidian\u0027s formatting. I\u0027m choosing to generate English notes from the Slovenian source to optimize their usability.\n\n\n**Revising Language Preference**\n\nI\u0027ve just recognized that the output needs to be in Slovenian, following the source material\u0027s language. I\u0027m focusing on adapting the generated notes accordingly, ensuring complete linguistic consistency with the original documents.\n\nI\u0027m now analyzing the source material, the transcript and images, and creating notes. The colloquium\u0027s logistics are: Nov 21st, 4 PM, 60 minutes, with 5 calculation problems worth 25 points total. The content is exclusively calculation-based, focused on lab exercises 1-4. The upcoming problems are well-defined: water molecules in magnesium sulfate, a gas mixture scenario, a limiting reagent reaction, and a stoichiometry task.\n\n\n**Evaluating Problem Details**\n\nI\u0027m now zeroing in on the specific problems from the seminar. I\u0027ve broken them down based on the available information. I\u0027ve examined problem five, which concerns the solubility of copper sulfate pentahydrate. I\u0027m also carefully reviewing the stoichiometry and titration details for a reaction involving potassium hydroxide and phosphoric acid, calculating the necessary acid volume. Moreover, I\u0027m working to verify details from the handwritten notes.\n\n\n**Constructing Problem Solutions**\n\nI\u0027m currently focused on the specific steps and calculations for each problem. My current focus includes refining the formulas used to solve the problems, and the exact data given in each part. Now I\u0027m working on the process for solving Problem 5, which deals with solubility calculations, and the corresponding critical thinking for each step.\n\n\n**Analyzing Key Calculations**\n\nI\u0027m now deep in the calculation details of the problems. Problem 1 involves calculating water molecules in a hydrate. Problem 2 focuses on determining a gas\u0027s molar mass in a mixture using the average molar mass and Dalton\u0027s Law. Problem 3 is a limiting reagent problem. Problem 4 is about neutralization volume calculations using the concentration formula. And finally, I\u0027m trying to figure out the best way to interpret Problem 5 as it relates to dilution and saturation.\n\n\n**Revising Problem 5**\n\nI\u0027m now revising the approach to Problem 5, specifically addressing the solubility aspect and applying the calculation logic, considering how the hydrate\u0027s water content influences the final calculation. I\u0027m focusing on ensuring accuracy in the formula used and making sure the solution logic is easy to follow. I\u0027m now making sure that the steps are clear, including the initial salt amount, and the water needed given the temperature-dependent solubility. I\u0027ve corrected a calculation, and I\u0027m updating links.\n\n\n**Refining Problem Five**\n\nI\u0027m presently zeroing in on the final polish for the solution to Problem 5, particularly the calculation steps. I\u0027ve pinpointed a potential point of confusion concerning the water addition. The crucial step involves subtracting the water already present in the hydrate from the total water needed to reach saturation. I\u0027ve rephrased the explanation to explicitly highlight this subtraction step, ensuring clarity and mitigating common misunderstandings. The final answer, 47.74 mL, is now thoroughly justified.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Considering the Input**\n\nI\u0027ve been meticulously analyzing the input material – the audio transcript from that chemistry seminar and the handwritten notes. I\u0027m focusing on identifying the core concepts discussed and the problem-solving approaches used. Currently, I\u0027m working to extract the key stoichiometric principles and reactions covered.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Approach**\n\nI\u0027m now fully immersed in the academic context, understanding I\u0027m crafting Obsidian notes from a Slovenian chemistry session, structured chronologically. The constraints are clearly defined: LaTeX for formulas, SMILES for structures, a critical tutor\u0027s perspective, and separation of theory, problems, and solutions using Obsidian\u0027s formatting. I\u0027m choosing to generate English notes from the Slovenian source to optimize their usability.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Revising Language Preference**\n\nI\u0027ve just recognized that the output needs to be in Slovenian, following the source material\u0027s language. I\u0027m focusing on adapting the generated notes accordingly, ensuring complete linguistic consistency with the original documents.\n\nI\u0027m now analyzing the source material, the transcript and images, and creating notes. The colloquium\u0027s logistics are: Nov 21st, 4 PM, 60 minutes, with 5 calculation problems worth 25 points total. The content is exclusively calculation-based, focused on lab exercises 1-4. The upcoming problems are well-defined: water molecules in magnesium sulfate, a gas mixture scenario, a limiting reagent reaction, and a stoichiometry task.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Evaluating Problem Details**\n\nI\u0027m now zeroing in on the specific problems from the seminar. I\u0027ve broken them down based on the available information. I\u0027ve examined problem five, which concerns the solubility of copper sulfate pentahydrate. I\u0027m also carefully reviewing the stoichiometry and titration details for a reaction involving potassium hydroxide and phosphoric acid, calculating the necessary acid volume. Moreover, I\u0027m working to verify details from the handwritten notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing Problem Solutions**\n\nI\u0027m currently focused on the specific steps and calculations for each problem. My current focus includes refining the formulas used to solve the problems, and the exact data given in each part. Now I\u0027m working on the process for solving Problem 5, which deals with solubility calculations, and the corresponding critical thinking for each step.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Key Calculations**\n\nI\u0027m now deep in the calculation details of the problems. Problem 1 involves calculating water molecules in a hydrate. Problem 2 focuses on determining a gas\u0027s molar mass in a mixture using the average molar mass and Dalton\u0027s Law. Problem 3 is a limiting reagent problem. Problem 4 is about neutralization volume calculations using the concentration formula. And finally, I\u0027m trying to figure out the best way to interpret Problem 5 as it relates to dilution and saturation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Revising Problem 5**\n\nI\u0027m now revising the approach to Problem 5, specifically addressing the solubility aspect and applying the calculation logic, considering how the hydrate\u0027s water content influences the final calculation. I\u0027m focusing on ensuring accuracy in the formula used and making sure the solution logic is easy to follow. I\u0027m now making sure that the steps are clear, including the initial salt amount, and the water needed given the temperature-dependent solubility. I\u0027ve corrected a calculation, and I\u0027m updating links.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Problem Five**\n\nI\u0027m presently zeroing in on the final polish for the solution to Problem 5, particularly the calculation steps. I\u0027ve pinpointed a potential point of confusion concerning the water addition. The crucial step involves subtracting the water already present in the hydrate from the total water needed to reach saturation. I\u0027ve rephrased the explanation to explicitly highlight this subtraction step, ensuring clarity and mitigating common misunderstandings. The final answer, 47.74 mL, is now thoroughly justified.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Tu so strukturirani zapiski s seminarija (priprava na kolokvij), ki temeljijo na priloženem zvočnem zapisu in ročno napisanih rešitvah. Zapiski so oblikovani za Obsidian in sledijo kronološkemu ter logičnemu poteku ure.\n\n***\n\n# 📅 Priprava na 1. Kolokvij: Računske naloge\n\n**Datum:** 21. 11. ob 16:00\n**Lokacija:** Velika predavalnica (Borut Pečenko)\n**Tip:** [[Laboratorijske vaje]] / [[Kemijsko računanje]]\n\n## 📝 Logistika in navodila za kolokvij\n\n*   **Trajanje:** 60 minut (1 polna ura).\n*   **Vsebina:** 5 računskih nalog (brez teorije).\n    *   Vsaka naloga je vredna 5 točk.\n    *   Skupaj 25 točk.\n    *   Za pozitivno oceno je potrebnih 50 % (približno 12,5 - 13 točk).\n*   **Dovoljeni pripomočki:**\n    *   Pisalo (prinesite 2 za vsak slučaj).\n    *   **Kalkulator** (telefon ni dovoljen!).\n    *   Osebni dokument/študentska izkaznica.\n    *   Periodni sistem in formule bodo podane na poli.\n*   **Obseg snovi:** Od 1. do 4. laboratorijske vaje (vključno s plinskimi zakoni, stehiometrijo, topnostjo). Titracije (laboratorijska vaja) še niso vključene v ta kolokvij.\n\n---\n\n## 🧮 Splošne formule in koncepti\n\nPred reševanjem nalog si velja zapomniti ključne zveze, ki jih bomo uporabljali (in obračali) skozi celoten seminar.\n\n### [[Molska masa]] in množina\n$$ n \u003d \\frac{m}{M} $$\n$$ N \u003d n \\cdot N_A $$\nKjer je $N_A \u003d 6,022 \\cdot 10^{23} \\text{ mol}^{-1}$ ([[Avogadrova konstanta]]).\n\n### [[Splošna plinska enačba]] (Idealni plin)\n$$ p \\cdot V \u003d n \\cdot R \\cdot T $$\n$$ \\bar{M} \u003d \\frac{\\rho \\cdot R \\cdot T}{p} $$\n*Izpeljava:* $n \u003d \\frac{m}{M} \\rightarrow pV \u003d \\frac{m}{M}RT \\rightarrow pM \u003d \\frac{m}{V}RT \\rightarrow pM \u003d \\rho RT$.\n\n### [[Koncentracija]] in masni delež\n$$ c \u003d \\frac{n}{V} $$\n$$ w \u003d \\frac{m_{topljenca}}{m_{raztopine}} $$\nPovezava med gostoto, masnim deležem in molsko koncentracijo:\n$$ c \u003d \\frac{w \\cdot \\rho}{M} $$\n\n---\n\n## 1. Naloga: Število molekul v hidratu\n\n**Problem:** Izračunajte število molekul kristalno vezane vode v 10 g magnezijevega sulfata heptahidrata ($MgSO_4 \\cdot 7H_2O$).\n\n### Podatki\n*   Spojina: $MgSO_4 \\cdot 7H_2O$\n*   Masa vzorca: $m \u003d 10 \\text{ g}$\n*   Molska masa: $M \u003d 246,5 \\text{ g/mol}$ (izračunana iz periodnega sistema)\n\n### Postopek reševanja\n1.  **Izračun množine celotnega hidrata:**\n    $$ n(\\text{hidrat}) \u003d \\frac{m}{M} \u003d \\frac{10 \\text{ g}}{246,5 \\text{ g/mol}} \u003d 0,04056 \\text{ mol} $$\n\n2.  **Stehiometrično razmerje:**\n    V 1 molu hidrata je 7 molov vode.\n    $$ n(H_2O) \u003d 7 \\cdot n(\\text{hidrat}) $$\n    $$ n(H_2O) \u003d 7 \\cdot 0,04056 \\text{ mol} \u003d 0,2839 \\text{ mol} $$\n\n3.  **Izračun števila molekul ($N$):**\n    $$ N(H_2O) \u003d n(H_2O) \\cdot N_A $$\n    $$ N(H_2O) \u003d 0,2839 \\text{ mol} \\cdot 6,022 \\cdot 10^{23} \\text{ mol}^{-1} $$\n    $$ N(H_2O) \u003d 1,71 \\cdot 10^{23} \\text{ molekul} $$\n\n\u003e [!NOTE] Critical Analysis\n\u003e **Past:** Mnogi študenti pozabijo pomnožiti s 7. Formulo hidrata vedno obravnavajte kot celoto, nato pa poglejte razmerje. Če vas sprašuje po *atomih* kisika, bi množili še s številom kisikov v molekuli vode (v tem primeru 1, skupaj v hidratu pa $4 + 7 \u003d 11$).\n\n---\n\n## 2. Naloga: Plinske zmesi in Molska masa\n\n**Problem:** Imamo zmes vodika ($H_2$) in neznanega plina $X$. Podana je temperatura, tlak in gostota zmesi. Določi molsko maso plina $X$.\n\n### Podatki\n*   $T \u003d 20^\\circ C \u003d 293,15 \\text{ K}$\n*   $p_{skupni} \u003d 0,960 \\text{ bar} \u003d 96 \\text{ kPa} \u003d 96000 \\text{ Pa}$\n*   $\\rho_{zmesi} \u003d 0,36 \\text{ g/L} \u003d 0,36 \\text{ kg/m}^3$ (pazite na enote pri $R$!)\n*   $p_X \u003d 24 \\text{ kPa}$ (delni tlak plina X)\n\n### Postopek reševanja\n\n1.  **Izračun povprečne molske mase zmesi ($\\bar{M}$):**\n    Uporabimo izpeljano plinsko enačbo. Pazimo na enote ($R \u003d 8,314 \\text{ J/(mol K)}$).\n    $$ \\bar{M} \u003d \\frac{\\rho \\cdot R \\cdot T}{p} $$\n    $$ \\bar{M} \u003d \\frac{0,36 \\text{ g/L} \\cdot 8,314 \\text{ kPa L/(mol K)} \\cdot 293,15 \\text{ K}}{96 \\text{ kPa}} $$\n    *(Opomba: Uporaba g/L in kPa s to konstanto R da rezultat direktno v g/mol)*\n    $$ \\bar{M} \u003d 9,1397 \\text{ g/mol} $$\n\n2.  **Določitev molskih deležev ($x$):**\n    Po [[Daltonov zakon|Daltonovem zakonu]] je molski delež enak razmerju tlakov.\n    $$ x_X \u003d \\frac{p_X}{p_{skupni}} \u003d \\frac{24 \\text{ kPa}}{96 \\text{ kPa}} \u003d 0,25 $$\n    Ker je vsota molskih deležev 1:\n    $$ x_{H_2} \u003d 1 - x_X \u003d 0,75 $$\n\n3.  **Izračun molske mase neznanke iz povprečja:**\n    $$ \\bar{M} \u003d x_{H_2} \\cdot M(H_2) + x_X \\cdot M(X) $$\n    $$ 9,14 \u003d 0,75 \\cdot 2,02 + 0,25 \\cdot M(X) $$\n    $$ 9,14 \u003d 1,515 + 0,25 \\cdot M(X) $$\n    $$ 0,25 \\cdot M(X) \u003d 7,625 $$\n    $$ M(X) \\approx 30,5 \\text{ g/mol} $$\n\n\u003e [!WARNING] Opozorilo\n\u003e Pri uporabi plinske enačbe vedno preverite enote za plinsko konstanto $R$. Če uporabljate $R \u003d 8314$, morate vstaviti gostoto v $\\text{kg/m}^3$ in tlak v $\\text{Pa}$. Če uporabljate $R \u003d 8,314$, so enote pogosto prilagojene (kPa, $dm^3$).\n\n---\n\n## 3. Naloga: Stehiometrija in omejitveni reagent\n\n**Problem:** Reakcija amoniaka s kisikom: $4NH_3 + 5O_2 \\rightarrow 4NO + 6H_2O$. Imamo določene mase reaktantov. Kateri je omejitveni reagent in koliko produkta nastane?\n\n### Podatki\n*   $m(NH_3) \u003d 7 \\text{ g}$\n*   $M(NH_3) \u003d 17 \\text{ g/mol}$\n*   $M(O_2) \u003d 32 \\text{ g/mol}$\n\n### Postopek reševanja (Reverse Engineering from notes)\n\n1.  **Izračun množine amoniaka:**\n    $$ n(NH_3) \u003d \\frac{7 \\text{ g}}{17 \\text{ g/mol}} \u003d 0,4118 \\text{ mol} $$\n\n2.  **Preverjanje potrebne množine kisika (teoretično):**\n    Iz reakcije $4NH_3 : 5O_2$ sledi razmerje $\\frac{5}{4} \u003d 1,25$.\n    $$ n(O_2)_{potreben} \u003d \\frac{5}{4} \\cdot n(NH_3) $$\n    $$ n(O_2)_{potreben} \u003d 1,25 \\cdot 0,4118 \\text{ mol} \u003d 0,5147 \\text{ mol} $$\n\n3.  **Primerjava z dejanskim stanjem:**\n    *(Opomba: Podatek za maso ali volumen kisika v zapiskih ni eksplicitno viden v celoti, a logika ostaja enaka. Predpostavimo, da imamo podano količino $O_2$.)*\n    *   Če je $n(O_2)_{dejanski} \u003c 0,5147$, je kisik omejitveni reagent.\n    *   Če je $n(O_2)_{dejanski} \u003e 0,5147$, je amoniak omejitveni reagent.\n\n4.  **Izračun produkta (npr. vode):**\n    Vedno računamo glede na omejitveni reagent!\n    Če je $NH_3$ omejitveni: $n(H_2O) \u003d \\frac{6}{4} n(NH_3)$.\n\n---\n\n## 4. Naloga: Nevtralizacija (Stehiometrija raztopin)\n\n**Problem:** Reakcija $3KOH + H_3PO_4 \\rightarrow K_3PO_4 + 3H_2O$. Koliko kisline potrebujemo za nevtralizacijo baze?\n\n### Podatki\n*   Baza: $KOH$\n*   Kislina: $H_3PO_4$ (fosforjeva kislina)\n*   Podatki o kislini: $w \u003d 0,016$ (1,6 %), $\\rho \u003d 1,012 \\text{ g/mL}$.\n*   Razmerje iz enačbe: $n(KOH) : n(H_3PO_4) \u003d 3 : 1$.\n\n### Postopek reševanja\n\n1.  **Izračun koncentracije kisline:**\n    $$ c(H_3PO_4) \u003d \\frac{w \\cdot \\rho}{M} $$\n    $$ c \u003d \\frac{0,016 \\cdot 1012 \\text{ g/L}}{98 \\text{ g/mol}} \\approx 0,165 \\text{ mol/L} $$\n    *(Opomba: Gostoto $1,012 \\text{ g/mL}$ pretvorimo v $1012 \\text{ g/L}$ za lažji račun)*.\n\n2.  **Stehiometrija:**\n    $$ \\frac{n(KOH)}{n(H_3PO_4)} \u003d \\frac{3}{1} \\Rightarrow n(H_3PO_4) \u003d \\frac{n(KOH)}{3} $$\n\n3.  **Izračun volumna:**\n    $$ V \u003d \\frac{n}{c} $$\n    Vstavimo podatke iz prvega dela naloge (množina KOH je verjetno podana ali izračunana iz prejšnjega koraka, v zapiskih je omenjeno $c \\cdot V$).\n    Končni rezultat v zapiskih: $V \\approx 2,35 \\text{ L}$.\n\n---\n\n## 5. Naloga: Priprava nasičene raztopine iz hidrata\n\n**Problem:** Imamo 100 g $CuSO_4 \\cdot 5H_2O$. Koliko vode moramo dodati, da dobimo nasičeno raztopino pri določeni temperaturi?\n**Podatek o topnosti:** Topnost brezvodnega $CuSO_4$ je $75,4 \\text{ g}$ na $100 \\text{ g } H_2O$.\n\n### Analiza problema\nTo je najtežji tip naloge. Hidrat ($CuSO_4 \\cdot 5H_2O$) sestavljata **topljenec** ($CuSO_4$) in **kristalna voda** ($H_2O$). Ko hidrat raztopimo, kristalna voda postane del topila!\n\n### Postopek reševanja\n\n1.  **Razčlenitev hidrata (100 g):**\n    *   Molska masa $CuSO_4 \\approx 159,6 \\text{ g/mol}$.\n    *   Molska masa $CuSO_4 \\cdot 5H_2O \\approx 249,7 \\text{ g/mol}$.\n    *   Masa čistega $CuSO_4$ v 100 g hidrata:\n        $$ m(CuSO_4) \u003d 100 \\text{ g} \\cdot \\frac{159,6}{249,7} \u003d 63,92 \\text{ g} $$\n    *   Masa vode v hidratu:\n        $$ m(H_2O)_{hidrat} \u003d 100 \\text{ g} - 63,92 \\text{ g} \u003d 36,08 \\text{ g} $$\n\n2.  **Izračun potrebne celotne vode (za nasičenje):**\n    Uporabimo sorazmerje (topnost):\n    $$ \\frac{75,4 \\text{ g soli}}{100 \\text{ g vode}} \u003d \\frac{63,92 \\text{ g soli}}{x \\text{ g vode}} $$\n    $$ x \u003d \\frac{63,92 \\cdot 100}{75,4} \u003d 83,82 \\text{ g vode} $$\n    To je *celotna* voda, ki jo potrebujemo za raztopitev te soli.\n\n3.  **Izračun vode, ki jo moramo DOLITI:**\n    Od celotne potrebne vode odštejemo vodo, ki smo jo prinesli s hidratom.\n    $$ m(H_2O)_{doliti} \u003d m(skupna) - m(H_2O)_{hidrat} $$\n    $$ m(H_2O)_{doliti} \u003d 83,82 \\text{ g} - 36,08 \\text{ g} \u003d 47,74 \\text{ g} $$\n\n4.  **Pretvorba v volumen:**\n    Ker je gostota vode $\\approx 1 \\text{ g/mL}$:\n    $$ V_{dodane} \u003d 47,74 \\text{ mL} $$\n\n\u003e [!NOTE] Note to Self\n\u003e Pri hidratih in topnosti **VEDNO** loči maso čiste soli in maso vode v kristalu. Topnost je podana za čisto sol (brezvodno). Če tega ne upoštevaš, bo rezultat napačen.\n\n---\n\n## 🔗 Povezave na nove koncepte\n[[Stehiometrija]]\n[[Plinski zakoni]]\n[[Priprava raztopin]]\n[[Topnost]]",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3942,
+      "parts": [{
+        "text": "Tu so strukturirani zapiski s seminarija (priprava na kolokvij), ki temeljijo na priloženem zvočnem zapisu in ročno napisanih rešitvah. Zapiski so oblik"
+      }, {
+        "text": "ovani za Obsidian in sledijo kronološkemu ter logičnemu poteku ure.\n\n***\n\n# "
+      }, {
+        "text": "📅 Priprava na 1. Kolokvij: Računske naloge\n\n**Datum:** 21"
+      }, {
+        "text": ". 11. ob 16:00\n**Lokacija:** Velika predavalnica (Borut Pe"
+      }, {
+        "text": "čenko)\n**Tip:** [[Laboratorijske vaje]] / [[Kemijsko računanje]]\n\n## 📝"
+      }, {
+        "text": " Logistika in navodila za kolokvij\n\n*   **Trajanje:** 60 minut (1 pol"
+      }, {
+        "text": "na ura).\n*   **Vsebina:** 5 računskih nalog (brez teorije).\n    *   "
+      }, {
+        "text": "Vsaka naloga je vredna 5 točk.\n    *   Skupaj 25 točk"
+      }, {
+        "text": ".\n    *   Za pozitivno oceno je potrebnih 50 % (približno "
+      }, {
+        "text": "12,5 - 13 točk).\n*   **Dovoljeni pripomočki:**\n    *"
+      }, {
+        "text": "   Pisalo (prinesite 2 za vsak slučaj).\n    *   **Kalkulator** (telefon"
+      }, {
+        "text": " ni dovoljen!).\n    *   Osebni dokument/študentska izkaznica.\n    *   Periodni"
+      }, {
+        "text": " sistem in formule bodo podane na poli.\n*   **Obseg snovi:** Od 1. do 4"
+      }, {
+        "text": ". laboratorijske vaje (vključno s plinskimi zakoni, stehiometrijo, topnostjo)."
+      }, {
+        "text": " Titracije (laboratorijska vaja) še niso vključene v ta kolokvij.\n\n---\n\n## 🧮 Splošne formule in koncepti\n\nPred reševanjem nalog si velja zapomniti kl"
+      }, {
+        "text": "jučne zveze, ki jih bomo uporabljali (in obračali) skozi celoten seminar.\n\n###"
+      }, {
+        "text": " [[Molska masa]] in množina\n$$ n \u003d \\frac{m}{M} $$\n$$ N \u003d n \\cdot"
+      }, {
+        "text": " N_A $$\nKjer je $N_A \u003d 6,022 \\cdot 10^{"
+      }, {
+        "text": "23} \\text{ mol}^{-1}$ ([[Avogadrova konstanta]]).\n\n### [[Splošna plinska"
+      }, {
+        "text": " enačba]] (Idealni plin)\n$$ p \\cdot V \u003d n \\cdot R \\cdot T $$\n"
+      }, {
+        "text": "$$ \\bar{M} \u003d \\frac{\\rho \\cdot R \\cdot T}{p} $$\n*Iz"
+      }, {
+        "text": "peljava:* $n \u003d \\frac{m}{M} \\rightarrow pV \u003d \\frac{m}{M"
+      }, {
+        "text": "}RT \\rightarrow pM \u003d \\frac{m}{V}RT \\rightarrow pM \u003d \\rho RT$.\n\n"
+      }, {
+        "text": "### [[Koncentracija]] in masni delež\n$$ c \u003d \\frac{n}{V} $$\n"
+      }, {
+        "text": "$$ w \u003d \\frac{m_{topljenca}}{m_{raztopine}} $$\nPovezava med gostoto"
+      }, {
+        "text": ", masnim deležem in molsko koncentracijo:\n$$ c \u003d \\frac{w \\cdot \\rho"
+      }, {
+        "text": "}{M} $$\n\n---\n\n## 1. Naloga: Število molekul v hidratu\n\n**Problem"
+      }, {
+        "text": ":** Izračunajte število molekul kristalno vezane vode v 10 g magnezijevega sulf"
+      }, {
+        "text": "ata heptahidrata ($MgSO_4 \\cdot 7H_2O$).\n\n### Podatki\n*"
+      }, {
+        "text": "   Spojina: $MgSO_4 \\cdot 7H_2O$\n*   Masa vzorca:"
+      }, {
+        "text": " $m \u003d 10 \\text{ g}$\n*   Molska masa: $M \u003d 24"
+      }, {
+        "text": "6,5 \\text{ g/mol}$ (izračunana iz periodnega sistema)\n\n### Postopek rešev"
+      }, {
+        "text": "anja\n1.  **Izračun množine celotnega hidrata:**\n    $$ n(\\text{hidrat})"
+      }, {
+        "text": " \u003d \\frac{m}{M} \u003d \\frac{10 \\text{ g}}{246,5"
+      }, {
+        "text": " \\text{ g/mol}} \u003d 0,04056 \\text{ mol} $$\n\n2"
+      }, {
+        "text": ".  **Stehiometrično razmerje:**\n    V 1 molu hidrata je 7 molov vode."
+      }, {
+        "text": "\n    $$ n(H_2O) \u003d 7 \\cdot n(\\text{hidrat}) $$\n    "
+      }, {
+        "text": "$$ n(H_2O) \u003d 7 \\cdot 0,04056 \\text{"
+      }, {
+        "text": " mol} \u003d 0,2839 \\text{ mol} $$\n\n3.  **Izračun števila"
+      }, {
+        "text": " molekul ($N$):**\n    $$ N(H_2O) \u003d n(H_2O) \\cdot"
+      }, {
+        "text": " N_A $$\n    $$ N(H_2O) \u003d 0,2839 \\text"
+      }, {
+        "text": "{ mol} \\cdot 6,022 \\cdot 10^{23} \\text{ mol"
+      }, {
+        "text": "}^{-1} $$\n    $$ N(H_2O) \u003d 1,71 \\cdot 1"
+      }, {
+        "text": "0^{23} \\text{ molekul} $$\n\n\u003e [!NOTE] Critical Analysis\n\u003e **Past"
+      }, {
+        "text": ":** Mnogi študenti pozabijo pomnožiti s 7. Formulo hidrata vedno ob"
+      }, {
+        "text": "ravnavajte kot celoto, nato pa poglejte razmerje. Če vas sprašuje po *atom"
+      }, {
+        "text": "ih* kisika, bi množili še s številom kisikov v molekuli vode (v tem primeru "
+      }, {
+        "text": "1, skupaj v hidratu pa $4 + 7 \u003d 11$).\n\n---\n\n## 2. Naloga"
+      }, {
+        "text": ": Plinske zmesi in Molska masa\n\n**Problem:** Imamo zmes vodika ($H_2$) in ne"
+      }, {
+        "text": "znanega plina $X$. Podana je temperatura, tlak in gostota zmesi. Določi mol"
+      }, {
+        "text": "sko maso plina $X$.\n\n### Podatki\n*   $T \u003d 20^\\circ"
+      }, {
+        "text": " C \u003d 293,15 \\text{ K}$\n*   $p_{skupni} \u003d 0"
+      }, {
+        "text": ",960 \\text{ bar} \u003d 96 \\text{ kPa} \u003d 96000 \\"
+      }, {
+        "text": "text{ Pa}$\n*   $\\rho_{zmesi} \u003d 0,36 \\text{ g/L}"
+      }, {
+        "text": " \u003d 0,36 \\text{ kg/m}^3$ (pazite na enote pri $R$!)"
+      }, {
+        "text": "\n*   $p_X \u003d 24 \\text{ kPa}$ (delni tlak plina X)\n\n"
+      }, {
+        "text": "### Postopek reševanja\n\n1.  **Izračun povprečne molske mase zmesi"
+      }, {
+        "text": " ($\\bar{M}$):**\n    Uporabimo izpeljano plinsko enačbo."
+      }, {
+        "text": " Pazimo na enote ($R \u003d 8,314 \\text{ J/(mol K)}$).\n"
+      }, {
+        "text": "    $$ \\bar{M} \u003d \\frac{\\rho \\cdot R \\cdot T}{p} $$\n    "
+      }, {
+        "text": "$$ \\bar{M} \u003d \\frac{0,36 \\text{ g/L} \\cdot "
+      }, {
+        "text": "8,314 \\text{ kPa L/(mol K)} \\cdot 293,15 \\text{"
+      }, {
+        "text": " K}}{96 \\text{ kPa}} $$\n    *(Opomba: Uporaba g/L in kPa"
+      }, {
+        "text": " s to konstanto R da rezultat direktno v g/mol)*\n    $$ \\bar{M} \u003d "
+      }, {
+        "text": "9,1397 \\text{ g/mol} $$\n\n2.  **Določitev molskih"
+      }, {
+        "text": " deležev ($x$):**\n    Po [[Daltonov zakon|Daltonovem zakonu]] je mol"
+      }, {
+        "text": "ski delež enak razmerju tlakov.\n    $$ x_X \u003d \\frac{p_X}{p_{"
+      }, {
+        "text": "skupni}} \u003d \\frac{24 \\text{ kPa}}{96 \\text{ kPa}} \u003d "
+      }, {
+        "text": "0,25 $$\n    Ker je vsota molskih deležev 1:\n    $$ x_{H_2"
+      }, {
+        "text": "} \u003d 1 - x_X \u003d 0,75 $$\n\n3.  **Izračun mols"
+      }, {
+        "text": "ke mase neznanke iz povprečja:**\n    $$ \\bar{M} \u003d x_{H_2}"
+      }, {
+        "text": " \\cdot M(H_2) + x_X \\cdot M(X) $$\n    $$ 9"
+      }, {
+        "text": ",14 \u003d 0,75 \\cdot 2,02 + 0,25 \\cdot M"
+      }, {
+        "text": "(X) $$\n    $$ 9,14 \u003d 1,515 + 0,25"
+      }, {
+        "text": " \\cdot M(X) $$\n    $$ 0,25 \\cdot M(X) \u003d 7,62"
+      }, {
+        "text": "5 $$\n    $$ M(X) \\approx 30,5 \\text{ g/mol} $$"
+      }, {
+        "text": "\n\n\u003e [!WARNING] Opozorilo\n\u003e Pri uporabi plinske enačbe vedno preverite en"
+      }, {
+        "text": "ote za plinsko konstanto $R$. Če uporabljate $R \u003d 8314$, morate v"
+      }, {
+        "text": "staviti gostoto v $\\text{kg/m}^3$ in tlak v $\\text{Pa}$. Če uporabljate"
+      }, {
+        "text": " $R \u003d 8,314$, so enote pogosto prilagojene (kPa, $dm"
+      }, {
+        "text": "^3$).\n\n---\n\n## 3. Naloga: Stehiometrija in omejitveni reagent\n\n**"
+      }, {
+        "text": "Problem:** Reakcija amoniaka s kisikom: $4NH_3 + 5O_2 \\"
+      }, {
+        "text": "rightarrow 4NO + 6H_2O$. Imamo določene mase reaktantov."
+      }, {
+        "text": " Kateri je omejitveni reagent in koliko produkta nastane?\n\n### Podatki\n*   $m"
+      }, {
+        "text": "(NH_3) \u003d 7 \\text{ g}$\n*   $M(NH_3) \u003d"
+      }, {
+        "text": " 17 \\text{ g/mol}$\n*   $M(O_2) \u003d 32"
+      }, {
+        "text": " \\text{ g/mol}$\n\n### Postopek reševanja (Reverse Engineering from notes)\n\n1.  **Iz"
+      }, {
+        "text": "račun množine amoniaka:**\n    $$ n(NH_3) \u003d \\frac{7 \\text{"
+      }, {
+        "text": " g}}{17 \\text{ g/mol}} \u003d 0,4118 \\text{ mol}"
+      }, {
+        "text": " $$\n\n2.  **Preverjanje potrebne množine kisika (teoretično):**\n    Iz"
+      }, {
+        "text": " reakcije $4NH_3 : 5O_2$ sledi razmerje $\\frac{5}{4}"
+      }, {
+        "text": " \u003d 1,25$.\n    $$ n(O_2)_{potreben} \u003d \\frac{"
+      }, {
+        "text": "5}{4} \\cdot n(NH_3) $$\n    $$ n(O_2)_{potreben"
+      }, {
+        "text": "} \u003d 1,25 \\cdot 0,4118 \\text{ mol} \u003d 0"
+      }, {
+        "text": ",5147 \\text{ mol} $$\n\n3.  **Primerjava z dejanskim stanjem:**"
+      }, {
+        "text": "\n    *(Opomba: Podatek za maso ali volumen kisika v zapiskih ni eksplicitno v"
+      }, {
+        "text": "iden v celoti, a logika ostaja enaka. Predpostavimo, da imamo podano količino $O"
+      }, {
+        "text": "_2$.)*\n    *   Če je $n(O_2)_{dejanski} \u003c 0,51"
+      }, {
+        "text": "47$, je kisik omejitveni reagent.\n    *   Če je $n(O_2"
+      }, {
+        "text": ")_{dejanski} \u003e 0,5147$, je amoniak omejitveni reagent.\n\n4"
+      }, {
+        "text": ".  **Izračun produkta (npr. vode):**\n    Vedno računamo glede na omejit"
+      }, {
+        "text": "veni reagent!\n    Če je $NH_3$ omejitveni: $n(H_2O) \u003d"
+      }, {
+        "text": " \\frac{6}{4} n(NH_3)$.\n\n---\n\n## 4. Naloga: Nev"
+      }, {
+        "text": "tralizacija (Stehiometrija raztopin)\n\n**Problem:** Reakcija $3KOH + H"
+      }, {
+        "text": "_3PO_4 \\rightarrow K_3PO_4 + 3H_2O$. Koliko kis"
+      }, {
+        "text": "line potrebujemo za nevtralizacijo baze?\n\n### Podatki\n*   Baza: $KOH"
+      }, {
+        "text": "$\n*   Kislina: $H_3PO_4$ (fosforjeva kislina)"
+      }, {
+        "text": "\n*   Podatki o kislini: $w \u003d 0,016$ (1,6"
+      }, {
+        "text": " %), $\\rho \u003d 1,012 \\text{ g/mL}$.\n*   Razmerje iz"
+      }, {
+        "text": " enačbe: $n(KOH) : n(H_3PO_4) \u003d 3 : "
+      }, {
+        "text": "1$.\n\n### Postopek reševanja\n\n1.  **Izračun koncentracije kisline:**\n    $$"
+      }, {
+        "text": " c(H_3PO_4) \u003d \\frac{w \\cdot \\rho}{M} $$\n    "
+      }, {
+        "text": "$$ c \u003d \\frac{0,016 \\cdot 1012 \\text{ g/L"
+      }, {
+        "text": "}}{98 \\text{ g/mol}} \\approx 0,165 \\text{ mol/L"
+      }, {
+        "text": "} $$\n    *(Opomba: Gostoto $1,012 \\text{ g/mL}$ pretvor"
+      }, {
+        "text": "imo v $1012 \\text{ g/L}$ za lažji račun)*.\n\n2.  "
+      }, {
+        "text": "**Stehiometrija:**\n    $$ \\frac{n(KOH)}{n(H_3PO_4"
+      }, {
+        "text": ")} \u003d \\frac{3}{1} \\Rightarrow n(H_3PO_4) \u003d \\frac{n(KOH"
+      }, {
+        "text": ")}{3} $$\n\n3.  **Izračun volumna:**\n    $$ V \u003d \\frac{n}{c"
+      }, {
+        "text": "} $$\n    Vstavimo podatke iz prvega dela naloge (množina KOH je verjetno podana"
+      }, {
+        "text": " ali izračunana iz prejšnjega koraka, v zapiskih je omenjeno $c \\cdot V$)."
+      }, {
+        "text": "\n    Končni rezultat v zapiskih: $V \\approx 2,35 \\text{ L}$.\n\n---"
+      }, {
+        "text": "\n\n## 5. Naloga: Priprava nasičene raztopine iz hidrata\n\n**Problem:**"
+      }, {
+        "text": " Imamo 100 g $CuSO_4 \\cdot 5H_2O$. Koliko vode"
+      }, {
+        "text": " moramo dodati, da dobimo nasičeno raztopino pri določeni temperaturi?\n**Pod"
+      }, {
+        "text": "atek o topnosti:** Topnost brezvodnega $CuSO_4$ je $75,4 \\text{ g"
+      }, {
+        "text": "}$ na $100 \\text{ g } H_2O$.\n\n### Analiza problema\nTo je naj"
+      }, {
+        "text": "težji tip naloge. Hidrat ($CuSO_4 \\cdot 5H_2O$) sest"
+      }, {
+        "text": "avljata **topljenec** ($CuSO_4$) in **kristalna voda** ($H_2"
+      }, {
+        "text": "O$). Ko hidrat raztopimo, kristalna voda postane del topila!\n\n### Postopek reševanja"
+      }, {
+        "text": "\n\n1.  **Razčlenitev hidrata (100 g):**\n    *   Molska masa $"
+      }, {
+        "text": "CuSO_4 \\approx 159,6 \\text{ g/mol}$.\n    *   Molska masa"
+      }, {
+        "text": " $CuSO_4 \\cdot 5H_2O \\approx 249,7 \\text{"
+      }, {
+        "text": " g/mol}$.\n    *   Masa čistega $CuSO_4$ v 100 g hid"
+      }, {
+        "text": "rata:\n        $$ m(CuSO_4) \u003d 100 \\text{ g} \\cdot \\frac"
+      }, {
+        "text": "{159,6}{249,7} \u003d 63,92 \\text{ g} $$"
+      }, {
+        "text": "\n    *   Masa vode v hidratu:\n        $$ m(H_2O)_{hidrat} \u003d"
+      }, {
+        "text": " 100 \\text{ g} - 63,92 \\text{ g} \u003d 3"
+      }, {
+        "text": "6,08 \\text{ g} $$\n\n2.  **Izračun potrebne celotne vode ("
+      }, {
+        "text": "za nasičenje):**\n    Uporabimo sorazmerje (topnost):\n    $$ \\frac{"
+      }, {
+        "text": "75,4 \\text{ g soli}}{100 \\text{ g vode}} \u003d \\frac{63"
+      }, {
+        "text": ",92 \\text{ g soli}}{x \\text{ g vode}} $$\n    $$ x \u003d \\frac"
+      }, {
+        "text": "{63,92 \\cdot 100}{75,4} \u003d 83,82 \\"
+      }, {
+        "text": "text{ g vode} $$\n    To je *celotna* voda, ki jo potrebujemo za raztop"
+      }, {
+        "text": "itev te soli.\n\n3.  **Izračun vode, ki jo moramo DOLITI:**\n    Od celotne"
+      }, {
+        "text": " potrebne vode odštejemo vodo, ki smo jo prinesli s hidratom.\n    $$ m"
+      }, {
+        "text": "(H_2O)_{doliti} \u003d m(skupna) - m(H_2O)_{hidrat} $$"
+      }, {
+        "text": "\n    $$ m(H_2O)_{doliti} \u003d 83,82 \\text{ g"
+      }, {
+        "text": "} - 36,08 \\text{ g} \u003d 47,74 \\text{ g"
+      }, {
+        "text": "} $$\n\n4.  **Pretvorba v volumen:**\n    Ker je gostota vode $\\approx 1 \\text"
+      }, {
+        "text": "{ g/mL}$:\n    $$ V_{dodane} \u003d 47,74 \\text{ mL}"
+      }, {
+        "text": " $$\n\n\u003e [!NOTE] Note to Self\n\u003e Pri hidratih in topnosti **VEDNO** lo"
+      }, {
+        "text": "či maso čiste soli in maso vode v kristalu. Topnost je podana za čisto sol ("
+      }, {
+        "text": "brezvodno). Če tega ne upoštevaš, bo rezultat napačen.\n\n---\n\n##"
+      }, {
+        "text": " 🔗 Povezave na nove koncepte\n[[Stehiometrija]]\n[[Plinski zakoni]]\n"
+      }, {
+        "text": "[[Priprava raztopin]]\n[[Topnost]]"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }, {
+      "text": "this is high school stuff why are we doign this in uni?",
+      "role": "user",
+      "tokenCount": 15
+    }, {
+      "text": "**Reassessing Relevance**\n\nI\u0027m now reconsidering the user\u0027s input, specifically their frustration. They seem to be questioning the material\u0027s appropriateness for a university level course. This perspective warrants deeper analysis to ensure I adequately address their concerns about the perceived value and relevance of the current discussion.\n\n\n**Clarifying Justification**\n\nI\u0027m solidifying the justification for the content\u0027s presence. I understand their perspective; these topics are foundational, appearing even in high school. My academic assistant persona acknowledges this familiarity and is preparing to explain why universities revisit them. I\u0027m focusing on the \"Uni twist,\" emphasizing the increased rigor, pace, and their crucial role in preparing for lab work and uncovering knowledge gaps. This aims to shift focus to the practical implications.\n\n\n**Justifying Repetition**\n\nI\u0027m now detailing why these seemingly basic topics reappear at the university level. I\u0027ve broken it down to specific reasons: not everyone had the same high school preparation, the need for precision and rigorous notation, the \"toolbox\" argument for automatic calculation, and the practical implications for lab safety and cost. The idea is to make these calculations second nature. I\u0027m building this as the \"why\" component to reinforce content value. I will also explore how professors use these basics as a foundation for more advanced analysis, leading students into conceptual traps.\n\n\n**Reinforcing the \"Easy Points\"**\n\nI\u0027m now emphasizing the practical advantage of mastering seemingly simple calculations. The hydrate example isn\u0027t about difficult math; it\u0027s about solidifying conceptual logic. I\u0027m framing this as a strategic opportunity: these are \"easy points\" to bank before tackling more complex university-level topics. My goal is to motivate thorough understanding, not just passing familiarity, to create a solid foundation for future challenges.\n\n\n**Framing Exam Strategies**\n\nI\u0027m now integrating strategic exam advice into the explanation. I\u0027m focusing on the \"University Twist,\" that elevated expectation of this type of content. I\u0027m rephrasing any statements that might sound condescending, and I\u0027m avoiding the phrase \"You should know this.\" Instead, I\u0027ll emphasize that the system demands perfect mastery, setting the stage for more advanced concepts to come.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Reassessing Relevance**\n\nI\u0027m now reconsidering the user\u0027s input, specifically their frustration. They seem to be questioning the material\u0027s appropriateness for a university level course. This perspective warrants deeper analysis to ensure I adequately address their concerns about the perceived value and relevance of the current discussion.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Clarifying Justification**\n\nI\u0027m solidifying the justification for the content\u0027s presence. I understand their perspective; these topics are foundational, appearing even in high school. My academic assistant persona acknowledges this familiarity and is preparing to explain why universities revisit them. I\u0027m focusing on the \"Uni twist,\" emphasizing the increased rigor, pace, and their crucial role in preparing for lab work and uncovering knowledge gaps. This aims to shift focus to the practical implications.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Justifying Repetition**\n\nI\u0027m now detailing why these seemingly basic topics reappear at the university level. I\u0027ve broken it down to specific reasons: not everyone had the same high school preparation, the need for precision and rigorous notation, the \"toolbox\" argument for automatic calculation, and the practical implications for lab safety and cost. The idea is to make these calculations second nature. I\u0027m building this as the \"why\" component to reinforce content value. I will also explore how professors use these basics as a foundation for more advanced analysis, leading students into conceptual traps.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Reinforcing the \"Easy Points\"**\n\nI\u0027m now emphasizing the practical advantage of mastering seemingly simple calculations. The hydrate example isn\u0027t about difficult math; it\u0027s about solidifying conceptual logic. I\u0027m framing this as a strategic opportunity: these are \"easy points\" to bank before tackling more complex university-level topics. My goal is to motivate thorough understanding, not just passing familiarity, to create a solid foundation for future challenges.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Framing Exam Strategies**\n\nI\u0027m now integrating strategic exam advice into the explanation. I\u0027m focusing on the \"University Twist,\" that elevated expectation of this type of content. I\u0027m rephrasing any statements that might sound condescending, and I\u0027m avoiding the phrase \"You should know this.\" Instead, I\u0027ll emphasize that the system demands perfect mastery, setting the stage for more advanced concepts to come.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "This is a very common frustration for first-year STEM students. It feels repetitive, but there is a specific pedagogical reason why universities—especially in engineering and natural sciences—start here.\n\nHere is the **Critical Analysis** of why you are seeing this material again, from an academic tutor\u0027s perspective:\n\n### 1. The \"Leveling\" Factor\nNot all high schools are the same. You might have had a rigorous gymnasium chemistry teacher, but your colleague might come from a vocational school or a program with weak chemistry. The university has to ensure **everyone** starts at the exact same baseline before they introduce complex Thermodynamics or Organic Synthesis.\n\n### 2. Automating the \"Toolbox\"\nIn high school, calculating moles was often *the problem* itself. In university, calculating moles is just **Step 1 of 10** in a larger problem (like titrations, gravimetry, or reaction kinetics).\n*   **The Goal:** They need these calculations to be **reflexive** (muscle memory). If you have to stop and think about $n \u003d \\frac{m}{M}$ during a complex lab experiment next year, you will run out of time.\n\n### 3. The \"Hydrate\" Trap (Task 5)\nLook closely at **Task 5** (The Solubility of Hydrates) in your notes.\n*   **High School approach:** Usually plugs numbers into a memorized formula.\n*   **Uni approach:** Requires you to mentally separate the water inside the crystal from the water in the solvent. It tests **logic**, not just math. This is where they \"weed out\" students who memorize vs. students who understand the physical reality of the solution.\n\n### 4. Lab Safety and Cost\nThese calculations directly correlate to the **Laboratorijske vaje** (Laboratory Exercises).\n*   If you miscalculate a theoretical yield on paper, you lose a point.\n*   If you miscalculate a concentration in the lab, you could create a dangerous reaction, waste expensive reagents, or ruin a 4-hour experiment. They are testing your reliability before letting you loose with more dangerous chemicals.\n\n### 📝 Strategy for Thursday\nSince this is \"high school stuff,\" use it to your advantage.\n1.  **Don\u0027t get arrogant:** These are easy points, but they are also easy points to *lose* on silly mistakes (like forgetting to add the mass of the water in the hydrate to the total molar mass).\n2.  **Focus on Speed:** The time limit (60 mins for 5 tasks) is tighter than in high school. You need to solve these fast.\n3.  **Bank the Points:** You need ~13 points to pass. If you master these basics, you secure a pass early in the semester, taking pressure off the harder theoretical exams later.\n\n**Summary:** Treat this as a \"warm-up\" necessary to prove you are safe to proceed to the actual university-level chemistry. Crush it and move on.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 628,
+      "parts": [{
+        "text": "This is a very common frustration for first-year STEM students. It feels repetitive, but there is a specific pedagogical reason why universities—especially in engineering and natural sciences—start here.\n\nHere is"
+      }, {
+        "text": " the **Critical Analysis** of why you are seeing this material again, from an academic tutor\u0027s perspective:\n\n### 1."
+      }, {
+        "text": " The \"Leveling\" Factor\nNot all high schools are the same. You might have had a rigorous gymnasium chemistry teacher"
+      }, {
+        "text": ", but your colleague might come from a vocational school or a program with weak chemistry. The university has to ensure **everyone** starts"
+      }, {
+        "text": " at the exact same baseline before they introduce complex Thermodynamics or Organic Synthesis.\n\n### 2. Automating the \"Toolbox\"\n"
+      }, {
+        "text": "In high school, calculating moles was often *the problem* itself. In university, calculating moles is just **Step 1 of"
+      }, {
+        "text": " 10** in a larger problem (like titrations, gravimetry, or reaction kinetics).\n*   **The"
+      }, {
+        "text": " Goal:** They need these calculations to be **reflexive** (muscle memory). If you have to stop and think about $n"
+      }, {
+        "text": " \u003d \\frac{m}{M}$ during a complex lab experiment next year, you will run out of time.\n\n### 3"
+      }, {
+        "text": ". The \"Hydrate\" Trap (Task 5)\nLook closely at **Task 5** (The Solubility"
+      }, {
+        "text": " of Hydrates) in your notes.\n*   **High School approach:** Usually plugs numbers into a memorized formula.\n"
+      }, {
+        "text": "*   **Uni approach:** Requires you to mentally separate the water inside the crystal from the water in the solvent. It"
+      }, {
+        "text": " tests **logic**, not just math. This is where they \"weed out\" students who memorize vs. students who understand"
+      }, {
+        "text": " the physical reality of the solution.\n\n### 4. Lab Safety and Cost\nThese calculations directly correlate to the **Labor"
+      }, {
+        "text": "atorijske vaje** (Laboratory Exercises).\n*   If you miscalculate a theoretical yield on paper, you lose a"
+      }, {
+        "text": " point.\n*   If you miscalculate a concentration in the lab, you could create a dangerous reaction, waste expensive reagents,"
+      }, {
+        "text": " or ruin a 4-hour experiment. They are testing your reliability before letting you loose with more dangerous chemicals.\n\n"
+      }, {
+        "text": "### 📝 Strategy for Thursday\nSince this is \"high school stuff,\" use it to your advantage.\n1.  **"
+      }, {
+        "text": "Don\u0027t get arrogant:** These are easy points, but they are also easy points to *lose* on silly mistakes (like forgetting"
+      }, {
+        "text": " to add the mass of the water in the hydrate to the total molar mass).\n2.  **Focus on Speed"
+      }, {
+        "text": ":** The time limit (60 mins for 5 tasks) is tighter than in high school. You need to solve these"
+      }, {
+        "text": " fast.\n3.  **Bank the Points:** You need ~13 points to pass. If you master these"
+      }, {
+        "text": " basics, you secure a pass early in the semester, taking pressure off the harder theoretical exams later.\n\n**Summary:** Treat this as"
+      }, {
+        "text": " a \"warm-up\" necessary to prove you are safe to proceed to the actual university-level chemistry. Crush it and"
+      }, {
+        "text": " move on."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}
