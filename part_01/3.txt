@@ -1,0 +1,907 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes to know:\n1. The user\u0027s files (metadata) are chronologically labeled, so the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other, given the topic.\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT PROTOCOL**\n\n1.  **Initial Output Protocol:** Begin your response *only* with the content note itself. Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The foundational structure of the notes must accurately reflect the material presented (what was said/seen). Your first duty is to record the lecturer\u0027s content and the user\u0027s notes, **as they are**. Minimal AI interjection should occur in the main body; use dedicated analytical sections for added insight.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  **Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5.  **Conceptual Strengthening Tasks (NEW):** At the conclusion of the synthesized notes, generate a section of \u0027Conceptual Strengthening Tasks\u0027. These tasks must:\n    *   Mimic the structure and difficulty of the examples/problems presented in the current lecture material.\n    *   Include \u0027Challenges\u0027 designed to connect the current university concepts with foundational knowledge from high school or prior courses, forcing the user to utilize a broad, integrated understanding.\n\n### **4. OBSIDIAN LINKING \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a highly knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1tn0RdvDQYt9nHfrwDJAgvK4XXsvdqyfN"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1GI_YqbOsJ3pWNGIYwUNmxpemCQhvpowi"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1zUfAYC1oskQYRX5mgyZiNRk7Edu_nvIS"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1S7rIOBeOHvSMzXwMozIA3ecIIlUeSzgP"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "11xsNnIWqNusrL2QfnxTK8OX6Gxs6le5N"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1HK3maZE_a_140D3Ig-hSUiztnk8xjN-e"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1M-_qOF0ZtSoLXkT1VVKkoixTFik-VxUg"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ePe5EBEOtKRDojjMQMgxCr7-v1a46fpQ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1cNYcmUQWV-WIsHG5gTJQLof5aqkWwrM4"
+      },
+      "role": "user",
+      "tokenCount": 78678
+    }, {
+      "driveAudio": {
+        "id": "1m1ch94ZzDWZgVZ_mRj2kLEw4d-GNsS4n"
+      },
+      "role": "user",
+      "tokenCount": 79199
+    }, {
+      "driveAudio": {
+        "id": "1UVBPM2XZ9TlnXhIy8e7XqKlCR5Aor4d2"
+      },
+      "role": "user",
+      "tokenCount": 88311
+    }, {
+      "text": "MAT A TEO 3. predavanje Petra zigert. Realne funckije, preslikave, funkcijski predpisi, trigonometricni dokazi. ",
+      "role": "user",
+      "tokenCount": 36
+    }, {
+      "driveImage": {
+        "id": "1Abrp8tkqBJPxUAez6XVOikURCH7P2tWN"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1TTXqDmQDRnL-gFigL6kaiVtzgPo3Wc_V"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1tK2aecwlPzKO0MJtC3qtkh7I8J3VVGeg"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1sP7UCZSmEER1HjdEoPqWsKq1GPL2rvDT"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1JX8KMYmYNA62nP49qNKPDIfHfHybYpMW"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1W33tUoognsl97bV7ljDO2E8WQdGutlb-"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1vK3pnjXOHyRBZpUpWIRM4h-4F0mJDEDe"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1sWcvlWkBdBsrRLBsvHYjpAVwtFi4dPMe"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1GJennnVJYyBlnB6ATSH895AZfE47cQhR"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1qp_IzOKTYsBr5AQ8dSXA7iljPxpi6KTM"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1nBEjwxd-my5QWJ4N8h1Ifx5jE0W3eC9P"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1MyNXuMZi5ebIouse_61XpO6_LTC4CkKa"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ef4Hakfzn8vtO3k80gbsMGzYqBlJITm-"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1hwRayfPMLoQQXXSHaXIoci12HsJobtFO"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1fpUvNFG-WLyuAYIOISSrZSjS5WtcPeGG"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1WqOJuJ3HL0Nl-emd3rr_BbFc5pq1LtBE"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1LcUo95QbnbWi-mh2ymUSgmr2CB7J7uId"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1qOs5_O1BlchkRRuourg3jJ-xZQCuaGta"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ED2rAYvITYh10jsgY3mb1o8rhVXmyZAj"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1iAA5F9EbS2XuUcZo3H1iWXjg6wY5f4UL"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1KDhOr9aG9OZiRn4-GYaRthCpAgzWlX_c"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1A6qSZFas80_w7AEWx8Tz-tMRRsriiov8"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Qfy_RLFoz3UYkD-I9-VEA4QOwlJxPtlN"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1bqH-0u4aiRLyE-bRrxmqYajDMhH1mHEF"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Sv0aid5idhWtP6Dm3L_zETzZ6pkJiaz8"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1C5wVUl0U_cnCqAlJijNKVzZPgKgV-7DA"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Ur26yq8O22m8Q08h1W0F42vdYzwyc1Qs"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "pictures of the 3. lecture, order not chronological. ",
+      "role": "user",
+      "tokenCount": 14
+    }, {
+      "text": "**Initiating Synthesis Process**\n\nI\u0027m starting the synthesis process.  The goal is a single Obsidian note from these Slovenian lecture images on functions and mappings.  I\u0027m focusing on distilling the core mathematical concepts and relationships into a clear, structured format. My initial efforts are geared towards understanding the fundamental definitions and theorems presented.\n\n\n**Assessing Synthesis Constraints**\n\nI\u0027ve established the key constraints for the synthesis. I\u0027m confident in the approach: starting with a content note, accurately capturing the mathematical content in LaTeX, incorporating analytical sections for my insights, generating visualizations with Matplotlib, and ensuring all output is in standard Obsidian Markdown. My plan incorporates robust justifications, error checking, and ambiguity clarification to ensure clarity and accuracy in the final Obsidian note.\n\n\n**Defining the Scope.**\n\nI\u0027m now confidently scoping the project. I\u0027ve fully embraced the constraints, confirming I\u0027ll initiate with a content note and rigorously capture the mathematical content accurately using LaTeX for formulas. I have a robust plan to include analytical sections for my insights, generate visualizations with Matplotlib, and present everything in standard Obsidian Markdown. This will include justifications, error checking, and ambiguity clarifications. I\u0027ve assigned a confidence score of 5/5 to this approach, solidifying my methodology.\n\n\n**Refining Synthesis Process**\n\nI\u0027m now fully immersed in the processing. The existing plan is sound, and I\u0027ve started tackling the raw content. My current focus is accurately capturing the core concepts: mappings, their properties (injective, surjective, bijective), and their graphs. I\u0027ve sketched out the structure, including LaTeX for formulas and Matplotlib for visualizations. I\u0027m actively integrating insights from the audio transcript to ensure chronological accuracy and contextual richness. I\u0027ve identified key examples, such as the composition of mappings and the non-commutative nature, and plan to include detailed justifications and critical analysis.\n\n\n**Structuring the Content:**\n\nI\u0027ve just structured the core content now. I\u0027m focusing on \"Mappings (Preslikave)\", their properties, graphs, composition, inverse mappings, and elementary function overviews, including Trigonometric and Arcsin. I\u0027ve broken down these topics for organization, and I will be prioritizing capturing definitions, theorems, and examples, all while utilizing LaTeX for formulas and Matplotlib for visualizations. My confidence remains at 5/5. I\u0027ve noted the potential confusion with the lecturer\u0027s addition theorem mistake, and plan to correct it.\n\n\n**Advancing Content Capture**\n\nI\u0027m making progress in capturing the core content. I\u0027ve begun to define mappings and their basic properties. The initial focus is on the fundamental concepts, including domains, codomains, and the representation of mappings through examples and diagrams. I\u0027m focusing on ensuring accuracy in my transcription from the source material and translating any math into LaTeX.\n\n\n**Revising Scope and Refinement**\n\nI\u0027ve just refined the synthesis scope further and started processing the content. I\u0027m focusing on defining mappings and their properties - like domains, codomains, and the representation of mappings through examples and diagrams. I\u0027m prioritizing accuracy in transcribing from the source material and translating the math into LaTeX.\n\n\n",
+      "role": "model",
+      "tokenCount": 1529,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Initiating Synthesis Process**\n\nI\u0027m starting the synthesis process.  The goal is a single Obsidian note from these Slovenian lecture images on functions and mappings.  I\u0027m focusing on distilling the core mathematical concepts and relationships into a clear, structured format. My initial efforts are geared towards understanding the fundamental definitions and theorems presented.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Assessing Synthesis Constraints**\n\nI\u0027ve established the key constraints for the synthesis. I\u0027m confident in the approach: starting with a content note, accurately capturing the mathematical content in LaTeX, incorporating analytical sections for my insights, generating visualizations with Matplotlib, and ensuring all output is in standard Obsidian Markdown. My plan incorporates robust justifications, error checking, and ambiguity clarification to ensure clarity and accuracy in the final Obsidian note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Scope.**\n\nI\u0027m now confidently scoping the project. I\u0027ve fully embraced the constraints, confirming I\u0027ll initiate with a content note and rigorously capture the mathematical content accurately using LaTeX for formulas. I have a robust plan to include analytical sections for my insights, generate visualizations with Matplotlib, and present everything in standard Obsidian Markdown. This will include justifications, error checking, and ambiguity clarifications. I\u0027ve assigned a confidence score of 5/5 to this approach, solidifying my methodology.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Synthesis Process**\n\nI\u0027m now fully immersed in the processing. The existing plan is sound, and I\u0027ve started tackling the raw content. My current focus is accurately capturing the core concepts: mappings, their properties (injective, surjective, bijective), and their graphs. I\u0027ve sketched out the structure, including LaTeX for formulas and Matplotlib for visualizations. I\u0027m actively integrating insights from the audio transcript to ensure chronological accuracy and contextual richness. I\u0027ve identified key examples, such as the composition of mappings and the non-commutative nature, and plan to include detailed justifications and critical analysis.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Content:**\n\nI\u0027ve just structured the core content now. I\u0027m focusing on \"Mappings (Preslikave)\", their properties, graphs, composition, inverse mappings, and elementary function overviews, including Trigonometric and Arcsin. I\u0027ve broken down these topics for organization, and I will be prioritizing capturing definitions, theorems, and examples, all while utilizing LaTeX for formulas and Matplotlib for visualizations. My confidence remains at 5/5. I\u0027ve noted the potential confusion with the lecturer\u0027s addition theorem mistake, and plan to correct it.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Advancing Content Capture**\n\nI\u0027m making progress in capturing the core content. I\u0027ve begun to define mappings and their basic properties. The initial focus is on the fundamental concepts, including domains, codomains, and the representation of mappings through examples and diagrams. I\u0027m focusing on ensuring accuracy in my transcription from the source material and translating any math into LaTeX.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Revising Scope and Refinement**\n\nI\u0027ve just refined the synthesis scope further and started processing the content. I\u0027m focusing on defining mappings and their properties - like domains, codomains, and the representation of mappings through examples and diagrams. I\u0027m prioritizing accuracy in transcribing from the source material and translating the math into LaTeX.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# 3. Predavanje: Realne funkcije\n\n## [[3.1 Preslikave]]\n\n### [[Definicija preslikave]]\nPreslikava `f` je pravilo, ki vsakemu elementu `a` iz množice `A` priredi natanko en element `b` iz množice `B`. To zapišemo kot:\n$f: A \\to B$\nElement `b` je slika elementa `a`, kar zapišemo kot `b \u003d f(a)`.\n\n*   **A**: Domena (originali ali argumenti)\n*   **B**: Kodomena (slike)\n\n**Memorialization:** Predavanje se je začelo z osnovno definicijo preslikav, poudarek je bil na tem, da *vsak* element iz domene mora imeti sliko.\n\n**Pogoj za preslikavo:**\nVsak element iz množice `A` mora imeti **natanko eno** sliko v množici `B`.\n\n*   **Primer, ki JE preslikava:**\n    \n    *Vsak element iz A ima sliko v B. Element a3 nima slike, kar pomeni, da to ni preslikava.*\n\n*   **Popravljen primer, ki JE preslikava:**\n    \n    *Zdaj ima vsak element iz A sliko. Ni pomembno, da se a2 in a3 preslikata v isti element (b1).*\n\n**Kritična Analiza:** Ključna besedna zveza je \"natanko en\". To pomeni, da en original ne more imeti dveh različnih slik. Vendar pa je povsem dovoljeno, da dva različna originala imata isto sliko. To bo postalo pomembno pri razpravi o injektivnosti.\n\n### [[Enakost preslikav]]\nDve preslikavi, $f: A \\to B$ in $g: A \\to B$, sta enaki, če velja $f(a) \u003d g(a)$ za vsak $a \\in A$.\n\n**Primer:** Ali sta funkciji $f(x) \u003d x+2$ in $g(x) \u003d \\frac{x^2-4}{x-2}$ enaki?\n\n**Analiza:**\n1.  **Predpis za f(x):** $f(x) \u003d x+2$. Definicijsko območje je $D_f \u003d \\mathbb{R}$.\n2.  **Predpis za g(x):** $g(x) \u003d \\frac{x^2-4}{x-2} \u003d \\frac{(x-2)(x+2)}{x-2}$.\n    *   **Opozorilo:** Preden krajšamo ulomek, moramo določiti definicijsko območje. Imenovalec ne sme biti enak 0, torej $x-2 \\neq 0 \\Rightarrow x \\neq 2$.\n    *   Definicijsko območje za `g` je $D_g \u003d \\mathbb{R} \\setminus \\{2\\}$.\n    *   Za vse $x \\in D_g$ lahko krajšamo in dobimo $g(x) \u003d x+2$.\n\n**Zaključek:** Funkciji **nista enaki**, ker nimata istega definicijskega območja ($D_f \\neq D_g$). Funkcija `g` v točki `x\u003d2` ni definirana, medtem ko `f` je.\n\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Podatki za f(x)\nx_f \u003d np.linspace(-5, 5, 400)\ny_f \u003d x_f + 2\n\n# Podatki za g(x)\nx_g \u003d np.linspace(-5, 5, 400)\ny_g \u003d (x_g**2 - 4) / (x_g - 2)\n\n# Izris grafa\nplt.figure(figsize\u003d(10, 6))\nplt.plot(x_f, y_f, label\u003dr\u0027$f(x) \u003d x+2$\u0027, color\u003d\u0027blue\u0027, linewidth\u003d2)\n# Točka, kjer g(x) ni definirana\nplt.plot(2, 4, \u0027o\u0027, markerfacecolor\u003d\u0027white\u0027, markeredgecolor\u003d\u0027red\u0027, markersize\u003d8, label\u003dr\u0027Točka nezveznosti za $g(x)$ pri $x\u003d2$\u0027)\n\nplt.title(\u0027Primerjava funkcij f(x) in g(x)\u0027)\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027y\u0027)\nplt.axhline(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.axvline(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.grid(color \u003d \u0027gray\u0027, linestyle \u003d \u0027--\u0027, linewidth \u003d 0.5)\nplt.legend()\nplt.show()\n```\n**Opomba:** Graf funkcije `g(x)` je identičen grafu `f(x)`, le da ima \"luknjo\" v točki (2, 4).\n\n---\n\n### [[Lastnosti preslikav]]\n\n#### [[Surjektivnost]]\nPreslikava $f: A \\to B$ je **surjektivna**, če je vsak element v kodomeni `B` slika vsaj enega elementa iz domene `A`.\nFormalno: $\\forall b \\in B, \\exists a \\in A : f(a) \u003d b$.\n\n*   **Zaloga vrednosti ($Z_f$)**: Množica vseh slik elementov iz `A`. $Z_f \u003d \\{f(a) | a \\in A\\}$.\n*   Preslikava `f` je surjektivna natanko takrat, ko je njena zaloga vrednosti enaka celotni kodomeni: $Z_f \u003d B$.\n\n*   **Primer (ni surjektivna):**\n    \n    *Element b3 ni slika nobenega elementa iz A.* $Z_f\u003d\\{b_1, b_2\\} \\neq B$.\n\n*   **Primer (je surjektivna):**\n    \n    *Vsak element v B je slika vsaj enega elementa iz A.* $Z_f \u003d \\{b_1, b_2\\} \u003d B$.\n\n#### [[Injektivnost]]\nPreslikava $f: A \\to B$ je **injektivna**, če se poljubna različna elementa iz `A` preslikata v različna elementa v `B`.\nFormalno: $\\forall a_1, a_2 \\in A, a_1 \\neq a_2 \\implies f(a_1) \\neq f(a_2)$.\n\n*   **Primer (ni injektivna):**\n    \n    *Različna elementa a2 in a3 se preslikata v isti element b1.*\n\n*   **Primer (je injektivna):**\n    \n    *Vsak element iz A se preslika v unikaten element v B.*\n\n#### [[Bijektivnost]]\nPreslikava $f: A \\to B$ je **bijektivna**, če je hkrati **surjektivna in injektivna**.\nTo pomeni: $\\forall b \\in B, \\exists! a \\in A : f(a) \u003d b$. (Za vsak b obstaja natanko en a).\n\n**Kritična Analiza:** Bijektivna preslikava ustvari popolno \"parčkanje\" ena-na-ena med elementi množic A in B. To je nujen pogoj za obstoj inverzne preslikave, saj moramo imeti možnost, da se iz vsake slike v B enolično vrnemo nazaj do njenega originala v A.\n\n---\n## [[Graf preslikave]]\n\nGraf preslikave $f: A \\to B$, označen z $\\Gamma_f$, je množica vseh urejenih parov $(a, f(a))$, kjer je $a \\in A$.\n$\\Gamma_f \u003d \\{ (a, f(a)) \\mid a \\in A \\}$\n\n**Primer 1 (diskretni):**\nZa preslikavo:\nje graf: $\\Gamma_f \u003d \\{ (a_1, b_2), (a_2, b_1), (a_3, b_1) \\}$\n\n**Primer 2 (realne funkcije):**\na) $f: \\mathbb{R} \\to \\mathbb{R}, f(x)\u003dx^2$\n$\\Gamma_f \u003d \\{ (x, x^2) \\mid x \\in \\mathbb{R} \\}$. To je parabola.\n\nb) $f: \\mathbb{N} \\to \\mathbb{N}, f(n)\u003dn^2$\n$\\Gamma_f \u003d \\{ (n, n^2) \\mid n \\in \\mathbb{N} \\} \u003d \\{ (1,1), (2,4), (3,9), \\dots \\}$. To so diskretne točke.\n\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# a) f(x) \u003d x^2\nx_real \u003d np.linspace(-3, 3, 100)\ny_real \u003d x_real**2\n\n# b) f(n) \u003d n^2\nn_natural \u003d np.array([1, 2, 3, 4, 5])\ny_natural \u003d n_natural**2\n\nfig, (ax1, ax2) \u003d plt.subplots(1, 2, figsize\u003d(12, 5))\n\n# Graf za f: R -\u003e R\nax1.plot(x_real, y_real, label\u003dr\u0027$f(x) \u003d x^2, x \\in \\mathbb{R}$\u0027)\nax1.set_title(r\u0027Graf funkcije $f: \\mathbb{R} \\to \\mathbb{R}$\u0027)\nax1.grid(True)\nax1.legend()\n\n# Graf za f: N -\u003e N\nax2.plot(n_natural, y_natural, \u0027o\u0027, label\u003dr\u0027$f(n) \u003d n^2, n \\in \\mathbb{N}$\u0027)\nax2.set_title(r\u0027Graf funkcije $f: \\mathbb{N} \\to \\mathbb{N}$\u0027)\nax2.set_xticks(n_natural)\nax2.grid(True)\nax2.legend()\n\nplt.show()```\n\n---\n## [[Kompozitum (sestava) preslikav]]\nČe imamo preslikavi $f: A \\to B$ in $g: B \\to C$, je njun kompozitum (sestava) preslikava $g \\circ f: A \\to C$, definirana s predpisom:\n$(g \\circ f)(x) \u003d g(f(x))$\n\n**Shematski prikaz:**\n$A \\xrightarrow{f} B \\xrightarrow{g} C$\n$x \\mapsto f(x) \\mapsto g(f(x))$\n\n**Primer:**\nNaj bosta $f: \\mathbb{R} \\to \\mathbb{R}$ in $g: \\mathbb{R} \\to \\mathbb{R}$ podani z:\n$f(x) \u003d x^2 - 2$\n$g(x) \u003d e^{3x+1}$\n\n1.  **Izračunaj $(g \\circ f)(x)$:**\n    $(g \\circ f)(x) \u003d g(f(x)) \u003d g(x^2 - 2) \u003d e^{3(x^2-2)+1} \u003d e^{3x^2-6+1} \u003d e^{3x^2-5}$\n\n2.  **Izračunaj $(f \\circ g)(x)$:**\n    $(f \\circ g)(x) \u003d f(g(x)) \u003d f(e^{3x+1}) \u003d (e^{3x+1})^2 - 2 \u003d e^{2(3x+1)} - 2 \u003d e^{6x+2} - 2$\n\n**Opozorilo:** Očitno je, da $(g \\circ f)(x) \\neq (f \\circ g)(x)$. Kompozitum preslikav **ni komutativen**.\n\n**Asociativnost:**\nZa kompozitum velja asociativnost: $(f \\circ g) \\circ h \u003d f \\circ (g \\circ h)$.\n\n---\n## [[Inverzna preslikava]]\nNaj bo $f: A \\to B$ **bijektivna** preslikava. Potem obstaja natanko ena preslikava $g: B \\to A$ taka, da velja:\n$g \\circ f \u003d I_A$ in $f \\circ g \u003d I_B$.\n\n*   $I_A$ je **identična preslikava** na množici `A`, definirana kot $I_A(a)\u003da$ za vsak $a \\in A$.\n*   Preslikavo `g` imenujemo **inverzna preslikava** od `f` in jo označimo z $f^{-1}$.\n\n**Definicija inverza:**\nČe $f(a) \u003d b$, potem definiramo $g(b) \u003d a$.\nKer je `f` bijektivna, je `g` dobro definirana in je prav tako bijektivna.\n\n**Preverimo pogoje:**\n1.  $(g \\circ f)(a) \u003d g(f(a)) \u003d g(b) \u003d a$. To velja za vse $a \\in A$, torej $g \\circ f \u003d I_A$.\n2.  $(f \\circ g)(b) \u003d f(g(b)) \u003d f(a) \u003d b$. To velja za vse $b \\in B$, torej $f \\circ g \u003d I_B$.\n\n**Graf inverzne preslikave:**\nČe je $(a,b)$ točka na grafu $\\Gamma_f$, potem je $(b,a)$ točka na grafu $\\Gamma_{f^{-1}}$. Geometrijsko to pomeni, da je graf inverzne funkcije zrcalna slika grafa originalne funkcije preko simetrale lihih kvadrantov ($y\u003dx$).\n\n---\n## [[Pregled elementarnih funkcij]]\n\n### [[Trigonometrične (kotne) funkcije]]\n**Osnovne zveze:**\n*   $\\sin^2 x + \\cos^2 x \u003d 1$\n*   $\\tan^2 x + 1 \u003d \\frac{\\sin^2 x}{\\cos^2 x} + 1 \u003d \\frac{\\sin^2 x + \\cos^2 x}{\\cos^2 x} \u003d \\frac{1}{\\cos^2 x}$\n*   $\\cot^2 x + 1 \u003d \\frac{1}{\\sin^2 x}$\n\n**Adicijski izreki:**\n*   $\\sin(x \\pm y) \u003d \\sin x \\cos y \\pm \\cos x \\sin y$\n*   $\\cos(x \\pm y) \u003d \\cos x \\cos y \\mp \\sin x \\sin y$\n\n**Dvojni koti:**\n*   $\\cos(2x) \u003d \\cos(x+x) \u003d \\cos x \\cos x - \\sin x \\sin x \u003d \\cos^2 x - \\sin^2 x$\n*   $\\sin(2x) \u003d \\sin(x+x) \u003d \\sin x \\cos x + \\cos x \\sin x \u003d 2 \\sin x \\cos x$\n\n### [[Ciklometrične (krožne) funkcije]]\nTo so inverzne funkcije trigonometričnih funkcij.\n\n#### [[Arkus sinus]]\n*   Originalna funkcija je $f(x) \u003d \\sin x$. Ta funkcija ni bijektivna na celotnem $\\mathbb{R}$.\n*   **Omejitev:** Da bi postala bijektivna, jo omejimo. Standardna omejitev je na interval $[-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$.\n    $f: [-\\frac{\\pi}{2}, \\frac{\\pi}{2}] \\to [-1, 1]$ je bijekcija.\n*   **Inverzna funkcija:** $f^{-1}(x) \u003d \\arcsin x$.\n    $f^{-1}: [-1, 1] \\to [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$.\n\n**Zveze med kompozitumi:**\n1.  $(f^{-1} \\circ f)(x) \u003d \\arcsin(\\sin x) \u003d x$, velja za $x \\in [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$\n2.  $(f \\circ f^{-1})(x) \u003d \\sin(\\arcsin x) \u003d x$, velja za $x \\in [-1, 1]$\n\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx \u003d np.linspace(-np.pi/2, np.pi/2, 400)\ny_sin \u003d np.sin(x)\n\nx_arcsin \u003d np.linspace(-1, 1, 400)\ny_arcsin \u003d np.arcsin(x_arcsin)\n\nplt.figure(figsize\u003d(8, 8))\nplt.plot(x, y_sin, label\u003dr\u0027$y \u003d \\sin(x)$ on $[-\\pi/2, \\pi/2]$\u0027, color\u003d\u0027blue\u0027)\nplt.plot(x_arcsin, y_arcsin, label\u003dr\u0027$y \u003d \\arcsin(x)$ on $[-1, 1]$\u0027, color\u003d\u0027red\u0027)\nplt.plot(x_arcsin, x_arcsin, \u0027--\u0027, color\u003d\u0027gray\u0027, label\u003d\u0027y\u003dx\u0027)\n\nplt.title(\u0027Graf funkcije sin(x) in njene inverzne funkcije arcsin(x)\u0027)\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027y\u0027)\nplt.axhline(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.axvline(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.grid(True)\nplt.legend()\nplt.axis(\u0027equal\u0027)\nplt.show()\n```\n\n---\n## [[Osnovne lastnosti funkcij]]\n\n### [[Sodost in lihost (Pariteta)]]\nFunkcija `f` je definirana na simetričnem intervalu `D` (npr. `(-a, a)`).\n*   **Soda funkcija:** če velja $f(-x) \u003d f(x)$ za vsak $x \\in D$. Graf je simetričen glede na y-os.\n*   **Liha funkcija:** če velja $f(-x) \u003d -f(x)$ za vsak $x \\in D$. Graf je simetričen glede na izhodišče.\n    *   **Posledica za lihe funkcije:** Če je `0` v domeni, potem $f(0) \u003d -f(0) \\implies 2f(0)\u003d0 \\implies f(0)\u003d0$. Liha funkcija vedno poteka skozi izhodišče.\n\n### [[Omejenost]]\nFunkcija $f: D_f \\to \\mathbb{R}$ je **omejena**, če je njena zaloga vrednosti $Z_f$ omejena množica. To pomeni, da obstajata realni števili `m` (spodnja meja) in `M` (zgornja meja), tako da za vsak $x \\in D_f$ velja $m \\le f(x) \\le M$.\n\n### [[Monotonost]]\nNaj bo `f` definirana na območju `I`.\n*   **Naraščajoča:** $x_1 \u003c x_2 \\implies f(x_1) \\le f(x_2)$\n*   **Strogo naraščajoča:** $x_1 \u003c x_2 \\implies f(x_1) \u003c f(x_2)$\n*   **Padajoča:** $x_1 \u003c x_2 \\implies f(x_1) \\ge f(x_2)$\n*   **Strogo padajoča:** $x_1 \u003c x_2 \\implies f(x_1) \u003e f(x_2)$\n\n---\n### [[Conceptual Strengthening Tasks]]\n\n1.  **Naloga:** Dani sta funkciji $f(x) \u003d \\sqrt{x-1}$ in $g(x) \u003d x^2+1$.\n    a) Določi definicijski območji $D_f$ in $D_g$.\n    b) Izračunaj kompozituma $(f \\circ g)(x)$ in $(g \\circ f)(x)$.\n    c) Določi definicijski območji za oba kompozituma. Ali sta enaka?\n\n2.  **Naloga:** Funkcija $f(x) \u003d (x-2)^2$ ni injektivna na $\\mathbb{R}$.\n    a) Določi največji možen interval, ki vsebuje točko $x\u003d3$, na katerem je funkcija `f` strogo monotona (in zato injektivna).\n    b) Na tem intervalu poišči inverzno funkcijo $f^{-1}(x)$.\n    c) Nariši grafa $f(x)$ na skrčenem intervalu in $f^{-1}(x)$ v istem koordinatnem sistemu.\n\n3.  **Izziv:** Razmisli o funkciji $h(x) \u003d \\cos(\\arcsin x)$.\n    a) Določi definicijsko območje funkcije `h`.\n    b) Uporabi osnovno trigonometrično identiteto $\\sin^2 y + \\cos^2 y \u003d 1$. Vstavi $y \u003d \\arcsin x$ in izrazi $h(x)$ kot algebraično funkcijo (brez kotnih ali ciklometričnih funkcij).\n    c) Kakšna je zaloga vrednosti funkcije $h(x)$? Ali je soda ali liha? Utemelji.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 4988,
+      "parts": [{
+        "text": "# 3. Predavanje: Realne funkcije\n\n## [[3.1 Preslikave]]\n\n### [[Definicija preslikave]]\nPreslikava `f` je pravilo, ki vsakemu elementu `a` iz"
+      }, {
+        "text": " množice `A` priredi natanko en element `b` iz množice `B`. To zapišemo kot"
+      }, {
+        "text": ":\n$f: A \\to B$\nElement `b` je slika elementa `a`, kar"
+      }, {
+        "text": " zapišemo kot `b \u003d f(a)`.\n\n*   **A**: Domena (originali"
+      }, {
+        "text": " ali argumenti)\n*   **B**: Kodomena (slike)\n\n**Memorialization:** Predavanje se je"
+      }, {
+        "text": " začelo z osnovno definicijo preslikav, poudarek je bil na tem, da *vsak* element"
+      }, {
+        "text": " iz domene mora imeti sliko.\n\n**Pogoj za preslikavo:**\nVsak element iz množice `A"
+      }, {
+        "text": "` mora imeti **natanko eno** sliko v množici `B`.\n\n*   **Primer,"
+      }, {
+        "text": " ki JE preslikava:**\n    "
+      }, {
+        "text": "\n    *Vsak element iz A ima sliko v B. Element a3"
+      }, {
+        "text": " nima slike, kar pomeni, da to ni preslikava.*\n\n*   **Popravljen primer,"
+      }, {
+        "text": " ki JE preslikava:**\n    "
+      }, {
+        "text": "\n    *Zdaj ima vsak element iz A sliko."
+      }, {
+        "text": " Ni pomembno, da se a2 in a3 preslikata v isti element (b1).*\n\n**K"
+      }, {
+        "text": "ritična Analiza:** Ključna besedna zveza je \"natanko en\". To pomeni, da"
+      }, {
+        "text": " en original ne more imeti dveh različnih slik. Vendar pa je povsem dovoljeno, da dva različna original"
+      }, {
+        "text": "a imata isto sliko. To bo postalo pomembno pri razpravi o injektivnosti.\n\n### [[Enakost preslikav]]\nDve preslikavi, $f: A \\to B$ in $g:"
+      }, {
+        "text": " A \\to B$, sta enaki, če velja $f(a) \u003d g(a)$ za vsak $"
+      }, {
+        "text": "a \\in A$.\n\n**Primer:** Ali sta funkciji $f(x) \u003d x+2$ in"
+      }, {
+        "text": " $g(x) \u003d \\frac{x^2-4}{x-2}$ enaki?\n\n**"
+      }, {
+        "text": "Analiza:**\n1.  **Predpis za f(x):** $f(x) \u003d x+2"
+      }, {
+        "text": "$. Definicijsko območje je $D_f \u003d \\mathbb{R}$.\n2.  "
+      }, {
+        "text": "**Predpis za g(x):** $g(x) \u003d \\frac{x^2-4}{"
+      }, {
+        "text": "x-2} \u003d \\frac{(x-2)(x+2)}{x-2}$.\n    *   **O"
+      }, {
+        "text": "pozorilo:** Preden krajšamo ulomek, moramo določiti definicijsko območje"
+      }, {
+        "text": ". Imenovalec ne sme biti enak 0, torej $x-2 \\neq 0 \\Rightarrow"
+      }, {
+        "text": " x \\neq 2$.\n    *   Definicijsko območje za `g` je $"
+      }, {
+        "text": "D_g \u003d \\mathbb{R} \\setminus \\{2\\}$.\n    *   Za vse $x \\in"
+      }, {
+        "text": " D_g$ lahko krajšamo in dobimo $g(x) \u003d x+2$.\n\n**Zak"
+      }, {
+        "text": "ljuček:** Funkciji **nista enaki**, ker nimata istega definicijskega obmo"
+      }, {
+        "text": "čja ($D_f \\neq D_g$). Funkcija `g` v točki `x\u003d2"
+      }, {
+        "text": "` ni definirana, medtem ko `f` je.\n\n"
+      }, {
+        "text": "```python\nimport numpy as np\nimport matplotlib.pyplot as"
+      }, {
+        "text": " plt\n\n# Podatki za f(x)\nx_f \u003d np.linspace(-5, 5, "
+      }, {
+        "text": "400)\ny_f \u003d x_f + 2\n\n# Podatki za g(x)"
+      }, {
+        "text": "\nx_g \u003d np.linspace(-5, 5, 400)\ny_g \u003d ("
+      }, {
+        "text": "x_g**2 - 4) / (x_g - 2)\n\n# Izris grafa\nplt."
+      }, {
+        "text": "figure(figsize\u003d(10, 6))\nplt.plot(x_f, y_f, label"
+      }, {
+        "text": "\u003dr\u0027$f(x) \u003d x+2$\u0027, color\u003d\u0027blue\u0027, linewidth\u003d2)\n# Točka,"
+      }, {
+        "text": " kjer g(x) ni definirana\nplt.plot(2, 4, \u0027o\u0027, markerfacecolor\u003d\u0027white"
+      }, {
+        "text": "\u0027, markeredgecolor\u003d\u0027red\u0027, markersize\u003d8, label\u003dr\u0027Točka nezveznosti za $"
+      }, {
+        "text": "g(x)$ pri $x\u003d2$\u0027)\n\nplt.title(\u0027Primerjava funkcij f(x)"
+      }, {
+        "text": " in g(x)\u0027)\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027y\u0027)\nplt.axhline"
+      }, {
+        "text": "(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.axvline(0, color\u003d\u0027black"
+      }, {
+        "text": "\u0027,linewidth\u003d0.5)\nplt.grid(color \u003d \u0027gray\u0027, linestyle \u003d \u0027--\u0027, linewidth \u003d 0."
+      }, {
+        "text": "5)\nplt.legend()\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n**Opomba:** Graf funkcije `g("
+      }, {
+        "text": "x)` je identičen grafu `f(x)`, le da ima \"luknjo\" v točki"
+      }, {
+        "text": " (2, 4).\n\n---\n\n### [[Lastnosti preslikav]]\n\n#### [[Surjektivnost]]\n"
+      }, {
+        "text": "Preslikava $f: A \\to B$ je **surjektivna**, če je vsak element v"
+      }, {
+        "text": " kodomeni `B` slika vsaj enega elementa iz domene `A`.\nFormalno: $\\forall"
+      }, {
+        "text": " b \\in B, \\exists a \\in A : f(a) \u003d b$.\n\n*   **Z"
+      }, {
+        "text": "aloga vrednosti ($Z_f$)**: Množica vseh slik elementov iz `A`. $"
+      }, {
+        "text": "Z_f \u003d \\{f(a) | a \\in A\\}$.\n*   Preslikava `f` je sur"
+      }, {
+        "text": "jektivna natanko takrat, ko je njena zaloga vrednosti enaka celotni kodomeni:"
+      }, {
+        "text": " $Z_f \u003d B$.\n\n*   **Primer (ni surjektivna):**\n    "
+      }, {
+        "text": "\n    "
+      }, {
+        "text": "*Element b3 ni slika nobenega elementa iz A.* $Z_f\u003d\\{b_1, b_"
+      }, {
+        "text": "2\\} \\neq B$.\n\n*   **Primer (je surjektivna):**\n    "
+      }, {
+        "text": "\n    "
+      }, {
+        "text": "*Vsak element v B je slika vsaj enega elementa iz A.* $Z_f \u003d \\{b_"
+      }, {
+        "text": "1, b_2\\} \u003d B$.\n\n#### [[Injektivnost]]\nPreslikava $f:"
+      }, {
+        "text": " A \\to B$ je **injektivna**, če se poljubna različna elementa iz `A` preslik"
+      }, {
+        "text": "ata v različna elementa v `B`.\nFormalno: $\\forall a_1, a_2 \\in A,"
+      }, {
+        "text": " a_1 \\neq a_2 \\implies f(a_1) \\neq f(a_2)$."
+      }, {
+        "text": "\n\n*   **Primer (ni injektivna):**\n    "
+      }, {
+        "text": "\n    *Različna elementa"
+      }, {
+        "text": " a2 in a3 se preslikata v isti element b1.*\n\n*   **Primer (je injektivna):**"
+      }, {
+        "text": "\n    "
+      }, {
+        "text": "\n    *Vsak element iz A se preslika v unikaten element v B.*\n\n#### [[Bijektivnost]]\nPreslikava $f: A \\to B$ je **bijektivna**, če je"
+      }, {
+        "text": " hkrati **surjektivna in injektivna**.\nTo pomeni: $\\forall b \\in B, \\exists"
+      }, {
+        "text": "! a \\in A : f(a) \u003d b$. (Za vsak b obstaja natanko en a"
+      }, {
+        "text": ").\n\n**Kritična Analiza:** Bijektivna preslikava ustvari popolno \"parčkanje\" ena"
+      }, {
+        "text": "-na-ena med elementi množic A in B. To je nujen pogoj za obstoj inverzne preslikave"
+      }, {
+        "text": ", saj moramo imeti možnost, da se iz vsake slike v B enolično vrnemo nazaj do"
+      }, {
+        "text": " njenega originala v A.\n\n---\n## [[Graf preslikave]]\n\nGraf preslikave $f: A \\"
+      }, {
+        "text": "to B$, označen z $\\Gamma_f$, je množica vseh urejenih parov $(a, f("
+      }, {
+        "text": "a))$, kjer je $a \\in A$.\n$\\Gamma_f \u003d \\{ (a, f(a))"
+      }, {
+        "text": " \\mid a \\in A \\}$\n\n**Primer 1 (diskretni):**\nZa preslikavo:"
+      }, {
+        "text": "\nje graf: $\\Gamma_f \u003d \\{ (a_1, b_2), (a_2,"
+      }, {
+        "text": " b_1), (a_3, b_1) \\}$\n\n**Primer 2 (realne funkcije):**"
+      }, {
+        "text": "\na) $f: \\mathbb{R} \\to \\mathbb{R}, f(x)\u003dx^2$"
+      }, {
+        "text": "\n$\\Gamma_f \u003d \\{ (x, x^2) \\mid x \\in \\mathbb{R} \\"
+      }, {
+        "text": "}$. To je parabola.\n\nb) $f: \\mathbb{N} \\to \\mathbb{N}, f(n"
+      }, {
+        "text": ")\u003dn^2$\n$\\Gamma_f \u003d \\{ (n, n^2) \\mid n \\in"
+      }, {
+        "text": " \\mathbb{N} \\} \u003d \\{ (1,1), (2,4), (3,9), \\"
+      }, {
+        "text": "dots \\}$. To so diskretne točke.\n\n"
+      }, {
+        "text": "```python\nimport numpy as np\nimport matplotlib.pyplot as"
+      }, {
+        "text": " plt\n\n# a) f(x) \u003d x^2\nx_real \u003d np.linspace(-3, 3,"
+      }, {
+        "text": " 100)\ny_real \u003d x_real**2\n\n# b) f(n) \u003d"
+      }, {
+        "text": " n^2\nn_natural \u003d np.array([1, 2, 3, 4, 5])\n"
+      }, {
+        "text": "y_natural \u003d n_natural**2\n\nfig, (ax1, ax2) \u003d plt.subplots(1"
+      }, {
+        "text": ", 2, figsize\u003d(12, 5))\n\n# Graf za f: R -\u003e R\nax1"
+      }, {
+        "text": ".plot(x_real, y_real, label\u003dr\u0027$f(x) \u003d x^2,"
+      }, {
+        "text": " x \\in \\mathbb{R}$\u0027)\nax1.set_title(r\u0027Graf funkcije $f: \\mathbb"
+      }, {
+        "text": "{R} \\to \\mathbb{R}$\u0027)\nax1.grid(True)\nax1.legend()\n\n# Graf"
+      }, {
+        "text": " za f: N -\u003e N\nax2.plot(n_natural, y_natural, \u0027o\u0027, label"
+      }, {
+        "text": "\u003dr\u0027$f(n) \u003d n^2, n \\in \\mathbb{N}$\u0027)\nax2.set"
+      }, {
+        "text": "_title(r\u0027Graf funkcije $f: \\mathbb{N} \\to \\mathbb{N}$\u0027)\nax2."
+      }, {
+        "text": "set_xticks(n_natural)\nax2.grid(True)\nax2.legend()\n\nplt.show()"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n---\n## [[Kompozitum (sestava) preslikav]]\nČe imamo pres"
+      }, {
+        "text": "likavi $f: A \\to B$ in $g: B \\to C$, je njun kompozitum"
+      }, {
+        "text": " (sestava) preslikava $g \\circ f: A \\to C$, definirana s predpisom:"
+      }, {
+        "text": "\n$(g \\circ f)(x) \u003d g(f(x))$\n\n**Shematski prikaz:**"
+      }, {
+        "text": "\n$A \\xrightarrow{f} B \\xrightarrow{g} C$\n$x \\mapsto f(x) \\"
+      }, {
+        "text": "mapsto g(f(x))$\n\n**Primer:**\nNaj bosta $f: \\mathbb{R} \\to \\"
+      }, {
+        "text": "mathbb{R}$ in $g: \\mathbb{R} \\to \\mathbb{R}$ podani z:\n$f"
+      }, {
+        "text": "(x) \u003d x^2 - 2$\n$g(x) \u003d e^{3x+1"
+      }, {
+        "text": "}$\n\n1.  **Izračunaj $(g \\circ f)(x)$:**\n    $(g \\circ f"
+      }, {
+        "text": ")(x) \u003d g(f(x)) \u003d g(x^2 - 2) \u003d e^{3"
+      }, {
+        "text": "(x^2-2)+1} \u003d e^{3x^2-6+1} \u003d e^{"
+      }, {
+        "text": "3x^2-5}$\n\n2.  **Izračunaj $(f \\circ g)(x)$"
+      }, {
+        "text": ":**\n    $(f \\circ g)(x) \u003d f(g(x)) \u003d f(e^{3x+"
+      }, {
+        "text": "1}) \u003d (e^{3x+1})^2 - 2 \u003d e^{2(3x+1)} - "
+      }, {
+        "text": "2 \u003d e^{6x+2} - 2$\n\n**Opozorilo:** Očitno je, da"
+      }, {
+        "text": " $(g \\circ f)(x) \\neq (f \\circ g)(x)$. Kompozitum preslikav **"
+      }, {
+        "text": "ni komutativen**.\n\n**Asociativnost:**\nZa kompozitum velja asociativnost: $("
+      }, {
+        "text": "f \\circ g) \\circ h \u003d f \\circ (g \\circ h)$.\n\n---\n## [[Inverzna preslikava]]\nNaj bo $f: A \\to B$ **bijektivna** preslikava."
+      }, {
+        "text": " Potem obstaja natanko ena preslikava $g: B \\to A$ taka, da velja:"
+      }, {
+        "text": "\n$g \\circ f \u003d I_A$ in $f \\circ g \u003d I_B$.\n\n*   $"
+      }, {
+        "text": "I_A$ je **identična preslikava** na množici `A`, definirana kot $I_A("
+      }, {
+        "text": "a)\u003da$ za vsak $a \\in A$.\n*   Preslikavo `g` imenujemo **in"
+      }, {
+        "text": "verzna preslikava** od `f` in jo označimo z $f^{-1}$.\n\n**Definicija inver"
+      }, {
+        "text": "za:**\nČe $f(a) \u003d b$, potem definiramo $g(b) \u003d a$."
+      }, {
+        "text": "\nKer je `f` bijektivna, je `g` dobro definirana in je prav tako bijektivna"
+      }, {
+        "text": ".\n\n**Preverimo pogoje:**\n1.  $(g \\circ f)(a) \u003d g(f"
+      }, {
+        "text": "(a)) \u003d g(b) \u003d a$. To velja za vse $a \\in A$, torej $g \\"
+      }, {
+        "text": "circ f \u003d I_A$.\n2.  $(f \\circ g)(b) \u003d f(g("
+      }, {
+        "text": "b)) \u003d f(a) \u003d b$. To velja za vse $b \\in B$, torej $f \\circ"
+      }, {
+        "text": " g \u003d I_B$.\n\n**Graf inverzne preslikave:**\nČe je $(a,b)$ to"
+      }, {
+        "text": "čka na grafu $\\Gamma_f$, potem je $(b,a)$ točka na grafu $\\Gamma_{"
+      }, {
+        "text": "f^{-1}}$. Geometrijsko to pomeni, da je graf inverzne funkcije zrcalna slika gra"
+      }, {
+        "text": "fa originalne funkcije preko simetrale lihih kvadrantov ($y\u003dx$).\n\n---\n## [[Pregled elementarnih funkcij]]\n\n### [[Trigonometrične (kotne) funkcije]]\n**"
+      }, {
+        "text": "Osnovne zveze:**\n*   $\\sin^2 x + \\cos^2 x \u003d 1$\n*"
+      }, {
+        "text": "   $\\tan^2 x + 1 \u003d \\frac{\\sin^2 x}{\\cos^2 x} + "
+      }, {
+        "text": "1 \u003d \\frac{\\sin^2 x + \\cos^2 x}{\\cos^2 x} \u003d \\frac"
+      }, {
+        "text": "{1}{\\cos^2 x}$\n*   $\\cot^2 x + 1 \u003d \\frac{1"
+      }, {
+        "text": "}{\\sin^2 x}$\n\n**Adicijski izreki:**\n*   $\\sin(x \\pm y) \u003d"
+      }, {
+        "text": " \\sin x \\cos y \\pm \\cos x \\sin y$\n*   $\\cos(x \\pm"
+      }, {
+        "text": " y) \u003d \\cos x \\cos y \\mp \\sin x \\sin y$\n\n**Dvojni k"
+      }, {
+        "text": "oti:**\n*   $\\cos(2x) \u003d \\cos(x+x) \u003d \\cos x \\"
+      }, {
+        "text": "cos x - \\sin x \\sin x \u003d \\cos^2 x - \\sin^2 x$\n*"
+      }, {
+        "text": "   $\\sin(2x) \u003d \\sin(x+x) \u003d \\sin x \\cos x + \\"
+      }, {
+        "text": "cos x \\sin x \u003d 2 \\sin x \\cos x$\n\n### [[Ciklometrične (krožne) funkcije]]\nTo so inverzne funkcije trigonometričnih funkcij.\n\n#### [[Arkus sinus]]\n*   Originalna funkcija je $f(x) \u003d \\sin x$. Ta funkcija ni bij"
+      }, {
+        "text": "ektivna na celotnem $\\mathbb{R}$.\n*   **Omejitev:** Da bi postala"
+      }, {
+        "text": " bijektivna, jo omejimo. Standardna omejitev je na interval $[-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$.\n    $f: [-\\frac{\\pi}{2}, \\frac{\\pi}{2}] \\"
+      }, {
+        "text": "to [-1, 1]$ je bijekcija.\n*   **Inverzna funkcija:** $f"
+      }, {
+        "text": "^{-1}(x) \u003d \\arcsin x$.\n    $f^{-1}: [-1, 1]"
+      }, {
+        "text": " \\to [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$.\n\n**Zveze med kompozitumi"
+      }, {
+        "text": ":**\n1.  $(f^{-1} \\circ f)(x) \u003d \\arcsin(\\sin x) \u003d"
+      }, {
+        "text": " x$, velja za $x \\in [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$\n2"
+      }, {
+        "text": ".  $(f \\circ f^{-1})(x) \u003d \\sin(\\arcsin x) \u003d x$, vel"
+      }, {
+        "text": "ja za $x \\in [-1, 1]$\n\n"
+      }, {
+        "text": "```python\nimport numpy as np\nimport matplotlib."
+      }, {
+        "text": "pyplot as plt\n\nx \u003d np.linspace(-np.pi/2, np.pi/2, 400)"
+      }, {
+        "text": "\ny_sin \u003d np.sin(x)\n\nx_arcsin \u003d np.linspace(-1, 1, "
+      }, {
+        "text": "400)\ny_arcsin \u003d np.arcsin(x_arcsin)\n\nplt.figure(figsize"
+      }, {
+        "text": "\u003d(8, 8))\nplt.plot(x, y_sin, label\u003dr\u0027$y \u003d \\sin(x"
+      }, {
+        "text": ")$ on $[-\\pi/2, \\pi/2]$\u0027, color\u003d\u0027blue\u0027)\nplt.plot(x_arcs"
+      }, {
+        "text": "in, y_arcsin, label\u003dr\u0027$y \u003d \\arcsin(x)$ on $[-1, 1]$\u0027, color\u003d\u0027red\u0027)\nplt.plot(x_arcsin, x_arcsin, \u0027--\u0027, color\u003d\u0027"
+      }, {
+        "text": "gray\u0027, label\u003d\u0027y\u003dx\u0027)\n\nplt.title(\u0027Graf funkcije sin(x) in njene inverzne funk"
+      }, {
+        "text": "cije arcsin(x)\u0027)\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027y\u0027)\nplt.ax"
+      }, {
+        "text": "hline(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.axvline(0, color\u003d\u0027"
+      }, {
+        "text": "black\u0027,linewidth\u003d0.5)\nplt.grid(True)\nplt.legend()\nplt.axis"
+      }, {
+        "text": "(\u0027equal\u0027)\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n---\n## [[Osnovne lastnosti funkcij]]\n\n### [[Sodost in lihost (Pariteta)]]\nFunkcija `f` je definirana na simetričnem intervalu "
+      }, {
+        "text": "`D` (npr. `(-a, a)`).\n*   **Soda funkcija:** če vel"
+      }, {
+        "text": "ja $f(-x) \u003d f(x)$ za vsak $x \\in D$. Graf je simetri"
+      }, {
+        "text": "čen glede na y-os.\n*   **Liha funkcija:** če velja $f(-x)"
+      }, {
+        "text": " \u003d -f(x)$ za vsak $x \\in D$. Graf je simetričen glede na iz"
+      }, {
+        "text": "hodišče.\n    *   **Posledica za lihe funkcije:** Če je `0` v"
+      }, {
+        "text": " domeni, potem $f(0) \u003d -f(0) \\implies 2f(0)\u003d0 \\implies f"
+      }, {
+        "text": "(0)\u003d0$. Liha funkcija vedno poteka skozi izhodišče.\n\n### [[Omejenost]]\nFunkcija $f: D_f \\to \\mathbb{R}$ je **omejena**, če je nj"
+      }, {
+        "text": "ena zaloga vrednosti $Z_f$ omejena množica. To pomeni, da obstajata real"
+      }, {
+        "text": "ni števili `m` (spodnja meja) in `M` (zgornja meja), tako da za"
+      }, {
+        "text": " vsak $x \\in D_f$ velja $m \\le f(x) \\le M$."
+      }, {
+        "text": "\n\n### [[Monotonost]]\nNaj bo `f` definirana na območju `I`.\n*"
+      }, {
+        "text": "   **Naraščajoča:** $x_1 \u003c x_2 \\implies f(x_1) \\le"
+      }, {
+        "text": " f(x_2)$\n*   **Strogo naraščajoča:** $x_1 \u003c x"
+      }, {
+        "text": "_2 \\implies f(x_1) \u003c f(x_2)$\n*   **Padajoča"
+      }, {
+        "text": ":** $x_1 \u003c x_2 \\implies f(x_1) \\ge f(x_2"
+      }, {
+        "text": ")$\n*   **Strogo padajoča:** $x_1 \u003c x_2 \\implies f("
+      }, {
+        "text": "x_1) \u003e f(x_2)$\n\n---\n### [[Conceptual Strengthening Tasks]]\n\n1.  **"
+      }, {
+        "text": "Naloga:** Dani sta funkciji $f(x) \u003d \\sqrt{x-1}$ in $g"
+      }, {
+        "text": "(x) \u003d x^2+1$.\n    a) Določi definicijski območji"
+      }, {
+        "text": " $D_f$ in $D_g$.\n    b) Izračunaj kompozituma $("
+      }, {
+        "text": "f \\circ g)(x)$ in $(g \\circ f)(x)$.\n    c) Določi defin"
+      }, {
+        "text": "icijski območji za oba kompozituma. Ali sta enaka?\n\n2.  **Nal"
+      }, {
+        "text": "oga:** Funkcija $f(x) \u003d (x-2)^2$ ni injektivna na $\\mathbb{R}$."
+      }, {
+        "text": "\n    a) Določi največji možen interval, ki vsebuje točko $x\u003d3$, na"
+      }, {
+        "text": " katerem je funkcija `f` strogo monotona (in zato injektivna).\n    b) Na tem"
+      }, {
+        "text": " intervalu poišči inverzno funkcijo $f^{-1}(x)$.\n    c) Nariši gra"
+      }, {
+        "text": "fa $f(x)$ na skrčenem intervalu in $f^{-1}(x)$ v istem koordinatnem"
+      }, {
+        "text": " sistemu.\n\n3.  **Izziv:** Razmisli o funkciji $h(x) \u003d"
+      }, {
+        "text": " \\cos(\\arcsin x)$.\n    a) Določi definicijsko območje funkcije"
+      }, {
+        "text": " `h`.\n    b) Uporabi osnovno trigonometrično identiteto $\\sin^2 y + \\cos^"
+      }, {
+        "text": "2 y \u003d 1$. Vstavi $y \u003d \\arcsin x$ in izrazi $h(x)$"
+      }, {
+        "text": " kot algebraično funkcijo (brez kotnih ali ciklometričnih funkcij).\n    c) Kakš"
+      }, {
+        "text": "na je zaloga vrednosti funkcije $h(x)$? Ali je soda ali liha? Utemel"
+      }, {
+        "text": "ji."
+      }]
+    }, {
+      "text": "continue, im missing, pregled elementarnih funkcij 1. polinomske funkcije (no input because of time) 2. trigonometricne/kotne funkcije 2.1. ciklometricne funkcije. ",
+      "role": "user",
+      "tokenCount": 51
+    }, {
+      "text": "**Exploring Function Properties**\n\nI\u0027ve been delving further into the properties of mappings and functions, revisiting definitions and exploring the concepts of domain and codomain. My focus is still on ensuring the user\u0027s notes are complete and accurate within the context of the larger topics covered.\n\n\n**Charting Inverse Trigonometry**\n\nI\u0027m now fully immersed in the realm of inverse trigonometric functions, specifically focusing on arccosine, arctangent, and arccotangent. My strategy involves detailing each function, carefully explaining the necessary domain restrictions to ensure bijectivity. I\u0027m also preparing to meticulously cover the resulting inverse\u0027s domain, codomain, and any associated composition rules. Crucially, I\u0027m building up towards creating a clear visual representation of these important concepts, starting with graphs.\n\n\n**Expanding Trigonometry Coverage**\n\nI\u0027m now fully immersed in the details of the Arcus Cosinus, meticulously defining it using domain restriction on the cosine function. The focus is ensuring the notes clearly define Arccos\u0027s domain and codomain, accompanied by the corresponding composition rules. I\u0027m actively working on presenting a Matplotlib graph to complement this discussion. My next step will be to address the Arctangent.\n\n\n**Charting Arcus Tangens**\n\nI\u0027ve just finished covering the Arcus Cosinus in detail, now fully turning my attention to the Arctangent. I\u0027m carefully constructing a complete explanation using Matplotlib graphs, beginning with domain restriction and bijectivity. The plan is to cover Arccotangent immediately following this.\n\n\n**Expanding Arccosine Details**\n\nI\u0027ve just concluded the complete coverage of Arctangent, including its definition, restricted domain, codomain, inverse, composition rules, and a visual representation using Matplotlib. Following the logical progression, I\u0027m now turning my attention to Arccotangent, aiming to provide a comprehensive explanation in a similar style, complete with a supporting graph.\n\n\n",
+      "role": "model",
+      "tokenCount": 1405,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", ""],
+      "parts": [{
+        "text": "**Exploring Function Properties**\n\nI\u0027ve been delving further into the properties of mappings and functions, revisiting definitions and exploring the concepts of domain and codomain. My focus is still on ensuring the user\u0027s notes are complete and accurate within the context of the larger topics covered.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Charting Inverse Trigonometry**\n\nI\u0027m now fully immersed in the realm of inverse trigonometric functions, specifically focusing on arccosine, arctangent, and arccotangent. My strategy involves detailing each function, carefully explaining the necessary domain restrictions to ensure bijectivity. I\u0027m also preparing to meticulously cover the resulting inverse\u0027s domain, codomain, and any associated composition rules. Crucially, I\u0027m building up towards creating a clear visual representation of these important concepts, starting with graphs.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding Trigonometry Coverage**\n\nI\u0027m now fully immersed in the details of the Arcus Cosinus, meticulously defining it using domain restriction on the cosine function. The focus is ensuring the notes clearly define Arccos\u0027s domain and codomain, accompanied by the corresponding composition rules. I\u0027m actively working on presenting a Matplotlib graph to complement this discussion. My next step will be to address the Arctangent.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Charting Arcus Tangens**\n\nI\u0027ve just finished covering the Arcus Cosinus in detail, now fully turning my attention to the Arctangent. I\u0027m carefully constructing a complete explanation using Matplotlib graphs, beginning with domain restriction and bijectivity. The plan is to cover Arccotangent immediately following this.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding Arccosine Details**\n\nI\u0027ve just concluded the complete coverage of Arctangent, including its definition, restricted domain, codomain, inverse, composition rules, and a visual representation using Matplotlib. Following the logical progression, I\u0027m now turning my attention to Arccotangent, aiming to provide a comprehensive explanation in a similar style, complete with a supporting graph.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "#### [[Arkus kosinus]]\n*   **Originalna funkcija:** $f(x) \u003d \\cos x$. Ta funkcija, tako kot sinus, ni bijektivna na celotnem $\\mathbb{R}$, saj je periodična in zato ni injektivna.\n*   **Omejitev:** Da bi ustvarili bijekcijo, funkcijo kosinus standardno omejimo na interval $[0, \\pi]$. Na tem intervalu funkcija strogo pada in zavzame vse vrednosti od 1 do -1.\n    $f: [0, \\pi] \\to [-1, 1]$ je bijekcija.\n*   **Inverzna funkcija:** Inverz te omejene funkcije je $f^{-1}(x) \u003d \\arccos x$.\n    $f^{-1}: [-1, 1] \\to [0, \\pi]$.\n\n**Zveze med kompozitumi:**\n1.  $(f^{-1} \\circ f)(x) \u003d \\arccos(\\cos x) \u003d x$, velja za $x \\in [0, \\pi]$\n2.  $(f \\circ f^{-1})(x) \u003d \\cos(\\arccos x) \u003d x$, velja za $x \\in [-1, 1]$\n\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx_cos \u003d np.linspace(0, np.pi, 400)\ny_cos \u003d np.cos(x_cos)\n\nx_arccos \u003d np.linspace(-1, 1, 400)\ny_arccos \u003d np.arccos(x_arccos)\n\nplt.figure(figsize\u003d(8, 8))\nplt.plot(x_cos, y_cos, label\u003dr\u0027$y \u003d \\cos(x)$ on $[0, \\pi]$\u0027, color\u003d\u0027blue\u0027)\nplt.plot(x_arccos, y_arccos, label\u003dr\u0027$y \u003d \\arccos(x)$ on $[-1, 1]$\u0027, color\u003d\u0027red\u0027)\nplt.plot(x_arccos, x_arccos, \u0027--\u0027, color\u003d\u0027gray\u0027, label\u003d\u0027y\u003dx\u0027)\n\nplt.title(\u0027Graf funkcije cos(x) in njene inverzne funkcije arccos(x)\u0027)\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027y\u0027)\nplt.axhline(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.axvline(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.grid(True)\nplt.legend()\nplt.axis(\u0027equal\u0027)\nplt.show()\n```\n\n#### [[Arkus tangens]]\n*   **Originalna funkcija:** $f(x) \u003d \\tan x \u003d \\frac{\\sin x}{\\cos x}$. Definirana je za $x \\neq \\frac{\\pi}{2} + k\\pi, k \\in \\mathbb{Z}$. Ni bijektivna.\n*   **Omejitev:** Standardno jo omejimo na eno vejo, in sicer na odprti interval $(-\\frac{\\pi}{2}, \\frac{\\pi}{2})$. Na tem intervalu je funkcija strogo naraščajoča.\n    $f: (-\\frac{\\pi}{2}, \\frac{\\pi}{2}) \\to \\mathbb{R}$ je bijekcija.\n*   **Inverzna funkcija:** $f^{-1}(x) \u003d \\arctan x$.\n    $f^{-1}: \\mathbb{R} \\to (-\\frac{\\pi}{2}, \\frac{\\pi}{2})$.\n\n**Zveze med kompozitumi:**\n1.  $(f^{-1} \\circ f)(x) \u003d \\arctan(\\tan x) \u003d x$, velja za $x \\in (-\\frac{\\pi}{2}, \\frac{\\pi}{2})$\n2.  $(f \\circ f^{-1})(x) \u003d \\tan(\\arctan x) \u003d x$, velja za $x \\in \\mathbb{R}$\n\n#### [[Arkus kotangens]]\n*   **Originalna funkcija:** $f(x) \u003d \\cot x \u003d \\frac{\\cos x}{\\sin x}$. Definirana je za $x \\neq k\\pi, k \\in \\mathbb{Z}$. Ni bijektivna.\n*   **Omejitev:** Standardno jo omejimo na interval $(0, \\pi)$, kjer je funkcija strogo padajoča.\n    $f: (0, \\pi) \\to \\mathbb{R}$ je bijekcija.\n*   **Inverzna funkcija:** $f^{-1}(x) \u003d \\text{arccot} \\, x$.\n    $f^{-1}: \\mathbb{R} \\to (0, \\pi)$.\n\n**Zveze med kompozitumi:**\n1.  $(f^{-1} \\circ f)(x) \u003d \\text{arccot}(\\cot x) \u003d x$, velja za $x \\in (0, \\pi)$\n2.  $(f \\circ f^{-1})(x) \u003d \\cot(\\text{arccot} \\, x) \u003d x$, velja za $x \\in \\mathbb{R}$\n\n---\n### [[Zveze med ciklometričnimi funkcijami]]\nObstajata dve pomembni identiteti, ki povezujeta ciklometrične funkcije.\n\n#### [[Zveza med arcsin in arccos]]\nZa vsak $x \\in [-1, 1]$ velja:\n$\\arcsin x + \\arccos x \u003d \\frac{\\pi}{2}$\n\n**Dokaz in utemeljitev:**\n1.  **Definicija:** Naj bo $y \u003d \\arcsin x$. Po definiciji inverzne funkcije to pomeni, da je $\\sin y \u003d x$ in $y \\in [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$.\n2.  **Uporaba komplementarnih kotov:** Vemo, da za komplementarna kota velja zveza $\\cos(\\frac{\\pi}{2} - y) \u003d \\sin y$.\n3.  **Zamenjava:** Ker je $\\sin y \u003d x$, lahko zamenjamo in dobimo $\\cos(\\frac{\\pi}{2} - y) \u003d x$.\n4.  **Uporaba inverzne funkcije arccos:** Zdaj na obeh straneh enačbe uporabimo funkcijo $\\arccos$.\n    $\\arccos(\\cos(\\frac{\\pi}{2} - y)) \u003d \\arccos x$.\n5.  **Poenostavitev:** Ker argument $\\frac{\\pi}{2} - y$ leži na intervalu $[0, \\pi]$ (saj je $y \\in [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$), se $\\arccos$ in $\\cos$ \"izničita\" in dobimo:\n    $\\frac{\\pi}{2} - y \u003d \\arccos x$.\n6.  **Končni korak:** Vstavimo nazaj $y \u003d \\arcsin x$ in dobimo $\\frac{\\pi}{2} - \\arcsin x \u003d \\arccos x$. Ko preuredimo člene, dobimo želeno identiteto.\n\n#### [[Zveza med arctan in arccot]]\nZa vsak $x \\in \\mathbb{R}$ velja:\n$\\arctan x + \\text{arccot} \\, x \u003d \\frac{\\pi}{2}$\n\n**Opomba k dokazu:** Dokaz je povsem analogen prejšnjemu. Izhajamo iz $y \u003d \\arctan x$, uporabimo zvezo za komplementarne kote $\\cot(\\frac{\\pi}{2} - y) \u003d \\tan y$ in sledimo istim korakom.\n\n---\n### [[Conceptual Strengthening Tasks]]\n\n1.  **Naloga:** Poenostavi izraz $\\sin(\\arccos x)$ brez uporabe ciklometričnih ali trigonometričnih funkcij.\n    *   **Namig:** Uporabi identiteto $\\sin^2 y + \\cos^2 y \u003d 1$ in substitucijo $y \u003d \\arccos x$. Pazi na predznak, glede na zalogo vrednosti funkcije arccos.\n\n2.  **Naloga:** Izračunaj točno vrednost izraza $\\tan(\\arcsin(\\frac{3}{5}))$.\n    *   **Namig:** Nariši pravokotni trikotnik. Če je $\\theta \u003d \\arcsin(\\frac{3}{5})$, potem je $\\sin \\theta \u003d \\frac{3}{5}$. Določi stranice trikotnika in izračunaj $\\tan \\theta$.\n\n3.  **Izziv:** Dana je enačba $\\arccos x \u003d 2 \\arcsin x$.\n    a) Uporabi zvezo $\\arcsin x + \\arccos x \u003d \\frac{\\pi}{2}$ in reši enačbo za $\\arcsin x$.\n    b) Izračunaj $x$.\n    c) Preveri, ali rešitev ustreza definicijskim območjem udeleženih funkcij.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1997,
+      "parts": [{
+        "text": "#### [[Arkus kosinus]]\n*   **Originalna funkcija:** $f(x) \u003d \\cos x$. Ta"
+      }, {
+        "text": " funkcija, tako kot sinus, ni bijektivna na celotnem $\\mathbb{R}$, saj je periodič"
+      }, {
+        "text": "na in zato ni injektivna.\n*   **Omejitev:** Da bi ustvarili bijek"
+      }, {
+        "text": "cijo, funkcijo kosinus standardno omejimo na interval $[0, \\pi]$. Na tem intervalu funk"
+      }, {
+        "text": "cija strogo pada in zavzame vse vrednosti od 1 do -1.\n    $f: [0, \\pi] \\to [-1, 1]$ je bijekcija.\n*   **Inverzna"
+      }, {
+        "text": " funkcija:** Inverz te omejene funkcije je $f^{-1}(x) \u003d \\arccos x$.\n    $f"
+      }, {
+        "text": "^{-1}: [-1, 1] \\to [0, \\pi]$.\n\n**Zveze med kom"
+      }, {
+        "text": "pozitumi:**\n1.  $(f^{-1} \\circ f)(x) \u003d \\arccos(\\cos x"
+      }, {
+        "text": ") \u003d x$, velja za $x \\in [0, \\pi]$\n2.  $(f \\circ"
+      }, {
+        "text": " f^{-1})(x) \u003d \\cos(\\arccos x) \u003d x$, velja za $x \\in [-1, 1]$\n\n"
+      }, {
+        "text": "```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx_cos \u003d np."
+      }, {
+        "text": "linspace(0, np.pi, 400)\ny_cos \u003d np.cos(x_cos)"
+      }, {
+        "text": "\n\nx_arccos \u003d np.linspace(-1, 1, 400)\ny_arccos \u003d"
+      }, {
+        "text": " np.arccos(x_arccos)\n\nplt.figure(figsize\u003d(8, 8))\nplt.plot(x"
+      }, {
+        "text": "_cos, y_cos, label\u003dr\u0027$y \u003d \\cos(x)$ on $[0, \\pi]$\u0027, color"
+      }, {
+        "text": "\u003d\u0027blue\u0027)\nplt.plot(x_arccos, y_arccos, label\u003dr\u0027$y \u003d \\arccos("
+      }, {
+        "text": "x)$ on $[-1, 1]$\u0027, color\u003d\u0027red\u0027)\nplt.plot(x_arccos, x"
+      }, {
+        "text": "_arccos, \u0027--\u0027, color\u003d\u0027gray\u0027, label\u003d\u0027y\u003dx\u0027)\n\nplt.title(\u0027Graf funkcije cos"
+      }, {
+        "text": "(x) in njene inverzne funkcije arccos(x)\u0027)\nplt.xlabel(\u0027x\u0027)\nplt"
+      }, {
+        "text": ".ylabel(\u0027y\u0027)\nplt.axhline(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.ax"
+      }, {
+        "text": "vline(0, color\u003d\u0027black\u0027,linewidth\u003d0.5)\nplt.grid(True)\nplt."
+      }, {
+        "text": "legend()\nplt.axis(\u0027equal\u0027)\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n#### [[Arkus tangens]]\n*"
+      }, {
+        "text": "   **Originalna funkcija:** $f(x) \u003d \\tan x \u003d \\frac{\\sin x}{\\cos"
+      }, {
+        "text": " x}$. Definirana je za $x \\neq \\frac{\\pi}{2} + k\\pi, k \\in \\"
+      }, {
+        "text": "mathbb{Z}$. Ni bijektivna.\n*   **Omejitev:** Standardno jo omejimo na"
+      }, {
+        "text": " eno vejo, in sicer na odprti interval $(-\\frac{\\pi}{2}, \\frac{\\"
+      }, {
+        "text": "pi}{2})$. Na tem intervalu je funkcija strogo naraščajoča.\n    $f: (-\\frac{\\"
+      }, {
+        "text": "pi}{2}, \\frac{\\pi}{2}) \\to \\mathbb{R}$ je bijekcija.\n"
+      }, {
+        "text": "*   **Inverzna funkcija:** $f^{-1}(x) \u003d \\arctan x$.\n    $f^{-"
+      }, {
+        "text": "1}: \\mathbb{R} \\to (-\\frac{\\pi}{2}, \\frac{\\pi}{2})$.\n\n"
+      }, {
+        "text": "**Zveze med kompozitumi:**\n1.  $(f^{-1} \\circ f)(x"
+      }, {
+        "text": ") \u003d \\arctan(\\tan x) \u003d x$, velja za $x \\in (-\\frac{\\pi}{2"
+      }, {
+        "text": "}, \\frac{\\pi}{2})$\n2.  $(f \\circ f^{-1})(x) \u003d \\"
+      }, {
+        "text": "tan(\\arctan x) \u003d x$, velja za $x \\in \\mathbb{R}$\n\n#### [[Arkus kotangens]]\n*   **Originalna funkcija:** $f(x) \u003d \\cot x \u003d"
+      }, {
+        "text": " \\frac{\\cos x}{\\sin x}$. Definirana je za $x \\neq k\\pi, k \\in"
+      }, {
+        "text": " \\mathbb{Z}$. Ni bijektivna.\n*   **Omejitev:** Standardno jo omej"
+      }, {
+        "text": "imo na interval $(0, \\pi)$, kjer je funkcija strogo padajoča.\n    $f:"
+      }, {
+        "text": " (0, \\pi) \\to \\mathbb{R}$ je bijekcija.\n*   **Inver"
+      }, {
+        "text": "zna funkcija:** $f^{-1}(x) \u003d \\text{arccot} \\, x$.\n    "
+      }, {
+        "text": "$f^{-1}: \\mathbb{R} \\to (0, \\pi)$.\n\n**Zveze med"
+      }, {
+        "text": " kompozitumi:**\n1.  $(f^{-1} \\circ f)(x) \u003d \\text{"
+      }, {
+        "text": "arccot}(\\cot x) \u003d x$, velja za $x \\in (0, \\pi)$\n"
+      }, {
+        "text": "2.  $(f \\circ f^{-1})(x) \u003d \\cot(\\text{arccot} \\,"
+      }, {
+        "text": " x) \u003d x$, velja za $x \\in \\mathbb{R}$\n\n---\n### [[Zveze med ciklometričnimi funkcijami]]\nObstajata dve pomembni identiteti, ki"
+      }, {
+        "text": " povezujeta ciklometrične funkcije.\n\n#### [[Zveza med arcsin in arccos]]\nZa"
+      }, {
+        "text": " vsak $x \\in [-1, 1]$ velja:\n$\\arcsin x + \\arccos x \u003d"
+      }, {
+        "text": " \\frac{\\pi}{2}$\n\n**Dokaz in utemeljitev:**\n1.  **Definicija:**"
+      }, {
+        "text": " Naj bo $y \u003d \\arcsin x$. Po definiciji inverzne funkcije to pomeni, da je $\\sin"
+      }, {
+        "text": " y \u003d x$ in $y \\in [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$.\n2"
+      }, {
+        "text": ".  **Uporaba komplementarnih kotov:** Vemo, da za komplementarna kota velja zve"
+      }, {
+        "text": "za $\\cos(\\frac{\\pi}{2} - y) \u003d \\sin y$.\n3.  **Z"
+      }, {
+        "text": "amenjava:** Ker je $\\sin y \u003d x$, lahko zamenjamo in dobimo $\\cos(\\frac{\\pi"
+      }, {
+        "text": "}{2} - y) \u003d x$.\n4.  **Uporaba inverzne funkcije arccos:** Zd"
+      }, {
+        "text": "aj na obeh straneh enačbe uporabimo funkcijo $\\arccos$.\n    $\\arccos(\\cos(\\frac{\\pi}{"
+      }, {
+        "text": "2} - y)) \u003d \\arccos x$.\n5.  **Poenostavitev:** Ker argument $\\frac{\\pi"
+      }, {
+        "text": "}{2} - y$ leži na intervalu $[0, \\pi]$ (saj je $y \\in [-\\frac{\\pi}{2}, \\frac{\\pi}{2}]$), se $\\arccos$ in $\\cos$ \""
+      }, {
+        "text": "izničita\" in dobimo:\n    $\\frac{\\pi}{2} - y \u003d \\arccos x$."
+      }, {
+        "text": "\n6.  **Končni korak:** Vstavimo nazaj $y \u003d \\arcsin x$ in dobimo"
+      }, {
+        "text": " $\\frac{\\pi}{2} - \\arcsin x \u003d \\arccos x$. Ko preuredimo člene, dobimo"
+      }, {
+        "text": " želeno identiteto.\n\n#### [[Zveza med arctan in arccot]]\nZa vsak $x"
+      }, {
+        "text": " \\in \\mathbb{R}$ velja:\n$\\arctan x + \\text{arccot} \\, x"
+      }, {
+        "text": " \u003d \\frac{\\pi}{2}$\n\n**Opomba k dokazu:** Dokaz je povsem analogen pre"
+      }, {
+        "text": "jšnjemu. Izhajamo iz $y \u003d \\arctan x$, uporabimo zvezo za komplementarne"
+      }, {
+        "text": " kote $\\cot(\\frac{\\pi}{2} - y) \u003d \\tan y$ in sledimo istim korakom"
+      }, {
+        "text": ".\n\n---\n### [[Conceptual Strengthening Tasks]]\n\n1.  **Naloga:** Poenostavi iz"
+      }, {
+        "text": "raz $\\sin(\\arccos x)$ brez uporabe ciklometričnih ali trigonometričnih funkcij.\n    *   **Nam"
+      }, {
+        "text": "ig:** Uporabi identiteto $\\sin^2 y + \\cos^2 y \u003d 1$ in substit"
+      }, {
+        "text": "ucijo $y \u003d \\arccos x$. Pazi na predznak, glede na zalogo vrednosti funkcije arccos."
+      }, {
+        "text": "\n\n2.  **Naloga:** Izračunaj točno vrednost izraza $\\tan(\\arcsin(\\"
+      }, {
+        "text": "frac{3}{5}))$.\n    *   **Namig:** Nariši pravokotni trikotnik."
+      }, {
+        "text": " Če je $\\theta \u003d \\arcsin(\\frac{3}{5})$, potem je $\\sin \\theta \u003d \\frac"
+      }, {
+        "text": "{3}{5}$. Določi stranice trikotnika in izračunaj $\\tan \\theta$.\n\n"
+      }, {
+        "text": "3.  **Izziv:** Dana je enačba $\\arccos x \u003d 2 \\arcsin x$.\n    "
+      }, {
+        "text": "a) Uporabi zvezo $\\arcsin x + \\arccos x \u003d \\frac{\\pi}{2}$ in"
+      }, {
+        "text": " reši enačbo za $\\arcsin x$.\n    b) Izračunaj $x$.\n    "
+      }, {
+        "text": "c) Preveri, ali rešitev ustreza definicijskim območjem udeleženih funkcij"
+      }, {
+        "text": "."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

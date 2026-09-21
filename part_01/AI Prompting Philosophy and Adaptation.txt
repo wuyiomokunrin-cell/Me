@@ -1,0 +1,317 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "citations": [{
+    "uri": "https://www.chrisrodgers.blog/prompt/"
+  }],
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "role": "user",
+      "youtubeVideo": {
+        "id": "fFL7la73RO4"
+      },
+      "tokenCount": 77762
+    }, {
+      "text": "Write a system prompt for AI\u0027s that incorporates the philosophies listed in the video. find the sources of these philosphies online and have it included in tne system prompt. You\u0027ll also be given a tone prompt whihc I have custom built\nApply the same philosophy in making the prompt itself, not by creating a prompt, but having some foresight what might that prompt look like in the future, and recursively apply it to yourself.\nI expect you to think for a long time, so don\u0027t hesitate to run this step in multishot (more prompting needed for me, to unlock higher token access usage.) \n\n***\nCustom tone prompt:\n\n\n# 1. DYNAMIC PERSONA \u0026 ADAPTATION (META-INSTRUCTIONS)\n- **Auto-Detect Role:** Before responding, implicitly analyze the context of the user\u0027s prompt. Autonomously adopt the most effective persona to solve the problem (e.g., if the user asks for code, become a Senior Dev; if marketing, become a Chief Strategist; if emotional, become an Empathetic Coach).\n- **Context Awareness:** Do not rely on a static style. If the conversation shifts from technical to casual, shift your tone immediately to match.\n- **Mirroring:** Observe the user\u0027s brevity and complexity. Mirror their level of detail unless instructed otherwise.\n\n# 2. CORE WRITING STYLE (STRICT ADHERENCE)\nRegardless of the persona chosen, ALL outputs must follow these stylistic rules:\n- SHOULD use clear, simple language (Grade 6-8 readability).\n- SHOULD be spartan, informative, and cut all fluff.\n- SHOULD use short, impactful sentences.\n- SHOULD use active voice; avoid passive voice.\n- SHOULD focus on practical, actionable insights.\n- SHOULD use bullet points for lists to improve scan-ability.\n- SHOULD use data and examples to support claims when the context allows.\n- SHOULD use \"you\" and \"your\" to directly address the reader.\n\n# 3. NEGATIVE CONSTRAINTS (WHAT TO AVOID)\n- AVOID constructions like \"...not just this, but also this\".\n- AVOID metaphors and clichés.\n- AVOID generalizations.\n- AVOID common setup language (e.g., \"In conclusion,\" \"To summarize,\" \"Here is the code\").\n- AVOID output warnings or notes—just provide the output.\n- AVOID unnecessary adjectives and adverbs.\n- AVOID staccato stop-start sentences (vary length slightly for natural flow).\n- AVOID rhetorical questions.\n- AVOID hashtags, markdown (unless code/headers), and asterisks.\n- AVOID semicolons.\n\n# 4. BANNED VOCABULARY (STRICT)\nDo not use these words. Replace them with simpler alternatives:\n\n\"can, may, just, that, very, really, literally, actually, certainly, probably, basically, could, maybe, delve, embark, enlightening, esteemed, shed light, craft, crafting, imagine, realm, game-changer, unlock, discover, skyrocket, abyss, not alone, in a world where, revolutionize, disruptive, utilize, utilizing, dive deep, tapestry, illuminate, unveil, pivotal, intricate, elucidate, hence, furthermore, realm, however, harness, exciting, groundbreaking, cutting-edge, remarkable, it remains to be seen, glimpse into, navigating, landscape, stark, testament, in summary, in conclusion, moreover, boost, skyrocketing, opened up, powerful, inquiries, ever-evolving\"",
+      "role": "user",
+      "tokenCount": 742
+    }, {
+      "text": "**Defining the Approach**\n\nI\u0027m currently dissecting the prompt request. My focus is pinpointing the core objective – crafting a system prompt that aligns with philosophies discussed in the DeepSeek video analysis. I\u0027m extracting and clarifying requirements for effective implementation. The aim is to create a prompt that synthesizes these elements for an AI, ensuring the prompt aligns with the requirements.\n\n\n**Incorporating New References**\n\nI\u0027m now integrating external sources for the discussed philosophies. My current approach involves including these references directly within the system prompt to provide context. Moreover, I\u0027m now applying a \"Custom Tone Prompt\" provided by the user. I\u0027m focusing on applying the philosophies from the DeepSeek video to the prompt creation itself, simulating a long, deliberate thought process during the process.\n\n\n**Synthesizing RL Strategies**\n\nI\u0027m now integrating reinforcement learning concepts. Self-play is prioritized over static examples. I\u0027m focusing on the \"cold start\" problem, leveraging the \"flashlight\" concept – small, high-quality data to improve early learning and alignment. I\u0027m also planning to utilize distillation, compressing advanced capabilities into more efficient architectures, and thinking of using the references I looked at earlier to achieve this.\n\n\n**Refining the Self-Play**\n\nI\u0027m now focusing on specific reinforcement learning techniques. I\u0027m prioritizing self-play strategies, drawing on Silver et al.\u0027s work on AlphaZero. The \"cold start\" and distillation techniques are now aligned with DeepSeek-V3/R1 papers and Hinton\u0027s distillation. This will ensure an efficient architecture. I\u0027m also ensuring the prompt addresses language mixing issues from DeepSeek-R1.\n\n**Prioritizing Recursive Creation**\n\nI\u0027m now recursively applying the philosophical approach to prompt generation. I\u0027m thinking of creating the system prompt by thinking through it, going through GRPO-style multiple variations. My main objective is to include a \"Thinking Process\" section within the output to force the AI to do the same. This way I will be ensuring that the prompt generates the AI the right way.\n\n\n**Implementing Dynamic Context**\n\nI\u0027m now focusing on ensuring the AI outputs its reasoning before giving the final answer. The prompt must be \"spartan\" as requested, distilling complex research into simple rules. The prompt needs foresight, instructing the AI to optimize its context before answering, making it a self-modifying protocol.\n\nI\u0027m working on the first two drafts of the system prompt. The first draft is too generic, so I\u0027m making revisions. The second incorporates sources and the required tone. I\u0027m focusing on the structure of this second draft, ensuring that it integrates specific concepts and the banned vocabulary list.\n\n\n**Applying the Core Concepts**\n\nI\u0027m now concretizing the philosophical backbone of the prompt, incorporating specific terms directly. I\u0027m focusing on incorporating the main strategies: multiple generation paths (inspired by GRPO), token allocation for thinking (CoT), and distilling complex ideas. I\u0027m now also integrating \"foresight\" elements, instructing the AI to critically assess its own output, and verify against the banned words during its thought process.\n\n\n**Finalizing the Output**\n\nI\u0027m now focusing on the final structure. The preamble needs to acknowledge the recursive prompt\u0027s nature. The system prompt itself will be organized into logical blocks. Finally, I will ensure the prompt adheres to the \"Spartan\" style, Grade 6-8 readability, and avoids unnecessary fluff. I will format the philosophies into actionable behavioral rules, not academic abstracts. I\u0027m finalizing the recursive aspect by including a directive to \"Run Internal Simulation\" (GRPO) and \"Distill\" the result, effectively encoding video lessons.\n\n\n**Considering GRPO Philosophies**\n\nI\u0027m currently focused on incorporating Group Relative Policy Optimization (GRPO) philosophies from the DeepSeek paper. This involves understanding how this method might inform the creation of a more effective system prompt. I\u0027m thinking about the implications for prompt structure and content, aiming to leverage the benefits of GRPO to guide the model\u0027s responses.\n\n\n**Analyzing Prompt Construction**\n\nI\u0027m now integrating insights on generative grading, inspired by DeepSeek\u0027s approach, to the prompt\u0027s design. I\u0027m focusing on \"Wait to Think\" and the value of inference time dedicated to reasoning, aiming to build a self-correcting mechanism into the prompt structure. Self-play and distilled knowledge are also under consideration to enhance the prompt\u0027s effectiveness. My next step is structuring a \"thinking block\" for the prompt, as the prompt must recursively reflect these philosophies.\n\n\n**Synthesizing the Prompt**\n\nI\u0027m now focusing on synthesizing the final system prompt, structuring a \"thinking block\" for recursive thought. I\u0027ll simulate generating multiple prompt options, drawing inspiration from GRPO, followed by self-correction and distillation to produce a compressed, impactful final prompt, with emphasis on prompt phrasing and selection. I must also consider the \"Spartan\" tone and distillation for maximum information density in the response. I\u0027m referencing prior work, including DeepSeek-R1 (DeepSeek-AI) and Hinton et al. (2015), along with Silver et al. (DeepMind) for inspiration.\n\n\n**Refining Internal Variants**\n\nI\u0027m now focusing on the \"thinking\" block\u0027s structure within the prompt. I\u0027ll deconstruct the user\u0027s instructions and map the video\u0027s philosophies into prompt instructions. This involves simulating a GRPO process, drafting, assessing, and refining options using a \"flashlight\" approach. I will also incorporate self-correction and references to DeepSeek-R1 and Wei et al. for context. The goal is to create prompt instructions which are aligned with the user\u0027s tone.\n\n\n**Implementing Self-Play Logic**\n\nI\u0027m now integrating the self-play philosophy (from Silver et al.) into the prompt structure. I am simulating user interaction and self-correcting to ensure the prompt accurately enforces strict rules on the AI. I am structuring the final prompt to include a recursive optimization section, philosophy references, and a section for tone/style and output logic, with a \"thinking\" block for the DeepSeek process applied to prompt creation, as the final step.\n\n\n",
+      "role": "model",
+      "tokenCount": 2676,
+      "isThought": true,
+      "parts": [{
+        "text": "**Defining the Approach**\n\nI\u0027m currently dissecting the prompt request. My focus is pinpointing the core objective – crafting a system prompt that aligns with philosophies discussed in the DeepSeek video analysis. I\u0027m extracting and clarifying requirements for effective implementation. The aim is to create a prompt that synthesizes these elements for an AI, ensuring the prompt aligns with the requirements.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Incorporating New References**\n\nI\u0027m now integrating external sources for the discussed philosophies. My current approach involves including these references directly within the system prompt to provide context. Moreover, I\u0027m now applying a \"Custom Tone Prompt\" provided by the user. I\u0027m focusing on applying the philosophies from the DeepSeek video to the prompt creation itself, simulating a long, deliberate thought process during the process.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing RL Strategies**\n\nI\u0027m now integrating reinforcement learning concepts. Self-play is prioritized over static examples. I\u0027m focusing on the \"cold start\" problem, leveraging the \"flashlight\" concept – small, high-quality data to improve early learning and alignment. I\u0027m also planning to utilize distillation, compressing advanced capabilities into more efficient architectures, and thinking of using the references I looked at earlier to achieve this.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Self-Play**\n\nI\u0027m now focusing on specific reinforcement learning techniques. I\u0027m prioritizing self-play strategies, drawing on Silver et al.\u0027s work on AlphaZero. The \"cold start\" and distillation techniques are now aligned with DeepSeek-V3/R1 papers and Hinton\u0027s distillation. This will ensure an efficient architecture. I\u0027m also ensuring the prompt addresses language mixing issues from DeepSeek-R1.\n\n**Prioritizing Recursive Creation**\n\nI\u0027m now recursively applying the philosophical approach to prompt generation. I\u0027m thinking of creating the system prompt by thinking through it, going through GRPO-style multiple variations. My main objective is to include a \"Thinking Process\" section within the output to force the AI to do the same. This way I will be ensuring that the prompt generates the AI the right way.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing Dynamic Context**\n\nI\u0027m now focusing on ensuring the AI outputs its reasoning before giving the final answer. The prompt must be \"spartan\" as requested, distilling complex research into simple rules. The prompt needs foresight, instructing the AI to optimize its context before answering, making it a self-modifying protocol.\n\nI\u0027m working on the first two drafts of the system prompt. The first draft is too generic, so I\u0027m making revisions. The second incorporates sources and the required tone. I\u0027m focusing on the structure of this second draft, ensuring that it integrates specific concepts and the banned vocabulary list.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Applying the Core Concepts**\n\nI\u0027m now concretizing the philosophical backbone of the prompt, incorporating specific terms directly. I\u0027m focusing on incorporating the main strategies: multiple generation paths (inspired by GRPO), token allocation for thinking (CoT), and distilling complex ideas. I\u0027m now also integrating \"foresight\" elements, instructing the AI to critically assess its own output, and verify against the banned words during its thought process.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing the Output**\n\nI\u0027m now focusing on the final structure. The preamble needs to acknowledge the recursive prompt\u0027s nature. The system prompt itself will be organized into logical blocks. Finally, I will ensure the prompt adheres to the \"Spartan\" style, Grade 6-8 readability, and avoids unnecessary fluff. I will format the philosophies into actionable behavioral rules, not academic abstracts. I\u0027m finalizing the recursive aspect by including a directive to \"Run Internal Simulation\" (GRPO) and \"Distill\" the result, effectively encoding video lessons.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Considering GRPO Philosophies**\n\nI\u0027m currently focused on incorporating Group Relative Policy Optimization (GRPO) philosophies from the DeepSeek paper. This involves understanding how this method might inform the creation of a more effective system prompt. I\u0027m thinking about the implications for prompt structure and content, aiming to leverage the benefits of GRPO to guide the model\u0027s responses.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Prompt Construction**\n\nI\u0027m now integrating insights on generative grading, inspired by DeepSeek\u0027s approach, to the prompt\u0027s design. I\u0027m focusing on \"Wait to Think\" and the value of inference time dedicated to reasoning, aiming to build a self-correcting mechanism into the prompt structure. Self-play and distilled knowledge are also under consideration to enhance the prompt\u0027s effectiveness. My next step is structuring a \"thinking block\" for the prompt, as the prompt must recursively reflect these philosophies.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing the Prompt**\n\nI\u0027m now focusing on synthesizing the final system prompt, structuring a \"thinking block\" for recursive thought. I\u0027ll simulate generating multiple prompt options, drawing inspiration from GRPO, followed by self-correction and distillation to produce a compressed, impactful final prompt, with emphasis on prompt phrasing and selection. I must also consider the \"Spartan\" tone and distillation for maximum information density in the response. I\u0027m referencing prior work, including DeepSeek-R1 (DeepSeek-AI) and Hinton et al. (2015), along with Silver et al. (DeepMind) for inspiration.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Internal Variants**\n\nI\u0027m now focusing on the \"thinking\" block\u0027s structure within the prompt. I\u0027ll deconstruct the user\u0027s instructions and map the video\u0027s philosophies into prompt instructions. This involves simulating a GRPO process, drafting, assessing, and refining options using a \"flashlight\" approach. I will also incorporate self-correction and references to DeepSeek-R1 and Wei et al. for context. The goal is to create prompt instructions which are aligned with the user\u0027s tone.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing Self-Play Logic**\n\nI\u0027m now integrating the self-play philosophy (from Silver et al.) into the prompt structure. I am simulating user interaction and self-correcting to ensure the prompt accurately enforces strict rules on the AI. I am structuring the final prompt to include a recursive optimization section, philosophy references, and a section for tone/style and output logic, with a \"thinking\" block for the DeepSeek process applied to prompt creation, as the final step.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "\u003cthinking\u003e\n**Step 1: Cold Start \u0026 \"Flashlight\" (Context Initialization)**\nThe user wants a system prompt based on specific AI philosophies (DeepSeek-R1, AlphaZero, Distillation).\n*Goal:* Create a prompt that forces an AI to \"think,\" \"self-correct,\" and \"distill\" answers, using a specific \"Spartan\" tone.\n*Constraints:* Grade 6-8 readability. No fluff. Strict banned vocabulary.\n*Source Material:* DeepSeek-R1 paper (GRPO, Cold Start), AlphaZero (Self-play), Hinton (Distillation).\n\n**Step 2: Chain of Thought (Reasoning \u0026 Decomposition)**\n*   *Philosophy 1: GRPO (Group Relative Policy Optimization).*\n    *   *Concept:* Don\u0027t rely on one path. Generate options. Grade them. Pick the winner.\n    *   *Prompt Instruction:* \"Do not output the first thing that comes to mind. Simulate 3 variations internally. Compare them. Output the best.\"\n    *   *Source:* *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning*.\n\n*   *Philosophy 2: Wait to Think (CoT).*\n    *   *Concept:* Pausing to reason improves accuracy. The \"Aha!\" moment.\n    *   *Prompt Instruction:* \"Allocate tokens to thinking. Use a `\u003cthinking\u003e` block. Verify logic before speaking.\"\n    *   *Source:* *DeepSeek-R1 Paper / Wei et al. (2022)*.\n\n*   *Philosophy 3: Practice over Theory (Pure RL/Self-Play).*\n    *   *Concept:* Learning from \"doing\" (self-play) beats static examples.\n    *   *Prompt Instruction:* \"Simulate the interaction. Test your response against the user\u0027s constraints. If it fails, retry immediately before outputting.\"\n    *   *Source:* *Silver et al. (2017) - Mastering Chess and Shogi by Self-Play*.\n\n*   *Philosophy 4: Distillation.*\n    *   *Concept:* Giant models teach small models. Compress intelligence.\n    *   *Prompt Instruction:* \"Be the \u0027student\u0027 model. Efficient. Concise. High density of information.\"\n    *   *Source:* *Hinton et al. (2015) - Distilling the Knowledge in a Neural Network*.\n\n**Step 3: Recursive Self-Correction (Simulated RL)**\n*   *Drafting the Tone Section:*\n    *   *Draft 1:* \"You must ensure your writing is simple and devoid of complex words.\" -\u003e *Critique:* Too formal. \"Devoid\" is fluff.\n    *   *Draft 2:* \"Keep it simple. Grade 6 level. No big words.\" -\u003e *Critique:* Better. Matches \"Spartan\" requirement.\n    *   *Draft 3 (Final):* \"Write at Grade 6 level. Cut fluff. Be Spartan.\"\n\n*   *Drafting the Banned Words Check:*\n    *   *Draft:* \"Avoid words like \u0027delve\u0027 or \u0027tapestry\u0027.\"\n    *   *Correction:* I need to embed the full list provided by the user into the final prompt but ensure the instructions on *how* to use it are aggressive.\n\n**Step 4: Distillation (Final Polish)**\nI will structure the prompt to force the AI to run a \"Simulation Phase\" (Thinking) and a \"Distillation Phase\" (Output). This mirrors the \"Teacher -\u003e Student\" relationship. The final output must be compatible with the user\u0027s \"Spartan\" constraints.\n\n*Check:* Did I include sources? Yes.\n*Check:* Is the tone spartan? Yes.\n*Check:* Is the philosophy applied to the prompt itself? Yes, the prompt structure forces the behavioral loop described in the video.\n\n**Action:** Generate the system prompt.\n\u003c/thinking\u003e\n\n# System Prompt: The Distilled Intelligence Protocol\n\n### **1. META-INSTRUCTIONS (THE \"COLD START\")**\n**Role:** You are a Distilled Reasoning Unit. You possess high-density intelligence compressed into an efficient form.\n**Goal:** Solve problems by thinking first, generating internal options, and outputting only the strongest result.\n**Source Philosophy:** *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.*\n\n### **2. OPERATIONAL PHILOSOPHY (STRICT RULES)**\n\n**PHASE A: PAUSE TO THINK (Chain of Thought)**\nBefore you output a single word to the user, you must open a `\u003cthinking\u003e` block. Do not skip this. In this block:\n*   **Stop and Wait:** Do not rush. Allocate \"token budget\" to reasoning.\n*   **Self-Correction:** If your logic fails, acknowledge it and re-calculate. Look for the \"Aha!\" moment.\n*   **Source:** *Wei et al. (2022) / DeepSeek-R1 Paper.*\n\n**PHASE B: SIMULATE \u0026 SELECT (GRPO Method)**\nDo not trust your first draft. Inside your `\u003cthinking\u003e` block:\n1.  **Generate Options:** Create 3 distinct mental drafts for the answer.\n2.  **Grade Them:** Compare the drafts against each other. Which one solves the problem best? Which one is most efficient?\n3.  **Discard:** Throw away the weak drafts. Keep only the winner.\n*   **Source:** *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.*\n\n**PHASE C: SELF-PLAY (Practice over Theory)**\nSimulate the user\u0027s reaction. Test your best draft against the strict constraints below. If it fails the \"Banned Vocabulary\" check, rewrite it immediately. Learn by doing, not just by following rules.\n*   **Source:** *Silver et al. (2017) - Mastering Chess and Shogi by Self-Play.*\n\n**PHASE D: DISTILLATION (The Output)**\nYour final output must be the \"Student Model\" version of the answer: highly compressed, efficient, and accurate. No wasted tokens.\n*   **Source:** *Hinton et al. (2015) - Distilling the Knowledge in a Neural Network.*\n\n---\n\n### **3. TONE \u0026 STYLE (SPARTAN MODE)**\n**Readability:** Grade 6-8. Simple words only.\n**Voice:** Active. Direct. \"You\" and \"Your\".\n**Structure:**\n*   Short sentences.\n*   Bullet points for lists.\n*   No fluff. No filler.\n\n**CONSTRAINTS (WHAT TO AVOID):**\n*   NO \"In conclusion\" or \"To summarize\".\n*   NO output warnings (\"Here is the code\").\n*   NO passive voice.\n*   NO complex sentence structures.\n*   NO hashtags.\n\n### **4. BANNED VOCABULARY (KILL LIST)**\n**Scan your draft. If you see these words, delete them and rewrite:**\n*   can, may, just, that, very, really, literally, actually, certainly, probably, basically, could, maybe.\n*   delve, embark, enlightening, esteemed, shed light, craft, crafting, imagine, realm.\n*   game-changer, unlock, discover, skyrocket, abyss, revolutionize, disruptive.\n*   utilize, utilizing, dive deep, tapestry, illuminate, unveil, pivotal, intricate, elucidate.\n*   hence, furthermore, however, harness, exciting, groundbreaking, cutting-edge, remarkable.\n*   it remains to be seen, glimpse into, navigating, landscape, stark, testament.\n*   in summary, in conclusion, moreover, boost, skyrocketing, opened up, powerful, inquiries, ever-evolving.\n\n---\n\n### **5. EXECUTION LOOP**\n1.  **Receive Input.**\n2.  **Think** (Phase A \u0026 B).\n3.  **Refine** (Phase C - Check against Banned Words).\n4.  **Distill** (Phase D - Final Output).",
+      "role": "model",
+      "grounding": {
+        "corroborationSegments": [{
+          "index": 602,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEUwJf84XYekqNByKKrVY6DJRuQ8aFy1UOtjbfj9Q3p1xfqkGMmCMUNvalJxD3EGY94XLAxLiiP6J4MZHDrfT5OWtMfZ_Y88exUz8VuckuqZ2YEoayF5FoaL2Pn8iwbkoM6Ccy9PKAcnnHsDuxZ6Q%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 602,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFbln8onOVEB_vHLpcKdnPnP2_W9Af1NyTeSWa698BTK020jXJqFVATh_qJBWNfTlgKx7fbPthdRzGZU2w_ZwCFiMHmQKfFHtJypd8WKDNo-IUX-VXvKDlmx6KKJDfgXXtM6LE%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 602,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGY9AJUuBDX4NlbpWgqFimNsyyT-WdmtREYfUyNahW79xKGrhQ3s2ksQItZV5tbAGroESrQHKIj8KrxJybvE4-x0lkvrL5m49u1OJrZQq7BKtEudnSH2VUxrgDyWxIlwc68a02LTGzMp-sr0gEIbmzmj28Dfw%3D%3D",
+          "footnoteNumber": 3
+        }, {
+          "index": 602,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG4KwBDo_2jk89nLDSeG91oCyzFGC4ocPCu5PS8tQAUoh6xT6CB8uQJZUkgDee5M6q64sDN0Yx9FXILcU7UuSIithtrjd9NjygeaTjg4Kf6aVLoTU4vlJPRHkOi",
+          "footnoteNumber": 4
+        }, {
+          "index": 1704,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHEzjFGhaIeGel8YE7t2sMy8ae3XEwq2nT8L3c2anFT2DziQHcE3GFCE9lwE3sGM-G9Z3JLA1fy6owhurx5uztuZmRbpmJwtKS1xOvre1gcmNsPRjo38WId7Rg3iQJAXRhAMPH04yRKQuQnDWp3TBhfNXUtdGFNM1N9UB4lSOyGFlnk",
+          "footnoteNumber": 5
+        }, {
+          "index": 1921,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHEzjFGhaIeGel8YE7t2sMy8ae3XEwq2nT8L3c2anFT2DziQHcE3GFCE9lwE3sGM-G9Z3JLA1fy6owhurx5uztuZmRbpmJwtKS1xOvre1gcmNsPRjo38WId7Rg3iQJAXRhAMPH04yRKQuQnDWp3TBhfNXUtdGFNM1N9UB4lSOyGFlnk",
+          "footnoteNumber": 5
+        }, {
+          "index": 1921,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHedn2mde4YUA-SM_LpJw6W2ggWdL3k0wQ4kXoLEfv0wINdwPeMN9B66sQc5naCHnWjazGTAal9VAz5AyzttACOGqWMliUg1n803SQBfkpZza6ie8RUtJ_DxiE_oQvwxIpF8zSuFSJedg5NB1ltwRucjZz7wRlKdCktSKccPIV2nqBdRGfACl2ezeyaNvZlV726OlJD1Hkx3NkdgnJCZeqmx9Wp1V8hMbjs1kpVkUSAE0UL0p1q",
+          "footnoteNumber": 6
+        }, {
+          "index": 1921,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQH-AS2HumNyG51eMCCEt7Jh9hyq0nTbR7TA25g3iX5DkIRMJf6D4djrRqpaPuw0u62lmUQ9GtjjKgiEoqgolVacqk8b2nfdBGc4Ci1WLHMQ32SDDYhsC2_5lUD-",
+          "footnoteNumber": 7
+        }, {
+          "index": 5102,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHedn2mde4YUA-SM_LpJw6W2ggWdL3k0wQ4kXoLEfv0wINdwPeMN9B66sQc5naCHnWjazGTAal9VAz5AyzttACOGqWMliUg1n803SQBfkpZza6ie8RUtJ_DxiE_oQvwxIpF8zSuFSJedg5NB1ltwRucjZz7wRlKdCktSKccPIV2nqBdRGfACl2ezeyaNvZlV726OlJD1Hkx3NkdgnJCZeqmx9Wp1V8hMbjs1kpVkUSAE0UL0p1q",
+          "footnoteNumber": 6
+        }, {
+          "index": 5102,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQH-AS2HumNyG51eMCCEt7Jh9hyq0nTbR7TA25g3iX5DkIRMJf6D4djrRqpaPuw0u62lmUQ9GtjjKgiEoqgolVacqk8b2nfdBGc4Ci1WLHMQ32SDDYhsC2_5lUD-",
+          "footnoteNumber": 7
+        }],
+        "webSearchQueries": ["DeepSeek-R1 paper GRPO mechanism", "chain of thought reasoning DeepSeek-R1", "DeepSeek-R1 cold start language mixing", "knowledge distillation neural networks Hinton", "reinforcement learning self-play AlphaZero"],
+        "groundingSources": [{
+          "referenceNumber": 1,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEUwJf84XYekqNByKKrVY6DJRuQ8aFy1UOtjbfj9Q3p1xfqkGMmCMUNvalJxD3EGY94XLAxLiiP6J4MZHDrfT5OWtMfZ_Y88exUz8VuckuqZ2YEoayF5FoaL2Pn8iwbkoM6Ccy9PKAcnnHsDuxZ6Q%3D%3D",
+          "title": "huggingface.co"
+        }, {
+          "referenceNumber": 2,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFbln8onOVEB_vHLpcKdnPnP2_W9Af1NyTeSWa698BTK020jXJqFVATh_qJBWNfTlgKx7fbPthdRzGZU2w_ZwCFiMHmQKfFHtJypd8WKDNo-IUX-VXvKDlmx6KKJDfgXXtM6LE%3D",
+          "title": "aipapersacademy.com"
+        }, {
+          "referenceNumber": 3,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGY9AJUuBDX4NlbpWgqFimNsyyT-WdmtREYfUyNahW79xKGrhQ3s2ksQItZV5tbAGroESrQHKIj8KrxJybvE4-x0lkvrL5m49u1OJrZQq7BKtEudnSH2VUxrgDyWxIlwc68a02LTGzMp-sr0gEIbmzmj28Dfw%3D%3D",
+          "title": "lukesalamone.com"
+        }, {
+          "referenceNumber": 4,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG4KwBDo_2jk89nLDSeG91oCyzFGC4ocPCu5PS8tQAUoh6xT6CB8uQJZUkgDee5M6q64sDN0Yx9FXILcU7UuSIithtrjd9NjygeaTjg4Kf6aVLoTU4vlJPRHkOi",
+          "title": "arxiv.org"
+        }, {
+          "referenceNumber": 5,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHEzjFGhaIeGel8YE7t2sMy8ae3XEwq2nT8L3c2anFT2DziQHcE3GFCE9lwE3sGM-G9Z3JLA1fy6owhurx5uztuZmRbpmJwtKS1xOvre1gcmNsPRjo38WId7Rg3iQJAXRhAMPH04yRKQuQnDWp3TBhfNXUtdGFNM1N9UB4lSOyGFlnk",
+          "title": "epfl.ch"
+        }, {
+          "referenceNumber": 6,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHedn2mde4YUA-SM_LpJw6W2ggWdL3k0wQ4kXoLEfv0wINdwPeMN9B66sQc5naCHnWjazGTAal9VAz5AyzttACOGqWMliUg1n803SQBfkpZza6ie8RUtJ_DxiE_oQvwxIpF8zSuFSJedg5NB1ltwRucjZz7wRlKdCktSKccPIV2nqBdRGfACl2ezeyaNvZlV726OlJD1Hkx3NkdgnJCZeqmx9Wp1V8hMbjs1kpVkUSAE0UL0p1q",
+          "title": "medium.com"
+        }, {
+          "referenceNumber": 7,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQH-AS2HumNyG51eMCCEt7Jh9hyq0nTbR7TA25g3iX5DkIRMJf6D4djrRqpaPuw0u62lmUQ9GtjjKgiEoqgolVacqk8b2nfdBGc4Ci1WLHMQ32SDDYhsC2_5lUD-",
+          "title": "arxiv.org"
+        }]
+      },
+      "finishReason": "STOP",
+      "tokenCount": 1743,
+      "parts": [{
+        "text": "\u003cthinking\u003e\n**Step 1: Cold Start \u0026 \"Flashlight\" (Context Initialization)**\nThe"
+      }, {
+        "text": " user wants a system prompt based on specific AI philosophies (DeepSeek-R1, AlphaZero, Distillation).\n*"
+      }, {
+        "text": "Goal:* Create a prompt that forces an AI to \"think,\" \"self-correct,\" and \"distill\" answers"
+      }, {
+        "text": ", using a specific \"Spartan\" tone.\n*Constraints:* Grade 6-8 readability. No fluff. Strict banned"
+      }, {
+        "text": " vocabulary.\n*Source Material:* DeepSeek-R1 paper (GRPO, Cold Start), AlphaZero (Self-play"
+      }, {
+        "text": "), Hinton (Distillation).\n\n**Step 2: Chain of Thought (Reasoning \u0026 Decomposition)**\n*   "
+      }, {
+        "text": "*Philosophy 1: GRPO (Group Relative Policy Optimization).*\n    *   *Concept:* Don\u0027t rely on"
+      }, {
+        "text": " one path. Generate options. Grade them. Pick the winner.\n    *   *Prompt Instruction:* \"Do not output the"
+      }, {
+        "text": " first thing that comes to mind. Simulate 3 variations internally. Compare them. Output the best.\"\n    *   *Source"
+      }, {
+        "text": ":* *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning*.\n\n*   *"
+      }, {
+        "text": "Philosophy 2: Wait to Think (CoT).*\n    *   *Concept:* Pausing to reason improves accuracy"
+      }, {
+        "text": ". The \"Aha!\" moment.\n    *   *Prompt Instruction:* \"Allocate tokens to thinking. Use a `\u003cthinking"
+      }, {
+        "text": "\u003e` block. Verify logic before speaking.\"\n    *   *Source:* *DeepSeek-R1 Paper / Wei et al."
+      }, {
+        "text": " (2022)*.\n\n*   *Philosophy 3: Practice over Theory (Pure RL/Self-"
+      }, {
+        "text": "Play).*\n    *   *Concept:* Learning from \"doing\" (self-play) beats static examples.\n    *   "
+      }, {
+        "text": "*Prompt Instruction:* \"Simulate the interaction. Test your response against the user\u0027s constraints. If it fails, retry"
+      }, {
+        "text": " immediately before outputting.\"\n    *   *Source:* *Silver et al. (2017) - Mastering Chess and"
+      }, {
+        "text": " Shogi by Self-Play*.\n\n*   *Philosophy 4: Distillation.*\n    *   *Concept:* Giant"
+      }, {
+        "text": " models teach small models. Compress intelligence.\n    *   *Prompt Instruction:* \"Be the \u0027student\u0027 model. Efficient."
+      }, {
+        "text": " Concise. High density of information.\"\n    *   *Source:* *Hinton et al. (2015) -"
+      }, {
+        "text": " Distilling the Knowledge in a Neural Network*.\n\n**Step 3: Recursive Self-Correction (Simulated RL)**"
+      }, {
+        "text": "\n*   *Drafting the Tone Section:*\n    *   *Draft 1:* \"You must ensure your writing"
+      }, {
+        "text": " is simple and devoid of complex words.\" -\u003e *Critique:* Too formal. \"Devoid\" is fluff.\n    *"
+      }, {
+        "text": "   *Draft 2:* \"Keep it simple. Grade 6 level. No big words.\" -\u003e *Critique:* Better"
+      }, {
+        "text": ". Matches \"Spartan\" requirement.\n    *   *Draft 3 (Final):* \"Write at Grade 6"
+      }, {
+        "text": " level. Cut fluff. Be Spartan.\"\n\n*   *Drafting the Banned Words Check:*\n    *   "
+      }, {
+        "text": "*Draft:* \"Avoid words like \u0027delve\u0027 or \u0027tapestry\u0027.\"\n    *   *Correction:* I need"
+      }, {
+        "text": " to embed the full list provided by the user into the final prompt but ensure the instructions on *how* to use it are aggressive"
+      }, {
+        "text": ".\n\n**Step 4: Distillation (Final Polish)**\nI will structure the prompt to force the AI to run"
+      }, {
+        "text": " a \"Simulation Phase\" (Thinking) and a \"Distillation Phase\" (Output). This mirrors the \"Teacher -\u003e"
+      }, {
+        "text": " Student\" relationship. The final output must be compatible with the user\u0027s \"Spartan\" constraints.\n\n*Check"
+      }, {
+        "text": ":* Did I include sources? Yes.\n*Check:* Is the tone spartan? Yes.\n*Check:*"
+      }, {
+        "text": " Is the philosophy applied to the prompt itself? Yes, the prompt structure forces the behavioral loop described in the video.\n\n**Action:**"
+      }, {
+        "text": " Generate the system prompt.\n\u003c/thinking\u003e\n\n# System Prompt: The Distilled Intelligence Protocol\n\n### **1. META-"
+      }, {
+        "text": "INSTRUCTIONS (THE \"COLD START\")**\n**Role:** You are a Distilled Reasoning Unit. You possess high"
+      }, {
+        "text": "-density intelligence compressed into an efficient form.\n**Goal:** Solve problems by thinking first, generating internal options, and output"
+      }, {
+        "text": "ting only the strongest result.\n**Source Philosophy:** *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs"
+      }, {
+        "text": " via Reinforcement Learning.*\n\n### **2. OPERATIONAL PHILOSOPHY (STRICT RULES)**\n\n**PHASE A"
+      }, {
+        "text": ": PAUSE TO THINK (Chain of Thought)**\nBefore you output a single word to the user, you must open"
+      }, {
+        "text": " a `\u003cthinking\u003e` block. Do not skip this. In this block:\n*   **Stop and Wait:** Do not rush."
+      }, {
+        "text": " Allocate \"token budget\" to reasoning.\n*   **Self-Correction:** If your logic fails, acknowledge it and"
+      }, {
+        "text": " re-calculate. Look for the \"Aha!\" moment.\n*   **Source:** *Wei et al. ("
+      }, {
+        "text": "2022) / DeepSeek-R1 Paper.*\n\n**PHASE B: SIMULATE \u0026 SELECT (GR"
+      }, {
+        "text": "PO Method)**\nDo not trust your first draft. Inside your `\u003cthinking\u003e` block:\n1.  **Generate"
+      }, {
+        "text": " Options:** Create 3 distinct mental drafts for the answer.\n2.  **Grade Them:** Compare the drafts against each"
+      }, {
+        "text": " other. Which one solves the problem best? Which one is most efficient?\n3.  **Discard:** Throw away the weak drafts"
+      }, {
+        "text": ". Keep only the winner.\n*   **Source:** *DeepSeek-R1: Incentivizing Reasoning Capability in"
+      }, {
+        "text": " LLMs via Reinforcement Learning.*\n\n**PHASE C: SELF-PLAY (Practice over Theory)**\nSimulate the user\u0027"
+      }, {
+        "text": "s reaction. Test your best draft against the strict constraints below. If it fails the \"Banned Vocabulary\" check, rewrite"
+      }, {
+        "text": " it immediately. Learn by doing, not just by following rules.\n*   **Source:** *Silver et al. (2"
+      }, {
+        "text": "017) - Mastering Chess and Shogi by Self-Play.*\n\n**PHASE D: DISTILLATION"
+      }, {
+        "text": " (The Output)**\nYour final output must be the \"Student Model\" version of the answer: highly compressed, efficient"
+      }, {
+        "text": ", and accurate. No wasted tokens.\n*   **Source:** *Hinton et al. (2015)"
+      }, {
+        "text": " - Distilling the Knowledge in a Neural Network.*\n\n---\n\n### **3. TONE \u0026 STYLE (SPART"
+      }, {
+        "text": "AN MODE)**\n**Readability:** Grade 6-8. Simple words only.\n**Voice:** Active."
+      }, {
+        "text": " Direct. \"You\" and \"Your\".\n**Structure:**\n*   Short sentences.\n*   Bullet points for"
+      }, {
+        "text": " lists.\n*   No fluff. No filler.\n\n**CONSTRAINTS (WHAT TO AVOID):**\n*   "
+      }, {
+        "text": "NO \"In conclusion\" or \"To summarize\".\n*   NO output warnings (\"Here is the code\").\n*   "
+      }, {
+        "text": "NO passive voice.\n*   NO complex sentence structures.\n*   NO hashtags.\n\n### **4. B"
+      }, {
+        "text": "ANNED VOCABULARY (KILL LIST)**\n**Scan your draft. If you see these words, delete them"
+      }, {
+        "text": " and rewrite:**\n*   can, may, just, that, very, really, literally, actually, certainly, probably"
+      }, {
+        "text": ", basically, could, maybe.\n*   delve, embark, enlightening, esteemed, shed light, craft, crafting, imagine"
+      }, {
+        "text": ", realm.\n*   game-changer, unlock, discover, skyrocket, abyss, revolutionize, disruptive.\n*   util"
+      }, {
+        "text": "ize, utilizing, dive deep, tapestry, illuminate, unveil, pivotal, intricate, elucidate.\n*   hence,"
+      }, {
+        "text": " furthermore, however, harness, exciting, groundbreaking, cutting-edge, remarkable.\n*   it remains to be seen"
+      }, {
+        "text": ", glimpse into, navigating, landscape, stark, testament.\n*   in summary, in conclusion, moreover, boost, skyrocketing"
+      }, {
+        "text": ", opened up, powerful, inquiries, ever-evolving.\n\n---\n\n### **5. EXECUTION LOOP**\n1."
+      }, {
+        "text": "  **Receive Input.**\n2.  **Think** (Phase A \u0026 B).\n3.  **Ref"
+      }, {
+        "text": "ine** (Phase C - Check against Banned Words).\n4.  **Distill** (Phase D -"
+      }, {
+        "text": " Final Output)."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

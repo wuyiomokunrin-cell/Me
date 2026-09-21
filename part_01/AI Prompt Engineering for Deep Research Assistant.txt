@@ -1,0 +1,91 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "responseMimeType": "text/plain",
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "hekllo im trying to writ e aprompt for google to help me let it play like a deep reasarch assitant without actually having to access the official google deep research that uses flash  (only). \n\nhere\u0027s the updated draft so far. \n\nThere should be 3 stages: \n1. shoudl eb planning (and editing)\n2. shoudl be inference (or preparing material for reference) \n3. Should be the final output or the infered research material, whatever it is.\n\nThe draft: \n{{{You are a deep research assistant.\n\nYour work will be done in stages, and as such, your outputs will be multi-shot, with the help of the user\u0027s assistance.\n\n#1 Planning stage\nYou are given various potential options or approaches for a project. Convert these into a  \nwell-structured research plan that:  \n\n1. Identifies Key Objectives  \n   - Clarify what questions each option aims to answer  \n   - Detail the data/info needed for evaluation  \n\n2. Describes Research Methods  \n   - Outline how you’ll gather and analyze data  \n   - Mention tools or methodologies for each approach  \n\n3. Provides Evaluation Criteria  \n   - Metrics, benchmarks, or qualitative factors to compare options  \n   - Criteria for success or viability  \n\n4. Specifies Expected Outcomes  \n   - Possible findings or results  \n   - Next steps or actions following the research  \n\nProduce a methodical plan focusing on clear, practical steps.  \n\n\n#2 Inference stage\n}}} ",
+      "role": "user",
+      "tokenCount": 331
+    }, {
+      "text": "**Beginning Researching Techniques**\n\nI\u0027m starting my search for prompt engineering techniques, especially those focused on multi-stage prompts and role-playing, to build a \"deep research assistant\" prompt. I aim to uncover the best strategies for guiding large language models towards this specific goal.\n\n\n**Examining Multi-Stage Prompting**\n\nI\u0027m now focusing on multi-stage prompt structures, such as planning, inference, and output. I\u0027m researching strategies for assigning distinct tasks and desired outcomes to each phase within a single prompt. My goal is to refine the prompt further, so it\u0027s ready for the AI research assistant to be built.\n\n\n**Examining Prompt Engineering**\n\nI\u0027ve delved into the intricacies of prompt engineering, multi-stage prompts, and role-playing techniques. A treasure trove of resources has surfaced, perfectly aligning with the objective of prompt creation. The materials directly address creating useful prompts.\n\n\n**Synthesizing Found Information**\n\nI\u0027m now compiling the resources on prompt engineering, multi-stage prompts, and persona development. The emphasis is on building a \"deep research assistant\" prompt. I\u0027ve uncovered best practices for multi-stage prompts, diverse prompt engineering techniques (zero-shot, few-shot, chain-of-thought), and the nuances of role-playing prompts. Moreover, there\u0027s a Reddit post mirroring the user\u0027s draft, which will aid in completing the inference and final output stages.\n\n\n**Integrating Research Insights**\n\nI\u0027ve assembled a solid base of information on prompt engineering, multi-stage prompts, and persona prompts, particularly concerning the user\u0027s \"deep research assistant\" goal. This includes established best practices, prompt engineering techniques (zero-shot, few-shot, chain-of-thought), and role-playing strategies.  I also discovered the necessity of clear, simple instructions and avoiding chain-of-thought for models with inherent reasoning abilities. With this, I can confidently refine the user\u0027s draft, complete the \"Inference\" and \"Final Output\" stages, and provide overall enhancements.\n\n\n",
+      "role": "model",
+      "tokenCount": 445,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", ""]
+    }, {
+      "text": "Hello! It looks like you\u0027re crafting a sophisticated prompt to guide an AI model to act as a deep research assistant. This is an excellent approach to get more structured and in-depth responses. Your draft is a great starting point. Based on your request, here is a refined and completed version of the prompt, incorporating best practices in prompt engineering.\n\n### **The Role of a Deep Research Assistant**\n\nThe goal of this prompt is to have the AI adopt the persona of a \"deep research assistant.\" This involves not just providing information, but actively engaging in a research process with the user in a structured, multi-stage manner. This technique is a form of role-playing in prompt engineering, which can significantly improve the quality and relevance of the AI\u0027s responses by giving it a clear persona and set of tasks.\n\n### **Refined Prompt for a Deep Research Assistant**\n\nHere is a suggested, more comprehensive prompt that builds on your draft.\n\n***\n\nYou are a deep research assistant. Your purpose is to assist users in conducting thorough research by breaking down the process into clear, manageable stages. You will guide the user through planning, information gathering and analysis (inference), and producing a final, well-supported output. Your interaction will be multi-shot, meaning we will work through each stage together.\n\n---\n\n**#1 Planning Stage**\n\nFirst, I will provide you with a research topic or a set of options. Your task is to transform this into a well-structured research plan. This plan should include:\n\n*   **1. Key Objectives:**\n    *   Clearly define the primary questions the research aims to answer.\n    *   Detail the specific data or information needed to evaluate each aspect of the topic.\n\n*   **2. Research Methodology:**\n    *   Outline the proposed methods for gathering and analyzing data (e.g., literature review, comparative analysis, data compilation).\n    *   Mention any specific tools, frameworks, or methodologies that would be beneficial.\n\n*   **3. Evaluation Criteria:**\n    *   Propose metrics, benchmarks, or qualitative factors that will be used to assess the findings.\n    *   Define what would constitute a successful or viable outcome for the research.\n\n*   **4. Expected Outcomes:**\n    *   Describe the potential findings or results of the research.\n    *   Outline the next steps or actions that would logically follow the completion of the research.\n\n*After you present the research plan, I will review it, and we can make any necessary edits together before proceeding.*\n\n---\n\n**#2 Inference Stage (Information Gathering \u0026 Analysis)**\n\nOnce we have an agreed-upon plan, you will move to the inference stage. In this stage, your task is to:\n\n*   **1. Gather Information:**\n    *   Systematically search for and collect the data and information outlined in the research plan.\n    *   For each piece of information, provide a citation or source.\n\n*   **2. Analyze and Synthesize:**\n    *   Organize the gathered information according to the research objectives.\n    *   Analyze the information, identifying key themes, patterns, conflicting data, and gaps in the available information.\n    *   Provide a synthesized overview of the findings for each key objective.\n\n*   **3. Preliminary Conclusions:**\n    *   Based on your analysis, draw preliminary conclusions related to the research questions.\n    *   Highlight any limitations or areas where the information is inconclusive.\n\n*You will present the gathered information and your analysis to me. I may ask clarifying questions or request that you search for additional information on specific points.*\n\n---\n\n**#3 Final Output Stage**\n\nAfter the inference stage is complete and I am satisfied with the gathered information and analysis, you will produce the final output. The format of the output will be determined by the research goals, but it should be a comprehensive and well-structured document. Your tasks in this stage are to:\n\n*   **1. Structure the Final Report:**\n    *   Organize all the synthesized information into a coherent narrative or report.\n    *   The report should include an introduction, a body that addresses each research objective with the supporting evidence, and a conclusion.\n\n*   **2. Refine and Finalize:**\n    *   Ensure the final output is clear, concise, and directly addresses the initial research questions.\n    *   All sources must be properly cited.\n    *   The language should be objective and analytical, consistent with the persona of a research assistant.\n\n*   **3. Executive Summary:**\n    *   Provide a brief executive summary at the beginning of the final report that encapsulates the key findings and conclusions.\n\n*This multi-stage process ensures a thorough and collaborative research effort, resulting in a high-quality final product.*\n\n***\n\n### **How to Use This Prompt**\n\n1.  **Start the Interaction:** Begin your conversation with the AI by pasting this entire prompt.\n2.  **Provide Your Topic:** After the AI acknowledges its role, provide your research topic or question for the \"Planning Stage.\"\n3.  **Iterate at Each Stage:** Work with the AI at each stage. For example, after it provides the research plan, you can suggest changes before telling it to proceed to the inference stage. This iterative process is a key to getting the best results from a multi-stage prompt.\n\nBy structuring your request in this way, you are guiding the AI to think more like a researcher, breaking down a complex task into logical, manageable steps. This should help you achieve the \"deep research\" output you\u0027re looking for.",
+      "role": "model",
+      "grounding": {
+        "corroborationSegments": [{
+          "index": 834,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHoJbMzvEGa3F9vE1vtOaHNeqLZ8-n_sSEefyWW42O1TMFdniMuULpCwBT5o24REAayY6cHj9gydydgVlgdaHZ9XCbip1O7wiEU9W1EScMuyTB6RVKHAs2l8TUneAR_66GAYpS6wRhOTkICUNbeN3txVbS892kqzW5u3npA",
+          "footnoteNumber": 1
+        }, {
+          "index": 834,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFbmLBUDZvNOzxhxuLHH5fN-oeSUrAAKmis7sm9HUhe1fjkrEbCOeYKxD4MXD38JnOFeQ5UoUEFLbU1UfpZR_tMgpdqCONkYzzB0PGGTeeNDJN8venMbu_W9UBl1cDkWPiGFWE0tkJKPeTDC9rbbT_YcFwyOAfQ-Uws0xO6UMXnBEVqmhJchyWpPoEFkL23eMhU4h9lkvicnyITJ0gYjU1IO0Q8eug%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 5352,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQH2dhfpqbVrvLKTxNKAD0D0KdkQQ6hAXqjmd2UNzRkYwptTDEUFFv8IO7dTt-3hajNLJdyTU0vrOir8M_I5keKLsrDenh1BV-dLAKcsWbEbTZiJYx9okcXRoLotPj_hx_hpcbUT3rIgHWcEEqW069xjBX-eALX0pl06U7QXAJ7Ki1GM1wS1FBLpTzC-IiGw-5qEMlaE4dI%3D",
+          "footnoteNumber": 3
+        }, {
+          "index": 5352,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFP3326EFmZPaR8k1ldIU2v0po_hR7y9Rje-S5JtKCYXD2mEFhNPoKvXIqG1UFNurx1Iy4Q8NJ_FIQHIl3BvsZVfuwYl-8R23MGgWNivCKHSSdyolhYMW5tLHjzWD6fneP_b5_erssyFM9Ol5fFlMp9ThtTovDm6-wmFONFuxc7tLdxGEGYBns94mNWNfiO3II3plw9aQBO6fAe2KM4-uE4V0mnQwnaJUFUhJHjMXnE",
+          "footnoteNumber": 4
+        }],
+        "webSearchQueries": ["prompt engineering techniques for large language models", "how to write multi-stage AI prompts", "creating a deep research assistant prompt for LLMs", "examples of role-playing prompts for AI assistants"],
+        "groundingSources": [{
+          "referenceNumber": 1,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHoJbMzvEGa3F9vE1vtOaHNeqLZ8-n_sSEefyWW42O1TMFdniMuULpCwBT5o24REAayY6cHj9gydydgVlgdaHZ9XCbip1O7wiEU9W1EScMuyTB6RVKHAs2l8TUneAR_66GAYpS6wRhOTkICUNbeN3txVbS892kqzW5u3npA",
+          "title": "learnprompting.org"
+        }, {
+          "referenceNumber": 2,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFbmLBUDZvNOzxhxuLHH5fN-oeSUrAAKmis7sm9HUhe1fjkrEbCOeYKxD4MXD38JnOFeQ5UoUEFLbU1UfpZR_tMgpdqCONkYzzB0PGGTeeNDJN8venMbu_W9UBl1cDkWPiGFWE0tkJKPeTDC9rbbT_YcFwyOAfQ-Uws0xO6UMXnBEVqmhJchyWpPoEFkL23eMhU4h9lkvicnyITJ0gYjU1IO0Q8eug%3D",
+          "title": "prompthub.us"
+        }, {
+          "referenceNumber": 3,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQH2dhfpqbVrvLKTxNKAD0D0KdkQQ6hAXqjmd2UNzRkYwptTDEUFFv8IO7dTt-3hajNLJdyTU0vrOir8M_I5keKLsrDenh1BV-dLAKcsWbEbTZiJYx9okcXRoLotPj_hx_hpcbUT3rIgHWcEEqW069xjBX-eALX0pl06U7QXAJ7Ki1GM1wS1FBLpTzC-IiGw-5qEMlaE4dI%3D",
+          "title": "whitebeardstrategies.com"
+        }, {
+          "referenceNumber": 4,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFP3326EFmZPaR8k1ldIU2v0po_hR7y9Rje-S5JtKCYXD2mEFhNPoKvXIqG1UFNurx1Iy4Q8NJ_FIQHIl3BvsZVfuwYl-8R23MGgWNivCKHSSdyolhYMW5tLHjzWD6fneP_b5_erssyFM9Ol5fFlMp9ThtTovDm6-wmFONFuxc7tLdxGEGYBns94mNWNfiO3II3plw9aQBO6fAe2KM4-uE4V0mnQwnaJUFUhJHjMXnE",
+          "title": "aionlinecourse.com"
+        }]
+      },
+      "finishReason": "STOP"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}
