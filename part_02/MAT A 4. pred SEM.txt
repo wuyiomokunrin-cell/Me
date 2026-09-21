@@ -1,0 +1,301 @@
+# Function Composition and Limits of Functions
+
+## [[Function Composition]]
+
+### [[Theory and Definitions]]
+
+Function composition is the application of one function to the results of another.
+- The composition of `f` with `g` is denoted as `f ∘ g` (read as "f of g") and is defined by `(f ∘ g)(x) = f(g(x))`.
+- The composition of `g` with `f` is denoted as `g ∘ f` (read as "g of f") and is defined by `(g ∘ f)(x) = g(f(x))`.
+
+A visual representation of `g ∘ f`:
+```
+  x --- f(x) ---> y --- g(y) ---> z
+  |                               |
+  +-------- g(f(x)) --------------+
+           (g ∘ f)
+```
+
+### [[Problems]]
+
+1.  Given `f, g: ℝ → ℝ`, with `f(x) = x³` and `g(x) = 2x + 1`, find `f ∘ g` and `g ∘ f`.
+2.  Given `f(x) = sgn(x)` and `g(x) = 2x + 1`, find `f ∘ g` and `g ∘ f`.
+3.  Given `f(x) = {x, if x < 0; 0, if x ≥ 0}` and `g(x) = {5, if x ≤ 0; x² + 1, if x > 0}`, find `f ∘ g` and `g ∘ f`.
+4.  Given `f(x) = {1/x², if x < 0; e^x, if x ≥ 0}` and `g(x) = {0, if x ≤ 1; (π/2)arctan(x) + 2, if x > 1}`, find `f ∘ g` and `g ∘ f`.
+
+### [[Solutions]]
+
+#### [[Problem 1 Solution]]
+Given:
+- $f(x) = x^3$
+- $g(x) = 2x + 1$
+
+**1. Calculate `f ∘ g`:**
+The definition is `(f ∘ g)(x) = f(g(x))`. We substitute the expression for `g(x)` into `f(x)`.
+$f(g(x)) = f(2x+1) = (2x+1)^3$
+
+**2. Calculate `g ∘ f`:**
+The definition is `(g ∘ f)(x) = g(f(x))`. We substitute the expression for `f(x)` into `g(x)`.
+$g(f(x)) = g(x^3) = 2(x^3) + 1 = 2x^3 + 1$
+
+> **Critical Analysis:** Note that function composition is not commutative, meaning `f ∘ g ≠ g ∘ f` in general, as demonstrated by this example where `(2x+1)³ ≠ 2x³ + 1`.
+
+---
+#### [[Problem 2 Solution]]
+Given:
+- $f(x) = \text{sgn}(x) = \begin{cases} -1 & \text{if } x < 0 \\ 0 & \text{if } x = 0 \\ 1 & \text{if } x > 0 \end{cases}$
+- $g(x) = 2x + 1$
+
+**1. Calculate `g ∘ f`:**
+This is `g(f(x))`. We must evaluate this piecewise based on the definition of `f(x)`.
+- **Case 1: `x < 0`**
+  `f(x) = -1`. Therefore, `g(f(x)) = g(-1) = 2(-1) + 1 = -1`.
+- **Case 2: `x = 0`**
+  `f(x) = 0`. Therefore, `g(f(x)) = g(0) = 2(0) + 1 = 1`.
+- **Case 3: `x > 0`**
+  `f(x) = 1`. Therefore, `g(f(x)) = g(1) = 2(1) + 1 = 3`.
+
+Combining these cases, we get the piecewise function for `g ∘ f`:
+$g(f(x)) = \begin{cases} -1 & \text{if } x < 0 \\ 1 & \text{if } x = 0 \\ 3 & \text{if } x > 0 \end{cases}$
+
+**2. Calculate `f ∘ g`:**
+This is `f(g(x)) = f(2x+1)`. We need to determine when the input to `f`, which is `g(x)`, is negative, zero, or positive.
+- **Case 1: `g(x) < 0`**
+  `2x + 1 < 0` which implies `2x < -1` or `x < -1/2`. In this case, `f(g(x)) = -1`.
+- **Case 2: `g(x) = 0`**
+  `2x + 1 = 0` which implies `x = -1/2`. In this case, `f(g(x)) = 0`.
+- **Case 3: `g(x) > 0`**
+  `2x + 1 > 0` which implies `x > -1/2`. In this case, `f(g(x)) = 1`.
+
+Combining these cases, we get the piecewise function for `f ∘ g`:
+$f(g(x)) = \begin{cases} -1 & \text{if } x < -1/2 \\ 0 & \text{if } x = -1/2 \\ 1 & \text{if } x > -1/2 \end{cases}$
+
+---
+#### [[Problem 3 Solution]]
+Given:
+- $f(x) = \begin{cases} x & \text{if } x < 0 \\ 0 & \text{if } x \geq 0 \end{cases}$
+- $g(x) = \begin{cases} 5 & \text{if } x \leq 0 \\ x^2+1 & \text{if } x > 0 \end{cases}$
+
+**1. Calculate `f ∘ g`:**
+This is `f(g(x))`. We analyze the output of `g(x)` to determine which piece of `f(x)` to use.
+- **Case 1: `x ≤ 0`**
+  `g(x) = 5`. Since `5 ≥ 0`, we use the second piece of `f(x)`.
+  `f(g(x)) = f(5) = 0`.
+- **Case 2: `x > 0`**
+  `g(x) = x² + 1`. Since `x > 0`, `x²` is positive, so `x² + 1 > 1`. This means `g(x)` is always `≥ 0`. We use the second piece of `f(x)`.
+  `f(g(x)) = f(x² + 1) = 0`.
+
+Since the result is `0` for all `x ∈ ℝ`:
+$f(g(x)) = 0, \forall x \in \mathbb{R}$
+
+**2. Calculate `g ∘ f`:**
+This is `g(f(x))`. We analyze the output of `f(x)`.
+- **Case 1: `x < 0`**
+  `f(x) = x`. Since `x < 0`, `f(x)` is also `< 0`. We must use the first piece of `g(x)`.
+  `g(f(x)) = g(x) = 5`.
+- **Case 2: `x ≥ 0`**
+  `f(x) = 0`. Since `0 ≤ 0`, we use the first piece of `g(x)`.
+  `g(f(x)) = g(0) = 5`.
+
+Since the result is `5` for all `x ∈ ℝ`:
+$g(f(x)) = 5, \forall x \in \mathbb{R}$
+
+---
+#### [[Problem 4 Solution]]
+Given:
+- $f(x) = \begin{cases} 1/x^2 & \text{if } x < 0 \\ e^x & \text{if } x \geq 0 \end{cases}$
+- $g(x) = \begin{cases} 0 & \text{if } x \leq 1 \\ \frac{\pi}{2}\arctan(x) + 2 & \text{if } x > 1 \end{cases}$
+
+**1. Calculate `f ∘ g`:**
+This is `f(g(x))`. We analyze the output of `g(x)`.
+- **Case 1: `x ≤ 1`**
+  `g(x) = 0`. Since `0 ≥ 0`, we use the second piece of `f(x)`.
+  `f(g(x)) = f(0) = e^0 = 1`.
+- **Case 2: `x > 1`**
+  `g(x) = (π/2)arctan(x) + 2`. The range of `arctan(x)` for `x > 1` is `(π/4, π/2)`.
+  So, `(π/2) * (π/4, π/2)` gives `(π²/8, π²/4)`.
+  Adding 2, the range of `g(x)` is `(π²/8 + 2, π²/4 + 2)`. Since `π ≈ 3.14`, `π² ≈ 9.86`. The range is approximately `(1.23+2, 2.46+2) = (3.23, 4.46)`. All these values are `≥ 0`.
+  We use the second piece of `f(x)`.
+  `f(g(x)) = f(\frac{\pi}{2}\arctan(x) + 2) = e^{\frac{\pi}{2}\arctan(x) + 2}`.
+
+Combining these:
+$f(g(x)) = \begin{cases} 1 & \text{if } x \leq 1 \\ e^{\frac{\pi}{2}\arctan(x) + 2} & \text{if } x > 1 \end{cases}$
+
+**2. Calculate `g ∘ f`:**
+This is `g(f(x))`. We analyze the output of `f(x)`.
+- **Case 1: `x < 0`**
+  `f(x) = 1/x²`. Since `x < 0`, `x² > 0`, so `1/x² > 0`. We need to determine if `1/x²` is `≤ 1` or `> 1`.
+  `1/x² ≤ 1` implies `1 ≤ x²`, which means `|x| ≥ 1`. Since we are in the domain `x < 0`, this corresponds to `x ≤ -1`.
+  So, if `x ≤ -1`, then `f(x) = 1/x² ∈ (0, 1]`. For these values, we use the first piece of `g(x)`: `g(f(x)) = 0`.
+  If `-1 < x < 0`, then `f(x) = 1/x² > 1`. For these values, we use the second piece of `g(x)`: `g(f(x)) = (\pi/2)arctan(1/x²) + 2`.
+- **Case 2: `x ≥ 0`**
+  `f(x) = e^x`. Since `x ≥ 0`, the range of `f(x)` is `[1, ∞)`.
+  If `x = 0`, `f(x) = e^0 = 1`. Since `1 ≤ 1`, we use the first piece of `g(x)`: `g(f(0)) = 0`.
+  If `x > 0`, `f(x) = e^x > 1`. We use the second piece of `g(x)`: `g(f(x)) = (\pi/2)arctan(e^x) + 2`.
+
+Combining all sub-cases:
+$g(f(x)) = \begin{cases} 0 & \text{if } x \leq -1 \\ \frac{\pi}{2}\arctan(1/x^2) + 2 & \text{if } -1 < x < 0 \\ 0 & \text{if } x=0 \\ \frac{\pi}{2}\arctan(e^x) + 2 & \text{if } x>0 \end{cases}$
+
+> **Note to Self:** The domain partitioning for `g ∘ f` is complex. It's crucial to analyze the range of the inner function (`f(x)`) and see how it maps onto the domain pieces of the outer function (`g(x)`).
+
+## [[Limits of Functions]]
+
+### [[Theory and Definitions]]
+
+#### [[Epsilon-Delta Definition of a Limit]]
+The limit of a function `f(x)` as `x` approaches `a` is `L`, written as:
+$\lim_{x \to a} f(x) = L$
+This is formally defined as:
+$\forall \epsilon > 0, \exists \delta > 0 \text{ such that } \forall x \in D, (0 < |x-a| < \delta \implies |f(x) - L| < \epsilon)$
+
+This means that for any small positive number `ε` (epsilon), we can find another small positive number `δ` (delta) such that if `x` is within `δ` distance of `a` (but not equal to `a`), then `f(x)` will be within `ε` distance of `L`.
+
+![[Figure_1-17.png]]
+#### [[Known Limits]]
+These are foundational limits used to solve more complex problems, often by algebraic manipulation.
+> **Memorialization Note:** The lecturer emphasized a general method using a "škatla" (box) as a placeholder. This is a form of u-substitution. If you have a known limit `lim (expression_in_x) = L` as `x→0`, then the same limit holds if you replace `x` with a "box" (some function `g(x)`), as long as `box→0` under the same conditions.
+
+1.  $\lim_{x \to 0} \frac{\sin(x)}{x} = 1$  (General form: $\lim_{\square \to 0} \frac{\sin(\square)}{\square} = 1$)
+2.  $\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1$  (General form: $\lim_{\square \to 0} \frac{\ln(1+\square)}{\square} = 1$)
+3.  $\lim_{x \to 0} \frac{e^x - 1}{x} = 1$  (General form: $\lim_{\square \to 0} \frac{e^\square - 1}{\square} = 1$)
+4.  $\lim_{x \to 0} \frac{a^x - 1}{x} = \ln(a)$ for `a > 0`.
+5.  $\lim_{x \to \infty} (1 + \frac{1}{x})^x = e$ (General form: $\lim_{\square \to \infty} (1 + \frac{1}{\square})^\square = e$)
+
+### [[Problems]]
+
+**Group 1: Rational Functions & Factoring**
+a) $\lim_{x \to 2} \frac{x^2-4}{x^3-8}$
+b) $\lim_{x \to -2} \frac{x^2-4}{x^3+8}$
+c) $\lim_{x \to 1} (\frac{1}{1-x} - \frac{2}{1-x^2})$
+
+**Group 2: Radicals & Conjugate Method**
+a) $\lim_{x \to 1} \frac{\sqrt{x+3}-2}{x-1}$
+b) $\lim_{x \to 2} \frac{\sqrt{2-x} - \sqrt{2x}}{ \sqrt{4x} + 2 }$
+
+**Group 3: Trigonometric Limits**
+a) $\lim_{x \to 0} \frac{\sin(2x)}{\sin(3x)}$
+b) $\lim_{x \to 0} \frac{\tan(2x) - 2\tan(x)}{x^3}$
+c) $\lim_{x \to \pi/4} \frac{\cos(x) - \sin(x)}{\cos(2x)}$
+
+**Group 4: Logarithmic & Exponential Limits**
+a) $\lim_{x \to 0} \frac{\ln(1+2x)}{x}$ (From audio transcript)
+b) $\lim_{x \to e} \frac{\ln(x)-1}{x-e}$
+c) $\lim_{x \to 0} \frac{2^{2x}-1}{x}$ (From audio transcript)
+d) $\lim_{x \to 1} \frac{e^x-e}{x-1}$
+e) $\lim_{x \to 0} \frac{x \cdot \sinh(x)}{e^{x^2-1}}$
+f) $\lim_{x \to 1/2} \frac{2^x - \sqrt{2}}{\ln(2x)}$
+
+**Group 5: Limits at Infinity**
+a) $\lim_{x \to \infty} \frac{x^2}{x^3+1}$
+b) $\lim_{x \to \infty} \frac{x^3}{2x^3+1}$
+c) $\lim_{x \to \infty} \frac{x^3}{2x^2+1}$
+d) $\lim_{x \to \infty} (x + \sqrt{1-x^3})$
+e) $\lim_{x \to \infty} \frac{x \cdot \arctan(x)}{\sqrt{1+x^2}}$
+f) $\lim_{x \to \infty} (x \cdot \sin(\frac{1}{x}) - \frac{\sin(1/x)}{x})$
+g) $\lim_{x \to \infty} (\frac{2x}{2x+1})^x$
+h) $\lim_{x \to \infty} (\frac{x^2-2}{x^2-1})^{4x^2}$
+i) $\lim_{x \to 0} (\frac{2x+1}{x+1})^{\frac{2}{x}}$
+j) $\lim_{x \to \pi} (1+\sin(x))^{\frac{1}{x-\pi}}$
+
+**Group 6: Application to Continuity**
+Determine the values of constants `a` and `b` such that the function `f` is continuous on `ℝ`.
+$f(x) = \begin{cases} 2x+1 & \text{if } x < 0 \\ ax+b & \text{if } 0 \leq x \leq 1 \\ \frac{x-1}{x^2-1} & \text{if } x > 1 \end{cases}$
+
+### [[Solutions and Critical Analysis]]
+
+#### [[Group 1 Solutions: Rational Functions]]
+
+**Problem 1 a)**
+$\lim_{x \to 2} \frac{x^2-4}{x^3-8}$
+> **Critical Analysis:** Direct substitution of `x=2` yields the indeterminate form `0/0`. This suggests that `(x-2)` is a factor of both the numerator and the denominator, which we can cancel out. We use the formulas for the difference of squares and difference of cubes.
+> - $a^2 - b^2 = (a-b)(a+b)$
+> - $a^3 - b^3 = (a-b)(a^2+ab+b^2)$
+
+$\lim_{x \to 2} \frac{(x-2)(x+2)}{(x-2)(x^2+2x+4)} = \lim_{x \to 2} \frac{x+2}{x^2+2x+4}$
+
+Now, we can substitute `x=2`:
+$\frac{2+2}{2^2+2(2)+4} = \frac{4}{4+4+4} = \frac{4}{12} = \frac{1}{3}$
+
+**Problem 1 b)**
+$\lim_{x \to -2} \frac{x^2-4}{x^3+8}$
+> **Critical Analysis:** Again, substitution gives `0/0`. We factor using difference of squares and sum of cubes.
+> - $a^3 + b^3 = (a+b)(a^2-ab+b^2)$
+
+$\lim_{x \to -2} \frac{(x-2)(x+2)}{(x+2)(x^2-2x+4)} = \lim_{x \to -2} \frac{x-2}{x^2-2x+4}$
+
+Substitute `x=-2`:
+$\frac{-2-2}{(-2)^2-2(-2)+4} = \frac{-4}{4+4+4} = \frac{-4}{12} = -\frac{1}{3}$
+
+**Problem 1 c)**
+$\lim_{x \to 1} (\frac{1}{1-x} - \frac{2}{1-x^2})$
+> **Critical Analysis:** This is an indeterminate form of `∞ - ∞`. To resolve it, we combine the fractions into a single fraction by finding a common denominator.
+
+$\lim_{x \to 1} \left(\frac{1}{1-x} - \frac{2}{(1-x)(1+x)}\right) = \lim_{x \to 1} \frac{(1+x) - 2}{(1-x)(1+x)}$
+$= \lim_{x \to 1} \frac{x-1}{(1-x)(1+x)} = \lim_{x \to 1} \frac{-(1-x)}{(1-x)(1+x)}$
+$= \lim_{x \to 1} \frac{-1}{1+x} = \frac{-1}{1+1} = -\frac{1}{2}$
+
+> **Warning Note:** A common mistake in the notes (`d)` corresponds to this problem `c)`) shows a calculation resulting in `1/2`. The error occurs by incorrectly canceling `x-1` with `x-1` in the denominator, ignoring the `1-x` term. The correct step is to factor out `-1` from `x-1` to get `-(1-x)`, which then cancels with `1-x`. The calculation in the notes seems to have jumped steps and ended up with `(x-1)/(x-1)(x+1)`, which is incorrect as the denominator is `(1-x)(1+x)`.
+
+#### [[Group 2 Solutions: Radicals]]
+
+**Problem 2 a)**
+$\lim_{x \to 1} \frac{\sqrt{x+3}-2}{x-1}$
+> **Critical Analysis:** This is a `0/0` form. When radicals are involved, a common technique is to multiply the numerator and denominator by the conjugate of the expression containing the radical. The conjugate of `(a-b)` is `(a+b)`. This uses the difference of squares formula `(a-b)(a+b) = a²-b²` to eliminate the radical.
+
+The conjugate of `sqrt(x+3) - 2` is `sqrt(x+3) + 2`.
+$\lim_{x \to 1} \frac{\sqrt{x+3}-2}{x-1} \cdot \frac{\sqrt{x+3}+2}{\sqrt{x+3}+2} = \lim_{x \to 1} \frac{(x+3) - 4}{(x-1)(\sqrt{x+3}+2)}$
+$= \lim_{x \to 1} \frac{x-1}{(x-1)(\sqrt{x+3}+2)} = \lim_{x \to 1} \frac{1}{\sqrt{x+3}+2}$
+
+Substitute `x=1`:
+$\frac{1}{\sqrt{1+3}+2} = \frac{1}{\sqrt{4}+2} = \frac{1}{2+2} = \frac{1}{4}$
+
+**Problem 2 b)**
+> **Warning Note:** The provided solution in the notes for this problem seems incorrect and incomplete. It attempts to use both a quadratic and cubic conjugate at the same time, leading to a confusing expression. Let's re-evaluate. The denominator `∛(4x) + 2` as `x→2` is `∛8 + 2 = 2 + 2 = 4`, which is not zero. The numerator `√(2-2) - √(2*2) = 0 - 2 = -2`. Therefore, there is no indeterminate form.
+$\lim_{x \to 2} \frac{\sqrt{2-x} - \sqrt{2x}}{ \sqrt{4x} + 2 } = \frac{\sqrt{2-2}-\sqrt{2(2)}}{\sqrt{4(2)}+2} = \frac{0-2}{2+2} = \frac{-2}{4} = -\frac{1}{2}$
+The calculation in the notes appears to be addressing a different, more complex problem or contains significant errors in transcription. It incorrectly results in `3/4`.
+
+#### [[Group 3 Solutions: Trigonometric Limits]]
+
+**Problem 3 a)**
+$\lim_{x \to 0} \frac{\sin(2x)}{\sin(3x)}$
+> **Critical Analysis:** This is `0/0`. We can resolve this by manipulating the expression to use the known limit $\lim_{u \to 0} \frac{\sin(u)}{u} = 1$. We need to create matching arguments inside and outside the sine functions.
+
+$\lim_{x \to 0} \frac{\sin(2x)}{1} \cdot \frac{1}{\sin(3x)} = \lim_{x \to 0} \left(\frac{\sin(2x)}{2x} \cdot 2x\right) \cdot \left(\frac{3x}{\sin(3x)} \cdot \frac{1}{3x}\right)$
+As `x→0`, `2x→0` and `3x→0`. We can regroup the terms:
+$= \lim_{x \to 0} \left(\frac{\sin(2x)}{2x}\right) \cdot \left(\frac{3x}{\sin(3x)}\right) \cdot \left(\frac{2x}{3x}\right)$
+The first two terms go to 1.
+$= 1 \cdot 1 \cdot \lim_{x \to 0} \frac{2}{3} = \frac{2}{3}$
+
+**Problem 3 c)**
+$\lim_{x \to \pi/4} \frac{\cos(x) - \sin(x)}{\cos(2x)}$
+> **Critical Analysis:** Substitution gives `(√2/2 - √2/2) / cos(π/2) = 0/0`. We use the double angle identity for cosine: `cos(2x) = cos²(x) - sin²(x)`. This creates a difference of squares.
+
+$\lim_{x \to \pi/4} \frac{\cos(x) - \sin(x)}{\cos^2(x) - \sin^2(x)} = \lim_{x \to \pi/4} \frac{\cos(x) - \sin(x)}{(\cos(x) - \sin(x))(\cos(x) + \sin(x))}$
+$= \lim_{x \to \pi/4} \frac{1}{\cos(x) + \sin(x)}$
+
+Substitute `x = π/4`:
+$\frac{1}{\cos(\pi/4) + \sin(\pi/4)} = \frac{1}{\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}} = \frac{1}{\sqrt{2}}$
+
+#### [[Group 6 Solution: Continuity]]
+For `f(x)` to be continuous, the left-hand limit, right-hand limit, and the function's value must be equal at the points where the definition changes, i.e., at `x=0` and `x=1`.
+
+**At `x = 0`:**
+- Left-hand limit: $\lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} (2x+1) = 1$
+- Right-hand limit: $\lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} (ax+b) = b$
+For continuity, these must be equal:
+$b=1$
+
+**At `x = 1`:**
+- Left-hand limit: $\lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (ax+b) = a(1)+b = a+b$
+- Right-hand limit: $\lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} \frac{x-1}{x^2-1} = \lim_{x \to 1^+} \frac{x-1}{(x-1)(x+1)} = \lim_{x \to 1^+} \frac{1}{x+1} = \frac{1}{2}$
+For continuity, these must be equal:
+$a+b = \frac{1}{2}$
+
+Now we have a system of two equations:
+1. `b = 1`
+2. `a + b = 1/2`
+
+Substitute (1) into (2):
+$a + 1 = \frac{1}{2} \implies a = \frac{1}{2} - 1 = -\frac{1}{2}$
+
+**Conclusion:** The function is continuous if `a = -1/2` and `b = 1`./2` and `b = 1`.

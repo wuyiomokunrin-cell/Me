@@ -1,0 +1,426 @@
+#  [[Absolute Value Inequalities in the Cartesian Plane]]
+
+This note covers the initial problems from Seminar V, Lecture 2, focusing on sketching sets of points in $\mathbb{R}^2$ defined by inequalities involving absolute values.
+
+##  [[Problem A: Sketch the set |x+y| ≤ 1]]
+The set is defined as $A = \{(x,y) \in \mathbb{R}^2 \mid |x+y| \leq 1\}$.
+
+###  [[Analysis]]
+The absolute value function $|a|$ is defined as:
+$$ |a| = \begin{cases} a & \text{if } a \geq 0 \\ -a & \text{if } a < 0 \end{cases} $$
+To solve this inequality, we must consider two cases based on the sign of the expression inside the absolute value, `x+y`. The boundary line separating these two cases is $x+y=0$, which is the line $y=-x$.
+
+###  [[Case Breakdown]]
+1.  **Case 1: $x+y \geq 0$ (The region above or on the line $y=-x$)**
+    In this region, the absolute value has no effect, and the inequality becomes:
+    $$ x+y \leq 1 \implies y \leq 1-x $$
+    So, for this case, the solution is the set of points that are both on or above $y=-x$ AND on or below $y=1-x$. This forms a strip between these two parallel lines.
+
+2.  **Case 2: $x+y < 0$ (The region below the line $y=-x$)**
+    In this region, the absolute value is resolved by multiplying the expression by -1:
+    $$ -(x+y) \leq 1 \implies -x-y \leq 1 \implies y \geq -x-1 $$
+    The solution here is the set of points that are below $y=-x$ AND on or above $y=-x-1$. This forms another strip.
+
+The final solution is the union of these two regions, which is an infinite strip bounded by the lines $y=-x-1$ and $y=1-x$.
+
+###  [[Visualization]]
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(8, 8))
+x = np.linspace(-4, 4, 400)
+
+# Define the boundary lines
+y1 = 1 - x
+y2 = -1 - x
+
+# Fill the region between the lines y1 and y2
+ax.fill_between(x, y1, y2, color='lightblue', alpha=0.5, label='|x+y| ≤ 1')
+
+# Plot the boundary lines for clarity
+ax.plot(x, y1, 'b--', label='y = 1-x')
+ax.plot(x, y2, 'r--', label='y = -x-1')
+ax.plot(x, -x, 'g:', label='y = -x (dividing line)')
+
+
+# Formatting the plot
+ax.set_xlabel("x-axis")
+ax.set_ylabel("y-axis")
+ax.set_title("Sketch of the Set A: |x+y| ≤ 1")
+ax.axhline(0, color='black', lw=0.5)
+ax.axvline(0, color='black', lw=0.5)
+ax.set_xlim(-3, 3)
+ax.set_ylim(-3, 3)
+ax.set_aspect('equal', adjustable='box')
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.legend()
+
+plt.show()
+```
+![[Figure_1.png]]
+
+---
+## [[Problem B: Sketch the set |x|+|y| ≤ 1]]
+The set is defined as $B = \{(x,y) \in \mathbb{R}^2 \mid |x|+|y| \leq 1\}$.
+
+### [[Analysis]]
+This problem involves two separate absolute value functions, one for `x` and one for `y`. This requires us to split the plane into four regions based on the signs of `x` and `y`, which correspond perfectly to the four quadrants.
+
+### [[Case Breakdown]]
+1.  **Quadrant I ($x \geq 0, y \geq 0$)**: The inequality becomes $x+y \leq 1$. This is the region under the line $y=1-x$ bounded by the positive axes.
+2.  **Quadrant II ($x < 0, y \geq 0$)**: The inequality becomes $-x+y \leq 1$. This is the region under the line $y=1+x$ bounded by the negative x-axis and positive y-axis.
+3.  **Quadrant III ($x < 0, y < 0$)**: The inequality becomes $-x-y \leq 1$. This is the region above the line $y=-1-x$ bounded by the negative axes.
+4.  **Quadrant IV ($x \geq 0, y < 0$)**: The inequality becomes $x-y \leq 1$. This is the region above the line $y=x-1$ bounded by the positive x-axis and negative y-axis.
+
+Combining these four triangular regions forms a square rotated by 45 degrees, centered at the origin.
+
+### [[Visualization]]
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(8, 8))
+
+# Vertices of the diamond shape |x|+|y| <= 1
+x_coords = [1, 0, -1, 0, 1]
+y_coords = [0, 1, 0, -1, 0]
+
+# Fill the diamond shape
+ax.fill(x_coords, y_coords, 'lightblue', alpha=0.5, label='|x|+|y| ≤ 1')
+# Plot the boundary for clarity
+ax.plot(x_coords, y_coords, 'b-')
+
+# Add boundary line equations for each quadrant
+ax.text(0.5, 0.2, 'x+y=1', ha='center', va='center', rotation=-45)
+ax.text(-0.5, 0.2, '-x+y=1', ha='center', va='center', rotation=45)
+ax.text(-0.5, -0.2, '-x-y=1', ha='center', va='center', rotation=-45)
+ax.text(0.5, -0.2, 'x-y=1', ha='center', va='center', rotation=45)
+
+# Formatting the plot
+ax.set_xlabel("x-axis")
+ax.set_ylabel("y-axis")
+ax.set_title("Sketch of the Set B: |x|+|y| ≤ 1")
+ax.axhline(0, color='black', lw=0.5)
+ax.axvline(0, color='black', lw=0.5)
+ax.set_xlim(-2, 2)
+ax.set_ylim(-2, 2)
+ax.set_aspect('equal', adjustable='box')
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.legend()
+
+plt.show()
+```
+![[Figure_2.png]]
+
+---
+## [[Problem C: Sketch the set |x+y|+|x-2y| ≤ 2]]
+The set is defined as $C = \{(x,y) \in \mathbb{R}^2 \mid |x+y|+|x-2y| \leq 2\}$.
+
+### [[Analysis]]
+This problem is more complex as the arguments of the absolute values define regions that are not aligned with the Cartesian axes. The dividing lines are where the arguments are zero:
+1.  $x+y=0 \implies y=-x$
+2.  $x-2y=0 \implies y=x/2$
+
+These two lines divide the plane into four regions, which we must analyze individually.
+
+> **Warning Note:** Your handwritten notes contain a calculation error in one of the cases. Specifically, when both `x+y` and `x-2y` are negative, the inequality should be `-(x+y) - (x-2y) <= 2`. Your notes incorrectly calculated this as `-(x+y) + (x-2y) <= 2`. This leads to an incorrect boundary line. Below is the correct step-by-step breakdown.
+
+### [[Case Breakdown]]
+1.  **Region 1: $y \geq -x$ and $y \leq x/2$**
+    Both arguments are non-negative.
+    $$ (x+y) + (x-2y) \leq 2 \implies 2x-y \leq 2 \implies y \geq 2x-2 $$
+    The solution is the area bounded by $y=-x$, $y=x/2$, and $y=2x-2$.
+
+2.  **Region 2: $y \geq -x$ and $y > x/2$**
+    The first argument is non-negative, the second is negative.
+    $$ (x+y) - (x-2y) \leq 2 \implies 3y \leq 2 \implies y \leq \frac{2}{3} $$
+    The solution is the area bounded by $y=-x$, $y=x/2$, and $y=2/3$.
+
+3.  **Region 3: $y < -x$ and $y > x/2$**
+    Both arguments are negative.
+    $$ -(x+y) - (x-2y) \leq 2 \implies -2x+y \leq 2 \implies y \leq 2x+2 $$
+    The solution is the area bounded by $y=-x$, $y=x/2$, and $y=2x+2$.
+
+4.  **Region 4: $y < -x$ and $y \leq x/2$**
+    The first argument is negative, the second is non-negative.
+    $$ -(x+y) + (x-2y) \leq 2 \implies -3y \leq 2 \implies y \geq -\frac{2}{3} $$
+    The solution is the area bounded by $y=-x$, $y=x/2$, and $y=-2/3$.
+
+The union of these four regions forms a parallelogram.
+
+### [[Visualization]]
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(8, 8))
+x = np.linspace(-3, 3, 400)
+
+# Define the dividing lines
+y_div1 = -x
+y_div2 = x / 2
+
+# Plot the dividing lines
+ax.plot(x, y_div1, 'k--', alpha=0.7, label='y = -x')
+ax.plot(x, y_div2, 'k-.', alpha=0.7, label='y = x/2')
+
+# Vertices of the parallelogram
+# Intersection of y=2/3 and y=2x-2 -> 2/3 = 2x-2 -> 8/3 = 2x -> x=4/3. Point (4/3, 2/3)
+# Intersection of y=2/3 and y=2x+2 -> 2/3 = 2x+2 -> -4/3 = 2x -> x=-2/3. Point (-2/3, 2/3)
+# Intersection of y=-2/3 and y=2x+2 -> -2/3 = 2x+2 -> -8/3 = 2x -> x=-4/3. Point (-4/3, -2/3)
+# Intersection of y=-2/3 and y=2x-2 -> -2/3 = 2x-2 -> 4/3 = 2x -> x=2/3. Point (2/3, -2/3)
+
+x_coords = [4/3, -2/3, -4/3, 2/3, 4/3]
+y_coords = [2/3, 2/3, -2/3, -2/3, 2/3]
+
+# Fill the parallelogram
+ax.fill(x_coords, y_coords, 'lightblue', alpha=0.5, label='|x+y|+|x-2y| ≤ 2')
+ax.plot(x_coords, y_coords, 'b-')
+
+# Formatting the plot
+ax.set_xlabel("x-axis")
+ax.set_ylabel("y-axis")
+ax.set_title("Sketch of the Set C: |x+y|+|x-2y| ≤ 2")
+ax.axhline(0, color='black', lw=0.5)
+ax.axvline(0, color='black', lw=0.5)
+ax.set_xlim(-2.5, 2.5)
+ax.set_ylim(-2.5, 2.5)
+ax.set_aspect('equal', adjustable='box')
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.legend()
+
+plt.show()
+
+```
+
+![[Figure_3.png]]
+
+---
+## [[Conceptual Strengthening Tasks]]
+
+1.  **Direct Application:** Sketch the set defined by $|2x| + |y/3| \leq 1$. Explain how this differs geometrically from Problem B.
+2.  **Region Analysis:** Sketch the set defined by $|y-x^2| \leq 1$. (Hint: The dividing line is no longer straight. What shape is it? How do you define the regions "above" and "below" it?)
+3.  **Integration Challenge:** Combine the methods. Sketch the region defined by the intersection of the sets from Problem A and Problem B, i.e., sketch $A \cap B$. Justify which inequalities apply in the overlapping areas.
+
+#  [[Complex Numbers Lecture Synthesis]]
+
+These notes synthesize handwritten material and lecture audio on complex numbers, focusing on solving equations and sketching sets in the complex plane.
+
+##  [[Problem 1: z + 1/z is a Real Number]]
+
+Find all complex numbers `z` for which the expression `z + 1/z` is a real number.
+
+###  [[Initial Analysis and Constraints]]
+The expression `1/z` requires that `z` cannot be zero.
+> **Constraint:** $z \neq 0$
+
+A complex number is real if and only if its imaginary part is equal to zero. We can approach this problem in two ways.
+
+###  [[Method 1: Cartesian Form]]
+Let's represent `z` in its standard Cartesian form, $z = a + bi$.
+
+1.  **Substitute `z` into the expression:**
+    $$(a+bi) + \frac{1}{a+bi}$$
+
+2.  **Rationalize the denominator** of the fraction by multiplying the numerator and denominator by the complex conjugate of the denominator, which is `a - bi`.
+    $$ \frac{1}{a+bi} \cdot \frac{a-bi}{a-bi} = \frac{a-bi}{a^2+b^2} $$
+
+3.  **Combine the terms:**
+    $$ (a+bi) + \frac{a-bi}{a^2+b^2} = a+bi + \frac{a}{a^2+b^2} - i\frac{b}{a^2+b^2} $$
+
+4.  **Group the real and imaginary parts:**
+    $$ \left(a + \frac{a}{a^2+b^2}\right) + i\left(b - \frac{b}{a^2+b^2}\right) $$
+
+5.  **Set the imaginary part to zero** as per the problem's condition:
+    $$ \text{Im}\left(z + \frac{1}{z}\right) = b - \frac{b}{a^2+b^2} = 0 $$
+
+6.  **Solve for `a` and `b`:**
+    $$ b\left(1 - \frac{1}{a^2+b^2}\right) = 0 $$
+    This equation gives two possible conditions for the solution:
+
+    *   **Case 1:** $b=0$.
+        *   This implies that `z` is a real number ($z = a$). Since the original constraint is $z \neq 0$, the solution is all real numbers except zero.
+        *   $z \in \mathbb{R} \setminus \{0\}$
+
+    *   **Case 2:** $1 - \frac{1}{a^2+b^2} = 0$.
+        *   This simplifies to $a^2+b^2 = 1$.
+        *   Recognizing that $|z|^2 = a^2+b^2$, this means $|z|^2 = 1$, or $|z|=1$. This is the equation for the **unit circle** in the complex plane.
+
+###  [[Method 2: Complex Conjugate Property]]
+This is a more elegant approach mentioned by the professor. A number `w` is real if and only if it is equal to its own conjugate, $w = \overline{w}$.
+
+1.  **Apply the property:**
+    Let $w = z + \frac{1}{z}$. The condition is $w = \overline{w}$.
+    $$ z + \frac{1}{z} = \overline{\left(z + \frac{1}{z}\right)} $$
+
+2.  **Use conjugate properties** ($\overline{z_1+z_2} = \overline{z_1}+\overline{z_2}$ and $\overline{1/z} = 1/\overline{z}$):
+    $$ z + \frac{1}{z} = \overline{z} + \frac{1}{\overline{z}} $$
+
+3.  **Rearrange the terms** to group `z` and `z_bar`:
+    $$ z - \overline{z} = \frac{1}{\overline{z}} - \frac{1}{z} $$
+    $$ z - \overline{z} = \frac{z - \overline{z}}{z\overline{z}} $$
+
+4.  **Bring all terms to one side and factor:**
+    $$ (z - \overline{z}) - \frac{z - \overline{z}}{z\overline{z}} = 0 $$
+    $$ (z - \overline{z})\left(1 - \frac{1}{z\overline{z}}\right) = 0 $$
+
+5.  **Identify the two conditions:**
+    *   **Case 1:** $z - \overline{z} = 0 \implies z = \overline{z}$.
+        *   This is the definition of a **real number**. Since we must have $z \neq 0$, this solution is the real axis excluding the origin.
+    *   **Case 2:** $1 - \frac{1}{z\overline{z}} = 0 \implies z\overline{z} = 1$.
+        *   Since $z\overline{z} = |z|^2$, this gives $|z|^2 = 1$, or $|z|=1$. This is the unit circle.
+
+###  [[Visualization of Solution Set]]
+
+The solution set consists of the real axis (excluding the origin) and the unit circle.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(8, 8))
+
+# Plot the real axis (excluding the origin)
+ax.axhline(0, color='blue', lw=2, label='Real Axis (z = a, a ≠ 0)')
+ax.plot(0, 0, 'o', markerfacecolor='white', markeredgecolor='blue', markersize=8) # Hole at the origin
+
+# Plot the unit circle
+theta = np.linspace(0, 2 * np.pi, 100)
+x_circle = np.cos(theta)
+y_circle = np.sin(theta)
+ax.plot(x_circle, y_circle, color='red', lw=2, label='Unit Circle (|z| = 1)')
+
+# Formatting the plot
+ax.set_xlabel("Real Part (a)")
+ax.set_ylabel("Imaginary Part (b)")
+ax.set_title("Solution Set for z + 1/z ∈ ℝ")
+ax.axhline(0, color='black', alpha=0.5, lw=0.5)
+ax.axvline(0, color='black', alpha=0.5, lw=0.5)
+ax.set_xlim(-2, 2)
+ax.set_ylim(-2, 2)
+ax.set_aspect('equal', adjustable='box')
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.legend()
+
+plt.show()
+```
+
+![[Figure_4.png]]
+
+---
+## [[Problem 2: Sketching Im(z^3) ≤ 0]]
+
+Determine and sketch the set of complex numbers `z` for which the imaginary part of $z^3$ is less than or equal to zero.
+
+### [[Method 1: Polar Form (Professor's Method)]]
+
+This approach is significantly more direct for problems involving powers or roots.
+Let $z = r(\cos\phi + i\sin\phi)$.
+
+1.  **Apply De Moivre's Formula** to find $z^3$:
+    $$ z^3 = r^3(\cos(3\phi) + i\sin(3\phi)) $$
+
+2.  **Identify the imaginary part** of $z^3$:
+    $$ \text{Im}(z^3) = r^3\sin(3\phi) $$
+
+3.  **Apply the inequality:**
+    $$ r^3\sin(3\phi) \leq 0 $$
+    Since `r` is the modulus, $r \geq 0$, which means $r^3 \geq 0$. The inequality thus depends entirely on the sign of $\sin(3\phi)$.
+    $$ \sin(3\phi) \leq 0 $$
+
+4.  **Solve the trigonometric inequality.** The sine function is non-positive in the third and fourth quadrants. Therefore, the angle $3\phi$ must lie in the interval $[\pi, 2\pi]$, plus any integer multiples of $2\pi$.
+    $$ \pi + 2k\pi \leq 3\phi \leq 2\pi + 2k\pi, \quad k \in \mathbb{Z} $$
+
+5.  **Isolate `φ`** by dividing the entire inequality by 3:
+    $$ \frac{\pi}{3} + \frac{2k\pi}{3} \leq \phi \leq \frac{2\pi}{3} + \frac{2k\pi}{3} $$
+
+6.  **Find the specific angular sectors** by substituting integer values for `k`:
+    *   For $k=0$: $\frac{\pi}{3} \leq \phi \leq \frac{2\pi}{3}$ (60° to 120°)
+    *   For $k=1$: $\pi \leq \phi \leq \frac{4\pi}{3}$ (180° to 240°)
+    *   For $k=2$: $\frac{5\pi}{3} \leq \phi \leq 2\pi$ (300° to 360°)
+    *   For $k=3$, the pattern repeats ($ \frac{7\pi}{3} \equiv \frac{\pi}{3} $).
+
+The solution is three sectors in the complex plane.
+
+### [[Critical Analysis: The Cartesian Method Trap]]
+
+Your notes show an attempt using the Cartesian form $z=a+bi$, which became complicated. This is a common pitfall. Let's analyze why and how to complete it, to demonstrate the superiority of the polar method here.
+
+1.  **Your Derivation:**
+    $z = a+bi \implies z^3 = (a^3 - 3ab^2) + i(3a^2b - b^3)$
+    $\text{Im}(z^3) = 3a^2b - b^3 \leq 0$
+    $b(3a^2 - b^2) \leq 0$
+
+2.  **The Point of Confusion:** Your notes show `b <= 0` and `???` indicating uncertainty. The product of two terms is non-positive if:
+    *   One term is non-positive and the other is non-negative.
+    *   This gives us two systems of inequalities to solve.
+
+3.  **System 1:**
+    $b \geq 0 \quad \text{AND} \quad 3a^2 - b^2 \leq 0$
+    The second inequality is $b^2 \geq 3a^2$, which means $|b| \geq \sqrt{3}|a|$. Since $b \geq 0$, this is $b \geq \sqrt{3}|a|$. This describes the area "above" the lines $b = \sqrt{3}a$ and $b = -\sqrt{3}a$.
+
+4.  **System 2:**
+    $b \leq 0 \quad \text{AND} \quad 3a^2 - b^2 \geq 0$
+    The second inequality is $b^2 \leq 3a^2$, which means $|b| \leq \sqrt{3}|a|$. This describes the area "between" the lines $b = \sqrt{3}a$ and $b = -\sqrt{3}a$.
+
+> **Warning Note:** While the Cartesian approach is valid, it leads to a complex system of inequalities involving boundary lines ($y = \pm\sqrt{3}x$). The polar form simplifies the problem to a basic trigonometric inequality, which is far more efficient. The lines $b/a = \tan\phi = \pm\sqrt{3}$ correspond directly to angles like $\pi/3$, $2\pi/3$, etc., which we found easily with the polar method. **This demonstrates that choosing the right representation of a complex number is a critical strategic step.**
+
+### [[Visualization of Im(z^3) ≤ 0]]
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(8, 8))
+ax = fig.add_subplot(111, polar=True)
+
+# Function to draw a filled sector
+def draw_sector(ax, start_angle, end_angle, color):
+    # Create the angles for the sector
+    theta = np.linspace(start_angle, end_angle, 100)
+    # Define a radius that fills the plot
+    radius = np.linspace(0, 1.5, 2)
+    
+    # Create a meshgrid
+    theta_grid, radius_grid = np.meshgrid(theta, radius)
+    
+    # Plot the filled region
+    ax.pcolormesh(theta_grid, radius_grid, np.ones(theta_grid.shape), color=color, alpha=0.3, shading='auto')
+    
+    # Plot boundary lines
+    ax.plot([start_angle, start_angle], [0, 1.5], color='blue', lw=2)
+    ax.plot([end_angle, end_angle], [0, 1.5], color='blue', lw=2)
+
+
+# The sectors from the solution
+sectors = [
+    (np.pi/3, 2*np.pi/3),
+    (np.pi, 4*np.pi/3),
+    (5*np.pi/3, 2*np.pi)
+]
+
+for start, end in sectors:
+    draw_sector(ax, start, end, 'lightblue')
+
+ax.set_title("Solution Set for Im(z³) ≤ 0", va='bottom')
+ax.set_yticklabels([]) # Hide radial labels
+ax.grid(True)
+
+plt.show()
+
+![[download-4.png]]```
+![[download-4.png]]
+
+# [[Conceptual Strengthening Tasks]]
+
+1.  **Peer Problem:** Find and sketch the set of all complex numbers `z` such that the expression $z - \frac{4}{z}$ is purely imaginary. (Hint: A number `w` is purely imaginary if $\overline{w} = -w$).
+
+2.  **De Moivre's Application:** Calculate $(\sqrt{3} - i)^{12}$. Justify each step of converting to polar form and applying the formula.
+
+3.  **Integration Challenge (High School & University Concepts):** Using the polar form solution for `Im(z^3) <= 0`, find the area of the solution set that lies within the circle defined by $|z| \leq 2$. (Hint: Recall the formula for the area of a sector, or use the integral formula for area in polar coordinates, $A = \frac{1}{2}\int_{\alpha}^{\beta} r(\theta)^2 d\theta$).
+
+

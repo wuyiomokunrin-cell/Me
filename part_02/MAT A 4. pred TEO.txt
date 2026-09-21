@@ -1,0 +1,203 @@
+# [[Predavanje 4: Elementarne Funkcije, Limita in Zveznost]]
+
+## [[Eksponentna funkcija]]
+Je funkcija oblike:
+$$ f(x) = a^x $$
+Pogoji za osnovo $a$:
+- $a > 0$
+- $a \neq 1$
+- $x \in \mathbb{R}$
+
+Definicijsko območje je $D_f = \mathbb{R}$.
+
+### [[Kritična analiza pogojev za osnovo]]
+- **Zakaj $a > 0$?** Če bi bila osnova negativna, npr. $a = -2$, bi za $x = \frac{1}{2}$ dobili $f(\frac{1}{2}) = (-2)^{\frac{1}{2}} = \sqrt{-2}$, kar v realnih številih ni definirano. Funkcija bi bila definirana samo za določene racionalne eksponente in ne za vsa realna števila, kar bi otežilo analizo.
+- **Zakaj $a \neq 1$?** Če bi bila osnova enaka 1, bi imeli funkcijo $f(x) = 1^x = 1$. To je konstantna funkcija, ki nima lastnosti, ki jih preučujemo pri eksponentnih funkcijah (npr. nima inverzne funkcije v splošnem smislu, ker ni injektivna).
+
+### [[Grafi in lastnosti eksponentne funkcije]]
+Ločimo dva glavna tipa obnašanja funkcije glede na osnovo $a$.
+
+
+1.  **Primer: $a > 1$ (npr. $a=2$)**
+    - Funkcija je **strogo naraščujoča**.
+    - Ko gre $x \to \infty$, gre $f(x) \to \infty$.
+    - Ko gre $x \to -\infty$, gre $f(x) \to 0$.
+ ![[Figure_1-11.png]]
+2.  **Primer: $0 < a < 1$ (npr. $a = \frac{1}{2}$)**
+    - Funkcija je **strogo padajoča**.
+    - Ko gre $x \to \infty$, gre $f(x) \to 0$.
+    - Ko gre $x \to -\infty$, gre $f(x) \to \infty$.
+![[Figure_1-12.png]]
+
+### [[Zaloga Vrednosti]]
+Zaloga vrednosti za obe vrsti eksponentnih funkcij je enaka:
+$$ Z_f = \mathbb{R}^+ = (0, \infty) $$
+Eksponentna funkcija nikoli ne doseže vrednosti 0 in je vedno pozitivna.
+
+---
+
+## [[Logaritemska funkcija]]
+Logaritemska funkcija je **inverzna funkcija** eksponentni funkciji.
+- Ker je eksponentna funkcija $f(x) = a^x: \mathbb{R} \to \mathbb{R}^+$ bijekcija, njen inverz obstaja.
+- Inverzno funkcijo označimo z $f^{-1}(x) = \log_a x$.
+- Definicijsko območje in zaloga vrednosti se zamenjata: $\log_a x: \mathbb{R}^+ \to \mathbb{R}$.
+
+### [[Temeljna zveza]]
+Najpomembnejša relacija, ki povezuje logaritem in eksponentno funkcijo, je:
+$$ y = \log_a x \iff a^y = x $$
+> **Note to Self:** To je definicija, ki jo uporabljamo za reševanje logaritemskih enačb in dokazovanje lastnosti. Pove nam, da je $\log_a x$ eksponent, s katerim moramo potencirati osnovo $a$, da dobimo $x$.
+
+### [[Lastnosti inverzne kompozicije]]
+1.  $(f^{-1} \circ f)(x) = f^{-1}(f(x)) = \log_a(a^x) = x, \quad \forall x \in \mathbb{R}$
+2.  $(f \circ f^{-1})(x) = f(f^{-1}(x)) = a^{\log_a x} = x, \quad \forall x \in \mathbb{R}^+$
+
+### [[Pomembne vrednosti]]
+- Kdaj je $\log_a x = 0$? $\implies a^0 = x \implies x=1$. Torej, $\log_a 1 = 0$.
+- Kdaj je $\log_a x = 1$? $\implies a^1 = x \implies x=a$. Torej, $\log_a a = 1$.
+
+### [[Grafi logaritemske funkcije]]
+Graf logaritemske funkcije je zrcalna slika grafa eksponentne funkcije preko simetrale $y=x$.
+
+1.  **Primer: $a > 1$ (npr. $a=2$)**
+    - Funkcija je **strogo naraščujoča**.
+![[Figure_1-14.png]]
+
+2.  **Primer: $0 < a < 1$**
+    - Funkcija je **strogo padajoča**.
+
+---
+
+## [[Lastnosti logaritmov]]
+Za $x, y > 0$:
+1.  **[[Logaritem produkta]]**: $\log_a(xy) = \log_a(x) + \log_a(y)$
+    - **Dokaz:** Uporabimo lastnost eksponentne funkcije $a^{m+n} = a^m \cdot a^n$.
+    $$ a^{\log_a(x) + \log_a(y)} = a^{\log_a(x)} \cdot a^{\log_a(y)} = x \cdot y = a^{\log_a(xy)} $$
+    Ker so eksponenti enaki, velja enakost.
+
+2.  **[[Logaritem kvocienta]]**: $\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)$
+    - **Dokaz:** Uporabimo $a^{m-n} = \frac{a^m}{a^n}$.
+    $$ a^{\log_a(x) - \log_a(y)} = \frac{a^{\log_a(x)}}{a^{\log_a(y)}} = \frac{x}{y} = a^{\log_a(x/y)} $$
+
+3.  **[[Logaritem potence]]**: $\log_a(x^y) = y \cdot \log_a(x)$
+    - **Dokaz:** Uporabimo $(a^m)^n = a^{m \cdot n}$.
+    $$ a^{y \cdot \log_a(x)} = \left(a^{\log_a(x)}\right)^y = x^y = a^{\log_a(x^y)} $$
+
+### [[Naravni logaritem]]
+Poseben primer logaritma je, ko je osnova $a=e \approx 2.718...$. To je naravni logaritem.
+$$ \log_e x = \ln x $$
+
+---
+
+## [[Hiperbolične funkcije]]
+Definirane so s pomočjo eksponentne funkcije z osnovo $e$.
+- **[[Sinus hiperbolikus]]**:
+$$ \sinh x = \frac{e^x - e^{-x}}{2}, \quad D_f = \mathbb{R} $$
+- **[[Kosinus hiperbolikus]]**:
+$$ \cosh x = \frac{e^x + e^{-x}}{2}, \quad D_f = \mathbb{R}, \quad Z_f = [1, \infty) $$
+
+### [[Osnovna zveza med hiperboličnimi funkcijami]]
+$$ \cosh^2 x - \sinh^2 x = 1 $$
+> **Note to Self:** Ta identiteta je analogna trigonometrični identiteti $\cos^2 x + \sin^2 x = 1$. Medtem ko trigonometrične funkcije parametrizirajo enotsko krožnico ($x^2+y^2=1$), hiperbolične funkcije parametrizirajo enotsko hiperbolo ($x^2-y^2=1$).
+
+---
+
+## [[Limita in zveznost funkcije]]
+
+### [[Uvod v Limito]]
+Limita opisuje obnašanje funkcije, ko se njen argument približuje določeni točki, ne da bi jo nujno dosegel.
+
+- **Primer:** $f(x) = \frac{x^2-4}{x-2}$
+  - Definicijsko območje: $D_f = \mathbb{R} \setminus \{2\}$. V točki $x=2$ funkcija ni definirana.
+  - Za $x \neq 2$ lahko izraz poenostavimo: $f(x) = \frac{(x-2)(x+2)}{x-2} = x+2$.
+  - Ko se $x$ približuje 2 (iz leve ali desne), se vrednost $f(x)$ približuje $2+2=4$.
+  - Zapišemo: $\lim_{x \to 2} f(x) = 4$.
+
+### [[Formalna Definicija Limite (ε-δ)]]
+Število $L$ je limita funkcije $f(x)$, ko gre $x$ proti $a$, če velja:
+$$ \forall \varepsilon > 0, \quad \exists \delta > 0, \quad \text{tako da za vsak } x \in D_f \text{ velja:} $$
+$$ 0 < |x-a| < \delta \implies |f(x) - L| < \varepsilon $$
+
+> **Razlaga:** Ne glede na to, kako majhen pas okoli limite $L$ (širine $2\varepsilon$) izberemo, vedno lahko najdemo dovolj majhno okolico okoli točke $a$ (širine $2\delta$), da bodo vse funkcijske vrednosti (za $x$ iz te okolice, razen morda v $a$) padle v izbrani pas.
+
+### [[Enostranske Limite]]
+- **[[Leva limita]]**: $L^{-} = \lim_{x \to a^{-}} f(x)$
+  - Proučujemo vrednosti $f(x)$, ko se $x$ približuje $a$ z leve strani ($x < a$).
+  - Formalno: $\forall \varepsilon > 0, \exists \delta > 0$ t.d. $x \in (a-\delta, a) \implies |f(x) - L^{-}| < \varepsilon$.
+
+- **[[Desna limita]]**: $L^{+} = \lim_{x \to a^{+}} f(x)$
+  - Proučujemo vrednosti $f(x)$, ko se $x$ približuje $a$ z desne strani ($x > a$).
+  - Formalno: $\forall \varepsilon > 0, \exists \delta > 0$ t.d. $x \in (a, a+\delta) \implies |f(x) - L^{+}| < \varepsilon$.
+
+> **Pogoj za obstoj limite**: Limita funkcije $f(x)$ v točki $a$ obstaja natanko takrat, ko sta leva in desna limita enaki: $L = L^{-} = L^{+}$.
+
+### [[Lastnosti Limit]]
+Če velja $\lim_{x \to a} f(x) = A$ in $\lim_{x \to a} g(x) = B$:
+1.  **[[Limita vsote/razlike]]**: $\lim_{x \to a} (f(x) \pm g(x)) = A \pm B$
+2.  **[[Limita produkta konstante]]**: $\lim_{x \to a} (c \cdot f(x)) = c \cdot A$
+3.  **[[Limita produkta]]**: $\lim_{x \to a} (f(x) \cdot g(x)) = A \cdot B$
+4.  **[[Limita kvocienta]]**: $\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{A}{B}$, če $B \neq 0$.
+
+### [[Zveznost Funkcije]]
+Intuitivno je funkcija zvezna, če lahko njen graf narišemo brez dvigovanja svinčnika.
+
+- **[[Formalna Definicija zveznosti]]**: Funkcija $f$ je zvezna v točki $a \in D_f$, če velja:
+$$ \forall \varepsilon > 0, \quad \exists \delta > 0, \quad \text{tako da za vsak } x \in D_f \text{ velja:} $$
+$$ |x-a| < \delta \implies |f(x) - f(a)| < \varepsilon $$
+- **[[Praktična definicija zveznosti]]**: Funkcija $f$ je zvezna v točki $a$ natanko takrat, ko so izpolnjeni trije pogoji:
+    1.  $f(a)$ obstaja (funkcija je definirana v točki $a$).
+    2.  $\lim_{x \to a} f(x)$ obstaja.
+    3.  $\lim_{x \to a} f(x) = f(a)$.
+
+### [[Limita Kompozituma]]
+Če je funkcija $f$ zvezna v točki $b$ in je $\lim_{x \to a} g(x) = b$, potem velja:
+$$ \lim_{x \to a} f(g(x)) = f\left(\lim_{x \to a} g(x)\right) = f(b) $$
+> **Note to Self:** To pomeni, da lahko pri zveznih zunanjih funkcijah "potisnemo limito noter".
+> **Primer:**
+> $$ \lim_{x \to 2} \sqrt{\frac{x^2-4}{x-2}} = \sqrt{\lim_{x \to 2} \frac{x^2-4}{x-2}} = \sqrt{4} = 2 $$
+> To lahko storimo, ker je funkcija $f(u) = \sqrt{u}$ zvezna v točki $u=4$.
+
+---
+
+## [[Pomembne limite]]
+
+1.  ### $$\lim_{x \to 0} \frac{\sin x}{x} = 1$$
+    - **Dokaz (Geometrijski z izrekom o sendviču):**
+      - Primerjamo ploščine treh likov na enotski krožnici za majhen pozitiven kot $x$:
+      - Ploščina $\triangle OAE <$ Ploščina krožnega izseka $OAE <$ Ploščina $\triangle OAT'$
+      - $\frac{1}{2} \cdot \cos x \cdot \sin x < \frac{1}{2} \cdot 1^2 \cdot x < \frac{1}{2} \cdot 1 \cdot \tan x$
+      - $\cos x \sin x < x < \frac{\sin x}{\cos x}$
+      - Delimo s $\sin x$ (za $x \in (0, \pi/2)$ je $\sin x > 0$):
+      - $\cos x < \frac{x}{\sin x} < \frac{1}{\cos x}$
+      - Obrnemo ulomke in neenačaj:
+      - $\frac{1}{\cos x} > \frac{\sin x}{x} > \cos x$
+      - Ker $\lim_{x \to 0} \cos x = 1$ in $\lim_{x \to 0} \frac{1}{\cos x} = 1$, po izreku o sendviču sledi, da je tudi limita vmesnega izraza enaka 1.
+
+2.  ### $$\lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^x = e$$
+
+3.  ### $$\lim_{x \to 0} (1+x)^{\frac{1}{x}} = e$$
+    - **Izpeljava:** Uvedemo novo spremenljivko $u = \frac{1}{x}$. Ko gre $x \to 0$, gre $u \to \infty$. Limita postane $\lim_{u \to \infty} (1 + \frac{1}{u})^u = e$.
+
+4.  ### $$\lim_{x \to 0} \frac{\log_a(1+x)}{x} = \frac{1}{\ln a}$$
+    - **Izpeljava:**
+      $$ \lim_{x \to 0} \frac{1}{x} \log_a(1+x) = \lim_{x \to 0} \log_a\left((1+x)^{\frac{1}{x}}\right) $$
+      Ker je logaritem zvezna funkcija, lahko zamenjamo limito in logaritem:
+      $$ \log_a\left(\lim_{x \to 0} (1+x)^{\frac{1}{x}}\right) = \log_a(e) = \frac{\ln e}{\ln a} = \frac{1}{\ln a} $$
+
+5.  ### $$\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1$$
+    - Poseben primer prejšnje limite za $a=e$.
+
+6.  ### $$\lim_{x \to 0} \frac{a^x - 1}{x} = \ln a$$
+    - **Izpeljava:** Uvedemo novo spremenljivko $u = a^x - 1 \implies a^x = u+1 \implies x = \log_a(u+1)$.
+    - Ko gre $x \to 0$, velja $a^0 - 1 = 0$, torej $u \to 0$.
+    $$ \lim_{u \to 0} \frac{u}{\log_a(u+1)} = \lim_{u \to 0} \frac{1}{\frac{\log_a(1+u)}{u}} = \frac{1}{\frac{1}{\ln a}} = \ln a $$
+
+7.  ### $$\lim_{x \to 0} \frac{e^x - 1}{x} = 1$$
+    - Poseben primer prejšnje limite za $a=e$.
+
+---
+
+## [[Conceptual Strengthening Tasks]]
+1.  **Naloga (Lastnosti limit):** Izračunajte limito funkcije $f(x) = \frac{2x^2 - 2}{x-1} \cdot \cos(\pi x)$, ko gre $x \to 1$. Utemeljite vsak korak z uporabo lastnosti limit.
+2.  **Naloga (Zveznost):** Dana je funkcija $f(x) = \begin{cases} \frac{\sin(3x)}{x} & x \neq 0 \\ k & x=0 \end{cases}$. Določite vrednost konstante $k$ tako, da bo funkcija $f(x)$ zvezna v točki $x=0$.
+3.  **Izziv (Povezovanje znanja):** S pomočjo limite $\lim_{t \to 0} \frac{e^t-1}{t}=1$ in z ustrezno zamenjavo spremenljivk, izpeljite formulo za limito $\lim_{x \to 1} \frac{\ln x}{x-1}$.
+    - *Namig:* Spomnite se, kako sta logaritemska in eksponentna funkcija povezani (osnovna šola/gimnazija). Definirajte $t = \ln x$. Kaj se zgodi z $t$, ko gre $x \to 1$? Kako lahko izrazite $x-1$ s pomočjo $t$?x-1$ s pomočjo $t$?

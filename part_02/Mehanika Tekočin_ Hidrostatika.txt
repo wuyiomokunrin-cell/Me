@@ -1,0 +1,373 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n4. Numbering. If you can\u0027t read the chronological order of the image or page, then there\u0027s a number on the bottom right corner indicating the page. \n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1Tr18nVR7OV5voO_ndpQCjkv4e38fh1Ui"
+      },
+      "role": "user",
+      "tokenCount": 90521
+    }, {
+      "driveAudio": {
+        "id": "12AO51sxmh0HY_cS2QjGnkI3tnDQdqzkX"
+      },
+      "role": "user",
+      "tokenCount": 112720
+    }, {
+      "driveImage": {
+        "id": "1YmmoBzRs2gxAJvG8sRLz1zUP3phkwMts"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1KmJULLC9doXCiBpphJ28BB6kTNAt_QzZ"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1QGgGeAVXM57_fFqSWb0qxey3AzcwoOIO"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1tcS62NCPxgpcM4vNSR3HdkzFJxKoxmP3"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1c0AjkFZpimUX_lnVzCMHWenSk_QrRMLr"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1e5Fqn_kxm2rciqvTjSaMzyap8yeek3z1"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "text": "**Assessing the Input**\n\nI\u0027m currently focused on the initial input. The core is a set of handwritten lecture notes in image format, alongside a bit of contextual information. My primary task is to interpret this raw data, specifically these handwritten notes. I\u0027m prioritizing understanding the structure and content of this material.\n\n\n**Refining the Approach**\n\nI\u0027ve shifted my focus to the core transformation process. My goal is to structure this raw lecture transcript on fluid mechanics into a comprehensive, analytical Markdown note. I\u0027m prioritizing the chronological organization based on file names. I\u0027ll translate the mathematical content into LaTeX, and ensure Obsidian compatibility. My task now is to ensure each section follows the \"reverse engineering\" logic, clearly explaining each step.\n\n\n**Localizing the Notes**\n\nI\u0027m now fully immersed in the Slovenian context. Understanding the core topic is paramount: fluid mechanics, called \"Mehanika tekočin\" in Slovenian. I\u0027ve broken down key concepts like density, pressure, and viscosity, along with vital derivations such as hydrostatic pressure and buoyancy. I\u0027m noting specific instrumentation mentioned like manometers and barometers, which are essential for practical applications.\n\n\n**Incorporating Examples Now**\n\nI\u0027m presently building upon my theoretical framework with concrete examples. I\u0027ve integrated real-world scenarios like the hydraulic press, icebergs (connecting to the Titanic), blood pressure, and even the immense pressure in the Mariana Trench. These examples will illustrate the principles of fluid mechanics effectively. Next I\u0027ll formalize the structure.\n\n\n**Delving Deeper into Theory**\n\nI\u0027m now focusing on the core theoretical components. I\u0027ve broken down fluid dynamics into key steps, starting with the distinction between solids and fluids in response to stress. I\u0027m elaborating on the concept of pressure, explaining its formula and unit (Pascal). I\u0027m carefully deriving hydrostatic pressure, emphasizing the underlying force balance and the crucial role of height. I\u0027m noting the counter-intuitive hydrostatic paradox and outlining key measurement instruments like manometers and barometers. Pascal\u0027s Principle is next.\n\n\n**Analyzing Buoyancy Concepts**\n\nI\u0027ve just added the crucial concept of buoyancy. I\u0027ve derived it from pressure differences, linking to Archimedes\u0027 principle. Now, I\u0027m integrating compressibility, viscosity, and surface tension into the main text, with LaTeX formatting for clarity. Next, I\u0027m formalizing `[[Wikilinks]]` for expansion and incorporating \"Critical Analysis\" boxes.\n\n\n**Addressing Imperfections \u0026 Refinement**\n\nI\u0027m now focusing on final refinements and ensuring completeness. I\u0027ve rechecked for all planned elements, like the iceberg example and pressure unit specifications, confirming their inclusion. I\u0027ve also verified that the tone remains explanatory and appropriate for a tutor. Now, I\u0027m prepared for the final output generation.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Assessing the Input**\n\nI\u0027m currently focused on the initial input. The core is a set of handwritten lecture notes in image format, alongside a bit of contextual information. My primary task is to interpret this raw data, specifically these handwritten notes. I\u0027m prioritizing understanding the structure and content of this material.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Approach**\n\nI\u0027ve shifted my focus to the core transformation process. My goal is to structure this raw lecture transcript on fluid mechanics into a comprehensive, analytical Markdown note. I\u0027m prioritizing the chronological organization based on file names. I\u0027ll translate the mathematical content into LaTeX, and ensure Obsidian compatibility. My task now is to ensure each section follows the \"reverse engineering\" logic, clearly explaining each step.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Localizing the Notes**\n\nI\u0027m now fully immersed in the Slovenian context. Understanding the core topic is paramount: fluid mechanics, called \"Mehanika tekočin\" in Slovenian. I\u0027ve broken down key concepts like density, pressure, and viscosity, along with vital derivations such as hydrostatic pressure and buoyancy. I\u0027m noting specific instrumentation mentioned like manometers and barometers, which are essential for practical applications.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Incorporating Examples Now**\n\nI\u0027m presently building upon my theoretical framework with concrete examples. I\u0027ve integrated real-world scenarios like the hydraulic press, icebergs (connecting to the Titanic), blood pressure, and even the immense pressure in the Mariana Trench. These examples will illustrate the principles of fluid mechanics effectively. Next I\u0027ll formalize the structure.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Delving Deeper into Theory**\n\nI\u0027m now focusing on the core theoretical components. I\u0027ve broken down fluid dynamics into key steps, starting with the distinction between solids and fluids in response to stress. I\u0027m elaborating on the concept of pressure, explaining its formula and unit (Pascal). I\u0027m carefully deriving hydrostatic pressure, emphasizing the underlying force balance and the crucial role of height. I\u0027m noting the counter-intuitive hydrostatic paradox and outlining key measurement instruments like manometers and barometers. Pascal\u0027s Principle is next.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Buoyancy Concepts**\n\nI\u0027ve just added the crucial concept of buoyancy. I\u0027ve derived it from pressure differences, linking to Archimedes\u0027 principle. Now, I\u0027m integrating compressibility, viscosity, and surface tension into the main text, with LaTeX formatting for clarity. Next, I\u0027m formalizing `[[Wikilinks]]` for expansion and incorporating \"Critical Analysis\" boxes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Addressing Imperfections \u0026 Refinement**\n\nI\u0027m now focusing on final refinements and ensuring completeness. I\u0027ve rechecked for all planned elements, like the iceberg example and pressure unit specifications, confirming their inclusion. I\u0027ve also verified that the tone remains explanatory and appropriate for a tutor. Now, I\u0027m prepared for the final output generation.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "To so strukturirani zapiski predmeta **Mehanika tekočin**, pripravljeni na podlagi transkripta predavanj in ročnih zapiskov. Zapiski so optimizirani za Obsidian in vključujejo \"reverse engineering\" izpeljav, da se zagotovi globoko razumevanje snovi.\n\n---\n\n# Mehanika tekočin (Hidrostatika)\n\n**Datum:** [[2025-12-04]]\n**Predmet:** [[Fizika]] / [[Mehanika]]\n**Tags:** #fluidi #tlak #vzgon #hidrostatika #fizika\n\n---\n\n## 1. Uvod in definicija tekočin\n\nPri mehaniki tekočin obravnavamo snovi, ki nimajo stalne oblike in tečejo.\n\n### Razlika med trdninami in tekočinami\nGlavna razlika je v odzivu na **strižne sile** (tangencialne sile na površino):\n*   **Trdnine:** Se upirajo strižnim silam (se deformirajo, a ostanejo v kosu).\n*   **Tekočine:** Strižnih sil v mirovanju ne prenašajo. Sile na površino delujejo izključno **pravokotno**. Zato pravimo, da \"tečejo\".\n\n### Delitev tekočin\nTekočine delimo na dve glavni skupini glede na stisljivost in molekularno urejenost:\n\n1.  **Kapljevine (npr. voda):**\n    *   Gostota ($\\rho$) je velika (cca $1000 \\text{ kg/m}^3$ za vodo).\n    *   So praktično **nestisljive** (volumen se s tlakom zelo malo spreminja).\n    *   Tvorijo gladino (površino) v posodi.\n    *   Molekule so blizu skupaj (vezeno stanje), a nimajo stalnega mesta.\n2.  **Plini (npr. zrak):**\n    *   Gostota je majhna (cca $1 \\text{ kg/m}^3$ za zrak - 1000x manjša od vode).\n    *   So **stisljivi**.\n    *   Zapolnijo celotno posodo (ne tvorijo gladine).\n    *   Potencialna energija med molekulami je zanemarljiva (prosto gibanje).\n\n---\n\n## 2. Tlak ($p$)\n\nTlak definiramo kot razmerje med silo, ki deluje pravokotno na površino, in velikostjo te površine.\n\n$$ p \u003d \\frac{F}{S} $$\n\n**Enote:**\n*   Osnovna enota: **Pascal (Pa)**\n    $$ 1 \\text{ Pa} \u003d 1 \\frac{\\text{N}}{\\text{m}^2} \u003d 1 \\frac{\\text{kg}}{\\text{m s}^2} $$\n*   Izpeljane/druge enote:\n    *   **bar:** $1 \\text{ bar} \u003d 10^5 \\text{ Pa}$ (približno en atmosferski tlak).\n    *   **torr (mm Hg):** $1 \\text{ torr} \\approx 133 \\text{ Pa}$ (uporaba v medicini - krvni tlak).\n    *   **psi (pound per square inch):** Imperialna enota (pnevmatike).\n\n\u003e [!NOTE] Opomba tutorja: Skalarnost tlaka\n\u003e Čeprav je sila ($F$) vektor, je tlak ($p$) **skalar**. Tlak v točki deluje v vse smeri enako (Pascalov zakon). Smer dobi šele, ko definiramo površino, na katero deluje (sila je vedno pravokotna na to površino).\n\n---\n\n## 3. Hidrostatski tlak\n\nKako se tlak spreminja z globino v mirujoči tekočini?\n\n### Izpeljava (Reverse Engineering)\n*Motivacija:* Zakaj nas v ušesih tišči, ko se potopimo globlje? Ker teža vode nad nami pritiska navzdol.\n\n**Miselni poskus:**\nZamislimo si navpičen stolpec (prizmo) tekočine v mirujoči vodi. Ker tekočina miruje, mora biti vsota vseh sil na ta stolpec enaka 0.\n\n**Sile, ki delujejo na stolpec:**\n1.  Sila tlaka od zgoraj navzdol: $F_{zg} \u003d p(z_2) \\cdot S$\n2.  Sila tlaka od spodaj navzgor: $F_{sp} \u003d p(z_1) \\cdot S$\n3.  Teža stolpca tekočine: $F_g \u003d m \\cdot g \u003d (\\rho \\cdot V) \\cdot g \u003d \\rho \\cdot S \\cdot h \\cdot g$ (kjer je $h \u003d z_2 - z_1$)\n\n**Ravnovesna enačba:**\n$$ F_{sp} - F_{zg} - F_g \u003d 0 $$\n$$ p(z_1) S - p(z_2) S - \\rho S (z_2 - z_1) g \u003d 0 $$\n\nDelimo s ploskvijo $S$:\n$$ p(z_1) - p(z_2) \u003d \\rho g (z_2 - z_1) $$\n\nČe označimo globino $h$, dobimo splošno enačbo za hidrostatski tlak:\n\n$$ p \u003d p_0 + \\rho g h $$\n\nKjer je:\n*   $p$: absolutni tlak na globini $h$.\n*   $p_0$: zunanji (atmosferski) tlak na gladini.\n*   $\\rho g h$: hidrostatski dodatek.\n\n\u003e [!WARNING] Opozorilo: Hidrostatski paradoks\n\u003e Tlak je odvisen **samo od globine** ($h$) in gostote tekočine ($\\rho$), **ne pa od oblike posode**. V vseh povezanih posodah (komunikacijskih posodah) bo gladina na isti višini, ne glede na to, kako široka ali zavita je posoda.\n\n---\n\n## 4. Merjenje tlaka\n\n### 4.1 Odprti manometer (U-cevka)\nUporablja se za merjenje razlike tlakov.\n*   Ena stran je odprta (atmosferski tlak $p_0$).\n*   Druga stran je priključena na merjen sistem ($p$).\n*   Razlika v višini stolpca tekočine ($h$) nam pove tlačno razliko.\n\n$$ \\Delta p \u003d p - p_0 \u003d \\rho g h $$\n\n### 4.2 Barometer (Torricellijev poskus)\nUporablja se za merjenje atmosferskega tlaka.\n*   Cevko napolnimo z živim srebrom (Hg) in jo obrnemo v posodo z Hg.\n*   Na vrhu cevke nastane vakuum ($p \\approx 0$).\n*   Zunanji tlak drži stolpec tekočine pokonci.\n\n$$ p_{atm} \u003d \\rho_{Hg} g h $$\n\n*Zakaj živo srebro?*\n$$ \\rho_{Hg} \\approx 13600 \\text{ kg/m}^3 \\quad \\text{vs.} \\quad \\rho_{H_2O} \\approx 1000 \\text{ kg/m}^3 $$\nZaradi velike gostote je stolpec Hg visok le cca 760 mm (0,76 m) za 1 atm. Če bi uporabili vodo, bi morala biti cevka visoka cca 10 metrov!\n\n$$ 1 \\text{ atm} \u003d 1013 \\text{ hPa} \u003d 760 \\text{ mm Hg} $$\n\n---\n\n## 5. Pascalov princip (Hidravlika)\n\nTlak v zaprti tekočini se širi **neomejeno in enakomerno** v vse smeri.\n\n### Hidravlična stiskalnica\nImamo dva bata različnih površin ($S_1$ in $S_2$), povezana s tekočino.\nČe na manjšega pritisnemo s silo $F_1$, se tlak prenese na večjega.\n\n$$ p_1 \u003d p_2 \\implies \\frac{F_1}{S_1} \u003d \\frac{F_2}{S_2} $$\n\nIz tega sledi ojačitev sile:\n$$ F_2 \u003d F_1 \\frac{S_2}{S_1} $$\n\n\u003e [!CRITICAL] Analiza: Delo se ohranja\n\u003e Ne dobimo \"energije iz nič\". Čeprav je sila $F_2$ večja, je premik $d_2$ ustrezno manjši.\n\u003e $$ W_1 \u003d W_2 \\implies F_1 d_1 \u003d F_2 d_2 $$\n\u003e Volumen prečrpane tekočine je konstanten: $S_1 d_1 \u003d S_2 d_2$.\n\n---\n\n## 6. Vzgon (Archimedov zakon)\n\nVsako telo, potopljeno v tekočino, občuti silo navzgor, ki je enaka teži izpodrinjene tekočine.\n\n### Izpeljava iz tlaka\nSila vzgona je posledica tlačne razlike med spodnjim in zgornjim delom telesa.\n*   Tlak zgoraj: $p_1 \u003d p_0 + \\rho g h_1$\n*   Tlak spodaj: $p_2 \u003d p_0 + \\rho g h_2$\n\nSila vzgona $F_{vzgon}$ je rezultanta sil v vertikalni smeri:\n$$ F_{vzgon} \u003d F_{sp} - F_{zg} \u003d p_2 S - p_1 S $$\n$$ F_{vzgon} \u003d (p_2 - p_1) S \u003d \\rho g (h_2 - h_1) S $$\nKer je $(h_2 - h_1) S \u003d V$ (volumen potopljenega dela telesa):\n\n$$ F_{vzgon} \u003d \\rho_{tekočine} \\cdot g \\cdot V_{pod} $$\n\n\u003e [!WARNING] Pozor pri nalogah!\n\u003e V formuli za vzgon nastopa **gostota tekočine** ($\\rho_{tekočine}$), ne gostota telesa! Gostota telesa nastopa le pri sili teže ($F_g \u003d m g \u003d \\rho_{telesa} V g$).\n\n### Primer: Ledena gora\n*   Gostota ledu: $\\rho_{led} \\approx 900 \\text{ kg/m}^3$\n*   Gostota vode: $\\rho_{voda} \\approx 1000 \\text{ kg/m}^3$\n*   Ravnovesje (plavanje): $F_g \u003d F_{vzgon}$\n    $$ \\rho_{led} V_{cel} g \u003d \\rho_{voda} V_{pod} g $$\n    $$ \\frac{V_{pod}}{V_{cel}} \u003d \\frac{\\rho_{led}}{\\rho_{voda}} \\approx 0,9 $$\n    **Rezultat:** 90 % ledene gore je pod vodo.\n\n---\n\n## 7. Dodatne lastnosti tekočin\n\n### 7.1 Stisljivost ($\\chi$)\nPove, kako se relativno spremeni volumen pri spremembi tlaka.\n$$ \\chi \u003d - \\frac{1}{V} \\frac{dV}{dp} $$\n*   Minus je zato, ker povečanje tlaka ($dp \u003e 0$) povzroči zmanjšanje volumna ($dV \u003c 0$).\n*   Voda: $\\chi \\approx 5 \\cdot 10^{-10} \\text{ Pa}^{-1}$ (zelo majhna -\u003e nestisljiva).\n*   Plini: Zelo velika stisljivost (Boyle-Mariottov zakon: $p V \u003d \\text{konst} \\implies V \\propto 1/p$).\n\n### 7.2 Viskoznost ($\\eta$)\nNotranje trenje v tekočini. Nastopi, ko se plasti tekočine gibljejo z različnimi hitrostmi (strižna deformacija).\n$$ F \u003d \\eta S \\frac{dv}{dz} $$\n*   $\\frac{dv}{dz}$: gradient hitrosti.\n*   Enota: $\\text{Pa s}$ (Pascal sekunda).\n*   Primer: Med ima visoko viskoznost, voda nizko.\n\n### 7.3 Površinska napetost ($\\gamma$)\nSila, s katero gladina tekočine drži skupaj (zaradi kohezijskih sil med molekulami).\nDeluje kot tanka prožna membrana na površini.\n$$ F \u003d \\gamma \\cdot l $$\n*   $l$: dolžina roba, na katerega deluje sila.\n*   Enota: N/m.\n*   Posledica: Kapljice so okrogle (minimalna površina), žuželke hodijo po vodi.\n\n---\n\n## 8. Povzetek formul za reševanje nalog\n\n| Količina | Formula | Opomba |\n| :--- | :--- | :--- |\n| **Gostota** | $\\rho \u003d \\frac{m}{V}$ | $\\text{kg/m}^3$ |\n| **Tlak** | $p \u003d \\frac{F}{S}$ | $F \\perp S$ |\n| **Hidrostatski tlak** | $p \u003d p_0 + \\rho g h$ | $\\rho$ tekočine |\n| **Hidravlika** | $F_1 S_2 \u003d F_2 S_1$ | Ohranitev tlaka |\n| **Vzgon** | $F_{vz} \u003d \\rho_{tek} g V_{pod}$ | Nasprotuje teži |\n| **Stisljivost** | $\\frac{\\Delta V}{V} \u003d -\\chi \\Delta p$ | Za majhne spremembe |\n\n---\n\n### Povezave na snov\n*   Naprej na: [[Bernoullijeva enačba]] (Hidrodinamika - tekočine v gibanju)\n*   Povezano z: [[Termodinamika]] (Plinska enačba)",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3338,
+      "parts": [{
+        "text": "To so strukturirani zapiski predmeta **Mehanika tekočin**, pripravljeni na podlagi transkripta predavanj in ro"
+      }, {
+        "text": "čnih zapiskov. Zapiski so optimizirani za Obsidian in vključujejo \"reverse engineering\" iz"
+      }, {
+        "text": "peljav, da se zagotovi globoko razumevanje snovi.\n\n---\n\n# Mehanika tekočin (Hid"
+      }, {
+        "text": "rostatika)\n\n**Datum:** [[2025-12-04]]\n**Predmet:** [[Fizika]] /"
+      }, {
+        "text": " [[Mehanika]]\n**Tags:** #fluidi #tlak #vzgon #hidrostatika #fizika\n\n"
+      }, {
+        "text": "---\n\n## 1. Uvod in definicija tekočin\n\nPri mehaniki tekočin obravnavamo snovi, ki"
+      }, {
+        "text": " nimajo stalne oblike in tečejo.\n\n### Razlika med trdninami in tekočinami\nG"
+      }, {
+        "text": "lavna razlika je v odzivu na **strižne sile** (tangencialne sile na površino):\n*   **Tr"
+      }, {
+        "text": "dnine:** Se upirajo strižnim silam (se deformirajo, a ostanejo v kosu).\n*   **Teko"
+      }, {
+        "text": "čine:** Strižnih sil v mirovanju ne prenašajo. Sile na površino delujejo iz"
+      }, {
+        "text": "ključno **pravokotno**. Zato pravimo, da \"tečejo\".\n\n### Delitev tekočin\n"
+      }, {
+        "text": "Tekočine delimo na dve glavni skupini glede na stisljivost in molekularno ure"
+      }, {
+        "text": "jenost:\n\n1.  **Kapljevine (npr. voda):**\n    *   Gostota ($\\rho$) je vel"
+      }, {
+        "text": "ika (cca $1000 \\text{ kg/m}^3$ za vodo).\n    *   "
+      }, {
+        "text": "So praktično **nestisljive** (volumen se s tlakom zelo malo spreminja).\n    *   T"
+      }, {
+        "text": "vorijo gladino (površino) v posodi.\n    *   Molekule so blizu skupaj (vezen"
+      }, {
+        "text": "o stanje), a nimajo stalnega mesta.\n2.  **Plini (npr. zrak):**"
+      }, {
+        "text": "\n    *   Gostota je majhna (cca $1 \\text{ kg/m}^3$ za zrak - "
+      }, {
+        "text": "1000x manjša od vode).\n    *   So **stisljivi**.\n    *   Zapolnijo"
+      }, {
+        "text": " celotno posodo (ne tvorijo gladine).\n    *   Potencialna energija med molekulami je zan"
+      }, {
+        "text": "emarljiva (prosto gibanje).\n\n---\n\n## 2. Tlak ($p$)\n\nTlak definir"
+      }, {
+        "text": "amo kot razmerje med silo, ki deluje pravokotno na površino, in velikostjo te površine."
+      }, {
+        "text": "\n\n$$ p \u003d \\frac{F}{S} $$\n\n**Enote:**\n*   Osnovna enota: **"
+      }, {
+        "text": "Pascal (Pa)**\n    $$ 1 \\text{ Pa} \u003d 1 \\frac{\\text{N}}{\\"
+      }, {
+        "text": "text{m}^2} \u003d 1 \\frac{\\text{kg}}{\\text{m s}^2} $$\n*   Iz"
+      }, {
+        "text": "peljane/druge enote:\n    *   **bar:** $1 \\text{ bar} \u003d 10"
+      }, {
+        "text": "^5 \\text{ Pa}$ (približno en atmosferski tlak).\n    *   **tor"
+      }, {
+        "text": "r (mm Hg):** $1 \\text{ torr} \\approx 133 \\text{ Pa}$ (up"
+      }, {
+        "text": "oraba v medicini - krvni tlak).\n    *   **psi (pound per square inch):** Imperial"
+      }, {
+        "text": "na enota (pnevmatike).\n\n\u003e [!NOTE] Opomba tutorja: Skalarnost tl"
+      }, {
+        "text": "aka\n\u003e Čeprav je sila ($F$) vektor, je tlak ($p$) **skalar**. Tlak"
+      }, {
+        "text": " v točki deluje v vse smeri enako (Pascalov zakon). Smer dobi šele, ko definir"
+      }, {
+        "text": "amo površino, na katero deluje (sila je vedno pravokotna na to površino).\n\n---\n\n## "
+      }, {
+        "text": "3. Hidrostatski tlak\n\nKako se tlak spreminja z globino v mirujoči tekočini?"
+      }, {
+        "text": "\n\n### Izpeljava (Reverse Engineering)\n*Motivacija:* Zakaj nas v ušesih tišči, ko se potop"
+      }, {
+        "text": "imo globlje? Ker teža vode nad nami pritiska navzdol.\n\n**Miselni pos"
+      }, {
+        "text": "kus:**\nZamislimo si navpičen stolpec (prizmo) tekočine v mirujoči vodi"
+      }, {
+        "text": ". Ker tekočina miruje, mora biti vsota vseh sil na ta stolpec enaka 0.\n\n**"
+      }, {
+        "text": "Sile, ki delujejo na stolpec:**\n1.  Sila tlaka od zgoraj nav"
+      }, {
+        "text": "zdol: $F_{zg} \u003d p(z_2) \\cdot S$\n2.  Sila tlaka od spodaj"
+      }, {
+        "text": " navzgor: $F_{sp} \u003d p(z_1) \\cdot S$\n3.  "
+      }, {
+        "text": "Teža stolpca tekočine: $F_g \u003d m \\cdot g \u003d (\\rho \\cdot V)"
+      }, {
+        "text": " \\cdot g \u003d \\rho \\cdot S \\cdot h \\cdot g$ (kjer je $h \u003d z_2"
+      }, {
+        "text": " - z_1$)\n\n**Ravnovesna enačba:**\n$$ F_{sp} - F_{"
+      }, {
+        "text": "zg} - F_g \u003d 0 $$\n$$ p(z_1) S - p(z_2) S"
+      }, {
+        "text": " - \\rho S (z_2 - z_1) g \u003d 0 $$\n\nDelimo s plos"
+      }, {
+        "text": "kvijo $S$:\n$$ p(z_1) - p(z_2) \u003d \\rho g"
+      }, {
+        "text": " (z_2 - z_1) $$\n\nČe označimo globino $h$, dobimo splošno enačbo za"
+      }, {
+        "text": " hidrostatski tlak:\n\n$$ p \u003d p_0 + \\rho g h $$\n\nKjer je:\n*   $p$: absolut"
+      }, {
+        "text": "ni tlak na globini $h$.\n*   $p_0$: zunanji (atmosferski) tlak na"
+      }, {
+        "text": " gladini.\n*   $\\rho g h$: hidrostatski dodatek.\n\n\u003e [!WARNING] O"
+      }, {
+        "text": "pozorilo: Hidrostatski paradoks\n\u003e Tlak je odvisen **samo od globine**"
+      }, {
+        "text": " ($h$) in gostote tekočine ($\\rho$), **ne pa od oblike posode**. V vseh pove"
+      }, {
+        "text": "zanih posodah (komunikacijskih posodah) bo gladina na isti višini, ne glede na to"
+      }, {
+        "text": ", kako široka ali zavita je posoda.\n\n---\n\n## 4. Merjenje tlaka\n\n### 4.1 Od"
+      }, {
+        "text": "prti manometer (U-cevka)\nUporablja se za merjenje razlike tlakov.\n*   E"
+      }, {
+        "text": "na stran je odprta (atmosferski tlak $p_0$).\n*   Druga stran je priključena na merjen sistem"
+      }, {
+        "text": " ($p$).\n*   Razlika v višini stolpca tekočine ($h$) nam pove tlačno razliko."
+      }, {
+        "text": "\n\n$$ \\Delta p \u003d p - p_0 \u003d \\rho g h $$\n\n### 4.2 Bar"
+      }, {
+        "text": "ometer (Torricellijev poskus)\nUporablja se za merjenje atmosferskega tlaka.\n*   Cevko"
+      }, {
+        "text": " napolnimo z živim srebrom (Hg) in jo obrnemo v posodo z Hg"
+      }, {
+        "text": ".\n*   Na vrhu cevke nastane vakuum ($p \\approx 0$).\n*   Z"
+      }, {
+        "text": "unanji tlak drži stolpec tekočine pokonci.\n\n$$ p_{atm} \u003d \\rho_{Hg} g"
+      }, {
+        "text": " h $$\n\n*Zakaj živo srebro?*\n$$ \\rho_{Hg} \\approx 13600 \\text{"
+      }, {
+        "text": " kg/m}^3 \\quad \\text{vs.} \\quad \\rho_{H_2O} \\approx 1"
+      }, {
+        "text": "000 \\text{ kg/m}^3 $$\nZaradi velike gostote je stolpec Hg visok"
+      }, {
+        "text": " le cca 760 mm (0,76 m) za 1 atm. Če bi uporabili vodo,"
+      }, {
+        "text": " bi morala biti cevka visoka cca 10 metrov!\n\n$$ 1 \\text{ atm} \u003d"
+      }, {
+        "text": " 1013 \\text{ hPa} \u003d 760 \\text{ mm Hg} $$\n\n---\n\n## 5."
+      }, {
+        "text": " Pascalov princip (Hidravlika)\n\nTlak v zaprti tekočini se širi **neome"
+      }, {
+        "text": "jeno in enakomerno** v vse smeri.\n\n### Hidravlična stiskalnica\nImamo dva bata"
+      }, {
+        "text": " različnih površin ($S_1$ in $S_2$), povezana s tekočino.\nČ"
+      }, {
+        "text": "e na manjšega pritisnemo s silo $F_1$, se tlak prenese na večjega.\n\n$$ p_1"
+      }, {
+        "text": " \u003d p_2 \\implies \\frac{F_1}{S_1} \u003d \\frac{F_2}{S_2}"
+      }, {
+        "text": " $$\n\nIz tega sledi ojačitev sile:\n$$ F_2 \u003d F_1 \\frac{S_2}{S_1"
+      }, {
+        "text": "} $$\n\n\u003e [!CRITICAL] Analiza: Delo se ohranja\n\u003e Ne dobimo \"energ"
+      }, {
+        "text": "ije iz nič\". Čeprav je sila $F_2$ večja, je premik $d_2$ ust"
+      }, {
+        "text": "rezno manjši.\n\u003e $$ W_1 \u003d W_2 \\implies F_1 d_1 \u003d F_2 d_"
+      }, {
+        "text": "2 $$\n\u003e Volumen prečrpane tekočine je konstanten: $S_1 d_1 \u003d S_"
+      }, {
+        "text": "2 d_2$.\n\n---\n\n## 6. Vzgon (Archimedov zakon)\n\nVsako telo, potopljeno v"
+      }, {
+        "text": " tekočino, občuti silo navzgor, ki je enaka teži izpodrinjene tekočine.\n\n###"
+      }, {
+        "text": " Izpeljava iz tlaka\nSila vzgona je posledica tlačne razlike med spodnjim in zgornjim del"
+      }, {
+        "text": "om telesa.\n*   Tlak zgoraj: $p_1 \u003d p_0 + \\rho g h"
+      }, {
+        "text": "_1$\n*   Tlak spodaj: $p_2 \u003d p_0 + \\rho g h"
+      }, {
+        "text": "_2$\n\nSila vzgona $F_{vzgon}$ je rezultanta sil v vertikalni smeri:\n$$ F"
+      }, {
+        "text": "_{vzgon} \u003d F_{sp} - F_{zg} \u003d p_2 S - p_1 S"
+      }, {
+        "text": " $$\n$$ F_{vzgon} \u003d (p_2 - p_1) S \u003d \\rho g (h_2 - h"
+      }, {
+        "text": "_1) S $$\nKer je $(h_2 - h_1) S \u003d V$ (volumen potopljenega dela"
+      }, {
+        "text": " telesa):\n\n$$ F_{vzgon} \u003d \\rho_{tekočine} \\cdot g \\cdot V_{pod}"
+      }, {
+        "text": " $$\n\n\u003e [!WARNING] Pozor pri nalogah!\n\u003e V formuli za vzgon nastopa **gostota te"
+      }, {
+        "text": "kočine** ($\\rho_{tekočine}$), ne gostota telesa! Gostota telesa nast"
+      }, {
+        "text": "opa le pri sili teže ($F_g \u003d m g \u003d \\rho_{telesa} V g$).\n\n### Primer"
+      }, {
+        "text": ": Ledena gora\n*   Gostota ledu: $\\rho_{led} \\approx 900"
+      }, {
+        "text": " \\text{ kg/m}^3$\n*   Gostota vode: $\\rho_{voda} \\approx 1000 \\"
+      }, {
+        "text": "text{ kg/m}^3$\n*   Ravnovesje (plavanje): $F_g \u003d F_{"
+      }, {
+        "text": "vzgon}$\n    $$ \\rho_{led} V_{cel} g \u003d \\rho_{voda} V_{pod} g $$\n    "
+      }, {
+        "text": "$$ \\frac{V_{pod}}{V_{cel}} \u003d \\frac{\\rho_{led}}{\\rho_{voda"
+      }, {
+        "text": "}} \\approx 0,9 $$\n    **Rezultat:** 90 % ledene gore je pod vodo."
+      }, {
+        "text": "\n\n---\n\n## 7. Dodatne lastnosti tekočin\n\n### 7.1 Stisljiv"
+      }, {
+        "text": "ost ($\\chi$)\nPove, kako se relativno spremeni volumen pri spremembi tlaka.\n$$"
+      }, {
+        "text": " \\chi \u003d - \\frac{1}{V} \\frac{dV}{dp} $$\n*   Minus je"
+      }, {
+        "text": " zato, ker povečanje tlaka ($dp \u003e 0$) povzroči zmanjšanje volumna ($dV \u003c 0$)."
+      }, {
+        "text": "\n*   Voda: $\\chi \\approx 5 \\cdot 10^{-10} \\text{ Pa}^{-1}$"
+      }, {
+        "text": " (zelo majhna -\u003e nestisljiva).\n*   Plini: Zelo velika stisljivost (B"
+      }, {
+        "text": "oyle-Mariottov zakon: $p V \u003d \\text{konst} \\implies V \\propto 1/p$).\n\n"
+      }, {
+        "text": "### 7.2 Viskoznost ($\\eta$)\nNotranje trenje v tekočini. Nast"
+      }, {
+        "text": "opi, ko se plasti tekočine gibljejo z različnimi hitrostmi (strižna deform"
+      }, {
+        "text": "acija).\n$$ F \u003d \\eta S \\frac{dv}{dz} $$\n*   $\\frac{dv}{dz}$: gradient"
+      }, {
+        "text": " hitrosti.\n*   Enota: $\\text{Pa s}$ (Pascal sekunda).\n*   Primer"
+      }, {
+        "text": ": Med ima visoko viskoznost, voda nizko.\n\n### 7.3 Površinska napetost ($\\gamma"
+      }, {
+        "text": "$)\nSila, s katero gladina tekočine drži skupaj (zaradi kohezij"
+      }, {
+        "text": "skih sil med molekulami).\nDeluje kot tanka prožna membrana na površini.\n$$ F \u003d \\gamma \\cdot l"
+      }, {
+        "text": " $$\n*   $l$: dolžina roba, na katerega deluje sila.\n*   E"
+      }, {
+        "text": "nota: N/m.\n*   Posledica: Kapljice so okrogle (minimalna površina), ž"
+      }, {
+        "text": "uželke hodijo po vodi.\n\n---\n\n## 8. Povzetek formul za reševanje nalog\n\n| K"
+      }, {
+        "text": "oličina | Formula | Opomba |\n| :--- | :--- | :--- |\n| **Gostota** | $\\"
+      }, {
+        "text": "rho \u003d \\frac{m}{V}$ | $\\text{kg/m}^3$ |\n| **Tlak"
+      }, {
+        "text": "** | $p \u003d \\frac{F}{S}$ | $F \\perp S$ |\n| **Hid"
+      }, {
+        "text": "rostatski tlak** | $p \u003d p_0 + \\rho g h$ | $\\rho$ tekočine |\n| **Hid"
+      }, {
+        "text": "ravlika** | $F_1 S_2 \u003d F_2 S_1$ | Ohranitev tl"
+      }, {
+        "text": "aka |\n| **Vzgon** | $F_{vz} \u003d \\rho_{tek} g V_{pod}$ | Nas"
+      }, {
+        "text": "protuje teži |\n| **Stisljivost** | $\\frac{\\Delta V}{V} \u003d -\\chi \\Delta p"
+      }, {
+        "text": "$ | Za majhne spremembe |\n\n---\n\n### Povezave na snov\n*   Naprej na"
+      }, {
+        "text": ": [[Bernoullijeva enačba]] (Hidrodinamika - tekočine v gibanju)"
+      }, {
+        "text": "\n*   Povezano z: [[Termodinamika]] (Plinska enačba)"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

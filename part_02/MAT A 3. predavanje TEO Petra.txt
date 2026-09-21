@@ -1,0 +1,393 @@
+# 3. Predavanje: Realne funkcije
+
+## [[3.1 Preslikave]]
+
+### [[Definicija preslikave]]
+Preslikava `f` je pravilo, ki vsakemu elementu `a` iz množice `A` priredi natanko en element `b` iz množice `B`. To zapišemo kot:
+$f: A \to B$
+Element `b` je slika elementa `a`, kar zapišemo kot `b = f(a)`.
+
+*   **A**: Domena (originali ali argumenti)
+*   **B**: Kodomena (slike)
+
+**Memorialization:** Predavanje se je začelo z osnovno definicijo preslikav, poudarek je bil na tem, da *vsak* element iz domene mora imeti sliko.
+
+**Pogoj za preslikavo:**
+Vsak element iz množice `A` mora imeti **natanko eno** sliko v množici `B`.
+
+*   **Primer, ki JE preslikava:**
+    
+    *Vsak element iz A ima sliko v B. Element a 3 nima slike, kar pomeni, da to ni preslikava.*
+
+*   **Popravljen primer, ki JE preslikava:**
+    
+    *Zdaj ima vsak element iz A sliko. Ni pomembno, da se a 2 in a 3 preslikata v isti element (b 1).*
+
+**Kritična Analiza:** Ključna besedna zveza je "natanko en". To pomeni, da en original ne more imeti dveh različnih slik. Vendar pa je povsem dovoljeno, da dva različna originala imata isto sliko. To bo postalo pomembno pri razpravi o injektivnosti.
+
+### [[Enakost preslikav]]
+Dve preslikavi, $f: A \to B$ in $g: A \to B$, sta enaki, če velja $f(a) = g(a)$ za vsak $a \in A$.
+
+**Primer:** Ali sta funkciji $f(x) = x+2$ in $g(x) = \frac{x^2-4}{x-2}$ enaki?
+
+**Analiza:**
+1.  **Predpis za f(x):** $f(x) = x+2$. Definicijsko območje je $D_f = \mathbb{R}$.
+2.  **Predpis za g(x):** $g(x) = \frac{x^2-4}{x-2} = \frac{(x-2)(x+2)}{x-2}$.
+    *   **Opozorilo:** Preden krajšamo ulomek, moramo določiti definicijsko območje. Imenovalec ne sme biti enak 0, torej $x-2 \neq 0 \Rightarrow x \neq 2$.
+    *   Definicijsko območje za `g` je $D_g = \mathbb{R} \setminus \{2\}$.
+    *   Za vse $x \in D_g$ lahko krajšamo in dobimo $g(x) = x+2$.
+
+**Zaključek:** Funkciji **nista enaki**, ker nimata istega definicijskega območja ($D_f \neq D_g$). Funkcija `g` v točki `x=2` ni definirana, medtem ko `f` je.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Podatki za f(x)
+x_f = np.linspace(-5, 5, 400)
+y_f = x_f + 2
+
+# Podatki za g(x)
+x_g = np.linspace(-5, 5, 400)
+y_g = (x_g**2 - 4) / (x_g - 2)
+
+# Izris grafa
+plt.figure(figsize=(10, 6))
+plt.plot(x_f, y_f, label=r'$f(x) = x+2$', color='blue', linewidth=2)
+# Točka, kjer g(x) ni definirana
+plt.plot(2, 4, 'o', markerfacecolor='white', markeredgecolor='red', markersize=8, label=r'Točka nezveznosti za $g(x)$ pri $x=2$')
+
+plt.title('Primerjava funkcij f(x) in g(x)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
+plt.legend()
+plt.show()
+```
+
+![[Figure_8.png]]
+**Opomba:** Graf funkcije `g(x)` je identičen grafu `f(x)`, le da ima "luknjo" v točki (2, 4).
+
+---
+
+### [[Lastnosti preslikav]]
+
+#### [[Surjektivnost]]
+Preslikava $f: A \to B$ je **surjektivna**, če je vsak element v kodomeni `B` slika vsaj enega elementa iz domene `A`.
+Formalno: $\forall b \in B, \exists a \in A : f(a) = b$.
+
+*   **Zaloga vrednosti ($Z_f$)**: Množica vseh slik elementov iz `A`. $Z_f = \{f(a) | a \in A\}$.
+*   Preslikava `f` je surjektivna natanko takrat, ko je njena zaloga vrednosti enaka celotni kodomeni: $Z_f = B$.
+
+*   **Primer (ni surjektivna):**
+    
+    *Element b 3 ni slika nobenega elementa iz A.* $Z_f=\{b_1, b_2\} \neq B$.
+
+*   **Primer (je surjektivna):**
+    
+    *Vsak element v B je slika vsaj enega elementa iz A.* $Z_f = \{b_1, b_2\} = B$.
+
+#### [[Injektivnost]]
+Preslikava $f: A \to B$ je **injektivna**, če se poljubna različna elementa iz `A` preslikata v različna elementa v `B`.
+Formalno: $\forall a_1, a_2 \in A, a_1 \neq a_2 \implies f(a_1) \neq f(a_2)$.
+
+*   **Primer (ni injektivna):**
+    
+    *Različna elementa a 2 in a 3 se preslikata v isti element b 1.*
+
+*   **Primer (je injektivna):**
+    
+    *Vsak element iz A se preslika v unikaten element v B.*
+
+#### [[Bijektivnost]]
+Preslikava $f: A \to B$ je **bijektivna**, če je hkrati **surjektivna in injektivna**.
+To pomeni: $\forall b \in B, \exists! a \in A : f(a) = b$. (Za vsak b obstaja natanko en a).
+
+**Kritična Analiza:** Bijektivna preslikava ustvari popolno "parčkanje" ena-na-ena med elementi množic A in B. To je nujen pogoj za obstoj inverzne preslikave, saj moramo imeti možnost, da se iz vsake slike v B enolično vrnemo nazaj do njenega originala v A.
+
+---
+## [[Graf preslikave]]
+
+Graf preslikave $f: A \to B$, označen z $\Gamma_f$, je množica vseh urejenih parov $(a, f(a))$, kjer je $a \in A$.
+$\Gamma_f = \{ (a, f(a)) \mid a \in A \}$
+
+**Primer 1 (diskretni):**
+Za preslikavo:
+je graf: $\Gamma_f = \{ (a_1, b_2), (a_2, b_1), (a_3, b_1) \}$
+
+**Primer 2 (realne funkcije):**
+a) $f: \mathbb{R} \to \mathbb{R}, f(x)=x^2$
+$\Gamma_f = \{ (x, x^2) \mid x \in \mathbb{R} \}$. To je parabola.
+
+b) $f: \mathbb{N} \to \mathbb{N}, f(n)=n^2$
+$\Gamma_f = \{ (n, n^2) \mid n \in \mathbb{N} \} = \{ (1,1), (2,4), (3,9), \dots \}$. To so diskretne točke.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# a) f(x) = x^2
+x_real = np.linspace(-3, 3, 100)
+y_real = x_real**2
+
+# b) f(n) = n^2
+n_natural = np.array([1, 2, 3, 4, 5])
+y_natural = n_natural**2
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# Graf za f: R -> R
+ax1.plot(x_real, y_real, label=r'$f(x) = x^2, x \in \mathbb{R}$')
+ax1.set_title(r'Graf funkcije $f: \mathbb{R} \to \mathbb{R}$')
+ax1.grid(True)
+ax1.legend()
+
+# Graf za f: N -> N
+ax2.plot(n_natural, y_natural, 'o', label=r'$f(n) = n^2, n \in \mathbb{N}$')
+ax2.set_title(r'Graf funkcije $f: \mathbb{N} \to \mathbb{N}$')
+ax2.set_xticks(n_natural)
+ax2.grid(True)
+ax2.legend()
+
+plt.show()```
+![[Figure_9.png]]
+
+---
+## [[Kompozitum (sestava) preslikav]]
+Če imamo preslikavi $f: A \to B$ in $g: B \to C$, je njun kompozitum (sestava) preslikava $g \circ f: A \to C$, definirana s predpisom:
+$(g \circ f)(x) = g(f(x))$
+
+**Shematski prikaz:**
+$A \xrightarrow{f} B \xrightarrow{g} C$
+$x \mapsto f(x) \mapsto g(f(x))$
+
+**Primer:**
+Naj bosta $f: \mathbb{R} \to \mathbb{R}$ in $g: \mathbb{R} \to \mathbb{R}$ podani z:
+$f(x) = x^2 - 2$
+$g(x) = e^{3x+1}$
+
+1.  **Izračunaj $(g \circ f)(x)$:**
+    $(g \circ f)(x) = g(f(x)) = g(x^2 - 2) = e^{3(x^2-2)+1} = e^{3x^2-6+1} = e^{3x^2-5}$
+
+2.  **Izračunaj $(f \circ g)(x)$:**
+    $(f \circ g)(x) = f(g(x)) = f(e^{3x+1}) = (e^{3x+1})^2 - 2 = e^{2(3x+1)} - 2 = e^{6x+2} - 2$
+
+**Opozorilo:** Očitno je, da $(g \circ f)(x) \neq (f \circ g)(x)$. Kompozitum preslikav **ni komutativen**.
+
+**Asociativnost:**
+Za kompozitum velja asociativnost: $(f \circ g) \circ h = f \circ (g \circ h)$.
+
+---
+## [[Inverzna preslikava]]
+Naj bo $f: A \to B$ **bijektivna** preslikava. Potem obstaja natanko ena preslikava $g: B \to A$ taka, da velja:
+$g \circ f = I_A$ in $f \circ g = I_B$.
+
+*   $I_A$ je **identična preslikava** na množici `A`, definirana kot $I_A(a)=a$ za vsak $a \in A$.
+*   Preslikavo `g` imenujemo **inverzna preslikava** od `f` in jo označimo z $f^{-1}$.
+
+**Definicija inverza:**
+Če $f(a) = b$, potem definiramo $g(b) = a$.
+Ker je `f` bijektivna, je `g` dobro definirana in je prav tako bijektivna.
+
+**Preverimo pogoje:**
+1.  $(g \circ f)(a) = g(f(a)) = g(b) = a$. To velja za vse $a \in A$, torej $g \circ f = I_A$.
+2.  $(f \circ g)(b) = f(g(b)) = f(a) = b$. To velja za vse $b \in B$, torej $f \circ g = I_B$.
+
+**Graf inverzne preslikave:**
+Če je $(a,b)$ točka na grafu $\Gamma_f$, potem je $(b,a)$ točka na grafu $\Gamma_{f^{-1}}$. Geometrijsko to pomeni, da je graf inverzne funkcije zrcalna slika grafa originalne funkcije preko simetrale lihih kvadrantov ($y=x$).
+
+---
+## [[Pregled elementarnih funkcij]]
+
+### [[Trigonometrične (kotne) funkcije]]
+**Osnovne zveze:**
+*   $\sin^2 x + \cos^2 x = 1$
+*   $\tan^2 x + 1 = \frac{\sin^2 x}{\cos^2 x} + 1 = \frac{\sin^2 x + \cos^2 x}{\cos^2 x} = \frac{1}{\cos^2 x}$
+*   $\cot^2 x + 1 = \frac{1}{\sin^2 x}$
+
+**Adicijski izreki:**
+*   $\sin(x \pm y) = \sin x \cos y \pm \cos x \sin y$
+*   $\cos(x \pm y) = \cos x \cos y \mp \sin x \sin y$
+
+**Dvojni koti:**
+*   $\cos(2x) = \cos(x+x) = \cos x \cos x - \sin x \sin x = \cos^2 x - \sin^2 x$
+*   $\sin(2x) = \sin(x+x) = \sin x \cos x + \cos x \sin x = 2 \sin x \cos x$
+
+### [[Ciklometrične (krožne) funkcije]]
+To so inverzne funkcije trigonometričnih funkcij.
+
+#### [[Arkus sinus]]
+*   Originalna funkcija je $f(x) = \sin x$. Ta funkcija ni bijektivna na celotnem $\mathbb{R}$.
+*   **Omejitev:** Da bi postala bijektivna, jo omejimo. Standardna omejitev je na interval $[-\frac{\pi}{2}, \frac{\pi}{2}]$.
+    $f: [-\frac{\pi}{2}, \frac{\pi}{2}] \to [-1, 1]$ je bijekcija.
+*   **Inverzna funkcija:** $f^{-1}(x) = \arcsin x$.
+    $f^{-1}: [-1, 1] \to [-\frac{\pi}{2}, \frac{\pi}{2}]$.
+
+**Zveze med kompozitumi:**
+1.  $(f^{-1} \circ f)(x) = \arcsin(\sin x) = x$, velja za $x \in [-\frac{\pi}{2}, \frac{\pi}{2}]$
+2.  $(f \circ f^{-1})(x) = \sin(\arcsin x) = x$, velja za $x \in [-1, 1]$
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-np.pi/2, np.pi/2, 400)
+y_sin = np.sin(x)
+
+x_arcsin = np.linspace(-1, 1, 400)
+y_arcsin = np.arcsin(x_arcsin)
+
+plt.figure(figsize=(8, 8))
+plt.plot(x, y_sin, label=r'$y = \sin(x)$ on $[-\pi/2, \pi/2]$', color='blue')
+plt.plot(x_arcsin, y_arcsin, label=r'$y = \arcsin(x)$ on $[-1, 1]$', color='red')
+plt.plot(x_arcsin, x_arcsin, '--', color='gray', label='y=x')
+
+plt.title('Graf funkcije sin(x) in njene inverzne funkcije arcsin(x)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(True)
+plt.legend()
+plt.axis('equal')
+plt.show()
+```
+![[Figure_10.png]]
+
+---
+## [[Osnovne lastnosti funkcij]]
+
+### [[Sodost in lihost (Pariteta)]]
+Funkcija `f` je definirana na simetričnem intervalu `D` (npr. `(-a, a)`).
+*   **Soda funkcija:** če velja $f(-x) = f(x)$ za vsak $x \in D$. Graf je simetričen glede na y-os.
+*   **Liha funkcija:** če velja $f(-x) = -f(x)$ za vsak $x \in D$. Graf je simetričen glede na izhodišče.
+    *   **Posledica za lihe funkcije:** Če je `0` v domeni, potem $f(0) = -f(0) \implies 2f(0)=0 \implies f(0)=0$. Liha funkcija vedno poteka skozi izhodišče.
+
+### [[Omejenost]]
+Funkcija $f: D_f \to \mathbb{R}$ je **omejena**, če je njena zaloga vrednosti $Z_f$ omejena množica. To pomeni, da obstajata realni števili `m` (spodnja meja) in `M` (zgornja meja), tako da za vsak $x \in D_f$ velja $m \le f(x) \le M$.
+
+### [[Monotonost]]
+Naj bo `f` definirana na območju `I`.
+*   **Naraščajoča:** $x_1 < x_2 \implies f(x_1) \le f(x_2)$
+*   **Strogo naraščajoča:** $x_1 < x_2 \implies f(x_1) < f(x_2)$
+*   **Padajoča:** $x_1 < x_2 \implies f(x_1) \ge f(x_2)$
+*   **Strogo padajoča:** $x_1 < x_2 \implies f(x_1) > f(x_2)$
+
+---
+
+## [[Zveze med ciklometričnimi funkcijami]]
+
+#### [[Arkus kosinus]]
+*   **Originalna funkcija:** $f(x) = \cos x$. Ta funkcija, tako kot sinus, ni bijektivna na celotnem $\mathbb{R}$, saj je periodična in zato ni injektivna.
+*   **Omejitev:** Da bi ustvarili bijekcijo, funkcijo kosinus standardno omejimo na interval $[0, \pi]$. Na tem intervalu funkcija strogo pada in zavzame vse vrednosti od 1 do -1.
+    $f: [0, \pi] \to [-1, 1]$ je bijekcija.
+*   **Inverzna funkcija:** Inverz te omejene funkcije je $f^{-1}(x) = \arccos x$.
+    $f^{-1}: [-1, 1] \to [0, \pi]$.
+
+**Zveze med kompozitumi:**
+1.  $(f^{-1} \circ f)(x) = \arccos(\cos x) = x$, velja za $x \in [0, \pi]$
+2.  $(f \circ f^{-1})(x) = \cos(\arccos x) = x$, velja za $x \in [-1, 1]$
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x_cos = np.linspace(0, np.pi, 400)
+y_cos = np.cos(x_cos)
+
+x_arccos = np.linspace(-1, 1, 400)
+y_arccos = np.arccos(x_arccos)
+
+plt.figure(figsize=(8, 8))
+plt.plot(x_cos, y_cos, label=r'$y = \cos(x)$ on $[0, \pi]$', color='blue')
+plt.plot(x_arccos, y_arccos, label=r'$y = \arccos(x)$ on $[-1, 1]$', color='red')
+plt.plot(x_arccos, x_arccos, '--', color='gray', label='y=x')
+
+plt.title('Graf funkcije cos(x) in njene inverzne funkcije arccos(x)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(True)
+plt.legend()
+plt.axis('equal')
+plt.show()
+```
+![[Figure_1-2.png]]
+#### [[Arkus tangens]]
+*   **Originalna funkcija:** $f(x) = \tan x = \frac{\sin x}{\cos x}$. Definirana je za $x \neq \frac{\pi}{2} + k\pi, k \in \mathbb{Z}$. Ni bijektivna.
+*   **Omejitev:** Standardno jo omejimo na eno vejo, in sicer na odprti interval $(-\frac{\pi}{2}, \frac{\pi}{2})$. Na tem intervalu je funkcija strogo naraščajoča.
+    $f: (-\frac{\pi}{2}, \frac{\pi}{2}) \to \mathbb{R}$ je bijekcija.
+*   **Inverzna funkcija:** $f^{-1}(x) = \arctan x$.
+    $f^{-1}: \mathbb{R} \to (-\frac{\pi}{2}, \frac{\pi}{2})$.
+
+**Zveze med kompozitumi:**
+1.  $(f^{-1} \circ f)(x) = \arctan(\tan x) = x$, velja za $x \in (-\frac{\pi}{2}, \frac{\pi}{2})$
+2.  $(f \circ f^{-1})(x) = \tan(\arctan x) = x$, velja za $x \in \mathbb{R}$
+
+#### [[Arkus kotangens]]
+*   **Originalna funkcija:** $f(x) = \cot x = \frac{\cos x}{\sin x}$. Definirana je za $x \neq k\pi, k \in \mathbb{Z}$. Ni bijektivna.
+*   **Omejitev:** Standardno jo omejimo na interval $(0, \pi)$, kjer je funkcija strogo padajoča.
+    $f: (0, \pi) \to \mathbb{R}$ je bijekcija.
+*   **Inverzna funkcija:** $f^{-1}(x) = \text{arccot} \, x$.
+    $f^{-1}: \mathbb{R} \to (0, \pi)$.
+
+**Zveze med kompozitumi:**
+1.  $(f^{-1} \circ f)(x) = \text{arccot}(\cot x) = x$, velja za $x \in (0, \pi)$
+2.  $(f \circ f^{-1})(x) = \cot(\text{arccot} \, x) = x$, velja za $x \in \mathbb{R}$
+
+---
+### [[Zveze med ciklometričnimi funkcijami]]
+Obstajata dve pomembni identiteti, ki povezujeta ciklometrične funkcije.
+
+#### [[Zveza med arcsin in arccos]]
+Za vsak $x \in [-1, 1]$ velja:
+$\arcsin x + \arccos x = \frac{\pi}{2}$
+
+**Dokaz in utemeljitev:**
+1.  **Definicija:** Naj bo $y = \arcsin x$. Po definiciji inverzne funkcije to pomeni, da je $\sin y = x$ in $y \in [-\frac{\pi}{2}, \frac{\pi}{2}]$.
+2.  **Uporaba komplementarnih kotov:** Vemo, da za komplementarna kota velja zveza $\cos(\frac{\pi}{2} - y) = \sin y$.
+3.  **Zamenjava:** Ker je $\sin y = x$, lahko zamenjamo in dobimo $\cos(\frac{\pi}{2} - y) = x$.
+4.  **Uporaba inverzne funkcije arccos:** Zdaj na obeh straneh enačbe uporabimo funkcijo $\arccos$.
+    $\arccos(\cos(\frac{\pi}{2} - y)) = \arccos x$.
+5.  **Poenostavitev:** Ker argument $\frac{\pi}{2} - y$ leži na intervalu $[0, \pi]$ (saj je $y \in [-\frac{\pi}{2}, \frac{\pi}{2}]$), se $\arccos$ in $\cos$ "izničita" in dobimo:
+    $\frac{\pi}{2} - y = \arccos x$.
+6.  **Končni korak:** Vstavimo nazaj $y = \arcsin x$ in dobimo $\frac{\pi}{2} - \arcsin x = \arccos x$. Ko preuredimo člene, dobimo želeno identiteto.
+
+#### [[Zveza med arctan in arccot]]
+Za vsak $x \in \mathbb{R}$ velja:
+$\arctan x + \text{arccot} \, x = \frac{\pi}{2}$
+
+**Opomba k dokazu:** Dokaz je povsem analogen prejšnjemu. Izhajamo iz $y = \arctan x$, uporabimo zvezo za komplementarne kote $\cot(\frac{\pi}{2} - y) = \tan y$ in sledimo istim korakom.
+
+---
+### [[Conceptual Strengthening Tasks]]
+
+1.  **Naloga:** Poenostavi izraz $\sin(\arccos x)$ brez uporabe ciklometričnih ali trigonometričnih funkcij.
+    *   **Namig:** Uporabi identiteto $\sin^2 y + \cos^2 y = 1$ in substitucijo $y = \arccos x$. Pazi na predznak, glede na zalogo vrednosti funkcije arccos.
+
+2.  **Naloga:** Izračunaj točno vrednost izraza $\tan(\arcsin(\frac{3}{5}))$.
+    *   **Namig:** Nariši pravokotni trikotnik. Če je $\theta = \arcsin(\frac{3}{5})$, potem je $\sin \theta = \frac{3}{5}$. Določi stranice trikotnika in izračunaj $\tan \theta$.
+
+3.  **Izziv:** Dana je enačba $\arccos x = 2 \arcsin x$.
+    a) Uporabi zvezo $\arcsin x + \arccos x = \frac{\pi}{2}$ in reši enačbo za $\arcsin x$.
+    b) Izračunaj $x$.
+    c) Preveri, ali rešitev ustreza definicijskim območjem udeleženih funkcij.
+### [[Conceptual Strengthening Tasks]]
+
+1.  **Naloga:** Dani sta funkciji $f(x) = \sqrt{x-1}$ in $g(x) = x^2+1$.
+    a) Določi definicijski območji $D_f$ in $D_g$.
+    b) Izračunaj kompozituma $(f \circ g)(x)$ in $(g \circ f)(x)$.
+    c) Določi definicijski območji za oba kompozituma. Ali sta enaka?
+
+2.  **Naloga:** Funkcija $f(x) = (x-2)^2$ ni injektivna na $\mathbb{R}$.
+    a) Določi največji možen interval, ki vsebuje točko $x=3$, na katerem je funkcija `f` strogo monotona (in zato injektivna).
+    b) Na tem intervalu poišči inverzno funkcijo $f^{-1}(x)$.
+    c) Nariši grafa $f(x)$ na skrčenem intervalu in $f^{-1}(x)$ v istem koordinatnem sistemu.
+
+3.  **Izziv:** Razmisli o funkciji $h(x) = \cos(\arcsin x)$.
+    a) Določi definicijsko območje funkcije `h`.
+    b) Uporabi osnovno trigonometrično identiteto $\sin^2 y + \cos^2 y = 1$. Vstavi $y = \arcsin x$ in izrazi $h(x)$ kot algebraično funkcijo (brez kotnih ali ciklometričnih funkcij).
+    c) Kakšna je zaloga vrednosti funkcije $h(x)$? Ali je soda ali liha? Utemelji.

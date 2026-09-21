@@ -1,0 +1,391 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n4. Numbering. If you can\u0027t read the chronological order of the image or page, then there\u0027s a number on the bottom right corner indicating the page. \n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1OsEY0QJiduezDnFSUF89ZdJkoplRzUaS"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1dsKYh57t1iiKjAHEUDSludoV8dmNJ7nQ"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1hyJY8tiSTKeSh-sXBJQRMrx_NRA0wVE7"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "19qZ9_xUO2z2lkX8AhhMsFe8gs5PiJvq1"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1_wUp6-N0d0zkCFX5Bd-KQaUjGwad3Iik"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1P_BAmiLoK31Wi_HGRESiBOBF0Uv3Nh0Y"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveAudio": {
+        "id": "1ODJ_LqF6ZWhmzeo9b3elkKzrKoYiUO83"
+      },
+      "role": "user",
+      "tokenCount": 90043
+    }, {
+      "driveAudio": {
+        "id": "1ZECQtr0h8SqFDy2EK7uLLj6k0NnOo4DD"
+      },
+      "role": "user",
+      "tokenCount": 173313
+    }, {
+      "text": "**Generating a Structure**\n\nI\u0027ve been dissecting the request and its implicit components. My primary focus is understanding the data format—handwritten notes as images, specifically—and the academic context. The goal is to design an optimal Obsidian note structure considering this input. I\u0027m focusing on key aspects like image processing and integrating the academic material logically.\n\n\n**Developing a Framework**\n\nI\u0027m currently structuring the lecture notes on chemical bonding. I\u0027m focusing on creating an analytical Markdown note, incorporating LaTeX for formulas and SMILES for molecule representations where relevant. The Slovenian language of the lecture is being retained for the notes, as per the system prompt, but I\u0027m careful to maintain a robust and understandable structure. I\u0027m also planning to include a critical analysis layer with warnings and justifications, and a separate theory section.\n\n\n**Developing the Analysis**\n\nI\u0027m now diving deep into the source material, using a \"mental sandbox\" approach. I\u0027m focusing on the images, dissecting each one to identify key concepts like ionic vs. covalent bonding, Lewis structures, VSEPR theory, and hybridization. I\u0027m taking the structure step-by-step. I\u0027m also carefully noting the formulas and examples provided, and planning how to integrate this content effectively. I\u0027m keen on establishing the relationships of each concept to the next.\n\n\n**Examining Molecular Theory**\n\nI\u0027m now fully immersed in the details of the lecture, focusing on the concepts of hybridization, resonance, VSEPR, and MO theory. I\u0027m taking comprehensive notes on each, including relevant examples like $H_2S$, $CH_2Cl_2$, $O_3$, and even $O_2$. I\u0027m meticulously charting the transition between Valence Bond Theory and Molecular Orbital Theory, while considering bond order and formal charge calculations. I\u0027m keen to incorporate the lecture\u0027s emphasis on molecular geometry.\n\n\n**Developing the Structure**\n\nNow, I\u0027m concentrating on the examples within the framework. I\u0027m grouping them by molecular complexity to show the progression of concepts, from basic structures like $CaCl_2$ to complex ones involving MO theory, like $O_2$. Each group will evolve from Lewis structures to VSEPR and finally hybridization. There will be a section on critical analysis to point out common pitfalls. Also, I\u0027m refining my LaTeX implementation for formulas, and I\u0027m updating my approach to include formal charge calculations and resonance.\n\n\n**Integrating Complexities**\n\nI\u0027m now integrating the analysis of complex molecules, especially those with resonance and expanded octets. I\u0027m focusing on providing warnings for common student misconceptions, like the dynamic \"flipping\" of resonance structures. I\u0027m also ensuring that the formal charge calculations are presented in a way that emphasizes they are a tool and not a precise representation. Additionally, I\u0027m now cross-referencing between source and notes, focusing particularly on $H_3PO_4$. My priority is creating content that\u0027s both accurate and helpful.\n\n\n**Focusing on Nuances**\n\nI\u0027m now integrating the intricacies of resonance, making sure to highlight the critical absence of resonance in OH groups. I\u0027ve also re-examined the $N_2O$ structure calculation from Image 3, refining the table logic for clarity. I\u0027m carefully considering the $H_2S$ hybridization, acknowledging the subtleties between the lecture\u0027s $sp^3$ classification and the observed bond angle. My priority now is to strike a balance between adhering to the source material and presenting it in a manner that will ensure robust understanding.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Generating a Structure**\n\nI\u0027ve been dissecting the request and its implicit components. My primary focus is understanding the data format—handwritten notes as images, specifically—and the academic context. The goal is to design an optimal Obsidian note structure considering this input. I\u0027m focusing on key aspects like image processing and integrating the academic material logically.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing a Framework**\n\nI\u0027m currently structuring the lecture notes on chemical bonding. I\u0027m focusing on creating an analytical Markdown note, incorporating LaTeX for formulas and SMILES for molecule representations where relevant. The Slovenian language of the lecture is being retained for the notes, as per the system prompt, but I\u0027m careful to maintain a robust and understandable structure. I\u0027m also planning to include a critical analysis layer with warnings and justifications, and a separate theory section.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Analysis**\n\nI\u0027m now diving deep into the source material, using a \"mental sandbox\" approach. I\u0027m focusing on the images, dissecting each one to identify key concepts like ionic vs. covalent bonding, Lewis structures, VSEPR theory, and hybridization. I\u0027m taking the structure step-by-step. I\u0027m also carefully noting the formulas and examples provided, and planning how to integrate this content effectively. I\u0027m keen on establishing the relationships of each concept to the next.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Examining Molecular Theory**\n\nI\u0027m now fully immersed in the details of the lecture, focusing on the concepts of hybridization, resonance, VSEPR, and MO theory. I\u0027m taking comprehensive notes on each, including relevant examples like $H_2S$, $CH_2Cl_2$, $O_3$, and even $O_2$. I\u0027m meticulously charting the transition between Valence Bond Theory and Molecular Orbital Theory, while considering bond order and formal charge calculations. I\u0027m keen to incorporate the lecture\u0027s emphasis on molecular geometry.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Structure**\n\nNow, I\u0027m concentrating on the examples within the framework. I\u0027m grouping them by molecular complexity to show the progression of concepts, from basic structures like $CaCl_2$ to complex ones involving MO theory, like $O_2$. Each group will evolve from Lewis structures to VSEPR and finally hybridization. There will be a section on critical analysis to point out common pitfalls. Also, I\u0027m refining my LaTeX implementation for formulas, and I\u0027m updating my approach to include formal charge calculations and resonance.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Complexities**\n\nI\u0027m now integrating the analysis of complex molecules, especially those with resonance and expanded octets. I\u0027m focusing on providing warnings for common student misconceptions, like the dynamic \"flipping\" of resonance structures. I\u0027m also ensuring that the formal charge calculations are presented in a way that emphasizes they are a tool and not a precise representation. Additionally, I\u0027m now cross-referencing between source and notes, focusing particularly on $H_3PO_4$. My priority is creating content that\u0027s both accurate and helpful.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Focusing on Nuances**\n\nI\u0027m now integrating the intricacies of resonance, making sure to highlight the critical absence of resonance in OH groups. I\u0027ve also re-examined the $N_2O$ structure calculation from Image 3, refining the table logic for clarity. I\u0027m carefully considering the $H_2S$ hybridization, acknowledging the subtleties between the lecture\u0027s $sp^3$ classification and the observed bond angle. My priority now is to strike a balance between adhering to the source material and presenting it in a manner that will ensure robust understanding.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Tukaj je strukturiran in obdelan zapis, ki združuje tvoje ročne zapiske in transkript predavanja. Zapis je optimiziran za Obsidian, vključuje LaTeX za formule in kritične opombe za lažje razumevanje.\n\n---\n\n# [[Kemijska Vez]]\n\n## 1. Splošne formule in identitete\nV tem razdelku so zbrane ključne formule, ki jih potrebujemo za reševanje nalog.\n\n### Formalni naboj (Formal Charge - FC)\n$$ FC \u003d V - N - \\frac{1}{2}V_{vez} $$\nKjer je:\n*   $V$: Število valenčnih elektronov atoma (iz periodnega sistema).\n*   $N$: Število neveznih elektronov (pike).\n*   $V_{vez}$: Število veznih elektronov (črte $\\times$ 2).\n\n*Alternativni zapis iz zapiskov:*\n$$ FN \u003d (\\text{št. val. el.}) - (\\text{št. pripadajočih elektronov v strukturi}) $$\n*(Pripadajoči elektroni \u003d vsi nevezni + polovica veznih).*\n\n### Red vezi (Bond Order - RV)\nUporablja se v teoriji molekulskih orbital (MO).\n$$ RV \u003d \\frac{1}{2} (N_{veznih} - N_{protiveznih}) $$\n*   $N_{veznih}$: Elektroni v orbitalah brez zvezdice ($\\sigma, \\pi$).\n*   $N_{protiveznih}$: Elektroni v orbitalah z zvezdico ($\\sigma^*, \\pi^*$).\n\n---\n\n## 2. Teoretična izhodišča\n\n### [[Ionska in Kovalentna vez]]\n\n| Lastnost | **Ionska vez** | **Kovalentna vez** |\n| :--- | :--- | :--- |\n| **Sodelujoči** | Kovina ($Me^+$) + Nekovina ($X^-$) | Nekovina + Nekovina |\n| **Princip** | Popoln prenos elektronov | Delitev elektronskih parov |\n| **Usmerjenost** | Ni usmerjena (sferično simetrična) | Usmerjena (določa geometrijo) |\n| **Lastnosti** | Visoka $T_{tal}$ in $T_{vre}$ | Prevajajo tok le izjemoma (polarizacija) |\n| **Primeri** | $NaCl, MgO, CaCl_2$ | $H_2, O_2, H_2O$ |\n\n\u003e **Critical Analysis:** Pri $CaCl_2$ kalcij odda dva elektrona (ima 2 valenčna), vsak klor sprejme enega. Nastane kristalna mreža kationov in anionov.\n\n### [[Lewisove strukture]] in Oktetno pravilo\nShematski zapis elektronov in vezi.\n*   **Oktetno pravilo:** Atomi težijo k temu, da imajo 8 valenčnih elektronov (konfiguracija žlahtnega plina).\n*   **Razširjen oktet:** Elementi 3. periode in nižje (imajo $d$ orbitale) lahko sprejmejo več kot 8 elektronov (npr. $PCl_5, SF_6, BrF_5$).\n\n### [[Hibridizacija]] in Geometrija\nMešanje atomskih orbital ($s, p, d$), da nastanejo nove, enakovredne hibridne orbitale. To pojasni geometrijo molekul.\n\n| Tip Hibridizacije | Št. domen (veznih + neveznih parov) | Kot | Geometrija | Primeri |\n| :--- | :---: | :---: | :--- | :--- |\n| **$sp$** | 2 | $180^\\circ$ | Linearna | $CO_2, NO_2^+, C_2H_2$ |\n| **$sp^2$** | 3 | $120^\\circ$ | Trikotna planarna | $H_2CO, NO_2^-, SO_3$ |\n| **$sp^3$** | 4 | $109.5^\\circ$ | Tetraeder | $CH_4, H_2O, NH_3, H_2S$ |\n| **$sp^3d$** | 5 | / | Trikotna bipiramida | $PCl_5$ |\n| **$sp^3d^2$** | 6 | $90^\\circ$ | Oktaeder | $SF_6$ |\n\n\u003e **Note to Self:** Hibridizacija je posledica geometrije, ne obratno. Ko določamo hibridizacijo, štejemo **domene** okoli centralnega atoma (sigma vezi + nevezni pari). Dvojna vez šteje kot 1 domena.\n\n### [[Resonanca]] (Mezomerija)\nKo ene same Lewisove strukture ne moremo uporabiti za pravilen opis molekule (npr. dolžine vezi so v realnosti enake, v risbi pa imamo enojne in dvojne), uporabimo resonanco.\n*   Resančna struktura je **hibrid** (povprečje) vseh mejnih struktur.\n*   Elektroni so **delokalizirani**.\n*   **Pogoj:** Pi ($\\pi$) vez ali nevezni par ob sosednji $\\pi$ vezi.\n\n---\n\n## 3. Rešeni primeri in Analiza struktur\n\n### Primer 1: Enostavne molekule in Hibridizacija\n\n#### **$H_2S$ (Vodikov sulfid)**\n*   **Lewis:** Žveplo (S) ima 6 valenčnih $e^-$, veže 2 H. Ostaneta 2 nevezna para.\n*   **Domene:** 2 vezi + 2 nevezna para \u003d 4 domene.\n*   **Hibridizacija:** $sp^3$.\n*   **Geometrija:** Upognjena (kot pri vodi), kot $\u003c 109.5^\\circ$ zaradi odboja neveznih parov.\n*   **SMILES:** `S`\n\n#### **$CH_2Cl_2$ (Diklorometan)**\n*   **Lewis:** C v sredini, 4 enojne vezi ($2\\times H, 2\\times Cl$).\n*   **Domene:** 4 vezi \u003d 4 domene.\n*   **Hibridizacija:** $sp^3$ (Tetraeder).\n*   **SMILES:** `ClCCl`\n\n#### **$H_2CO$ (Formaldehid)**\n*   **Lewis:** C tvori dvojno vez z O in dve enojni z H.\n*   **Domene:** 3 domene (2 enojni, 1 dvojna).\n*   **Hibridizacija:** $sp^2$ (Trikotna planarna, kot $\\approx 120^\\circ$).\n*   **SMILES:** `C\u003dO`\n\n---\n\n### Primer 2: Formalni naboj in Resonanca ($N_2O$)\n\nStruktura didušikovega oksida ($N-N-O$). Katera razporeditev elektronov je pravilna? Računamo formalni naboj za tri možne resonance.\n\n**Tabela iz zapiskov (rekonstrukcija):**\n\n| Struktura | $:N \\equiv N - \\ddot{O}:$ (A) | $:N \u003d N \u003d \\ddot{O}:$ (B) | $: \\ddot{N} - N \\equiv O:$ (C) |\n| :--- | :---: | :---: | :---: |\n| **Valenčni ($V$)** | 5 - 5 - 6 | 5 - 5 - 6 | 5 - 5 - 6 |\n| **Pripadajoči ($N + \\frac{1}{2}V_{vez}$)** | 6 - 4 - 6 | 6 - 4 - 6 | 7 - 4 - 5 |\n| **Formalni naboj** | **-1 / +1 / 0** | **-1 / +1 / 0** | **-2 / +1 / +1** |\n\n\u003e **Critical Analysis:**\n\u003e *   Struktura C ima naboj -2 na dušiku in +1 na kisiku. To je energetsko zelo neugodno (kisik je bolj elektronegativen in bi moral nositi negativen naboj, dušik pa težko nosi -2).\n\u003e *   Struktura A in B sta bolj verjetni. Struktura A ($N \\equiv N - O^-$) postavi negativen naboj na kisik, kar je skladno z elektronegativnostjo.\n\n---\n\n### Primer 3: Ioni in Radikali ($NO_2$ variacije)\n\n#### **$NO_2^+$ (Nitronijev ion)**\n*   **Valenčni elektroni:** $5 (N) + 2 \\times 6 (O) - 1 (naboj) \u003d 16 e^-$.\n*   **Struktura:** $O \u003d N \u003d O$ (linearna).\n*   **Hibridizacija:** Centralni N ima 2 domeni (dve dvojni vezi) $\\rightarrow$ **$sp$**.\n*   **Kot:** $180^\\circ$.\n\n#### **$NO_2^-$ (Nitritni ion)**\n*   **Valenčni elektroni:** $5 + 12 + 1 \u003d 18 e^-$.\n*   **Struktura:** Ena dvojna vez, ena enojna vez in **en nevezni par** na dušiku.\n*   **Hibridizacija:** 3 domene $\\rightarrow$ **$sp^2$**.\n*   **Kot:** $\\approx 120^\\circ$ (upognjena).\n\n\u003e **Warning:** Pazi na razliko med pozitivnim in negativnim ionom! Nevezni par pri $NO_2^-$ drastično spremeni geometrijo iz linearne v upognjeno.\n\n---\n\n### Primer 4: Razširjen oktet in VSEPR\n\n#### **$PCl_5$ (Fosforjev pentaklorid)**\n*   **Centralni atom:** Fosfor (5 valenčnih).\n*   **Vezi:** 5 enojnih vezi s klorom.\n*   **Hibridizacija:** $sp^3d$.\n*   **Geometrija:** Trikotna bipiramida.\n\n#### **$BrF_5$ (Bromov pentafluorid)**\n*   **Centralni atom:** Brom (7 valenčnih).\n*   **Vezi:** 5 vezi s F + **1 nevezni par** ($7 - 5 \u003d 2e^-$ ostaneta).\n*   **Skupaj domen:** 6 domen ($sp^3d^2$ osnova).\n*   **Geometrija:** Kvadratna piramida (nevezni par spodrine vezi).\n\n---\n\n### Primer 5: Kompleksna resonanca in Kisline\n\n#### **$O_3$ (Ozon)**\n*   Struktura $O - O \u003d O \\leftrightarrow O \u003d O - O$.\n*   Srednji kisik ima naboj +1, terminalna pa si delita -1.\n*   Hibridizacija: $sp^2$, upognjena oblika.\n\n#### **$H_2SO_4$ in $H_3PO_4$**\n*   Pri $H_2SO_4$ resonanca teče le na kisikih, ki niso vezani na vodik (terminalni O). Kisika v $OH$ skupini ne sodelujeta v $\\pi$ sistemu resonance na enak način.\n*   Pri $H_3PO_4$ (v transkriptu omenjeno kot $H_3PO_4$ v primerjavi s sulfatom): Resonanca ni mogoča čez celotno molekulo na enak način, če so kisiki protonirani ($P-OH$).\n\n#### **$ClO_4^-$ (Perklorat)**\n*   Vsi 4 kisiki so enakovredni. Resonanca je popolna.\n*   Klor (7 valenčnih) tvori vezi tako, da formalni naboji štimajo (več dvojnih vezi).\n*   Tetraedrična struktura.\n\n---\n\n## 4. [[Teorija Molekulskih Orbital]] (MO Theory)\n\nTeorija, ki pojasni magnetne lastnosti in nastanek vezi z vidika delokalizacije po celi molekuli.\n\n### Diagrami in Red vezi (Bond Order)\n\n#### **$N_2$ (Dušik)**\n*   **Valenčni elektroni:** $5 + 5 \u003d 10$.\n*   **Polnjenje:** $\\sigma_{2s}^2, \\sigma_{2s}^{*2}, \\pi_{2p}^4, \\sigma_{2p}^2$.\n*   **Izračun:**\n    $$ RV \u003d \\frac{1}{2} (8 - 2) \u003d 3 $$\n    *(Opomba: Pogosto zanemarimo 1s in 2s, če se krajšajo, in gledamo samo p orbitale: $RV \u003d \\frac{1}{2}(6 - 0) \u003d 3$)*.\n*   **Rezultat:** Trojna vez, diamagneten (vsi elektroni poparjeni).\n\n#### **$O_2$ (Kisik)**\n*   **Valenčni elektroni:** $6 + 6 \u003d 12$.\n*   **Posebnost:** Zaradi energije orbital se vrstni red zamenja ($\\sigma_{2p}$ je nižje od $\\pi_{2p}$ pri kisiku in fluorju).\n*   **Polnjenje:** Zadnja dva elektrona gresta vsak v svojo $\\pi^*$ (protivezno) orbitalo (Hundovo pravilo).\n*   **Izračun:**\n    $$ RV \u003d \\frac{1}{2} (8 - 4) \u003d 2 $$ (ali $\\frac{1}{2}(6-2) \u003d 2$ če gledamo samo p).\n*   **Rezultat:** Dvojna vez, **paramagneten** (dva samska elektrona).\n\n\u003e **Important:** Lewisova struktura za $O_2$ ($O\u003dO$) pravilno napove dvojno vez, ampak **NE** napove paramagnetnosti. To pojasni šele MO teorija.\n\n---\n\n### **Teacher\u0027s Note / Povzetek za učenje**\n1.  **Vrstni red reševanja:**\n    1.  Nariši Lewisovo strukturo (preštej vse valenčne elektrone).\n    2.  Preveri oktetno pravilo (in razširitve za 3. periodo).\n    3.  Uporabi VSEPR za določitev geometrije (štej domene).\n    4.  Določi hibridizacijo glede na število domen ($2\u003dsp, 3\u003dsp^2, 4\u003dsp^3...$).\n    5.  Če obstaja več možnosti, izračunaj **formalni naboj**, da najdeš najverjetnejšo strukturo.\n2.  **Resonanca:** Ne pomeni, da molekula skače iz ene oblike v drugo. Molekula je **vedno** povprečje (hibrid).\n3.  **Magnetizem:** Če naloga sprašuje po magnetnih lastnostih preprostih dvoatomnih molekul ($O_2, B_2, N_2$), *vedno* uporabi MO diagram.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3592,
+      "parts": [{
+        "text": "Tukaj je strukturiran in obdelan zapis, ki združuje tvoje ročne zapiske in transkript predavanja. Zapis je optimiziran za Obsidian, v"
+      }, {
+        "text": "ključuje LaTeX za formule in kritične opombe za lažje razumevanje.\n\n---\n\n# [[Kemijska Vez"
+      }, {
+        "text": "]]\n\n## 1. Splošne formule in identitete\nV tem razdelku so zbrane ključne formule, ki jih potreb"
+      }, {
+        "text": "ujemo za reševanje nalog.\n\n### Formalni naboj (Formal Charge - FC)\n$$ FC \u003d V -"
+      }, {
+        "text": " N - \\frac{1}{2}V_{vez} $$\nKjer je:\n*   $V$:"
+      }, {
+        "text": " Število valenčnih elektronov atoma (iz periodnega sistema).\n*   $N$: Število nevez"
+      }, {
+        "text": "nih elektronov (pike).\n*   $V_{vez}$: Število veznih elektronov (črte $\\"
+      }, {
+        "text": "times$ 2).\n\n*Alternativni zapis iz zapiskov:*\n$$ FN \u003d (\\text{št. val. el"
+      }, {
+        "text": ".}) - (\\text{št. pripadajočih elektronov v strukturi}) $$\n*(Pripadajoči elektroni \u003d"
+      }, {
+        "text": " vsi nevezni + polovica veznih).*\n\n### Red vezi (Bond Order - RV)\nUporablja se v teoriji mole"
+      }, {
+        "text": "kulskih orbital (MO).\n$$ RV \u003d \\frac{1}{2} (N_{veznih} - N_{prot"
+      }, {
+        "text": "iveznih}) $$\n*   $N_{veznih}$: Elektroni v orbitalah brez zvezdice ($\\sigma, \\"
+      }, {
+        "text": "pi$).\n*   $N_{protiveznih}$: Elektroni v orbitalah z zvezdico ($\\"
+      }, {
+        "text": "sigma^*, \\pi^*$).\n\n---\n\n## 2. Teoretična izhodišča\n\n### [[I"
+      }, {
+        "text": "onska in Kovalentna vez]]\n\n| Lastnost | **Ionska vez** | **Kovalentna vez**"
+      }, {
+        "text": " |\n| :--- | :--- | :--- |\n| **Sodelujoči** | Kovina ($"
+      }, {
+        "text": "Me^+$) + Nekovina ($X^-$) | Nekovina + Nekovina |\n| **Princip** | Popoln prenos elektron"
+      }, {
+        "text": "ov | Delitev elektronskih parov |\n| **Usmerjenost** | Ni usmerjena (sferično simetrična"
+      }, {
+        "text": ") | Usmerjena (določa geometrijo) |\n| **Lastnosti** | Visoka $T_{tal}$"
+      }, {
+        "text": " in $T_{vre}$ | Prevajajo tok le izjemoma (polarizacija) |\n| **Primeri"
+      }, {
+        "text": "** | $NaCl, MgO, CaCl_2$ | $H_2, O_2, H_2O$"
+      }, {
+        "text": " |\n\n\u003e **Critical Analysis:** Pri $CaCl_2$ kalcij odda dva elektrona (ima 2 valenčna"
+      }, {
+        "text": "), vsak klor sprejme enega. Nastane kristalna mreža kationov in anionov.\n\n###"
+      }, {
+        "text": " [[Lewisove strukture]] in Oktetno pravilo\nShematski zapis elektronov in vezi.\n*   **Okt"
+      }, {
+        "text": "etno pravilo:** Atomi težijo k temu, da imajo 8 valenčnih elektronov (kon"
+      }, {
+        "text": "figuracija žlahtnega plina).\n*   **Razširjen oktet:** Elementi 3. periode"
+      }, {
+        "text": " in nižje (imajo $d$ orbitale) lahko sprejmejo več kot 8 elektronov (npr. $PCl"
+      }, {
+        "text": "_5, SF_6, BrF_5$).\n\n### [[Hibridizacija]] in Geometrija\nMe"
+      }, {
+        "text": "šanje atomskih orbital ($s, p, d$), da nastanejo nove, enakovredne hibridne"
+      }, {
+        "text": " orbitale. To pojasni geometrijo molekul.\n\n| Tip Hibridizacije | Št. domen (vez"
+      }, {
+        "text": "nih + neveznih parov) | Kot | Geometrija | Primeri |\n| :--- | :---: | :---:"
+      }, {
+        "text": " | :--- | :--- |\n| **$sp$** | 2 | $180^\\circ"
+      }, {
+        "text": "$ | Linearna | $CO_2, NO_2^+, C_2H_2$ |\n|"
+      }, {
+        "text": " **$sp^2$** | 3 | $120^\\circ$ | Trikotna planarna | $H"
+      }, {
+        "text": "_2CO, NO_2^-, SO_3$ |\n| **$sp^3$** | 4 | $1"
+      }, {
+        "text": "09.5^\\circ$ | Tetraeder | $CH_4, H_2O, NH_3, H_"
+      }, {
+        "text": "2S$ |\n| **$sp^3d$** | 5 | / | Trikotna bip"
+      }, {
+        "text": "iramida | $PCl_5$ |\n| **$sp^3d^2$** | 6"
+      }, {
+        "text": " | $90^\\circ$ | Oktaeder | $SF_6$ |\n\n\u003e **Note to Self:**"
+      }, {
+        "text": " Hibridizacija je posledica geometrije, ne obratno. Ko določamo hibridizacijo, š"
+      }, {
+        "text": "tejemo **domene** okoli centralnega atoma (sigma vezi + nevezni pari). Dvojna vez šteje kot 1"
+      }, {
+        "text": " domena.\n\n### [[Resonanca]] (Mezomerija)\nKo ene same Lewisove strukture ne moremo"
+      }, {
+        "text": " uporabiti za pravilen opis molekule (npr. dolžine vezi so v realnosti enake, v"
+      }, {
+        "text": " risbi pa imamo enojne in dvojne), uporabimo resonanco.\n*   Resančna struktura je **hibrid"
+      }, {
+        "text": "** (povprečje) vseh mejnih struktur.\n*   Elektroni so **delokalizirani**."
+      }, {
+        "text": "\n*   **Pogoj:** Pi ($\\pi$) vez ali nevezni par ob sosednji $\\pi$ vezi.\n\n---\n\n##"
+      }, {
+        "text": " 3. Rešeni primeri in Analiza struktur\n\n### Primer 1: Enostavne molekule in H"
+      }, {
+        "text": "ibridizacija\n\n#### **$H_2S$ (Vodikov sulfid)**\n*   **Lewis:**"
+      }, {
+        "text": " Žveplo (S) ima 6 valenčnih $e^-$, veže 2 H. Ostaneta 2 nevezna para."
+      }, {
+        "text": "\n*   **Domene:** 2 vezi + 2 nevezna para \u003d 4 domene.\n*   "
+      }, {
+        "text": "**Hibridizacija:** $sp^3$.\n*   **Geometrija:** Upognjena (kot pri"
+      }, {
+        "text": " vodi), kot $\u003c 109.5^\\circ$ zaradi odboja neveznih parov.\n*   **SMILES:** "
+      }, {
+        "text": "`S`\n\n#### **$CH_2Cl_2$ (Diklorometan)**\n*   **Lewis"
+      }, {
+        "text": ":** C v sredini, 4 enojne vezi ($2\\times H, 2\\times Cl$).\n*   **Domene:**"
+      }, {
+        "text": " 4 vezi \u003d 4 domene.\n*   **Hibridizacija:** $sp^3$"
+      }, {
+        "text": " (Tetraeder).\n*   **SMILES:** `ClCCl`\n\n#### **$H_2CO"
+      }, {
+        "text": "$ (Formaldehid)**\n*   **Lewis:** C tvori dvojno vez z O in dve enojni z H"
+      }, {
+        "text": ".\n*   **Domene:** 3 domene (2 enojni, 1 dvojna).\n*   "
+      }, {
+        "text": "**Hibridizacija:** $sp^2$ (Trikotna planarna, kot $\\approx 120^\\circ$)."
+      }, {
+        "text": "\n*   **SMILES:** `C\u003dO`\n\n---\n\n### Primer 2: Formalni naboj in Resonanca ($N"
+      }, {
+        "text": "_2O$)\n\nStruktura didušikovega oksida ($N-N-O$). Katera raz"
+      }, {
+        "text": "poreditev elektronov je pravilna? Računamo formalni naboj za tri možne resonance.\n\n**"
+      }, {
+        "text": "Tabela iz zapiskov (rekonstrukcija):**\n\n| Struktura | $:N \\equiv N -"
+      }, {
+        "text": " \\ddot{O}:$ (A) | $:N \u003d N \u003d \\ddot{O}:$ (B) | $: \\ddot{N} -"
+      }, {
+        "text": " N \\equiv O:$ (C) |\n| :--- | :---: | :---: | :---:"
+      }, {
+        "text": " |\n| **Valenčni ($V$)** | 5 - 5 - 6 | 5 - 5 - 6 |"
+      }, {
+        "text": " 5 - 5 - 6 |\n| **Pripadajoči ($N + \\frac{1"
+      }, {
+        "text": "}{2}V_{vez}$)** | 6 - 4 - 6 | 6 - 4 - 6"
+      }, {
+        "text": " | 7 - 4 - 5 |\n| **Formalni naboj** | **-1 / +1 / 0** | **"
+      }, {
+        "text": "-1 / +1 / 0** | **-2 / +1 / +1** |\n\n\u003e **Critical"
+      }, {
+        "text": " Analysis:**\n\u003e *   Struktura C ima naboj -2 na dušiku in +1 na kis"
+      }, {
+        "text": "iku. To je energetsko zelo neugodno (kisik je bolj elektronegativen in bi moral nositi neg"
+      }, {
+        "text": "ativen naboj, dušik pa težko nosi -2).\n\u003e *   Struktura A in B sta bolj"
+      }, {
+        "text": " verjetni. Struktura A ($N \\equiv N - O^-$) postavi negativen naboj na kis"
+      }, {
+        "text": "ik, kar je skladno z elektronegativnostjo.\n\n---\n\n### Primer 3: Ioni in"
+      }, {
+        "text": " Radikali ($NO_2$ variacije)\n\n#### **$NO_2^+$ (Nitronijev ion)**\n*   **Val"
+      }, {
+        "text": "enčni elektroni:** $5 (N) + 2 \\times 6 (O) - 1 (nab"
+      }, {
+        "text": "oj) \u003d 16 e^-$.\n*   **Struktura:** $O \u003d N \u003d O$"
+      }, {
+        "text": " (linearna).\n*   **Hibridizacija:** Centralni N ima 2 domeni (dve dvojni vezi) $\\rightarrow$"
+      }, {
+        "text": " **$sp$**.\n*   **Kot:** $180^\\circ$.\n\n#### **$NO_"
+      }, {
+        "text": "2^-$ (Nitritni ion)**\n*   **Valenčni elektroni:** $5 + 12 + 1 \u003d "
+      }, {
+        "text": "18 e^-$.\n*   **Struktura:** Ena dvojna vez, ena enojna vez"
+      }, {
+        "text": " in **en nevezni par** na dušiku.\n*   **Hibridizacija:** 3 dom"
+      }, {
+        "text": "ene $\\rightarrow$ **$sp^2$**.\n*   **Kot:** $\\approx 120^\\circ$"
+      }, {
+        "text": " (upognjena).\n\n\u003e **Warning:** Pazi na razliko med pozitivnim in negativnim ionom! Ne"
+      }, {
+        "text": "vezni par pri $NO_2^-$ drastično spremeni geometrijo iz linearne v upognjeno.\n\n---\n\n"
+      }, {
+        "text": "### Primer 4: Razširjen oktet in VSEPR\n\n#### **$PCl_5$ (F"
+      }, {
+        "text": "osforjev pentaklorid)**\n*   **Centralni atom:** Fosfor (5 valenčnih).\n*   **Ve"
+      }, {
+        "text": "zi:** 5 enojnih vezi s klorom.\n*   **Hibridizacija:** $"
+      }, {
+        "text": "sp^3d$.\n*   **Geometrija:** Trikotna bipiramida.\n\n#### **$BrF_5"
+      }, {
+        "text": "$ (Bromov pentafluorid)**\n*   **Centralni atom:** Brom (7 valenčnih).\n"
+      }, {
+        "text": "*   **Vezi:** 5 vezi s F + **1 nevezni par** ($7 - 5 \u003d 2e"
+      }, {
+        "text": "^-$ ostaneta).\n*   **Skupaj domen:** 6 domen ($sp^3d^2$ os"
+      }, {
+        "text": "nova).\n*   **Geometrija:** Kvadratna piramida (nevezni par spodrine"
+      }, {
+        "text": " vezi).\n\n---\n\n### Primer 5: Kompleksna resonanca in Kisline\n\n#### **$O_3$ (Ozon"
+      }, {
+        "text": ")**\n*   Struktura $O - O \u003d O \\leftrightarrow O \u003d O - O$.\n*   S"
+      }, {
+        "text": "rednji kisik ima naboj +1, terminalna pa si delita -1.\n*   Hibrid"
+      }, {
+        "text": "izacija: $sp^2$, upognjena oblika.\n\n#### **$H_2SO_4$ in $H_3"
+      }, {
+        "text": "PO_4$**\n*   Pri $H_2SO_4$ resonanca teče le na kis"
+      }, {
+        "text": "ikih, ki niso vezani na vodik (terminalni O). Kisika v $OH$ skupini ne"
+      }, {
+        "text": " sodelujeta v $\\pi$ sistemu resonance na enak način.\n*   Pri $H_3PO_4$"
+      }, {
+        "text": " (v transkriptu omenjeno kot $H_3PO_4$ v primerjavi s sulfatom"
+      }, {
+        "text": "): Resonanca ni mogoča čez celotno molekulo na enak način, če so kisiki proton"
+      }, {
+        "text": "irani ($P-OH$).\n\n#### **$ClO_4^-$ (Perklorat)**\n*   Vsi 4 kis"
+      }, {
+        "text": "iki so enakovredni. Resonanca je popolna.\n*   Klor (7 valenčnih) tvori vezi"
+      }, {
+        "text": " tako, da formalni naboji štimajo (več dvojnih vezi).\n*   Tetraedrična struktura."
+      }, {
+        "text": "\n\n---\n\n## 4. [[Teorija Molekulskih Orbital]] (MO Theory)\n\nTeorija, ki po"
+      }, {
+        "text": "jasni magnetne lastnosti in nastanek vezi z vidika delokalizacije po celi molekuli.\n\n### Diagram"
+      }, {
+        "text": "i in Red vezi (Bond Order)\n\n#### **$N_2$ (Dušik)**\n*   **Val"
+      }, {
+        "text": "enčni elektroni:** $5 + 5 \u003d 10$.\n*   **Polnjenje:** $\\sigma_{2"
+      }, {
+        "text": "s}^2, \\sigma_{2s}^{*2}, \\pi_{2p}^4, \\sigma_{2p}^"
+      }, {
+        "text": "2$.\n*   **Izračun:**\n    $$ RV \u003d \\frac{1}{2} (8 - "
+      }, {
+        "text": "2) \u003d 3 $$\n    *(Opomba: Pogosto zanemarimo 1s in 2s, če se"
+      }, {
+        "text": " krajšajo, in gledamo samo p orbitale: $RV \u003d \\frac{1}{2}(6 - 0) \u003d 3"
+      }, {
+        "text": "$)*.\n*   **Rezultat:** Trojna vez, diamagneten (vsi elektroni poparjeni).\n\n#### **$O"
+      }, {
+        "text": "_2$ (Kisik)**\n*   **Valenčni elektroni:** $6 + 6 \u003d 12$.\n*   **"
+      }, {
+        "text": "Posebnost:** Zaradi energije orbital se vrstni red zamenja ($\\sigma_{2p}$ je niž"
+      }, {
+        "text": "je od $\\pi_{2p}$ pri kisiku in fluorju).\n*   **Polnjenje:** Zadnja dva"
+      }, {
+        "text": " elektrona gresta vsak v svojo $\\pi^*$ (protivezno) orbitalo (Hundovo pravilo).\n*   **Iz"
+      }, {
+        "text": "račun:**\n    $$ RV \u003d \\frac{1}{2} (8 - 4) \u003d 2 $$"
+      }, {
+        "text": " (ali $\\frac{1}{2}(6-2) \u003d 2$ če gledamo samo p).\n*   **Rezultat:** D"
+      }, {
+        "text": "vojna vez, **paramagneten** (dva samska elektrona).\n\n\u003e **Important:** Lewisova struktura za"
+      }, {
+        "text": " $O_2$ ($O\u003dO$) pravilno napove dvojno vez, ampak **NE** nap"
+      }, {
+        "text": "ove paramagnetnosti. To pojasni šele MO teorija.\n\n---\n\n### **Teacher\u0027s Note / Pov"
+      }, {
+        "text": "zetek za učenje**\n1.  **Vrstni red reševanja:**\n    1.  Nari"
+      }, {
+        "text": "ši Lewisovo strukturo (preštej vse valenčne elektrone).\n    2.  Preveri okt"
+      }, {
+        "text": "etno pravilo (in razširitve za 3. periodo).\n    3.  Uporabi VSEPR za določ"
+      }, {
+        "text": "itev geometrije (štej domene).\n    4.  Določi hibridizacijo gle"
+      }, {
+        "text": "de na število domen ($2\u003dsp, 3\u003dsp^2, 4\u003dsp^3..."
+      }, {
+        "text": "$).\n    5.  Če obstaja več možnosti, izračunaj **formalni naboj**, da naj"
+      }, {
+        "text": "deš najverjetnejšo strukturo.\n2.  **Resonanca:** Ne pomeni, da molekula skače"
+      }, {
+        "text": " iz ene oblike v drugo. Molekula je **vedno** povprečje (hibrid)."
+      }, {
+        "text": "\n3.  **Magnetizem:** Če naloga sprašuje po magnetnih lastnostih preprostih d"
+      }, {
+        "text": "voatomnih molekul ($O_2, B_2, N_2$), *vedno* uporabi MO diagram."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

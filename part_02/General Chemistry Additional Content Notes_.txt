@@ -1,0 +1,324 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "\u003e **System Prompt for Gemini:**\n\u003e\n\u003e **## Core Objective:**\n\u003e Your primary task is to act as my personal academic assistant for my university studies. I will provide you with lecture recordings, images of my handwritten notes, or other source materials. Your job is to transform this raw information into structured, comprehensive, and clear notes suitable for my Obsidian vault.\n\n\u003e **## Guiding Principles \u0026 Formatting Rules:**\n\u003e\n\u003e 1.  **LaTeX is Mandatory for Formulas:** All mathematical equations, chemical formulas, and scientific notations must be formatted using LaTeX for clarity and professionalism. Avoid using plain text for formulas. Use standard Markdown for headings, lists, and blockquotes.\n\u003e\n\u003e 2.  **Structure and Organization:** A key challenge is that lecture content is often scattered. Your task is to organize it logically.\n\n\n\u003e 3.  **Act as a Tutor - Proactive Analysis:** When processing my notes, act as a tutor.\n\u003e     -   **Identify potential mistakes:** If you spot a calculation error or a logical inconsistency in my original notes, perform the correct calculation and present it and perform a check for why that problem has occured in the first place.\n\u003e     -   **Clarify ambiguity:** If a problem\u0027s wording is confusing, build a detailed physical model, explain the unstated assumptions (\"the system is sealed\"), and justify the lecturer\u0027s intended interpretation. Use \"Critical Analysis\" or \"Note to Self\" sections to highlight these learning points.\n\n\u003e\n\u003e **## User Persona \u0026 Tone:**\n\u003e My learning style is critical, analytical and curious. I am not satisfied with just memorizing formulas; I want to understand where they come from and why they work. Your tone should be that of a knowledgeable and encouraging peer or tutor who respects this approach and aims to provide clarity and insight.\n\u003e # *Use [[wikilinks]] for #(##) headers and ###subheaders. to ensure references are easily mentionable.*\n\u003e ## Use wikilinks to create new subfiles to expand on the mindmap that is available in Obsidian. \n\u003eSo instead of expanding on the topic you wikilinked in the same file below the [[wikilink]]ed file, you create a new file with the same name as the wikilink in which further explains the topics inside it.\n"
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1y-CPeisWmj5H-egX6av953GQzQgWug9S"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "11cb2-LMVyrddtVd7WJgGmK6O4IK6aVKu"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "185y261SMY2KxBYNNnjCqkWIeRkDZV20G"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Rx7CFOS5NauwjazX1r6bH49eCDwqPKn7"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "19vrVMuu_4vUGVCobLxaCxfUCAQ0hPTqh"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1VTCPmezZmqcxyWL04FkP7wQQ8f4fYoox"
+      },
+      "role": "user",
+      "tokenCount": 81142
+    }, {
+      "driveAudio": {
+        "id": "1aeO_X8OcgBeBlK8lgtY3kegEoa-X6mVI"
+      },
+      "role": "user",
+      "tokenCount": 144759
+    }, {
+      "text": "here is the lecture from Splosna kemija (dodatne vsebine) for UNI KEM in maribor, first lecture. While not the first lecture for Splosna kemija as standalone, it\u0027s the first lecture for Splosna Kemija (dodatne vsebine) dedicated for KEM UNI. \n1. we had an introduction class, some fun facts the lecturer presented to the class, the menti.com survey more or less, \n2. then in second part we went into the dodatne vsebine where we discussed the nomenclature of ions, bonds and other things like including -oxy- or something else like using a standardized greek numeration or stock\u0027s. \n3. we explored binary and terniary blocks and others...",
+      "role": "user",
+      "tokenCount": 163
+    }, {
+      "text": "**Analyzing the Task\u0027s Core**\n\nI\u0027m zeroing in on the fundamental need: to transmute lecture recordings and handwritten scribbles into a well-organized structure. I\u0027m focusing on parsing the request to identify the primary pain points and desired outcomes. The objective is to distill the core objective.\n\n\n**Clarifying the Objectives**\n\nNow I\u0027m delving deeper into the user\u0027s requirements. The key challenge lies in the tight formatting constraints – LaTeX for all formulas, standard Markdown with wikilinks for headers, and separate subfiles for linked topics. My goal is to craft a solution that seamlessly translates the raw input into this structure, effectively building a Zettelkasten-style knowledge base. I also need to make sure I don\u0027t introduce mistakes.\n\n\n**Formulating the Obsidian Structure**\n\nI\u0027m now outlining the Obsidian note structure based on the initial audio portion. \"Kemijska Nomenklatura\" will become the central node, with subfiles created for Ionic Compounds, Molecular Compounds, and so on. My focus is on ensuring these nodes are interconnected using [[wikilinks]], building the Zettelkasten-style knowledge graph. I\u0027ll need to remember to keep a special section for the admin bits that were at the beginning of the recording.\n\n\n**Developing the Note Hierarchy**\n\nI\u0027m translating the raw audio and handwritten notes into a planned Obsidian structure. I\u0027ve broken the content into modules: \"Kemijska Nomenklatura\" as the top-level note, branching into \"Ionske Spojine,\" \"Molekulske Spojine,\" and further classifications. I\u0027m focusing on ensuring consistent [[wikilinks]] for interconnectivity and integrating the administrative introduction as a separate section in the primary note. I\u0027m taking the tutor role of providing critical notes.\n\n\n**Constructing the Core Knowledge**\n\nI\u0027m now integrating the initial information into the Obsidian format. I\u0027m focusing on \"Kemijska Nomenklatura\" as the main note, linking to sub-notes for \"Ionske Spojine,\" \"Molekulske Spojine,\" and others. My efforts are concentrated on making a interconnected Zettelkasten-style structure, and also retaining the critical tutor role of providing clarifying comments.\n\n**Organizing the Information**\n\nI\u0027m now starting the content extraction. I\u0027ll transform the initial overview into a note, covering administrative details (lecturer, schedule, assessment) within an \"Introduction\" section. Following this, I\u0027ll structure the main content around \"Chemical Nomenclature,\" detailing the compound classifications introduced. I\u0027m taking the tutor role to include insights and clarifying comments.\n\n\n**Developing the Obsidian Notes**\n\nI\u0027m translating the raw audio and handwritten notes into a planned Obsidian structure. I\u0027ve broken the content into modules: \"Splošna kemija (dodatne vsebine)\" as the top-level note, branching into \"Definicije Ključnih Pojmov,\" \"Klasifikacija Anorganskih Spojin\" and so on. I\u0027m focusing on ensuring consistent [[wikilinks]] for interconnectivity and integrating the administrative introduction as a separate section in the primary note.\n\n\n**Developing the Note\u0027s Structure**\n\nI\u0027m starting the structure of the main note, \"Splošna kemija (dodatne vsebine)\". It\u0027ll consist of an introductory section and a section for chemical nomenclature. I\u0027m focusing on \"Uvodna Predavanja in Organizacija\" and \"Kemijska Nomenklatura in Klasifikacija Spojin\" to align with the core content. The goal is to provide a coherent framework.\n\nI\u0027ve translated the structure of the notes into the Obsidian format, focusing on the main topic, \"Splošna kemija (dodatne vsebine).\" I\u0027m making sure that \"Uvodna Predavanja in Organizacija\" and \"Kemijska Nomenklatura in Klasifikacija Spojin\" are the main sections. My goal is to create links for the detailed definitions.\n\nI\u0027m now transforming the original source, making \"Splošna kemija (dodatne vsebine)\" the central point of the notes. I\u0027ve integrated \"Uvodna Predavanja in Organizacija\" and \"Kemijska Nomenklatura in Klasifikacija Spojin\" to guide the note structure. The next task is to produce the link structure.\n\nI\u0027ve begun organizing the content of the main note, structuring \"Splošna kemija (dodatne vsebine)\" with key elements. I\u0027m concentrating on the \"Uvodna Predavanja in Organizacija\" for administrative details and the \"Kemijska Nomenklatura in Klasifikacija Spojin\" for the core content.\n\nI\u0027m moving forward with \"Splošna kemija (dodatne vsebine)\" as the core note. I\u0027ve incorporated both administrative and core content sections, aiming to provide a clear and organized knowledge base. I\u0027m taking the tutor role to include links for the definitions.\n\nI\u0027m now incorporating the material into \"Splošna kemija (dodatne vsebine)\" as the principal note. I\u0027ve designed the framework to incorporate administrative details and the central content. I\u0027ll make sure to add internal links.\n\n\n**Developing the Note\u0027s Structure**\n\nI\u0027m starting the structure of the main note, \"Splošna kemija (dodatne vsebine)\". It\u0027ll consist of an introductory section and a section for chemical nomenclature. I\u0027m focusing on \"Uvodna Predavanja in Organizacija\" and \"Kemijska Nomenklatura in Klasifikacija Spojin\" to align with the core content. The goal is to provide a coherent framework.\n\nI\u0027ve begun organizing the content of the main note, structuring \"Splošna kemija (dodatne vsebine)\" with key elements. I\u0027m concentrating on the \"Uvodna Predavanja in Organizacija\" for administrative details and the \"Kemijska Nomenklatura in Klasifikacija Spojin\" for the core content.\n\nI\u0027m translating the raw audio and handwritten notes into a planned Obsidian structure. I\u0027ve broken the content into modules: \"Splošna kemija (dodatne vsebine)\" as the top-level note, branching into \"Definicije Ključnih Pojmov,\" \"Klasifikacija Anorganskih Spojin\" and so on. I\u0027m focusing on ensuring consistent [[wikilinks]] for interconnectivity and integrating the administrative introduction as a separate section in the primary note.\n\n\n**Consolidating the Output**\n\nI\u0027m now compiling the notes, integrating the content, and ensuring consistent structure for \"Splošna kemija (dodatne vsebine)\". I\u0027ve broken the content into modules: \"Splošna kemija (dodatne vsebine)\" as the top-level note, branching into \"Definicije Ključnih Pojmov,\" \"Klasifikacija Anorganskih Spojin\" and so on. I\u0027m focusing on ensuring consistent [[wikilinks]] for interconnectivity.\n\n\n**Synthesizing the Knowledge**\n\nI\u0027m now integrating the initial information into the Obsidian format. I\u0027m focusing on \"Splošna kemija (dodatne vsebine)\" as the main note, linking to sub-notes for \"Definicije Ključnih Pojmov,\" \"Klasifikacija Anorganskih Spojin\" and \"Imenovanje Ionov.\" My efforts are concentrated on making an interconnected Zettelkasten-style structure, and also retaining the critical tutor role of providing clarifying comments.\n\n\n",
+      "role": "model",
+      "tokenCount": 2653,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Analyzing the Task\u0027s Core**\n\nI\u0027m zeroing in on the fundamental need: to transmute lecture recordings and handwritten scribbles into a well-organized structure. I\u0027m focusing on parsing the request to identify the primary pain points and desired outcomes. The objective is to distill the core objective.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Clarifying the Objectives**\n\nNow I\u0027m delving deeper into the user\u0027s requirements. The key challenge lies in the tight formatting constraints – LaTeX for all formulas, standard Markdown with wikilinks for headers, and separate subfiles for linked topics. My goal is to craft a solution that seamlessly translates the raw input into this structure, effectively building a Zettelkasten-style knowledge base. I also need to make sure I don\u0027t introduce mistakes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Obsidian Structure**\n\nI\u0027m now outlining the Obsidian note structure based on the initial audio portion. \"Kemijska Nomenklatura\" will become the central node, with subfiles created for Ionic Compounds, Molecular Compounds, and so on. My focus is on ensuring these nodes are interconnected using [[wikilinks]], building the Zettelkasten-style knowledge graph. I\u0027ll need to remember to keep a special section for the admin bits that were at the beginning of the recording.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Note Hierarchy**\n\nI\u0027m translating the raw audio and handwritten notes into a planned Obsidian structure. I\u0027ve broken the content into modules: \"Kemijska Nomenklatura\" as the top-level note, branching into \"Ionske Spojine,\" \"Molekulske Spojine,\" and further classifications. I\u0027m focusing on ensuring consistent [[wikilinks]] for interconnectivity and integrating the administrative introduction as a separate section in the primary note. I\u0027m taking the tutor role of providing critical notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing the Core Knowledge**\n\nI\u0027m now integrating the initial information into the Obsidian format. I\u0027m focusing on \"Kemijska Nomenklatura\" as the main note, linking to sub-notes for \"Ionske Spojine,\" \"Molekulske Spojine,\" and others. My efforts are concentrated on making a interconnected Zettelkasten-style structure, and also retaining the critical tutor role of providing clarifying comments.\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Information**\n\nI\u0027m now starting the content extraction. I\u0027ll transform the initial overview into a note, covering administrative details (lecturer, schedule, assessment) within an \"Introduction\" section. Following this, I\u0027ll structure the main content around \"Chemical Nomenclature,\" detailing the compound classifications introduced. I\u0027m taking the tutor role to include insights and clarifying comments.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Obsidian Notes**\n\nI\u0027m translating the raw audio and handwritten notes into a planned Obsidian structure. I\u0027ve broken the content into modules: \"Splošna kemija (dodatne vsebine)\" as the top-level note, branching into \"Definicije Ključnih Pojmov,\" \"Klasifikacija Anorganskih Spojin\" and so on. I\u0027m focusing on ensuring consistent [[wikilinks]] for interconnectivity and integrating the administrative introduction as a separate section in the primary note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Note\u0027s Structure**\n\nI\u0027m starting the structure of the main note, \"Splošna kemija (dodatne vsebine)\". It\u0027ll consist of an introductory section and a section for chemical nomenclature. I\u0027m focusing on \"Uvodna Predavanja in Organizacija\" and \"Kemijska Nomenklatura in Klasifikacija Spojin\" to align with the core content. The goal is to provide a coherent framework.\n\nI\u0027ve translated the structure of the notes into the Obsidian format, focusing on the main topic, \"Splošna kemija (dodatne vsebine).\" I\u0027m making sure that \"Uvodna Predavanja in Organizacija\" and \"Kemijska Nomenklatura in Klasifikacija Spojin\" are the main sections. My goal is to create links for the detailed definitions.\n\nI\u0027m now transforming the original source, making \"Splošna kemija (dodatne vsebine)\" the central point of the notes. I\u0027ve integrated \"Uvodna Predavanja in Organizacija\" and \"Kemijska Nomenklatura in Klasifikacija Spojin\" to guide the note structure. The next task is to produce the link structure.\n\nI\u0027ve begun organizing the content of the main note, structuring \"Splošna kemija (dodatne vsebine)\" with key elements. I\u0027m concentrating on the \"Uvodna Predavanja in Organizacija\" for administrative details and the \"Kemijska Nomenklatura in Klasifikacija Spojin\" for the core content.\n\nI\u0027m moving forward with \"Splošna kemija (dodatne vsebine)\" as the core note. I\u0027ve incorporated both administrative and core content sections, aiming to provide a clear and organized knowledge base. I\u0027m taking the tutor role to include links for the definitions.\n\nI\u0027m now incorporating the material into \"Splošna kemija (dodatne vsebine)\" as the principal note. I\u0027ve designed the framework to incorporate administrative details and the central content. I\u0027ll make sure to add internal links.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Note\u0027s Structure**\n\nI\u0027m starting the structure of the main note, \"Splošna kemija (dodatne vsebine)\". It\u0027ll consist of an introductory section and a section for chemical nomenclature. I\u0027m focusing on \"Uvodna Predavanja in Organizacija\" and \"Kemijska Nomenklatura in Klasifikacija Spojin\" to align with the core content. The goal is to provide a coherent framework.\n\nI\u0027ve begun organizing the content of the main note, structuring \"Splošna kemija (dodatne vsebine)\" with key elements. I\u0027m concentrating on the \"Uvodna Predavanja in Organizacija\" for administrative details and the \"Kemijska Nomenklatura in Klasifikacija Spojin\" for the core content.\n\nI\u0027m translating the raw audio and handwritten notes into a planned Obsidian structure. I\u0027ve broken the content into modules: \"Splošna kemija (dodatne vsebine)\" as the top-level note, branching into \"Definicije Ključnih Pojmov,\" \"Klasifikacija Anorganskih Spojin\" and so on. I\u0027m focusing on ensuring consistent [[wikilinks]] for interconnectivity and integrating the administrative introduction as a separate section in the primary note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Consolidating the Output**\n\nI\u0027m now compiling the notes, integrating the content, and ensuring consistent structure for \"Splošna kemija (dodatne vsebine)\". I\u0027ve broken the content into modules: \"Splošna kemija (dodatne vsebine)\" as the top-level note, branching into \"Definicije Ključnih Pojmov,\" \"Klasifikacija Anorganskih Spojin\" and so on. I\u0027m focusing on ensuring consistent [[wikilinks]] for interconnectivity.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing the Knowledge**\n\nI\u0027m now integrating the initial information into the Obsidian format. I\u0027m focusing on \"Splošna kemija (dodatne vsebine)\" as the main note, linking to sub-notes for \"Definicije Ključnih Pojmov,\" \"Klasifikacija Anorganskih Spojin\" and \"Imenovanje Ionov.\" My efforts are concentrated on making an interconnected Zettelkasten-style structure, and also retaining the critical tutor role of providing clarifying comments.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Of course! Based on your handwritten notes and the lecture recording, I\u0027ve structured the information into a set of notes suitable for your Obsidian vault. I\u0027ve organized the scattered topics, applied LaTeX for all formulas, and added some \"Critical Analysis\" points to clarify concepts, just as a tutor would.\n\nHere are the notes, organized into separate files as you requested.\n\n---\n\n### **File 1: `Splošna kemija (dodatne vsebine).md`**\n\n```markdown\n# [[Splošna kemija (dodatne vsebine)]]\n\nThis file serves as the main hub for the additional content in General Chemistry, specifically designed for the Chemistry university program (UNI KEM).\n\n## [[#Uvodna Predavanja in Organizacija]]\n\nThe first lecture provided an overview of the course structure, schedule, and assessment methods.\n\n- **Lecturer:** Prof. Janja Trček\n- **Schedule:** Lectures for additional content will primarily take place on Fridays, starting at 8:15.\n- **Communication:** The main channel for communication and materials will be the Arnes Učilnice platform.\n\n### [[#Struktura Ocenjevanja]]\nThe final grade is a composite of several components, reflecting both the core \"Splošna kemija\" and this \"dodatne vsebine\" module.\n\n1.  **Pisni Izpit (Written Exam):** 50% of the final grade. This covers the core general chemistry syllabus shared with other programs.\n2.  **Naloge iz Dodatnih Vsebin (Tasks from Additional Content):** 25% of the final grade. This will assess the material covered in these specific lectures.\n3.  **Delni Zaključni Kolokvij (Seminar/Lab Colloquium):** 25% of the final grade. This is tied to the seminar and laboratory work.\n\n\u003e **Note to Self:** The assessment is clearly divided. It\u0027s crucial to distinguish between the core syllabus and this advanced content for chemistry majors when studying for exams and assignments.\n\n## [[#Kemijska Nomenklatura in Klasifikacija Spojin]]\n\nThe first major topic is a systematic review and deepening of chemical nomenclature. A solid understanding of this is fundamental for all future chemistry subjects.\n\n### [[Definicije Ključnih Pojmov]]\nA review of the fundamental building blocks of chemical language, such as chemical species, formula units, and ions.\n\n### [[Klasifikacija Anorganskih Spojin]]\nA systematic breakdown of how inorganic compounds are categorized, which forms the basis for their naming conventions.\n\n### [[Imenovanje Ionov]]\nSpecific rules for naming different types of ions, including monoatomic, polyatomic, and the particularly important oxoanions.\n\n```\n---\n\n### **File 2: `Definicije Ključnih Pojmov.md`**\n\n```markdown\n# [[Definicije Ključnih Pojmov]]\n\nThis note clarifies the fundamental terms used in chemical nomenclature.\n\n### [[#Kemijska Zvrst (Chemical Species)]]\n\"Kemijska zvrst\" is a general term that refers to any chemically distinct entity. This includes:\n-   **Atom:** A single, neutral particle of an element.\n    -   *Primer:* Žveplov atom ($S$)\n-   **Molekula (Molecule):** A neutral particle composed of two or more atoms joined by covalent bonds.\n    -   *Primer:* Molekula žvepla ($S_8$)\n-   **Ion:** An atom or molecule that has a net electrical charge due to the loss or gain of one or more electrons.\n    -   *Primer:* Sulfitni ion ($SO_3^{2-}$)\n-   **Radikal (Radical):** An atom or molecule with an unpaired electron, making it highly reactive.\n    -   *Primer:* Klorov radikal ($Cl^{\\bullet}$)\n-   **Kompleks (Complex):** A central metal atom or ion bonded to surrounding molecules or ions, known as ligands.\n    -   *Primer:* Tetraamminbaker(II) ion ($[Cu(NH_3)_4]^{2+}$)\n\n### [[#Kemijska Spojina in Formula (Chemical Compound and Formula)]]\nA chemical compound is a substance formed from two or more different elements chemically united in fixed proportions.\n\n#### [[#Formulska Enota (Formula Unit)]]\nThis is the empirical formula of an ionic compound, representing the simplest whole-number ratio of ions in the crystal lattice.\n-   *Primer:* For sodium chloride, the formula unit is $NaCl$. This indicates a 1:1 ratio of $Na^+$ to $Cl^-$ ions in its crystal structure.\n-   **Note:** We use \"formula unit\" for ionic compounds because they don\u0027t form discrete molecules but rather extensive, ordered crystal lattices.\n\n### [[#Ion]]\nAn ion is a charged chemical species.\n-   **Monoatomni ion (Monoatomic ion):** An ion consisting of a single atom that has gained or lost electrons.\n-   **Poliatomni ion (Polyatomic ion):** An ion composed of two or more atoms covalently bonded together that act as a single unit with a net charge.\n```\n---\n\n### **File 3: `Klasifikacija Anorganskih Spojin.md`**\n\n```markdown\n# [[Klasifikacija Anorganskih Spojin]]\n\nAnorganic compounds are systematically classified to facilitate their naming and the prediction of their properties. The primary division is based on the type of bonding.\n\n### [[Ionske Spojine (Ionic Compounds)]]\nFormed between metals and non-metals, involving the transfer of electrons and formation of ions held together by electrostatic forces.\n\n#### [[#Binarne Ionske Spojine]]\nComposed of ions from only two different elements.\n-   *Primeri:* $KCl$, $AlCl_3$\n\n#### [[#Ternarne Ionske Spojine]]\nComposed of ions from three or more different elements, typically involving at least one polyatomic ion.\n-   *Primeri:* $KNO_3$, $Al(NO_3)_3$\n\n### [[Molekulske Spojine (Molecular Compounds)]]\nFormed between non-metals, involving the sharing of electrons to form covalent bonds and discrete molecules.\n\n#### [[#Binarne Molekulske Spojine]]\nComposed of molecules containing atoms of only two different elements.\n-   *Primeri:* $H_2O$, $NH_3$\n\n#### [[#Binarne Kisline]]\nA specific class of binary molecular compounds where hydrogen is bonded to a more electronegative non-metal. They form acidic solutions in water.\n-   *Primeri:* $HCl$, $H_2S$\n\n#### [[#Ternarne Kisline (Okso-kisline)]]\nAcids containing three elements: hydrogen, oxygen, and another non-metal (the central atom).\n-   *Primeri:* Žveplova(VI) kislina ($H_2SO_4$), Fosforjeva(V) kislina ($H_3PO_4$)\n\n```\n---\n\n### **File 4: `Imenovanje Ionov.md`**\n\n```markdown\n# [[Imenovanje Ionov]]\n\nThe systematic naming of ions is crucial for building the names of more complex compounds.\n\n### [[#Monoatomni in Poliatomni Ioni]]\n-   **Monoatomni Ioni:** Single-atom ions. Cations (positive) usually keep the element\u0027s name (e.g., natrijev ion, $Na^+$), while anions (negative) take the element\u0027s root and add the suffix \"-id\" (e.g., klorid, $Cl^-$).\n-   **Poliatiomni Ioni:** Multi-atom ions. Many have common names that must be learned (e.g., amonijev ion, $NH_4^+$). Special rules apply for series of ions like oxoanions.\n\n### [[#Oksoanioni (Oxoanions)]]\nOksoanioni are polyatomic anions containing a central atom bonded to one or more oxygen atoms. Their naming follows a specific pattern related to the number of oxygen atoms (and thus the oxidation state of the central atom).\n\n#### [[#Končnici -at in -it (-ate and -ite Suffixes)]]\nThe suffixes `-at` and `-it` are used to differentiate between oxoanions of the same element with different numbers of oxygen atoms.\n\n-   **-at (-ate):** This suffix is generally used for the oxoanion with the *higher* number of oxygen atoms (higher oxidation state of the central atom).\n-   **-it (-ite):** This suffix is used for the oxoanion with the *lower* number of oxygen atoms (lower oxidation state).\n\n| Ime Kisline (Acid Name) | Formula Kisline (Acid Formula) | Ime Aniona (Anion Name) | Formula Aniona (Anion Formula) |\n| -------------------------| -------------------------------| -------------------------| -------------------------------|\n| Dušikova(V) kislina      | $HNO_3$                        | **Nitrat**                | $NO_3^-$                       |\n| Dušikova(III) kislina    | $HNO_2$                        | **Nitrit**                | $NO_2^-$                       |\n| Žveplova(VI) kislina     | $H_2SO_4$                      | **Sulfat**                | $SO_4^{2-}$                    |\n| Žveplova(IV) kislina     | $H_2SO_3$                      | **Sulfit**                | $SO_3^{2-}$                    |\n| Ogljikova kislina        | $H_2CO_3$                      | **Karbonat**              | $CO_3^{2-}$                    |\n\n\u003e #### **Critical Analysis: Beyond -at and -it**\n\u003e While the `-at` vs. `-it` rule is a great starting point, it\u0027s a simplification. The system is based on the **oxidation state** of the central atom. For elements that can form more than two oxoanions (like chlorine), prefixes are also used:\n\u003e -   **Per-…-at:** Highest oxidation state (e.g., Perklorat, $ClO_4^-$)\n\u003e -   **-at:** High oxidation state (e.g., Klorat, $ClO_3^-$)\n\u003e -   **-it:** Low oxidation state (e.g., Klorit, $ClO_2^-$)\n\u003e -   **Hipo-…-it:** Lowest oxidation state (e.g., Hipoklorit, $ClO^-$)\n\u003e Understanding this broader system based on oxidation states provides a more powerful and predictive tool than just memorizing pairs.\n\n```",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 2382,
+      "parts": [{
+        "text": "Of course! Based on your handwritten notes and the lecture recording, I\u0027ve structured the information into a set of notes"
+      }, {
+        "text": " suitable for your Obsidian vault. I\u0027ve organized the scattered topics, applied LaTeX for all formulas, and added some \""
+      }, {
+        "text": "Critical Analysis\" points to clarify concepts, just as a tutor would.\n\nHere are the notes, organized into separate files as you"
+      }, {
+        "text": " requested.\n\n---\n\n### **File 1: `Splošna kemija (dodatne vseb"
+      }, {
+        "text": "ine).md`**\n\n"
+      }, {
+        "text": "```markdown\n# [[Splošna kemija (dodatne vsebine)]]\n\n"
+      }, {
+        "text": "This file serves as the main hub for the additional content in General Chemistry, specifically designed for the Chemistry university program (UNI"
+      }, {
+        "text": " KEM).\n\n## [[#Uvodna Predavanja in Organizacija]]\n\nThe first lecture provided an overview of the"
+      }, {
+        "text": " course structure, schedule, and assessment methods.\n\n- **Lecturer:** Prof. Janja Trček\n- **Schedule"
+      }, {
+        "text": ":** Lectures for additional content will primarily take place on Fridays, starting at 8:15.\n- **Communication:** The main"
+      }, {
+        "text": " channel for communication and materials will be the Arnes Učilnice platform.\n\n### [[#Struktura Ocenjevanja]]\nThe final grade is a composite of several components, reflecting both the core \"Splošna kemija\" and"
+      }, {
+        "text": " this \"dodatne vsebine\" module.\n\n1.  **Pisni Izpit (Written Exam):"
+      }, {
+        "text": "** 50% of the final grade. This covers the core general chemistry syllabus shared with other programs.\n2"
+      }, {
+        "text": ".  **Naloge iz Dodatnih Vsebin (Tasks from Additional Content):** 25%"
+      }, {
+        "text": " of the final grade. This will assess the material covered in these specific lectures.\n3.  **Delni Zak"
+      }, {
+        "text": "ljučni Kolokvij (Seminar/Lab Colloquium):** 25% of the final grade. This"
+      }, {
+        "text": " is tied to the seminar and laboratory work.\n\n\u003e **Note to Self:** The assessment is clearly divided. It\u0027s crucial to"
+      }, {
+        "text": " distinguish between the core syllabus and this advanced content for chemistry majors when studying for exams and assignments.\n\n## [[#Kemijska Nomenklatura in Klasifikacija Spojin]]\n\nThe first major topic is a systematic review and deepening"
+      }, {
+        "text": " of chemical nomenclature. A solid understanding of this is fundamental for all future chemistry subjects.\n\n### [[Definicije Ključnih Pojmov]]\nA review of the fundamental building blocks of chemical language, such as chemical species, formula units, and ions"
+      }, {
+        "text": ".\n\n### [[Klasifikacija Anorganskih Spojin]]\nA systematic breakdown of how inorganic compounds are categorized,"
+      }, {
+        "text": " which forms the basis for their naming conventions.\n\n### [[Imenovanje Ionov]]\nSpecific rules for naming different"
+      }, {
+        "text": " types of ions, including monoatomic, polyatomic, and the particularly important oxoanions.\n\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n---\n\n### **"
+      }, {
+        "text": "File 2: `Definicije Ključnih Pojmov.md`**\n\n"
+      }, {
+        "text": "```markdown\n# [[Definicije Ključnih Pojmov]]\n\nThis note clarifies the fundamental terms used in chemical nomenclature.\n\n### [[#Kemijska Zvrst (Chemical Species)]]\n\"Kemijska zvrst\" is a general term that refers to any chemically"
+      }, {
+        "text": " distinct entity. This includes:\n-   **Atom:** A single, neutral particle of an element.\n    -"
+      }, {
+        "text": "   *Primer:* Žveplov atom ($S$)\n-   **Molekula (Molecule):**"
+      }, {
+        "text": " A neutral particle composed of two or more atoms joined by covalent bonds.\n    -   *Primer:* Molekula ž"
+      }, {
+        "text": "vepla ($S_8$)\n-   **Ion:** An atom or molecule that has a net electrical charge due"
+      }, {
+        "text": " to the loss or gain of one or more electrons.\n    -   *Primer:* Sulfitni ion ($SO_3"
+      }, {
+        "text": "^{2-}$)\n-   **Radikal (Radical):** An atom or molecule with an unpaired electron,"
+      }, {
+        "text": " making it highly reactive.\n    -   *Primer:* Klorov radikal ($Cl^{\\bullet}$)\n-   **"
+      }, {
+        "text": "Kompleks (Complex):** A central metal atom or ion bonded to surrounding molecules or ions, known as ligands."
+      }, {
+        "text": "\n    -   *Primer:* Tetraamminbaker(II) ion ($[Cu(NH_3)_4]^{"
+      }, {
+        "text": "2+}$)\n\n### [[#Kemijska Spojina in Formula (Chemical Compound and Formula)]]\nA chemical"
+      }, {
+        "text": " compound is a substance formed from two or more different elements chemically united in fixed proportions.\n\n#### [[#Formulska Enota (Formula Unit)]]\nThis is the empirical formula of an ionic compound, representing the simplest whole-number ratio of"
+      }, {
+        "text": " ions in the crystal lattice.\n-   *Primer:* For sodium chloride, the formula unit is $NaCl$. This"
+      }, {
+        "text": " indicates a 1:1 ratio of $Na^+$ to $Cl^-$ ions in its crystal structure.\n-   "
+      }, {
+        "text": "**Note:** We use \"formula unit\" for ionic compounds because they don\u0027t form discrete molecules but rather extensive,"
+      }, {
+        "text": " ordered crystal lattices.\n\n### [[#Ion]]\nAn ion is a charged chemical species.\n-   **Monoatomni ion"
+      }, {
+        "text": " (Monoatomic ion):** An ion consisting of a single atom that has gained or lost electrons.\n-   **Poliat"
+      }, {
+        "text": "omni ion (Polyatomic ion):** An ion composed of two or more atoms covalently bonded together that act as a single unit"
+      }, {
+        "text": " with a net charge.\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n---\n\n### **File 3: `Klasifikacija Anorganskih"
+      }, {
+        "text": " Spojin.md`**\n\n"
+      }, {
+        "text": "```markdown\n# [[Klasifikacija Anorganskih Spojin]]"
+      }, {
+        "text": "\n\nAnorganic compounds are systematically classified to facilitate their naming and the prediction of their properties. The primary division is based on the"
+      }, {
+        "text": " type of bonding.\n\n### [[Ionske Spojine (Ionic Compounds)]]\nFormed between metals and non-metals"
+      }, {
+        "text": ", involving the transfer of electrons and formation of ions held together by electrostatic forces.\n\n#### [[#Binarne Ionske Spojine]]\nComposed of ions from only two different elements.\n-   *Primeri:* $KCl"
+      }, {
+        "text": "$, $AlCl_3$\n\n#### [[#Ternarne Ionske Spojine]]\nComposed of ions from three"
+      }, {
+        "text": " or more different elements, typically involving at least one polyatomic ion.\n-   *Primeri:* $KNO"
+      }, {
+        "text": "_3$, $Al(NO_3)_3$\n\n### [[Molekulske Spojine (Molecular Compounds)]]\nFormed between non-metals, involving the sharing of electrons to form covalent bonds and discrete molecules.\n\n"
+      }, {
+        "text": "#### [[#Binarne Molekulske Spojine]]\nComposed of molecules containing atoms of only two different elements"
+      }, {
+        "text": ".\n-   *Primeri:* $H_2O$, $NH_3$\n\n#### [[#Binarne Kisline]]\nA specific class of binary molecular compounds where hydrogen is bonded to a more electronegative non-metal. They"
+      }, {
+        "text": " form acidic solutions in water.\n-   *Primeri:* $HCl$, $H_2S$\n\n####"
+      }, {
+        "text": " [[#Ternarne Kisline (Okso-kisline)]]\nAcids containing three elements: hydrogen, oxygen"
+      }, {
+        "text": ", and another non-metal (the central atom).\n-   *Primeri:* Žveplova(VI) kisl"
+      }, {
+        "text": "ina ($H_2SO_4$), Fosforjeva(V) kislina ($H_3PO_"
+      }, {
+        "text": "4$)\n\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n---\n\n### **File 4: `Imenovanje Ionov.md`**\n\n"
+      }, {
+        "text": "```markdown\n# [[Imenovanje Ionov]]\n\nThe systematic naming of ions is crucial for building the names of more"
+      }, {
+        "text": " complex compounds.\n\n### [[#Monoatomni in Poliatomni Ioni]]\n-   **Monoatom"
+      }, {
+        "text": "ni Ioni:** Single-atom ions. Cations (positive) usually keep the element\u0027s name (e.g.,"
+      }, {
+        "text": " natrijev ion, $Na^+$), while anions (negative) take the element\u0027s root and add the suffix"
+      }, {
+        "text": " \"-id\" (e.g., klorid, $Cl^-$).\n-   **Poliati"
+      }, {
+        "text": "omni Ioni:** Multi-atom ions. Many have common names that must be learned (e.g., amonijev"
+      }, {
+        "text": " ion, $NH_4^+$). Special rules apply for series of ions like oxoanions.\n\n### [[#Oksoanioni (Oxoanions)]]\nOksoanioni are polyatomic anions containing a central atom bonded"
+      }, {
+        "text": " to one or more oxygen atoms. Their naming follows a specific pattern related to the number of oxygen atoms (and thus the oxidation state"
+      }, {
+        "text": " of the central atom).\n\n#### [[#Končnici -at in -it (-ate and -ite Suffixes)]]"
+      }, {
+        "text": "\nThe suffixes `-at` and `-it` are used to differentiate between oxoanions of the same element with"
+      }, {
+        "text": " different numbers of oxygen atoms.\n\n-   **-at (-ate):** This suffix is generally used for the ox"
+      }, {
+        "text": "oanion with the *higher* number of oxygen atoms (higher oxidation state of the central atom).\n-   **-"
+      }, {
+        "text": "it (-ite):** This suffix is used for the oxoanion with the *lower* number of oxygen atoms ("
+      }, {
+        "text": "lower oxidation state).\n\n| Ime Kisline (Acid Name) | Formula Kisline (Acid Formula) | I"
+      }, {
+        "text": "me Aniona (Anion Name) | Formula Aniona (Anion Formula) |\n| -------------------------|"
+      }, {
+        "text": " -------------------------------| -------------------------| -------------------------------|\n| Dušikova(V) kislina      "
+      }, {
+        "text": "| $HNO_3$                        | **Nitrat**                | $NO_3^-$                       |\n| Du"
+      }, {
+        "text": "šikova(III) kislina    | $HNO_2$                        | **Nitrit**                | $NO"
+      }, {
+        "text": "_2^-$                       |\n| Žveplova(VI) kislina     | $H_2"
+      }, {
+        "text": "SO_4$                      | **Sulfat**                | $SO_4^{2-}$                    |\n| Ž"
+      }, {
+        "text": "veplova(IV) kislina     | $H_2SO_3$                      | **Sulfit**                |"
+      }, {
+        "text": " $SO_3^{2-}$                    |\n| Ogljikova kislina        | $H_2CO_3"
+      }, {
+        "text": "$                      | **Karbonat**              | $CO_3^{2-}$                    |\n\n\u003e #### **Critical Analysis:"
+      }, {
+        "text": " Beyond -at and -it**\n\u003e While the `-at` vs. `-it` rule is a great starting point,"
+      }, {
+        "text": " it\u0027s a simplification. The system is based on the **oxidation state** of the central atom. For elements that"
+      }, {
+        "text": " can form more than two oxoanions (like chlorine), prefixes are also used:\n\u003e -   **Per-"
+      }, {
+        "text": "…-at:** Highest oxidation state (e.g., Perklorat, $ClO_4^-$)\n\u003e -   "
+      }, {
+        "text": "**-at:** High oxidation state (e.g., Klorat, $ClO_3^-$)\n\u003e"
+      }, {
+        "text": " -   **-it:** Low oxidation state (e.g., Klorit, $ClO_2^-$)\n\u003e"
+      }, {
+        "text": " -   **Hipo-…-it:** Lowest oxidation state (e.g., Hipoklorit, $ClO^"
+      }, {
+        "text": "-$)\n\u003e Understanding this broader system based on oxidation states provides a more powerful and predictive tool than just memorizing pairs"
+      }, {
+        "text": ".\n\n"
+      }, {
+        "text": "```"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

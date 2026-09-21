@@ -1,0 +1,291 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n4. Numbering. If you can\u0027t read the chronological order of the image or page, then there\u0027s a number on the bottom right corner indicating the page. \n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1HDcqQbnoj8jME0wX9hAeAuwNe0-bCCPU"
+      },
+      "role": "user",
+      "tokenCount": 62251
+    }, {
+      "driveImage": {
+        "id": "13fgSHQzFDWkrEgpz5ukuum8PMFR0gbjV"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1wFuE4M8VMr_GnkqA8HSTqcZjGdskh-Oz"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1A5Y_hdLaxLjrk_9RAjFYy-AWIVZyKMg3"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "text": "I came late to the lecture (this is about the 1/3rd of the the last 3 parts of the lecture.  But I think they went thought binary acids, Ternary acids and maybe before they went to bases or something. i\u0027d like you to fill in the blanks what\u0027s appropriate okay?        ",
+      "role": "user",
+      "tokenCount": 68
+    }, {
+      "text": "**Refining the Approach**\n\nI\u0027m currently breaking down the request: a late student needs help, likely university-level Gen Chem. Now, I\u0027m focusing on the implied learning goals. What fundamental concepts did they miss? What are the prerequisite building blocks for understanding this lecture? The goal is to provide a concise and targeted summary note structure, not a full rehash.\n\n\n**Synthesizing Knowledge Base**\n\nI\u0027ve been working on integrating the key concepts: \"Ternary Acids,\" \"Inductive Effect,\" and \"Chemical Kinetics.\"  The real challenge is the mix of audio, images, and the missing binary acids content.  I\u0027m trying to insert knowledge as a tutor might, filling gaps and anticipating potential misunderstandings. The goal is to build a solid Obsidian note adhering to strict formatting and making sure the information is easy to find and understand.\n\n\n**Adapting the Output**\n\nI\u0027ve decided to write the notes in English, considering the user\u0027s prompt and the need for clarity. I\u0027ll maintain the recognizable chemical terminology, mirroring international academic practices. I am also considering my system prompt instructions.\n\n\n**Deciphering the Lecture**\n\nI\u0027m translating the lecture, understanding it\u0027s in English to clarify the concepts better. Now I\u0027m carefully analyzing the transcript and images. My current task focuses on breaking down the concepts of binary acids and their influence on the subsequent ternary acids, and phosphorus\u0027 acid structures. I will write notes on the dissociation and key factors, particularly the inductive effect. The objective is to produce a cohesive and structured note system.\n\n\n**Elaborating Key Concepts**\n\nMy focus is on differentiating between the acidic hydrogens in phosphoric acids. I\u0027m noting that H directly attached to P isn\u0027t acidic. This leads to the tri, di, and monoprotic behavior of phosphoric acids. There\u0027s a debate on acid strength which I\u0027m aligning with, noting a lecture\u0027s unique explanation of the inductive effect, and I am noting the unique case regarding the exception. I\u0027ve also incorporated the Lewis acid behavior of boric acid.\n\n\n**Connecting the Dots**\n\nI\u0027m now integrating information on salts and hydrolysis, plus the introduction to chemical kinetics. I\u0027m noting the factors that influence reaction rates, distinguishing between thermodynamics and kinetics with examples. The new notes connect to the previous content. Salt hydrolysis, $Na_3PO_4$, $Na_2HPO_4$, and $NaH_2PO_4$ are being considered in my analysis. I am starting to write the notes.\n\n\n**Refining the Note Structure**\n\nI\u0027ve been working on structuring the notes within Obsidian, using tags to organize the content: #chemistry, #acids\\_bases, #kinetics, and #lecture_notes. I\u0027m focusing on three main sections: Binary Acids, Ternary Acids, and the Phosphorus Exception. Now, I\u0027m integrating the Binary Acids section as a \"missing\" foundation, clarifying the trend. I am currently concentrating on Phosphorus. I also added a \"Special Cases\" section to cover Boric Acid and polyprotic salts. I will start inserting the content.\n\n\n**Expanding on Kinetics**\n\nI\u0027m now elaborating on the kinetics section, differentiating it from thermodynamics as the lecture does. I\u0027m focusing on factors influencing reaction rates: rate laws, reaction order, and collision theory. I\u0027m taking the lecturer\u0027s emphasis on \"why\" into account, focusing on inductive effects. I\u0027m using `$$` for formulas and `\\ce{}` for chemistry notations. I\u0027m going to integrate this into the note. I\u0027ll also add a [RECONSTRUCTED CONTEXT] warning.\n\n\n**Adjusting for Exceptions**\n\nI\u0027m now revising my notes about the exceptions. I\u0027m adding a note that the lecture\u0027s order for ($H_3PO_2 \u003e H_3PO_3 \u003e H_3PO_4$) is contrary to some standard textbooks, but is supported by an organic chemistry view. The focus is to stay true to the lecture\u0027s viewpoint. The kinetics section is ready to integrate, with a new header, too. I\u0027m also double checking the SMILES, the math in the rate law formula, and the explanation of boric acid\u0027s special case, for final polish.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Refining the Approach**\n\nI\u0027m currently breaking down the request: a late student needs help, likely university-level Gen Chem. Now, I\u0027m focusing on the implied learning goals. What fundamental concepts did they miss? What are the prerequisite building blocks for understanding this lecture? The goal is to provide a concise and targeted summary note structure, not a full rehash.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Knowledge Base**\n\nI\u0027ve been working on integrating the key concepts: \"Ternary Acids,\" \"Inductive Effect,\" and \"Chemical Kinetics.\"  The real challenge is the mix of audio, images, and the missing binary acids content.  I\u0027m trying to insert knowledge as a tutor might, filling gaps and anticipating potential misunderstandings. The goal is to build a solid Obsidian note adhering to strict formatting and making sure the information is easy to find and understand.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Adapting the Output**\n\nI\u0027ve decided to write the notes in English, considering the user\u0027s prompt and the need for clarity. I\u0027ll maintain the recognizable chemical terminology, mirroring international academic practices. I am also considering my system prompt instructions.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Deciphering the Lecture**\n\nI\u0027m translating the lecture, understanding it\u0027s in English to clarify the concepts better. Now I\u0027m carefully analyzing the transcript and images. My current task focuses on breaking down the concepts of binary acids and their influence on the subsequent ternary acids, and phosphorus\u0027 acid structures. I will write notes on the dissociation and key factors, particularly the inductive effect. The objective is to produce a cohesive and structured note system.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Elaborating Key Concepts**\n\nMy focus is on differentiating between the acidic hydrogens in phosphoric acids. I\u0027m noting that H directly attached to P isn\u0027t acidic. This leads to the tri, di, and monoprotic behavior of phosphoric acids. There\u0027s a debate on acid strength which I\u0027m aligning with, noting a lecture\u0027s unique explanation of the inductive effect, and I am noting the unique case regarding the exception. I\u0027ve also incorporated the Lewis acid behavior of boric acid.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Connecting the Dots**\n\nI\u0027m now integrating information on salts and hydrolysis, plus the introduction to chemical kinetics. I\u0027m noting the factors that influence reaction rates, distinguishing between thermodynamics and kinetics with examples. The new notes connect to the previous content. Salt hydrolysis, $Na_3PO_4$, $Na_2HPO_4$, and $NaH_2PO_4$ are being considered in my analysis. I am starting to write the notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Note Structure**\n\nI\u0027ve been working on structuring the notes within Obsidian, using tags to organize the content: #chemistry, #acids\\_bases, #kinetics, and #lecture_notes. I\u0027m focusing on three main sections: Binary Acids, Ternary Acids, and the Phosphorus Exception. Now, I\u0027m integrating the Binary Acids section as a \"missing\" foundation, clarifying the trend. I am currently concentrating on Phosphorus. I also added a \"Special Cases\" section to cover Boric Acid and polyprotic salts. I will start inserting the content.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding on Kinetics**\n\nI\u0027m now elaborating on the kinetics section, differentiating it from thermodynamics as the lecture does. I\u0027m focusing on factors influencing reaction rates: rate laws, reaction order, and collision theory. I\u0027m taking the lecturer\u0027s emphasis on \"why\" into account, focusing on inductive effects. I\u0027m using `$$` for formulas and `\\ce{}` for chemistry notations. I\u0027m going to integrate this into the note. I\u0027ll also add a [RECONSTRUCTED CONTEXT] warning.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Adjusting for Exceptions**\n\nI\u0027m now revising my notes about the exceptions. I\u0027m adding a note that the lecture\u0027s order for ($H_3PO_2 \u003e H_3PO_3 \u003e H_3PO_4$) is contrary to some standard textbooks, but is supported by an organic chemistry view. The focus is to stay true to the lecture\u0027s viewpoint. The kinetics section is ready to integrate, with a new header, too. I\u0027m also double checking the SMILES, the math in the rate law formula, and the explanation of boric acid\u0027s special case, for final polish.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Here is the comprehensive Obsidian-optimized note file.\n\nI have reconstructed the missing **Binary Acids** section to bridge the gap before the lecture recording starts, ensuring a seamless flow into **Ternary Acids** and **Chemical Kinetics**.\n\n***\n\n# [[Inorganic Chemistry]]: Acids, Bases, and Introduction to Kinetics\n\n## 1. [[Binary Acids]] (Contextual Reconstruction)\n\u003e **Note to Self:** I missed the start of the lecture. Based on the transition into ternary acids, the lecturer covered binary acids ($HX$) immediately prior. Here is the reconstructed logic required to understand the subsequent topics.\n\n### General Structure\n*   **Formula:** $H_n X$ (where X is a non-metal, e.g., $HCl, H_2S$).\n*   **Dissociation:** $$HX_{(aq)} \\rightleftharpoons H^+_{(aq)} + X^-_{(aq)}$$\n\n### Trends in Acidity\nThe strength of a binary acid depends on two competing factors:\n1.  **Bond Polarity (Period Trend):** As electronegativity of $X$ increases (left to right), the $H-X$ bond becomes more polar, making $H^+$ easier to remove.\n    *   *Trend:* Acidity increases across a period.\n    *   *Example:* $CH_4 \u003c NH_3 \u003c H_2O \u003c HF$.\n2.  **Bond Strength (Group Trend):** As the size of $X$ increases (down a group), the $H-X$ bond becomes longer and weaker. **This is the dominant factor.**\n    *   *Trend:* Acidity increases down a group.\n    *   *Example:* $HF \\ll HCl \u003c HBr \u003c HI$.\n\n\u003e **Critical Analysis:** Unlike ternary acids (where electronegativity rules), in binary acids, **bond strength** is the primary driver for acidity down a group. $HI$ is the strongest because the bond is the weakest.\n\n---\n\n## 2. [[Ternary Acids]] (Oxoacids)\n\n### Structural Definition\n*   **Structure:** Contains Hydrogen, Oxygen, and a Central Atom ($Z$).\n*   **General Formula:** $H-O-Z$ (or $H_mZO_n$).\n*   **Key Concept:** The acidic proton is *always* bound to an Oxygen atom, forming a hydroxyl group ($-OH$) attached to the central atom.\n\n### Factors Affecting Acidity Strength\nThe strength depends on how easily the $O-H$ bond breaks to release $H^+$. This is determined by the **Inductive Effect**.\n\n#### 1. Electronegativity of the Central Atom ($Z$)\n*   If $Z$ is highly electronegative, it pulls electron density from the $O$ atom.\n*   The $O$ atom, in turn, pulls electron density from the $H$ atom.\n*   **Result:** The $O-H$ bond weakens (becomes more polar), and $H^+$ dissociates more easily.\n*   **Comparison:**\n    $$HOCl \u003c HOBr \u003c HOI$$\n    *   *Correction/Warning:* The transcript notes that $Cl$ is more electronegative than $I$. Therefore, the pull is stronger in $HOCl$.\n    *   **Trend:** Higher electronegativity of $Z \\rightarrow$ Stronger Acid.\n\n#### 2. Oxidation Number (Number of Oxygen Atoms)\n*   As the number of terminal Oxygen atoms (O atoms *not* bonded to H) increases, the electron density is pulled away from the central atom ($Z$) and the $O-H$ bond.\n*   **Delocalization:** The negative charge on the resulting anion (conjugate base) is stabilized by resonance over more oxygen atoms.\n*   **General Formula:** $O_nZ(OH)_m$. As $n$ increases, acidity increases.\n\n**Example: Chlorine Series**\n$$HClO \u003c HClO_2 \u003c HClO_3 \u003c HClO_4$$\n*   **Hypochlorous acid ($HClO$):** $+1$ oxidation state. Weakest.\n*   **Perchloric acid ($HClO_4$):** $+7$ oxidation state. Strongest.\n\n**Example: Nitrogen Series**\n*   **Nitrous Acid ($HNO_2$):** Weak acid.\n*   **Nitric Acid ($HNO_3$):** Strong acid.\n*   *Reasoning:* Nitrogen in $HNO_3$ has a higher oxidation state ($+5$) and more oxygen atoms to stabilize the anion via resonance.\n\n**Example: Sulfur Series**\n*   **Sulfurous Acid ($H_2SO_3$):** Weaker.\n*   **Sulfuric Acid ($H_2SO_4$):** Stronger ($+6$ oxidation state).\n\n---\n\n## 3. [[Phosphorus Acid Exceptions]]\n\u003e **Warning:** Phosphorus acids **do not** follow the standard rule that \"more Oxygens \u003d stronger acid\" in a straightforward way, nor does the formula $H_3...$ imply triprotic behavior. We must look at the physical structure.\n\n### The Structure Anomaly\nAcidity is determined by protons on **Oxygen** ($P-O-H$), not protons directly on **Phosphorus** ($P-H$). The $P-H$ bond is non-polar and does not dissociate.\n\n| Acid Name | Formula | Structure (SMILES) | Protic Nature | Strength (Notes*) |\n| :--- | :--- | :--- | :--- | :--- |\n| **Hypophosphorous** | $H_3PO_2$ | `[H]OP(\u003dO)([H])[H]` | **Monoprotic** (1 OH) | Strongest |\n| **Phosphorous** | $H_3PO_3$ | `[H]OP(\u003dO)(O[H])[H]` | **Diprotic** (2 OH) | Medium |\n| **Phosphoric** | $H_3PO_4$ | `[H]OP(\u003dO)(O[H])O[H]` | **Triprotic** (3 OH) | Weakest |\n\n### Justification of Strength Inversion ($H_3PO_2 \u003e H_3PO_3 \u003e H_3PO_4$)\n*   **The Lecture Logic:** The lecturer argues that despite having fewer oxygens, $H_3PO_2$ is stronger due to the specific structural arrangement and the inductive effect (or lack of opposing resonance stabilization relative to the proton release).\n*   *Note:* Standard literature often lists $pK_a$ values as very similar ($2.1$, $1.3$, $2.0$), but for this course, memorize the **Inverse Order** provided in the notes (Page 1 bottom).\n\n---\n\n## 4. Special Cases: [[Boric Acid]] and Salts\n\n### Boric Acid ($H_3BO_3$)\n*   **Behavior:** It is **not** a Brønsted-Lowry acid (doesn\u0027t donate its own proton directly). It acts as a **Lewis Acid**.\n*   **Mechanism:** The Boron atom is electron-deficient (sextet). It accepts an electron pair from a water molecule\u0027s hydroxide ion ($OH^-$).\n*   **Reaction:**\n    $$B(OH)_3 + 2H_2O \\rightleftharpoons [B(OH)_4]^- + H_3O^+$$\n*   **Result:** It effectively releases a proton from the *water*, not the boron structure itself.\n\n### Hydrolysis of Salts (Brief Overview)\nThe acidity of a salt depends on the strength of the parent acid/base.\n*   **$Na_3PO_4$:** Salt of Strong Base ($NaOH$) + Weak Acid ($HPO_4^{2-}$ conjugate). **Solution is Basic.**\n*   **$NaH_2PO_4$:** Amphoteric, but generally acidic due to the ionization of the remaining protons.\n\n---\n\n## 5. [[Chemical Kinetics]]\n\n### 5.1 Kinetics vs. Thermodynamics\n*   **[[Thermodynamics]]:** Determines **IF** a reaction can occur (Spontaneity).\n    *   Condition: $\\Delta G \u003c 0$.\n    *   *Example:* $2NO + O_2 \\rightarrow 2NO_2$ (Spontaneous at $25^\\circ C$, $\\Delta G \u003d -140 kJ$).\n*   **[[Kinetics]]:** Determines **HOW FAST** a reaction occurs (Rate).\n    *   *Example:* $2H_2 + O_2 \\rightarrow 2H_2O$.\n    *   Thermodynamically favorable ($\\Delta G \\ll 0$), but kinetically **extremely slow** at room temperature without a catalyst (spark).\n\n### 5.2 Factors Affecting Reaction Rate\n1.  **Physical State:** Surface area of solid reactants. (Finely ground powder reacts faster than chunks).\n2.  **Concentration:** Higher concentration \u003d more collisions.\n3.  **Temperature:** Higher T \u003d particles have more Kinetic Energy $\\rightarrow$ more successful collisions (Activation Energy).\n4.  **Catalyst:** Lowers Activation Energy ($E_a$).\n\n### 5.3 Reaction Rate Definition\nThe change in concentration of a reactant or product over time.\n$$v \u003d \\pm \\frac{dc}{dt}$$\n*   *(Negative sign for reactants consuming, positive for products forming).*\n\n### 5.4 The Rate Law\nThe mathematical relationship between rate and concentration.\n$$v \u003d k \\cdot [A]^\\alpha \\cdot [B]^\\beta$$\n*   $k$: Rate constant (temperature dependent).\n*   $[A], [B]$: Concentrations of reactants.\n*   $\\alpha, \\beta$: **Orders of reaction**.\n    *   **Crucial Note:** $\\alpha$ and $\\beta$ are determined **experimentally**. They are NOT necessarily the stoichiometric coefficients ($a, b$) from the balanced equation ($aA + bB \\rightarrow Products$).\n\n### 5.5 Collision Theory (Teorija Trkov)\n*   **Basic Premise:** For a reaction to occur, particles must collide.\n*   **Success Factors:**\n    1.  **Correct Orientation:** Steric factor.\n    2.  **Sufficient Energy:** Must exceed Activation Energy ($E_a$).\n\n***\n\n### **General Formulas \u0026 Constants**\n*   **Dissociation of base:** $MOH \\rightleftharpoons M^+ + OH^-$\n*   **General Rate Law:** $v \u003d k[A]^\\alpha[B]^\\beta$\n*   **Arrhenius Equation (implied by T dependence):** $k \u003d A \\cdot e^{-E_a/RT}$",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 2307,
+      "parts": [{
+        "text": "Here is the comprehensive Obsidian-optimized note file.\n\nI have reconstructed the missing **Binary Acids** section to bridge the gap before the lecture recording"
+      }, {
+        "text": " starts, ensuring a seamless flow into **Ternary Acids** and **Chemical Kinetics**.\n\n***\n\n# [[In"
+      }, {
+        "text": "organic Chemistry]]: Acids, Bases, and Introduction to Kinetics\n\n## 1. [[Binary Acids]] (Contextual Reconstruction)\n"
+      }, {
+        "text": "\u003e **Note to Self:** I missed the start of the lecture. Based on the transition into ternary acids, the lecturer covered binary"
+      }, {
+        "text": " acids ($HX$) immediately prior. Here is the reconstructed logic required to understand the subsequent topics.\n\n### General Structure\n"
+      }, {
+        "text": "*   **Formula:** $H_n X$ (where X is a non-metal, e.g.,"
+      }, {
+        "text": " $HCl, H_2S$).\n*   **Dissociation:** $$HX_{(aq)} \\rightleftharpoons H^+_{("
+      }, {
+        "text": "aq)} + X^-_{(aq)}$$\n\n### Trends in Acidity\nThe strength of a binary acid depends on two"
+      }, {
+        "text": " competing factors:\n1.  **Bond Polarity (Period Trend):** As electronegativity of $X$ increases ("
+      }, {
+        "text": "left to right), the $H-X$ bond becomes more polar, making $H^+$ easier to remove.\n    "
+      }, {
+        "text": "*   *Trend:* Acidity increases across a period.\n    *   *Example:* $CH_4 \u003c"
+      }, {
+        "text": " NH_3 \u003c H_2O \u003c HF$.\n2.  **Bond Strength (Group Trend):** As the"
+      }, {
+        "text": " size of $X$ increases (down a group), the $H-X$ bond becomes longer and weaker. **"
+      }, {
+        "text": "This is the dominant factor.**\n    *   *Trend:* Acidity increases down a group.\n    *   *"
+      }, {
+        "text": "Example:* $HF \\ll HCl \u003c HBr \u003c HI$.\n\n\u003e **Critical Analysis:** Unlike ternary acids (where electroneg"
+      }, {
+        "text": "ativity rules), in binary acids, **bond strength** is the primary driver for acidity down a group. $HI$ is the"
+      }, {
+        "text": " strongest because the bond is the weakest.\n\n---\n\n## 2. [[Ternary Acids]] (Oxoacids"
+      }, {
+        "text": ")\n\n### Structural Definition\n*   **Structure:** Contains Hydrogen, Oxygen, and a Central Atom ($Z$).\n*"
+      }, {
+        "text": "   **General Formula:** $H-O-Z$ (or $H_mZO_n$).\n*   **Key"
+      }, {
+        "text": " Concept:** The acidic proton is *always* bound to an Oxygen atom, forming a hydroxyl group ($-OH$) attached"
+      }, {
+        "text": " to the central atom.\n\n### Factors Affecting Acidity Strength\nThe strength depends on how easily the $O-H$ bond"
+      }, {
+        "text": " breaks to release $H^+$. This is determined by the **Inductive Effect**.\n\n#### 1. Electronegativity of"
+      }, {
+        "text": " the Central Atom ($Z$)\n*   If $Z$ is highly electronegative, it pulls electron density from the $O$"
+      }, {
+        "text": " atom.\n*   The $O$ atom, in turn, pulls electron density from the $H$ atom.\n*"
+      }, {
+        "text": "   **Result:** The $O-H$ bond weakens (becomes more polar), and $H^+$ dissociates more"
+      }, {
+        "text": " easily.\n*   **Comparison:**\n    $$HOCl \u003c HOBr \u003c HOI$$\n    *   "
+      }, {
+        "text": "*Correction/Warning:* The transcript notes that $Cl$ is more electronegative than $I$. Therefore, the pull"
+      }, {
+        "text": " is stronger in $HOCl$.\n    *   **Trend:** Higher electronegativity of $Z \\rightarrow$ Stronger"
+      }, {
+        "text": " Acid.\n\n#### 2. Oxidation Number (Number of Oxygen Atoms)\n*   As the number of terminal Oxygen atoms"
+      }, {
+        "text": " (O atoms *not* bonded to H) increases, the electron density is pulled away from the central atom ($Z$) and the"
+      }, {
+        "text": " $O-H$ bond.\n*   **Delocalization:** The negative charge on the resulting anion (conjugate base)"
+      }, {
+        "text": " is stabilized by resonance over more oxygen atoms.\n*   **General Formula:** $O_nZ(OH)_m"
+      }, {
+        "text": "$. As $n$ increases, acidity increases.\n\n**Example: Chlorine Series**\n$$HClO \u003c HClO"
+      }, {
+        "text": "_2 \u003c HClO_3 \u003c HClO_4$$\n*   **Hypochlorous acid ($HClO"
+      }, {
+        "text": "$):** $+1$ oxidation state. Weakest.\n*   **Perchloric acid ($HClO_4"
+      }, {
+        "text": "$):** $+7$ oxidation state. Strongest.\n\n**Example: Nitrogen Series**\n*   **Nitrous"
+      }, {
+        "text": " Acid ($HNO_2$):** Weak acid.\n*   **Nitric Acid ($HNO_3$):"
+      }, {
+        "text": "** Strong acid.\n*   *Reasoning:* Nitrogen in $HNO_3$ has a higher oxidation state ($+"
+      }, {
+        "text": "5$) and more oxygen atoms to stabilize the anion via resonance.\n\n**Example: Sulfur Series**\n*   **Sulfurous Acid"
+      }, {
+        "text": " ($H_2SO_3$):** Weaker.\n*   **Sulfuric Acid ($H_2SO_4"
+      }, {
+        "text": "$):** Stronger ($+6$ oxidation state).\n\n---\n\n## 3. [[Phosphorus Acid Exceptions]]\n\u003e"
+      }, {
+        "text": " **Warning:** Phosphorus acids **do not** follow the standard rule that \"more Oxygens \u003d stronger acid\" in a"
+      }, {
+        "text": " straightforward way, nor does the formula $H_3...$ imply triprotic behavior. We must look at the"
+      }, {
+        "text": " physical structure.\n\n### The Structure Anomaly\nAcidity is determined by protons on **Oxygen** ($P-O-H"
+      }, {
+        "text": "$), not protons directly on **Phosphorus** ($P-H$). The $P-H$ bond is non-polar and does"
+      }, {
+        "text": " not dissociate.\n\n| Acid Name | Formula | Structure (SMILES) | Protic Nature | Strength (Notes*)"
+      }, {
+        "text": " |\n| :--- | :--- | :--- | :--- | :--- |\n| **Hypophosphorous** |"
+      }, {
+        "text": " $H_3PO_2$ | `[H]OP(\u003dO)([H])[H]` | **Monoprotic**"
+      }, {
+        "text": " (1 OH) | Strongest |\n| **Phosphorous** | $H_3PO_3$ | `["
+      }, {
+        "text": "H]OP(\u003dO)(O[H])[H]` | **Diprotic** (2 OH) | Medium |\n| **"
+      }, {
+        "text": "Phosphoric** | $H_3PO_4$ | `[H]OP(\u003dO)(O[H"
+      }, {
+        "text": "])O[H]` | **Triprotic** (3 OH) | Weakest |\n\n### Justification of Strength In"
+      }, {
+        "text": "version ($H_3PO_2 \u003e H_3PO_3 \u003e H_3PO_4$)\n"
+      }, {
+        "text": "*   **The Lecture Logic:** The lecturer argues that despite having fewer oxygens, $H_3PO_2$ is stronger"
+      }, {
+        "text": " due to the specific structural arrangement and the inductive effect (or lack of opposing resonance stabilization relative to the proton release).\n*   "
+      }, {
+        "text": "*Note:* Standard literature often lists $pK_a$ values as very similar ($2.1$, $1.3$,"
+      }, {
+        "text": " $2.0$), but for this course, memorize the **Inverse Order** provided in the notes (Page 1 bottom"
+      }, {
+        "text": ").\n\n---\n\n## 4. Special Cases: [[Boric Acid]] and Salts\n\n### Boric Acid ($H"
+      }, {
+        "text": "_3BO_3$)\n*   **Behavior:** It is **not** a Brønsted-Lowry acid"
+      }, {
+        "text": " (doesn\u0027t donate its own proton directly). It acts as a **Lewis Acid**.\n*   **Mechanism:** The"
+      }, {
+        "text": " Boron atom is electron-deficient (sextet). It accepts an electron pair from a water molecule\u0027s hydroxide ion ($"
+      }, {
+        "text": "OH^-$).\n*   **Reaction:**\n    $$B(OH)_3 + 2H_2"
+      }, {
+        "text": "O \\rightleftharpoons [B(OH)_4]^- + H_3O^+$$\n*   **Result:** It effectively"
+      }, {
+        "text": " releases a proton from the *water*, not the boron structure itself.\n\n### Hydrolysis of Salts (Brief Overview)\nThe"
+      }, {
+        "text": " acidity of a salt depends on the strength of the parent acid/base.\n*   **$Na_3PO_4$"
+      }, {
+        "text": ":** Salt of Strong Base ($NaOH$) + Weak Acid ($HPO_4^{2-}$ conjugate). **Solution is Basic.**\n"
+      }, {
+        "text": "*   **$NaH_2PO_4$:** Amphoteric, but generally acidic due to the ionization of the remaining"
+      }, {
+        "text": " protons.\n\n---\n\n## 5. [[Chemical Kinetics]]\n\n### 5.1 Kinetics vs. Thermodynamics\n"
+      }, {
+        "text": "*   **[[Thermodynamics]]:** Determines **IF** a reaction can occur (Spontaneity).\n    *   Condition"
+      }, {
+        "text": ": $\\Delta G \u003c 0$.\n    *   *Example:* $2NO + O_2 \\rightarrow"
+      }, {
+        "text": " 2NO_2$ (Spontaneous at $25^\\circ C$, $\\Delta G \u003d -140 kJ$)."
+      }, {
+        "text": "\n*   **[[Kinetics]]:** Determines **HOW FAST** a reaction occurs (Rate).\n    *   *Example"
+      }, {
+        "text": ":* $2H_2 + O_2 \\rightarrow 2H_2O$.\n    *   Ther"
+      }, {
+        "text": "modynamically favorable ($\\Delta G \\ll 0$), but kinetically **extremely slow** at room temperature without a catalyst ("
+      }, {
+        "text": "spark).\n\n### 5.2 Factors Affecting Reaction Rate\n1.  **Physical State:** Surface area of solid"
+      }, {
+        "text": " reactants. (Finely ground powder reacts faster than chunks).\n2.  **Concentration:** Higher concentration \u003d more collisions."
+      }, {
+        "text": "\n3.  **Temperature:** Higher T \u003d particles have more Kinetic Energy $\\rightarrow$ more successful collisions (Activation Energy).\n"
+      }, {
+        "text": "4.  **Catalyst:** Lowers Activation Energy ($E_a$).\n\n### 5.3 Reaction Rate Definition"
+      }, {
+        "text": "\nThe change in concentration of a reactant or product over time.\n$$v \u003d \\pm \\frac{dc}{dt}$$\n"
+      }, {
+        "text": "*   *(Negative sign for reactants consuming, positive for products forming).*\n\n### 5.4 The Rate Law\n"
+      }, {
+        "text": "The mathematical relationship between rate and concentration.\n$$v \u003d k \\cdot [A]^\\alpha \\cdot [B]^\\"
+      }, {
+        "text": "beta$$\n*   $k$: Rate constant (temperature dependent).\n*   $[A], [B]$:"
+      }, {
+        "text": " Concentrations of reactants.\n*   $\\alpha, \\beta$: **Orders of reaction**.\n    *   **Crucial Note"
+      }, {
+        "text": ":** $\\alpha$ and $\\beta$ are determined **experimentally**. They are NOT necessarily the stoichiometric coefficients ($a, b$)"
+      }, {
+        "text": " from the balanced equation ($aA + bB \\rightarrow Products$).\n\n### 5.5 Collision Theory (Teor"
+      }, {
+        "text": "ija Trkov)\n*   **Basic Premise:** For a reaction to occur, particles must collide.\n*   **"
+      }, {
+        "text": "Success Factors:**\n    1.  **Correct Orientation:** Steric factor.\n    2.  **Sufficient Energy"
+      }, {
+        "text": ":** Must exceed Activation Energy ($E_a$).\n\n***\n\n### **General Formulas \u0026 Constants**\n*   **Diss"
+      }, {
+        "text": "ociation of base:** $MOH \\rightleftharpoons M^+ + OH^-$\n*   **General Rate Law:** $v"
+      }, {
+        "text": " \u003d k[A]^\\alpha[B]^\\beta$\n*   **Arrhenius Equation (implied by"
+      }, {
+        "text": " T dependence):** $k \u003d A \\cdot e^{-E_a/RT}$"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

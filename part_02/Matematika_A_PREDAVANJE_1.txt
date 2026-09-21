@@ -1,0 +1,239 @@
+### File: `Matematika_A_Predavanje_1.md`
+
+# [[Predavanje 1: Temeljni Pojmi in Matematična Indukcija]]
+
+This lecture introduces the fundamental building blocks for Matematika A, including logic, number sets, the principle of mathematical induction, and the properties of real numbers and absolute values.
+
+## [[Logika in Množice (Logic and Sets)]]
+
+### [[Izjavni Vezniki (Logical Connectives)]]
+We use symbols to represent logical operations:
+*   **Konjunkcija (AND):** $P \land Q$ (Both must be true)
+*   **Disjunkcija (OR):** $P \lor Q$ (At least one must be true)
+*   **Implikacija (IMPLIES):** $P \Rightarrow Q$ (If P, then Q)
+
+A crucial point is the **negacija implikacije (negation of an implication)**. It's often misunderstood, but your notes clarify it perfectly.
+
+> **Razlaga (The "Why"):**
+> The negation of "If P, then Q" is **not** another implication. The only way for the statement "$P \Rightarrow Q$" to be false is if the premise $P$ is true, but the conclusion $Q$ is false.
+>
+> $$\neg(P \Rightarrow Q) \equiv P \land \neg Q$$
+>
+> **Analogy:** Consider the statement "If it is raining ($P$), then the ground is wet ($Q$)." This is only false if "it is raining ($P$) AND the ground is NOT wet ($\neg Q$)."
+
+### [[Kartezični Produkt (Cartesian Product)]]
+The Cartesian product of two sets, $A$ and $B$, is the set of all possible ordered pairs where the first element comes from $A$ and the second from $B$.
+$$ A \times B = \{ (a, b) \,|\, a \in A \land b \in B \} $$
+
+**Primer (Example) from your notes:**
+*   Let $A = \mathbb{R}$ (the set of all real numbers, the entire x-axis).
+*   Let $B = \{1, 3\}$ (a set with two distinct numbers).
+*   The Cartesian product $A \times B$ is then $\mathbb{R} \times \{1, 3\}$. Geometrically, this represents two infinite horizontal lines at $y=1$ and $y=3$.
+
+This concept extends to define the real plane: $\mathbb{R}^2 = \mathbb{R} \times \mathbb{R} = \{ (x, y) \,|\, x, y \in \mathbb{R} \}$.
+
+## [[Številske Množice (Number Sets)]]
+Your notes show a clear hierarchy of number sets, where each is a subset of the next.
+
+*   **Naravna števila ($\mathbb{N}$):** $\{1, 2, 3, \dots\}$ - Used for counting.
+*   **Cela števila ($\mathbb{Z}$):** $\{\dots, -2, -1, 0, 1, 2, \dots\}$ - Includes natural numbers, their negatives, and zero.
+*   **Racionalna števila ($\mathbb{Q}$):** Numbers that can be expressed as a fraction $\frac{a}{b}$, where $a, b \in \mathbb{Z}$ and $b \neq 0$.
+*   **Realna števila ($\mathbb{R}$):** All rational and irrational numbers (like $\sqrt{2}$, $\pi$). They fill the number line completely.
+
+The relationship is: $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$.
+
+## [[Realna Števila, Omejenost in Supremum]]
+
+> **Note to Self:** This is a corrected and supplemented version of the notes for Predavanje 1, focusing on topics from the handwritten notes that were previously omitted or underdeveloped.
+
+## [[Obseg Realnih Števil (The Field of Real Numbers)]]
+
+Your notes begin with the fundamental structure of real numbers, defining what a **binarna operacija (binary operation)** is.
+
+> **Definicija: Binarna Operacija**
+> A binary operation `*` on a set $A$ is a rule that takes any two elements $(a, b)$ from the Cartesian product $A \times A$ and maps them to a single element $a * b$ that is also in the set $A$.
+
+**Razlaga (The "Why"):**
+The key idea is **closure**. If you take any two elements from the set, and perform the operation, the result *must* still be in the same set. Your notes provide a perfect illustration:
+
+*   **Primer a) Seštevanje sodih števil (Adding even numbers):**
+    Let $S$ be the set of even numbers. If you add any two even numbers, is the result always even? Yes.
+    `even + even = even`
+    Therefore, addition **is** a binary operation on the set of even numbers.
+
+*   **Primer b) Seštevanje lihih števil (Adding odd numbers):**
+    Let $L$ be the set of odd numbers. If you add any two odd numbers, is the result always odd? No.
+    `odd + odd = even`
+    Since the result (an even number) is not in the original set $L$, addition **is not** a binary operation on the set of odd numbers.
+
+### [[Dve Binarni Operaciji na $\mathbb{R}$ (Two Binary Operations on $\mathbb{R}$)]]
+For the set of real numbers, $\mathbb{R}$, we focus on two main binary operations:
+*   **Seštevanje (Addition):** $(a, b) \mapsto a+b \in \mathbb{R}$
+*   **Množenje (Multiplication):** $(a, b) \mapsto a \cdot b \in \mathbb{R}$
+
+These operations, along with their properties, give the real numbers a special structure called an **obseg (field)**.
+
+### [[Lastnosti, ki Določajo Obseg (Properties that Define a Field)]]
+1.  **Lastnosti Seštevanja (Properties of Addition)**
+    *   **Asociativnost (Associativity):** $(a+b)+c = a+(b+c)$
+    *   **Komutativnost (Commutativity):** $a+b=b+a$
+    *   **Nevtralni element (Neutral Element):** $a+0 = a$ (The identity for addition is 0)
+    *   **Nasprotni element (Inverse Element):** $a+(-a) = 0$ (Every number has an additive inverse)
+
+2.  **Lastnosti Množenja (Properties of Multiplication)**
+    *   **Asociativnost (Associativity):** $(ab)c = a(bc)$
+    *   **Komutativnost (Commutativity):** $ab = ba$
+    *   **Nevtralni element (Neutral Element):** $a \cdot 1 = a$ (The identity for multiplication is 1)
+    *   **Inverzni oz. obratni element (Inverse Element):** $a \cdot a^{-1} = 1$ (Every non-zero number has a multiplicative inverse, e.g., $a \cdot \frac{1}{a} = 1$)
+
+3.  **Skupna Lastnost (Shared Property)**
+    *   **Distributivnost (Distributivity):** $a(b+c) = ab+ac$ (Connects multiplication and addition)
+
+Because $(\mathbb{R}, +, \cdot)$ satisfies all these rules, we call it an **obseg (field)**. Subtraction and division are simply inverse operations of this structure:
+*   **Odštevanje (Subtraction):** $a - b$ is defined as $a + (-b)$.
+*   **Deljenje (Division):** $a \div b$ is defined as $a \cdot b^{-1}$ (where $b \neq 0$).
+
+## [[Urejenost Realnih Števil in Podmnožice (Ordering and Subsets of Real Numbers)]]
+
+Real numbers are ordered, which allows us to define intervals. Your notes list the standard types:
+*   **Odprti interval (Open interval):** $(a, b) = \{ x \in \mathbb{R} \,|\, a < x < b \}$
+*   **Zaprti interval (Closed interval):** $[a, b] = \{ x \in \mathbb{R} \,|\, a \le x \le b \}$
+*   **Polodprti interval (Half-open interval):** $(a, b]$ or $[a, b)$
+*   **Neskončni intervali (Infinite intervals):** e.g., $[a, \infty)$
+
+### DN: [[Potenciranje in Korenjenje (Exponentiation and Roots)]]
+Your notes highlight the identity: $\sqrt[n]{a^m} = a^{\frac{m}{n}}$.
+
+**Razlaga (The "Why"):** This identity comes directly from the definitions of roots and fractional exponents.
+1.  The definition of a root is: $\sqrt[n]{x} = x^{\frac{1}{n}}$.
+2.  The power-of-a-power rule for exponents is: $(x^m)^k = x^{m \cdot k}$.
+
+By combining these, we can derive the identity:
+$$ \sqrt[n]{a^m} = (a^m)^{\frac{1}{n}} = a^{m \cdot \frac{1}{n}} = a^{\frac{m}{n}} $$
+
+## [[Omejenost Množic (Boundedness of Sets)]]
+For any subset $A \subseteq \mathbb{R}$:
+*   $A$ is **navzgor omejena (bounded above)** if there exists an upper bound $M$ such that $x \le M$ for all $x \in A$.
+*   $A$ is **navzdol omejena (bounded below)** if there exists a lower bound $m$ such that $x \ge m$ for all $x \in A$.
+
+### [[Supremum in Infimum]]
+*   **Supremum (sup A):** The **least upper bound** (`najmanjša zgornja meja`). It is the "lowest ceiling" for the set.
+*   **Infimum (inf A):** The **greatest lower bound** (`največja spodnja meja`). It is the "highest floor" for the set.
+*   **Maksimum (max A) / Minimum (min A):** If the supremum or infimum is an element *within* the set $A$, it is called the maximum or minimum, respectively.
+
+### Primer: $A = \{ \frac{n}{n-1} \,|\, n \in \mathbb{N}, n \ge 2 \}$
+This is a fantastic example from your notes to illustrate these concepts.
+
+**1. Analiza Množice (Analyzing the Set):**
+Let's write out the first few elements:
+*   For $n=2$: $\frac{2}{2-1} = 2$
+*   For $n=3$: $\frac{3}{3-1} = \frac{3}{2} = 1.5$
+*   For $n=4$: $\frac{4}{4-1} = \frac{4}{3} \approx 1.33$
+*   For $n=5$: $\frac{5}{5-1} = \frac{5}{4} = 1.25$
+$$ A = \left\{ 2, \frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \dots \right\} $$
+We can see the sequence is decreasing and seems to be approaching 1.
+
+**2. Določanje Meja (Determining the Bounds):**
+*   The largest element occurs at $n=2$, which is $2$. All other elements are smaller. Thus, **sup A = 2**. Since $2 \in A$, we also have **max A = 2**.
+*   The elements are always greater than 1. Let's prove that **inf A = 1**.
+
+**3. Dokaz, da je inf A = 1 (Proof that inf A = 1):**
+To prove that 1 is the greatest lower bound, we must show that for any arbitrarily small number $\epsilon > 0$, we can always find an element of $A$ that is between $1$ and $1+\epsilon$.
+*   **Goal:** Find an $x \in A$ such that $1 < x < 1+\epsilon$.
+*   Substitute $x = \frac{n}{n-1}$:
+    $$ \frac{n}{n-1} < 1+\epsilon $$
+*   Since $n \ge 2$, $n-1$ is positive, so we can multiply without changing the inequality direction:
+    $$ n < (1+\epsilon)(n-1) = n - 1 + \epsilon n - \epsilon $$
+    $$ 0 < -1 + \epsilon n - \epsilon $$
+    $$ 1+\epsilon < \epsilon n $$
+    $$ \frac{1+\epsilon}{\epsilon} < n $$
+*   **Zaključek:** This shows that if we choose a natural number $n$ that is larger than $\frac{1+\epsilon}{\epsilon}$, the corresponding element $\frac{n}{n-1}$ will be in the interval $(1, 1+\epsilon)$. Since we can do this for *any* $\epsilon>0$, no matter how small, there can be no lower bound greater than 1. Therefore, **inf A = 1**.
+*   Since $1 \notin A$ (as shown by the check `1 = n/(n-1)` leading to `-1 = 0`), the set has **no minimum**./(n-1) ` leading to ` -1 = 0 ), the set has **no minimum**.
+## [[Matematična Indukcija (Mathematical Induction)]]
+This is a fundamental proof technique to prove that a statement or formula holds true for all natural numbers (or from a certain natural number onwards).
+
+**The Two-Step Process:**
+1.  **[[Baza Indukcije (Base Case)]]:** Prove the statement is true for the first, smallest value of $n$ (usually $n=1$). This is the "first domino".
+2.  **[[Indukcijski Korak (Inductive Step)]]:**
+    *   **Indukcijska Predpostavka (Inductive Hypothesis):** *Assume* the statement is true for an arbitrary natural number $n=k$.
+    *   **Dokaz (Proof):** Use this assumption to prove that the statement must then also be true for the next number, $n=k+1$. This proves that "if one domino falls, the next one will too."
+
+If both steps are successful, the statement is proven true for all natural numbers $n$ from the base case onward.
+
+### Primer 1: Vsota prvih *n* naravnih števil
+**Trditev (Statement):** Dokaži, da za vsak $n \in \mathbb{N}$ velja:
+$$ 1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2} $$
+
+*   **Baza indukcije ($n=1$):**
+    *   Leva stran (LHS): $1$
+    *   Desna stran (RHS): $\frac{1(1+1)}{2} = \frac{2}{2} = 1$.
+    *   Ker je $1=1$, baza velja.
+
+*   **Indukcijski korak:**
+    *   **Predpostavka (Assume true for n):** $1 + 2 + \dots + n = \frac{n(n+1)}{2}$.
+    *   **Dokaži za $n+1$ (Prove for n+1):** We want to show that $1 + 2 + \dots + n + (n+1) = \frac{(n+1)(n+2)}{2}$.
+        *   Starting with the left side for $n+1$:
+        $$(1 + 2 + \dots + n) + (n+1)$$
+        *   We substitute our assumption for the part in the parenthesis:
+        $$= \frac{n(n+1)}{2} + (n+1)$$
+        *   Now, we find a common denominator and simplify:
+        $$= \frac{n(n+1) + 2(n+1)}{2}$$
+        *   Factor out the common term $(n+1)$:
+        $$= \frac{(n+1)(n+2)}{2}$$
+        *   This matches the required right-hand side. The proof is complete.
+
+### Primer 2: Vsota Kvadratov
+**Trditev (Statement):** Dokaži, da za vsak $n \in \mathbb{N}$ velja:
+$$ 1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6} $$
+
+*   **Baza indukcije ($n=1$):**
+    *   LHS: $1^2 = 1$
+    *   RHS: $\frac{1(1+1)(2 \cdot 1 + 1)}{6} = \frac{1 \cdot 2 \cdot 3}{6} = 1$.
+    *   Baza velja.
+
+*   **Indukcijski korak:**
+    *   **Predpostavka:** $1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}$
+    *   **Dokaži za $n+1$:** $1^2 + \dots + n^2 + (n+1)^2 = \frac{(n+1)((n+1)+1)(2(n+1)+1)}{6} = \frac{(n+1)(n+2)(2n+3)}{6}$
+        *   Start with the LHS and apply the hypothesis:
+        $$(1^2 + \dots + n^2) + (n+1)^2 = \frac{n(n+1)(2n+1)}{6} + (n+1)^2$$
+        *   Factor out $(n+1)$:
+        $$= (n+1) \left[ \frac{n(2n+1)}{6} + (n+1) \right]$$
+        *   Find a common denominator inside the brackets:
+        $$= (n+1) \left[ \frac{2n^2+n+6n+6}{6} \right] = (n+1) \left[ \frac{2n^2+7n+6}{6} \right]$$
+        *   Factor the quadratic polynomial $2n^2+7n+6 = (n+2)(2n+3)$:
+        $$= \frac{(n+1)(n+2)(2n+3)}{6}$$
+        *   This is the required RHS for $n+1$. The proof is complete.
+
+## [[Absolutna Vrednost (Absolute Value)]]
+
+This is a measure of a number's magnitude, regardless of its sign.
+
+### [[Definicija in Lastnosti (Definition and Properties)]]
+*   **Definicija:** $|x| = \begin{cases} x & \text{if } x \ge 0 \\ -x & \text{if } x < 0 \end{cases}$
+*   **Ključne Lastnosti:**
+    1.  **Produkt:** $|a \cdot b| = |a| \cdot |b|$
+    2.  **Trikotniška neenakost:** $|a+b| \le |a|+|b|$. *This is fundamental in analysis. The name comes from the geometric interpretation that the length of one side of a triangle ($\vec{a}+\vec{b}$) cannot be longer than the sum of the lengths of the other two sides ($\vec{a}$ and $\vec{b}$).*
+    3.  **Razdalja (Distance):** $|a-b|$ is the distance between $a$ and $b$.
+
+### Dokaz: $|x|^2 = x^2$
+The lecture provided a simple but important proof by cases.
+*   **Case 1 ($x \ge 0$):** By definition, $|x| = x$. Therefore, $|x|^2 = x^2$.
+*   **Case 2 ($x < 0$):** By definition, $|x| = -x$. Therefore, $|x|^2 = (-x)^2 = x^2$.
+*   **Zaključek:** Since the equality holds in all cases, the statement $|x|^2 = x^2$ is true for all $x \in \mathbb{R}$.
+
+### Primer: Reševanje Neenačbe z Absolutno Vrednostjo
+**Naloga (Problem):** Reši neenačbo $|2x+1| < 3$.
+
+*   **Razlaga (The "Why"):** The expression $|A| < B$ means that the distance of A from zero is less than B. This is equivalent to saying A is between $-B$ and $B$. So, we can rewrite the inequality without the absolute value.
+    $$-3 < 2x+1 < 3$$
+
+*   **Reševanje (Solving):** We solve this compound inequality.
+    1.  Subtract 1 from all parts:
+        $$-3 - 1 < 2x < 3 - 1$$
+        $$-4 < 2x < 2$$
+    2.  Divide all parts by 2:
+        $$-2 < x < 1$$
+
+*   **Rešitev (Solution):** The solution set is the open interval $x \in (-2, 1)$.
+
+---

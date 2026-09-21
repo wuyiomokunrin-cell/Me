@@ -1,0 +1,402 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1pmUrrIkjg2lyX1LeR7TUtg-RIerfGEJI"
+      },
+      "role": "user",
+      "tokenCount": 70668
+    }, {
+      "driveImage": {
+        "id": "1MuCEsHX3UOGUEQ29ml7vB4BucM75-8x4"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1wMZoo_MbfK3sc5snrDpAF7j_HZZLjTGH"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1eucYiOsvCHysNv5bfjqRVU_jCYZynIK6"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1RkahBkX7QzEkYYvm3BcS-vufstL_mNZn"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Sx_dcjyDLsAD__Awh8WTvndhXBURghpz"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1f9vCGsUkYlfVqwrbMFjNBeAWp_sw9oyh"
+      },
+      "role": "user",
+      "tokenCount": 79151
+    }, {
+      "driveAudio": {
+        "id": "1o-M3yb43bl4ts91uziK4eGMAzeUIEpfd"
+      },
+      "role": "user",
+      "tokenCount": 89878
+    }, {
+      "text": "**Processing the Request**\n\nI\u0027m currently engaged in analyzing the initial input, which includes an audio transcript of a physics lecture. My focus is on understanding the structure of the request and how to best parse the contents to deliver relevant results. I have determined that it\u0027s important to start with the transcription and see if there are associated handwritten notes.\n\n\n**Outlining the Strategy**\n\nI\u0027m now in the process of formulating a plan to tackle this project. The primary goal is creating a structured markdown note system for Obsidian using the lecture transcript and any provided notes.  I\u0027ve defined my role and objective, ensuring accurate transformation of the content. This involves a focus on LaTeX formatting for formulas, prioritizing the chronological flow of the lecture.\n\n\n**Structuring the Notes**\n\nI\u0027ve transitioned from general strategy to building out the note structure. My goal now is to establish the distinct sections within the lecture: theory, problems, and solutions, as requested. I\u0027m focusing on identifying these areas chronologically and applying appropriate Markdown formatting. I\u0027m also actively looking for LaTeX formulas and plan to make \"Note to Self\" entries to clarify any ambiguous statements.\n\n\n**Formulating the Structure**\n\nI\u0027m now determining how to integrate the theoretical and practical instructions. I am establishing my persona as a tutor who will incorporate specific sections, such as, \"Critical Analysis\" and \"Note to Self\". The approach is to explain and justify every concept and methodology for a learner. The plan is to create linked notes within Obsidian to help with navigation.\n\n\n**Developing the Structure**\n\nNow, I\u0027m analyzing the initial audio transcript of the physics lecture to define the key lecture components. I\u0027m prioritizing building sections, such as \"Theory,\" \"Problems,\" and \"Solutions,\" while looking for the right ways to incorporate LaTeX formulas and Markdown formatting. Additionally, I\u0027ll add \"Note to Self\" sections to clarify any areas that may be unclear.\n\n\n\n**Processing the Request**\n\nI\u0027ve completed the initial analysis of the provided lecture transcript, identifying key topics like kinetic energy, work, and the work-energy theorem. I\u0027ve also noted the distinct concepts of systems of point masses and rigid bodies, and the importance of König\u0027s theorem, which leads to the  differentiation between internal forces in both the  systems of point masses and the rigid body. I\u0027m focusing on  integrating all of these distinct components to  prepare the content  for Obsidian formatting and linking the core concepts together.\n\n\n**Integrating Content**\n\nI\u0027m now fully immersed in the raw academic material, including an audio transcript and handwritten notes, for which I\u0027m creating a comprehensive Markdown note system for Obsidian. I\u0027ve begun to integrate all the components into a cohesive structure, focusing on the order and flow of the physics lecture to accurately reflect its progression. I am preparing to ensure the user can follow along from the start.\n\n\n**Developing the Outline**\n\nI\u0027m now integrating the user\u0027s operational guidelines into the structure. My primary focus is establishing the sections, \"General Formulas\", \"Theory\", \"Problems/Methods\", \"Solving\" and \"Critical Analysis\", with appropriate Markdown and LaTeX formatting. I will be sure to address ambiguities, adding \"Note to Self\" entries to clarify any statements.\n\n\n**Developing the Structure**\n\nNow I\u0027m fully prepared to integrate the user\u0027s request. I will start by establishing the primary sections with the appropriate Markdown format. The sections will include: \"General Formulas,\" \"Theory,\" \"Problems,\" and \"Solutions,\" and I\u0027ll make sure to add \"Note to Self\" sections to explain any complex statements. I will link all the primary headers with Wikilinks. I\u0027ll need to link them with a specific order for effective navigation.\n\n\n**Structuring the Note**\n\nI\u0027m now focused on the initial parsing of the request, working to create a structured Markdown note system within Obsidian based on the lecture\u0027s audio transcript and handwritten notes. I\u0027m prioritizing establishing the main sections, including theory, problems, and solutions, and incorporating the required LaTeX formatting. I will then integrate critical analyses, while addressing any ambiguities with \"Note to Self\" sections.\n\n\n**Developing the Framework**\n\nI\u0027ve completed a thorough analysis of all the provided materials, including the lecture transcript, handwritten notes, and user instructions. My focus is on creating a comprehensive Markdown note system for Obsidian, as requested. I\u0027ve broken down the steps and developed a clear plan of action, structuring it by core sections such as theory, problems, and solutions. I\u0027m now ready to start on the core sections and apply my tutor-like persona.\n\n\n\n",
+      "role": "model",
+      "tokenCount": 2601,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Processing the Request**\n\nI\u0027m currently engaged in analyzing the initial input, which includes an audio transcript of a physics lecture. My focus is on understanding the structure of the request and how to best parse the contents to deliver relevant results. I have determined that it\u0027s important to start with the transcription and see if there are associated handwritten notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining the Strategy**\n\nI\u0027m now in the process of formulating a plan to tackle this project. The primary goal is creating a structured markdown note system for Obsidian using the lecture transcript and any provided notes.  I\u0027ve defined my role and objective, ensuring accurate transformation of the content. This involves a focus on LaTeX formatting for formulas, prioritizing the chronological flow of the lecture.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Notes**\n\nI\u0027ve transitioned from general strategy to building out the note structure. My goal now is to establish the distinct sections within the lecture: theory, problems, and solutions, as requested. I\u0027m focusing on identifying these areas chronologically and applying appropriate Markdown formatting. I\u0027m also actively looking for LaTeX formulas and plan to make \"Note to Self\" entries to clarify any ambiguous statements.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Structure**\n\nI\u0027m now determining how to integrate the theoretical and practical instructions. I am establishing my persona as a tutor who will incorporate specific sections, such as, \"Critical Analysis\" and \"Note to Self\". The approach is to explain and justify every concept and methodology for a learner. The plan is to create linked notes within Obsidian to help with navigation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Structure**\n\nNow, I\u0027m analyzing the initial audio transcript of the physics lecture to define the key lecture components. I\u0027m prioritizing building sections, such as \"Theory,\" \"Problems,\" and \"Solutions,\" while looking for the right ways to incorporate LaTeX formulas and Markdown formatting. Additionally, I\u0027ll add \"Note to Self\" sections to clarify any areas that may be unclear.\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Processing the Request**\n\nI\u0027ve completed the initial analysis of the provided lecture transcript, identifying key topics like kinetic energy, work, and the work-energy theorem. I\u0027ve also noted the distinct concepts of systems of point masses and rigid bodies, and the importance of König\u0027s theorem, which leads to the  differentiation between internal forces in both the  systems of point masses and the rigid body. I\u0027m focusing on  integrating all of these distinct components to  prepare the content  for Obsidian formatting and linking the core concepts together.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Content**\n\nI\u0027m now fully immersed in the raw academic material, including an audio transcript and handwritten notes, for which I\u0027m creating a comprehensive Markdown note system for Obsidian. I\u0027ve begun to integrate all the components into a cohesive structure, focusing on the order and flow of the physics lecture to accurately reflect its progression. I am preparing to ensure the user can follow along from the start.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Outline**\n\nI\u0027m now integrating the user\u0027s operational guidelines into the structure. My primary focus is establishing the sections, \"General Formulas\", \"Theory\", \"Problems/Methods\", \"Solving\" and \"Critical Analysis\", with appropriate Markdown and LaTeX formatting. I will be sure to address ambiguities, adding \"Note to Self\" entries to clarify any statements.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Structure**\n\nNow I\u0027m fully prepared to integrate the user\u0027s request. I will start by establishing the primary sections with the appropriate Markdown format. The sections will include: \"General Formulas,\" \"Theory,\" \"Problems,\" and \"Solutions,\" and I\u0027ll make sure to add \"Note to Self\" sections to explain any complex statements. I will link all the primary headers with Wikilinks. I\u0027ll need to link them with a specific order for effective navigation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Note**\n\nI\u0027m now focused on the initial parsing of the request, working to create a structured Markdown note system within Obsidian based on the lecture\u0027s audio transcript and handwritten notes. I\u0027m prioritizing establishing the main sections, including theory, problems, and solutions, and incorporating the required LaTeX formatting. I will then integrate critical analyses, while addressing any ambiguities with \"Note to Self\" sections.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Framework**\n\nI\u0027ve completed a thorough analysis of all the provided materials, including the lecture transcript, handwritten notes, and user instructions. My focus is on creating a comprehensive Markdown note system for Obsidian, as requested. I\u0027ve broken down the steps and developed a clear plan of action, structuring it by core sections such as theory, problems, and solutions. I\u0027m now ready to start on the core sections and apply my tutor-like persona.\n\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Kinetična Energija, Delo in Moč]]\n\n## [[Splošne Formule]]\n- **Kinetična Energija (Translacija):** $$W_k \u003d \\frac{1}{2}mv^2 \u003d \\frac{p^2}{2m}$$\n- **Kinetična Energija (Rotacija):** $$W_k \u003d \\frac{1}{2}J\\omega^2 \u003d \\frac{\\Gamma^2}{2J}$$\n- **Delo Sile:** $$A \u003d \\int_{r_1}^{r_2} \\vec{F} \\cdot d\\vec{r}$$\n- **Izrek o Kinetični Energiji (Točkasto Telo):** $$A_{skupno} \u003d \\Delta W_k \u003d W_{k,končna} - W_{k,začetna}$$\n- **Kinetična Energija Tugega Telesa (Königov Izrek):** $$W_k \u003d \\frac{1}{2}mv_{T}^2 + \\frac{1}{2}J_{T}\\omega^2$$\n- **Moč (Translacija):** $$P \u003d \\frac{dA}{dt} \u003d \\vec{F} \\cdot \\vec{v}$$\n- **Moč (Rotacija):** $$P \u003d \\frac{dA}{dt} \u003d \\vec{M} \\cdot \\vec{\\omega}$$\n- **Gravitacijska Potencialna Energija:** $$W_p \u003d mgy$$\n- **Prožnostna Potencialna Energija (Vzmet):** $$W_{vz} \u003d \\frac{1}{2}kx^2$$\n- **Izrek o Mehanski Energiji:** $$A_{nekonz} \u003d \\Delta W_{meh} \u003d \\Delta W_k + \\Delta W_p$$\n\n---\n\n## [[Teorija]]\n\n### [[Povezava Kinetične Energije in Gibalne Količine]]\nKinetično energijo za premo gibanje lahko izrazimo na dva načina. Standardna definicija je:\n$$W_k \u003d \\frac{1}{2}mv^2$$\nČe to enačbo pomnožimo in delimo z maso $m$, dobimo:\n$$W_k \u003d \\frac{1}{2} \\frac{(mv)^2}{m}$$\nKer je gibalna količina $p$ definirana kot $p \u003d mv$, lahko kinetično energijo zapišemo tudi kot:\n$$W_k \u003d \\frac{p^2}{2m}$$\n\n### [[Povezava Vrtilne Energije in Vrtilne Količine]]\nPodobno analogijo lahko naredimo za vrtenje. Kinetična energija vrtenja je:\n$$W_k \u003d \\frac{1}{2}J\\omega^2$$\nKjer je $J$ vztrajnostni moment in $\\omega$ kotna hitrost. Če enačbo pomnožimo in delimo z $J$, dobimo:\n$$W_k \u003d \\frac{1}{2} \\frac{(J\\omega)^2}{J}$$\nKer je vrtilna količina $\\Gamma$ definirana kot $\\Gamma \u003d J\\omega$, lahko kinetično energijo vrtenja zapišemo kot:\n$$\\Gamma^2 \\over 2J$$\n\n\u003e **Opomba:** Ta analogija med translacijo in rotacijo je zelo uporabna in se pojavlja skozi celotno mehaniko. Količine kot so masa ($m$) in gibalna količina ($p$) imajo svoje rotacijske ustreznike: vztrajnostni moment ($J$) in vrtilno količino ($\\Gamma$).\n\n### [[Delo in Izrek o Kinetični Energiji za Točkasto Telo]]\nČe sila $\\vec{F}$ deluje na telo in ga premakne za $d\\vec{r}$, opravi delo $dA \u003d \\vec{F} \\cdot d\\vec{r}$. Celotno delo $A$ na poti od točke 1 do točke 2 je integral:\n$$A \u003d \\int_{1}^{2} \\vec{F} \\cdot d\\vec{r}$$\nZa točkasto telo velja, da je **skupno delo vseh sil, ki delujejo na telo, enako spremembi kinetične energije telesa.** To je **izrek o kinetični energiji**.\n$$A \u003d \\Delta W_k \u003d W_{k2} - W_{k1}$$\n\n### [[Razširitev na Sistem Točkastih Teles]]\nPri posplošitvi na sistem več točkastih teles moramo upoštevati tako **zunanje** sile (sile iz okolice na sistem) kot **notranje** sile (sile med delci znotraj sistema).\n- **Skupna kinetična energija** sistema je vsota kinetičnih energij vseh delcev: $W_k \u003d \\sum_i \\frac{1}{2}m_i v_i^2$.\n- **Skupno delo** je vsota dela zunanjih sil ($A_z$) in dela notranjih sil ($A_n$): $A_{skupno} \u003d A_z + A_n$.\n\nIzrek se tako glasi:\n$$A_z + A_n \u003d \\Delta W_k$$\n\n\u003e **Kritična Analiza:** Ključna razlika med vsoto notranjih sil in delom notranjih sil je, da medtem ko je vsota notranjih sil v sistemu po tretjem Newtonovem zakonu vedno enaka nič ($\\sum \\vec{F}_{ij} \u003d 0$), **delo notranjih sil ni nujno enako nič** ($A_n \\neq 0$). To se zgodi, ker se prijemališči sil $\\vec{F}_{ij}$ in $\\vec{F}_{ji}$ lahko premikata različno, zato se njuni deli ne odštejeta.\n\n### [[Specializacija za Togo Telo (Togo Telo)]]\nZa **togo telo** je situacija drugačna. Ker je razdalja med poljubnima dvema točkama v togem telesu vedno konstantna, je delo notranjih sil vedno enako nič.\n$$A_n \u003d 0 \\quad (\\text{za togo telo})$$\nTako se izrek o kinetični energiji za togo telo poenostavi na:\n$$A_z \u003d \\Delta W_k$$\n**Kinetična energija togega telesa** se lahko po **Königovem izreku** razstavi na dva dela:\n1.  **Translacijska kinetična energija težišča:** Energija, ki bi jo imelo telo, če bi bila vsa njegova masa zbrana v težišču.\n2.  **Rotacijska kinetična energija okrog težišča:** Energija vrtenja telesa okoli osi, ki gre skozi težišče.\n\n$$W_k \u003d W_{k, trans} + W_{k, rot} \u003d \\frac{1}{2}Mv_T^2 + \\frac{1}{2}J_T\\omega^2$$\nKjer je $M$ celotna masa, $v_T$ hitrost težišča, in $J_T$ vztrajnostni moment glede na os skozi težišče.\n\n### [[Moč (Moč)]]\nMoč je definirana kot odvod dela po času, oziroma hitrost opravljanja dela.\n- **Povprečna moč:** $P_{povp} \u003d \\frac{A}{\\Delta t}$\n- **Trenutna moč:** $P \u003d \\frac{dA}{dt}$\n\nZa **translacijsko gibanje** lahko moč izrazimo kot:\n$$P \u003d \\frac{\\vec{F} \\cdot d\\vec{r}}{dt} \u003d \\vec{F} \\cdot \\vec{v}$$\nZa **rotacijsko gibanje** pa kot:\n$$P \u003d \\frac{\\vec{M} \\cdot d\\vec{\\phi}}{dt} \u003d \\vec{M} \\cdot \\vec{\\omega}$$\n\n### [[Konzervativne Sile in Potencialna Energija]]\n**Konzervativne sile** so sile, pri katerih je delo, opravljeno med dvema točkama, neodvisno od poti. Posledično je delo po zaključeni zanki enako nič.\nZa take sile lahko vpeljemo **potencialno energijo** ($W_p$) tako, da velja:\n$$\\Delta W_p \u003d -A_{konz}$$\nSprememba potencialne energije je enaka negativnemu delu, ki ga opravi konzervativna sila.\n\n- **Gravitacijska potencialna energija:** Delo sile teže med višinama $y_1$ in $y_2$ je $A_g \u003d -mg(y_2-y_1)$. Potencialno energijo definiramo kot $W_p \u003d mgy$.\n- **Prožnostna potencialna energija (sila vzmeti):** Sila vzmeti je $F_{vz} \u003d -kx$. Delo sile vzmeti je $A_{vz} \u003d -(\\frac{1}{2}kx_2^2 - \\frac{1}{2}kx_1^2)$. Potencialno energijo definiramo kot $W_p \u003d \\frac{1}{2}kx^2$.\n\n### [[Izrek o Mehanski Energiji]]\nČe delo vseh sil razdelimo na delo konzervativnih ($A_{konz}$) in delo nekonzervativnih sil ($A_{nekonz}$), dobimo:\n$$A_{konz} + A_{nekonz} \u003d \\Delta W_k$$\nKer je $A_{konz} \u003d -\\Delta W_p$, sledi:\n$$A_{nekonz} \u003d \\Delta W_k + \\Delta W_p \u003d \\Delta W_{meh}$$\n**Delo nekonzervativnih sil je enako spremembi celotne mehanske energije sistema.** Če nekonzervativne sile ne opravljajo dela ($A_{nekonz}\u003d0$), se mehanska energija ohranja ($\\Delta W_{meh} \u003d 0$).\n\n---\n\n## [[Problem: Zanka (Loop-the-Loop)]]\nS predavanj je podan problem: S kakšne najmanjše višine $h$ moramo spustiti kroglico, da bo naredila cel obrat po zanki s polmerom $r$, ne da bi padla z nje?\n\n\u003e **Opomba:** Pri reševanju moramo upoštevati dva ključna pogoja:\n\u003e 1.  Ohranitev mehanske energije (zanemarimo trenje in zračni upor).\n\u003e 2.  Pogoj za kroženje na vrhu zanke: Sila podlage (normalna sila) mora biti večja ali enaka nič ($N \\geq 0$). Minimalna hitrost na vrhu je dosežena, ko je $N\u003d0$.\n\n---\n\n## [[Rešitev]]\n1.  **Postavitev Energijskega Zakona:**\n    Sistem je kroglica v gravitacijskem polju. Edini nekonzervativni sili sta zračni upor in trenje, ki ju zanemarimo, ter normalna sila podlage, ki pa ne opravlja dela, ker je vedno pravokotna na smer gibanja. Zato se mehanska energija ohranja.\n    Primerjamo energijo na začetni višini $h$ (točka 1) in na vrhu zanke (točka 2, višina $2r$).\n    $$W_{meh, 1} \u003d W_{meh, 2}$$\n    $$W_{k,1} + W_{p,1} \u003d W_{k,2} + W_{p,2}$$\n    Na začetku kroglica miruje ($v_1 \u003d 0$), torej $W_{k,1} \u003d 0$. Višino merimo od tal, torej $W_{p,1} \u003d mgh$.\n    Na vrhu zanke ima hitrost $v_2$ in višino $2r$.\n    $$0 + mgh \u003d \\frac{1}{2}mv_2^2 + mg(2r)$$\n\n2.  **Analiza Sil na Vrhu Zanke:**\n    Na vrhu zanke na kroglico delujeta sila teže ($mg$) in normalna sila podlage ($N$), obe usmerjeni navzdol. Njuna vsota predstavlja centripetalno silo, ki je potrebna za kroženje.\n    $$F_{cp} \u003d N + mg \u003d \\frac{mv_2^2}{r}$$\n    Minimalni pogoj, da kroglica ostane na zanki, je, da je normalna sila $N \\geq 0$. Mejni primer je $N\u003d0$.\n    $$mg \u003d \\frac{mv_{2,min}^2}{r}$$\n    Iz tega izrazimo minimalno hitrost na vrhu:\n    $$v_{2,min}^2 \u003d gr$$\n\n3.  **Izračun Minimalne Višine $h$:**\n    Vstavimo minimalno hitrost $v_{2,min}^2$ v energijsko enačbo:\n    $$mgh \u003d \\frac{1}{2}m(gr) + 2mgr$$\n    Delimo z $mg$:\n    $$h \u003d \\frac{1}{2}r + 2r \u003d \\frac{5}{2}r$$\n    Minimalna višina, s katere moramo spustiti kroglico, je $h_{min} \u003d 2.5r$.\n\n---\n\n## [[Kritična Analiza in Memorializacija]]\n-   **Memorializacija:** Predavatelj je uporabil vrtavko (ang. *spinning top*), da je demonstriral precesijo. Ko se vrtavka vrti in je nagnjena, njena os ne pade, temveč kroži (precesira). To je posledica navora sile teže, ki povzroči spremembo vrtilne količine, pravokotno na samo vrtilno količino. Ta pojav je ključen za razumevanje, zakaj se vrtilna količina sistema ne obnaša vedno intuitivno.\n-   **Opozorilo (Notranje Sile):** Bodite pozorni na razliko med vsoto notranjih sil in delom notranjih sil. Pri izreku o gibalni količini se notranje sile vedno izničijo. Pri izreku o kinetični energiji pa se delo notranjih sil izniči le v posebnem primeru togega telesa, ne pa za splošen sistem delcev (npr. pri neprožnem trku, kjer se del energije pretvori v toploto – kar je delo notranjih sil).\n-   **Povezava z Astronomijo:** Precesija zemeljske osi, omenjena v predavanju, je posledica gravitacijskih navorov Sonca in Lune na Zemljino sploščeno obliko. Ta počasen \"ples\" osi povzroči, da se položaj pomladišča skozi tisočletja premika po nebesni krogli, kar vpliva na dolgoročne klimatske cikle in spreminja, katera zvezda je \"severnica\".",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3509,
+      "parts": [{
+        "text": "# [[Kinetična Energija, Delo in Moč]]\n\n## [[Splošne Formule]]\n"
+      }, {
+        "text": "- **Kinetična Energija (Translacija):** $$W_k \u003d \\frac{1}{2}mv"
+      }, {
+        "text": "^2 \u003d \\frac{p^2}{2m}$$\n- **Kinetična Energija (Rotacija):**"
+      }, {
+        "text": " $$W_k \u003d \\frac{1}{2}J\\omega^2 \u003d \\frac{\\Gamma^2"
+      }, {
+        "text": "}{2J}$$\n- **Delo Sile:** $$A \u003d \\int_{r_1}^{r_2} \\"
+      }, {
+        "text": "vec{F} \\cdot d\\vec{r}$$\n- **Izrek o Kinetični Energiji ("
+      }, {
+        "text": "Točkasto Telo):** $$A_{skupno} \u003d \\Delta W_k \u003d W_{k,kon"
+      }, {
+        "text": "čna} - W_{k,začetna}$$\n- **Kinetična Energija Tugega Teles"
+      }, {
+        "text": "a (Königov Izrek):** $$W_k \u003d \\frac{1}{2}mv_{T"
+      }, {
+        "text": "}^2 + \\frac{1}{2}J_{T}\\omega^2$$\n- **Moč ("
+      }, {
+        "text": "Translacija):** $$P \u003d \\frac{dA}{dt} \u003d \\vec{F} \\cdot \\vec{"
+      }, {
+        "text": "v}$$\n- **Moč (Rotacija):** $$P \u003d \\frac{dA}{dt} \u003d \\vec{"
+      }, {
+        "text": "M} \\cdot \\vec{\\omega}$$\n- **Gravitacijska Potencialna Energija:** $$W_"
+      }, {
+        "text": "p \u003d mgy$$\n- **Prožnostna Potencialna Energija (Vzmet):** $$"
+      }, {
+        "text": "W_{vz} \u003d \\frac{1}{2}kx^2$$\n- **Izrek o Mehanski Energiji:**"
+      }, {
+        "text": " $$A_{nekonz} \u003d \\Delta W_{meh} \u003d \\Delta W_k + \\Delta W_"
+      }, {
+        "text": "p$$\n\n---\n\n## [[Teorija]]\n\n### [[Povezava Kinetične Energije in Gibalne Količine]]\nKinetično energijo za premo gibanje lahko izrazimo na dva načina."
+      }, {
+        "text": " Standardna definicija je:\n$$W_k \u003d \\frac{1}{2}mv^2$$\nČ"
+      }, {
+        "text": "e to enačbo pomnožimo in delimo z maso $m$, dobimo:\n$$W_k"
+      }, {
+        "text": " \u003d \\frac{1}{2} \\frac{(mv)^2}{m}$$\nKer je gibalna količina"
+      }, {
+        "text": " $p$ definirana kot $p \u003d mv$, lahko kinetično energijo zapišemo tudi kot:\n$$"
+      }, {
+        "text": "W_k \u003d \\frac{p^2}{2m}$$\n\n### [[Povezava Vrtilne Energije in Vrtilne Količine]]\nPodobno analogijo lahko naredimo za vrtenje. K"
+      }, {
+        "text": "inetična energija vrtenja je:\n$$W_k \u003d \\frac{1}{2}J\\omega"
+      }, {
+        "text": "^2$$\nKjer je $J$ vztrajnostni moment in $\\omega$ kotna hitrost."
+      }, {
+        "text": " Če enačbo pomnožimo in delimo z $J$, dobimo:\n$$W_k \u003d \\"
+      }, {
+        "text": "frac{1}{2} \\frac{(J\\omega)^2}{J}$$\nKer je vrtilna količ"
+      }, {
+        "text": "ina $\\Gamma$ definirana kot $\\Gamma \u003d J\\omega$, lahko kinetično energijo vrtenja zapi"
+      }, {
+        "text": "šemo kot:\n$$\\Gamma^2 \\over 2J$$\n\n\u003e **Opomba:** Ta analogija med"
+      }, {
+        "text": " translacijo in rotacijo je zelo uporabna in se pojavlja skozi celotno mehaniko. K"
+      }, {
+        "text": "oličine kot so masa ($m$) in gibalna količina ($p$) imajo svoje rotacijske u"
+      }, {
+        "text": "streznike: vztrajnostni moment ($J$) in vrtilno količino ($\\Gamma$).\n\n### [[Delo in Izrek o Kinetični Energiji za Točkasto Telo]]\nČe sila $\\"
+      }, {
+        "text": "vec{F}$ deluje na telo in ga premakne za $d\\vec{r}$, opravi del"
+      }, {
+        "text": "o $dA \u003d \\vec{F} \\cdot d\\vec{r}$. Celotno delo $A$ na"
+      }, {
+        "text": " poti od točke 1 do točke 2 je integral:\n$$A \u003d \\int_{1}^{2} \\"
+      }, {
+        "text": "vec{F} \\cdot d\\vec{r}$$\nZa točkasto telo velja, da je **sk"
+      }, {
+        "text": "upno delo vseh sil, ki delujejo na telo, enako spremembi kinetične energije teles"
+      }, {
+        "text": "a.** To je **izrek o kinetični energiji**.\n$$A \u003d \\Delta W_k \u003d W"
+      }, {
+        "text": "_{k2} - W_{k1}$$\n\n### [[Razširitev na Sistem Točkastih Teles]]"
+      }, {
+        "text": "\nPri posplošitvi na sistem več točkastih teles moramo upoštevati tako **zunanje** sile"
+      }, {
+        "text": " (sile iz okolice na sistem) kot **notranje** sile (sile med delci znotraj"
+      }, {
+        "text": " sistema).\n- **Skupna kinetična energija** sistema je vsota kinetičnih energij vseh delcev"
+      }, {
+        "text": ": $W_k \u003d \\sum_i \\frac{1}{2}m_i v_i^2"
+      }, {
+        "text": "$.\n- **Skupno delo** je vsota dela zunanjih sil ($A_z$) in dela not"
+      }, {
+        "text": "ranjih sil ($A_n$): $A_{skupno} \u003d A_z + A_n"
+      }, {
+        "text": "$.\n\nIzrek se tako glasi:\n$$A_z + A_n \u003d \\Delta W_k$$\n\n\u003e"
+      }, {
+        "text": " **Kritična Analiza:** Ključna razlika med vsoto notranjih sil in delom notranjih"
+      }, {
+        "text": " sil je, da medtem ko je vsota notranjih sil v sistemu po tretjem Newtonovem zakonu vedno en"
+      }, {
+        "text": "aka nič ($\\sum \\vec{F}_{ij} \u003d 0$), **delo notranjih sil ni n"
+      }, {
+        "text": "ujno enako nič** ($A_n \\neq 0$). To se zgodi, ker se prijem"
+      }, {
+        "text": "ališči sil $\\vec{F}_{ij}$ in $\\vec{F}_{ji}$ lahko premikata različ"
+      }, {
+        "text": "no, zato se njuni deli ne odštejeta.\n\n### [[Specializacija za Togo Telo (Togo Telo)]]\nZa **togo telo** je situacija drugačna. Ker je razdalja med pol"
+      }, {
+        "text": "jubnima dvema točkama v togem telesu vedno konstantna, je delo notranjih sil vedno"
+      }, {
+        "text": " enako nič.\n$$A_n \u003d 0 \\quad (\\text{za togo telo})$$\nT"
+      }, {
+        "text": "ako se izrek o kinetični energiji za togo telo poenostavi na:\n$$A_z \u003d \\"
+      }, {
+        "text": "Delta W_k$$\n**Kinetična energija togega telesa** se lahko po **Königovem"
+      }, {
+        "text": " izreku** razstavi na dva dela:\n1.  **Translacijska kinetična energija"
+      }, {
+        "text": " težišča:** Energija, ki bi jo imelo telo, če bi bila vsa njegova masa zbr"
+      }, {
+        "text": "ana v težišču.\n2.  **Rotacijska kinetična energija okrog težišča"
+      }, {
+        "text": ":** Energija vrtenja telesa okoli osi, ki gre skozi težišče.\n\n$$"
+      }, {
+        "text": "W_k \u003d W_{k, trans} + W_{k, rot} \u003d \\frac{1}{2}"
+      }, {
+        "text": "Mv_T^2 + \\frac{1}{2}J_T\\omega^2$$\nKjer je $"
+      }, {
+        "text": "M$ celotna masa, $v_T$ hitrost težišča, in $J_T$ vztraj"
+      }, {
+        "text": "nostni moment glede na os skozi težišče.\n\n### [[Moč (Moč)]]\n"
+      }, {
+        "text": "Moč je definirana kot odvod dela po času, oziroma hitrost opravljanja dela.\n- **Pov"
+      }, {
+        "text": "prečna moč:** $P_{povp} \u003d \\frac{A}{\\Delta t}$\n- **Tren"
+      }, {
+        "text": "utna moč:** $P \u003d \\frac{dA}{dt}$\n\nZa **translacijsko gibanje"
+      }, {
+        "text": "** lahko moč izrazimo kot:\n$$P \u003d \\frac{\\vec{F} \\cdot d\\"
+      }, {
+        "text": "vec{r}}{dt} \u003d \\vec{F} \\cdot \\vec{v}$$\nZa **rotacijsko gibanje"
+      }, {
+        "text": "** pa kot:\n$$P \u003d \\frac{\\vec{M} \\cdot d\\vec{\\phi}}{dt} \u003d \\"
+      }, {
+        "text": "vec{M} \\cdot \\vec{\\omega}$$\n\n### [[Konzervativne Sile in Potencialna Energija]]\n**Konzervativne sile** so sile, pri katerih je delo, opravljeno med"
+      }, {
+        "text": " dvema točkama, neodvisno od poti. Posledično je delo po zaključeni zanki"
+      }, {
+        "text": " enako nič.\nZa take sile lahko vpeljemo **potencialno energijo** ($W_p$)"
+      }, {
+        "text": " tako, da velja:\n$$\\Delta W_p \u003d -A_{konz}$$\nSprememba potencialne energije"
+      }, {
+        "text": " je enaka negativnemu delu, ki ga opravi konzervativna sila.\n\n- **Gravitacijska potencial"
+      }, {
+        "text": "na energija:** Delo sile teže med višinama $y_1$ in $y_2$ je"
+      }, {
+        "text": " $A_g \u003d -mg(y_2-y_1)$. Potencialno energijo definiramo kot $W"
+      }, {
+        "text": "_p \u003d mgy$.\n- **Prožnostna potencialna energija (sila vzmeti):** S"
+      }, {
+        "text": "ila vzmeti je $F_{vz} \u003d -kx$. Delo sile vzmeti je $A_{vz}"
+      }, {
+        "text": " \u003d -(\\frac{1}{2}kx_2^2 - \\frac{1}{2}kx_1^2"
+      }, {
+        "text": ")$. Potencialno energijo definiramo kot $W_p \u003d \\frac{1}{2}kx^2"
+      }, {
+        "text": "$.\n\n### [[Izrek o Mehanski Energiji]]\nČe delo vseh sil razdelimo na del"
+      }, {
+        "text": "o konzervativnih ($A_{konz}$) in delo nekonzervativnih sil ($A_{nekonz}$"
+      }, {
+        "text": "), dobimo:\n$$A_{konz} + A_{nekonz} \u003d \\Delta W_k$$\n"
+      }, {
+        "text": "Ker je $A_{konz} \u003d -\\Delta W_p$, sledi:\n$$A_{nekon"
+      }, {
+        "text": "z} \u003d \\Delta W_k + \\Delta W_p \u003d \\Delta W_{meh}$$\n**Del"
+      }, {
+        "text": "o nekonzervativnih sil je enako spremembi celotne mehanske energije sistema.** Če ne"
+      }, {
+        "text": "konzervativne sile ne opravljajo dela ($A_{nekonz}\u003d0$), se mehanska energija"
+      }, {
+        "text": " ohranja ($\\Delta W_{meh} \u003d 0$).\n\n---\n\n## [[Problem: Zanka (Loop-the-Loop)]]\nS predavanj je podan problem: S kakšne najmanjše višine"
+      }, {
+        "text": " $h$ moramo spustiti kroglico, da bo naredila cel obrat po zanki s polmerom $"
+      }, {
+        "text": "r$, ne da bi padla z nje?\n\n\u003e **Opomba:** Pri reševanju moramo upošte"
+      }, {
+        "text": "vati dva ključna pogoja:\n\u003e 1.  Ohranitev mehanske energije (zanemarimo tren"
+      }, {
+        "text": "je in zračni upor).\n\u003e 2.  Pogoj za kroženje na vrhu zanke:"
+      }, {
+        "text": " Sila podlage (normalna sila) mora biti večja ali enaka nič ($N \\geq 0$). Minimal"
+      }, {
+        "text": "na hitrost na vrhu je dosežena, ko je $N\u003d0$.\n\n---\n\n## [[Rešitev]]\n"
+      }, {
+        "text": "1.  **Postavitev Energijskega Zakona:**\n    Sistem je kroglica v gravit"
+      }, {
+        "text": "acijskem polju. Edini nekonzervativni sili sta zračni upor in trenje, ki ju"
+      }, {
+        "text": " zanemarimo, ter normalna sila podlage, ki pa ne opravlja dela, ker je vedno pravokotna na"
+      }, {
+        "text": " smer gibanja. Zato se mehanska energija ohranja.\n    Primerjamo energijo na začet"
+      }, {
+        "text": "ni višini $h$ (točka 1) in na vrhu zanke (točka 2, višina"
+      }, {
+        "text": " $2r$).\n    $$W_{meh, 1} \u003d W_{meh, 2}$$\n    "
+      }, {
+        "text": "$$W_{k,1} + W_{p,1} \u003d W_{k,2} + W_{"
+      }, {
+        "text": "p,2}$$\n    Na začetku kroglica miruje ($v_1 \u003d 0$), torej $W_{"
+      }, {
+        "text": "k,1} \u003d 0$. Višino merimo od tal, torej $W_{p,1"
+      }, {
+        "text": "} \u003d mgh$.\n    Na vrhu zanke ima hitrost $v_2$ in višino $2"
+      }, {
+        "text": "r$.\n    $$0 + mgh \u003d \\frac{1}{2}mv_2^2 + mg"
+      }, {
+        "text": "(2r)$$\n\n2.  **Analiza Sil na Vrhu Zanke:**\n    Na vrhu z"
+      }, {
+        "text": "anke na kroglico delujeta sila teže ($mg$) in normalna sila podlage ($N$), obe us"
+      }, {
+        "text": "merjeni navzdol. Njuna vsota predstavlja centripetalno silo, ki je potrebna za kroženje.\n"
+      }, {
+        "text": "    $$F_{cp} \u003d N + mg \u003d \\frac{mv_2^2}{r}$$\n    Minimal"
+      }, {
+        "text": "ni pogoj, da kroglica ostane na zanki, je, da je normalna sila $N \\"
+      }, {
+        "text": "geq 0$. Mejni primer je $N\u003d0$.\n    $$mg \u003d \\frac{mv_{2,min}^"
+      }, {
+        "text": "2}{r}$$\n    Iz tega izrazimo minimalno hitrost na vrhu:\n    $$v_{2,min"
+      }, {
+        "text": "}^2 \u003d gr$$\n\n3.  **Izračun Minimalne Višine $h$:**\n    Vstavimo"
+      }, {
+        "text": " minimalno hitrost $v_{2,min}^2$ v energijsko enačbo:\n    $$mgh \u003d"
+      }, {
+        "text": " \\frac{1}{2}m(gr) + 2mgr$$\n    Delimo z $mg$:\n    "
+      }, {
+        "text": "$$h \u003d \\frac{1}{2}r + 2r \u003d \\frac{5}{2}r"
+      }, {
+        "text": "$$\n    Minimalna višina, s katere moramo spustiti kroglico, je $h_{min} \u003d "
+      }, {
+        "text": "2.5r$.\n\n---\n\n## [[Kritična Analiza in Memorializacija]]\n-   **Memorial"
+      }, {
+        "text": "izacija:** Predavatelj je uporabil vrtavko (ang. *spinning top*), da je demonstr"
+      }, {
+        "text": "iral precesijo. Ko se vrtavka vrti in je nagnjena, njena os ne pade, temveč"
+      }, {
+        "text": " kroži (precesira). To je posledica navora sile teže, ki povzroči sprem"
+      }, {
+        "text": "embo vrtilne količine, pravokotno na samo vrtilno količino. Ta pojav je kl"
+      }, {
+        "text": "jučen za razumevanje, zakaj se vrtilna količina sistema ne obnaša vedno intuitivno.\n"
+      }, {
+        "text": "-   **Opozorilo (Notranje Sile):** Bodite pozorni na razliko med vs"
+      }, {
+        "text": "oto notranjih sil in delom notranjih sil. Pri izreku o gibalni količini se"
+      }, {
+        "text": " notranje sile vedno izničijo. Pri izreku o kinetični energiji pa se delo notran"
+      }, {
+        "text": "jih sil izniči le v posebnem primeru togega telesa, ne pa za splošen sistem del"
+      }, {
+        "text": "cev (npr. pri neprožnem trku, kjer se del energije pretvori v toploto – kar"
+      }, {
+        "text": " je delo notranjih sil).\n-   **Povezava z Astronomijo:** Precesija zem"
+      }, {
+        "text": "eljske osi, omenjena v predavanju, je posledica gravitacijskih navorov Sonca in Lune na"
+      }, {
+        "text": " Zemljino sploščeno obliko. Ta počasen \"ples\" osi povzroči, da se polož"
+      }, {
+        "text": "aj pomladišča skozi tisočletja premika po nebesni krogli, kar v"
+      }, {
+        "text": "pliva na dolgoročne klimatske cikle in spreminja, katera zvezda je \"sever"
+      }, {
+        "text": "nica\"."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

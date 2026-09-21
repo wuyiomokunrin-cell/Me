@@ -1,0 +1,212 @@
+# Lecture Notes - Complex Numbers
+
+These notes cover the fundamentals of complex numbers, their representation, and operations, including multiplication, division, exponentiation, and root extraction in polar form.
+
+---
+
+## <span style="color:#a883e8">Introduction to Complex Numbers</span>
+
+The concept of complex numbers arises from the need to solve equations that have no real solutions, such as:
+
+$$
+x^2 + 1 = 0 \implies x^2 = -1
+$$
+
+In the set of real numbers, $\mathbb{R}$, there is no number whose square is negative. To solve this, we introduce the **imaginary unit**, denoted by $i$.
+
+**Definition: Imaginary Unit**
+The imaginary unit $i$ is defined as the principal square root of -1.
+$$
+i = \sqrt{-1} \quad \text{such that} \quad i^2 = -1
+$$
+This allows us to define the set of [[Complex Numbers]].
+
+A complex number, typically denoted by $z$, is an expression of the form:
+$$
+z = a + ib
+$$
+where $a$ and $b$ are real numbers.
+-   $a = \text{Re}(z)$ is the **real part** of $z$.
+-   $b = \text{Im}(z)$ is the **imaginary part** of $z$.
+
+The set of all complex numbers is denoted by $\mathbb{C}$. This can also be viewed as the set of all ordered pairs $(a, b)$ where $a, b \in \mathbb{R}$, which corresponds to the Cartesian product $\mathbb{R} \times \mathbb{R}$.
+
+---
+
+## <span style="color:#a883e8">[[Algebraic Properties of Complex Numbers]]</span>
+
+Complex numbers follow specific rules for arithmetic operations.
+
+### <span style="color:#8ab4f8">Addition and Subtraction</span>
+
+Given two complex numbers $z = a + ib$ and $w = c + id$:
+$$
+z + w = (a+c) + i(b+d)
+$$
+$$
+z - w = (a-c) + i(b-d)
+$$
+Addition is performed by adding the real and imaginary parts separately.
+
+### <span style="color:#8ab4f8">Multiplication</span>
+
+Multiplication is performed by treating the complex numbers as binomials and remembering that $i^2 = -1$:
+$$
+\begin{aligned}
+z \cdot w &= (a+ib)(c+id) \\
+&= ac + iad + ibc + i^2bd \\
+&= ac + i(ad+bc) - bd \\
+&= (ac - bd) + i(ad + bc)
+\end{aligned}
+$$
+
+### <span style="color:#8ab4f8">Complex Conjugate</span>
+
+The **conjugate** of a complex number $z = a + ib$ is denoted by $\bar{z}$ and is defined as:
+$$
+\bar{z} = a - ib
+$$
+Geometrically, it is the reflection of the point $(a, b)$ across the real axis.
+
+### <span style="color:#8ab4f8">Absolute Value (Modulus)</span>
+
+The **absolute value** or **modulus** of a complex number $z$ is its distance from the origin in the complex plane. It is calculated as:
+$$
+|z| = \sqrt{z \cdot \bar{z}} = \sqrt{(a+ib)(a-ib)} = \sqrt{a^2 - (ib)^2} = \sqrt{a^2 + b^2}
+$$
+The absolute value $|z|$ is always a non-negative real number.
+
+---
+
+## <span style="color:#a883e8">[[Polar Form of Complex Numbers]]</span>
+
+While the Cartesian form $z = a + ib$ is useful for addition, the **polar form** is ideal for multiplication, division, and finding roots.
+
+A complex number $z = a+ib$ can be represented as a point $(a,b)$ in the complex plane. This point can also be described by its distance from the origin, $r$, and the angle, $\phi$, it makes with the positive real axis.
+
+-   **Radius (Modulus)**: $r = |z| = \sqrt{a^2 + b^2}$
+-   **Argument (Angle)**: $\phi = \arg(z)$, where $\tan(\phi) = \frac{b}{a}$.
+
+From trigonometry, we have:
+-   $a = r \cos(\phi)$
+-   $b = r \sin(\phi)$
+
+Substituting these into the Cartesian form gives the **polar form**:
+$$
+z = r \cos(\phi) + i r \sin(\phi) = r(\cos(\phi) + i \sin(\phi))
+$$
+
+### <span style="color:#8ab4f8">Critical Analysis: Finding the Correct Angle $\phi$</span>
+
+A common mistake is to simply use $\phi = \arctan(\frac{b}{a})$. The arctan function only returns values in $(-\frac{\pi}{2}, \frac{\pi}{2})$ (or $-90^\circ$ to $90^\circ$), which covers Quadrants I and IV. You must check the signs of $a$ and $b$ to determine the correct quadrant and adjust the angle accordingly.
+
+**Example from Notes:** $z = -1 - i$
+
+1.  **Calculate r:** $a=-1$, $b=-1$.
+    $$
+    r = \sqrt{(-1)^2 + (-1)^2} = \sqrt{1+1} = \sqrt{2}
+    $$
+2.  **Calculate tan($\phi$):**
+    $$
+    \tan(\phi) = \frac{b}{a} = \frac{-1}{-1} = 1
+    $$
+3.  **Determine Quadrant:** Since both $a$ and $b$ are negative, the point $(-1, -1)$ lies in **Quadrant III**.
+4.  **Find Correct Angle:** The reference angle for $\tan(\phi') = 1$ is $45^\circ$ or $\frac{\pi}{4}$. For Quadrant III, the correct angle is:
+    $$
+    \phi = 180^\circ + 45^\circ = 225^\circ
+    $$
+    In radians:
+    $$
+    \phi = \pi + \frac{\pi}{4} = \frac{5\pi}{4}
+    $$
+    *Note: Your handwritten note initially had `3π/4`, which would be in Quadrant II. This is a crucial distinction.*
+
+Therefore, the correct polar form is:
+$$
+z = \sqrt{2} \left(\cos(225^\circ) + i \sin(225^\circ)\right) \quad \text{or} \quad z = \sqrt{2} \left(\cos\left(\frac{5\pi}{4}\right) + i \sin\left(\frac{5\pi}{4}\right)\right)
+$$
+![[download.png]]
+
+### <span style="color:#8ab4f8">Operations in Polar Form</span>
+
+Let $z_1 = r_1(\cos(\phi_1) + i\sin(\phi_1))$ and $z_2 = r_2(\cos(\phi_2) + i\sin(\phi_2))$.
+
+-   **Multiplication:** Multiply the moduli and add the arguments.
+    $$
+    z_1 \cdot z_2 = r_1 r_2 (\cos(\phi_1 + \phi_2) + i\sin(\phi_1 + \phi_2))
+    $$
+-   **Division:** Divide the moduli and subtract the arguments.
+    $$
+    \frac{z_1}{z_2} = \frac{r_1}{r_2} (\cos(\phi_1 - \phi_2) + i\sin(\phi_1 - \phi_2))
+    $$
+
+---
+
+## <span style="color:#a883e8">[[De Moivre's Formula]]</span>
+
+A direct consequence of the multiplication rule is De Moivre's formula, which provides a simple way to calculate powers of complex numbers.
+
+For any integer $n$ and complex number $z = r(\cos(\phi) + i\sin(\phi))$:
+$$
+z^n = r^n(\cos(n\phi) + i\sin(n\phi))
+$$
+**Justification:** This can be proven by mathematical induction. The base case ($n=2$) is just the multiplication rule. The inductive step assumes the formula holds for $n$ and proves it for $n+1$ by multiplying $z^n$ by $z$.
+
+---
+
+## <span style="color:#a883e8">[[Roots of Complex Numbers]]</span>
+
+Finding the $n$ -th root of a complex number is where the polar form truly shines. An $n$ -th root of $z$ is a complex number $u$ such that $u^n = z$.
+
+Unlike real numbers, a complex number has exactly $n$ distinct $n$ -th roots.
+
+**Formula for n-th Roots:**
+Given $z = r(\cos(\phi) + i\sin(\phi))$, its $n$ distinct $n$ -th roots, $z_k$, are given by:
+$$
+z_k = \sqrt[n]{r} \left( \cos\left(\frac{\phi + 2\pi k}{n}\right) + i \sin\left(\frac{\phi + 2\pi k}{n}\right) \right)
+$$
+for $k = 0, 1, 2, \dots, n-1$.
+
+**Justification:**
+-   The $\sqrt[n]{r}$ part is straightforward.
+-   The angle is divided by $n$ due to De Moivre's formula.
+-   The term $2\pi k$ (or $360^\circ k$) is added because angles are periodic. Adding a full circle ($2\pi$ or $360^\circ$) doesn't change the complex number $z$, but when we divide by $n$, it yields different angles for the roots.
+-   We only need $k$ from $0$ to $n-1$. For $k=n$, the angle becomes $(\phi + 2\pi n)/n = \phi/n + 2\pi$, which is the same as the angle for $k=0$. The cycle repeats.
+
+### <span style="color:#8ab4f8">Example from Notes: Find the 4 th roots of $z = -8 + i 8\sqrt{3}$</span>
+
+**1. Convert to Polar Form:**
+-   **Modulus (r):**
+    $$
+    r = \sqrt{(-8)^2 + (8\sqrt{3})^2} = \sqrt{64 + 64 \cdot 3} = \sqrt{64(1+3)} = \sqrt{256} = 16
+    $$
+-   **Argument ($\phi$):**
+    -   $a = -8$ (negative), $b = 8\sqrt{3}$ (positive) $\implies$ **Quadrant II**.
+    -   $\tan(\phi) = \frac{8\sqrt{3}}{-8} = -\sqrt{3}$.
+    -   The reference angle is $60^\circ$. In Quadrant II, this is $\phi = 180^\circ - 60^\circ = 120^\circ$.
+
+So, $z = 16(\cos(120^\circ) + i\sin(120^\circ))$.
+
+**2. Apply the Root Formula:**
+Here, $n=4$. The roots $z_k$ are:
+$$
+z_k = \sqrt{16} \left( \cos\left(\frac{120^\circ + 360^\circ k}{4}\right) + i \sin\left(\frac{120^\circ + 360^\circ k}{4}\right) \right)
+$$
+$$
+z_k = 2 \left( \cos(30^\circ + 90^\circ k) + i \sin(30^\circ + 90^\circ k) \right) \quad \text{for } k = 0, 1, 2, 3
+$$
+
+**3. Calculate the Four Roots:**
+-   **k = 0:**
+    $z_0 = 2(\cos(30^\circ) + i\sin(30^\circ)) = 2\left(\frac{\sqrt{3}}{2} + i\frac{1}{2}\right) = \sqrt{3} + i$
+-   **k = 1:**
+    $z_1 = 2(\cos(120^\circ) + i\sin(120^\circ)) = 2\left(-\frac{1}{2} + i\frac{\sqrt{3}}{2}\right) = -1 + i\sqrt{3}$
+-   **k = 2:**
+    $z_2 = 2(\cos(210^\circ) + i\sin(210^\circ)) = 2\left(-\frac{\sqrt{3}}{2} - i\frac{1}{2}\right) = -\sqrt{3} - i$
+-   **k = 3:**
+    $z_3 = 2(\cos(300^\circ) + i\sin(300^\circ)) = 2\left(\frac{1}{2} - i\frac{\sqrt{3}}{2}\right) = 1 - i\sqrt{3}$
+
+**4. Geometric Interpretation:**
+The four roots are equally spaced on a circle of radius 2. They form the vertices of a square.
+
+![[download-1.png]]

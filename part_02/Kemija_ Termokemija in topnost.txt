@@ -1,0 +1,615 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1DCJ2lbqdC7iWdL1KqR6oYtZhy8IBfxnc"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1YvF5SUQYDhfIgmJh1TSY178xw6MCm4Ia"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1_kkRjWoqQj3ARGICk6rJBs9q9CxSK9DW"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1CxckXC7OvQZi3DA7W8LQmGXbzynqtUtM"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ZYqMQAlXEaxu9cG5uqPVy13j8p_PUkWU"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1YfIaA-KBe4pOG2oHiewH2bXeM2T0b5Gx"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1TgUUMGUPMskiNZaP2E_iM_RGYGXW3xGN"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1L8v4lsFb5sxIPHGs9j8w3GGN05goYrKD"
+      },
+      "role": "user",
+      "tokenCount": 72970
+    }, {
+      "driveAudio": {
+        "id": "1J5isnqbeI_3mwqSkeDqQzAyAb9SaJBGr"
+      },
+      "role": "user",
+      "tokenCount": 171834
+    }, {
+      "text": "**Begin Processing Thermochemistry**\n\nI\u0027m starting the analysis of the user\u0027s materials. Right now, I\u0027m diving into the handwritten notes, aiming to fully grasp the concepts and structure within them. This includes making sure I understand the equations, diagrams and other content.\n\n\n**Comprehending the Notes**\n\nNow, I\u0027m focusing on the handwritten notes, page by page, to build a solid foundation. I\u0027ve finished the initial review and have a good grasp of the covered concepts, like enthalpy of formation using Born-Haber cycle and Madelung constant calculations.  Currently, I\u0027m integrating that information with my analysis of the lecture transcript. I am also working on understanding the differences between them.\n\n\n**Developing a Comprehensive Overview**\n\nMy current focus is on creating a comprehensive understanding of the thermochemistry concepts. I have thoroughly analyzed the handwritten notes, page by page, and identified the key topics, from enthalpy calculations to solubility rules and Gibbs free energy. I am now incorporating information from the audio transcript, especially the concept of enthalpy of solution and its components. I am trying to determine the relationships between these different pieces of information. This includes cross-referencing examples and derivations.\n\n\n**Mapping Note and Audio Content**\n\nI\u0027m now creating a comprehensive map of the thermochemistry concepts, integrating the handwritten notes and the audio transcript. I\u0027ve finished extracting and organizing the topics like Born-Haber cycle and Gibbs free energy calculations. Currently, I\u0027m focusing on \"topilna entalpija\" or enthalpy of solution, and the detailed discussion of its components and examples from the lecture. I\u0027m building connections between related ideas, making sure the content fits together.\n\n\n**Constructing the Knowledge Graph**\n\nMy current task is to synthesize the detailed information from both the notes and the audio transcript. I\u0027m focusing on \"topilna entalpija\" and related concepts, like enthalpy of solution, lattice enthalpy, and hydration enthalpy. I\u0027m also ensuring that the solubility rules and entropy calculations are correctly incorporated. The lecture transcript\u0027s detailed explanation on lithium chloride\u0027s dissolution and the student\u0027s input are particularly useful.\n\n\n**Analyzing the Content Thoroughly**\n\nMy current focus is on analyzing the provided notes and the audio transcript. I\u0027m carefully reviewing the handwritten notes, page by page, covering topics from enthalpy calculations, Born-Haber cycle and Kapustinskii equation calculations. I\u0027m concurrently processing the audio transcript. This involves carefully mapping the lecturer\u0027s explanations and integrating all the examples and derivations with the notes. I\u0027m focusing on \"topilna entalpija\" and enthalpy of solution concepts.\n\n\n**Analyzing and Integrating Information**\n\nMy focus is now on integrating the notes and the audio transcript to build a comprehensive understanding. I\u0027ve analyzed each page of the notes, from enthalpy calculations to solubility rules and entropy. Currently, I\u0027m carefully mapping the lecturer\u0027s explanations, especially the details of \"topilna entalpija\" and the related examples, into the structured knowledge map.\n\n\n**Constructing the Synthesis**\n\nThe current task involves integrating the notes and audio transcript into a coherent Markdown file, ensuring accurate transcription of formulas and examples using LaTeX. I\u0027m focusing on \"Termokemija\" (Thermochemistry), \"Entropija\" (Entropy), and \"Gibbsova Prosta Energija\" (Gibbs Free Energy) as primary sections with relevant subheaders, and organizing theory and problems distinctly. I\u0027ve started the \"Termokemija\" section.\n\n\n**Composing a Detailed Summary**\n\nI\u0027ve finished the initial analysis of the thermochemistry content, including the notes and the audio transcript. Now, I am concentrating on developing a structured overview, mapping the information logically. My primary concern is accuracy, especially when dealing with the calculations and derivations. I\u0027ve successfully incorporated the student\u0027s example and related concepts.\n\n\n**Constructing the Synthesis**\n\nThe current task involves integrating the notes and audio transcript into a coherent Markdown file, ensuring accurate transcription of formulas and examples using LaTeX. I\u0027m focusing on \"Termokemija\" (Thermochemistry), \"Entropija\" (Entropy), and \"Gibbsova Prosta Energija\" (Gibbs Free Energy) as primary sections with relevant subheaders, and organizing theory and problems distinctly. I\u0027ve started the \"Termokemija\" section.\n\n\\n\\n**Composing a Detailed Summary**\n\nI\u0027ve finished the initial analysis of the thermochemistry content, including the notes and the audio transcript. Now, I am concentrating on developing a structured overview, mapping the information logically. My primary concern is accuracy, especially when dealing with the calculations and derivations. I\u0027ve successfully incorporated the student\u0027s example and related concepts.\n\n\\n\\n**Refining the Structure and Content**\n\nI am now focusing on refining the structure and content of the thermochemistry summary, ensuring that each topic is well-defined and interconnected. This includes adding the student\u0027s example and relevant context to the lattice enthalpy calculations to create a robust and comprehensive knowledge resource. I\u0027m working to integrate the explanations from the audio transcript seamlessly into the Markdown document.\n\n\\n\\n**Composing the Detailed Summary**\n\nThe final phase involves compiling a detailed and easy to understand summary of the thermochemistry notes and audio transcript into a Markdown file. I\u0027m organizing the information logically, creating clear sections and sub-sections for each topic. Formulas and derivations are accurately transcribed using LaTeX. I will also incorporate the instructor\u0027s detailed explanations to add clarity.\n\n\\n\\n**Fine-tuning the Structure and Content**\n\nI am now conducting a comprehensive review of the Markdown summary. I\u0027m making sure that the structure is logical, the formulas are accurate, and the explanations from the audio transcript are incorporated seamlessly. I\u0027m also adding supporting information to make sure the user has a great educational resource. The goal is to provide a complete and easily-navigable reference.\n\n\\n\\n**Adding Instructor\u0027s Insights**\n\nNow I am enriching the summary with the instructor\u0027s insights from the audio transcript, especially their detailed explanation of lattice enthalpy and solubility rules, to provide extra context. This also makes sure that the knowledge map I\u0027m creating is in line with the lecturer\u0027s teaching. The goal is to create a complete and easily-accessible resource.\n\n\\n\\n**Creating the Knowledge Map**\n\nCurrently, I\u0027m constructing a comprehensive knowledge map by seamlessly integrating the information from the notes and audio transcript, making sure each section includes concise theory, clear examples, and detailed explanations using LaTeX formulas. I\u0027m starting to add the sections on enthalpy of formation, enthalpy of solution, and solubility rules.\n\n\\n\\n**Generating the Final Document**\n\nThe current focus is on compiling a concise, structured markdown document that combines the user\u0027s handwritten notes and the audio transcript of the lecture. This involves structuring the information logically, accurately transcribing LaTeX formulas, and including all relevant details. I am now working on the sections about entropy and Gibbs free energy.\n\n\\n\\n**Integrating and Organizing Content**\n\nI\u0027m now integrating information from both the user\u0027s notes and the lecture transcript to build a comprehensive, structured Markdown document. This includes adding a clear organization, accurate LaTeX-formatted formulas, and relevant explanations. The goal is to make a valuable learning resource that is also easy to read.\n\n\n**Analyzing Data and Constructing**\n\nI am now thoroughly analyzing the contents of the provided materials to ensure that the content is accurate and complete, using the notes and the audio transcript. I\u0027m focusing on \"topilna entalpija\" and enthalpy of solution concepts. I\u0027m building connections between related ideas, making sure the content fits together.\n\n\n**Refining the Structure and Content**\n\nI\u0027m now focusing on refining the structure and content of the thermochemistry summary. This entails ensuring all subtopics, from Born-Haber cycle calculations to solubility rules and entropy principles, are clearly defined and interconnected. I\u0027m especially focused on integrating the examples and justifications, and confirming the Markdown file accurately reflects the lecturer\u0027s explanations.\n\n",
+      "role": "model",
+      "tokenCount": 3453,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Begin Processing Thermochemistry**\n\nI\u0027m starting the analysis of the user\u0027s materials. Right now, I\u0027m diving into the handwritten notes, aiming to fully grasp the concepts and structure within them. This includes making sure I understand the equations, diagrams and other content.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Comprehending the Notes**\n\nNow, I\u0027m focusing on the handwritten notes, page by page, to build a solid foundation. I\u0027ve finished the initial review and have a good grasp of the covered concepts, like enthalpy of formation using Born-Haber cycle and Madelung constant calculations.  Currently, I\u0027m integrating that information with my analysis of the lecture transcript. I am also working on understanding the differences between them.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing a Comprehensive Overview**\n\nMy current focus is on creating a comprehensive understanding of the thermochemistry concepts. I have thoroughly analyzed the handwritten notes, page by page, and identified the key topics, from enthalpy calculations to solubility rules and Gibbs free energy. I am now incorporating information from the audio transcript, especially the concept of enthalpy of solution and its components. I am trying to determine the relationships between these different pieces of information. This includes cross-referencing examples and derivations.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping Note and Audio Content**\n\nI\u0027m now creating a comprehensive map of the thermochemistry concepts, integrating the handwritten notes and the audio transcript. I\u0027ve finished extracting and organizing the topics like Born-Haber cycle and Gibbs free energy calculations. Currently, I\u0027m focusing on \"topilna entalpija\" or enthalpy of solution, and the detailed discussion of its components and examples from the lecture. I\u0027m building connections between related ideas, making sure the content fits together.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing the Knowledge Graph**\n\nMy current task is to synthesize the detailed information from both the notes and the audio transcript. I\u0027m focusing on \"topilna entalpija\" and related concepts, like enthalpy of solution, lattice enthalpy, and hydration enthalpy. I\u0027m also ensuring that the solubility rules and entropy calculations are correctly incorporated. The lecture transcript\u0027s detailed explanation on lithium chloride\u0027s dissolution and the student\u0027s input are particularly useful.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Content Thoroughly**\n\nMy current focus is on analyzing the provided notes and the audio transcript. I\u0027m carefully reviewing the handwritten notes, page by page, covering topics from enthalpy calculations, Born-Haber cycle and Kapustinskii equation calculations. I\u0027m concurrently processing the audio transcript. This involves carefully mapping the lecturer\u0027s explanations and integrating all the examples and derivations with the notes. I\u0027m focusing on \"topilna entalpija\" and enthalpy of solution concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing and Integrating Information**\n\nMy focus is now on integrating the notes and the audio transcript to build a comprehensive understanding. I\u0027ve analyzed each page of the notes, from enthalpy calculations to solubility rules and entropy. Currently, I\u0027m carefully mapping the lecturer\u0027s explanations, especially the details of \"topilna entalpija\" and the related examples, into the structured knowledge map.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing the Synthesis**\n\nThe current task involves integrating the notes and audio transcript into a coherent Markdown file, ensuring accurate transcription of formulas and examples using LaTeX. I\u0027m focusing on \"Termokemija\" (Thermochemistry), \"Entropija\" (Entropy), and \"Gibbsova Prosta Energija\" (Gibbs Free Energy) as primary sections with relevant subheaders, and organizing theory and problems distinctly. I\u0027ve started the \"Termokemija\" section.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Composing a Detailed Summary**\n\nI\u0027ve finished the initial analysis of the thermochemistry content, including the notes and the audio transcript. Now, I am concentrating on developing a structured overview, mapping the information logically. My primary concern is accuracy, especially when dealing with the calculations and derivations. I\u0027ve successfully incorporated the student\u0027s example and related concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing the Synthesis**\n\nThe current task involves integrating the notes and audio transcript into a coherent Markdown file, ensuring accurate transcription of formulas and examples using LaTeX. I\u0027m focusing on \"Termokemija\" (Thermochemistry), \"Entropija\" (Entropy), and \"Gibbsova Prosta Energija\" (Gibbs Free Energy) as primary sections with relevant subheaders, and organizing theory and problems distinctly. I\u0027ve started the \"Termokemija\" section.\n\n\\n\\n**Composing a Detailed Summary**\n\nI\u0027ve finished the initial analysis of the thermochemistry content, including the notes and the audio transcript. Now, I am concentrating on developing a structured overview, mapping the information logically. My primary concern is accuracy, especially when dealing with the calculations and derivations. I\u0027ve successfully incorporated the student\u0027s example and related concepts.\n\n\\n\\n**Refining the Structure and Content**\n\nI am now focusing on refining the structure and content of the thermochemistry summary, ensuring that each topic is well-defined and interconnected. This includes adding the student\u0027s example and relevant context to the lattice enthalpy calculations to create a robust and comprehensive knowledge resource. I\u0027m working to integrate the explanations from the audio transcript seamlessly into the Markdown document.\n\n\\n\\n**Composing the Detailed Summary**\n\nThe final phase involves compiling a detailed and easy to understand summary of the thermochemistry notes and audio transcript into a Markdown file. I\u0027m organizing the information logically, creating clear sections and sub-sections for each topic. Formulas and derivations are accurately transcribed using LaTeX. I will also incorporate the instructor\u0027s detailed explanations to add clarity.\n\n\\n\\n**Fine-tuning the Structure and Content**\n\nI am now conducting a comprehensive review of the Markdown summary. I\u0027m making sure that the structure is logical, the formulas are accurate, and the explanations from the audio transcript are incorporated seamlessly. I\u0027m also adding supporting information to make sure the user has a great educational resource. The goal is to provide a complete and easily-navigable reference.\n\n\\n\\n**Adding Instructor\u0027s Insights**\n\nNow I am enriching the summary with the instructor\u0027s insights from the audio transcript, especially their detailed explanation of lattice enthalpy and solubility rules, to provide extra context. This also makes sure that the knowledge map I\u0027m creating is in line with the lecturer\u0027s teaching. The goal is to create a complete and easily-accessible resource.\n\n\\n\\n**Creating the Knowledge Map**\n\nCurrently, I\u0027m constructing a comprehensive knowledge map by seamlessly integrating the information from the notes and audio transcript, making sure each section includes concise theory, clear examples, and detailed explanations using LaTeX formulas. I\u0027m starting to add the sections on enthalpy of formation, enthalpy of solution, and solubility rules.\n\n\\n\\n**Generating the Final Document**\n\nThe current focus is on compiling a concise, structured markdown document that combines the user\u0027s handwritten notes and the audio transcript of the lecture. This involves structuring the information logically, accurately transcribing LaTeX formulas, and including all relevant details. I am now working on the sections about entropy and Gibbs free energy.\n\n\\n\\n**Integrating and Organizing Content**\n\nI\u0027m now integrating information from both the user\u0027s notes and the lecture transcript to build a comprehensive, structured Markdown document. This includes adding a clear organization, accurate LaTeX-formatted formulas, and relevant explanations. The goal is to make a valuable learning resource that is also easy to read.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Data and Constructing**\n\nI am now thoroughly analyzing the contents of the provided materials to ensure that the content is accurate and complete, using the notes and the audio transcript. I\u0027m focusing on \"topilna entalpija\" and enthalpy of solution concepts. I\u0027m building connections between related ideas, making sure the content fits together.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Structure and Content**\n\nI\u0027m now focusing on refining the structure and content of the thermochemistry summary. This entails ensuring all subtopics, from Born-Haber cycle calculations to solubility rules and entropy principles, are clearly defined and interconnected. I\u0027m especially focused on integrating the examples and justifications, and confirming the Markdown file accurately reflects the lecturer\u0027s explanations.\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Termokemija]]\n\n## [[Born-Haberjev Cikel]]\n\n### [[Teorija in Definicije]]\n\nBorn-Haberjev cikel je metoda, ki se uporablja za analizo reakcijskih energij. Povezuje mrežno entalpijo (entalpijo ionske kristalne mreže) ionske spojine s standardno tvorbeno entalpijo in drugimi termokemijskimi podatki, kot so sublimacijska entalpija, ionizacijska energija, disociacijska entalpija in elektronska afiniteta. Cikel temelji na Hessovem zakonu, ki pravi, da je skupna sprememba entalpije med reakcijo neodvisna od poti, po kateri reakcija poteka.\n\nPosamezni koraki v ciklu za tvorbo $MgBr_{2}(s)$ iz $Mg(s)$ in $Br_{2}(l)$ so:\n1.  **[[Sublimacijska entalpija]] ($\\Delta H_{sub}$):** Energija, potrebna za prehod enega mola snovi iz trdnega v plinasto agregatno stanje.\n    $Mg(s) \\rightarrow Mg(g)$\n2.  **[[Ionizacijska energija]] ($\\Delta H_{ion}$):** Energija, potrebna za odstranitev elektrona iz atoma ali iona v plinastem stanju. Ker magnezij tvori ion $Mg^{2+}$, se upoštevata prva in druga ionizacijska energija ($IE_1 + IE_2$).\n    $Mg(g) \\rightarrow Mg^{2+}(g) + 2e^{-}$\n3.  **[[Izparilna entalpija]] ($\\Delta H_{upar}$):** Energija, potrebna za prehod enega mola snovi iz tekočega v plinasto agregatno stanje.\n    $Br_{2}(l) \\rightarrow Br_{2}(g)$\n4.  **[[Disociacijska entalpija]] ($\\Delta H_{dis}$):** Energija, potrebna za prekinitev vezi v enem molu molekul v plinastem stanju, da nastanejo atomi.\n    $Br_{2}(g) \\rightarrow 2Br(g)$\n5.  **[[Elektronska afiniteta]] ($E_a$):** Sprememba energije ob sprejetju elektrona s strani atoma v plinastem stanju.\n    $2Br(g) + 2e^{-} \\rightarrow 2Br^{-}(g)$\n6.  **[[Mrežna entalpija]] ($\\Delta H_{mrežna}$):** Sprememba entalpije, ko iz ionov v plinastem stanju nastane en mol trdne ionske spojine. Ta proces je eksotermen (energija se sprosti).\n    $Mg^{2+}(g) + 2Br^{-}(g) \\rightarrow MgBr_{2}(s)$\n\n### [[Seznam Problemov]]\n1.  Izračunajte mrežno entalpijo za $MgBr_{2}(s)$ z uporabo podanih termokemijskih podatkov.\n\n### [[Reševanje in Analiza]]\n#### [[Izračun Mrežne Entalpije za MgBr2]]\nPo Hessovem zakonu je tvorbena entalpija ($\\Delta H_{tvorbe}$) enaka vsoti entalpij vseh korakov v ciklu.\n\n**Splošna formula:**\n$$ \\Delta H_{tvorbe} \u003d \\Delta H_{sub} + \\Delta H_{ion} + \\Delta H_{upar} + \\Delta H_{disoc} + 2 \\cdot E_a + \\Delta H_{mrežna} $$\n\n**Note to Self:** Mrežna entalpija ($\\Delta H_{mrežna}$) je po definiciji energija, ki se sprosti pri tvorbi mreže iz plinastih ionov, zato je njena vrednost negativna. V enačbi jo zapišemo s plusom, ker pričakujemo negativen rezultat. V zapiskih je uporabljena konvencija, kjer je $\\Delta H_{mrežna}$ definirana kot energija, potrebna za razpad mreže (pozitivna vrednost), zato je v enačbi zapisana z minusom. Končni numerični rezultat je enak, pomembno je le razumevanje predznaka. Uporabili bomo enačbo, kot je zapisana v zapiskih.\n\n**Enačba iz zapiskov (preurejena za izračun mrežne entalpije):**\n$$ \\Delta H_{mrežna} \u003d (\\Delta H_{sub} + \\Delta H_{ion} + \\Delta H_{upar} + \\Delta H_{disoc} + 2 \\cdot E_a) - \\Delta H_{tvorbe} $$\n\n**Podatki:**\n*   Tvorbena entalpija $MgBr_{2}(s)$: $\\Delta H_{tvorbe} \u003d -524 \\text{ kJ/mol}$\n*   Sublimacija $Mg(s)$: $\\Delta H_{sub} \u003d +148 \\text{ kJ/mol}$\n*   Ionizacija $Mg(g) \\rightarrow Mg^{2+}(g)$: $\\Delta H_{ion} \u003d +2187 \\text{ kJ/mol}$\n*   Uparivanje $Br_{2}(l)$: $\\Delta H_{upar} \u003d +31 \\text{ kJ/mol}$\n*   Disociacija $Br_{2}(g)$: $\\Delta H_{disoc} \u003d +193 \\text{ kJ/mol}$\n*   Elektronska afiniteta $Br(g)$: $E_a \u003d -331 \\text{ kJ/mol}$\n\n**Izračun:**\n1.  **Vstavimo vrednosti v enačbo:**\n    $$ \\Delta H_{mrežna} \u003d (148 + 2187 + 31 + 193 + 2 \\cdot (-331)) - (-524) $$\n2.  **Izračunamo vsoto v oklepaju:**\n    $$ (148 + 2187 + 31 + 193 - 662) \u003d 1897 \\text{ kJ/mol} $$\n3.  **Končni izračun:**\n    $$ \\Delta H_{mrežna} \u003d 1897 - (-524) \u003d 1897 + 524 \u003d 2421 \\text{ kJ/mol} $$\n\n**Rezultat:**\n$$ \\Delta H_{mrežna} \u003d 2421 \\text{ kJ/mol} $$\n\n**Warning Note:** V originalnih zapiskih je formula zapisana kot `ΔH_tvor - (vsota ostalih) \u003d -ΔH_mrežna`. Ta zapis je lahko zavajajoč zaradi dvojnih negativnih predznakov in postavitve. Končni rezultat `2421 kJ/mol` je pravilen, vendar je pot do njega jasnejša, če enačbo preuredimo, kot je prikazano zgoraj. Pozitivna vrednost pomeni, da je to energija, potrebna za **razpad** mreže (lattice dissociation enthalpy). Entalpija **tvorbe** mreže bi bila $-2421 \\text{ kJ/mol}$.\n\n## [[Born-Mayerjeva in Kapustinskega Enačba]]\n\n### [[Teorija in Definicije]]\n\n**[[Coulombov zakon]]**\nOpisuje elektrostatsko silo ($F$) med dvema točkastima nabojema ($q_1, q_2$), ki sta na razdalji $r$.\n$$ F \u003d k \\frac{|q_1 q_2|}{r^2} \\quad \\text{ali} \\quad F(r) \u003d \\frac{1}{4\\pi\\epsilon_0} \\frac{|q_1 q_2|}{r^2} $$\n*   $\\epsilon_0$ je dielektrična konstanta v vakuumu ($8.854 \\cdot 10^{-12} C^2/Jm$).\n\n**[[Born-Mayerjeva enačba]]**\nTeoretični model za izračun mrežne entalpije ($\\Delta H_{mr}^{\\circ}$) ionskega kristala. Upošteva elektrostatske privlačne in odbojne sile med ioni.\n$$ \\Delta H_{mr}^{\\circ} \u003d \\frac{N_A |z_1 z_2| e^2}{4\\pi\\epsilon_0 d} \\left(1 - \\frac{d^*}{d}\\right) A $$\n*   **$N_A$**: Avogadrova konstanta ($6.023 \\cdot 10^{23} \\text{ mol}^{-1}$)\n*   **$z_1, z_2$**: Naboj kationa in aniona\n*   **$e$**: Elementarni naboj ($1.602 \\cdot 10^{-19} C$)\n*   **$d$**: Razdalja med jedri sosednjih ionov (radij kationa + radij aniona)\n*   **$d^*$**: Konstanta, povezana z odbojnimi silami (približno $34.5 \\text{ pm}$)\n*   **$A$**: Madelungova konstanta (odvisna od geometrije kristalne mreže)\n*   **$\\epsilon_0$**: Dielektrična konstanta v vakuumu\n\n**[[Kapustinskega enačba]]**\nPoenostavljena metoda za oceno mrežne entalpije, ki ne zahteva poznavanja Madelungove konstante ali natančne kristalne strukture.\n$$ \\Delta H_{mr}^{\\circ} \u003d \\frac{N |z_a z_b|}{d} \\left(1 - \\frac{d^*}{d}\\right) K $$\n*   **$N$**: Število ionov v formuli (npr. za $KNO_3$, $N\u003d2$)\n*   **$d$**: Vsota radijev kationa in aniona ($d \u003d r_k + r_a$)\n*   **$K$**: Kapustinskega konstanta ($1.21 \\cdot 10^5 \\text{ kJ pm/mol}$)\n*   **$d^*$**: Konstanta ($34.5 \\text{ pm}$)\n\n### [[Seznam Problemov]]\n1.  Ocenite mrežno entalpijo za $NaCl$ z Born-Mayerjevo enačbo.\n2.  Ocenite mrežno entalpijo za $KNO_3$ s Kapustinskega enačbo.\n\n### [[Reševanje in Analiza]]\n\n#### [[Ocena Mrežne Entalpije za NaCl]]\n**Podatki:**\n*   $N_A \u003d 6.023 \\cdot 10^{23} \\text{ mol}^{-1}$\n*   $|z_a z_b| \u003d |(+1)(-1)| \u003d 1$\n*   $e \u003d 1.602 \\cdot 10^{-19} C$\n*   $\\epsilon_0 \u003d 8.854 \\cdot 10^{-12} C^2/Jm$\n*   $d \u003d 283 \\text{ pm} \u003d 283 \\cdot 10^{-12} m$\n*   $d^* \u003d 34.5 \\text{ pm} \u003d 34.5 \\cdot 10^{-12} m$\n*   $A (NaCl) \u003d 1.748$\n\n**Izračun:**\n$$ \\Delta H_{mr}^{\\circ} \u003d \\frac{(6.023 \\cdot 10^{23}) \\cdot 1 \\cdot (1.602 \\cdot 10^{-19})^2}{4 \\cdot \\pi \\cdot (8.854 \\cdot 10^{-12}) \\cdot (283 \\cdot 10^{-12})} \\left(1 - \\frac{34.5}{283}\\right) \\cdot 1.748 $$\n$$ \\Delta H_{mr}^{\\circ} \\approx 753.5 \\text{ kJ/mol} $$\n**Rezultat:** Mrežna entalpija za NaCl, ocenjena z Born-Mayerjevo enačbo, je približno **753.5 kJ/mol**.\n\n#### [[Ocena Mrežne Entalpije za KNO3]]\n**Podatki:**\n*   $N \u003d 2$ (ion $K^+$ in ion $NO_3^-$)\n*   $|z_a z_b| \u003d |(+1)(-1)| \u003d 1$\n*   $d \u003d 327 \\text{ pm}$\n*   $d^* \u003d 34.5 \\text{ pm}$\n*   $K \u003d 1.21 \\cdot 10^5 \\text{ kJ pm/mol}$\n\n**Izračun:**\n$$ \\Delta H_{mr}^{\\circ} \u003d \\frac{2 \\cdot 1}{327} \\left(1 - \\frac{34.5}{327}\\right) \\cdot (1.21 \\cdot 10^5) $$\n$$ \\Delta H_{mr}^{\\circ} \u003d \\frac{2}{327} (1 - 0.1055) \\cdot (1.21 \\cdot 10^5) $$\n$$ \\Delta H_{mr}^{\\circ} \u003d 0.006116 \\cdot 0.8945 \\cdot 121000 \\approx 662 \\text{ kJ/mol} $$\n**Rezultat:** Mrežna entalpija za KNO3, ocenjena s Kapustinskega enačbo, je približno **662 kJ/mol**.\n\n## [[Toplotna Stabilnost in Topnost]]\n\n### [[Teorija in Definicije]]\n#### [[Gibbsova Prosta Energija in Stabilnost]]\nTermična stabilnost ionskih spojin je povezana s temperaturo, pri kateri spojina razpade. To je odvisno od spremembe Gibbsove proste energije ($\\Delta G$).\n$$ \\Delta G^{\\circ} \u003d \\Delta H^{\\circ} - T\\Delta S^{\\circ} $$\nReakcija razpada je spontana, ko je $\\Delta G \u003c 0$.\n\n#### [[Topilna Entalpija]]\n**Topilna entalpija** ($\\Delta H_{top}$) je količina toplote, ki se sprosti ali porabi, ko se en mol snovi raztopi v topilu. Je vsota mrežne entalpije in solvatacijske (hidratacijske) entalpije.\n\n$$ \\Delta H_{top} \u003d \\Delta H_{mrežna} + \\Delta H_{hidratacija} $$\n\n*   **$\\Delta H_{mrežna}$ (razpad mreže)**: Je endotermen proces (zahteva energijo, $\u003e 0$).\n*   **$\\Delta H_{hidratacija}$**: Je eksotermen proces (energija se sprosti ob nastanku vezi med ioni in molekulami vode, $\u003c 0$).\n\n**Memorialization:** Predavateljica je poudarila, da je topilna entalpija kot \"most\" med dvema nasprotujočima si procesoma: razpadom kristala in hidratacijo ionov. Ravnovesje med njima določa, ali bo raztapljanje endotermno ali eksotermno.\n\n**Primeri:**\n*   **NaCl(s) $\\rightarrow$ Na$^+$(aq) + Cl$^-$(aq)**\n    $\\Delta H_{top} \u003d +3.9 \\text{ kJ/mol}$ (Endotermno: več energije se porabi za razpad mreže, kot se je sprosti pri hidrataciji.)\n*   **LiCl(s) $\\rightarrow$ Li$^+$(g) + Cl$^-$(g)**; $\\Delta H_{mrežna} \u003d +837 \\text{ kJ/mol}$\n*   **Li$^+$(g) + Cl$^-$(g) $\\rightarrow$ Li$^+$(aq) + Cl$^-$(aq)**; $\\Delta H_{hidr.} \u003d -886 \\text{ kJ/mol}$\n*   **Skupna topilna entalpija za LiCl:** $\\Delta H_{top} \u003d 837 + (-886) \u003d -49 \\text{ kJ/mol}$ (Eksotermno)\n\n**Memorialization:** Študent je pravilno pojasnil, da je raztapljanje LiCl eksotermno, ker se pri hidrataciji sprosti več energije, kot se je porabi za razpad kristalne mreže. Predavateljica je to pohvalila in poudarila, da ima majhen $Li^+$ ion visoko hidratacijsko entalpijo.\n\n### [[Pravila Topnosti]]\nPravila za topnost ionskih spojin v vodi so posplošitve, ki pomagajo napovedati, ali bo spojina topna.\n\n**Vedno topni (brez izjem):**\n1.  Spojine, ki vsebujejo ione **alkalijskih kovin** (Li$^+$, Na$^+$, K$^+$, itd.).\n2.  Spojine, ki vsebujejo **amonijev ion** (NH$_4^+$).\n3.  Spojine, ki vsebujejo **nitratni ion** (NO$_3^-$).\n4.  Spojine, ki vsebujejo **acetatni ion** (C$_2$H$_3$O$_2^-$).\n\n**Večinoma netopni (razen če so vezani na ione iz zgornjih pravil):**\n*   Karbonati ($CO_3^{2-}$)\n*   Fosfati ($PO_4^{3-}$)\n*   Kromati ($CrO_4^{2-}$)\n*   Sulfidi ($S^{2-}$)\n*   Hidroksidi ($OH^-$)\n\n**Halidi (Cl$^-$, Br$^-$, I$^-$):**\n*   So večinoma topni, **razen** spojin z $Ag^+$, $Pb^{2+}$, $Hg_2^{2+}$.\n\n# [[Entropija (S)]]\nEntropija je termodinamska količina, ki je mera za nered oziroma razpršenost sistema. Označujemo jo s črko **S**.\n*   **2. Termodinamski zakon:** Entropija vesolja se pri vsakem spontanem procesu poveča.\n*   $\\Delta S \u003e 0$: Nered se poveča (neurejenost).\n*   $\\Delta S \u003c 0$: Nered se zmanjša (večja urejenost).\n\n**Splošna primerjava:**\n$$ S_{plin} \u003e S_{tekočina} \u003e S_{trdnina} $$\n\n**Izračun spremembe entropije reakcije ($\\Delta S_{reakcije}^{\\circ}$):**\n$$ \\Delta S_{reakcije}^{\\circ} \u003d \\sum S_{produkti}^{\\circ} - \\sum S_{reaktanti}^{\\circ} $$\n\n### [[Seznam Problemov]]\n1.  Ocenite spremembo entropije za reakcijo: $2Fe_2O_3(s) \\rightarrow 4Fe(s) + 3O_2(g)$.\n2.  Izračunajte $\\Delta S^{\\circ}$ za reakcijo: $2NO(g) + O_2(g) \\rightarrow 2NO_2(g)$.\n\n### [[Reševanje in Analiza]]\n\n#### [[Sprememba Entropije pri Razpadu Fe2O3]]\n$$ 2Fe_2O_3(s) \\rightarrow 4Fe(s) + 3O_2(g) $$\n*   **Kvalitativna ocena:** V reakciji iz trdne snovi nastane plin ($O_2$), ki ima bistveno višjo entropijo. Pričakujemo, da bo $\\Delta S \u003e 0$.\n*   **Izračun:**\n    $$ \\Delta S_{reakcije}^{\\circ} \u003d (4 \\cdot S_{Fe(s)}^{\\circ} + 3 \\cdot S_{O_2(g)}^{\\circ}) - (2 \\cdot S_{Fe_2O_3(s)}^{\\circ}) $$\n    *   Podatki iz tabel (vrednosti so v J/K·mol): $S_{Fe_2O_3(s)}^{\\circ} \u003d 87.4$, $S_{Fe(s)}^{\\circ} \u003d 27.3$, $S_{O_2(g)}^{\\circ} \u003d 205.1$\n    $$ \\Delta S_{reakcije}^{\\circ} \u003d (4 \\cdot 27.3 + 3 \\cdot 205.1) - (2 \\cdot 87.4) $$\n    $$ \\Delta S_{reakcije}^{\\circ} \u003d (109.2 + 615.3) - 174.8 \u003d 724.5 - 174.8 \u003d +549.7 \\text{ J/K} $$\n**Rezultat:** Sprememba entropije je **+549.7 J/K**, kar potrjuje našo oceno.\n\n#### [[Sprememba Entropije pri Tvorbi NO2]]\n$$ 2NO(g) + O_2(g) \\rightarrow 2NO_2(g) $$\n*   **Kvalitativna ocena:** Reakcija poteka iz 3 molov plina v 2 mola plina. Število delcev se zmanjša, zato pričakujemo zmanjšanje nereda, $\\Delta S \u003c 0$.\n*   **Izračun:**\n    $$ \\Delta S_{reakcije}^{\\circ} \u003d (2 \\cdot S_{NO_2(g)}^{\\circ}) - (2 \\cdot S_{NO(g)}^{\\circ} + 1 \\cdot S_{O_2(g)}^{\\circ}) $$\n    *   Podatki iz tabel (vrednosti so v J/K·mol): $S_{NO_2(g)}^{\\circ} \u003d 240.06$, $S_{NO(g)}^{\\circ} \u003d 210.76$, $S_{O_2(g)}^{\\circ} \u003d 205.138$\n    $$ \\Delta S_{reakcije}^{\\circ} \u003d (2 \\cdot 240.06) - (2 \\cdot 210.76 + 205.138) $$\n    $$ \\Delta S_{reakcije}^{\\circ} \u003d 480.12 - (421.52 + 205.138) \u003d 480.12 - 626.658 \u003d -146.538 \\text{ J/K} $$\n**Rezultat:** Sprememba entropije je **-146.5 J/K**, kar potrjuje našo oceno.\n\n# [[Gibbsova Prosta Energija ($\\Delta G$)]]\n\n### [[Teorija in Definicije]]\nGibbsova prosta energija je termodinamski potencial, ki meri \"koristno\" ali procesno delo, ki ga je mogoče pridobiti iz zaprtega sistema pri konstantni temperaturi in tlaku. Je ključni pokazatelj spontanosti kemijske reakcije.\n\n**[[Enačba za Gibbsovo Prosto Energijo]]**\n$$ \\Delta G^{\\circ} \u003d \\Delta H^{\\circ} - T\\Delta S^{\\circ} $$\n*   **$\\Delta H^{\\circ}$**: Standardna sprememba entalpije\n*   **$T$**: Absolutna temperatura (v Kelvinih)\n*   **$\\Delta S^{\\circ}$**: Standardna sprememba entropije\n\n**[[Spontanost Reakcije]]**\n*   **$\\Delta G \u003c 0$**: Reakcija je **spontana** v smeri produktov.\n*   **$\\Delta G \u003e 0$**: Reakcija **ni spontana**; spontana je obratna reakcija.\n*   **$\\Delta G \u003d 0$**: Sistem je v **ravnotežju**.\n\n**[[Povezava z Ravnotežno Konstanto (K)]]**\n$$ \\Delta G^{\\circ} \u003d -RT \\ln K $$\n*   **$R$**: Plinska konstanta ($8.314 \\text{ J/mol·K}$)\n*   **$K$**: Ravnotežna konstanta\n*   Če **$K \u003e 1$**, $\\ln K$ je pozitiven, $\\Delta G^{\\circ}$ je **negativen** (produkti prevladujejo).\n*   Če **$K \u003c 1$**, $\\ln K$ je negativen, $\\Delta G^{\\circ}$ je **pozitiven** (reaktanti prevladujejo).\n\n### [[Seznam Problemov]]\n1.  Ugotovite, v katero smer se pomakne reakcija pri $298 K$: $CH_4(g) + O_2(g) \\rightarrow 2H_2O(l) + CO_2(g)$.\n2.  Ugotovite spontanost reakcije: $2Fe_2O_3(s) + 3C(s) \\rightarrow 4Fe(s) + 3CO_2(g)$.\n\n### [[Reševanje in Analiza]]\n\n#### [[Spontanost Reakcije Gorenja Metana]]\n**Podatki:**\n*   $\\Delta H^{\\circ} \u003d -890.3 \\text{ kJ}$\n*   $\\Delta S^{\\circ} \u003d -243.0 \\text{ J/K} \u003d -0.243 \\text{ kJ/K}$\n*   $T \u003d 298 K$\n\n**Izračun:**\n$$ \\Delta G^{\\circ} \u003d \\Delta H^{\\circ} - T\\Delta S^{\\circ} $$\n$$ \\Delta G^{\\circ} \u003d -890.3 \\text{ kJ} - (298 \\text{ K} \\cdot (-0.243 \\text{ kJ/K})) $$\n$$ \\Delta G^{\\circ} \u003d -890.3 \\text{ kJ} - (-72.414 \\text{ kJ}) $$\n$$ \\Delta G^{\\circ} \u003d -890.3 + 72.414 \u003d -817.9 \\text{ kJ} $$\n**Analiza:** Ker je $\\Delta G^{\\circ} \u003c 0$, je reakcija **spontana** in pomaknjena močno v smer produktov.\n\n#### [[Spontanost Reakcije Redukcije Železovega Oksida]]\n**Note to Self:** Za to reakcijo v zapiskih niso podane vse vrednosti, zato je rešitev zgolj nakazana. Za polni izračun bi potrebovali vrednosti $\\Delta H^{\\circ}$ in $\\Delta S^{\\circ}$. Vendar pa lahko sklepamo, da je ta reakcija (taljenje železa v plavžu) spontana pri visokih temperaturah, saj endotermna entalpija ($\\Delta H \u003e 0$) postane manj pomembna v primerjavi s členom $T\\Delta S$, kjer $\\Delta S$ postane velik in pozitiven zaradi nastanka plina ($CO_2$).",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 6271,
+      "parts": [{
+        "text": "# [[Termokemija]]\n\n## [[Born-Haberjev Cikel]]\n\n### [[Teorija in Definicije]]\n\nBorn-Haberjev cikel je metoda, ki se uporablja za analizo reak"
+      }, {
+        "text": "cijskih energij. Povezuje mrežno entalpijo (entalpijo ionske kristalne mre"
+      }, {
+        "text": "že) ionske spojine s standardno tvorbeno entalpijo in drugimi termokemijskimi"
+      }, {
+        "text": " podatki, kot so sublimacijska entalpija, ionizacijska energija, disociacijska ent"
+      }, {
+        "text": "alpija in elektronska afiniteta. Cikel temelji na Hessovem zakonu, ki pravi, da je"
+      }, {
+        "text": " skupna sprememba entalpije med reakcijo neodvisna od poti, po kateri reakcija poteka."
+      }, {
+        "text": "\n\nPosamezni koraki v ciklu za tvorbo $MgBr_{2}(s)$ iz $Mg("
+      }, {
+        "text": "s)$ in $Br_{2}(l)$ so:\n1.  **[[Sublimacijska entalpija]] ($\\Delta H_{sub}$):** Energija, potrebna za prehod enega mola snovi"
+      }, {
+        "text": " iz trdnega v plinasto agregatno stanje.\n    $Mg(s) \\rightarrow Mg("
+      }, {
+        "text": "g)$\n2.  **[[Ionizacijska energija]] ($\\Delta H_{ion}$):** Energ"
+      }, {
+        "text": "ija, potrebna za odstranitev elektrona iz atoma ali iona v plinastem stanju. Ker"
+      }, {
+        "text": " magnezij tvori ion $Mg^{2+}$, se upoštevata prva in druga ionizacijska energ"
+      }, {
+        "text": "ija ($IE_1 + IE_2$).\n    $Mg(g) \\rightarrow Mg^{2+}(g) + "
+      }, {
+        "text": "2e^{-}$\n3.  **[[Izparilna entalpija]] ($\\Delta H_{upar}$):** Energ"
+      }, {
+        "text": "ija, potrebna za prehod enega mola snovi iz tekočega v plinasto agreg"
+      }, {
+        "text": "atno stanje.\n    $Br_{2}(l) \\rightarrow Br_{2}(g)$\n4."
+      }, {
+        "text": "  **[[Disociacijska entalpija]] ($\\Delta H_{dis}$):** Energija, potrebna"
+      }, {
+        "text": " za prekinitev vezi v enem molu molekul v plinastem stanju, da nastanejo atom"
+      }, {
+        "text": "i.\n    $Br_{2}(g) \\rightarrow 2Br(g)$\n5.  **"
+      }, {
+        "text": "[[Elektronska afiniteta]] ($E_a$):** Sprememba energije ob sprejetju elektrona"
+      }, {
+        "text": " s strani atoma v plinastem stanju.\n    $2Br(g) + 2e"
+      }, {
+        "text": "^{-} \\rightarrow 2Br^{-}(g)$\n6.  **[[Mrežna entalpija]] ($\\"
+      }, {
+        "text": "Delta H_{mrežna}$):** Sprememba entalpije, ko iz ionov v plinastem stanju"
+      }, {
+        "text": " nastane en mol trdne ionske spojine. Ta proces je eksotermen (energija se sprost"
+      }, {
+        "text": "i).\n    $Mg^{2+}(g) + 2Br^{-}(g) \\rightarrow MgBr_{2}("
+      }, {
+        "text": "s)$\n\n### [[Seznam Problemov]]\n1.  Izračunajte mrežno entalpijo za $MgBr"
+      }, {
+        "text": "_{2}(s)$ z uporabo podanih termokemijskih podatkov.\n\n### [[Reševanje in Analiza]]\n#### [[Izračun Mrežne Entalpije za MgBr2]]\nPo"
+      }, {
+        "text": " Hessovem zakonu je tvorbena entalpija ($\\Delta H_{tvorbe}$) enaka vsoti ent"
+      }, {
+        "text": "alpij vseh korakov v ciklu.\n\n**Splošna formula:**\n$$ \\Delta H_{"
+      }, {
+        "text": "tvorbe} \u003d \\Delta H_{sub} + \\Delta H_{ion} + \\Delta H_{upar"
+      }, {
+        "text": "} + \\Delta H_{disoc} + 2 \\cdot E_a + \\Delta H_{mrežna"
+      }, {
+        "text": "} $$\n\n**Note to Self:** Mrežna entalpija ($\\Delta H_{mrežna}$) je po"
+      }, {
+        "text": " definiciji energija, ki se sprosti pri tvorbi mreže iz plinastih ionov, zato"
+      }, {
+        "text": " je njena vrednost negativna. V enačbi jo zapišemo s plusom, ker pričakujemo neg"
+      }, {
+        "text": "ativen rezultat. V zapiskih je uporabljena konvencija, kjer je $\\Delta H_{mrežna}$ definir"
+      }, {
+        "text": "ana kot energija, potrebna za razpad mreže (pozitivna vrednost), zato je v enačbi zapis"
+      }, {
+        "text": "ana z minusom. Končni numerični rezultat je enak, pomembno je le razumevanje predznaka. U"
+      }, {
+        "text": "porabili bomo enačbo, kot je zapisana v zapiskih.\n\n**Enačba iz zapiskov"
+      }, {
+        "text": " (preurejena za izračun mrežne entalpije):**\n$$ \\Delta H_{mrežna"
+      }, {
+        "text": "} \u003d (\\Delta H_{sub} + \\Delta H_{ion} + \\Delta H_{upar} + \\Delta H_{"
+      }, {
+        "text": "disoc} + 2 \\cdot E_a) - \\Delta H_{tvorbe} $$\n\n**"
+      }, {
+        "text": "Podatki:**\n*   Tvorbena entalpija $MgBr_{2}(s)$: $\\Delta H_{t"
+      }, {
+        "text": "vorbe} \u003d -524 \\text{ kJ/mol}$\n*   Sublimacija $Mg(s"
+      }, {
+        "text": ")$: $\\Delta H_{sub} \u003d +148 \\text{ kJ/mol}$\n*   Ioniz"
+      }, {
+        "text": "acija $Mg(g) \\rightarrow Mg^{2+}(g)$: $\\Delta H_{ion} \u003d +21"
+      }, {
+        "text": "87 \\text{ kJ/mol}$\n*   Uparivanje $Br_{2}(l)$: $\\Delta H_{upar"
+      }, {
+        "text": "} \u003d +31 \\text{ kJ/mol}$\n*   Disociacija $Br_{2}(g"
+      }, {
+        "text": ")$: $\\Delta H_{disoc} \u003d +193 \\text{ kJ/mol}$\n*   Ele"
+      }, {
+        "text": "ktronska afiniteta $Br(g)$: $E_a \u003d -331 \\text{ kJ"
+      }, {
+        "text": "/mol}$\n\n**Izračun:**\n1.  **Vstavimo vrednosti v enačbo:**\n"
+      }, {
+        "text": "    $$ \\Delta H_{mrežna} \u003d (148 + 2187 + 3"
+      }, {
+        "text": "1 + 193 + 2 \\cdot (-331)) - (-524) $$\n2.  "
+      }, {
+        "text": "**Izračunamo vsoto v oklepaju:**\n    $$ (148 + 218"
+      }, {
+        "text": "7 + 31 + 193 - 662) \u003d 1897 \\text{"
+      }, {
+        "text": " kJ/mol} $$\n3.  **Končni izračun:**\n    $$ \\Delta H_{mrež"
+      }, {
+        "text": "na} \u003d 1897 - (-524) \u003d 1897 + 52"
+      }, {
+        "text": "4 \u003d 2421 \\text{ kJ/mol} $$\n\n**Rezultat:**\n$$ \\Delta H_{"
+      }, {
+        "text": "mrežna} \u003d 2421 \\text{ kJ/mol} $$\n\n**Warning Note:** V"
+      }, {
+        "text": " originalnih zapiskih je formula zapisana kot `ΔH_tvor - (vsota ostalih) \u003d -"
+      }, {
+        "text": "ΔH_mrežna`. Ta zapis je lahko zavajajoč zaradi dvojnih negativnih predznakov in post"
+      }, {
+        "text": "avitve. Končni rezultat `2421 kJ/mol` je pravilen, vendar je pot do njega jas"
+      }, {
+        "text": "nejša, če enačbo preuredimo, kot je prikazano zgoraj. Pozitivna vrednost"
+      }, {
+        "text": " pomeni, da je to energija, potrebna za **razpad** mreže (lattice dissociation enthalpy). Ent"
+      }, {
+        "text": "alpija **tvorbe** mreže bi bila $-2421 \\text{ kJ/mol}$.\n\n"
+      }, {
+        "text": "## [[Born-Mayerjeva in Kapustinskega Enačba]]\n\n### [[Teorija in Definicije]]\n\n**[[Coulombov zakon]]**\nOpisuje elektrostatsko silo ($F$) med dve"
+      }, {
+        "text": "ma točkastima nabojema ($q_1, q_2$), ki sta na razdalji $"
+      }, {
+        "text": "r$.\n$$ F \u003d k \\frac{|q_1 q_2|}{r^2} \\quad \\text"
+      }, {
+        "text": "{ali} \\quad F(r) \u003d \\frac{1}{4\\pi\\epsilon_0} \\frac"
+      }, {
+        "text": "{|q_1 q_2|}{r^2} $$\n*   $\\epsilon_0$ je dielektri"
+      }, {
+        "text": "čna konstanta v vakuumu ($8.854 \\cdot 10^{-12} C^2/J"
+      }, {
+        "text": "m$).\n\n**[[Born-Mayerjeva enačba]]**\nTeoretični model za izračun mrež"
+      }, {
+        "text": "ne entalpije ($\\Delta H_{mr}^{\\circ}$) ionskega kristala. Upošteva elektrostatske"
+      }, {
+        "text": " privlačne in odbojne sile med ioni.\n$$ \\Delta H_{mr}^{\\circ} \u003d \\frac{"
+      }, {
+        "text": "N_A |z_1 z_2| e^2}{4\\pi\\epsilon_0 d}"
+      }, {
+        "text": " \\left(1 - \\frac{d^*}{d}\\right) A $$\n*   **$N_A"
+      }, {
+        "text": "$**: Avogadrova konstanta ($6.023 \\cdot 10^{23} \\text{"
+      }, {
+        "text": " mol}^{-1}$)\n*   **$z_1, z_2$**: Naboj kationa in an"
+      }, {
+        "text": "iona\n*   **$e$**: Elementarni naboj ($1.602 \\cdot 10^{-1"
+      }, {
+        "text": "9} C$)\n*   **$d$**: Razdalja med jedri sosednjih ionov (rad"
+      }, {
+        "text": "ij kationa + radij aniona)\n*   **$d^*$**: Konstanta, povezana z odbo"
+      }, {
+        "text": "jnimi silami (približno $34.5 \\text{ pm}$)\n*   **$"
+      }, {
+        "text": "A$**: Madelungova konstanta (odvisna od geometrije kristalne mreže)\n*   **"
+      }, {
+        "text": "$\\epsilon_0$**: Dielektrična konstanta v vakuumu\n\n**[[Kapustinskega enačba]]**\nPoenostavljena metoda za oceno mrežne entalpije, ki ne zahteva"
+      }, {
+        "text": " poznavanja Madelungove konstante ali natančne kristalne strukture.\n$$ \\Delta H_{mr}^{\\"
+      }, {
+        "text": "circ} \u003d \\frac{N |z_a z_b|}{d} \\left(1 - \\frac{d^*"
+      }, {
+        "text": "}{d}\\right) K $$\n*   **$N$**: Število ionov v formuli ("
+      }, {
+        "text": "npr. za $KNO_3$, $N\u003d2$)\n*   **$d$**: Vs"
+      }, {
+        "text": "ota radijev kationa in aniona ($d \u003d r_k + r_a$)\n*   **"
+      }, {
+        "text": "$K$**: Kapustinskega konstanta ($1.21 \\cdot 10^5 \\text{ kJ pm"
+      }, {
+        "text": "/mol}$)\n*   **$d^*$**: Konstanta ($34.5 \\text{ pm}$)\n\n###"
+      }, {
+        "text": " [[Seznam Problemov]]\n1.  Ocenite mrežno entalpijo za $NaCl$ z Born"
+      }, {
+        "text": "-Mayerjevo enačbo.\n2.  Ocenite mrežno entalpijo za $K"
+      }, {
+        "text": "NO_3$ s Kapustinskega enačbo.\n\n### [[Reševanje in Analiza]]\n\n####"
+      }, {
+        "text": " [[Ocena Mrežne Entalpije za NaCl]]\n**Podatki:**\n*   $N_A \u003d "
+      }, {
+        "text": "6.023 \\cdot 10^{23} \\text{ mol}^{-1}$\n*   "
+      }, {
+        "text": "$|z_a z_b| \u003d |(+1)(-1)| \u003d 1$\n*   $e \u003d"
+      }, {
+        "text": " 1.602 \\cdot 10^{-19} C$\n*   $\\epsilon_0"
+      }, {
+        "text": " \u003d 8.854 \\cdot 10^{-12} C^2/Jm$\n"
+      }, {
+        "text": "*   $d \u003d 283 \\text{ pm} \u003d 283 \\cdot 10^{-12"
+      }, {
+        "text": "} m$\n*   $d^* \u003d 34.5 \\text{ pm} \u003d 34"
+      }, {
+        "text": ".5 \\cdot 10^{-12} m$\n*   $A (NaCl) \u003d 1.74"
+      }, {
+        "text": "8$\n\n**Izračun:**\n$$ \\Delta H_{mr}^{\\circ} \u003d \\frac{(6.02"
+      }, {
+        "text": "3 \\cdot 10^{23}) \\cdot 1 \\cdot (1.602 \\cdot"
+      }, {
+        "text": " 10^{-19})^2}{4 \\cdot \\pi \\cdot (8.854 \\cdot"
+      }, {
+        "text": " 10^{-12}) \\cdot (283 \\cdot 10^{-12})} \\left"
+      }, {
+        "text": "(1 - \\frac{34.5}{283}\\right) \\cdot 1.74"
+      }, {
+        "text": "8 $$\n$$ \\Delta H_{mr}^{\\circ} \\approx 753.5 \\text{ kJ"
+      }, {
+        "text": "/mol} $$\n**Rezultat:** Mrežna entalpija za NaCl, ocenjena z Born-Mayerje"
+      }, {
+        "text": "vo enačbo, je približno **753.5 kJ/mol**.\n\n#### [[Ocena Mrežne Entalpije za KNO3]]\n**Podatki:**\n*   $N \u003d 2$ (ion"
+      }, {
+        "text": " $K^+$ in ion $NO_3^-$)\n*   $|z_a z_b| \u003d"
+      }, {
+        "text": " |(+1)(-1)| \u003d 1$\n*   $d \u003d 327 \\text{ pm}$\n*"
+      }, {
+        "text": "   $d^* \u003d 34.5 \\text{ pm}$\n*   $K \u003d 1."
+      }, {
+        "text": "21 \\cdot 10^5 \\text{ kJ pm/mol}$\n\n**Izračun:**\n"
+      }, {
+        "text": "$$ \\Delta H_{mr}^{\\circ} \u003d \\frac{2 \\cdot 1}{327} \\"
+      }, {
+        "text": "left(1 - \\frac{34.5}{327}\\right) \\cdot (1.21"
+      }, {
+        "text": " \\cdot 10^5) $$\n$$ \\Delta H_{mr}^{\\circ} \u003d \\frac{2}{"
+      }, {
+        "text": "327} (1 - 0.1055) \\cdot (1.21 \\cdot 1"
+      }, {
+        "text": "0^5) $$\n$$ \\Delta H_{mr}^{\\circ} \u003d 0.00611"
+      }, {
+        "text": "6 \\cdot 0.8945 \\cdot 121000 \\approx 66"
+      }, {
+        "text": "2 \\text{ kJ/mol} $$\n**Rezultat:** Mrežna entalpija za KNO3, ocenjena"
+      }, {
+        "text": " s Kapustinskega enačbo, je približno **662 kJ/mol**.\n\n## [[Toplotna Stabilnost in Topnost]]\n\n### [[Teorija in Definicije]]\n#### [[Gibbsova Prosta Energija in Stabilnost]]\nTermična stabilnost ionskih spojin je povezana s temperaturo, pri"
+      }, {
+        "text": " kateri spojina razpade. To je odvisno od spremembe Gibbsove proste energije ($\\Delta G$).\n$$"
+      }, {
+        "text": " \\Delta G^{\\circ} \u003d \\Delta H^{\\circ} - T\\Delta S^{\\circ} $$\nRe"
+      }, {
+        "text": "akcija razpada je spontana, ko je $\\Delta G \u003c 0$.\n\n#### [[Topilna Entalpija]]\n**Topilna entalpija** ($\\Delta H_{top}$) je količina toplote, ki se"
+      }, {
+        "text": " sprosti ali porabi, ko se en mol snovi raztopi v topilu. Je vsota m"
+      }, {
+        "text": "režne entalpije in solvatacijske (hidratacijske) entalpije.\n\n$$ \\Delta H_{"
+      }, {
+        "text": "top} \u003d \\Delta H_{mrežna} + \\Delta H_{hidratacija} $$\n\n*   **$\\"
+      }, {
+        "text": "Delta H_{mrežna}$ (razpad mreže)**: Je endotermen proces (zahteva energijo,"
+      }, {
+        "text": " $\u003e 0$).\n*   **$\\Delta H_{hidratacija}$**: Je eksotermen proces (energija se sp"
+      }, {
+        "text": "rosti ob nastanku vezi med ioni in molekulami vode, $\u003c 0$).\n\n**Memorialization:** Pred"
+      }, {
+        "text": "avateljica je poudarila, da je topilna entalpija kot \"most\" med dve"
+      }, {
+        "text": "ma nasprotujočima si procesoma: razpadom kristala in hidratacijo ionov. Ravnovesje med"
+      }, {
+        "text": " njima določa, ali bo raztapljanje endotermno ali eksotermno.\n\n**Primeri"
+      }, {
+        "text": ":**\n*   **NaCl(s) $\\rightarrow$ Na$^+$(aq) + Cl$^-$(aq)**"
+      }, {
+        "text": "\n    $\\Delta H_{top} \u003d +3.9 \\text{ kJ/mol}$ (Endotermno:"
+      }, {
+        "text": " več energije se porabi za razpad mreže, kot se je sprosti pri hidrataciji.)\n*   **"
+      }, {
+        "text": "LiCl(s) $\\rightarrow$ Li$^+$(g) + Cl$^-$(g)**; $\\Delta H_{"
+      }, {
+        "text": "mrežna} \u003d +837 \\text{ kJ/mol}$\n*   **Li$^+$("
+      }, {
+        "text": "g) + Cl$^-$(g) $\\rightarrow$ Li$^+$(aq) + Cl$^-$(aq"
+      }, {
+        "text": ")**; $\\Delta H_{hidr.} \u003d -886 \\text{ kJ/mol}$\n*   **Sk"
+      }, {
+        "text": "upna topilna entalpija za LiCl:** $\\Delta H_{top} \u003d 837 +"
+      }, {
+        "text": " (-886) \u003d -49 \\text{ kJ/mol}$ (Eksotermno)\n\n**Memorialization"
+      }, {
+        "text": ":** Študent je pravilno pojasnil, da je raztapljanje LiCl eksotermno, ker se"
+      }, {
+        "text": " pri hidrataciji sprosti več energije, kot se je porabi za razpad kristalne mreže. Predavateljica"
+      }, {
+        "text": " je to pohvalila in poudarila, da ima majhen $Li^+$ ion visoko hidratacijsko entalp"
+      }, {
+        "text": "ijo.\n\n### [[Pravila Topnosti]]\nPravila za topnost ionskih spojin v vodi so pos"
+      }, {
+        "text": "plošitve, ki pomagajo napovedati, ali bo spojina topna.\n\n**Vedno topni"
+      }, {
+        "text": " (brez izjem):**\n1.  Spojine, ki vsebujejo ione **alkalij"
+      }, {
+        "text": "skih kovin** (Li$^+$, Na$^+$, K$^+$, itd.).\n2.  Spojine,"
+      }, {
+        "text": " ki vsebujejo **amonijev ion** (NH$_4^+$).\n3.  Spojine, ki"
+      }, {
+        "text": " vsebujejo **nitratni ion** (NO$_3^-$).\n4.  Spojine, ki vse"
+      }, {
+        "text": "bujejo **acetatni ion** (C$_2$H$_3$O$_2^-$).\n\n"
+      }, {
+        "text": "**Večinoma netopni (razen če so vezani na ione iz zgornjih pravil):**\n"
+      }, {
+        "text": "*   Karbonati ($CO_3^{2-}$)\n*   Fosfati ($PO_4"
+      }, {
+        "text": "^{3-}$)\n*   Kromati ($CrO_4^{2-}$)\n*   Sulfidi ($S^{"
+      }, {
+        "text": "2-}$)\n*   Hidroksidi ($OH^-$)\n\n**Halidi (Cl$^-$, Br$^-"
+      }, {
+        "text": "$, I$^-$):**\n*   So večinoma topni, **razen** spojin z $Ag^+"
+      }, {
+        "text": "$, $Pb^{2+}$, $Hg_2^{2+}$.\n\n# [[Entropija (S)]]"
+      }, {
+        "text": "\nEntropija je termodinamska količina, ki je mera za nered oziroma razpršenost sistema. Oz"
+      }, {
+        "text": "načujemo jo s črko **S**.\n*   **2. Termodinamski zakon:** Entropija ves"
+      }, {
+        "text": "olja se pri vsakem spontanem procesu poveča.\n*   $\\Delta S \u003e 0$: N"
+      }, {
+        "text": "ered se poveča (neurejenost).\n*   $\\Delta S \u003c 0$: Nered se z"
+      }, {
+        "text": "manjša (večja urejenost).\n\n**Splošna primerjava:**\n$$ S_{plin"
+      }, {
+        "text": "} \u003e S_{tekočina} \u003e S_{trdnina} $$\n\n**Izračun spremembe entrop"
+      }, {
+        "text": "ije reakcije ($\\Delta S_{reakcije}^{\\circ}$):**\n$$ \\Delta S_{reakcije}^{\\"
+      }, {
+        "text": "circ} \u003d \\sum S_{produkti}^{\\circ} - \\sum S_{reaktanti}^{\\circ} $$"
+      }, {
+        "text": "\n\n### [[Seznam Problemov]]\n1.  Ocenite spremembo entropije za reakcijo:"
+      }, {
+        "text": " $2Fe_2O_3(s) \\rightarrow 4Fe(s) + 3O_"
+      }, {
+        "text": "2(g)$.\n2.  Izračunajte $\\Delta S^{\\circ}$ za reakcijo: $2"
+      }, {
+        "text": "NO(g) + O_2(g) \\rightarrow 2NO_2(g)$.\n\n### [[Reševanje in Analiza]]\n\n#### [[Sprememba Entropije pri Razpadu Fe2O3]]"
+      }, {
+        "text": "\n$$ 2Fe_2O_3(s) \\rightarrow 4Fe(s) + 3O_"
+      }, {
+        "text": "2(g) $$\n*   **Kvalitativna ocena:** V reakciji iz trdne"
+      }, {
+        "text": " snovi nastane plin ($O_2$), ki ima bistveno višjo entropijo. Pričakujemo,"
+      }, {
+        "text": " da bo $\\Delta S \u003e 0$.\n*   **Izračun:**\n    $$ \\Delta S_{"
+      }, {
+        "text": "reakcije}^{\\circ} \u003d (4 \\cdot S_{Fe(s)}^{\\circ} + 3 \\cdot S"
+      }, {
+        "text": "_{O_2(g)}^{\\circ}) - (2 \\cdot S_{Fe_2O_3(s"
+      }, {
+        "text": ")}^{\\circ}) $$\n    *   Podatki iz tabel (vrednosti so v J/K·mol): $"
+      }, {
+        "text": "S_{Fe_2O_3(s)}^{\\circ} \u003d 87.4$, $S_{Fe(s)}^{\\"
+      }, {
+        "text": "circ} \u003d 27.3$, $S_{O_2(g)}^{\\circ} \u003d 20"
+      }, {
+        "text": "5.1$\n    $$ \\Delta S_{reakcije}^{\\circ} \u003d (4 \\cdot 27.3"
+      }, {
+        "text": " + 3 \\cdot 205.1) - (2 \\cdot 87.4) $$"
+      }, {
+        "text": "\n    $$ \\Delta S_{reakcije}^{\\circ} \u003d (109.2 + 61"
+      }, {
+        "text": "5.3) - 174.8 \u003d 724.5 - 174.8 \u003d"
+      }, {
+        "text": " +549.7 \\text{ J/K} $$\n**Rezultat:** Sprememba entropije je **"
+      }, {
+        "text": "+549.7 J/K**, kar potrjuje našo oceno.\n\n#### [[Sprememba Entropije pri Tvorbi NO2]]\n$$ 2NO(g) + O_2(g) \\rightarrow "
+      }, {
+        "text": "2NO_2(g) $$\n*   **Kvalitativna ocena:** Reakcija pot"
+      }, {
+        "text": "eka iz 3 molov plina v 2 mola plina. Število delcev se zmanj"
+      }, {
+        "text": "ša, zato pričakujemo zmanjšanje nereda, $\\Delta S \u003c 0$.\n*   **Izrač"
+      }, {
+        "text": "un:**\n    $$ \\Delta S_{reakcije}^{\\circ} \u003d (2 \\cdot S_{NO_"
+      }, {
+        "text": "2(g)}^{\\circ}) - (2 \\cdot S_{NO(g)}^{\\circ} + 1 \\cdot"
+      }, {
+        "text": " S_{O_2(g)}^{\\circ}) $$\n    *   Podatki iz tabel (vrednosti so"
+      }, {
+        "text": " v J/K·mol): $S_{NO_2(g)}^{\\circ} \u003d 240."
+      }, {
+        "text": "06$, $S_{NO(g)}^{\\circ} \u003d 210.76$, $S_{O_2"
+      }, {
+        "text": "(g)}^{\\circ} \u003d 205.138$\n    $$ \\Delta S_{reak"
+      }, {
+        "text": "cije}^{\\circ} \u003d (2 \\cdot 240.06) - (2 \\cdot 2"
+      }, {
+        "text": "10.76 + 205.138) $$\n    $$ \\Delta S_{re"
+      }, {
+        "text": "akcije}^{\\circ} \u003d 480.12 - (421.52 + 205."
+      }, {
+        "text": "138) \u003d 480.12 - 626.658 \u003d -1"
+      }, {
+        "text": "46.538 \\text{ J/K} $$\n**Rezultat:** Sprememba entropije"
+      }, {
+        "text": " je **-146.5 J/K**, kar potrjuje našo oceno.\n\n# [[Gibbsova Prosta Energija ($\\Delta G$)]]\n\n### [[Teorija in Definicije]]\nGib"
+      }, {
+        "text": "bsova prosta energija je termodinamski potencial, ki meri \"koristno\" ali procesno delo,"
+      }, {
+        "text": " ki ga je mogoče pridobiti iz zaprtega sistema pri konstantni temperaturi in tlaku. Je"
+      }, {
+        "text": " ključni pokazatelj spontanosti kemijske reakcije.\n\n**[[Enačba za Gibbsovo Prosto Energijo]]**\n$$ \\Delta G^{\\circ} \u003d \\Delta H^{\\circ} - T\\Delta"
+      }, {
+        "text": " S^{\\circ} $$\n*   **$\\Delta H^{\\circ}$**: Standardna sprememba entalpije\n"
+      }, {
+        "text": "*   **$T$**: Absolutna temperatura (v Kelvinih)\n*   **$\\Delta S^{\\circ"
+      }, {
+        "text": "}$**: Standardna sprememba entropije\n\n**[[Spontanost Reakcije]]**\n*   **"
+      }, {
+        "text": "$\\Delta G \u003c 0$**: Reakcija je **spontana** v smeri produktov.\n*   **"
+      }, {
+        "text": "$\\Delta G \u003e 0$**: Reakcija **ni spontana**; spontana je obratna reakcija"
+      }, {
+        "text": ".\n*   **$\\Delta G \u003d 0$**: Sistem je v **ravnotežju**.\n\n**[[Povezava z Ravnotežno Konstanto (K)]]**\n$$ \\Delta G^{\\circ} \u003d -"
+      }, {
+        "text": "RT \\ln K $$\n*   **$R$**: Plinska konstanta ($8.314 \\text{"
+      }, {
+        "text": " J/mol·K}$)\n*   **$K$**: Ravnotežna konstanta\n*   Č"
+      }, {
+        "text": "e **$K \u003e 1$**, $\\ln K$ je pozitiven, $\\Delta G^{\\circ}$ je **"
+      }, {
+        "text": "negativen** (produkti prevladujejo).\n*   Če **$K \u003c 1$**, $\\"
+      }, {
+        "text": "ln K$ je negativen, $\\Delta G^{\\circ}$ je **pozitiven** (reaktanti prevlad"
+      }, {
+        "text": "ujejo).\n\n### [[Seznam Problemov]]\n1.  Ugotovite, v katero smer se pom"
+      }, {
+        "text": "akne reakcija pri $298 K$: $CH_4(g) + O_2(g)"
+      }, {
+        "text": " \\rightarrow 2H_2O(l) + CO_2(g)$.\n2.  Ugot"
+      }, {
+        "text": "ovite spontanost reakcije: $2Fe_2O_3(s) + 3C(s) \\"
+      }, {
+        "text": "rightarrow 4Fe(s) + 3CO_2(g)$.\n\n### [[Reševanje in Analiza]]"
+      }, {
+        "text": "\n\n#### [[Spontanost Reakcije Gorenja Metana]]\n**Podatki:**\n*   $\\"
+      }, {
+        "text": "Delta H^{\\circ} \u003d -890.3 \\text{ kJ}$\n*   $\\Delta S^{\\circ"
+      }, {
+        "text": "} \u003d -243.0 \\text{ J/K} \u003d -0.243 \\text{ kJ/"
+      }, {
+        "text": "K}$\n*   $T \u003d 298 K$\n\n**Izračun:**\n$$ \\Delta G"
+      }, {
+        "text": "^{\\circ} \u003d \\Delta H^{\\circ} - T\\Delta S^{\\circ} $$\n$$ \\Delta G"
+      }, {
+        "text": "^{\\circ} \u003d -890.3 \\text{ kJ} - (298 \\text{ K}"
+      }, {
+        "text": " \\cdot (-0.243 \\text{ kJ/K})) $$\n$$ \\Delta G^{\\circ}"
+      }, {
+        "text": " \u003d -890.3 \\text{ kJ} - (-72.414 \\text{ kJ}) $$\n"
+      }, {
+        "text": "$$ \\Delta G^{\\circ} \u003d -890.3 + 72.414 \u003d -"
+      }, {
+        "text": "817.9 \\text{ kJ} $$\n**Analiza:** Ker je $\\Delta G^{\\circ} \u003c"
+      }, {
+        "text": " 0$, je reakcija **spontana** in pomaknjena močno v smer produktov.\n\n#### [[Spontanost Reakcije Redukcije Železovega Oksida]]\n**Note to Self:** Za to reak"
+      }, {
+        "text": "cijo v zapiskih niso podane vse vrednosti, zato je rešitev zgolj nakazana. Za"
+      }, {
+        "text": " polni izračun bi potrebovali vrednosti $\\Delta H^{\\circ}$ in $\\Delta S^{\\circ}$. V"
+      }, {
+        "text": "endar pa lahko sklepamo, da je ta reakcija (taljenje železa v plavžu) spontana pri visokih temperatur"
+      }, {
+        "text": "ah, saj endotermna entalpija ($\\Delta H \u003e 0$) postane manj pomembna v primerjavi s"
+      }, {
+        "text": " členom $T\\Delta S$, kjer $\\Delta S$ postane velik in pozitiven zaradi nastanka plina ($"
+      }, {
+        "text": "CO_2$)."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

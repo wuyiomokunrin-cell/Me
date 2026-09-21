@@ -1,0 +1,590 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes to know:\n1. The user\u0027s files (metadata) are chronologically labeled, so the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other, given the topic.\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT PROTOCOL**\n\n1.  **Initial Output Protocol:** Begin your response *only* with the content note itself. Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The foundational structure of the notes must accurately reflect the material presented (what was said/seen). Your first duty is to record the lecturer\u0027s content and the user\u0027s notes, **as they are**. Minimal AI interjection should occur in the main body; use dedicated analytical sections for added insight.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  **Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5.  **Conceptual Strengthening Tasks (NEW):** At the conclusion of the synthesized notes, generate a section of \u0027Conceptual Strengthening Tasks\u0027. These tasks must:\n    *   Mimic the structure and difficulty of the examples/problems presented in the current lecture material.\n    *   Include \u0027Challenges\u0027 designed to connect the current university concepts with foundational knowledge from high school or prior courses, forcing the user to utilize a broad, integrated understanding.\n\n### **4. OBSIDIAN LINKING \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a highly knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveDocument": {
+        "id": "1AYNaPHGPFpgGB_zpHFG33lwDOYpFbRpw"
+      },
+      "role": "user",
+      "tokenCount": 17029
+    }, {
+      "driveImage": {
+        "id": "1mu6MvnjccMdlas2Op65goyFuobkWNIYE"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "15Dep4HH170hjWezVtxvJAqKtO8_XqZUo"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1vbWvDbvW2XOSKW_RP06gRCpWAnu_YuSq"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1uIUqmWw707s3oS2GlK7-Dp3P_pbuKdIW"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1rkGfVv6BHUmNqBkNIOAEv6X-3aiwVFSn"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1AT1hlSScGtI4qWqAMP5T27U6-r7FSqLW"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1iclALQgHFO2kDRb0gCeOcY50Y2Iu92c_"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1w-5vERaieYdr2FOXSlzLX4V_HeQQnxdO"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1T5zCpieyOfHO1m7LMPhyVA8vBh44fuvO"
+      },
+      "role": "user",
+      "tokenCount": 71472
+    }, {
+      "driveAudio": {
+        "id": "1exbiL2mgFDf9MuRgeW5cNs5CY49ZQwsh"
+      },
+      "role": "user",
+      "tokenCount": 167441
+    }, {
+      "text": "2. pred splosna kemija teorija Irena Ban. 2. Plini. ",
+      "role": "user",
+      "tokenCount": 22
+    }, {
+      "text": "**Establishing the Framework**\n\nI\u0027m currently focused on defining the core role and objectives for this project. I want to build a system that acts as a specialized Academic Assistant within my Obsidian vault. The goal is to ingest diverse materials—lecture slides, handwritten notes, and audio transcripts—and transform them into a cohesive, easily navigable knowledge base. This will involve establishing a robust and analyzable structure to improve information accessibility.\n\n\n**Developing the Architecture**\n\nI\u0027m currently fleshing out the operational guidelines for content priority, ensuring accurate capture of information from various sources while maintaining clean output. I\u0027m focusing on LaTeX for formulas, Matplotlib for plots, and standard Markdown formatting for Obsidian compatibility. I\u0027m also incorporating [[Wikilinks]] for headers to represent new note files. The next step is to delve into the academic tutoring and critical analysis aspect.\n\n\n**Formulating the Structure**\n\nI\u0027m now prioritizing content acquisition and structure. My main focus is on accurately translating the lecture material and handwritten notes into a coherent Obsidian note. I\u0027m prioritizing direct Markdown output and incorporating [[Wikilinks]] for new note creation. I\u0027ve also detailed the initial section of the ideal gas and real gas law.\n\n\n**Finalizing the Note Structure**\n\nI\u0027ve made significant progress in structuring the core note content. My immediate focus is incorporating the user\u0027s handwritten notes, ensuring a smooth integration with the lecture slides. I\u0027m prioritizing accuracy in formula representation using LaTeX and precise implementation of Obsidian-compatible [[Wikilinks]]. I\u0027m now working to seamlessly blend the user\u0027s handwritten summaries with the slide content, aiming for a cohesive and insightful narrative. I\u0027m also preparing to analyze the content in detail to create a \"conceptual strengthening\" section.\n\n\n**Implementing the Analysis**\n\nI\u0027m now integrating the analysis into the existing structure. I\u0027m focusing on creating that final conceptual strengthening section. My plan includes an in-depth justification of key formulas and identifying potential errors from the handwritten notes. I\u0027m also preparing to clarify any ambiguous points in the lecture material.\n\n\n**Developing the Note**\n\nI\u0027m now integrating the analysis into the structure. I\u0027m focusing on ensuring accuracy in the formula justifications and identifying any inconsistencies between the slides and the handwritten notes. I\u0027m also preparing the conceptual strengthening tasks, which will include relevant problems and challenges linking to foundational knowledge.\n\n\n**Analyzing the Material**\n\nI\u0027m now diving into the detailed analysis of the lecture content, focusing on justifying the formulas and identifying potential errors. The plan includes a conceptual strengthening section with challenges that connect back to foundational knowledge. I\u0027m also capturing any insights from the lecture\u0027s audio.\n\n\n**Synthesizing Lecture Content**\n\nI\u0027m now integrating the lecture slides and handwritten notes page by page. I\u0027ve begun with the fundamental properties of gases, progressing through the gas laws (Boyle\u0027s, Charles\u0027s, Gay-Lussac\u0027s, Avogadro\u0027s), the combined and ideal gas laws, Dalton\u0027s law of partial pressures, and real gases, culminating in kinetic molecular theory and Graham\u0027s law, all to generate Markdown and Wikilinks. I\u0027m building this note as directly as possible, starting by transcribing content from the source material and gradually incorporating notes.\n\n\n",
+      "role": "model",
+      "tokenCount": 1776,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Establishing the Framework**\n\nI\u0027m currently focused on defining the core role and objectives for this project. I want to build a system that acts as a specialized Academic Assistant within my Obsidian vault. The goal is to ingest diverse materials—lecture slides, handwritten notes, and audio transcripts—and transform them into a cohesive, easily navigable knowledge base. This will involve establishing a robust and analyzable structure to improve information accessibility.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Architecture**\n\nI\u0027m currently fleshing out the operational guidelines for content priority, ensuring accurate capture of information from various sources while maintaining clean output. I\u0027m focusing on LaTeX for formulas, Matplotlib for plots, and standard Markdown formatting for Obsidian compatibility. I\u0027m also incorporating [[Wikilinks]] for headers to represent new note files. The next step is to delve into the academic tutoring and critical analysis aspect.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Structure**\n\nI\u0027m now prioritizing content acquisition and structure. My main focus is on accurately translating the lecture material and handwritten notes into a coherent Obsidian note. I\u0027m prioritizing direct Markdown output and incorporating [[Wikilinks]] for new note creation. I\u0027ve also detailed the initial section of the ideal gas and real gas law.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing the Note Structure**\n\nI\u0027ve made significant progress in structuring the core note content. My immediate focus is incorporating the user\u0027s handwritten notes, ensuring a smooth integration with the lecture slides. I\u0027m prioritizing accuracy in formula representation using LaTeX and precise implementation of Obsidian-compatible [[Wikilinks]]. I\u0027m now working to seamlessly blend the user\u0027s handwritten summaries with the slide content, aiming for a cohesive and insightful narrative. I\u0027m also preparing to analyze the content in detail to create a \"conceptual strengthening\" section.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing the Analysis**\n\nI\u0027m now integrating the analysis into the existing structure. I\u0027m focusing on creating that final conceptual strengthening section. My plan includes an in-depth justification of key formulas and identifying potential errors from the handwritten notes. I\u0027m also preparing to clarify any ambiguous points in the lecture material.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Note**\n\nI\u0027m now integrating the analysis into the structure. I\u0027m focusing on ensuring accuracy in the formula justifications and identifying any inconsistencies between the slides and the handwritten notes. I\u0027m also preparing the conceptual strengthening tasks, which will include relevant problems and challenges linking to foundational knowledge.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Material**\n\nI\u0027m now diving into the detailed analysis of the lecture content, focusing on justifying the formulas and identifying potential errors. The plan includes a conceptual strengthening section with challenges that connect back to foundational knowledge. I\u0027m also capturing any insights from the lecture\u0027s audio.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Lecture Content**\n\nI\u0027m now integrating the lecture slides and handwritten notes page by page. I\u0027ve begun with the fundamental properties of gases, progressing through the gas laws (Boyle\u0027s, Charles\u0027s, Gay-Lussac\u0027s, Avogadro\u0027s), the combined and ideal gas laws, Dalton\u0027s law of partial pressures, and real gases, culminating in kinetic molecular theory and Graham\u0027s law, all to generate Markdown and Wikilinks. I\u0027m building this note as directly as possible, starting by transcribing content from the source material and gradually incorporating notes.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[2. Plini]]\n\n## [[Sestava zraka]]\nZrak je zmes plinov, ki sestavljajo Zemljino atmosfero. Glavne komponente suhega zraka po volumnu so:\n- **Dušik ([[N2]])**: `0.78110` (78.11%)\n- **Kisik ([[O2]])**: `0.20953` (20.95%)\n- **Argon ([[Ar]])**: `0.00934` (0.93%)\n- **Ogljikov dioksid ([[CO2]])**: `0.00038` (0.038%)\n- Ostali plini v sledovih, kot so neon (Ne), helij (He), metan (CH4), kripton (Kr), vodik (H2), itd.\n\n\u003e **Memorial Note:** Predavateljica je poudarila, da sestava zraka ni konstantna in vsebuje tudi variabilne količine vode (H₂O), ozona (O₃), ogljikovega monoksida (CO) in drugih plinov, odvisno od lokacije in pogojev.\n\n---\n\n## [[Kemija Plinov]]\nPlini lahko nastanejo pri različnih kemijskih reakcijah, kot so termični razpadi ali reakcije kislin.\n\n### [[Primeri Reakcij za Nastanek Plinov]]\n1.  **Termični razpad živosrebrovega(II) oksida:**\n    $$2 \\text{HgO(s)} \\xrightarrow{\\Delta} 2 \\text{Hg(l)} + \\text{O}_2\\text{(g)}$$\n2.  **Termični razpad kalcijevega karbonata:**\n    $$\\text{CaCO}_3\\text{(s)} \\xrightarrow{\\Delta} \\text{CaO(s)} + \\text{CO}_2\\text{(g)}$$\n3.  **Termični razpad amonijevega klorida:**\n    $$\\text{NH}_4\\text{Cl(s)} \\xrightarrow{\\Delta} \\text{NH}_3\\text{(g)} + \\text{HCl(g)}$$\n4.  **Reakcija kisline s karbonati:**\n    $$\\text{CaCO}_3\\text{(s)} + 2 \\text{HCl(g)} \\rightarrow \\text{CaCl}_2\\text{(s)} + \\text{CO}_2\\text{(g)} + \\text{H}_2\\text{O(l)}$$\n5.  **Sinteza žveplovega dioksida in trioksida:**\n    $$\\text{S(s)} + \\text{O}_2\\text{(g)} \\rightarrow \\text{SO}_2\\text{(g)}$$\n    $$2 \\text{SO}_2\\text{(g)} + \\text{O}_2\\text{(g)} \\rightarrow 2 \\text{SO}_3\\text{(g)}$$\n6.  **Sinteza dušikovih oksidov:**\n    $$\\text{N}_2\\text{(g)} + \\text{O}_2\\text{(g)} \\rightarrow 2 \\text{NO(g)}$$\n    $$2 \\text{NO(g)} + \\text{O}_2\\text{(g)} \\rightarrow 2 \\text{NO}_2\\text{(g)}$$\n\n---\n\n## [[Lastnosti Plinov]]\n-   **Gibanje delcev:** Delci plina (atomi ali molekule) se neurejeno in hitro gibljejo po celotni prostornini posode.\n-   **Tlak ([[P]]):** Je posledica nenehnih trkov delcev plina ob stene posode.\n-   **Stisljivost:** Pline lahko stiskamo in razpenjamo, ker je med delci veliko praznega prostora. Obravnava plinov je enostavnejša od tekočin in trdnin zaradi šibkih medmolekulskih sil.\n\n### [[Idealni Plin vs. Realni Plin]]\n-   [[**Idealni plin**]] je teoretični model, pri katerem zanemarimo:\n    1.  **Privlačne sile med molekulami.**\n    2.  **Lasten volumen molekul** (molekule obravnavamo kot točkaste delce).\n-   Enačbe za idealni plin izpeljemo na podlagi eksperimentov in jih lahko razširimo na zmesi plinov.\n-   [[**Realni plini**]] se obnašajo približno kot idealni le pri normalnih pogojih (visoka temperatura in nizek tlak).\n\n---\n\n## [[Fizikalne Lastnosti in Spremenljivke Plinov]]\nStanje plina lahko opišemo s štirimi osnovnimi spremenljivkami:\n1.  **Tlak (`p`)**\n2.  **Volumen (`V`)**\n3.  **Temperatura (`T`)**\n4.  **Množina snovi (`n`)** ali masa (`m`) in molska masa (`M`), saj velja $n \u003d \\frac{m}{M}$.\n\n### [[Merjenje Tlaka]]\n-   **Barometer:** Klasična naprava za merjenje atmosferskega tlaka, ki deluje na principu potiskanja stolpca živega srebra (Hg).\n    -   **Standardni zračni tlak:** Tlak, potreben, da potisne stolpec Hg do višine 760 mm.\n    -   **Enote:**\n        -   $1 \\text{ atm} \u003d 760 \\text{ mmHg} \u003d 760 \\text{ Torr}$\n        -   $1 \\text{ atm} \u003d 1.013 \\text{ bar} \u003d 101.3 \\text{ kPa} \u003d 101325 \\text{ Pa}$\n        -   $1 \\text{ bar} \u003d 100 \\text{ kPa} \u003d 10^5 \\text{ Pa}$\n\n---\n\n## [[Plinski Zakoni]]\n\n### [[Boyle-Mariottov Zakon]]\nPri konstantni temperaturi (**T\u003dkonst.**) in množini plina (**n\u003dkonst.**) je prostornina plina obratno sorazmerna s tlakom.\n\n$$ p \\cdot V \u003d \\text{konst.} $$\n$$ p_1 V_1 \u003d p_2 V_2 $$\n\n\u003e **Kritična Analiza:** Ta zakon opisuje, kako se volumen plina zmanjša, ko povečamo tlak, in obratno. Grafični prikaz odvisnosti `p(V)` je hiperbola. To pomeni, če podvojimo tlak (iz $p_1$ v $p_2 \u003d 2p_1$), se bo volumen razpolovil ($V_2 \u003d V_1/2$).\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Boyle\u0027s Law: P * V \u003d k (constant)\nk \u003d 10  # Arbitrary constant for demonstration\n\nV \u003d np.linspace(1, 10, 100)\nP \u003d k / V\n\nplt.figure(figsize\u003d(8, 6))\nplt.plot(V, P, label\u003df\u0027p V \u003d {k} (Hiperbola)\u0027)\nplt.title(\"Boyle-Mariottov Zakon: Odvisnost Tlaka od Volumna (T\u003dkonst.)\")\nplt.xlabel(\"Volumen (V)\")\nplt.ylabel(\"Tlak (p)\")\nplt.grid(True)\nplt.legend()\n\n# Primer točk\nV1, P1 \u003d 8, k/8\nV2, P2 \u003d 4, k/4\nplt.plot([V1, V2], [P1, P2], \u0027ro\u0027)\nplt.text(V1, P1, \u0027  (V₁, p₁)\u0027, verticalalignment\u003d\u0027bottom\u0027)\nplt.text(V2, P2, \u0027  (V₂, p₂)\u0027, verticalalignment\u003d\u0027bottom\u0027)\n\nplt.show()\n```\n\n### [[Gay-Lussacov in Charlesov Zakon]]\nOba zakona opisujeta odvisnost od temperature.\n\n1.  **Charlesov Zakon (Izobarni proces, p\u003dkonst.):** Pri konstantnem tlaku in množini je prostornina plina premo sorazmerna z absolutno temperaturo.\n    $$ \\frac{V}{T} \u003d \\text{konst.} \\quad \\Rightarrow \\quad \\frac{V_1}{T_1} \u003d \\frac{V_2}{T_2} $$\n2.  **Gay-Lussacov Zakon (Izohorni proces, V\u003dkonst.):** Pri konstantni prostornini in množini je tlak plina premo sorazmeren z absolutno temperaturo.\n    $$ \\frac{p}{T} \u003d \\text{konst.} \\quad \\Rightarrow \\quad \\frac{p_1}{T_1} \u003d \\frac{p_2}{T_2} $$\n\n\u003e **Note to Self:** Predavateljica je poudarila, da iz teh zakonov sledi, da pri absolutni ničli ($T\u003d0$ K) molekule mirujejo in bi bil volumen idealnega plina enak nič. To je teoretični koncept, saj realni plini prej preidejo v tekoče stanje.\n\n#### [[Kelvinova Temperaturna Skala]]\nEksperimentalno je bilo ugotovljeno, da se volumen plina pri ohlajanju približuje ničli pri **-273.15 °C**. Ta temperatura je definirana kot absolutna ničla ($T\u003d0$ K).\n\n\u003e **Warning Note:** Pri vseh plinskih zakonih je **obvezna** uporaba absolutne temperature v Kelvinih (K). Uporaba stopinj Celzija (°C) vodi v napačne rezultate.\n\u003e Pretvorba:\n\u003e $$ T(\\text{K}) \u003d t(^{\\circ}\\text{C}) + 273.15 $$\n\n### [[Avogadrov Zakon]]\nPri konstantni temperaturi in tlaku (**T, p \u003d konst.**) je prostornina plina sorazmerna s številom molov (množino snovi).\n\n$$ V \\propto n \\quad \\Rightarrow \\quad V \u003d \\text{konst.} \\cdot n $$\n$$ \\frac{V_1}{n_1} \u003d \\frac{V_2}{n_2} $$\n\n-   **Molska prostornina ($V_m$):** Prostornina, ki jo zavzema 1 mol kateregakoli idealnega plina pri enakih pogojih.\n    -   Pri standardnih pogojih (0 °C in 1 atm), je $V_m \\approx 22.41 \\text{ L/mol}$.\n-   **Posledica:** Enaki volumni različnih plinov pri istih pogojih (T, p) vsebujejo enako število molekul.\n\n---\n\n## [[Splošna Plinska Enačba (Enačba Idealnega Plina)]]\nS kombinacijo Boylovega, Charlesovega in Avogadrovega zakona dobimo splošno plinsko enačbo, ki povezuje vse štiri spremenljivke.\n\n-   $V \\propto n$ (Avogadro)\n-   $V \\propto T$ (Charles)\n-   $V \\propto \\frac{1}{p}$ (Boyle)\n\nČe združimo sorazmernosti, dobimo:\n$$ V \\propto \\frac{nT}{p} \\quad \\Rightarrow \\quad V \u003d R \\cdot \\frac{nT}{p} $$\nKar preoblikujemo v standardno obliko:\n$$ pV \u003d nRT $$\n\n-   **R** je **splošna plinska konstanta**. Njena vrednost je odvisna od uporabljenih enot za tlak in volumen.\n    -   $R \u003d 8.314 \\frac{\\text{J}}{\\text{mol} \\cdot \\text{K}}$ (standardna SI enota)\n    -   $R \u003d 0.08206 \\frac{\\text{L} \\cdot \\text{atm}}{\\text{mol} \\cdot \\text{K}}$\n    -   $R \u003d 8.314 \\frac{\\text{kPa} \\cdot \\text{L}}{\\text{mol} \\cdot \\text{K}}$\n\n### [[Kombinirana Plinska Enačba]]\nZa določeno, konstantno množino plina ($n\u003dkonst.$) lahko zapišemo:\n$$ \\frac{pV}{T} \u003d nR \u003d \\text{konst.} $$\n$$ \\frac{p_1 V_1}{T_1} \u003d \\frac{p_2 V_2}{T_2} $$\n\n---\n\n## [[Plinske Zmesi in Daltonov Zakon]]\n\n### [[Daltonov Zakon o Parcialnih Tlakih]]\nCelotni tlak plinske zmesi ($p_{total}$) je enak vsoti parcialnih tlakov posameznih komponent v zmesi.\n\n$$ p_{total} \u003d p_1 + p_2 + p_3 + \\dots \u003d \\sum_{j\u003d1}^{k} p_j $$\n\n-   **Parcialni tlak ($p_j$):** Tlak, ki bi ga posamezna komponenta plina imela, če bi sama zavzemala celotno prostornino posode pri isti temperaturi.\n\nParcialni tlak je odvisen od **množinskega deleža ($x_j$)** komponente v zmesi:\n$$ p_j \u003d x_j \\cdot p_{total} $$\n-   **Množinski delež ($x_j$):**\n    $$ x_j \u003d \\frac{n_j}{n_{total}} \u003d \\frac{n_j}{\\sum n_j} $$\n-   Velja tudi, da je vsota vseh množinskih deležev enaka 1:\n    $$ \\sum x_j \u003d 1 $$\n\n### [[Povprečna Molska Masa Plinske Zmesi ($\\bar{M}$)]]\nPovprečno molsko maso zmesi izračunamo kot vsoto produktov množinskega deleža in molske mase vsake komponente.\n$$ \\bar{M} \u003d \\sum_{j} x_j M_j $$\n\n### [[Zveza med Masnim in Množinskim Deležem]]\n$$ x_j \u003d \\frac{m_j/M_j}{m_{total}/\\bar{M}} \u003d w_j \\frac{\\bar{M}}{M_j} $$\nKjer je $w_j$ masni delež ($m_j / m_{total}$).\n\n---\n\n## [[Kinetična Teorija Plinov]]\nTa teorija pojasnjuje makroskopske lastnosti plinov (tlak, temperatura) na podlagi gibanja molekul (mikroskopski nivo).\n\n### [[Model Idealnega Plina (predpostavke)]]\n1.  Plin sestavljajo enaki delci z maso `m`, ki se **stalno in neurejeno gibljejo**.\n2.  Delci so **točke** (zanemarljiv volumen).\n3.  Med gibanjem delci **ne vplivajo drug na drugega**, razen ob trkih.\n4.  Vsi trki (med delci in s steno) so **popolnoma elastični** (skupna kinetična energija se ohranja).\n\n### [[Tlak, Temperatura in Hitrost Molekul]]\n-   Tlak je posledica trkov molekul ob steno.\n-   Povprečna kinetična energija molekul je premo sorazmerna z absolutno temperaturo.\n    $$ \\bar{E}_{kin} \u003d \\frac{1}{2} m \\bar{v^2} \\propto T $$\n    Za 1 mol idealnega plina velja:\n    $$ \\bar{E}_{kin} \u003d \\frac{3}{2} RT $$\n-   **Povprečna vrednost kvadrata hitrosti ($\\bar{v^2}$):**\n    $$ \\bar{v^2} \u003d \\frac{3RT}{M} $$\n-   **Koren povprečnega kvadrata hitrosti ($v_{rms}$):** Hitrost, ki jo pogosto uporabljamo za oceno tipične hitrosti molekul.\n    $$ v_{rms} \u003d \\sqrt{\\bar{v^2}} \u003d \\sqrt{\\frac{3RT}{M}} $$\n\u003e **Warning Note:** Pri izračunu hitrosti je treba molsko maso `M` obvezno pretvoriti v **kg/mol** in uporabiti $R \u003d 8.314 \\text{ J/(mol K)}$, da dobimo hitrost v m/s.\n\n#### [[Maxwell-Boltzmannova Porazdelitev]]\nMolekule v plinu se ne gibljejo vse z enako hitrostjo, ampak imajo širok razpon hitrosti. Ta porazdelitev je odvisna od temperature in molske mase.\n-   Višja temperatura pomeni širšo porazdelitev in višjo povprečno hitrost.\n-   Lažje molekule (manjši M) imajo pri isti temperaturi višje povprečne hitrosti.\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ndef maxwell_boltzmann(v, M, T):\n    R \u003d 8.314\n    M_kg \u003d M / 1000  # Convert g/mol to kg/mol\n    return (4 * np.pi * (M_kg / (2 * np.pi * R * T))**1.5 * v**2 * np.exp(-M_kg * v**2 / (2 * R * T)))\n\nv \u003d np.linspace(0, 2500, 500) # m/s\n\n# Nitrogen (N2) at different temperatures\nM_N2 \u003d 28.02 # g/mol\nplt.figure(figsize\u003d(10, 6))\nplt.plot(v, maxwell_boltzmann(v, M_N2, 300), label\u003d\u0027N₂ pri 300 K\u0027)\nplt.plot(v, maxwell_boltzmann(v, M_N2, 600), label\u003d\u0027N₂ pri 600 K\u0027)\nplt.plot(v, maxwell_boltzmann(v, M_N2, 900), label\u003d\u0027N₂ pri 900 K\u0027)\nplt.title(\"Maxwell-Boltzmannova Porazdelitev za Dušik (N₂)\")\nplt.xlabel(\"Hitrost molekul (m/s)\")\nplt.ylabel(\"Delež molekul\")\nplt.legend()\nplt.grid(True)\nplt.show()\n```\n\n---\n\n## [[Difuzija in Efuzija]]\n\n### [[Grahamov Zakon]]\nPri konstantnem tlaku in temperaturi je hitrost difuzije ali efuzije plina obratno sorazmerna s kvadratnim korenom njegove molske mase.\n\n$$ v \\propto \\frac{1}{\\sqrt{M}} $$\n\nZa primerjavo dveh različnih plinov (1 in 2) velja:\n$$ \\frac{v_1}{v_2} \u003d \\sqrt{\\frac{M_2}{M_1}} $$\n\n-   **Difuzija:** Spontano širjenje molekul plina iz območja z višjo koncentracijo v območje z nižjo (mešanje plinov).\n-   **Efuzija:** Prehajanje molekul plina skozi majhno odprtino v prostor z nižjim tlakom.\n\n\u003e **Memorial Note:** Predavateljica je omenila klasični poskus z amonijakom (NH₃, M\u003d17 g/mol) in klorovodikom (HCl, M\u003d36.5 g/mol). Bel oblak amonijevega klorida (NH₄Cl) nastane bližje viru HCl, ker so lažje molekule NH₃ hitrejše in prepotujejo daljšo pot v istem času.\n\n---\n\n## [[Realni Plini in Van der Waalsova Enačba]]\nRealni plini odstopajo od idealnega obnašanja, ker:\n1.  **Molekule imajo lasten volumen.**\n2.  **Med molekulami obstajajo privlačne (medmolekulske) sile.**\n\nTa odstopanja so pomembna pri **visokih tlakih** in **nizkih temperaturah**.\n\n### [[Van der Waalsova Enačba]]\nJe popravljena splošna plinska enačba, ki upošteva neidealno obnašanje.\n\n$$ \\left( p_{real} + \\frac{an^2}{V^2} \\right) (V_{real} - nb) \u003d nRT $$\n\n-   **Korekcijski člen za tlak ($\\frac{an^2}{V^2}$):** Upošteva privlačne sile med molekulami, ki zmanjšajo silo udarcev ob steno, s tem pa tudi izmerjeni tlak ($p_{real} \u003c p_{ideal}$). Konstanta `a` je odvisna od polarnosti in velikosti molekul.\n-   **Korekcijski člen za volumen (nb):** Upošteva lasten volumen molekul, ki zmanjša razpoložljiv prostor za gibanje ($V_{ideal} \u003c V_{real}$). Konstanta `b` je povezana z velikostjo molekul.\n\n### [[Koeficient Stisljivosti (Z)]]\nJe merilo za odstopanje plina od idealnega obnašanja.\n$$ Z \u003d \\frac{pV}{nRT} $$\n-   Za **idealni plin** je $Z\u003d1$ pri vseh pogojih.\n-   Za **realne pline**:\n    -   $Z \u003c 1$ pri zmernih tlakih, kjer prevladujejo privlačne sile.\n    -   $Z \u003e 1$ pri zelo visokih tlakih, kjer prevladujejo odbojne sile (lasten volumen molekul).\n\n### [[Kritični Pogoji]]\n-   **Kritična temperatura ($T_c$):** Temperatura, nad katero plina ni mogoče utekočiniti, ne glede na to, kako visok je tlak.\n-   **Kritični tlak ($p_c$) in kritični volumen ($V_c$):** Tlak in volumen pri kritični temperaturi.\n\n\u003e **Memorial Note:** Predavateljica je pojasnila, da pri ohlajanju plina pod kritično temperaturo pride do faznega prehoda v tekoče stanje, kar povzroči močna odstopanja od Boylovega zakona. Ta proces je ključen za utekočinjanje plinov.\n\n---\n### **Conceptual Strengthening Tasks**\n\n1.  **Osnovna Naloga (Boyle-Mariottov Zakon):** 2.5 L vzorca helija ima tlak 150 kPa. Če volumen povečamo na 7.5 L pri konstantni temperaturi, kolikšen bo nov tlak?\n2.  **Osnovna Naloga (Charlesov Zakon):** Balon ima volumen 10.0 L pri 25 °C. Do kakšne temperature (v °C) ga moramo segreti, da bo njegov volumen 12.5 L, če tlak ostane konstanten?\n3.  **Osnovna Naloga (Splošna Plinska Enačba):** Izračunaj maso kisika (O₂) v 50 L jeklenki pri tlaku 150 bar in temperaturi 20 °C.\n4.  **Izziv (Povezava z Reakcijami):** V 20 L posodi pri 100 °C reagira 10 g vodika (H₂) z zadostno količino dušika (N₂) v amonijak (NH₃).\n    a) Napiši urejeno kemijsko enačbo.\n    b) Izračunaj končni tlak v posodi, ko se reakcija zaključi (predpostavi 100% izkoristek).\n5.  **Izziv (Povezava s Kinetično Teorijo):** Kateri plin bo hitreje efundiral skozi majhno odprtino: neon (Ne) ali ogljikov dioksid (CO₂)? Izračunaj razmerje njunih hitrosti efuzije. Kako se ta hitrost spremeni, če temperaturo podvojimo?\n\n\u003e **Memorial Note:** Predavanje se bo naslednjič nadaljevalo s termodinamiko. Na vajah bomo reševali naloge, povezane s plinskimi zakoni in enačbo idealnega plina.",
+      "role": "model",
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "# [[2. Plini]]\n\n## [[Sestava zraka]]\nZrak je zmes plinov"
+      }, {
+        "text": ", ki sestavljajo Zemljino atmosfero. Glavne komponente suhega zraka po vol"
+      }, {
+        "text": "umnu so:\n- **Dušik ([[N2]])**: `0.78110` (7"
+      }, {
+        "text": "8.11%)\n- **Kisik ([[O2]])**: `0.20953` (20"
+      }, {
+        "text": ".95%)\n- **Argon ([[Ar]])**: `0.00934` (0"
+      }, {
+        "text": ".93%)\n- **Ogljikov dioksid ([[CO2]])**: `0.00"
+      }, {
+        "text": "038` (0.038%)\n- Ostali plini v sledovih, kot so neon"
+      }, {
+        "text": " (Ne), helij (He), metan (CH4), kripton (Kr), vodik (H2"
+      }, {
+        "text": "), itd.\n\n\u003e **Memorial Note:** Predavateljica je poudarila, da sestava zraka"
+      }, {
+        "text": " ni konstantna in vsebuje tudi variabilne količine vode (H₂O), ozona (O₃), ogl"
+      }, {
+        "text": "jikovega monoksida (CO) in drugih plinov, odvisno od lokacije in pogojev.\n\n---"
+      }, {
+        "text": "\n\n## [[Kemija Plinov]]\nPlini lahko nastanejo pri različnih kemijskih reakcijah"
+      }, {
+        "text": ", kot so termični razpadi ali reakcije kislin.\n\n### [[Primeri Reakcij za Nastanek Plinov]]\n1.  **Termični razpad živosrebrovega(II) oksida"
+      }, {
+        "text": ":**\n    $$2 \\text{HgO(s)} \\xrightarrow{\\Delta} 2 \\text{Hg(l)}"
+      }, {
+        "text": " + \\text{O}_2\\text{(g)}$$\n2.  **Termični razpad kal"
+      }, {
+        "text": "cijevega karbonata:**\n    $$\\text{CaCO}_3\\text{(s)} \\xrightarrow{\\Delta} \\text{"
+      }, {
+        "text": "CaO(s)} + \\text{CO}_2\\text{(g)}$$\n3.  **Termič"
+      }, {
+        "text": "ni razpad amonijevega klorida:**\n    $$\\text{NH}_4\\text{Cl(s)}"
+      }, {
+        "text": " \\xrightarrow{\\Delta} \\text{NH}_3\\text{(g)} + \\text{HCl(g)}$"
+      }, {
+        "text": "$\n4.  **Reakcija kisline s karbonati:**\n    $$\\text{CaCO}_3\\text"
+      }, {
+        "text": "{(s)} + 2 \\text{HCl(g)} \\rightarrow \\text{CaCl}_2\\text{(s)} +"
+      }, {
+        "text": " \\text{CO}_2\\text{(g)} + \\text{H}_2\\text{O(l"
+      }, {
+        "text": ")}$$\n5.  **Sinteza žveplovega dioksida in trioksida:**\n"
+      }, {
+        "text": "    $$\\text{S(s)} + \\text{O}_2\\text{(g)} \\rightarrow \\text"
+      }, {
+        "text": "{SO}_2\\text{(g)}$$\n    $$2 \\text{SO}_2\\text{(g"
+      }, {
+        "text": ")} + \\text{O}_2\\text{(g)} \\rightarrow 2 \\text{SO}_3\\"
+      }, {
+        "text": "text{(g)}$$\n6.  **Sinteza dušikovih oksidov:**\n    $$\\text{N"
+      }, {
+        "text": "}_2\\text{(g)} + \\text{O}_2\\text{(g)} \\rightarrow 2 \\"
+      }, {
+        "text": "text{NO(g)}$$\n    $$2 \\text{NO(g)} + \\text{O}_"
+      }, {
+        "text": "2\\text{(g)} \\rightarrow 2 \\text{NO}_2\\text{(g)}$$\n\n---"
+      }, {
+        "text": "\n\n## [[Lastnosti Plinov]]\n-   **Gibanje delcev:** Delci plina (atomi ali"
+      }, {
+        "text": " molekule) se neurejeno in hitro gibljejo po celotni prostornini posode.\n-   **"
+      }, {
+        "text": "Tlak ([[P]]):** Je posledica nenehnih trkov delcev plina ob stene posode.\n"
+      }, {
+        "text": "-   **Stisljivost:** Pline lahko stiskamo in razpenjamo, ker je med del"
+      }, {
+        "text": "ci veliko praznega prostora. Obravnava plinov je enostavnejša od tekočin in tr"
+      }, {
+        "text": "dnin zaradi šibkih medmolekulskih sil.\n\n### [[Idealni Plin vs. Realni Plin]]\n-   [[**Idealni plin**]] je teoretični model, pri katerem zanemarimo:\n"
+      }, {
+        "text": "    1.  **Privlačne sile med molekulami.**\n    2.  **Lasten volumen mole"
+      }, {
+        "text": "kul** (molekule obravnavamo kot točkaste delce).\n-   Enačbe za"
+      }, {
+        "text": " idealni plin izpeljemo na podlagi eksperimentov in jih lahko razširimo na z"
+      }, {
+        "text": "mesi plinov.\n-   [[**Realni plini**]] se obnašajo približno kot idealni le"
+      }, {
+        "text": " pri normalnih pogojih (visoka temperatura in nizek tlak).\n\n---\n\n## [[Fizikalne Lastnosti in Spremenljivke Plinov]]\nStanje plina lahko opišemo s štirimi osnovnimi spremenljiv"
+      }, {
+        "text": "kami:\n1.  **Tlak (`p`)**\n2.  **Volumen (`V`)**\n"
+      }, {
+        "text": "3.  **Temperatura (`T`)**\n4.  **Množina snovi (`n`)** ali"
+      }, {
+        "text": " masa (`m`) in molska masa (`M`), saj velja $n \u003d \\frac{m}{M}$.\n\n###"
+      }, {
+        "text": " [[Merjenje Tlaka]]\n-   **Barometer:** Klasična naprava za merjenje atmosferskega tl"
+      }, {
+        "text": "aka, ki deluje na principu potiskanja stolpca živega srebra (Hg).\n    "
+      }, {
+        "text": "-   **Standardni zračni tlak:** Tlak, potreben, da potisne stolpec Hg do"
+      }, {
+        "text": " višine 760 mm.\n    -   **Enote:**\n        -   $1 \\text{ atm"
+      }, {
+        "text": "} \u003d 760 \\text{ mmHg} \u003d 760 \\text{ Torr}$\n        -"
+      }, {
+        "text": "   $1 \\text{ atm} \u003d 1.013 \\text{ bar} \u003d 10"
+      }, {
+        "text": "1.3 \\text{ kPa} \u003d 101325 \\text{ Pa}$\n        -"
+      }, {
+        "text": "   $1 \\text{ bar} \u003d 100 \\text{ kPa} \u003d 10^5"
+      }, {
+        "text": " \\text{ Pa}$\n\n---\n\n## [[Plinski Zakoni]]\n\n### [[Boyle-Mariottov Zakon]]\nPri konstantni temperaturi (**T\u003dkonst.**) in množini plina (**n\u003dkonst.**"
+      }, {
+        "text": ") je prostornina plina obratno sorazmerna s tlakom.\n\n$$ p \\cdot V \u003d"
+      }, {
+        "text": " \\text{konst.} $$\n$$ p_1 V_1 \u003d p_2 V_2 $$\n\n"
+      }, {
+        "text": "\u003e **Kritična Analiza:** Ta zakon opisuje, kako se volumen plina zmanjša,"
+      }, {
+        "text": " ko povečamo tlak, in obratno. Grafični prikaz odvisnosti `p(V)` je hiper"
+      }, {
+        "text": "bola. To pomeni, če podvojimo tlak (iz $p_1$ v $p_2 \u003d"
+      }, {
+        "text": " 2p_1$), se bo volumen razpolovil ($V_2 \u003d V_1/2$).\n\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Boyle\u0027s Law: P * V \u003d k"
+      }, {
+        "text": " (constant)\nk \u003d 10  # Arbitrary constant for demonstration\n\nV \u003d np.linspace(1, "
+      }, {
+        "text": "10, 100)\nP \u003d k / V\n\nplt.figure(figsize\u003d(8, 6"
+      }, {
+        "text": "))\nplt.plot(V, P, label\u003df\u0027p V \u003d {k} (Hiperbola)\u0027)\n"
+      }, {
+        "text": "plt.title(\"Boyle-Mariottov Zakon: Odvisnost Tlaka od Volumna (T"
+      }, {
+        "text": "\u003dkonst.)\")\nplt.xlabel(\"Volumen (V)\")\nplt.ylabel(\"Tlak (p)\")\nplt"
+      }, {
+        "text": ".grid(True)\nplt.legend()\n\n# Primer točk\nV1, P1 \u003d 8"
+      }, {
+        "text": ", k/8\nV2, P2 \u003d 4, k/4\nplt.plot([V1, V2], [P1, P2], \u0027ro\u0027)\nplt.text(V1, P1, \u0027  "
+      }, {
+        "text": "(V₁, p₁)\u0027, verticalalignment\u003d\u0027bottom\u0027)\nplt.text(V2, P2, \u0027  (V"
+      }, {
+        "text": "₂, p₂)\u0027, verticalalignment\u003d\u0027bottom\u0027)\n\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n### [[Gay-Lussacov in Charlesov Zakon]]\nOba zakona opisujeta odvisnost od temperature.\n\n1.  **Charles"
+      }, {
+        "text": "ov Zakon (Izobarni proces, p\u003dkonst.):** Pri konstantnem tlaku in množini je prostorn"
+      }, {
+        "text": "ina plina premo sorazmerna z absolutno temperaturo.\n    $$ \\frac{V}{T} \u003d"
+      }, {
+        "text": " \\text{konst.} \\quad \\Rightarrow \\quad \\frac{V_1}{T_1} \u003d \\frac"
+      }, {
+        "text": "{V_2}{T_2} $$\n2.  **Gay-Lussacov Zakon ("
+      }, {
+        "text": "Izohorni proces, V\u003dkonst.):** Pri konstantni prostornini in množini je tlak plina premo"
+      }, {
+        "text": " sorazmeren z absolutno temperaturo.\n    $$ \\frac{p}{T} \u003d \\text{kon"
+      }, {
+        "text": "st.} \\quad \\Rightarrow \\quad \\frac{p_1}{T_1} \u003d \\frac{p"
+      }, {
+        "text": "_2}{T_2} $$\n\n\u003e **Note to Self:** Predavateljica je poudarila,"
+      }, {
+        "text": " da iz teh zakonov sledi, da pri absolutni ničli ($T\u003d0$ K) molekule mir"
+      }, {
+        "text": "ujejo in bi bil volumen idealnega plina enak nič. To je teoretični koncept, saj realni plini prej"
+      }, {
+        "text": " preidejo v tekoče stanje.\n\n#### [[Kelvinova Temperaturna Skala]]\nEks"
+      }, {
+        "text": "perimentalno je bilo ugotovljeno, da se volumen plina pri ohlajanju približuje"
+      }, {
+        "text": " ničli pri **-273.15 °C**. Ta temperatura je definirana kot absolutna ničla"
+      }, {
+        "text": " ($T\u003d0$ K).\n\n\u003e **Warning Note:** Pri vseh plinskih zakonih je **ob"
+      }, {
+        "text": "vezna** uporaba absolutne temperature v Kelvinih (K). Uporaba stopinj Celzija (°"
+      }, {
+        "text": "C) vodi v napačne rezultate.\n\u003e Pretvorba:\n\u003e $$ T(\\text{K"
+      }, {
+        "text": "}) \u003d t(^{\\circ}\\text{C}) + 273.15 $$\n\n### [[Avogadrov Zakon]]\nPri konstantni temperaturi in tlaku (**T, p \u003d konst.**) je prostornina pl"
+      }, {
+        "text": "ina sorazmerna s številom molov (množino snovi).\n\n$$ V \\propto n \\"
+      }, {
+        "text": "quad \\Rightarrow \\quad V \u003d \\text{konst.} \\cdot n $$\n$$ \\frac{V_"
+      }, {
+        "text": "1}{n_1} \u003d \\frac{V_2}{n_2} $$\n\n-   **Molska"
+      }, {
+        "text": " prostornina ($V_m$):** Prostornina, ki jo zavzema 1 mol katereg"
+      }, {
+        "text": "akoli idealnega plina pri enakih pogojih.\n    -   Pri standardnih pogojih (0"
+      }, {
+        "text": " °C in 1 atm), je $V_m \\approx 22.41 \\text{ L"
+      }, {
+        "text": "/mol}$.\n-   **Posledica:** Enaki volumni različnih plinov pri istih pogojih"
+      }, {
+        "text": " (T, p) vsebujejo enako število molekul.\n\n---\n\n## [[Splošna Plinska Enačba (Enačba Idealnega Plina)]]\nS kombinacijo Boylovega, Charles"
+      }, {
+        "text": "ovega in Avogadrovega zakona dobimo splošno plinsko enačbo, ki povezuje vse štiri"
+      }, {
+        "text": " spremenljivke.\n\n-   $V \\propto n$ (Avogadro)\n-   $V \\"
+      }, {
+        "text": "propto T$ (Charles)\n-   $V \\propto \\frac{1}{p}$ (Boyle)\n\n"
+      }, {
+        "text": "Če združimo sorazmernosti, dobimo:\n$$ V \\propto \\frac{nT}{p} \\"
+      }, {
+        "text": "quad \\Rightarrow \\quad V \u003d R \\cdot \\frac{nT}{p} $$\nKar preoblikujemo v standard"
+      }, {
+        "text": "no obliko:\n$$ pV \u003d nRT $$\n\n-   **R** je **splošna plinska konst"
+      }, {
+        "text": "anta**. Njena vrednost je odvisna od uporabljenih enot za tlak in volumen.\n    -"
+      }, {
+        "text": "   $R \u003d 8.314 \\frac{\\text{J}}{\\text{mol} \\cdot \\text{"
+      }, {
+        "text": "K}}$ (standardna SI enota)\n    -   $R \u003d 0.08206"
+      }, {
+        "text": " \\frac{\\text{L} \\cdot \\text{atm}}{\\text{mol} \\cdot \\text{K}}$\n    "
+      }, {
+        "text": "-   $R \u003d 8.314 \\frac{\\text{kPa} \\cdot \\text{L}}{\\text"
+      }, {
+        "text": "{mol} \\cdot \\text{K}}$\n\n### [[Kombinirana Plinska Enačba]]\nZa"
+      }, {
+        "text": " določeno, konstantno množino plina ($n\u003dkonst.$) lahko zapišemo:\n$$ \\frac"
+      }, {
+        "text": "{pV}{T} \u003d nR \u003d \\text{konst.} $$\n$$ \\frac{p_1 V_1"
+      }, {
+        "text": "}{T_1} \u003d \\frac{p_2 V_2}{T_2} $$\n\n---\n\n"
+      }, {
+        "text": "## [[Plinske Zmesi in Daltonov Zakon]]\n\n### [[Daltonov Zakon o Parcialnih Tlakih]]\nCelotni tlak plinske zmesi ($p_{total}$) je enak vsoti parcialnih tlakov pos"
+      }, {
+        "text": "ameznih komponent v zmesi.\n\n$$ p_{total} \u003d p_1 + p_2 + p"
+      }, {
+        "text": "_3 + \\dots \u003d \\sum_{j\u003d1}^{k} p_j $$\n\n-   **Par"
+      }, {
+        "text": "cialni tlak ($p_j$):** Tlak, ki bi ga posamezna komponenta plina imela, če"
+      }, {
+        "text": " bi sama zavzemala celotno prostornino posode pri isti temperaturi.\n\nParcialni tlak je"
+      }, {
+        "text": " odvisen od **množinskega deleža ($x_j$)** komponente v zmesi:\n$$ p"
+      }, {
+        "text": "_j \u003d x_j \\cdot p_{total} $$\n-   **Množinski delež ($x_"
+      }, {
+        "text": "j$):**\n    $$ x_j \u003d \\frac{n_j}{n_{total}} \u003d \\"
+      }, {
+        "text": "frac{n_j}{\\sum n_j} $$\n-   Velja tudi, da je vsota v"
+      }, {
+        "text": "seh množinskih deležev enaka 1:\n    $$ \\sum x_j \u003d 1 $$\n\n###"
+      }, {
+        "text": " [[Povprečna Molska Masa Plinske Zmesi ($\\bar{M}$)]]\nPovprečno molsko"
+      }, {
+        "text": " maso zmesi izračunamo kot vsoto produktov množinskega deleža in molske mase vs"
+      }, {
+        "text": "ake komponente.\n$$ \\bar{M} \u003d \\sum_{j} x_j M_j $$\n\n"
+      }, {
+        "text": "### [[Zveza med Masnim in Množinskim Deležem]]\n$$ x_j \u003d \\frac"
+      }, {
+        "text": "{m_j/M_j}{m_{total}/\\bar{M}} \u003d w_j \\frac{\\"
+      }, {
+        "text": "bar{M}}{M_j} $$\nKjer je $w_j$ masni delež ($m_j /"
+      }, {
+        "text": " m_{total}$).\n\n---\n\n## [[Kinetična Teorija Plinov]]\nTa teorija pojas"
+      }, {
+        "text": "njuje makroskopske lastnosti plinov (tlak, temperatura) na podlagi gibanja mole"
+      }, {
+        "text": "kul (mikroskopski nivo).\n\n### [[Model Idealnega Plina (predpostavke)]]\n1."
+      }, {
+        "text": "  Plin sestavljajo enaki delci z maso `m`, ki se **stalno in neurejeno gib"
+      }, {
+        "text": "ljejo**.\n2.  Delci so **točke** (zanemarljiv volumen).\n3.  Med"
+      }, {
+        "text": " gibanjem delci **ne vplivajo drug na drugega**, razen ob trkih.\n4."
+      }, {
+        "text": "  Vsi trki (med delci in s steno) so **popolnoma elastični**"
+      }, {
+        "text": " (skupna kinetična energija se ohranja).\n\n### [[Tlak, Temperatura in Hitrost Molekul]]\n-   Tlak je posledica trkov molekul ob steno.\n-   Povprečna kinet"
+      }, {
+        "text": "ična energija molekul je premo sorazmerna z absolutno temperaturo.\n    $$ \\bar{E}_{"
+      }, {
+        "text": "kin} \u003d \\frac{1}{2} m \\bar{v^2} \\propto T $$\n    "
+      }, {
+        "text": "Za 1 mol idealnega plina velja:\n    $$ \\bar{E}_{kin} \u003d \\frac{"
+      }, {
+        "text": "3}{2} RT $$\n-   **Povprečna vrednost kvadrata hitrosti ($\\bar{v"
+      }, {
+        "text": "^2}$):**\n    $$ \\bar{v^2} \u003d \\frac{3RT}{M} $$\n-"
+      }, {
+        "text": "   **Koren povprečnega kvadrata hitrosti ($v_{rms}$):** Hitrost, ki jo"
+      }, {
+        "text": " pogosto uporabljamo za oceno tipične hitrosti molekul.\n    $$ v_{rms} \u003d"
+      }, {
+        "text": " \\sqrt{\\bar{v^2}} \u003d \\sqrt{\\frac{3RT}{M}} $$\n\u003e **Warning"
+      }, {
+        "text": " Note:** Pri izračunu hitrosti je treba molsko maso `M` obvezno pretvoriti v **"
+      }, {
+        "text": "kg/mol** in uporabiti $R \u003d 8.314 \\text{ J/(mol K)}$,"
+      }, {
+        "text": " da dobimo hitrost v m/s.\n\n#### [[Maxwell-Boltzmannova Porazdelitev]]\nMole"
+      }, {
+        "text": "kule v plinu se ne gibljejo vse z enako hitrostjo, ampak imajo širok razpon hitrost"
+      }, {
+        "text": "i. Ta porazdelitev je odvisna od temperature in molske mase.\n-   Višja temperatura pomen"
+      }, {
+        "text": "i širšo porazdelitev in višjo povprečno hitrost.\n-   Lažje molekule"
+      }, {
+        "text": " (manjši M) imajo pri isti temperaturi višje povprečne hitrosti.\n\n"
+      }, {
+        "text": "```python\nimport"
+      }, {
+        "text": " matplotlib.pyplot as plt\nimport numpy as np\n\ndef maxwell_boltzmann(v, M, T):\n"
+      }, {
+        "text": "    R \u003d 8.314\n    M_kg \u003d M / 1000  #"
+      }, {
+        "text": " Convert g/mol to kg/mol\n    return (4 * np.pi * (M_kg / (2"
+      }, {
+        "text": " * np.pi * R * T))**1.5 * v**2 * np.exp(-M_kg *"
+      }, {
+        "text": " v**2 / (2 * R * T)))\n\nv \u003d np.linspace(0, 2500"
+      }, {
+        "text": ", 500) # m/s\n\n# Nitrogen (N2) at different temperatures\nM_N2 \u003d "
+      }, {
+        "text": "28.02 # g/mol\nplt.figure(figsize\u003d(10, 6))\nplt.plot("
+      }, {
+        "text": "v, maxwell_boltzmann(v, M_N2, 300), label\u003d\u0027N₂"
+      }, {
+        "text": " pri 300 K\u0027)\nplt.plot(v, maxwell_boltzmann(v, M_N"
+      }, {
+        "text": "2, 600), label\u003d\u0027N₂ pri 600 K\u0027)\nplt.plot(v"
+      }, {
+        "text": ", maxwell_boltzmann(v, M_N2, 900), label\u003d\u0027N₂ pri"
+      }, {
+        "text": " 900 K\u0027)\nplt.title(\"Maxwell-Boltzmannova Porazdelitev za Dušik ("
+      }, {
+        "text": "N₂)\")\nplt.xlabel(\"Hitrost molekul (m/s)\")\nplt.ylabel(\"Delež"
+      }, {
+        "text": " molekul\")\nplt.legend()\nplt.grid(True)\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n---"
+      }, {
+        "text": "\n\n## [[Difuzija in Efuzija]]\n\n### [[Grahamov Zakon]]\nPri konstantnem tlaku in temperatur"
+      }, {
+        "text": "i je hitrost difuzije ali efuzije plina obratno sorazmerna s kvadratnim kore"
+      }, {
+        "text": "nom njegove molske mase.\n\n$$ v \\propto \\frac{1}{\\sqrt{M}} $$\n\nZa primer"
+      }, {
+        "text": "javo dveh različnih plinov (1 in 2) velja:\n$$ \\frac{v_1"
+      }, {
+        "text": "}{v_2} \u003d \\sqrt{\\frac{M_2}{M_1}} $$\n\n-   **"
+      }, {
+        "text": "Difuzija:** Spontano širjenje molekul plina iz območja z višjo koncentracijo v ob"
+      }, {
+        "text": "močje z nižjo (mešanje plinov).\n-   **Efuzija:** Prehajanje molekul"
+      }, {
+        "text": " plina skozi majhno odprtino v prostor z nižjim tlakom.\n\n\u003e **Memorial Note"
+      }, {
+        "text": ":** Predavateljica je omenila klasični poskus z amonijakom (NH₃, M\u003d1"
+      }, {
+        "text": "7 g/mol) in klorovodikom (HCl, M\u003d36.5 g/mol). Bel obl"
+      }, {
+        "text": "ak amonijevega klorida (NH₄Cl) nastane bližje viru HCl, ker so"
+      }, {
+        "text": " lažje molekule NH₃ hitrejše in prepotujejo daljšo pot v istem času.\n\n"
+      }, {
+        "text": "---\n\n## [[Realni Plini in Van der Waalsova Enačba]]\nRealni plini od"
+      }, {
+        "text": "stopajo od idealnega obnašanja, ker:\n1.  **Molekule imajo lasten volumen.**\n"
+      }, {
+        "text": "2.  **Med molekulami obstajajo privlačne (medmolekulske) sile.**\n\nTa"
+      }, {
+        "text": " odstopanja so pomembna pri **visokih tlakih** in **nizkih temperaturah**.\n\n###"
+      }, {
+        "text": " [[Van der Waalsova Enačba]]\nJe popravljena splošna plinska enačba,"
+      }, {
+        "text": " ki upošteva neidealno obnašanje.\n\n$$ \\left( p_{real} + \\"
+      }, {
+        "text": "frac{an^2}{V^2} \\right) (V_{real} - nb) \u003d nRT $$\n\n-"
+      }, {
+        "text": "   **Korekcijski člen za tlak ($\\frac{an^2}{V^2}$):** Upošteva"
+      }, {
+        "text": " privlačne sile med molekulami, ki zmanjšajo silo udarcev ob steno, s tem pa tudi"
+      }, {
+        "text": " izmerjeni tlak ($p_{real} \u003c p_{ideal}$). Konstanta `a` je odvisna od pol"
+      }, {
+        "text": "arnosti in velikosti molekul.\n-   **Korekcijski člen za volumen (nb):** Upo"
+      }, {
+        "text": "števa lasten volumen molekul, ki zmanjša razpoložljiv prostor za gibanje ($V_{ideal"
+      }, {
+        "text": "} \u003c V_{real}$). Konstanta `b` je povezana z velikostjo molekul.\n\n### [[Koeficient Stisljivosti (Z)]]\nJe merilo za odstopanje plina od idealnega ob"
+      }, {
+        "text": "našanja.\n$$ Z \u003d \\frac{pV}{nRT} $$\n-   Za **idealni plin"
+      }, {
+        "text": "** je $Z\u003d1$ pri vseh pogojih.\n-   Za **realne pline**:"
+      }, {
+        "text": "\n    -   $Z \u003c 1$ pri zmernih tlakih, kjer prevladujejo privla"
+      }, {
+        "text": "čne sile.\n    -   $Z \u003e 1$ pri zelo visokih tlakih, kjer prevladujejo od"
+      }, {
+        "text": "bojne sile (lasten volumen molekul).\n\n### [[Kritični Pogoji]]\n-   **K"
+      }, {
+        "text": "ritična temperatura ($T_c$):** Temperatura, nad katero plina ni mogoče uteko"
+      }, {
+        "text": "činiti, ne glede na to, kako visok je tlak.\n-   **Kritični tlak ($p"
+      }, {
+        "text": "_c$) in kritični volumen ($V_c$):** Tlak in volumen pri kritični temperaturi"
+      }, {
+        "text": ".\n\n\u003e **Memorial Note:** Predavateljica je pojasnila, da pri ohlajanju plina pod"
+      }, {
+        "text": " kritično temperaturo pride do faznega prehoda v tekoče stanje, kar povzroči močna odstopanja"
+      }, {
+        "text": " od Boylovega zakona. Ta proces je ključen za utekočinjanje plinov.\n\n---\n"
+      }, {
+        "text": "### **Conceptual Strengthening Tasks**\n\n1.  **Osnovna Naloga (Boyle-Mariottov Zak"
+      }, {
+        "text": "on):** 2.5 L vzorca helija ima tlak 150 kPa. Če volumen povečamo na"
+      }, {
+        "text": " 7.5 L pri konstantni temperaturi, kolikšen bo nov tlak?\n2.  **Osnovna Nal"
+      }, {
+        "text": "oga (Charlesov Zakon):** Balon ima volumen 10.0 L pri 25 °C. Do"
+      }, {
+        "text": " kakšne temperature (v °C) ga moramo segreti, da bo njegov volumen 12.5"
+      }, {
+        "text": " L, če tlak ostane konstanten?\n3.  **Osnovna Naloga (Splošna Pl"
+      }, {
+        "text": "inska Enačba):** Izračunaj maso kisika (O₂) v 50 L jeklen"
+      }, {
+        "text": "ki pri tlaku 150 bar in temperaturi 20 °C.\n4.  **I"
+      }, {
+        "text": "zziv (Povezava z Reakcijami):** V 20 L posodi pri 1"
+      }, {
+        "text": "00 °C reagira 10 g vodika (H₂) z zadostno količino dušika ("
+      }, {
+        "text": "N₂) v amonijak (NH₃).\n    a) Napiši urejeno kemijsko ena"
+      }, {
+        "text": "čbo.\n    b) Izračunaj končni tlak v posodi, ko se reakcija zaključi ("
+      }, {
+        "text": "predpostavi 100% izkoristek).\n5.  **Izziv (Povezava s"
+      }, {
+        "text": " Kinetično Teorijo):** Kateri plin bo hitreje efundiral skozi majhno od"
+      }, {
+        "text": "prtino: neon (Ne) ali ogljikov dioksid (CO₂)? Izračunaj raz"
+      }, {
+        "text": "merje njunih hitrosti efuzije. Kako se ta hitrost spremeni, če temperaturo podvoj"
+      }, {
+        "text": "imo?\n\n\u003e **Memorial Note:** Predavanje se bo naslednjič nadaljevalo s termodinamiko."
+      }, {
+        "text": " Na vajah bomo reševali naloge, povezane s plinskimi zakoni in enačbo ideal"
+      }, {
+        "text": "nega plina."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

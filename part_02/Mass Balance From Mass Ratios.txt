@@ -1,0 +1,477 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": false,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes to know:\n1. The user\u0027s files (metadata) are chronologically labeled, so the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other, given the topic.\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT PROTOCOL**\n\n1.  **Initial Output Protocol:** Begin your response *only* with the content note itself. Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The foundational structure of the notes must accurately reflect the material presented (what was said/seen). Your first duty is to record the lecturer\u0027s content and the user\u0027s notes, **as they are**. Minimal AI interjection should occur in the main body; use dedicated analytical sections for added insight.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  **Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5.  **Conceptual Strengthening Tasks (NEW):** At the conclusion of the synthesized notes, generate a section of \u0027Conceptual Strengthening Tasks\u0027. These tasks must:\n    *   Mimic the structure and difficulty of the examples/problems presented in the current lecture material.\n    *   Include \u0027Challenges\u0027 designed to connect the current university concepts with foundational knowledge from high school or prior courses, forcing the user to utilize a broad, integrated understanding.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a highly knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1c6eRZB3r32bItnnbPyFVGMKbGMRRQRKg"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1sIdjrnPEyoM5C9LcrvtXzf7GOuuKXO81"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Ql6Sd6VbGXB-vcWm0JYQP7w3o1jZS-EZ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1hfilHonjCA3anA06Rjsd3Qp-r_-bDzUQ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Uf8nyKisEDiZ9dOOeOarAYnlXNgCB2WW"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1wqesYpEpgITgJ9zX7MFmowA_FmqzuhUQ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "150iaE0OOKCcd21gUtqilvaXE2GSBOMRk"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1CFThleqcBVhEBTZuLGlfzJVsxVcFn0Ek"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1QuXTBg8XlssYrGWJjp7BYgKQ0Y3OQ-7-"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1c3JQh3DiyOzopbdnVVzdBNrQHSNfmC3Z"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1tPFQ0PzqeJA2cIKhP5jHDMAfZpgNCGrC"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveDocument": {
+        "id": "1vOHVP_TgzC7mEDcsPmzoupLukamxv2cV"
+      },
+      "role": "user",
+      "tokenCount": 1807
+    }, {
+      "driveAudio": {
+        "id": "1OzcRIiAxig8xNByKt3aBO2f2opQo8ajx"
+      },
+      "role": "user",
+      "tokenCount": 93137
+    }, {
+      "driveAudio": {
+        "id": "1tgqhQWlUbYK3yP_wZHOekPEMVZar9wju"
+      },
+      "role": "user",
+      "tokenCount": 162432
+    }, {
+      "text": "3. Predavanje DOdatne vsebine Splosne kemije, Janja stergar. \nresevanje masnih bilanc iz masnih razmerij  znotraj atomov in ter zmesi. pridobivanje stevilce predpise iz masnih razmerij in iz teh predpostavk dobiti molekulsko stevilo. \nrazumevanje D_h(plina) gostotno razmerje ekvivalentno z molskomasnim razmerjem. ",
+      "role": "user",
+      "tokenCount": 108
+    }, {
+      "text": "**Delineating Key Concepts**\n\nI\u0027ve begun dissecting the handwritten notes, starting with the title slide. My focus is now on identifying the core topics presented, aiming to establish a hierarchical structure for the future Obsidian note. \"SPLOŠNA KEMIJA\" and \"DODATNE VSEBINE\" are clearly prominent. I\u0027m currently working to categorize these terms and the upcoming material within, so as to define the key subject areas.\n\n\n**Outlining the Structure**\n\nHaving parsed the initial slide, I\u0027m now digging into the subsequent content, focusing on outlining the structure for the Obsidian note. I\u0027ve begun extracting the core concepts, such as the laws of chemical proportions, and am working to categorize them hierarchically. I\u0027ve identified the main sections and am mapping the relationships between \"SPLOŠNA KEMIJA,\" \"DODATNE VSEBINE,\" and the specific laws presented on slides 2-4. Specifically, I\u0027m noting the examples that relate to them. Moving forward, I am currently exploring how relative density fits in with these concepts.\n\n\n**Synthesizing Core Concepts**\n\nI\u0027ve been busy mapping out the relationships between the chemical laws and specific examples detailed in the notes. The Law of Constant Composition, attributed to Proust, is now linked to specific scenarios involving mercury/oxygen and hydrogen/oxygen. I\u0027m also ensuring the relative density formulas are properly categorized as they apply to Avogadro\u0027s hypothesis and the determination of molar mass. Notably, the worked examples are being cross-referenced with the relevant laws for a comprehensive overview.\n\n\n**Refining Note Structure**\n\nI\u0027m now integrating the worked examples into the conceptual framework. I\u0027ve begun to associate each problem with the relevant chemical law, ensuring a coherent structure. Specific examples, like the decomposition of mercury oxide, are linked directly to the Law of Constant Composition.  Currently, I\u0027m focusing on organizing the gas density problems, double-checking calculations to ensure accuracy.\n\n\n**Structuring the Examples**\n\nI\u0027m now linking the specific worked examples to the appropriate chemical laws, ensuring a coherent organizational scheme. For example, I\u0027ve clearly associated the problem involving the decomposition of mercury oxide with the Law of Constant Composition.  Currently, I\u0027m focusing on the gas density problems, double-checking all numerical calculations for any potential errors.\n\n\n**Mapping Example Problems**\n\nI\u0027m now focusing on mapping the worked examples to the appropriate chemical laws, ensuring a structured progression of concepts. The worked-out calculations related to gas density are being cross-checked to ensure accuracy in applying the ideal gas law. Notably, I\u0027ve identified and corrected a potential calculation error in an earlier example, confirming my approach is sound.\n\n\n**Integrating Example Problems**\n\nI\u0027m now focusing on integrating the various worked examples into the note. The problem with the decomposition of mercury oxide is now linked directly to the law of constant composition. I\u0027ve also begun adding the formulas for relative density, ensuring that they are categorized correctly. The gas density problems, however, present a unique challenge, as they require a careful application of the ideal gas law.\n\n\n**Structuring Notes and Examples**\n\nI\u0027m presently building the Obsidian note\u0027s framework, diligently linking the worked examples with their corresponding chemical laws.  Problems like the decomposition of mercury oxide are clearly tied to Proust\u0027s Law. I\u0027m carefully organizing the gas density problems, double-checking calculations, and confirming the correct usage of the ideal gas law.\n\n\n**Mapping Content to Structure**\n\nI\u0027m now fully immersed in the process of transferring the information, starting to integrate the solved problems under the appropriate section headers within the Obsidian note. For example, the decomposition problem of mercury oxide is being placed under the Law of Constant Composition. Also, I have moved the gas density calculations into their dedicated section.\n\n\n**Integrating Hand Written Problems**\n\nI\u0027m now integrating the worked examples, particularly the stoichiometry and gas density problems, into their respective sections. I\u0027m taking care to format all equations and formulas using LaTeX for clarity. Currently, I\u0027m focusing on providing detailed explanations for each step, ensuring the logic and mathematical procedures are easily followed. I have corrected a numerical error.\n\n\n**Finalizing Note Framework**\n\nI\u0027m now fully immersed in the final stage, integrating all the worked examples into their appropriate places within the Obsidian note. I\u0027m double-checking the accuracy of all calculations and the LaTeX formatting of the equations. The worked examples are linked with the theoretical concepts. Additionally, I\u0027m integrating the conceptual strengthening tasks I\u0027ve created to reinforce the learning from these lecture notes.\n\n\n",
+      "role": "model",
+      "tokenCount": 2950,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Delineating Key Concepts**\n\nI\u0027ve begun dissecting the handwritten notes, starting with the title slide. My focus is now on identifying the core topics presented, aiming to establish a hierarchical structure for the future Obsidian note. \"SPLOŠNA KEMIJA\" and \"DODATNE VSEBINE\" are clearly prominent. I\u0027m currently working to categorize these terms and the upcoming material within, so as to define the key subject areas.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining the Structure**\n\nHaving parsed the initial slide, I\u0027m now digging into the subsequent content, focusing on outlining the structure for the Obsidian note. I\u0027ve begun extracting the core concepts, such as the laws of chemical proportions, and am working to categorize them hierarchically. I\u0027ve identified the main sections and am mapping the relationships between \"SPLOŠNA KEMIJA,\" \"DODATNE VSEBINE,\" and the specific laws presented on slides 2-4. Specifically, I\u0027m noting the examples that relate to them. Moving forward, I am currently exploring how relative density fits in with these concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Core Concepts**\n\nI\u0027ve been busy mapping out the relationships between the chemical laws and specific examples detailed in the notes. The Law of Constant Composition, attributed to Proust, is now linked to specific scenarios involving mercury/oxygen and hydrogen/oxygen. I\u0027m also ensuring the relative density formulas are properly categorized as they apply to Avogadro\u0027s hypothesis and the determination of molar mass. Notably, the worked examples are being cross-referenced with the relevant laws for a comprehensive overview.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Note Structure**\n\nI\u0027m now integrating the worked examples into the conceptual framework. I\u0027ve begun to associate each problem with the relevant chemical law, ensuring a coherent structure. Specific examples, like the decomposition of mercury oxide, are linked directly to the Law of Constant Composition.  Currently, I\u0027m focusing on organizing the gas density problems, double-checking calculations to ensure accuracy.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Examples**\n\nI\u0027m now linking the specific worked examples to the appropriate chemical laws, ensuring a coherent organizational scheme. For example, I\u0027ve clearly associated the problem involving the decomposition of mercury oxide with the Law of Constant Composition.  Currently, I\u0027m focusing on the gas density problems, double-checking all numerical calculations for any potential errors.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping Example Problems**\n\nI\u0027m now focusing on mapping the worked examples to the appropriate chemical laws, ensuring a structured progression of concepts. The worked-out calculations related to gas density are being cross-checked to ensure accuracy in applying the ideal gas law. Notably, I\u0027ve identified and corrected a potential calculation error in an earlier example, confirming my approach is sound.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Example Problems**\n\nI\u0027m now focusing on integrating the various worked examples into the note. The problem with the decomposition of mercury oxide is now linked directly to the law of constant composition. I\u0027ve also begun adding the formulas for relative density, ensuring that they are categorized correctly. The gas density problems, however, present a unique challenge, as they require a careful application of the ideal gas law.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Notes and Examples**\n\nI\u0027m presently building the Obsidian note\u0027s framework, diligently linking the worked examples with their corresponding chemical laws.  Problems like the decomposition of mercury oxide are clearly tied to Proust\u0027s Law. I\u0027m carefully organizing the gas density problems, double-checking calculations, and confirming the correct usage of the ideal gas law.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping Content to Structure**\n\nI\u0027m now fully immersed in the process of transferring the information, starting to integrate the solved problems under the appropriate section headers within the Obsidian note. For example, the decomposition problem of mercury oxide is being placed under the Law of Constant Composition. Also, I have moved the gas density calculations into their dedicated section.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Hand Written Problems**\n\nI\u0027m now integrating the worked examples, particularly the stoichiometry and gas density problems, into their respective sections. I\u0027m taking care to format all equations and formulas using LaTeX for clarity. Currently, I\u0027m focusing on providing detailed explanations for each step, ensuring the logic and mathematical procedures are easily followed. I have corrected a numerical error.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing Note Framework**\n\nI\u0027m now fully immersed in the final stage, integrating all the worked examples into their appropriate places within the Obsidian note. I\u0027m double-checking the accuracy of all calculations and the LaTeX formatting of the equations. The worked examples are linked with the theoretical concepts. Additionally, I\u0027m integrating the conceptual strengthening tasks I\u0027ve created to reinforce the learning from these lecture notes.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[03 Basic Chemical Laws]]\n\n## [[Law of Constant and Multiple Mass Proportions]]\n\n### [[Law of Constant Composition]]\nThis law, also known as the Law of Definite Proportions, was discovered by French chemist Joseph Proust in 1799. It states that the mass ratio of two elements that combine to form a chemical compound is always constant, regardless of the source or method of preparation.\n\n**Example:**\n-   Water ($H_2O$) will always consist of 11.19% hydrogen and 88.81% oxygen by mass. If we react 11.19 g of hydrogen with 100 g of oxygen, we will still produce 100 g of water, and there will be an unreacted excess of 11.19 g of oxygen.\n\n#### [[Stoichiometry of Mixtures Example]]\nA mixture containing 1 g of zinc (Zn) and magnesium (Mg) is combusted, yielding 1.409 g of a mixture of zinc oxide (ZnO) and magnesium oxide (MgO). Calculate the mass percentages of Zn and Mg in the initial mixture.\n\n**Chemical Reaction:**\n$$2Zn + Mg + O_2 \\rightarrow ZnO + MgO$$\n\n\u003e **Note to Self:** The user\u0027s notes have a minor error in the initial reaction `2Zn + Mg + O_2 -\u003e ZnO + MgO`. The balanced reaction for the combustion of the mixture consists of two separate reactions:\n\u003e $$2Zn + O_2 \\rightarrow 2ZnO$$\n\u003e $$2Mg + O_2 \\rightarrow 2MgO$$\n\u003e However, for mass balance calculations, we can treat the total mass of reactants and products.\n\n**User\u0027s Solution \u0026 Analysis:**\n\n1.  **Determine the Mass of Reacted Oxygen:**\n    Based on the law of conservation of mass, the increase in mass is due to the oxygen that reacted.\n    $$m(O_2) \u003d m(ZnO + MgO) - m(Zn + Mg)$$\n    $$m(O_2) \u003d 1.409 \\text{ g} - 1.0 \\text{ g} \u003d 0.409 \\text{ g}$$\n\n2.  **Calculate the Moles of Reacted Oxygen:**\n    $$n(O_2) \u003d \\frac{m(O_2)}{M(O_2)} \u003d \\frac{0.409 \\text{ g}}{32.00 \\text{ g/mol}} \\approx 0.01278 \\text{ mol}$$\n\n3.  **Set Up a System of Equations:**\n    Let\u0027s define the variables. Let $n(Zn)$ be the moles of zinc and $n(Mg)$ be the moles of magnesium in the initial 1 g mixture.\n\n    *   **Equation 1 (Total Mass):** The sum of the masses of Zn and Mg is 1 g.\n        $$m(Zn) + m(Mg) \u003d 1 \\text{ g}$$\n        $$n(Zn) \\cdot M(Zn) + n(Mg) \\cdot M(Mg) \u003d 1 \\text{ g}$$\n\n    *   **Equation 2 (Stoichiometry with Oxygen):** From the balanced reactions, we know the mole ratios. Moles of oxygen atoms, $n(O)$, is twice the moles of oxygen molecules, $n(O_2)$.\n        $$n(O) \u003d 2 \\cdot n(O_2) \u003d 2 \\cdot 0.01278 \\text{ mol} \u003d 0.02556 \\text{ mol}$$\n        The moles of oxygen atoms must equal the sum of moles of ZnO and MgO formed, which in turn equals the sum of moles of Zn and Mg reacted.\n        $$n(Zn) + n(Mg) \u003d n(O) \u003d 0.02556 \\text{ mol}$$\n\n4.  **Solve the System of Equations:**\n    From Equation 2, we can express $n(Mg)$ in terms of $n(Zn)$:\n    $$n(Mg) \u003d 0.02556 - n(Zn)$$\n    Substitute this into Equation 1:\n    $$n(Zn) \\cdot M(Zn) + (0.02556 - n(Zn)) \\cdot M(Mg) \u003d 1$$\n    $$n(Zn) \\cdot M(Zn) + 0.02556 \\cdot M(Mg) - n(Zn) \\cdot M(Mg) \u003d 1$$\n    $$n(Zn) \\cdot (M(Zn) - M(Mg)) \u003d 1 - 0.02556 \\cdot M(Mg)$$\n    $$n(Zn) \u003d \\frac{1 - 0.02556 \\cdot M(Mg)}{M(Zn) - M(Mg)}$$\n    Using molar masses $M(Zn) \\approx 65.38 \\text{ g/mol}$ and $M(Mg) \\approx 24.305 \\text{ g/mol}$:\n    $$n(Zn) \u003d \\frac{1 - (0.02556 \\cdot 24.305)}{65.38 - 24.305} \u003d \\frac{1 - 0.6212}{41.075} \u003d \\frac{0.3788}{41.075} \\approx 0.00922 \\text{ mol}$$\n\n5.  **Calculate Masses and Percentages:**\n    $$m(Zn) \u003d n(Zn) \\cdot M(Zn) \u003d 0.00922 \\text{ mol} \\cdot 65.38 \\text{ g/mol} \\approx 0.603 \\text{ g}$$\n    $$m(Mg) \u003d 1 \\text{ g} - 0.603 \\text{ g} \u003d 0.397 \\text{ g}$$\n    The mass percentages are:\n    $$w(Zn) \u003d \\frac{0.603 \\text{ g}}{1 \\text{ g}} \\times 100\\% \u003d 60.3\\%$$\n    $$w(Mg) \u003d \\frac{0.397 \\text{ g}}{1 \\text{ g}} \\times 100\\% \u003d 39.7\\%$$\n\n### [[Law of Multiple Proportions]]\nIf two elements form more than one chemical compound, then the masses of one element that combines with a fixed mass of the other element are in a ratio of small whole numbers.\n\n**Example: Nitrogen Oxides**\nFor a fixed mass of nitrogen (100 g), the masses of oxygen that combine are:\n-   **N₂O:** 57 g of O\n-   **NO:** 114 g of O\n-   **N₂O₃:** 171 g of O\n-   **NO₂:** 228 g of O\n-   **N₂O₅:** 285 g of O\n\nIf we take the smallest mass of oxygen (57 g) as one unit, the ratios of oxygen masses in the other oxides are `57:114:171:228:285`, which simplifies to the whole-number ratio `1:2:3:4:5`.\n\n#### [[Law of Multiple Proportions Example]]\nThe multiple mass ratio of oxygen in two metal oxides is 4:7. The mass ratio of the metal (Me) to oxygen (O) in the first oxide is `1 : 0.901`. Calculate the mass fraction of the metal in the second oxide.\n\n**Analysis of the User\u0027s Solution:**\n\n1.  **Set Up the Ratios:**\n    -   Let Oxide 1 be $MeO_x$ and Oxide 2 be $MeO_y$.\n    -   The multiple mass ratio of oxygen is given for a fixed mass of metal. Let\u0027s express this as a ratio of masses.\n        $$\\frac{m_1(O)}{m_2(O)} \u003d \\frac{4}{7} \\quad (\\text{for a fixed } m(Me))$$\n    -   The mass ratio in the first oxide is given:\n        $$\\frac{m_1(Me)}{m_1(O)} \u003d \\frac{1}{0.901}$$\n\n2.  **Relate Mass Ratios to Mass Fractions:**\n    The goal is to find the mass fraction of the metal in the second oxide, $w_2(Me)$.\n    $$w_2(Me) \u003d \\frac{m_2(Me)}{m_2(Me) + m_2(O)}$$\n    We can rewrite this using the mass ratio $\\frac{m_2(Me)}{m_2(O)}$:\n    $$w_2(Me) \u003d \\frac{\\frac{m_2(Me)}{m_2(O)}}{\\frac{m_2(Me)}{m_2(O)} + 1}$$\n\n3.  **Find the Mass Ratio in the Second Oxide:**\n    We need to find $\\frac{m_2(Me)}{m_2(O)}$. We can use the information we have. Let\u0027s invert the ratio for Oxide 1 to match the form we need:\n    $$\\frac{m_1(O)}{m_1(Me)} \u003d \\frac{0.901}{1}$$\n    Now we use the law of multiple proportions. The ratio of `(mass of O) / (mass of Me)` between the two oxides is 4:7.\n    $$\\frac{\\frac{m_1(O)}{m_1(Me)}}{\\frac{m_2(O)}{m_2(Me)}} \u003d \\frac{4}{7}$$\n    Substitute the known ratio for Oxide 1:\n    $$\\frac{0.901}{\\frac{m_2(O)}{m_2(Me)}} \u003d \\frac{4}{7}$$\n    Solve for the ratio in Oxide 2:\n    $$\\frac{m_2(O)}{m_2(Me)} \u003d \\frac{0.901 \\cdot 7}{4} \u003d \\frac{6.307}{4} \u003d 1.57675$$\n    We need the inverse for our mass fraction formula:\n    $$\\frac{m_2(Me)}{m_2(O)} \u003d \\frac{1}{1.57675} \\approx 0.6342$$\n\n4.  **Calculate the Final Mass Fraction:**\n    $$w_2(Me) \u003d \\frac{0.6342}{0.6342 + 1} \u003d \\frac{0.6342}{1.6342} \\approx 0.3881$$\n    $$w_2(Me) \u003d 38.8\\%$$\n\n## [[Determining Molar Mass from Relative Density]]\n\nThe connection between the relative density of gases and their molar volume is based on **Avogadro\u0027s hypothesis**: equal volumes of gases at the same temperature and pressure contain an equal number of molecules. From this, it follows that the relative molecular masses of gases are in the same ratio as the masses of equal volumes of those gases.\n\n### [[Absolute and Relative Density of a Gas]]\n-   **Absolute Density ($\\rho$):** Mass per unit volume, typically in g/L.\n-   **Relative Density (D):** The ratio of the mass of a certain volume of a gas to the mass of an equal volume of a reference gas, under the same conditions. Hydrogen ($H_2$) is a common reference.\n    $$D_H \u003d \\frac{\\text{mass of some volume of gas}}{\\text{mass of an equal volume of hydrogen}} \u003d \\frac{\\rho(\\text{gas})}{\\rho(H_2)}$$\n    Since the number of molecules is equal (Avogadro\u0027s Law), this simplifies to:\n    $$D_H \u003d \\frac{\\text{mass of n molecules of gas}}{\\text{mass of n molecules of hydrogen}} \u003d \\frac{M_r(\\text{gas})}{M_r(H_2)} \u003d \\frac{M_r(\\text{gas})}{2}$$\n    Therefore, the relative molar mass of any gas (X) can be calculated if its relative density to hydrogen is known:\n    $$M_r(X) \u003d D_H(X) \\cdot 2$$\n\n### [[Relationship between Density and Molar Mass]]\n\n#### [[Derivation from Ideal Gas Law]]\nThe Ideal Gas Law provides a direct link between density, pressure, temperature, and molar mass.\n1.  Start with the Ideal Gas Law:\n    $$PV \u003d nRT$$\n2.  The number of moles ($n$) is mass ($m$) divided by molar mass ($M_r$):\n    $$n \u003d \\frac{m}{M_r}$$\n3.  Substitute this into the Ideal Gas Law:\n    $$PV \u003d \\frac{m}{M_r}RT$$\n4.  Rearrange the equation to group the mass and volume terms ($m/V$), which is the definition of density ($\\rho$):\n    $$P \\cdot M_r \u003d \\frac{m}{V} \\cdot RT$$\n    $$\\rho \u003d \\frac{P \\cdot M_r}{R \\cdot T}$$\n\n#### [[Gas Density Example 1]]\nCalculate the molar mass of a gas (`plin`) if its relative density with respect to nitrogen ($N_2$) is `D_N(plin) \u003d 1.57`.\n**Solution:**\n$$D_{N_2}(\\text{plin}) \u003d \\frac{M_r(\\text{plin})}{M_r(N_2)} \u003d 1.57$$\n$$M_r(\\text{plin}) \u003d D_{N_2}(\\text{plin}) \\cdot M_r(N_2)$$\n$$M_r(\\text{plin}) \u003d 1.57 \\cdot (2 \\cdot 14.007 \\text{ g/mol}) \\approx 1.57 \\cdot 28 \\text{ g/mol} \\approx 43.96 \\text{ g/mol}$$\n\n#### [[Gas Density Example 2]]\nCalculate the molar mass of a gas (`plin`) if its density is $\\rho(\\text{plin}) \u003d 1.98 \\text{ g/L}$ and the density of hydrogen is $\\rho(H_2) \u003d 0.09 \\text{ g/L}$ under the same conditions.\n\n**Solution:**\n1.  First, calculate the relative density with respect to hydrogen:\n    $$D_H(\\text{plin}) \u003d \\frac{\\rho(\\text{plin})}{\\rho(H_2)} \u003d \\frac{1.98 \\text{ g/L}}{0.09 \\text{ g/L}} \u003d 22$$\n2.  Then, use the relative density to find the molar mass:\n    $$M_r(\\text{plin}) \u003d D_H(\\text{plin}) \\cdot M_r(H_2) \u003d 22 \\cdot 2 \\text{ g/mol} \u003d 44 \\text{ g/mol}$$\n\n#### [[Gas Density Example 3]]\nThe relative density of a gas (`plin`) with respect to air (`zrak`) is $D_z(\\text{plin}) \u003d 0.587$. Calculate the molar mass of the gas.\n**Note to Self:** Air is a mixture, but its average molar mass is approximately $M_r(\\text{zrak}) \\approx 29 \\text{ g/mol}$. This is a standard value used in such calculations.\n**Solution:**\n$$M_r(\\text{plin}) \u003d D_z(\\text{plin}) \\cdot M_r(\\text{zrak})$$\n$$M_r(\\text{plin}) \u003d 0.587 \\cdot 29 \\text{ g/mol} \\approx 17.023 \\text{ g/mol}$$\nThis molar mass corresponds to ammonia, $NH_3$.\n\n---\n\n### [[Conceptual Strengthening Tasks]]\n1.  **Law of Multiple Proportions:** Phosphorus (P) and Chlorine (Cl) form two common compounds. In Compound A, 0.500 g of P reacts with 1.72 g of Cl. In Compound B, 0.750 g of P reacts with 3.87 g of Cl. Show that these data are consistent with the Law of Multiple Proportions.\n2.  **Gas Density \u0026 Molar Mass:** A 2.10 L vessel contains 4.65 g of a gas at 1.00 atm and 27.0 °C.\n    *   a) Calculate the molar mass of the gas.\n    *   b) Calculate the density of the gas in g/L.\n    *   c) **Challenge:** What would be the relative density of this gas with respect to air ($M_r \\approx 29 \\text{ g/mol}$)? Could this gas be Carbon Dioxide ($CO_2$)? Justify your answer.",
+      "role": "model",
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "# [[03 Basic Chemical Laws]]\n\n## [[Law of Constant and Multiple Mass Proportions]]\n\n### [[Law of Constant"
+      }, {
+        "text": " Composition]]\nThis law, also known as the Law of Definite Proportions, was discovered by French chemist Joseph Prou"
+      }, {
+        "text": "st in 1799. It states that the mass ratio of two elements that combine to form a chemical compound"
+      }, {
+        "text": " is always constant, regardless of the source or method of preparation.\n\n**Example:**\n-   Water ($H_"
+      }, {
+        "text": "2O$) will always consist of 11.19% hydrogen and 88.81% oxygen by mass"
+      }, {
+        "text": ". If we react 11.19 g of hydrogen with 100 g of oxygen, we will"
+      }, {
+        "text": " still produce 100 g of water, and there will be an unreacted excess of 11.1"
+      }, {
+        "text": "9 g of oxygen.\n\n#### [[Stoichiometry of Mixtures Example]]\nA mixture containing 1 g of zinc ("
+      }, {
+        "text": "Zn) and magnesium (Mg) is combusted, yielding 1.409 g of a mixture of zinc oxide"
+      }, {
+        "text": " (ZnO) and magnesium oxide (MgO). Calculate the mass percentages of Zn and Mg in the initial mixture.\n\n**"
+      }, {
+        "text": "Chemical Reaction:**\n$$2Zn + Mg + O_2 \\rightarrow ZnO + MgO$$\n\n\u003e **Note to Self"
+      }, {
+        "text": ":** The user\u0027s notes have a minor error in the initial reaction `2Zn + Mg + O_2 -\u003e ZnO"
+      }, {
+        "text": " + MgO`. The balanced reaction for the combustion of the mixture consists of two separate reactions:\n\u003e $$2Zn + O"
+      }, {
+        "text": "_2 \\rightarrow 2ZnO$$\n\u003e $$2Mg + O_2 \\rightarrow 2MgO$$\n"
+      }, {
+        "text": "\u003e However, for mass balance calculations, we can treat the total mass of reactants and products.\n\n**User\u0027s Solution"
+      }, {
+        "text": " \u0026 Analysis:**\n\n1.  **Determine the Mass of Reacted Oxygen:**\n    Based on the law of conservation of mass"
+      }, {
+        "text": ", the increase in mass is due to the oxygen that reacted.\n    $$m(O_2) \u003d m(ZnO"
+      }, {
+        "text": " + MgO) - m(Zn + Mg)$$\n    $$m(O_2) \u003d 1.4"
+      }, {
+        "text": "09 \\text{ g} - 1.0 \\text{ g} \u003d 0.409"
+      }, {
+        "text": " \\text{ g}$$\n\n2.  **Calculate the Moles of Reacted Oxygen:**\n    $$n("
+      }, {
+        "text": "O_2) \u003d \\frac{m(O_2)}{M(O_2)} \u003d \\frac{"
+      }, {
+        "text": "0.409 \\text{ g}}{32.00 \\text{ g/mol}} \\approx 0."
+      }, {
+        "text": "01278 \\text{ mol}$$\n\n3.  **Set Up a System of Equations:**\n    Let\u0027"
+      }, {
+        "text": "s define the variables. Let $n(Zn)$ be the moles of zinc and $n(Mg)$ be the moles of"
+      }, {
+        "text": " magnesium in the initial 1 g mixture.\n\n    *   **Equation 1 (Total Mass):** The sum"
+      }, {
+        "text": " of the masses of Zn and Mg is 1 g.\n        $$m(Zn) + m(Mg)"
+      }, {
+        "text": " \u003d 1 \\text{ g}$$\n        $$n(Zn) \\cdot M(Zn) + n("
+      }, {
+        "text": "Mg) \\cdot M(Mg) \u003d 1 \\text{ g}$$\n\n    *   **Equation 2 ("
+      }, {
+        "text": "Stoichiometry with Oxygen):** From the balanced reactions, we know the mole ratios. Moles of oxygen atoms,"
+      }, {
+        "text": " $n(O)$, is twice the moles of oxygen molecules, $n(O_2)$.\n        $$n"
+      }, {
+        "text": "(O) \u003d 2 \\cdot n(O_2) \u003d 2 \\cdot 0.01"
+      }, {
+        "text": "278 \\text{ mol} \u003d 0.02556 \\text{ mol}$$\n        "
+      }, {
+        "text": "The moles of oxygen atoms must equal the sum of moles of ZnO and MgO formed, which in turn equals the sum of moles of Zn"
+      }, {
+        "text": " and Mg reacted.\n        $$n(Zn) + n(Mg) \u003d n(O) \u003d 0."
+      }, {
+        "text": "02556 \\text{ mol}$$\n\n4.  **Solve the System of Equations:**\n    From"
+      }, {
+        "text": " Equation 2, we can express $n(Mg)$ in terms of $n(Zn)$:\n    $$n(Mg)"
+      }, {
+        "text": " \u003d 0.02556 - n(Zn)$$\n    Substitute this into Equation 1:\n    "
+      }, {
+        "text": "$$n(Zn) \\cdot M(Zn) + (0.02556 - n(Zn"
+      }, {
+        "text": ")) \\cdot M(Mg) \u003d 1$$\n    $$n(Zn) \\cdot M(Zn) +"
+      }, {
+        "text": " 0.02556 \\cdot M(Mg) - n(Zn) \\cdot M(Mg"
+      }, {
+        "text": ") \u003d 1$$\n    $$n(Zn) \\cdot (M(Zn) - M(Mg))"
+      }, {
+        "text": " \u003d 1 - 0.02556 \\cdot M(Mg)$$\n    $$n(Zn"
+      }, {
+        "text": ") \u003d \\frac{1 - 0.02556 \\cdot M(Mg)}{M(Zn"
+      }, {
+        "text": ") - M(Mg)}$$\n    Using molar masses $M(Zn) \\approx 65.3"
+      }, {
+        "text": "8 \\text{ g/mol}$ and $M(Mg) \\approx 24.305 \\text{"
+      }, {
+        "text": " g/mol}$:\n    $$n(Zn) \u003d \\frac{1 - (0.02556 \\"
+      }, {
+        "text": "cdot 24.305)}{65.38 - 24.305} \u003d"
+      }, {
+        "text": " \\frac{1 - 0.6212}{41.075} \u003d \\frac{0"
+      }, {
+        "text": ".3788}{41.075} \\approx 0.00922 \\text{"
+      }, {
+        "text": " mol}$$\n\n5.  **Calculate Masses and Percentages:**\n    $$m(Zn) \u003d n(Zn) \\cdot"
+      }, {
+        "text": " M(Zn) \u003d 0.00922 \\text{ mol} \\cdot 65."
+      }, {
+        "text": "38 \\text{ g/mol} \\approx 0.603 \\text{ g}$$\n    "
+      }, {
+        "text": "$$m(Mg) \u003d 1 \\text{ g} - 0.603 \\text{ g} \u003d "
+      }, {
+        "text": "0.397 \\text{ g}$$\n    The mass percentages are:\n    $$w(Zn) \u003d \\frac"
+      }, {
+        "text": "{0.603 \\text{ g}}{1 \\text{ g}} \\times 100\\% \u003d 6"
+      }, {
+        "text": "0.3\\%$$\n    $$w(Mg) \u003d \\frac{0.397 \\text{"
+      }, {
+        "text": " g}}{1 \\text{ g}} \\times 100\\% \u003d 39.7\\%$$\n\n"
+      }, {
+        "text": "### [[Law of Multiple Proportions]]\nIf two elements form more than one chemical compound, then the masses of one"
+      }, {
+        "text": " element that combines with a fixed mass of the other element are in a ratio of small whole numbers.\n\n**Example:"
+      }, {
+        "text": " Nitrogen Oxides**\nFor a fixed mass of nitrogen (100 g), the masses of oxygen that combine are:\n"
+      }, {
+        "text": "-   **N₂O:** 57 g of O\n-   **NO:** 114 g of"
+      }, {
+        "text": " O\n-   **N₂O₃:** 171 g of O\n-   **NO₂:**"
+      }, {
+        "text": " 228 g of O\n-   **N₂O₅:** 285 g of O\n\n"
+      }, {
+        "text": "If we take the smallest mass of oxygen (57 g) as one unit, the ratios of oxygen masses in the other oxides"
+      }, {
+        "text": " are `57:114:171:228:285`, which simplifies to the"
+      }, {
+        "text": " whole-number ratio `1:2:3:4:5`.\n\n#### [[Law of Multiple Proportions Example]]\nThe"
+      }, {
+        "text": " multiple mass ratio of oxygen in two metal oxides is 4:7. The mass ratio of the metal (Me) to oxygen"
+      }, {
+        "text": " (O) in the first oxide is `1 : 0.901`. Calculate the mass fraction of the metal in"
+      }, {
+        "text": " the second oxide.\n\n**Analysis of the User\u0027s Solution:**\n\n1.  **Set Up the Ratios:**"
+      }, {
+        "text": "\n    -   Let Oxide 1 be $MeO_x$ and Oxide 2 be $MeO_y$."
+      }, {
+        "text": "\n    -   The multiple mass ratio of oxygen is given for a fixed mass of metal. Let\u0027s express this as a"
+      }, {
+        "text": " ratio of masses.\n        $$\\frac{m_1(O)}{m_2(O)} \u003d \\frac{4"
+      }, {
+        "text": "}{7} \\quad (\\text{for a fixed } m(Me))$$\n    -   The mass ratio in"
+      }, {
+        "text": " the first oxide is given:\n        $$\\frac{m_1(Me)}{m_1(O)} \u003d"
+      }, {
+        "text": " \\frac{1}{0.901}$$\n\n2.  **Relate Mass Ratios to Mass Fractions:**\n    "
+      }, {
+        "text": "The goal is to find the mass fraction of the metal in the second oxide, $w_2(Me)$.\n"
+      }, {
+        "text": "    $$w_2(Me) \u003d \\frac{m_2(Me)}{m_2(Me)"
+      }, {
+        "text": " + m_2(O)}$$\n    We can rewrite this using the mass ratio $\\frac{m_2(Me)}{"
+      }, {
+        "text": "m_2(O)}$:\n    $$w_2(Me) \u003d \\frac{\\frac{m_"
+      }, {
+        "text": "2(Me)}{m_2(O)}}{\\frac{m_2(Me)}{m_2(O)}"
+      }, {
+        "text": " + 1}$$\n\n3.  **Find the Mass Ratio in the Second Oxide:**\n    We need to find $\\"
+      }, {
+        "text": "frac{m_2(Me)}{m_2(O)}$. We can use the information we have. Let\u0027s invert the"
+      }, {
+        "text": " ratio for Oxide 1 to match the form we need:\n    $$\\frac{m_1(O)}{m_1"
+      }, {
+        "text": "(Me)} \u003d \\frac{0.901}{1}$$\n    Now we use the law of multiple proportions."
+      }, {
+        "text": " The ratio of `(mass of O) / (mass of Me)` between the two oxides is 4:7"
+      }, {
+        "text": ".\n    $$\\frac{\\frac{m_1(O)}{m_1(Me)}}{\\frac{m_"
+      }, {
+        "text": "2(O)}{m_2(Me)}} \u003d \\frac{4}{7}$$\n    Substitute the known ratio"
+      }, {
+        "text": " for Oxide 1:\n    $$\\frac{0.901}{\\frac{m_2(O)}{"
+      }, {
+        "text": "m_2(Me)}} \u003d \\frac{4}{7}$$\n    Solve for the ratio in Oxide 2:"
+      }, {
+        "text": "\n    $$\\frac{m_2(O)}{m_2(Me)} \u003d \\frac{0.9"
+      }, {
+        "text": "01 \\cdot 7}{4} \u003d \\frac{6.307}{4} \u003d 1."
+      }, {
+        "text": "57675$$\n    We need the inverse for our mass fraction formula:\n    $$\\frac{m_"
+      }, {
+        "text": "2(Me)}{m_2(O)} \u003d \\frac{1}{1.57675}"
+      }, {
+        "text": " \\approx 0.6342$$\n\n4.  **Calculate the Final Mass Fraction:**\n    $$w_"
+      }, {
+        "text": "2(Me) \u003d \\frac{0.6342}{0.6342 + 1"
+      }, {
+        "text": "} \u003d \\frac{0.6342}{1.6342} \\approx 0.38"
+      }, {
+        "text": "81$$\n    $$w_2(Me) \u003d 38.8\\%$$\n\n## [[Determ"
+      }, {
+        "text": "ining Molar Mass from Relative Density]]\n\nThe connection between the relative density of gases and their molar volume is based on"
+      }, {
+        "text": " **Avogadro\u0027s hypothesis**: equal volumes of gases at the same temperature and pressure contain an equal number of molecules"
+      }, {
+        "text": ". From this, it follows that the relative molecular masses of gases are in the same ratio as the masses of equal volumes of those gases"
+      }, {
+        "text": ".\n\n### [[Absolute and Relative Density of a Gas]]\n-   **Absolute Density ($\\rho$):** Mass"
+      }, {
+        "text": " per unit volume, typically in g/L.\n-   **Relative Density (D):** The ratio of the mass"
+      }, {
+        "text": " of a certain volume of a gas to the mass of an equal volume of a reference gas, under the same conditions."
+      }, {
+        "text": " Hydrogen ($H_2$) is a common reference.\n    $$D_H \u003d \\frac{\\text{mass"
+      }, {
+        "text": " of some volume of gas}}{\\text{mass of an equal volume of hydrogen}} \u003d \\frac{\\rho(\\text{gas})}{\\"
+      }, {
+        "text": "rho(H_2)}$$\n    Since the number of molecules is equal (Avogadro\u0027s Law), this"
+      }, {
+        "text": " simplifies to:\n    $$D_H \u003d \\frac{\\text{mass of n molecules of gas}}{\\text{"
+      }, {
+        "text": "mass of n molecules of hydrogen}} \u003d \\frac{M_r(\\text{gas})}{M_r(H_"
+      }, {
+        "text": "2)} \u003d \\frac{M_r(\\text{gas})}{2}$$\n    Therefore, the relative molar mass of any"
+      }, {
+        "text": " gas (X) can be calculated if its relative density to hydrogen is known:\n    $$M_r(X"
+      }, {
+        "text": ") \u003d D_H(X) \\cdot 2$$\n\n### [[Relationship between Density and Molar Mass]]\n\n"
+      }, {
+        "text": "#### [[Derivation from Ideal Gas Law]]\nThe Ideal Gas Law provides a direct link between density, pressure, temperature, and"
+      }, {
+        "text": " molar mass.\n1.  Start with the Ideal Gas Law:\n    $$PV \u003d nRT$$\n2.  The"
+      }, {
+        "text": " number of moles ($n$) is mass ($m$) divided by molar mass ($M_r$):\n    $$n \u003d \\"
+      }, {
+        "text": "frac{m}{M_r}$$\n3.  Substitute this into the Ideal Gas Law:\n    $$PV \u003d"
+      }, {
+        "text": " \\frac{m}{M_r}RT$$\n4.  Rearrange the equation to group the mass and"
+      }, {
+        "text": " volume terms ($m/V$), which is the definition of density ($\\rho$):\n    $$P \\cdot M_r"
+      }, {
+        "text": " \u003d \\frac{m}{V} \\cdot RT$$\n    $$\\rho \u003d \\frac{P \\cdot M"
+      }, {
+        "text": "_r}{R \\cdot T}$$\n\n#### [[Gas Density Example 1]]\nCalculate the molar mass of a gas"
+      }, {
+        "text": " (`plin`) if its relative density with respect to nitrogen ($N_2$) is `D_N(plin)"
+      }, {
+        "text": " \u003d 1.57`.\n**Solution:**\n$$D_{N_2}(\\text{plin}) \u003d \\frac{"
+      }, {
+        "text": "M_r(\\text{plin})}{M_r(N_2)} \u003d 1.57$$\n$$M"
+      }, {
+        "text": "_r(\\text{plin}) \u003d D_{N_2}(\\text{plin}) \\cdot M_r("
+      }, {
+        "text": "N_2)$$\n$$M_r(\\text{plin}) \u003d 1.57 \\cdot (2 \\"
+      }, {
+        "text": "cdot 14.007 \\text{ g/mol}) \\approx 1.57 \\cdot"
+      }, {
+        "text": " 28 \\text{ g/mol} \\approx 43.96 \\text{ g/mol"
+      }, {
+        "text": "}$$\n\n#### [[Gas Density Example 2]]\nCalculate the molar mass of a gas (`plin`) if its density"
+      }, {
+        "text": " is $\\rho(\\text{plin}) \u003d 1.98 \\text{ g/L}$ and the density"
+      }, {
+        "text": " of hydrogen is $\\rho(H_2) \u003d 0.09 \\text{ g/L}$ under the same conditions"
+      }, {
+        "text": ".\n\n**Solution:**\n1.  First, calculate the relative density with respect to hydrogen:\n    $$D_H"
+      }, {
+        "text": "(\\text{plin}) \u003d \\frac{\\rho(\\text{plin})}{\\rho(H_2)} \u003d \\frac"
+      }, {
+        "text": "{1.98 \\text{ g/L}}{0.09 \\text{ g/L}} \u003d"
+      }, {
+        "text": " 22$$\n2.  Then, use the relative density to find the molar mass:\n    $$M_"
+      }, {
+        "text": "r(\\text{plin}) \u003d D_H(\\text{plin}) \\cdot M_r(H_2"
+      }, {
+        "text": ") \u003d 22 \\cdot 2 \\text{ g/mol} \u003d 44 \\text{ g/mol"
+      }, {
+        "text": "}$$\n\n#### [[Gas Density Example 3]]\nThe relative density of a gas (`plin`) with respect to air"
+      }, {
+        "text": " (`zrak`) is $D_z(\\text{plin}) \u003d 0.587$. Calculate the"
+      }, {
+        "text": " molar mass of the gas.\n**Note to Self:** Air is a mixture, but its average molar mass is approximately $"
+      }, {
+        "text": "M_r(\\text{zrak}) \\approx 29 \\text{ g/mol}$. This is a standard"
+      }, {
+        "text": " value used in such calculations.\n**Solution:**\n$$M_r(\\text{plin}) \u003d D_z"
+      }, {
+        "text": "(\\text{plin}) \\cdot M_r(\\text{zrak})$$\n$$M_r(\\text"
+      }, {
+        "text": "{plin}) \u003d 0.587 \\cdot 29 \\text{ g/mol} \\approx"
+      }, {
+        "text": " 17.023 \\text{ g/mol}$$\nThis molar mass corresponds to ammonia, $NH_3"
+      }, {
+        "text": "$.\n\n---\n\n### [[Conceptual Strengthening Tasks]]\n1.  **Law of Multiple Proportions:** Phosphorus (P) and Chlorine"
+      }, {
+        "text": " (Cl) form two common compounds. In Compound A, 0.500 g of P reacts with 1"
+      }, {
+        "text": ".72 g of Cl. In Compound B, 0.750 g of P reacts with 3"
+      }, {
+        "text": ".87 g of Cl. Show that these data are consistent with the Law of Multiple Proportions.\n2.  **"
+      }, {
+        "text": "Gas Density \u0026 Molar Mass:** A 2.10 L vessel contains 4.65 g of a"
+      }, {
+        "text": " gas at 1.00 atm and 27.0 °C.\n    *   a) Calculate the molar"
+      }, {
+        "text": " mass of the gas.\n    *   b) Calculate the density of the gas in g/L.\n    *   "
+      }, {
+        "text": "c) **Challenge:** What would be the relative density of this gas with respect to air ($M_r \\approx"
+      }, {
+        "text": " 29 \\text{ g/mol}$)? Could this gas be Carbon Dioxide ($CO_2$)? Just"
+      }, {
+        "text": "ify your answer."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

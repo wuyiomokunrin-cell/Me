@@ -1,0 +1,367 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1GAMsnGbOk6GsJZ5FYzwFHpGg5uTxSHjV"
+      },
+      "role": "user",
+      "tokenCount": 70986
+    }, {
+      "driveAudio": {
+        "id": "1JOGw-f-Editq7xtl3o_gR8Jlr0W08UFZ"
+      },
+      "role": "user",
+      "tokenCount": 155547
+    }, {
+      "driveImage": {
+        "id": "1pVKn9T_dr0NpC0gAANYp7h2iCQXrzeo2"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "18Mk9j0VsYH1lktqB-hvNhKsMB-iBTPru"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "**Refining The Objective**\n\nI\u0027m currently breaking down the user\u0027s request. My focus is on understanding the core need: an academic assistant within Obsidian. I\u0027ve identified the input as a lecture transcript and handwritten notes. The challenge now lies in how to integrate these disparate sources effectively to create a structured note. I am aiming to establish clear input formats to enable efficient processing.\n\n\n**Clarifying the Workflow**\n\nNow, I\u0027m working to delineate the specific steps for note creation. The process begins with parsing and cleaning the lecture transcript. Next, the handwritten notes are converted to text using OCR, if needed. Then, I plan to integrate these inputs by aligning them chronologically and thematically. Emphasis will be placed on identifying key concepts, theories, and problems for structured organization within the Obsidian note.\n\n\n**Detailing The Structure**\n\nThe user\u0027s requirements are clearly outlined, and now I\u0027m dissecting the input files. I\u0027ve begun extracting key information from the lecture transcript, focusing on concepts like orbital overlap and bond types. I am formulating the structure of the output note, ensuring dedicated sections for critical analysis and error identification, in alignment with the specified academic tutoring rules. The tone and formatting specifications are also being carefully considered.\n\n\n**Defining the Structure**\n\nNow I\u0027m focusing on defining the structure of the output note. I\u0027m breaking down the transcript content, highlighting key concepts like orbital overlap and hybridization. I\u0027m thinking through how to incorporate the user\u0027s specific formatting requirements, including LaTeX for formulas and SMILES for chemical structures. I will separate theory, problems and methods, and also include `[[Wikilinks]]` for headers and subheaders. I\u0027ll need to remember to create sections for critical analysis and error identification.\n\n\n**Outlining the Approach**\n\nI\u0027m now refining the note structure and content based on the input data. The lecture transcript\u0027s core concepts have been extracted, including σ and π bonds, resonance, formal charge, and hybridization (sp³, sp², sp). I\u0027m also preparing to incorporate the handwritten notes. I aim to create dedicated sections for theory, problems, solutions, and critical analysis, following the specified academic tutoring rules and incorporating LaTeX for formulas and SMILES for chemical structures where necessary.\n\n\n**Mapping Input to Structure**\n\nI\u0027m now integrating the user\u0027s instructions with the transcript and notes, aiming for a logical note structure. I\u0027ve begun sectioning the note, focusing on key topics like covalent bonds and hybridization, and will incorporate critical analysis, error correction, and formulas as requested.\n\n\n**Formulating Output Sections**\n\nI\u0027m now starting to organize the output note\u0027s structure based on the lecture\u0027s flow and the user\u0027s instructions. I plan to create dedicated sections for covalent bonds, sigma/pi bonds, examples, multiple bonds, resonance, and hybridization, ensuring all key concepts are captured and linked for easy navigation within Obsidian. The user\u0027s formatting requirements are being incorporated.\n\n\n**Formulating Output Structure**\n\nI\u0027m solidifying the output\u0027s structure. I\u0027ll include the main sections: covalent bonding, sigma/pi bonds, hybridization (sp3, sp2, sp), and resonance. Subsections will dissect each concept, incorporating user formatting rules like LaTeX and SMILES. Critical analysis sections will be integrated throughout, focusing on clarification and error identification as per the academic tutoring guidelines.\n\n\n**Developing Output Sections**\n\nI\u0027m now building the note structure.  The key sections will be:  covalent bonds, sigma/pi bonds with overlap diagrams, multiple bonds, resonance with formal charge calculation, and the different hybridization types. I\u0027ll include the user\u0027s formatting instructions and insert critical analysis elements as I proceed through the transcript.\n\nI\u0027ve got the core structure ready now.  I\u0027m now populating the note, section by section. The formatting is going well, and I\u0027m ensuring everything aligns with the user\u0027s specific instructions for LaTeX and Wikilinks. I\u0027ll keep an eye out for potential ambiguities and correct errors as I go.\n\n\n**Finalizing Note Population**\n\nI\u0027m wrapping up the note population, carefully integrating all the lecture content with the user\u0027s handwritten notes, and making sure to include `Critical Analysis`, `Note to Self` and `Warning` sections. I am structuring the note to make it easier to link to related material.\n\n\n**Synthesizing the Outline**\n\nI\u0027ve been meticulously crafting the sections and content for the Obsidian note, starting with \"Covalent Bond\" and drilling down to \"Hybridization.\"  I\u0027ve incorporated lecture examples like H₂, HF, and N₂O, and structured dedicated sections for critical analysis and errors to adhere to the tutoring rules. I\u0027m focusing on LaTeX for equations and SMILES where applicable.\n\n\nI\u0027ve started building the note structure, sectioning the content and incorporating user-provided formatting guidelines. I\u0027m focusing on covalent bonds, sigma/pi bonding, hybridization (sp3, sp2, sp), and resonance. Critical analysis and error corrections, as requested, are being incorporated.\n\n\n",
+      "role": "model",
+      "tokenCount": 2811,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Refining The Objective**\n\nI\u0027m currently breaking down the user\u0027s request. My focus is on understanding the core need: an academic assistant within Obsidian. I\u0027ve identified the input as a lecture transcript and handwritten notes. The challenge now lies in how to integrate these disparate sources effectively to create a structured note. I am aiming to establish clear input formats to enable efficient processing.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Clarifying the Workflow**\n\nNow, I\u0027m working to delineate the specific steps for note creation. The process begins with parsing and cleaning the lecture transcript. Next, the handwritten notes are converted to text using OCR, if needed. Then, I plan to integrate these inputs by aligning them chronologically and thematically. Emphasis will be placed on identifying key concepts, theories, and problems for structured organization within the Obsidian note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Detailing The Structure**\n\nThe user\u0027s requirements are clearly outlined, and now I\u0027m dissecting the input files. I\u0027ve begun extracting key information from the lecture transcript, focusing on concepts like orbital overlap and bond types. I am formulating the structure of the output note, ensuring dedicated sections for critical analysis and error identification, in alignment with the specified academic tutoring rules. The tone and formatting specifications are also being carefully considered.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Structure**\n\nNow I\u0027m focusing on defining the structure of the output note. I\u0027m breaking down the transcript content, highlighting key concepts like orbital overlap and hybridization. I\u0027m thinking through how to incorporate the user\u0027s specific formatting requirements, including LaTeX for formulas and SMILES for chemical structures. I will separate theory, problems and methods, and also include `[[Wikilinks]]` for headers and subheaders. I\u0027ll need to remember to create sections for critical analysis and error identification.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining the Approach**\n\nI\u0027m now refining the note structure and content based on the input data. The lecture transcript\u0027s core concepts have been extracted, including σ and π bonds, resonance, formal charge, and hybridization (sp³, sp², sp). I\u0027m also preparing to incorporate the handwritten notes. I aim to create dedicated sections for theory, problems, solutions, and critical analysis, following the specified academic tutoring rules and incorporating LaTeX for formulas and SMILES for chemical structures where necessary.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping Input to Structure**\n\nI\u0027m now integrating the user\u0027s instructions with the transcript and notes, aiming for a logical note structure. I\u0027ve begun sectioning the note, focusing on key topics like covalent bonds and hybridization, and will incorporate critical analysis, error correction, and formulas as requested.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating Output Sections**\n\nI\u0027m now starting to organize the output note\u0027s structure based on the lecture\u0027s flow and the user\u0027s instructions. I plan to create dedicated sections for covalent bonds, sigma/pi bonds, examples, multiple bonds, resonance, and hybridization, ensuring all key concepts are captured and linked for easy navigation within Obsidian. The user\u0027s formatting requirements are being incorporated.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating Output Structure**\n\nI\u0027m solidifying the output\u0027s structure. I\u0027ll include the main sections: covalent bonding, sigma/pi bonds, hybridization (sp3, sp2, sp), and resonance. Subsections will dissect each concept, incorporating user formatting rules like LaTeX and SMILES. Critical analysis sections will be integrated throughout, focusing on clarification and error identification as per the academic tutoring guidelines.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Output Sections**\n\nI\u0027m now building the note structure.  The key sections will be:  covalent bonds, sigma/pi bonds with overlap diagrams, multiple bonds, resonance with formal charge calculation, and the different hybridization types. I\u0027ll include the user\u0027s formatting instructions and insert critical analysis elements as I proceed through the transcript.\n\nI\u0027ve got the core structure ready now.  I\u0027m now populating the note, section by section. The formatting is going well, and I\u0027m ensuring everything aligns with the user\u0027s specific instructions for LaTeX and Wikilinks. I\u0027ll keep an eye out for potential ambiguities and correct errors as I go.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing Note Population**\n\nI\u0027m wrapping up the note population, carefully integrating all the lecture content with the user\u0027s handwritten notes, and making sure to include `Critical Analysis`, `Note to Self` and `Warning` sections. I am structuring the note to make it easier to link to related material.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing the Outline**\n\nI\u0027ve been meticulously crafting the sections and content for the Obsidian note, starting with \"Covalent Bond\" and drilling down to \"Hybridization.\"  I\u0027ve incorporated lecture examples like H₂, HF, and N₂O, and structured dedicated sections for critical analysis and errors to adhere to the tutoring rules. I\u0027m focusing on LaTeX for equations and SMILES where applicable.\n\n\n",
+        "thought": true
+      }, {
+        "text": "I\u0027ve started building the note structure, sectioning the content and incorporating user-provided formatting guidelines. I\u0027m focusing on covalent bonds, sigma/pi bonding, hybridization (sp3, sp2, sp), and resonance. Critical analysis and error corrections, as requested, are being incorporated.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Kemijska vez]]\n\n## [[Teorija]]\n\n### [[Kovalentna vez]]\n[[Kovalentna vez]] nastane z delnim prekrivanjem atomskih orbital sosednjih atomov. Pri tem pride do prerazporeditve elektronov, kar vodi v znižanje potencialne energije sistema in doseganje stabilnejšega stanja. Vez je prostorsko usmerjena v smer največjega prekrivanja.\n\n### [[Prekrivanje orbital: Sigma in Pi vezi]]\nPrekrivanje orbital je temelj kovalentne vezi. Ločimo dva glavna tipa prekrivanja, ki določata vrsto vezi: čelno in bočno.\n\n#### [[Sigma (σ) vez]]\n[[Sigma (σ) vez]] je najmočnejša vrsta kovalentne vezi in nastane s **čelnim prekrivanjem** atomskih orbital. Gostota elektronskega oblaka je največja na zveznici med jedroma obeh atomov.\nMožni tipi čelnega prekrivanja:\n- **s-s prekrivanje**: Dve s orbitali (npr. v molekuli $H_2$).\n- **s-p prekrivanje**: Ena s orbitala in ena p orbitala (npr. v molekuli $HF$).\n- **p-p prekrivanje**: Dve p orbitali, ki ležita na isti osi (npr. $p_x-p_x$ v molekuli $N_2$).\n\n#### [[Pi (π) vez]]\n[[Pi (π) vez]] nastane z **bočnim prekrivanjem** dveh vzporednih p orbital. Pri tej vezi nastaneta dve območji elektronske gostote, eno nad in eno pod zveznico med jedroma. Pi vezi so šibkejše od sigma vezi in se vedno pojavijo skupaj s sigma vezjo pri dvojnih ali trojnih vezeh.\n\n### [[Primeri molekul z enostavnim prekrivanjem]]\n- **Vodikova molekula ($H_2$)**: Nastane s čelnim prekrivanjem dveh $1s$ orbital.\n- **Vodikova molekula ($HF$)**: Nastane s čelnim prekrivanjem $1s$ orbitale vodika in ene od $2p$ orbital flora.\n- **Fosfin ($PH_3$)**: Fosfor ima valenčne elektrone v $3p$ orbitalah. Tri $1s$ orbitale vodikov se čelno prekrijejo s tremi $3p$ orbitalami fosforja ($3p_x, 3p_y, 3p_z$).\n- **Dušikova molekula ($N_2$)**: Vsebuje trojno vez.\n    - Ena **sigma (σ) vez** nastane s čelnim prekrivanjem dveh $2p_x$ orbital.\n    - Dve **pi (π) vezi** nastaneta z bočnim prekrivanjem $2p_y$ orbital in $2p_z$ orbital.\n- **Vodikova molekula ($H_2S$)**: Podobno kot pri vodi, dve $1s$ orbitali vodika se prekrijeta z dvema $p$ orbitalama žvepla, pri čemer nastaneta dve sigma vezi.\n\n### [[Resonanca in formalni naboj]]\n[[Resonanca]] je koncept, ki ga uporabimo, kadar ene same Lewisove strukture ne moremo uporabiti za ustrezno predstavitev vezi v molekuli. Dejanska struktura je **resonancni hibrid** več možnih struktur, imenovanih **kanonske (ali resonančne) strukture**.\n\n- **Primer: Dušikov(I) oksid ($N_2O$)**\n    - **Struktura 1**: Trojna vez med dušikoma, enojna med dušikom in kisikom.\n    - **Struktura 2**: Dve dvojni vezi.\n\n#### [[Formalni naboj]]\n[[Formalni naboj]] je hipotetični naboj, ki bi ga imel atom v molekuli, če bi si vse vezne elektrone enakomerno delil z veznimi partnerji.\n$$ \\text{Formalni naboj} \u003d (\\text{št. valenčnih } e^-) - (\\text{št. neveznih } e^-) - \\frac{1}{2}(\\text{št. veznih } e^-) $$\n\n- **Izračun za $N_2O$**:\n    - **Struktura 1 ($N \\equiv N - O$)**:\n        - Levi N: $5 - 2 - \\frac{1}{2}(6) \u003d 0$\n        - Srednji N: $5 - 0 - \\frac{1}{2}(8) \u003d +1$\n        - O: $6 - 6 - \\frac{1}{2}(2) \u003d -1$\n    - **Struktura 2 ($N \u003d N \u003d O$)**:\n        - Levi N: $5 - 4 - \\frac{1}{2}(4) \u003d -1$\n        - Srednji N: $5 - 0 - \\frac{1}{2}(8) \u003d +1$\n        - O: $6 - 4 - \\frac{1}{2}(4) \u003d 0$\n\n#### [[Red vezi]]\n[[Red vezi]] je povprečno število vezi med dvema atomoma v vseh resonančnih strukturah.\n$$ \\text{Povprečni red vezi} \u003d \\frac{\\text{Skupno število vezi med atomi v vseh strukturah}}{\\text{Število resonančnih struktur}} $$\n- **Primer: $N_2O$**\n    - Red vezi med $N-N$: $\\frac{3+2}{2} \u003d 2.5$\n    - Red vezi med $N-O$: $\\frac{1+2}{2} \u003d 1.5$\n\n### [[Hibridizacija]]\n[[Hibridizacija]] je matematični postopek **linearne kombinacije** atomskih orbital, ki ustvari nove, **hibridne orbitale**. Te nove orbitale imajo enako energijo (so degenerirane) in obliko ter bolje pojasnjujejo opažene molekularne geometrije in kote med vezmi, ki jih z enostavnim prekrivanjem ne moremo.\n\n#### [[sp³ hibridizacija]]\n- **Nastanek**: Kombinacija ene $s$ in treh $p$ orbital.\n- **Geometrija**: Nastanejo štiri enakovredne $sp^3$ hibridne orbitale, usmerjene proti ogliščem **tetraedra**.\n- **Kot**: $109.5^\\circ$.\n- **Primeri**:\n    - **Metan ($CH_4$)**: Ogljik je $sp^3$ hibridiziran, tvori štiri enake $\\sigma$ vezi z vodiki. Oblika je pravilen **tetraeder**.\n    - **Amoniak ($NH_3$)**: Dušik je $sp^3$ hibridiziran. Tri orbitale tvorijo vezi z vodiki, četrta pa vsebuje nevezni elektronski par. Oblika molekule je **trigonalna piramida**.\n    - **Voda ($H_2O$)**: Kisik je $sp^3$ hibridiziran. Dve orbitali tvorita vezi z vodiki, dve pa vsebujeta nevezna elektronska para. Oblika molekule je **kotna**.\n\n#### [[sp² hibridizacija]]\n- **Nastanek**: Kombinacija ene $s$ in dveh $p$ orbital.\n- **Geometrija**: Nastanejo tri enakovredne $sp^2$ hibridne orbitale, ki ležijo v isti ravnini in so usmerjene proti ogliščem **trigonalne planare** (enakostraničnega trikotnika). Ena $p$ orbitala ostane nehibridizirana in je pravokotna na ravnino.\n- **Kot**: $120^\\circ$.\n- **Primeri**:\n    - **Eten ($C_2H_4$)**: Oba ogljika sta $sp^2$ hibridizirana. Med njima nastane ena $\\sigma$ vez ($sp^2-sp^2$) in ena $\\pi$ vez (prekrivanje nehibridiziranih $p$ orbital).\n    - **Borov trifluorid ($BF_3$)**: Bor je $sp^2$ hibridiziran, kar ustreza **trigonalno planarni** obliki.\n\n#### [[sp hibridizacija]]\n- **Nastanek**: Kombinacija ene $s$ in ene $p$ orbitale.\n- **Geometrija**: Nastaneta dve enakovredni $sp$ hibridni orbitali, ki sta usmerjeni v nasprotnih smereh. Dve $p$ orbitali ostaneta nehibridizirani.\n- **Kot**: $180^\\circ$ (**linearna** geometrija).\n- **Primeri**:\n    - **Etin ($C_2H_2$)**: Oba ogljika sta $sp$ hibridizirana. Med njima nastane ena $\\sigma$ vez ($sp-sp$) in dve $\\pi$ vezi (prekrivanje dveh parov nehibridiziranih $p$ orbital).\n    - **Berilijev diklorid ($BeCl_2$)**: Berilij je $sp$ hibridiziran in tvori **linearno** molekulo.\n\n### [[Polarnost vezi in molekul]]\nKadar sta v kovalentni vezi povezana dva atoma z različno **elektronegativnostjo**, elektronski par ni enakomerno porazdeljen. Atom z večjo elektronegativnostjo močneje privlači elektrone in dobi **delni negativni naboj** ($\\delta^-$), medtem ko drugi atom dobi **delni pozitivni naboj** ($\\delta^+$). Taka vez je **polarna**.\n\n#### [[Dipolni moment]]\n[[Dipolni moment]] ($\\mu$) je vektorska količina, ki je merilo za polarnost molekule. Je produkt velikosti naboja ($q$) in razdalje ($d$) med središči pozitivnega in negativnega naboja.\n$$ \\mu \u003d q \\cdot d $$\n- **Smer**: Vektor dipolnega momenta je usmerjen od pozitivnega proti negativnemu polu.\n- **Molekularni dipolni moment**: Je **vektorska vsota** dipolnih momentov posameznih vezi v molekuli. Simetrične molekule (npr. $CO_2$, $BF_3$, $CCl_4$) imajo lahko polarne vezi, vendar je njihov skupni dipolni moment enak nič, zato so **nepolarne**. Molekule, kot sta $H_2O$ in $NH_3$, so zaradi svoje nesimetrične oblike in neveznih parov **polarne**.\n\n---\n## [[Splošne formule in pravila]]\n- **Formalni naboj**: $FN \u003d (\\text{št. valenčnih } e^-) - (\\text{št. neveznih } e^-) - \\frac{1}{2}(\\text{št. veznih } e^-)$\n- **Red vezi (povprečni)**: $\\text{Red} \u003d \\frac{\\text{Skupno število vezi}}{\\text{Število resonančnih struktur}}$\n- **Oktetno pravilo**: Atomi v molekulah težijo k doseganju stabilne elektronske konfiguracije z osmimi valenčnimi elektroni (kot žlahtni plini).\n    - **Izjeme**:\n        - **Pomanjkljiv oktet**: Atomi z manj kot 8 valenčnimi $e^-$ (npr. $B$ v $BF_3$).\n        - **Razširjen oktet**: Atomi od 3. periode naprej lahko sprejmejo več kot 8 valenčnih $e^-$ (npr. $S$ v $SF_6$), ker imajo na voljo prazne $d$-orbitale.\n\n---\n## [[Kritična analiza in opombe]]\n\n### [[Note to Self: Vloga neveznih elektronskih parov]]\nPredavateljica pravilno omeni, da imata amoniak ($NH_3$) in voda ($H_2O$) obliko, ki odstopa od idealnega tetraedra, čeprav sta $sp^3$ hibridizirana. Ključni razlog, ki ga je dobro poudariti, je teorija **VSEPR** (Valence Shell Electron Pair Repulsion). Ta teorija pravi, da se elektronski pari (vezni in nevezni) okoli centralnega atoma razporedijo tako, da so medsebojni odboji minimalni. Ker **nevezni pari zavzamejo več prostora** in močneje odbijajo kot vezni pari, \"stisnejo\" kote med vezmi.\n- Idealni tetraedrski kot ($CH_4$): $109.5^\\circ$.\n- Kot v $NH_3$ (en nevezni par): $\\approx 107^\\circ$.\n- Kot v $H_2O$ (dva nevezna para): $\\approx 104.5^\\circ$.\n\n### [[Note to Self: Hibridizacija je model, ne proces]]\nPomembno je razumeti, da hibridizacija ni fizični proces, ki se zgodi, preden se atomi povežejo. Je **matematični model**, ki ga uporabljamo znotraj teorije valenčne vezi, da bi uskladili teorijo z eksperimentalno določenimi geometrijami molekul. V resnici so vse vezi v metanu enake, in hibridizacija je naš način, kako to pojasnimo.\n\n### [[Warning Note: Dipolni moment za NaCl]]\nV zapiskih je izračunan dipolni moment za $NaCl$. Čeprav je izračun tehnično pravilen za hipotetični **ionski par $Na^+Cl^-$ v plinski fazi**, je $NaCl$ klasičen primer **ionske spojine**, ki v trdnem stanju tvori kristalno mrežo in ne diskretnih molekul. V kontekstu kovalentne vezi je ta primer lahko zavajajoč. Bistvo dipolnega momenta pri kovalentnih vezeh je opisovanje **delne** porazdelitve naboja, medtem ko pri ionskih spojinah gre za (skoraj) popoln prenos elektrona.\n\n### [[Memorialization: Opomnik s predavanja]]\nPredavateljica je omenila, da bo po razlagi hibridizacije in primerov sledila pavza (`~ 50:50`). Ta del je bil prehod med teorijo valenčne vezi in molekulsko orbitalno teorijo.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3408,
+      "parts": [{
+        "text": "# [[Kemijska vez]]\n\n## [[Teorija]]\n\n### [[Kovalentna vez]]\n[[Kovalentna vez]] nastane z delnim prekrivanjem atomskih orbital sosednjih atomov. Pri tem pride do prerazporedit"
+      }, {
+        "text": "ve elektronov, kar vodi v znižanje potencialne energije sistema in doseganje stabilnejšega stan"
+      }, {
+        "text": "ja. Vez je prostorsko usmerjena v smer največjega prekrivanja.\n\n### [[Prekrivanje orbital: Sigma in Pi vezi]]\nPrekrivanje orbital je temelj kovalentne vezi. Lo"
+      }, {
+        "text": "čimo dva glavna tipa prekrivanja, ki določata vrsto vezi: čelno in bo"
+      }, {
+        "text": "čno.\n\n#### [[Sigma (σ) vez]]\n[[Sigma (σ) vez]] je najmočnejša"
+      }, {
+        "text": " vrsta kovalentne vezi in nastane s **čelnim prekrivanjem** atomskih orbital. Gostota elektrons"
+      }, {
+        "text": "kega oblaka je največja na zveznici med jedroma obeh atomov.\nMožni tipi č"
+      }, {
+        "text": "elnega prekrivanja:\n- **s-s prekrivanje**: Dve s orbitali (npr"
+      }, {
+        "text": ". v molekuli $H_2$).\n- **s-p prekrivanje**: Ena s orbital"
+      }, {
+        "text": "a in ena p orbitala (npr. v molekuli $HF$).\n- **p-p prekrivanje**:"
+      }, {
+        "text": " Dve p orbitali, ki ležita na isti osi (npr. $p_x-p_x$"
+      }, {
+        "text": " v molekuli $N_2$).\n\n#### [[Pi (π) vez]]\n[[Pi (π) vez]] nastane z **bočnim prekrivanjem** dveh vzporednih p orbital. Pri tej vezi nastan"
+      }, {
+        "text": "eta dve območji elektronske gostote, eno nad in eno pod zveznico med jedroma"
+      }, {
+        "text": ". Pi vezi so šibkejše od sigma vezi in se vedno pojavijo skupaj s sigma vezjo pri dvoj"
+      }, {
+        "text": "nih ali trojnih vezeh.\n\n### [[Primeri molekul z enostavnim prekrivanjem]]\n"
+      }, {
+        "text": "- **Vodikova molekula ($H_2$)**: Nastane s čelnim prekrivanjem d"
+      }, {
+        "text": "veh $1s$ orbital.\n- **Vodikova molekula ($HF$)**: Nastane s čelnim"
+      }, {
+        "text": " prekrivanjem $1s$ orbitale vodika in ene od $2p$ orbital flora.\n- **F"
+      }, {
+        "text": "osfin ($PH_3$)**: Fosfor ima valenčne elektrone v $3p$ orbitalah. Tri"
+      }, {
+        "text": " $1s$ orbitale vodikov se čelno prekrijejo s tremi $3p$ orbitalami"
+      }, {
+        "text": " fosforja ($3p_x, 3p_y, 3p_z$).\n- **"
+      }, {
+        "text": "Dušikova molekula ($N_2$)**: Vsebuje trojno vez.\n    - Ena"
+      }, {
+        "text": " **sigma (σ) vez** nastane s čelnim prekrivanjem dveh $2p_x$ orbital."
+      }, {
+        "text": "\n    - Dve **pi (π) vezi** nastaneta z bočnim prekrivanjem $2p_y"
+      }, {
+        "text": "$ orbital in $2p_z$ orbital.\n- **Vodikova molekula ($H_2S$)**:"
+      }, {
+        "text": " Podobno kot pri vodi, dve $1s$ orbitali vodika se prekrijeta z dvema $p$"
+      }, {
+        "text": " orbitalama žvepla, pri čemer nastaneta dve sigma vezi.\n\n### [[Resonanca in formalni naboj]]\n[[Resonanca]] je koncept, ki ga uporabimo, kadar ene same Lewisove strukt"
+      }, {
+        "text": "ure ne moremo uporabiti za ustrezno predstavitev vezi v molekuli. Dejanska struktura je"
+      }, {
+        "text": " **resonancni hibrid** več možnih struktur, imenovanih **kanonske (ali resonančne) strukt"
+      }, {
+        "text": "ure**.\n\n- **Primer: Dušikov(I) oksid ($N_2O$)**\n    - **"
+      }, {
+        "text": "Struktura 1**: Trojna vez med dušikoma, enojna med dušikom in kis"
+      }, {
+        "text": "ikom.\n    - **Struktura 2**: Dve dvojni vezi.\n\n#### [[Formalni naboj]]\n[[Formalni naboj]] je hipotetični naboj, ki bi ga imel atom v molekuli,"
+      }, {
+        "text": " če bi si vse vezne elektrone enakomerno delil z veznimi partnerji.\n$$ \\text{Formal"
+      }, {
+        "text": "ni naboj} \u003d (\\text{št. valenčnih } e^-) - (\\text{št. nevez"
+      }, {
+        "text": "nih } e^-) - \\frac{1}{2}(\\text{št. veznih } e^-) $$\n\n"
+      }, {
+        "text": "- **Izračun za $N_2O$**:\n    - **Struktura 1 ($N \\"
+      }, {
+        "text": "equiv N - O$)**:\n        - Levi N: $5 - 2 - \\frac{1}{2"
+      }, {
+        "text": "}(6) \u003d 0$\n        - Srednji N: $5 - 0 - \\frac{"
+      }, {
+        "text": "1}{2}(8) \u003d +1$\n        - O: $6 - 6 - \\frac{"
+      }, {
+        "text": "1}{2}(2) \u003d -1$\n    - **Struktura 2 ($N \u003d N \u003d"
+      }, {
+        "text": " O$)**:\n        - Levi N: $5 - 4 - \\frac{1}{2}(4)"
+      }, {
+        "text": " \u003d -1$\n        - Srednji N: $5 - 0 - \\frac{1}{2"
+      }, {
+        "text": "}(8) \u003d +1$\n        - O: $6 - 4 - \\frac{1}{2}("
+      }, {
+        "text": "4) \u003d 0$\n\n#### [[Red vezi]]\n[[Red vezi]] je povprečno število vezi"
+      }, {
+        "text": " med dvema atomoma v vseh resonančnih strukturah.\n$$ \\text{Povprečni red vezi} \u003d \\"
+      }, {
+        "text": "frac{\\text{Skupno število vezi med atomi v vseh strukturah}}{\\text{Število resonan"
+      }, {
+        "text": "čnih struktur}} $$\n- **Primer: $N_2O$**\n    - Red vezi med $N-N$:"
+      }, {
+        "text": " $\\frac{3+2}{2} \u003d 2.5$\n    - Red vezi med $N-"
+      }, {
+        "text": "O$: $\\frac{1+2}{2} \u003d 1.5$\n\n### [[Hibridizacija]]"
+      }, {
+        "text": "\n[[Hibridizacija]] je matematični postopek **linearne kombinacije** atomskih orbital"
+      }, {
+        "text": ", ki ustvari nove, **hibridne orbitale**. Te nove orbitale imajo enako energijo ("
+      }, {
+        "text": "so degenerirane) in obliko ter bolje pojasnjujejo opažene molekularne geometrije in"
+      }, {
+        "text": " kote med vezmi, ki jih z enostavnim prekrivanjem ne moremo.\n\n#### [[sp³ hibridizacija]]\n- **Nastanek**: Kombinacija ene $s$ in treh $p$"
+      }, {
+        "text": " orbital.\n- **Geometrija**: Nastanejo štiri enakovredne $sp^3$ h"
+      }, {
+        "text": "ibridne orbitale, usmerjene proti ogliščem **tetraedra**.\n- **Kot**: $10"
+      }, {
+        "text": "9.5^\\circ$.\n- **Primeri**:\n    - **Metan ($CH_4$)**:"
+      }, {
+        "text": " Ogljik je $sp^3$ hibridiziran, tvori štiri enake $\\sigma$ vezi"
+      }, {
+        "text": " z vodiki. Oblika je pravilen **tetraeder**.\n    - **Amoniak ($NH_3$)**:"
+      }, {
+        "text": " Dušik je $sp^3$ hibridiziran. Tri orbitale tvorijo vezi z vodiki,"
+      }, {
+        "text": " četrta pa vsebuje nevezni elektronski par. Oblika molekule je **trigonalna piram"
+      }, {
+        "text": "ida**.\n    - **Voda ($H_2O$)**: Kisik je $sp^3$ h"
+      }, {
+        "text": "ibridiziran. Dve orbitali tvorita vezi z vodiki, dve pa vsebujeta nevezna elektronska"
+      }, {
+        "text": " para. Oblika molekule je **kotna**.\n\n#### [[sp² hibridizacija]]\n- **Nastanek"
+      }, {
+        "text": "**: Kombinacija ene $s$ in dveh $p$ orbital.\n- **Geometrija**: Nast"
+      }, {
+        "text": "anejo tri enakovredne $sp^2$ hibridne orbitale, ki ležijo v"
+      }, {
+        "text": " isti ravnini in so usmerjene proti ogliščem **trigonalne planare** (enak"
+      }, {
+        "text": "ostraničnega trikotnika). Ena $p$ orbitala ostane nehibridizirana in je"
+      }, {
+        "text": " pravokotna na ravnino.\n- **Kot**: $120^\\circ$.\n- **"
+      }, {
+        "text": "Primeri**:\n    - **Eten ($C_2H_4$)**: Oba ogljika sta $sp^2"
+      }, {
+        "text": "$ hibridizirana. Med njima nastane ena $\\sigma$ vez ($sp^2-sp^2"
+      }, {
+        "text": "$) in ena $\\pi$ vez (prekrivanje nehibridiziranih $p$ orbital).\n    "
+      }, {
+        "text": "- **Borov trifluorid ($BF_3$)**: Bor je $sp^2$ hibridiziran, kar"
+      }, {
+        "text": " ustreza **trigonalno planarni** obliki.\n\n#### [[sp hibridizacija]]\n-"
+      }, {
+        "text": " **Nastanek**: Kombinacija ene $s$ in ene $p$ orbitale.\n- **Geometri"
+      }, {
+        "text": "ja**: Nastaneta dve enakovredni $sp$ hibridni orbitali, ki sta usmerjeni"
+      }, {
+        "text": " v nasprotnih smereh. Dve $p$ orbitali ostaneta nehibridizirani."
+      }, {
+        "text": "\n- **Kot**: $180^\\circ$ (**linearna** geometrija).\n- **Primeri**:"
+      }, {
+        "text": "\n    - **Etin ($C_2H_2$)**: Oba ogljika sta $sp$ h"
+      }, {
+        "text": "ibridizirana. Med njima nastane ena $\\sigma$ vez ($sp-sp$) in dve $\\pi$ vezi"
+      }, {
+        "text": " (prekrivanje dveh parov nehibridiziranih $p$ orbital).\n    - **Ber"
+      }, {
+        "text": "ilijev diklorid ($BeCl_2$)**: Berilij je $sp$ hibridiziran in"
+      }, {
+        "text": " tvori **linearno** molekulo.\n\n### [[Polarnost vezi in molekul]]\nKadar"
+      }, {
+        "text": " sta v kovalentni vezi povezana dva atoma z različno **elektronegativnostjo**, elektronski"
+      }, {
+        "text": " par ni enakomerno porazdeljen. Atom z večjo elektronegativnostjo močneje privla"
+      }, {
+        "text": "či elektrone in dobi **delni negativni naboj** ($\\delta^-$), medtem ko drugi atom do"
+      }, {
+        "text": "bi **delni pozitivni naboj** ($\\delta^+$). Taka vez je **polarna**.\n\n#### [[Dipolni moment]]\n[[Dipolni moment]] ($\\mu$) je vektorska količina, ki je merilo za polarn"
+      }, {
+        "text": "ost molekule. Je produkt velikosti naboja ($q$) in razdalje ($d$) med središči"
+      }, {
+        "text": " pozitivnega in negativnega naboja.\n$$ \\mu \u003d q \\cdot d $$\n- **Smer**:"
+      }, {
+        "text": " Vektor dipolnega momenta je usmerjen od pozitivnega proti negativnemu polu.\n- **Molekular"
+      }, {
+        "text": "ni dipolni moment**: Je **vektorska vsota** dipolnih momentov posameznih vezi"
+      }, {
+        "text": " v molekuli. Simetrične molekule (npr. $CO_2$, $BF_3$, $CCl"
+      }, {
+        "text": "_4$) imajo lahko polarne vezi, vendar je njihov skupni dipolni moment enak nič, zato so **"
+      }, {
+        "text": "nepolarne**. Molekule, kot sta $H_2O$ in $NH_3$, so zaradi svoje"
+      }, {
+        "text": " nesimetrične oblike in neveznih parov **polarne**.\n\n---\n## [[Splošne formule in pravila]]\n- **Formalni naboj**: $FN \u003d (\\text{št. valenčnih } e^-"
+      }, {
+        "text": ") - (\\text{št. neveznih } e^-) - \\frac{1}{2}(\\text{št. veznih"
+      }, {
+        "text": " } e^-)$\n- **Red vezi (povprečni)**: $\\text{Red} \u003d \\frac{\\"
+      }, {
+        "text": "text{Skupno število vezi}}{\\text{Število resonančnih struktur}}$\n- **O"
+      }, {
+        "text": "ktetno pravilo**: Atomi v molekulah težijo k doseganju stabilne elektronske konfiguracije z"
+      }, {
+        "text": " osmimi valenčnimi elektroni (kot žlahtni plini).\n    - **Izjeme**:\n"
+      }, {
+        "text": "        - **Pomanjkljiv oktet**: Atomi z manj kot 8 valenčnimi $e^-$ ("
+      }, {
+        "text": "npr. $B$ v $BF_3$).\n        - **Razširjen oktet**: At"
+      }, {
+        "text": "omi od 3. periode naprej lahko sprejmejo več kot 8 valenčnih $e^-$ (n"
+      }, {
+        "text": "pr. $S$ v $SF_6$), ker imajo na voljo prazne $d$-orbitale.\n\n"
+      }, {
+        "text": "---\n## [[Kritična analiza in opombe]]\n\n### [[Note to Self: Vloga neveznih elektronskih parov]]\nPredavateljica pravilno omeni, da imata amoniak ($NH_"
+      }, {
+        "text": "3$) in voda ($H_2O$) obliko, ki odstopa od idealnega tetraedra, č"
+      }, {
+        "text": "eprav sta $sp^3$ hibridizirana. Ključni razlog, ki ga je dobro p"
+      }, {
+        "text": "oudariti, je teorija **VSEPR** (Valence Shell Electron Pair Repulsion). Ta teorija pravi,"
+      }, {
+        "text": " da se elektronski pari (vezni in nevezni) okoli centralnega atoma razporedijo tako, da so med"
+      }, {
+        "text": "sebojni odboji minimalni. Ker **nevezni pari zavzamejo več prostora** in mo"
+      }, {
+        "text": "čneje odbijajo kot vezni pari, \"stisnejo\" kote med vezmi.\n- Ideal"
+      }, {
+        "text": "ni tetraedrski kot ($CH_4$): $109.5^\\circ$.\n- Kot"
+      }, {
+        "text": " v $NH_3$ (en nevezni par): $\\approx 107^\\circ$.\n- Kot v"
+      }, {
+        "text": " $H_2O$ (dva nevezna para): $\\approx 104.5^\\circ$."
+      }, {
+        "text": "\n\n### [[Note to Self: Hibridizacija je model, ne proces]]\nPomembno je razum"
+      }, {
+        "text": "eti, da hibridizacija ni fizični proces, ki se zgodi, preden se atomi pove"
+      }, {
+        "text": "žejo. Je **matematični model**, ki ga uporabljamo znotraj teorije valenčne"
+      }, {
+        "text": " vezi, da bi uskladili teorijo z eksperimentalno določenimi geometrijami molekul. V"
+      }, {
+        "text": " resnici so vse vezi v metanu enake, in hibridizacija je naš način, kako to pojasn"
+      }, {
+        "text": "imo.\n\n### [[Warning Note: Dipolni moment za NaCl]]\nV zapiskih je izračunan dipolni moment za"
+      }, {
+        "text": " $NaCl$. Čeprav je izračun tehnično pravilen za hipotetični **ionski par $"
+      }, {
+        "text": "Na^+Cl^-$ v plinski fazi**, je $NaCl$ klasičen primer **ionske spojine**, ki"
+      }, {
+        "text": " v trdnem stanju tvori kristalno mrežo in ne diskretnih molekul. V kontek"
+      }, {
+        "text": "stu kovalentne vezi je ta primer lahko zavajajoč. Bistvo dipolnega momenta pri kovalentnih veze"
+      }, {
+        "text": "h je opisovanje **delne** porazdelitve naboja, medtem ko pri ionskih spoj"
+      }, {
+        "text": "inah gre za (skoraj) popoln prenos elektrona.\n\n### [[Memorialization: Opomnik s predavanja]]\nPredavateljica je omenila, da bo po razlagi hibridizacije in"
+      }, {
+        "text": " primerov sledila pavza (`~ 50:50`). Ta del je bil prehod med teorijo valen"
+      }, {
+        "text": "čne vezi in molekulsko orbitalno teorijo."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

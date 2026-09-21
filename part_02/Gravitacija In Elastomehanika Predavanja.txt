@@ -1,0 +1,348 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "10TRASKhZ4X7Lsv5L2rjPnETaxD0C6w2J"
+      },
+      "role": "user",
+      "tokenCount": 76864
+    }, {
+      "driveAudio": {
+        "id": "13ml_6LAqqUJgia7yAPDY9zwQjyPulN6r"
+      },
+      "role": "user",
+      "tokenCount": 81304
+    }, {
+      "driveAudio": {
+        "id": "1c8Kd4t7zJ1SsQPA48mQ5BH15Ioqe7wYz"
+      },
+      "role": "user",
+      "tokenCount": 92658
+    }, {
+      "driveImage": {
+        "id": "1i8l4xAjA3J5iAKHDCQVIWoYLcpPSTdHU"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1Evj1mw8RI5bLpHv2GJuKNXvz4WF8tRgj"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "10K2FYKwIUUhYgSAFoA_yV1OhQwPBqn6V"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1s7bipsYCq3wRI12dk1Jrzo2JsMT4-K7K"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1bX9ONc1kPtklTV1cImEX4QE5NRXDexbB"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "text": "**Refining Note Architecture**\n\nI\u0027m currently focused on the initial framework for the note system. Analyzing the request and underlying source material is key, with the aim of ensuring a comprehensive, structured, and analytically robust markdown system. I\u0027m prioritizing the user\u0027s need for a comprehensive structure. This entails a deep dive into the information provided to craft the best initial note framework.\n\n\n**Developing Initial Structure**\n\nI\u0027ve made significant progress in identifying key topics within the source material. I\u0027ve categorized the information into topics like Gravitation and Elasticity, which will be the basis for note organization.  Now, the plan is to decide on the appropriate language - I am leaning towards structuring the vault in English, but leaving the content in the original Slovenian.\n\n\n**Confirming Language Consistency**\n\nAfter a review, I realized that I had to align the language of the notes with the source material and the user\u0027s needs. Maintaining consistency is paramount for clarity. Therefore, I\u0027ve decided the notes will be in Slovenian.  This ensures the notes directly reflect the original language and context provided, enhancing user comprehension and utility.\n\n\n**Structuring Gravitational Content**\n\nI\u0027m now diving into the detailed breakdown of the gravitational concepts. My current focus is structuring the content related to the force of gravity within a solid sphere, and mapping out the key points on the force graphs. I\u0027m also planning to capture the important aspects of the Cavendish experiment related to measuring the gravitational constant. I am moving towards organizing notes on gravitational potential energy. I\u0027ve noted a need to include escape velocity derivations. The elastic deformation of solid bodies and Hooke\u0027s law are next in line.\n\n\n**Exploring Elastomechanics Details**\n\nI\u0027m presently focusing on the nuances of elastomechanics, particularly stress and strain. I\u0027m noting the formulas for Young\u0027s Modulus and the shear modulus, paying close attention to their practical implications. The distinction between linear and plastic regions on the stress-strain curve is becoming clearer, along with Poisson\u0027s ratio and volume change considerations. I am now incorporating fluid mechanics concepts and defining pressure in the context of hydrostatics. I\u0027ll also add details on torsion and shear stress in rotation.\n\n\n**Mapping Note Sections**\n\nI\u0027ve just solidified the note structure, meticulously planning each section. I\u0027ve broken it into three parts: Gravitation, Elastomechanics, and Fluid Mechanics. Now, I will start to flesh out the content in each part, ensuring it covers the key concepts comprehensively, with a focus on formatting formulas accurately and analyzing derivations, especially related to the geostationary orbit radius calculation.\n\n\n**Expanding Gravitational Insights**\n\nI\u0027m presently building upon the gravitational insights, with a focus on refining the theoretical underpinnings. I\u0027m clarifying the distinction between Earth\u0027s orbital radii, integrating notes on the shell theorem to show the point mass assumption.  I\u0027m also working to define the relationship between stress and pressure. Lastly, I\u0027m verifying the units, ensuring consistency.\n\n\n**Detailing Satellite Mechanics**\n\nI\u0027m presently dissecting the satellite mechanics. I\u0027m focusing on the low Earth orbit velocity derivation and the geostationary orbit radius. I\u0027m carefully deriving escape velocity and clarifying the energy considerations. I\u0027m also addressing the work integral and explaining the negative sign associated with bound systems. Moreover, I\u0027m documenting the relevant formulas, particularly for elastomechanics. The goal is to provide a solid foundation for orbital mechanics.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Refining Note Architecture**\n\nI\u0027m currently focused on the initial framework for the note system. Analyzing the request and underlying source material is key, with the aim of ensuring a comprehensive, structured, and analytically robust markdown system. I\u0027m prioritizing the user\u0027s need for a comprehensive structure. This entails a deep dive into the information provided to craft the best initial note framework.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Initial Structure**\n\nI\u0027ve made significant progress in identifying key topics within the source material. I\u0027ve categorized the information into topics like Gravitation and Elasticity, which will be the basis for note organization.  Now, the plan is to decide on the appropriate language - I am leaning towards structuring the vault in English, but leaving the content in the original Slovenian.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Confirming Language Consistency**\n\nAfter a review, I realized that I had to align the language of the notes with the source material and the user\u0027s needs. Maintaining consistency is paramount for clarity. Therefore, I\u0027ve decided the notes will be in Slovenian.  This ensures the notes directly reflect the original language and context provided, enhancing user comprehension and utility.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Gravitational Content**\n\nI\u0027m now diving into the detailed breakdown of the gravitational concepts. My current focus is structuring the content related to the force of gravity within a solid sphere, and mapping out the key points on the force graphs. I\u0027m also planning to capture the important aspects of the Cavendish experiment related to measuring the gravitational constant. I am moving towards organizing notes on gravitational potential energy. I\u0027ve noted a need to include escape velocity derivations. The elastic deformation of solid bodies and Hooke\u0027s law are next in line.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Exploring Elastomechanics Details**\n\nI\u0027m presently focusing on the nuances of elastomechanics, particularly stress and strain. I\u0027m noting the formulas for Young\u0027s Modulus and the shear modulus, paying close attention to their practical implications. The distinction between linear and plastic regions on the stress-strain curve is becoming clearer, along with Poisson\u0027s ratio and volume change considerations. I am now incorporating fluid mechanics concepts and defining pressure in the context of hydrostatics. I\u0027ll also add details on torsion and shear stress in rotation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping Note Sections**\n\nI\u0027ve just solidified the note structure, meticulously planning each section. I\u0027ve broken it into three parts: Gravitation, Elastomechanics, and Fluid Mechanics. Now, I will start to flesh out the content in each part, ensuring it covers the key concepts comprehensively, with a focus on formatting formulas accurately and analyzing derivations, especially related to the geostationary orbit radius calculation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Expanding Gravitational Insights**\n\nI\u0027m presently building upon the gravitational insights, with a focus on refining the theoretical underpinnings. I\u0027m clarifying the distinction between Earth\u0027s orbital radii, integrating notes on the shell theorem to show the point mass assumption.  I\u0027m also working to define the relationship between stress and pressure. Lastly, I\u0027m verifying the units, ensuring consistency.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Detailing Satellite Mechanics**\n\nI\u0027m presently dissecting the satellite mechanics. I\u0027m focusing on the low Earth orbit velocity derivation and the geostationary orbit radius. I\u0027m carefully deriving escape velocity and clarifying the energy considerations. I\u0027m also addressing the work integral and explaining the negative sign associated with bound systems. Moreover, I\u0027m documenting the relevant formulas, particularly for elastomechanics. The goal is to provide a solid foundation for orbital mechanics.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# Fizika: Gravitacija in Elastomehanika\n\n**Datum:** 27. 11. 2025\n**Oznake:** #fizika #gravitacija #elastomehanika #predavanja #mehanika\n**Povezave:** [[Fizika - Uvod]], [[Kroženje]], [[Delo in Energija]]\n\n---\n\n## 1. Gravitacija\n\nTo poglavje obravnava splošni gravitacijski zakon, njegovo uporabo pri sfernih telesih, gibanje satelitov in energijske razmere v gravitacijskem polju.\n\n### 1.1. Gravitacijska sila sfernih teles\nDa bi razumeli, zakaj lahko planete obravnavamo kot točkasta telesa, moramo izpeljati gravitacijsko silo sferne lupine in polne krogle.\n\n**Analiza izpeljave (Reverse Engineering):**\nPredavatelj uporabi integracijo po \"rezinah\" ali obročih sferne lupine, da dokaže **Newtonov lupinasti izrek (Shell Theorem)**.\n1.  **Zunaj lupine ($r \u003e R$):** Sferna lupina privlači zunanje telo, kot da bi bila vsa njena masa zbrana v središču.\n2.  **Znotraj lupine ($r \u003c R$):** Gravitacijska sila je enaka **0**.\n\nZa homogeno polno kroglo (npr. Zemlja z gostoto $\\rho$) velja:\n*   **Zunaj ($r \\geq R$):** Velja klasični zakon: $F_g \u003d G \\frac{M m}{r^2}$.\n*   **Znotraj ($r \u003c R$):** Sila linearno pada z oddaljenostjo od središča, ker prispeva le masa *znotraj* trenutnega radija $r$.\n\n$$ F_g(r) \u003d \\begin{cases} G \\frac{M m}{r^2} \u0026 \\text{za } r \\ge R \\\\ G \\frac{M m}{R^3} r \u0026 \\text{za } r \u003c R \\end{cases} $$\n\n\u003e **Note to Self:** Znotraj Zemlje sila pada linearno proti nič, ker se masa, ki nas privlači proti središču, manjša s kubom polmera ($V \\propto r^3$), medtem ko gravitacija pada s kvadratom ($1/r^2$). Rezultat je linearna odvisnost.\n\n### 1.2. Cavendishov poskus (Določitev G)\nGravitacijska konstanta $G$ je bila izmerjena s pomočjo torzijskega nihala (Cavendish).\n*   Princip: Dve veliki svinčeni krogli privlačita dve manjši na ročici.\n*   Navor gravitacije je uravnotežen z navorom torzijske vzmeti:\n    $$ M_g \u003d M_{torzija} \\rightarrow a \\cdot G \\frac{m M}{r^2} \u003d D \\varphi $$\n    Kjer je $D$ torzijska konstanta nitke in $\\varphi$ zasuk.\n    *   Vrednost: $G \\approx 6.67 \\cdot 10^{-11} \\, \\text{Nm}^2/\\text{kg}^2$.\n\n---\n\n## 2. Gravitacijsko polje Zemlje in Sateliti\n\n### 2.1. Spreminjanje $g$ z višino\nGravitacijski pospešek $g$ pada z višino $h$ nad površjem. Za majhne višine ($h \\ll R$) lahko uporabimo Taylorjev razvoj (linearizacijo):\n\n$$ g(h) \u003d g_0 \\frac{R^2}{(R+h)^2} \u003d g_0 \\frac{1}{(1 + \\frac{h}{R})^2} \\approx g_0 \\left(1 - 2\\frac{h}{R}\\right) $$\n\n### 2.2. Gibanje satelitov\nSateliti krožijo, ker gravitacijska sila deluje kot centripetalna sila: $F_g \u003d F_{rad}$.\n\n#### A) Nizki sateliti (Low Earth Orbit)\nKrožijo tik nad atmosfero (zanemarimo višino, $r \\approx R$).\n*   Pogoj: $m g_0 \u003d m \\frac{v^2}{R}$\n*   **1. kozmična hitrost:**\n    $$ v_1 \u003d \\sqrt{g_0 R} \\approx 7.9 \\, \\text{km/s} \\approx 8 \\, \\text{km/s} $$\n*   Obhodni čas: $t_0 \\approx 85 \\, \\text{min}$.\n\n#### B) Geostacionarni sateliti\nTi sateliti \"stojijo\" nad isto točko na ekvatorju.\n*   **Pogoj:** Njihova kotna hitrost mora biti enaka kotni hitrosti Zemlje ($\\omega_{sat} \u003d \\omega_{zemlje}$).\n*   Obhodni čas: $t_0 \u003d 24 \\, \\text{h} \u003d 86400 \\, \\text{s}$.\n*   Izpeljava radija:\n    $$ G \\frac{M m}{r^2} \u003d m \\omega^2 r \\Rightarrow G \\frac{M}{r^2} \u003d \\left(\\frac{2\\pi}{t_0}\\right)^2 r $$\n    $$ r^3 \u003d \\frac{G M t_0^2}{4 \\pi^2} $$\n    $$ r \\approx 42.400 \\, \\text{km} $$\n\n\u003e **Warning:** Izračunan $r$ je razdalja od **središča** Zemlje. Višina nad površjem je $h \u003d r - R_{zemlje} \\approx 36.000 \\, \\text{km}$.\n\n---\n\n## 3. Gravitacijska potencialna energija in Ubežna hitrost\n\n### 3.1. Potencialna energija ($W_p$)\nKer je gravitacijska sila konzervativna, lahko vpeljemo potencialno energijo. Definirana je kot delo, ki ga opravimo, da telo premaknemo iz neskončnosti v točko $r$.\n*   Sistem je vezan (privlačna sila), zato je energija **negativna**.\n    $$ W_p(r) \u003d - G \\frac{M m}{r} $$\n*   Običajna formula $W_p \u003d mgh$ velja le za majhne premike blizu površja ($r \\approx R$).\n\n### 3.2. Ubežna hitrost (2. kozmična hitrost)\nTo je hitrost, ki jo mora imeti telo, da se trajno umakne gravitacijskemu vplivu Zemlje (gre v neskončnost, kjer se ustavi).\n*   **Ohranitev energije:** $W_{meh} \u003d W_k + W_p \u003d 0$ (na koncu sta obe 0).\n    $$ \\frac{1}{2} m v^2 - G \\frac{M m}{R} \u003d 0 $$\n    $$ v_{ubezna} \u003d \\sqrt{\\frac{2GM}{R}} \u003d \\sqrt{2 g_0 R} $$\n*   Vrednost: $v_{ubezna} \\approx 11.2 \\, \\text{km/s}$.\n\n---\n\n## 4. Elastomehanika (Deformacije trdnin)\n\nKo na telo delujejo zunanje sile, se to deformira. Obravnavamo elastične (povratne) deformacije.\n\n### 4.1. Natezna/Tlačna obremenitev\nImamo palico dolžine $l$ in preseka $S$, ki jo raztegujemo s silo $F$.\n\n*   **Napetost ($\\sigma$):** Sila na enoto površine.\n    $$ \\sigma \u003d \\frac{F}{S} \\quad [\\text{N/m}^2 \u003d \\text{Pa}] $$\n*   **Relativni raztezek ($\\epsilon$):**\n    $$ \\epsilon \u003d \\frac{\\Delta l}{l} $$\n*   **Hookov zakon:** V linearnem območju je napetost sorazmerna z raztezkom.\n    $$ \\sigma \u003d E \\cdot \\epsilon \\quad \\text{ali} \\quad \\frac{F}{S} \u003d E \\frac{\\Delta l}{l} $$\n    *   $E$ \u003d **Prožnostni modul** (Young\u0027s modulus). Je lastnost materiala (npr. jeklo $\\approx 210$ GPa).\n\n\u003e **Context:** Graf $\\sigma(\\epsilon)$ prikazuje linearno območje (Hooke), mejo prožnosti, plastično deformacijo in zlom.\n\n### 4.2. Transverzalna kontrakcija (Poissonovo število)\nKo telo raztegnemo v dolžino ($l \\to l + \\Delta l$), se v prečni smeri zoži ($d \\to d - \\Delta d$).\n*   **Poissonovo število ($\\mu$ ali $\\nu$):**\n    $$ \\frac{\\Delta d}{d} \u003d -\\mu \\frac{\\Delta l}{l} $$\n    Za večino materialov je $\\mu \\approx 0.3$.\n*   **Sprememba volumna:** Pri raztegu se volumen malenkost poveča: $\\frac{\\Delta V}{V} \u003d (1-2\\mu)\\frac{\\Delta l}{l}$.\n\n### 4.3. Strižna obremenitev\nSila deluje vzporedno s ploskvijo (tangencialno), ne pravokotno. Telo se \"postrani\" zamakne.\n*   **Strižna napetost ($\\tau$):** $\\tau \u003d \\frac{F}{S}$ (sila vzporedno s ploskvijo).\n*   **Strižna deformacija ($\\gamma$):** Kot zamika.\n*   **Hookov zakon za strig:**\n    $$ \\tau \u003d G \\cdot \\gamma \\quad \\text{ali} \\quad \\frac{F}{S} \u003d G \\frac{\\Delta x}{l} $$\n    *   $G$ \u003d **Strižni modul** (Shear modulus).\n    *   Velja zveza med moduli: $G \u003d \\frac{E}{2(1+\\mu)}$.\n\n**Torzija:** Poseben primer strižne obremenitve pri zvijanju palice.\n$$ M \u003d D \\varphi $$ (To je ista enačba kot pri Cavendishovem poskusu).\n\n---\n\n## 5. Mehanika Tekočin (Hidrostatika - Uvod)\n\nKratek uvod v mehaniko fluidov.\n*   **Tlak ($p$):** Podobno kot napetost pri trdninah, gre za silo na površino, vendar v tekočinah tlak deluje v vse smeri enako (Pascalov zakon).\n    $$ p \u003d \\frac{F}{S} \\quad [\\text{Pa}] $$\n\n---\n\n## Povzetek formul (General Formulas)\n\n| Količina | Formula | Opomba |\n| :--- | :--- | :--- |\n| **Gravitacijska sila** | $F_g \u003d G \\frac{M m}{r^2}$ | $r \\ge R$ |\n| **Gravitacijska sila (znotraj)** | $F_g \u003d G \\frac{M m}{R^3} r$ | $r \u003c R$ (homogena krogla) |\n| **Približek g(h)** | $g(h) \\approx g_0 (1 - \\frac{2h}{R})$ | za $h \\ll R$ |\n| **1. kozmična hitrost** | $v_1 \u003d \\sqrt{g_0 R}$ | kroženje ob površju |\n| **2. kozmična hitrost** | $v_2 \u003d \\sqrt{2 g_0 R}$ | ubežna hitrost |\n| **Keplerjev zakon (kroženje)** | $r^3 \u003d \\frac{GM t_0^2}{4\\pi^2}$ | povezava radija in obhodnega časa |\n| **Hookov zakon (nateg)** | $\\sigma \u003d E \\epsilon \\Rightarrow \\frac{F}{S} \u003d E \\frac{\\Delta l}{l}$ | $E$ \u003d prožnostni modul |\n| **Hookov zakon (strig)** | $\\tau \u003d G \\gamma \\Rightarrow \\frac{F}{S} \u003d G \\frac{\\Delta x}{l}$ | $G$ \u003d strižni modul |\n| **Poissonovo število** | $\\frac{\\Delta d}{d} \u003d -\\mu \\frac{\\Delta l}{l}$ | prečna deformacija |",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 2930,
+      "parts": [{
+        "text": "# Fizika: Gravitacija in Elastomehanika\n\n**Datum:** 27. 11. 2025"
+      }, {
+        "text": "\n**Oznake:** #fizika #gravitacija #elastomehanika #predavanja #mehanika\n**P"
+      }, {
+        "text": "ovezave:** [[Fizika - Uvod]], [[Kroženje]], [[Delo in Energija]]\n\n---\n\n"
+      }, {
+        "text": "## 1. Gravitacija\n\nTo poglavje obravnava splošni gravitacijski zakon,"
+      }, {
+        "text": " njegovo uporabo pri sfernih telesih, gibanje satelitov in energijske razmere v gravitacijskem polju.\n\n"
+      }, {
+        "text": "### 1.1. Gravitacijska sila sfernih teles\nDa bi razumeli, zakaj lahko"
+      }, {
+        "text": " planete obravnavamo kot točkasta telesa, moramo izpeljati gravitacijsko silo sferne"
+      }, {
+        "text": " lupine in polne krogle.\n\n**Analiza izpeljave (Reverse Engineering):**\nPredavatelj upor"
+      }, {
+        "text": "abi integracijo po \"rezinah\" ali obročih sferne lupine, da dokaže **"
+      }, {
+        "text": "Newtonov lupinasti izrek (Shell Theorem)**.\n1.  **Zunaj lupine ($r \u003e R$):** Sfer"
+      }, {
+        "text": "na lupina privlači zunanje telo, kot da bi bila vsa njena masa zbrana v središču.\n2."
+      }, {
+        "text": "  **Znotraj lupine ($r \u003c R$):** Gravitacijska sila je enaka **0**.\n\nZa"
+      }, {
+        "text": " homogeno polno kroglo (npr. Zemlja z gostoto $\\rho$) velja:\n*   **"
+      }, {
+        "text": "Zunaj ($r \\geq R$):** Velja klasični zakon: $F_g \u003d G"
+      }, {
+        "text": " \\frac{M m}{r^2}$.\n*   **Znotraj ($r \u003c R$):** S"
+      }, {
+        "text": "ila linearno pada z oddaljenostjo od središča, ker prispeva le masa *znotraj* trenut"
+      }, {
+        "text": "nega radija $r$.\n\n$$ F_g(r) \u003d \\begin{cases} G \\frac{M"
+      }, {
+        "text": " m}{r^2} \u0026 \\text{za } r \\ge R \\\\ G \\frac{M m}{"
+      }, {
+        "text": "R^3} r \u0026 \\text{za } r \u003c R \\end{cases} $$\n\n\u003e **Note to Self:** Z"
+      }, {
+        "text": "notraj Zemlje sila pada linearno proti nič, ker se masa, ki nas privlači proti središču, manj"
+      }, {
+        "text": "ša s kubom polmera ($V \\propto r^3$), medtem ko gravitacija pada s kvadratom ($"
+      }, {
+        "text": "1/r^2$). Rezultat je linearna odvisnost.\n\n### 1.2. Cavendishov pos"
+      }, {
+        "text": "kus (Določitev G)\nGravitacijska konstanta $G$ je bila izmerjena s pomočjo torzijsk"
+      }, {
+        "text": "ega nihala (Cavendish).\n*   Princip: Dve veliki svinčeni krogli privlač"
+      }, {
+        "text": "ita dve manjši na ročici.\n*   Navor gravitacije je uravnotežen z navorom"
+      }, {
+        "text": " torzijske vzmeti:\n    $$ M_g \u003d M_{torzija} \\rightarrow a \\cdot G"
+      }, {
+        "text": " \\frac{m M}{r^2} \u003d D \\varphi $$\n    Kjer je $D$ tor"
+      }, {
+        "text": "zijska konstanta nitke in $\\varphi$ zasuk.\n    *   Vrednost: $G \\"
+      }, {
+        "text": "approx 6.67 \\cdot 10^{-11} \\, \\text{Nm}^2/\\text{kg}^2$.\n\n---"
+      }, {
+        "text": "\n\n## 2. Gravitacijsko polje Zemlje in Sateliti\n\n### 2.1. Spremin"
+      }, {
+        "text": "janje $g$ z višino\nGravitacijski pospešek $g$ pada z višino $h$ nad površ"
+      }, {
+        "text": "jem. Za majhne višine ($h \\ll R$) lahko uporabimo Taylorjev razvoj (linearizacijo):\n\n"
+      }, {
+        "text": "$$ g(h) \u003d g_0 \\frac{R^2}{(R+h)^2} \u003d g_0 \\frac{1"
+      }, {
+        "text": "}{(1 + \\frac{h}{R})^2} \\approx g_0 \\left(1 - 2\\frac{"
+      }, {
+        "text": "h}{R}\\right) $$\n\n### 2.2. Gibanje satelitov\nSateliti krož"
+      }, {
+        "text": "ijo, ker gravitacijska sila deluje kot centripetalna sila: $F_g \u003d F_{rad"
+      }, {
+        "text": "}$.\n\n#### A) Nizki sateliti (Low Earth Orbit)\nKrožijo tik nad atmosfero (zan"
+      }, {
+        "text": "emarimo višino, $r \\approx R$).\n*   Pogoj: $m g_0 \u003d m \\frac{v^"
+      }, {
+        "text": "2}{R}$\n*   **1. kozmična hitrost:**\n    $$ v_1 \u003d \\sqrt{g_0"
+      }, {
+        "text": " R} \\approx 7.9 \\, \\text{km/s} \\approx 8 \\, \\text{"
+      }, {
+        "text": "km/s} $$\n*   Obhodni čas: $t_0 \\approx 85 \\, \\text{min}$."
+      }, {
+        "text": "\n\n#### B) Geostacionarni sateliti\nTi sateliti \"stojijo\" nad isto točko na ek"
+      }, {
+        "text": "vatorju.\n*   **Pogoj:** Njihova kotna hitrost mora biti enaka kotni hitrosti Zemlje"
+      }, {
+        "text": " ($\\omega_{sat} \u003d \\omega_{zemlje}$).\n*   Obhodni čas: $t_0"
+      }, {
+        "text": " \u003d 24 \\, \\text{h} \u003d 86400 \\, \\text{s}$.\n*   "
+      }, {
+        "text": "Izpeljava radija:\n    $$ G \\frac{M m}{r^2} \u003d m \\omega^2 r \\"
+      }, {
+        "text": "Rightarrow G \\frac{M}{r^2} \u003d \\left(\\frac{2\\pi}{t_0}\\right)^2 r"
+      }, {
+        "text": " $$\n    $$ r^3 \u003d \\frac{G M t_0^2}{4 \\pi^2} $$\n    $$"
+      }, {
+        "text": " r \\approx 42.400 \\, \\text{km} $$\n\n\u003e **Warning:** Izračunan $"
+      }, {
+        "text": "r$ je razdalja od **središča** Zemlje. Višina nad površjem je $h \u003d r - R_{"
+      }, {
+        "text": "zemlje} \\approx 36.000 \\, \\text{km}$.\n\n---\n\n## 3"
+      }, {
+        "text": ". Gravitacijska potencialna energija in Ubežna hitrost\n\n### 3.1. Pot"
+      }, {
+        "text": "encialna energija ($W_p$)\nKer je gravitacijska sila konzervativna, lahko vpeljemo"
+      }, {
+        "text": " potencialno energijo. Definirana je kot delo, ki ga opravimo, da telo premaknemo iz nes"
+      }, {
+        "text": "končnosti v točko $r$.\n*   Sistem je vezan (privlačna sila), zato je energija"
+      }, {
+        "text": " **negativna**.\n    $$ W_p(r) \u003d - G \\frac{M m}{r} $$\n"
+      }, {
+        "text": "*   Običajna formula $W_p \u003d mgh$ velja le za majhne premike blizu površja ($r \\"
+      }, {
+        "text": "approx R$).\n\n### 3.2. Ubežna hitrost (2. kozmična hitrost"
+      }, {
+        "text": ")\nTo je hitrost, ki jo mora imeti telo, da se trajno umakne gravitacijskemu v"
+      }, {
+        "text": "plivu Zemlje (gre v neskončnost, kjer se ustavi).\n*   **Ohranitev energije:** $W_{"
+      }, {
+        "text": "meh} \u003d W_k + W_p \u003d 0$ (na koncu sta obe 0).\n    $$ \\"
+      }, {
+        "text": "frac{1}{2} m v^2 - G \\frac{M m}{R} \u003d 0 $$"
+      }, {
+        "text": "\n    $$ v_{ubezna} \u003d \\sqrt{\\frac{2GM}{R}} \u003d \\sqrt{2"
+      }, {
+        "text": " g_0 R} $$\n*   Vrednost: $v_{ubezna} \\approx 11"
+      }, {
+        "text": ".2 \\, \\text{km/s}$.\n\n---\n\n## 4. Elastomehanika (Deformacije trdnin"
+      }, {
+        "text": ")\n\nKo na telo delujejo zunanje sile, se to deformira. Obravnavamo elastične ("
+      }, {
+        "text": "povratne) deformacije.\n\n### 4.1. Natezna/Tlačna obremenitev\n"
+      }, {
+        "text": "Imamo palico dolžine $l$ in preseka $S$, ki jo raztegujemo s silo $F$.\n\n"
+      }, {
+        "text": "*   **Napetost ($\\sigma$):** Sila na enoto površine.\n    $$ \\sigma \u003d \\frac{F}{S"
+      }, {
+        "text": "} \\quad [\\text{N/m}^2 \u003d \\text{Pa}] $$\n*   **Relativni"
+      }, {
+        "text": " raztezek ($\\epsilon$):**\n    $$ \\epsilon \u003d \\frac{\\Delta l}{l} $$\n*"
+      }, {
+        "text": "   **Hookov zakon:** V linearnem območju je napetost sorazmerna z raztez"
+      }, {
+        "text": "kom.\n    $$ \\sigma \u003d E \\cdot \\epsilon \\quad \\text{ali} \\quad \\frac{"
+      }, {
+        "text": "F}{S} \u003d E \\frac{\\Delta l}{l} $$\n    *   $E$ \u003d **Prožnostni modul**"
+      }, {
+        "text": " (Young\u0027s modulus). Je lastnost materiala (npr. jeklo $\\approx 210$"
+      }, {
+        "text": " GPa).\n\n\u003e **Context:** Graf $\\sigma(\\epsilon)$ prikazuje linearno območje (Hooke"
+      }, {
+        "text": "), mejo prožnosti, plastično deformacijo in zlom.\n\n### 4.2. Trans"
+      }, {
+        "text": "verzalna kontrakcija (Poissonovo število)\nKo telo raztegnemo v dolžino ($"
+      }, {
+        "text": "l \\to l + \\Delta l$), se v prečni smeri zoži ($d \\to d - \\Delta d$).\n*"
+      }, {
+        "text": "   **Poissonovo število ($\\mu$ ali $\\nu$):**\n    $$ \\frac{\\Delta d}{"
+      }, {
+        "text": "d} \u003d -\\mu \\frac{\\Delta l}{l} $$\n    Za večino materialov je $\\mu"
+      }, {
+        "text": " \\approx 0.3$.\n*   **Sprememba volumna:** Pri raztegu se volumen mal"
+      }, {
+        "text": "enkost poveča: $\\frac{\\Delta V}{V} \u003d (1-2\\mu)\\frac{\\Delta l}{l}$.\n\n"
+      }, {
+        "text": "### 4.3. Strižna obremenitev\nSila deluje vzporedno s pl"
+      }, {
+        "text": "oskvijo (tangencialno), ne pravokotno. Telo se \"postrani\" zamakne.\n*   **Stri"
+      }, {
+        "text": "žna napetost ($\\tau$):** $\\tau \u003d \\frac{F}{S}$ (sila vzporedno s ploskvijo"
+      }, {
+        "text": ").\n*   **Strižna deformacija ($\\gamma$):** Kot zamika.\n*   **Hook"
+      }, {
+        "text": "ov zakon za strig:**\n    $$ \\tau \u003d G \\cdot \\gamma \\quad \\text{ali} \\quad \\frac"
+      }, {
+        "text": "{F}{S} \u003d G \\frac{\\Delta x}{l} $$\n    *   $G$ \u003d"
+      }, {
+        "text": " **Strižni modul** (Shear modulus).\n    *   Velja zveza med moduli: $G \u003d \\frac{E"
+      }, {
+        "text": "}{2(1+\\mu)}$.\n\n**Torzija:** Poseben primer strižne obremenitve pri zvijanju pal"
+      }, {
+        "text": "ice.\n$$ M \u003d D \\varphi $$ (To je ista enačba kot pri Cavendishovem poskusu)."
+      }, {
+        "text": "\n\n---\n\n## 5. Mehanika Tekočin (Hidrostatika - Uvod)\n\nK"
+      }, {
+        "text": "ratek uvod v mehaniko fluidov.\n*   **Tlak ($p$):** Podob"
+      }, {
+        "text": "no kot napetost pri trdninah, gre za silo na površino, vendar v tekočinah"
+      }, {
+        "text": " tlak deluje v vse smeri enako (Pascalov zakon).\n    $$ p \u003d \\frac{F}{S} \\"
+      }, {
+        "text": "quad [\\text{Pa}] $$\n\n---\n\n## Povzetek formul (General Formulas)\n\n| Količina | Formula"
+      }, {
+        "text": " | Opomba |\n| :--- | :--- | :--- |\n| **Gravitacijska sila**"
+      }, {
+        "text": " | $F_g \u003d G \\frac{M m}{r^2}$ | $r \\ge R$ |\n|"
+      }, {
+        "text": " **Gravitacijska sila (znotraj)** | $F_g \u003d G \\frac{M m}{R^3"
+      }, {
+        "text": "} r$ | $r \u003c R$ (homogena krogla) |\n| **Približek g(h)** |"
+      }, {
+        "text": " $g(h) \\approx g_0 (1 - \\frac{2h}{R})$ | za $h \\ll R$ |\n"
+      }, {
+        "text": "| **1. kozmična hitrost** | $v_1 \u003d \\sqrt{g_0 R}$ | kro"
+      }, {
+        "text": "ženje ob površju |\n| **2. kozmična hitrost** | $v_2 \u003d \\sqrt{"
+      }, {
+        "text": "2 g_0 R}$ | ubežna hitrost |\n| **Keplerjev zakon (kroženje)** | $r^"
+      }, {
+        "text": "3 \u003d \\frac{GM t_0^2}{4\\pi^2}$ | povezava radija in ob"
+      }, {
+        "text": "hodnega časa |\n| **Hookov zakon (nateg)** | $\\sigma \u003d E \\epsilon \\Rightarrow \\frac{F}{S}"
+      }, {
+        "text": " \u003d E \\frac{\\Delta l}{l}$ | $E$ \u003d prožnostni modul |\n| **Hookov zakon (strig)**"
+      }, {
+        "text": " | $\\tau \u003d G \\gamma \\Rightarrow \\frac{F}{S} \u003d G \\frac{\\Delta x}{"
+      }, {
+        "text": "l}$ | $G$ \u003d strižni modul |\n| **Poissonovo število** | $\\frac"
+      }, {
+        "text": "{\\Delta d}{d} \u003d -\\mu \\frac{\\Delta l}{l}$ | prečna deformacija |"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

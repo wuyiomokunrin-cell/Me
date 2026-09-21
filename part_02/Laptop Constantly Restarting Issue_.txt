@@ -1,0 +1,278 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "my laptop constantly restarting itself to advanced recovery panel whenever it deems it needs to restart or when inactive for a while. I do not shut down my computer at all.",
+      "role": "user",
+      "tokenCount": 34
+    }, {
+      "text": "**Investigating Laptop Restarts**\n\nI\u0027ve begun my search for the typical culprits behind this recurring advanced recovery panel boot loop. My primary focus is on common causes, but I\u0027m now delving into the software side. I\u0027m looking at potential problems with recent Windows updates, driver conflicts, and the possibility of corrupted system files as contributing factors.\n\n\n**Exploring Hardware Failures**\n\nI\u0027m now shifting my focus to hardware malfunctions. I\u0027m actively researching failing hard drives and problematic RAM modules. Simultaneously, I\u0027m digging into possible fixes for persistent advanced recovery boots. This includes startup repair, System File Checker runs, and safe mode troubleshooting. I\u0027m aiming to synthesize this into a thorough guide.\n\n\n**Analyzing Initial Data**\n\nI\u0027ve made significant progress by focusing on the initial search results. I\u0027ve uncovered a wealth of information concerning the causes and troubleshooting steps for laptops that persistently reboot into the advanced recovery panel. The results are illuminating, revealing insights into software-related issues, such as corrupted system files and faulty updates, that are likely culprits.\n\n\n**Consolidating Findings**\n\nI\u0027m now synthesizing the initial search results, which include the causes and troubleshooting steps for laptops stuck in the advanced recovery panel loop. The investigation has confirmed software issues (corrupted files, bad updates, drivers) and possible hardware failures (hard drives). The collected data highlights troubleshooting methods like startup repair, scans, safe mode, and system resets. I believe I have enough to craft a focused response.\n\n\n",
+      "role": "model",
+      "tokenCount": 338,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", ""],
+      "parts": [{
+        "text": "**Investigating Laptop Restarts**\n\nI\u0027ve begun my search for the typical culprits behind this recurring advanced recovery panel boot loop. My primary focus is on common causes, but I\u0027m now delving into the software side. I\u0027m looking at potential problems with recent Windows updates, driver conflicts, and the possibility of corrupted system files as contributing factors.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Exploring Hardware Failures**\n\nI\u0027m now shifting my focus to hardware malfunctions. I\u0027m actively researching failing hard drives and problematic RAM modules. Simultaneously, I\u0027m digging into possible fixes for persistent advanced recovery boots. This includes startup repair, System File Checker runs, and safe mode troubleshooting. I\u0027m aiming to synthesize this into a thorough guide.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Initial Data**\n\nI\u0027ve made significant progress by focusing on the initial search results. I\u0027ve uncovered a wealth of information concerning the causes and troubleshooting steps for laptops that persistently reboot into the advanced recovery panel. The results are illuminating, revealing insights into software-related issues, such as corrupted system files and faulty updates, that are likely culprits.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Consolidating Findings**\n\nI\u0027m now synthesizing the initial search results, which include the causes and troubleshooting steps for laptops stuck in the advanced recovery panel loop. The investigation has confirmed software issues (corrupted files, bad updates, drivers) and possible hardware failures (hard drives). The collected data highlights troubleshooting methods like startup repair, scans, safe mode, and system resets. I believe I have enough to craft a focused response.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "## Laptop Continually Restarting to Advanced Recovery Panel: A Troubleshooting Guide\n\nIf your laptop is persistently restarting to the advanced recovery panel, it\u0027s a clear indicator of an underlying issue that is preventing Windows from booting up correctly. This problem can stem from a variety of software or hardware-related causes. This guide will walk you through the potential reasons for this behavior and provide a series of troubleshooting steps to resolve it.\n\n### Common Causes for an Automatic Restart to Advanced Recovery\n\nSeveral factors can trigger this continuous loop into the advanced recovery mode. These often include:\n\n*   **Corrupted System Files:** Essential Windows files may have become damaged or corrupt, preventing the operating system from loading properly.\n*   **Faulty Driver Updates:** A recently installed or updated driver may be incompatible or faulty, causing a system conflict.\n*   **Problematic Windows Updates:** A recent Windows update could have introduced a bug or conflict that is causing the startup process to fail.\n*   **Hardware Malfunctions:** Issues with your hard drive, RAM, or other hardware components can lead to boot failures.\n*   **Damaged Boot Configuration Data (BCD):** The BCD contains boot-time configuration data. If it becomes corrupted, Windows may not know how to start.\n*   **Virus or Malware Infections:** Malicious software can damage system files and interfere with the boot process.\n\n### Troubleshooting Steps to Resolve the Issue\n\nHere is a step-by-step approach to troubleshoot and fix the problem. It is recommended to follow these steps in order.\n\n#### 1. Use Startup Repair\n\nThe Advanced Options screen often provides a \"Startup Repair\" tool. This is a good first step as it can automatically diagnose and fix some common startup problems.\n\n#### 2. Check for Corrupted System Files\n\nFrom the Advanced Options screen, you can access the Command Prompt. Once there, you can use built-in Windows tools to scan for and repair system files.\n\n*   Open the Command Prompt and type `sfc /scannow` and press Enter. This will scan for and attempt to repair corrupt Windows system files.\n*   Next, type `chkdsk C: /f /r` and press Enter. This will check your hard drive for errors and attempt to repair them.\n\n#### 3. Boot into Safe Mode\n\nBooting into Safe Mode starts Windows with a minimal set of drivers and services. If your laptop boots successfully in Safe Mode, it\u0027s a strong indication that a third-party application or driver is causing the issue.\n\nFrom the Advanced Options menu, go to \"Startup Settings\" and then restart your computer. You will then have the option to boot into Safe Mode. If you can get into Safe Mode, you can try uninstalling recently installed software or updating drivers.\n\n#### 4. Uninstall Recent Updates\n\nIf the problem started after a recent Windows update, you can try uninstalling it from the Advanced Options menu. Look for an option to \"Uninstall Updates\" and choose to remove the latest quality or feature update.\n\n#### 5. Perform a System Restore\n\nIf you have a system restore point created before the issue began, you can use System Restore to revert your computer\u0027s state to that earlier point in time. This will not affect your personal files, but it will remove apps, drivers, and updates installed after the restore point was made.\n\n#### 6. Rebuild the Boot Configuration Data (BCD)\n\nIf the BCD is corrupted, you can try to rebuild it using the Command Prompt from the Advanced Options screen. Enter the following commands one by one, pressing Enter after each:\n*   `bootrec /fixmbr`\n*   `bootrec /fixboot`\n*   `bootrec /scanos`\n*   `bootrec /rebuildbcd`\n\n#### 7. Reset Your PC\n\nIf none of the above steps work, you may need to reset your PC. The Advanced Options menu provides an option to \"Reset this PC.\" You will have the choice to keep your personal files or remove everything. Choosing to keep your files will reinstall Windows but preserve your data.\n\nIf all else fails, a clean installation of Windows might be necessary. This will erase everything on your hard drive, so it\u0027s crucial to back up your important files if possible before proceeding.",
+      "role": "model",
+      "grounding": {
+        "corroborationSegments": [{
+          "index": 787,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEA9G1aPTdxs_bX0M0sizkAoE3Yjd1Eyxfclp2pEl_IuYRc23uy1EM3T3UB_FyxfKsVJRmVotcuXprZ3QAuXyn5bXKvvqC-LgfbC2aisPFLx-upzBdbPBly55S3pYv6Kt9Kss33-Ucr1IOCzHkvYAI18CWNN7K6LagF8-8z0stV-32Q15POQ56fHRMipgPZbseOIKKR9xeW_P0kE4YD0qy9w2gTthP4YO6LUQ%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 787,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFEn8fYqand-uRb2dcx3dUFxRUasd2alB5wVIFS4vG_C-0ktOM4HA10FL_MZECTpoPuKc9TWuEUhw_ge4lhEXQcd3M-yFyFefn4ISL420lJhl9bftUq6JEHuRRIDjnbLQZiPP3sGPLpo8WvRcm3-I7o5quFOHoeFnOi_jS4VA4LSp9MVs5gQWdYnCKa94LL8wD0qXp1zoE%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 915,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEA9G1aPTdxs_bX0M0sizkAoE3Yjd1Eyxfclp2pEl_IuYRc23uy1EM3T3UB_FyxfKsVJRmVotcuXprZ3QAuXyn5bXKvvqC-LgfbC2aisPFLx-upzBdbPBly55S3pYv6Kt9Kss33-Ucr1IOCzHkvYAI18CWNN7K6LagF8-8z0stV-32Q15POQ56fHRMipgPZbseOIKKR9xeW_P0kE4YD0qy9w2gTthP4YO6LUQ%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 1182,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFEn8fYqand-uRb2dcx3dUFxRUasd2alB5wVIFS4vG_C-0ktOM4HA10FL_MZECTpoPuKc9TWuEUhw_ge4lhEXQcd3M-yFyFefn4ISL420lJhl9bftUq6JEHuRRIDjnbLQZiPP3sGPLpo8WvRcm3-I7o5quFOHoeFnOi_jS4VA4LSp9MVs5gQWdYnCKa94LL8wD0qXp1zoE%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 1182,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQElzRDrxW5CWMCzaMFAIalH9t1g064T2E5kSyK5Jk2DCLr2dcN5k3hoT1AwHdbF-tOMiNqiKT-PNSFRnGPcGwuK0wIO0nKj9KqZkb3C1fNirArdG-WsP-ZwaFOMgLuLLPiUiU3ivDY_3Jbi1_rcOeBie5lQRqpmSDIYhOL5m7UBVm1O8Lrpsr6-FsytzC4-BaJf4YsgQ_REolNxlkW7ymqEhpP6ytx734qMzptOCo1cUqtqcv-m7tKBdKu8RAcWLtrgf_gm5TJdIn8Rn5ZP7S2rbbucGhmq073cK3EI9Zq6Id9JRWLQiDsMgvQXNtLbumaaVVvd4Z9JpN9PoofBELG3_tKYKgfkkGqnbC9JzVnp_XoxSySObFk%3D",
+          "footnoteNumber": 3
+        }, {
+          "index": 1336,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFEn8fYqand-uRb2dcx3dUFxRUasd2alB5wVIFS4vG_C-0ktOM4HA10FL_MZECTpoPuKc9TWuEUhw_ge4lhEXQcd3M-yFyFefn4ISL420lJhl9bftUq6JEHuRRIDjnbLQZiPP3sGPLpo8WvRcm3-I7o5quFOHoeFnOi_jS4VA4LSp9MVs5gQWdYnCKa94LL8wD0qXp1zoE%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 1453,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFEn8fYqand-uRb2dcx3dUFxRUasd2alB5wVIFS4vG_C-0ktOM4HA10FL_MZECTpoPuKc9TWuEUhw_ge4lhEXQcd3M-yFyFefn4ISL420lJhl9bftUq6JEHuRRIDjnbLQZiPP3sGPLpo8WvRcm3-I7o5quFOHoeFnOi_jS4VA4LSp9MVs5gQWdYnCKa94LL8wD0qXp1zoE%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 1815,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFEn8fYqand-uRb2dcx3dUFxRUasd2alB5wVIFS4vG_C-0ktOM4HA10FL_MZECTpoPuKc9TWuEUhw_ge4lhEXQcd3M-yFyFefn4ISL420lJhl9bftUq6JEHuRRIDjnbLQZiPP3sGPLpo8WvRcm3-I7o5quFOHoeFnOi_jS4VA4LSp9MVs5gQWdYnCKa94LL8wD0qXp1zoE%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 1815,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGrTmx7_y8umcb5mBv-I4TW9XhwRY5yy2j8OkCug4unqUtPia-s_2sXGW-pOEfjC-r6KoB0coaFiJ0SuT-L1Yj7D9TpJRmpeNBF57Kt4WsXEPpgvuxrWNhTDHNZ_tuio-DyjyFzodQrkFcV_NIons6cyn2daNqu3p3Wm7qUtw0HxTNMGwUol15P",
+          "footnoteNumber": 4
+        }, {
+          "index": 1815,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGXCY7zTLrvu5UAVSKylpkRWkYcv9r8c6-xv1iUD0gkBCZRV_PYz8zLu552JVkplgc7PueoWxOSUWp0HV0Fcfy5fthISrzcKEG-PJt9BeRgTwN9dpGnp58gM3XtYOoOFXIlM1KLTGL8gklAHxjmRdfMsXCqSzk_dM3lh7cUguknOlBv6_f-6Qh-wMlGCugm67IHZKH8gUAQGBj1KMBqH1_sD1DVHgpL534pnMaJ2uZOmXLcHYDit8SnDB3XiWXEW5kgucc%3D",
+          "footnoteNumber": 5
+        }, {
+          "index": 2011,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEA9G1aPTdxs_bX0M0sizkAoE3Yjd1Eyxfclp2pEl_IuYRc23uy1EM3T3UB_FyxfKsVJRmVotcuXprZ3QAuXyn5bXKvvqC-LgfbC2aisPFLx-upzBdbPBly55S3pYv6Kt9Kss33-Ucr1IOCzHkvYAI18CWNN7K6LagF8-8z0stV-32Q15POQ56fHRMipgPZbseOIKKR9xeW_P0kE4YD0qy9w2gTthP4YO6LUQ%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 2011,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHw1IuJSCJ9-JQqhRh8ZeSvMMGTNEBbU69xdeu3E4S-LFHYC80j8vGFNxsMEoRUrkliAT1PqA8DRdLE2FU0p9EB92lIrGlMHVa0Io_knxWAwd2_SvriPqQPv3UiXzq06FRjCqb28C5idU55My7GOogOJRdtOPcgpnRWf-EbWLTPjzbPoEkIfKoFPLp7",
+          "footnoteNumber": 6
+        }, {
+          "index": 2152,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEA9G1aPTdxs_bX0M0sizkAoE3Yjd1Eyxfclp2pEl_IuYRc23uy1EM3T3UB_FyxfKsVJRmVotcuXprZ3QAuXyn5bXKvvqC-LgfbC2aisPFLx-upzBdbPBly55S3pYv6Kt9Kss33-Ucr1IOCzHkvYAI18CWNN7K6LagF8-8z0stV-32Q15POQ56fHRMipgPZbseOIKKR9xeW_P0kE4YD0qy9w2gTthP4YO6LUQ%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 2152,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHw1IuJSCJ9-JQqhRh8ZeSvMMGTNEBbU69xdeu3E4S-LFHYC80j8vGFNxsMEoRUrkliAT1PqA8DRdLE2FU0p9EB92lIrGlMHVa0Io_knxWAwd2_SvriPqQPv3UiXzq06FRjCqb28C5idU55My7GOogOJRdtOPcgpnRWf-EbWLTPjzbPoEkIfKoFPLp7",
+          "footnoteNumber": 6
+        }, {
+          "index": 2273,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFEn8fYqand-uRb2dcx3dUFxRUasd2alB5wVIFS4vG_C-0ktOM4HA10FL_MZECTpoPuKc9TWuEUhw_ge4lhEXQcd3M-yFyFefn4ISL420lJhl9bftUq6JEHuRRIDjnbLQZiPP3sGPLpo8WvRcm3-I7o5quFOHoeFnOi_jS4VA4LSp9MVs5gQWdYnCKa94LL8wD0qXp1zoE%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 2273,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGnvhN3K7tQbc_0IyJxgKpI2bJcueJwZ2bpH7Ud3XTOcqUzMMSORJGJD1MSKcF0HHHH2wSq7ijnmRhSSfS66YX07d9O3_az5m5GvYfOpdV84FSavIbUEWTZFkOhn0VRx2UxSH_Nrpo%3D",
+          "footnoteNumber": 7
+        }, {
+          "index": 2521,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFkJGjDu4_r9vRzVkkiCezlkU7tpLH23n-YFqng6V2cy361IRIvUcWwHTV_x5kJSrJQB4oECOULqhpNMOB5eLuejO7tzjnGTHvhW7pzwFy6JUAbJxZb361vNPHEun3fdzwcPzhEPHIEMFbiENyR7rcTu-7iR6nriMlLKsCliTnx390_e-QRE-LvqA%3D%3D",
+          "footnoteNumber": 8
+        }, {
+          "index": 2770,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGXCY7zTLrvu5UAVSKylpkRWkYcv9r8c6-xv1iUD0gkBCZRV_PYz8zLu552JVkplgc7PueoWxOSUWp0HV0Fcfy5fthISrzcKEG-PJt9BeRgTwN9dpGnp58gM3XtYOoOFXIlM1KLTGL8gklAHxjmRdfMsXCqSzk_dM3lh7cUguknOlBv6_f-6Qh-wMlGCugm67IHZKH8gUAQGBj1KMBqH1_sD1DVHgpL534pnMaJ2uZOmXLcHYDit8SnDB3XiWXEW5kgucc%3D",
+          "footnoteNumber": 5
+        }, {
+          "index": 2770,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFkJGjDu4_r9vRzVkkiCezlkU7tpLH23n-YFqng6V2cy361IRIvUcWwHTV_x5kJSrJQB4oECOULqhpNMOB5eLuejO7tzjnGTHvhW7pzwFy6JUAbJxZb361vNPHEun3fdzwcPzhEPHIEMFbiENyR7rcTu-7iR6nriMlLKsCliTnx390_e-QRE-LvqA%3D%3D",
+          "footnoteNumber": 8
+        }, {
+          "index": 3020,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGnvhN3K7tQbc_0IyJxgKpI2bJcueJwZ2bpH7Ud3XTOcqUzMMSORJGJD1MSKcF0HHHH2wSq7ijnmRhSSfS66YX07d9O3_az5m5GvYfOpdV84FSavIbUEWTZFkOhn0VRx2UxSH_Nrpo%3D",
+          "footnoteNumber": 7
+        }, {
+          "index": 3344,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEqPHtoiBO5_LJOlBh6UDFzD0vT5p19234CIcnCK4NqvVQS-L0jTBHBb7XheiN-9G3dRmyVqLZtkn6gqle3WtCeeuFOKBpp0lM1ZzXEwoz7nuOw1xksvDAfDSg7-bdqQtt5Kxd1-r6Z6kQ_7mpEkyEg64Odk_Lp6p3MSdv3fyHIt2cmvtUgeXxBTBNV0-puFtPKLcbuhlnnAraDqx-56g_Iu1jQ5UGIeoc%3D",
+          "footnoteNumber": 9
+        }, {
+          "index": 3970,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGnvhN3K7tQbc_0IyJxgKpI2bJcueJwZ2bpH7Ud3XTOcqUzMMSORJGJD1MSKcF0HHHH2wSq7ijnmRhSSfS66YX07d9O3_az5m5GvYfOpdV84FSavIbUEWTZFkOhn0VRx2UxSH_Nrpo%3D",
+          "footnoteNumber": 7
+        }, {
+          "index": 3970,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFBsHirznhX-lNSXGOMa3FZm2HlwKrxXaiAX-XJAWCLXKG2wcNURB7FDcmtdo_Z1kElkrIlMfG3647q-RlfospkwYhI7FdZt-9tt5H-okLxtijUdgJbXaqgsCjInUmRfCin7jck9hBEUT9qVzRE4AxoIy4-Ch6kN7hinybScFKHx1mUUD2dyLGCM2wqRv8Nb_haIik8HucjVpbVXJz1n6A%3D",
+          "footnoteNumber": 10
+        }],
+        "webSearchQueries": ["laptop keeps restarting to advanced recovery", "laptop automatically boots into advanced recovery mode causes", "troubleshoot laptop restarting to recovery panel", "windows automatic repair loop fix"],
+        "groundingSources": [{
+          "referenceNumber": 1,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEA9G1aPTdxs_bX0M0sizkAoE3Yjd1Eyxfclp2pEl_IuYRc23uy1EM3T3UB_FyxfKsVJRmVotcuXprZ3QAuXyn5bXKvvqC-LgfbC2aisPFLx-upzBdbPBly55S3pYv6Kt9Kss33-Ucr1IOCzHkvYAI18CWNN7K6LagF8-8z0stV-32Q15POQ56fHRMipgPZbseOIKKR9xeW_P0kE4YD0qy9w2gTthP4YO6LUQ%3D%3D",
+          "title": "itpro.com"
+        }, {
+          "referenceNumber": 2,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFEn8fYqand-uRb2dcx3dUFxRUasd2alB5wVIFS4vG_C-0ktOM4HA10FL_MZECTpoPuKc9TWuEUhw_ge4lhEXQcd3M-yFyFefn4ISL420lJhl9bftUq6JEHuRRIDjnbLQZiPP3sGPLpo8WvRcm3-I7o5quFOHoeFnOi_jS4VA4LSp9MVs5gQWdYnCKa94LL8wD0qXp1zoE%3D",
+          "title": "partitionwizard.com"
+        }, {
+          "referenceNumber": 3,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQElzRDrxW5CWMCzaMFAIalH9t1g064T2E5kSyK5Jk2DCLr2dcN5k3hoT1AwHdbF-tOMiNqiKT-PNSFRnGPcGwuK0wIO0nKj9KqZkb3C1fNirArdG-WsP-ZwaFOMgLuLLPiUiU3ivDY_3Jbi1_rcOeBie5lQRqpmSDIYhOL5m7UBVm1O8Lrpsr6-FsytzC4-BaJf4YsgQ_REolNxlkW7ymqEhpP6ytx734qMzptOCo1cUqtqcv-m7tKBdKu8RAcWLtrgf_gm5TJdIn8Rn5ZP7S2rbbucGhmq073cK3EI9Zq6Id9JRWLQiDsMgvQXNtLbumaaVVvd4Z9JpN9PoofBELG3_tKYKgfkkGqnbC9JzVnp_XoxSySObFk%3D",
+          "title": "quora.com"
+        }, {
+          "referenceNumber": 4,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGrTmx7_y8umcb5mBv-I4TW9XhwRY5yy2j8OkCug4unqUtPia-s_2sXGW-pOEfjC-r6KoB0coaFiJ0SuT-L1Yj7D9TpJRmpeNBF57Kt4WsXEPpgvuxrWNhTDHNZ_tuio-DyjyFzodQrkFcV_NIons6cyn2daNqu3p3Wm7qUtw0HxTNMGwUol15P",
+          "title": "easeus.com"
+        }, {
+          "referenceNumber": 5,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGXCY7zTLrvu5UAVSKylpkRWkYcv9r8c6-xv1iUD0gkBCZRV_PYz8zLu552JVkplgc7PueoWxOSUWp0HV0Fcfy5fthISrzcKEG-PJt9BeRgTwN9dpGnp58gM3XtYOoOFXIlM1KLTGL8gklAHxjmRdfMsXCqSzk_dM3lh7cUguknOlBv6_f-6Qh-wMlGCugm67IHZKH8gUAQGBj1KMBqH1_sD1DVHgpL534pnMaJ2uZOmXLcHYDit8SnDB3XiWXEW5kgucc%3D",
+          "title": "microsoft.com"
+        }, {
+          "referenceNumber": 6,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHw1IuJSCJ9-JQqhRh8ZeSvMMGTNEBbU69xdeu3E4S-LFHYC80j8vGFNxsMEoRUrkliAT1PqA8DRdLE2FU0p9EB92lIrGlMHVa0Io_knxWAwd2_SvriPqQPv3UiXzq06FRjCqb28C5idU55My7GOogOJRdtOPcgpnRWf-EbWLTPjzbPoEkIfKoFPLp7",
+          "title": "geeksforgeeks.org"
+        }, {
+          "referenceNumber": 7,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGnvhN3K7tQbc_0IyJxgKpI2bJcueJwZ2bpH7Ud3XTOcqUzMMSORJGJD1MSKcF0HHHH2wSq7ijnmRhSSfS66YX07d9O3_az5m5GvYfOpdV84FSavIbUEWTZFkOhn0VRx2UxSH_Nrpo%3D",
+          "title": "youtube.com"
+        }, {
+          "referenceNumber": 8,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFkJGjDu4_r9vRzVkkiCezlkU7tpLH23n-YFqng6V2cy361IRIvUcWwHTV_x5kJSrJQB4oECOULqhpNMOB5eLuejO7tzjnGTHvhW7pzwFy6JUAbJxZb361vNPHEun3fdzwcPzhEPHIEMFbiENyR7rcTu-7iR6nriMlLKsCliTnx390_e-QRE-LvqA%3D%3D",
+          "title": "diskpart.com"
+        }, {
+          "referenceNumber": 9,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEqPHtoiBO5_LJOlBh6UDFzD0vT5p19234CIcnCK4NqvVQS-L0jTBHBb7XheiN-9G3dRmyVqLZtkn6gqle3WtCeeuFOKBpp0lM1ZzXEwoz7nuOw1xksvDAfDSg7-bdqQtt5Kxd1-r6Z6kQ_7mpEkyEg64Odk_Lp6p3MSdv3fyHIt2cmvtUgeXxBTBNV0-puFtPKLcbuhlnnAraDqx-56g_Iu1jQ5UGIeoc%3D",
+          "title": "dell.com"
+        }, {
+          "referenceNumber": 10,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFBsHirznhX-lNSXGOMa3FZm2HlwKrxXaiAX-XJAWCLXKG2wcNURB7FDcmtdo_Z1kElkrIlMfG3647q-RlfospkwYhI7FdZt-9tt5H-okLxtijUdgJbXaqgsCjInUmRfCin7jck9hBEUT9qVzRE4AxoIy4-Ch6kN7hinybScFKHx1mUUD2dyLGCM2wqRv8Nb_haIik8HucjVpbVXJz1n6A%3D",
+          "title": "microsoft.com"
+        }]
+      },
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "## Laptop Continually Restarting to Advanced Recovery Panel: A Troubleshooting Guide\n\nIf your laptop is persistently restarting to the advanced recovery panel"
+      }, {
+        "text": ", it\u0027s a clear indicator of an underlying issue that is preventing Windows from booting up correctly. This problem can stem"
+      }, {
+        "text": " from a variety of software or hardware-related causes. This guide will walk you through the potential reasons for this behavior and provide"
+      }, {
+        "text": " a series of troubleshooting steps to resolve it.\n\n### Common Causes for an Automatic Restart to Advanced Recovery\n\nSeveral factors can trigger"
+      }, {
+        "text": " this continuous loop into the advanced recovery mode. These often include:\n\n*   **Corrupted System Files:** Essential Windows"
+      }, {
+        "text": " files may have become damaged or corrupt, preventing the operating system from loading properly.\n*"
+      }, {
+        "text": "   **Faulty Driver Updates:** A recently installed or updated driver may be incompatible or faulty, causing a system conflict.\n*   **Problematic Windows Updates:** A recent Windows update could have introduced a bug or conflict that"
+      }, {
+        "text": " is causing the startup process to fail.\n*   **Hardware Malfunctions:** Issues with your hard drive, RAM,"
+      }, {
+        "text": " or other hardware components can lead to boot failures.\n*   **Dam"
+      }, {
+        "text": "aged Boot Configuration Data (BCD):** The BCD contains boot-time configuration data. If it becomes corrupted, Windows"
+      }, {
+        "text": " may not know how to start.\n*   **Virus or Malware Infections:** Malicious software can damage"
+      }, {
+        "text": " system files and interfere with the boot process.\n\n### Troubleshooting Steps to Resolve the Issue\n\nHere is"
+      }, {
+        "text": " a step-by-step approach to troubleshoot and fix the problem. It is recommended to follow these steps in order.\n\n####"
+      }, {
+        "text": " 1. Use Startup Repair\n\nThe Advanced Options screen often provides a \"Startup Repair\" tool. This is a good first"
+      }, {
+        "text": " step as it can automatically diagnose and fix some common startup problems.\n\n#### 2. Check for Corrupted System Files\n\nFrom the Advanced Options screen, you can access the Command Prompt."
+      }, {
+        "text": " Once there, you can use built-in Windows tools to scan for and repair system files.\n\n*   Open the Command Prompt and type `sfc /scannow` and press Enter"
+      }, {
+        "text": ". This will scan for and attempt to repair corrupt Windows system files.\n*   Next"
+      }, {
+        "text": ", type `chkdsk C: /f /r` and press Enter. This will check your hard drive for errors"
+      }, {
+        "text": " and attempt to repair them.\n\n#### 3. Boot into Safe Mode"
+      }, {
+        "text": "\n\nBooting into Safe Mode starts Windows with a minimal set of drivers and services. If your laptop boots successfully in Safe Mode"
+      }, {
+        "text": ", it\u0027s a strong indication that a third-party application or driver is causing the issue."
+      }, {
+        "text": "\n\nFrom the Advanced Options menu, go to \"Startup Settings\" and then restart your computer. You will then have the"
+      }, {
+        "text": " option to boot into Safe Mode. If you can get into Safe Mode, you can try uninstalling recently installed software or updating"
+      }, {
+        "text": " drivers.\n\n#### 4. Uninstall Recent Updates\n\nIf the problem started after a"
+      }, {
+        "text": " recent Windows update, you can try uninstalling it from the Advanced Options menu. Look for an option to \"Uninstall Updates"
+      }, {
+        "text": "\" and choose to remove the latest quality or feature update.\n\n#### 5. Perform"
+      }, {
+        "text": " a System Restore\n\nIf you have a system restore point created before the issue began, you can use System Restore to revert your"
+      }, {
+        "text": " computer\u0027s state to that earlier point in time. This will not affect your personal files, but it will remove apps"
+      }, {
+        "text": ", drivers, and updates installed after the restore point was made.\n\n#### 6"
+      }, {
+        "text": ". Rebuild the Boot Configuration Data (BCD)\n\nIf the BCD is corrupted, you can try to rebuild it using"
+      }, {
+        "text": " the Command Prompt from the Advanced Options screen. Enter the following commands one by one, pressing Enter after each:\n*   `boot"
+      }, {
+        "text": "rec /fixmbr`\n*   `bootrec /fixboot`\n*   `bootrec /scanos"
+      }, {
+        "text": "`\n*   `bootrec /rebuildbcd`\n\n#### 7. Reset Your PC\n\nIf none of"
+      }, {
+        "text": " the above steps work, you may need to reset your PC. The Advanced Options menu provides an option to \"Reset this PC.\" You"
+      }, {
+        "text": " will have the choice to keep your personal files or remove everything. Choosing to keep your files will reinstall Windows but preserve your data"
+      }, {
+        "text": ".\n\nIf all else fails, a clean installation of Windows might be necessary. This"
+      }, {
+        "text": " will erase everything on your hard drive, so it\u0027s crucial to back up your important files if possible before proceeding."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

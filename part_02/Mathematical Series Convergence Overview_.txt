@@ -1,0 +1,538 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "10cGikTf3duFa0wFFis98yvMfSiaqZ1VF"
+      },
+      "role": "user",
+      "tokenCount": 74872
+    }, {
+      "driveAudio": {
+        "id": "1mCNVjbkb8osyviJDDYkKHbp7AvMRQ_TL"
+      },
+      "role": "user",
+      "tokenCount": 81601
+    }, {
+      "driveAudio": {
+        "id": "1RoMlJJ-gHCN6iBT-5CvdhbxfGcIH4bdt"
+      },
+      "role": "user",
+      "tokenCount": 88206
+    }, {
+      "driveImage": {
+        "id": "1Xy9RERKZKeBB5PNB0Qp3fXDZWY-be5dd"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1loVLfXk8fediaguMw90tX3Jj2UlUxNnL"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1FdoDmzFFQyJ3vuE09hjcxHJHA6U8neSH"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "13OMqPi2vIjIEUW7XPI7xok5zIbe4uTGy"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "19pFk8EuqV9sBZ4KFW9981gIP_kj81N0N"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "15S0tDG5qSGZ6UsCPDtH7SJ2MPFDDSDBg"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1qjiFJUtGVr3Nl6JKMj7u4BJ1cpkg4L_H"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1h0t3rdlTyUoD5P2Ag19Vbl_lwdYhDvv0"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "18Rul2pH9AdmMzdIX38UqvHPzLFh0Yv09"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Bb7K3ilmmkP6tyRlcZyn0nIRrKsKf34j"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1K4r3OZcP6awDM5WfcrGcPX6Cfwj6b-66"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1q9zKq7JB_w3xZ-L2a8uyk95TMd_aj_Eq"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1TbZe-LR2XCqhVV-J97ef_6llPz_wy1wY"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1LP6XgpRRuL11DGUsQofPJKikgWwPoK9A"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "**Refining the Approach**\n\nI\u0027m currently focused on analyzing the user input, which includes an audio transcript of a math lecture on infinite series and handwritten notes. I\u0027m building on the user\u0027s past work on sequences. I\u0027m assessing the best way to process this information to extract key concepts and relationships relevant to an expert. I\u0027m exploring different methods to organize this information for the user\u0027s review.\n\n\n**Outlining the Structure**\n\nMy current focus is on organizing the content from the audio transcript and handwritten notes. I\u0027m structuring the information into a chronological Obsidian markdown file, starting with the core topic of \"Series\". Key sections like the definition, convergence, partial sums, and specific examples (Geometric Series) are being identified and clearly delineated. I\u0027m also ensuring the key concepts and criteria are properly highlighted.\n\n\n**Formulating the Outline**\n\nI\u0027m now focusing on a more granular structure for the Obsidian note. I\u0027ve broken down the lecture and notes into specific sections, including the definition of series, the concept of convergence with partial sums and limits, and several convergence criteria like the Comparison Test, Ratio Test, and Root Test. I\u0027m prioritizing the inclusion of examples and clear mathematical formatting using LaTeX, like with the sum, limits, and fractions. Also, I have planned to generate a Matplotlib plot for the quadratic inequality.\n\n\n**Constructing a Comprehensive Outline**\n\nI\u0027m now implementing the detailed structure for the Obsidian note. I\u0027ve expanded on the initial outline, including the specific sections from the lecture: Definition of Series, Geometric Series, convergence criteria (Comparison, Ratio, Root, Raabe\u0027s), alternating series, functional series, power series. I\u0027m carefully incorporating LaTeX for mathematical expressions and planning a Matplotlib plot for the quadratic inequality. Moreover, I\u0027m adding crucial tutoring elements, such as justifications for the convergence criteria and a warning about the necessary (but not sufficient) condition for convergence.\n\n\n**Defining the Scope**\n\nI\u0027ve initiated the project to act as an Academic Obsidian Assistant. I\u0027m focusing on analyzing the user\u0027s input, which is an audio lecture transcript and handwritten notes on infinite series. My plan involves transcribing and organizing the content into an Obsidian markdown file. I\u0027m prioritizing structuring the material, incorporating LaTeX for mathematical expressions, and including a Matplotlib plot for a quadratic inequality. Additionally, I\u0027ll emphasize error handling and critical analysis to enhance the user\u0027s learning experience, and add a section for listed problems/examples.\n\n\n**Finalizing the Structure**\n\nI\u0027m presently building the Obsidian note with all core sections in place. I have incorporated mathematical notation using LaTeX and added initial descriptions for the main convergence tests. I\u0027m focusing on adding illustrative examples for each, including LaTeX formulas and Matplotlib plots where appropriate. I\u0027m also adding wikilinks as necessary.\n\n\n**Organizing the Input**\n\nMy main focus now is on organizing the content from the audio lecture and notes. I\u0027ve begun transcribing the audio and integrating the handwritten content into a coherent Obsidian markdown file. I\u0027m prioritizing structuring the material, incorporating LaTeX for mathematical expressions, and adding a Matplotlib plot for the quadratic inequality example. I will also incorporate wikilinks for all key topics.\n\n\n**Organizing and Analyzing**\n\nI\u0027m now in the process of thoroughly organizing and analyzing the user\u0027s input, which consists of an audio transcript and handwritten notes. My focus is on synthesizing this information into a structured Obsidian markdown file, starting with the core topic of \"Series.\" I\u0027m also preparing for the incorporation of LaTeX for mathematical notation and the generation of a Matplotlib plot for the quadratic inequality. Moreover, I\u0027m integrating tutoring elements like justifications and error warnings to enhance the user\u0027s comprehension.\n\n\n",
+      "role": "model",
+      "tokenCount": 1690,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Refining the Approach**\n\nI\u0027m currently focused on analyzing the user input, which includes an audio transcript of a math lecture on infinite series and handwritten notes. I\u0027m building on the user\u0027s past work on sequences. I\u0027m assessing the best way to process this information to extract key concepts and relationships relevant to an expert. I\u0027m exploring different methods to organize this information for the user\u0027s review.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining the Structure**\n\nMy current focus is on organizing the content from the audio transcript and handwritten notes. I\u0027m structuring the information into a chronological Obsidian markdown file, starting with the core topic of \"Series\". Key sections like the definition, convergence, partial sums, and specific examples (Geometric Series) are being identified and clearly delineated. I\u0027m also ensuring the key concepts and criteria are properly highlighted.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Outline**\n\nI\u0027m now focusing on a more granular structure for the Obsidian note. I\u0027ve broken down the lecture and notes into specific sections, including the definition of series, the concept of convergence with partial sums and limits, and several convergence criteria like the Comparison Test, Ratio Test, and Root Test. I\u0027m prioritizing the inclusion of examples and clear mathematical formatting using LaTeX, like with the sum, limits, and fractions. Also, I have planned to generate a Matplotlib plot for the quadratic inequality.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing a Comprehensive Outline**\n\nI\u0027m now implementing the detailed structure for the Obsidian note. I\u0027ve expanded on the initial outline, including the specific sections from the lecture: Definition of Series, Geometric Series, convergence criteria (Comparison, Ratio, Root, Raabe\u0027s), alternating series, functional series, power series. I\u0027m carefully incorporating LaTeX for mathematical expressions and planning a Matplotlib plot for the quadratic inequality. Moreover, I\u0027m adding crucial tutoring elements, such as justifications for the convergence criteria and a warning about the necessary (but not sufficient) condition for convergence.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Scope**\n\nI\u0027ve initiated the project to act as an Academic Obsidian Assistant. I\u0027m focusing on analyzing the user\u0027s input, which is an audio lecture transcript and handwritten notes on infinite series. My plan involves transcribing and organizing the content into an Obsidian markdown file. I\u0027m prioritizing structuring the material, incorporating LaTeX for mathematical expressions, and including a Matplotlib plot for a quadratic inequality. Additionally, I\u0027ll emphasize error handling and critical analysis to enhance the user\u0027s learning experience, and add a section for listed problems/examples.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing the Structure**\n\nI\u0027m presently building the Obsidian note with all core sections in place. I have incorporated mathematical notation using LaTeX and added initial descriptions for the main convergence tests. I\u0027m focusing on adding illustrative examples for each, including LaTeX formulas and Matplotlib plots where appropriate. I\u0027m also adding wikilinks as necessary.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Input**\n\nMy main focus now is on organizing the content from the audio lecture and notes. I\u0027ve begun transcribing the audio and integrating the handwritten content into a coherent Obsidian markdown file. I\u0027m prioritizing structuring the material, incorporating LaTeX for mathematical expressions, and adding a Matplotlib plot for the quadratic inequality example. I will also incorporate wikilinks for all key topics.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing and Analyzing**\n\nI\u0027m now in the process of thoroughly organizing and analyzing the user\u0027s input, which consists of an audio transcript and handwritten notes. My focus is on synthesizing this information into a structured Obsidian markdown file, starting with the core topic of \"Series.\" I\u0027m also preparing for the incorporation of LaTeX for mathematical notation and the generation of a Matplotlib plot for the quadratic inequality. Moreover, I\u0027m integrating tutoring elements like justifications and error warnings to enhance the user\u0027s comprehension.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[5. Vrste (Series)]]\n\n\u003e **Memorialization:** The lecturer mentioned that for the upcoming quiz, we are allowed to have our lecture notes with us.\n\nThis lecture transitions from the topic of `[[Zaporedje (Sequences)]]` to `[[Vrste (Series)]]`.\n\n## [[5.1. Številske vrste (Numerical Series)]]\n\n### [[Definicija številske vrste]]\nGiven a numerical `[[zaporedje (sequence)]]` denoted as $(a_n) \u003d (a_1, a_2, a_3, \\dots)$, we can form a **numerical series** (ali **vrsta**) by summing all of its terms.\n\n-   **Zaporedje (Sequence):** $(a_n) \u003d (a_1, a_2, a_3, \\dots)$\n-   **Vrsta (Series):** $a_1 + a_2 + a_3 + a_4 + \\dots$\n\nThis infinite sum is formally written using sigma notation:\n$$ S \u003d \\sum_{n\u003d1}^{\\infty} a_n $$\nThe value $S$ represents the **vsota vrste (sum of the series)**, if it exists.\n\n### [[Primeri (Examples)]]\n\nLet\u0027s consider two simple examples to build intuition.\n\n**Primer 1: Divergentna vrsta**\nLet the sequence be defined by $a_n \u003d 2^n$. The sequence is $(a_n) \u003d (2, 4, 8, 16, 32, \\dots)$.\nThe corresponding series is:\n$$ \\sum_{n\u003d1}^{\\infty} 2^n \u003d 2 + 4 + 8 + 16 + \\dots $$\n**Critical Analysis:** It is intuitively clear that as we keep adding progressively larger positive numbers, the sum will grow indefinitely towards infinity. This series does not converge to a finite number. We call such a series **divergentna (divergent)**.\n\n**Primer 2: Konvergentna vrsta**\nLet the sequence be defined by $a_n \u003d \\left(\\frac{1}{2}\\right)^n$. The sequence is $(a_n) \u003d \\left(\\frac{1}{2}, \\frac{1}{4}, \\frac{1}{8}, \\frac{1}{16}, \\dots\\right)$.\nThe corresponding series is:\n$$ \\sum_{n\u003d1}^{\\infty} \\left(\\frac{1}{2}\\right)^n \u003d \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\frac{1}{16} + \\dots $$\n**Critical Analysis:** Here, the terms we are adding become progressively smaller, approaching zero. It is plausible that this sum could approach a finite value. This is a **konvergentna (convergent)** series, and as we will see, its sum is $S\u003d1$.\n\n### [[Konvergenca vrste (Convergence of a Series)]]\n\nTo formally define convergence, we introduce the concept of **delne vsote (partial sums)**.\n\nThe **n-ta delna vsota ($S_n$)** is the sum of the first $n$ terms of the series:\n$$ S_n \u003d a_1 + a_2 + a_3 + \\dots + a_n $$\nThe partial sums themselves form a new sequence: $(S_1, S_2, S_3, \\dots)$.\n\n**Definicija:** A series $\\sum a_n$ is **konvergentna** if the sequence of its partial sums $(S_n)$ converges to a finite limit $S$. This limit $S$ is then defined as the sum of the series.\n$$ S \u003d \\lim_{n \\to \\infty} S_n $$\nIf this limit does not exist or is infinite, the series is **divergentna**.\n\n### [[Geometrijska vrsta (Geometric Series)]]\n\nA geometric series is a series where the ratio between consecutive terms is constant. This ratio is denoted by $q$. The general form is:\n$$ \\sum_{n\u003d1}^{\\infty} a \\cdot q^{n-1} \u003d a + aq + aq^2 + aq^3 + \\dots $$\n\n**Justification (Derivation of the Sum):**\nTo find the sum, we first analyze its n-th partial sum, $S_n$:\n1.  $S_n \u003d a + aq + aq^2 + \\dots + aq^{n-1}$\n2.  Multiply the entire equation by the common ratio $q$:\n    $S_n q \u003d aq + aq^2 + aq^3 + \\dots + aq^n$\n3.  Subtract the second equation from the first:\n    $S_n - S_n q \u003d (a + aq + \\dots + aq^{n-1}) - (aq + aq^2 + \\dots + aq^n)$\n    Most terms cancel out, leaving:\n    $S_n (1-q) \u003d a - aq^n$\n4.  Assuming $q \\neq 1$, we can solve for $S_n$:\n    $$ S_n \u003d \\frac{a(1-q^n)}{1-q} $$\n5.  Now, we find the sum of the series $S$ by taking the limit as $n \\to \\infty$:\n    $$ S \u003d \\lim_{n \\to \\infty} S_n \u003d \\lim_{n \\to \\infty} \\frac{a(1-q^n)}{1-q} $$\n    The behavior of this limit depends entirely on the term $q^n$.\n    *   If $|q| \u003c 1$, then $\\lim_{n \\to \\infty} q^n \u003d 0$. The sum converges to:\n        $$ S \u003d \\frac{a(1-0)}{1-q} \u003d \\frac{a}{1-q} $$\n    *   If $|q| \\ge 1$, the limit $\\lim_{n \\to \\infty} q^n$ does not converge to zero, and thus the series **divergira (diverges)**.\n\n**Primer:** For the series $\\sum_{n\u003d1}^{\\infty} (\\frac{1}{2})^n \u003d \\frac{1}{2} + \\frac{1}{4} + \\dots$, the first term is $a \u003d \\frac{1}{2}$ and the common ratio is $q \u003d \\frac{1}{2}$. Since $|q| \u003c 1$, the series converges.\nIts sum is:\n$$ S \u003d \\frac{a}{1-q} \u003d \\frac{1/2}{1 - 1/2} \u003d \\frac{1/2}{1/2} \u003d 1 $$\n\n### [[Nujni pogoj za konvergenco (Necessary Condition for Convergence)]]\n\n**Izrek (Theorem):** If a series $\\sum_{n\u003d1}^{\\infty} a_n$ is convergent, then the limit of its terms must be zero.\n$$ \\text{Če je } \\sum a_n \\text{ konvergentna} \\implies \\lim_{n \\to \\infty} a_n \u003d 0 $$\n\n**Warning:** This is a **necessary** but **not sufficient** condition. If the limit of the terms is not zero, the series definitely diverges. However, if the limit *is* zero, the series *might* still diverge.\n\nA classic counterexample is the **harmonična vrsta (harmonic series)**:\n$$ \\sum_{n\u003d1}^{\\infty} \\frac{1}{n} \u003d 1 + \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{4} + \\dots $$\nHere, $\\lim_{n \\to \\infty} a_n \u003d \\lim_{n \\to \\infty} \\frac{1}{n} \u003d 0$. The necessary condition is met, but the series **divergira (diverges)**. We can show this by grouping terms (as done in the notes), where each group sums to a value greater than or equal to $1/2$, leading to an infinite sum.\n$$ S_1\u003d1, S_2 \u003d \\frac{3}{2}, S_4 \\ge \\frac{4}{2}, S_8 \\ge \\frac{5}{2}, \\dots, S_{2^k} \\ge \\frac{k+2}{2} $$\nAs $k \\to \\infty$, the partial sums diverge.\n\n## [[Konvergenčni kriteriji (Convergence Criteria)]]\n\nFor series with positive terms ($a_n \u003e 0$ for all $n \\in \\mathbb{N}$), several criteria can help determine convergence without calculating the sum.\n\n### [[1. Primerjalni kriterij (Comparison Test)]]\nWe have two series with positive terms, $\\sum a_n$ and $\\sum b_n$, such that for all $n$, $a_n \\le b_n$.\n-   The series $\\sum b_n$ is called the **majoranta**.\n-   The series $\\sum a_n$ is called the **minoranta**.\n\n**Pravilo (Rule):**\n1.  If the **majoranta** ($\\sum b_n$) converges, then the **minoranta** ($\\sum a_n$) also converges.\n2.  If the **minoranta** ($\\sum a_n$) diverges, then the **majoranta** ($\\sum b_n$) also diverges.\n\n**Primer:** Determine the convergence of $\\sum_{n\u003d1}^{\\infty} \\frac{1}{\\sqrt{n(n+1)}}$.\nThe term $a_n \u003d \\frac{1}{\\sqrt{n(n+1)}}$. We can find a simpler series to compare it to.\nNotice that $\\sqrt{n(n+1)} \u003e \\sqrt{n \\cdot n} \u003d n$. Therefore, $\\frac{1}{\\sqrt{n(n+1)}} \u003c \\frac{1}{n}$.\nHere, $\\sum a_n$ is our series, and $\\sum b_n \u003d \\sum \\frac{1}{n}$ is the harmonic series.\n**Warning:** Our series is *smaller* than a divergent series. This tells us nothing. The comparison test is inconclusive in this direction.\n\nLet\u0027s try a different comparison. $\\sqrt{n(n+1)} \u003c \\sqrt{(n+1)(n+1)} \u003d n+1$.\nSo, $\\frac{1}{\\sqrt{n(n+1)}} \u003e \\frac{1}{n+1}$.\nHere, our series is the majorant, and the minorant is $\\sum \\frac{1}{n+1}$, which is just the harmonic series without the first term. It still diverges.\nSince our series is greater than a divergent series (minorant diverges), our series **divergira**.\n\n### [[2. Kvocientni kriterij (Ratio Test)]]\nWe calculate the limit of the ratio of consecutive terms:\n$$ q \u003d \\lim_{n \\to \\infty} \\frac{a_{n+1}}{a_n} $$\n-   If $q \u003c 1$, the series converges.\n-   If $q \u003e 1$, the series diverges.\n-   If $q \u003d 1$, the test is inconclusive.\n\n**Primer:** Test the convergence of $\\sum_{n\u003d0}^{\\infty} \\frac{5^n}{n!}$.\n$$ q \u003d \\lim_{n \\to \\infty} \\frac{5^{n+1}/(n+1)!}{5^n/n!} \u003d \\lim_{n \\to \\infty} \\frac{5^{n+1} \\cdot n!}{5^n \\cdot (n+1)!} \u003d \\lim_{n \\to \\infty} \\frac{5}{n+1} \u003d 0 $$\nSince $q\u003d0 \u003c 1$, the series **konvergira**.\n\n### [[3. Korenski kriterij (Root Test)]]\nWe calculate the limit:\n$$ q \u003d \\lim_{n \\to \\infty} \\sqrt[n]{a_n} $$\n-   If $q \u003c 1$, the series converges.\n-   If $q \u003e 1$, the series diverges.\n-   If $q \u003d 1$, the test is inconclusive.\n\n### [[4. Raabejev kriterij (Raabe\u0027s Test)]]\nThis test is often used when the Ratio and Root tests are inconclusive ($q\u003d1$).\nWe calculate the limit:\n$$ q \u003d \\lim_{n \\to \\infty} n\\left(\\frac{a_n}{a_{n+1}} - 1\\right) $$\n-   If $q \u003e 1$, the series converges.\n-   If $q \u003c 1$, the series diverges.\n-   If $q \u003d 1$, the test is inconclusive.\n\n**Primer:** Test the convergence of $\\sum \\frac{1}{n^2}$.\nThe Ratio Test gives $q\u003d1$. Let\u0027s use Raabe\u0027s Test.\n$$ q \u003d \\lim_{n \\to \\infty} n\\left(\\frac{(n+1)^2}{n^2} - 1\\right) \u003d \\lim_{n \\to \\infty} n\\left(\\frac{n^2+2n+1-n^2}{n^2}\\right) \u003d \\lim_{n \\to \\infty} \\frac{2n^2+n}{n^2} \u003d 2 $$\nSince $q\u003d2 \u003e 1$, the series **konvergira**.\n\n## [[Konvergenca vrst s poljubnimi členi]]\n\n### [[Alternirajoče vrste (Alternating Series)]]\nAn alternating series has terms that alternate in sign, e.g., $a_1 - a_2 + a_3 - a_4 + \\dots$.\nThe general form is $\\sum (-1)^{n+1} a_n$, where $a_n \\ge 0$.\n\n**Leibnizov kriterij:** An alternating series converges if two conditions are met:\n1.  The sequence of absolute values of the terms is monotonically decreasing: $a_1 \\ge a_2 \\ge a_3 \\ge \\dots$.\n2.  The limit of the terms is zero: $\\lim_{n \\to \\infty} a_n \u003d 0$.\n\n**Primer:** The alternating harmonic series $\\sum (-1)^{n+1} \\frac{1}{n} \u003d 1 - \\frac{1}{2} + \\frac{1}{3} - \\dots$.\n1.  The sequence $a_n \u003d \\frac{1}{n}$ is decreasing ($1 \\ge \\frac{1}{2} \\ge \\frac{1}{3} \\dots$).\n2.  $\\lim_{n \\to \\infty} \\frac{1}{n} \u003d 0$.\nBoth conditions are met, so the series **konvergira**.\n\n### [[Absolutna in pogojna konvergenca (Absolute and Conditional Convergence)]]\nFor any series $\\sum a_n$ with arbitrary terms, we can analyze the related series of absolute values, $\\sum |a_n|$.\n\n-   **Absolutna konvergenca:** The series $\\sum a_n$ is absolutely convergent if the series of absolute values $\\sum |a_n|$ converges.\n-   **Pogojna konvergenca:** The series $\\sum a_n$ is conditionally convergent if it converges, but the series $\\sum |a_n|$ diverges.\n\n**Izrek:** If a series converges absolutely, then it also converges.\n$$ \\sum |a_n| \\text{ konvergira} \\implies \\sum a_n \\text{ konvergira} $$\nThe converse is not true. The alternating harmonic series is a classic example of conditional convergence.\n\n## [[5.2. Funkcijske vrste (Functional Series)]]\n\nA functional series is a series whose terms are functions of a variable $x$.\n$$ \\sum_{n\u003d1}^{\\infty} f_n(x) \u003d f_1(x) + f_2(x) + f_3(x) + \\dots $$\n\n### [[Potenčne vrste (Power Series)]]\nA power series is a special type of functional series where the terms are of the form $a_n (x-c)^n$. We will focus on series centered at $c\u003d0$:\n$$ \\sum_{n\u003d0}^{\\infty} a_n x^n $$\n\n**Konvergenca po točkah (Convergence by Points):** We fix a value $x \u003d x_0$ and substitute it into the series. This transforms the functional series into a numerical series $\\sum a_n x_0^n$, which we can then test for convergence using the standard criteria.\n\nThe set of all $x$ values for which the series converges is called the **konvergenčno območje (domain of convergence)**. For power series, this domain is always an interval centered at $c$.\n\n### [[Konvergenčni polmer (Radius of Convergence)]]\nThe radius of convergence, $R$, defines the interval $(-R, R)$ inside which the power series converges absolutely.\nIt can be calculated using the coefficients $a_n$ with the ratio or root test formulas:\n$$ R \u003d \\lim_{n \\to \\infty} \\left| \\frac{a_n}{a_{n+1}} \\right| \\quad \\text{or} \\quad R \u003d \\frac{1}{\\lim_{n \\to \\infty} \\sqrt[n]{|a_n|}} $$\n\n-   If $|x| \u003c R$, the series converges absolutely.\n-   If $|x| \u003e R$, the series diverges.\n-   If $|x| \u003d R$ (at the endpoints of the interval), the convergence must be checked separately.\n\n### [[Primer: Določanje konvergenčnega območja]]\n\n**Problem:** Find the convergence domain for the series $\\sum_{n\u003d1}^{\\infty} \\frac{(-4)^n}{n^2} (x-2)^{2n}$.\n\n**Rešitev (Solution):**\n1.  **Identify the general term and apply the Ratio Test.** Let\u0027s denote the entire n-th term as $u_n$.\n    $$ q \u003d \\lim_{n \\to \\infty} \\left| \\frac{u_{n+1}}{u_n} \\right| \u003d \\lim_{n \\to \\infty} \\left| \\frac{(-4)^{n+1}(x-2)^{2(n+1)}}{(n+1)^2} \\cdot \\frac{n^2}{(-4)^n(x-2)^{2n}} \\right| $$\n2.  **Simplify the expression.**\n    $$ q \u003d \\lim_{n \\to \\infty} \\left| (-4) \\cdot (x-2)^2 \\cdot \\frac{n^2}{(n+1)^2} \\right| $$\n    $$ q \u003d |-4| \\cdot |(x-2)^2| \\cdot \\lim_{n \\to \\infty} \\frac{n^2}{(n+1)^2} $$\n    The limit is $\\lim \\frac{n^2}{n^2+2n+1} \u003d 1$.\n    $$ q \u003d 4 (x-2)^2 $$\n    Note: $(x-2)^2$ is always non-negative, so absolute value is not needed there.\n3.  **Set the condition for convergence.** The series converges when $q \u003c 1$.\n    $$ 4(x-2)^2 \u003c 1 \\implies (x-2)^2 \u003c \\frac{1}{4} $$\n4.  **Solve the inequality.**\n    $$ |x-2| \u003c \\sqrt{\\frac{1}{4}} \\implies |x-2| \u003c \\frac{1}{2} $$\n    This means:\n    $$ -\\frac{1}{2} \u003c x-2 \u003c \\frac{1}{2} $$\n    $$ 2 - \\frac{1}{2} \u003c x \u003c 2 + \\frac{1}{2} $$\n    $$ \\frac{3}{2} \u003c x \u003c \\frac{5}{2} $$\n    The series converges absolutely on the open interval $(\\frac{3}{2}, \\frac{5}{2})$.\n5.  **Test the endpoints.**\n    *   **Case 1: $x \u003d \\frac{3}{2}$**\n        Substitute into the original series:\n        $$ \\sum_{n\u003d1}^{\\infty} \\frac{(-4)^n}{n^2} \\left(\\frac{3}{2}-2\\right)^{2n} \u003d \\sum_{n\u003d1}^{\\infty} \\frac{(-4)^n}{n^2} \\left(-\\frac{1}{2}\\right)^{2n} \u003d \\sum_{n\u003d1}^{\\infty} \\frac{(-1)^n 4^n}{n^2} \\left(\\frac{1}{4}\\right)^n \u003d \\sum_{n\u003d1}^{\\infty} \\frac{(-1)^n}{n^2} $$\n        This is a convergent alternating series (Leibniz test).\n    *   **Case 2: $x \u003d \\frac{5}{2}$**\n        Substitute into the original series:\n        $$ \\sum_{n\u003d1}^{\\infty} \\frac{(-4)^n}{n^2} \\left(\\frac{5}{2}-2\\right)^{2n} \u003d \\sum_{n\u003d1}^{\\infty} \\frac{(-4)^n}{n^2} \\left(\\frac{1}{2}\\right)^{2n} \u003d \\sum_{n\u003d1}^{\\infty} \\frac{(-1)^n}{n^2} $$\n        This is the same convergent alternating series.\n\n**Zaključek (Conclusion):** The convergence domain is the closed interval $[\\frac{3}{2}, \\frac{5}{2}]$.",
+      "role": "model",
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "# [[5. Vrste (Series)]]\n\n\u003e **Memorialization:** The lecturer mentioned that for the upcoming quiz,"
+      }, {
+        "text": " we are allowed to have our lecture notes with us.\n\nThis lecture transitions from the topic of `[[Zaporedje (Sequences)]]` to `[[Vrste (Series)]]`.\n\n## [[5.1. Številske vrste (Numerical Series)]]\n\n### [[Definicija številske vrste]]\nGiven a numerical `[[zaporedje (sequence)]]` denoted as $(a_n) \u003d (a_1, a_2, a_3, \\"
+      }, {
+        "text": "dots)$, we can form a **numerical series** (ali **vrsta**) by summing all of its terms.\n\n"
+      }, {
+        "text": "-   **Zaporedje (Sequence):** $(a_n) \u003d (a_1, a_2, a"
+      }, {
+        "text": "_3, \\dots)$\n-   **Vrsta (Series):** $a_1 + a_2 + a_"
+      }, {
+        "text": "3 + a_4 + \\dots$\n\nThis infinite sum is formally written using sigma notation:\n$$ S \u003d \\sum_{"
+      }, {
+        "text": "n\u003d1}^{\\infty} a_n $$\nThe value $S$ represents the **vsota vrste (sum of the"
+      }, {
+        "text": " series)**, if it exists.\n\n### [[Primeri (Examples)]]\n\nLet\u0027s consider two simple examples"
+      }, {
+        "text": " to build intuition.\n\n**Primer 1: Divergentna vrsta**\nLet the sequence be defined by $a_n"
+      }, {
+        "text": " \u003d 2^n$. The sequence is $(a_n) \u003d (2, 4, 8, 16"
+      }, {
+        "text": ", 32, \\dots)$.\nThe corresponding series is:\n$$ \\sum_{n\u003d1}^{\\infty} "
+      }, {
+        "text": "2^n \u003d 2 + 4 + 8 + 16 + \\dots $$\n**Critical Analysis:** It"
+      }, {
+        "text": " is intuitively clear that as we keep adding progressively larger positive numbers, the sum will grow indefinitely towards infinity. This series does"
+      }, {
+        "text": " not converge to a finite number. We call such a series **divergentna (divergent)**.\n\n**Primer 2"
+      }, {
+        "text": ": Konvergentna vrsta**\nLet the sequence be defined by $a_n \u003d \\left(\\frac{"
+      }, {
+        "text": "1}{2}\\right)^n$. The sequence is $(a_n) \u003d \\left(\\frac{1}{2},"
+      }, {
+        "text": " \\frac{1}{4}, \\frac{1}{8}, \\frac{1}{16}, \\dots"
+      }, {
+        "text": "\\right)$.\nThe corresponding series is:\n$$ \\sum_{n\u003d1}^{\\infty} \\left(\\frac{"
+      }, {
+        "text": "1}{2}\\right)^n \u003d \\frac{1}{2} + \\frac{1}{4} +"
+      }, {
+        "text": " \\frac{1}{8} + \\frac{1}{16} + \\dots $$\n**Critical Analysis:** Here"
+      }, {
+        "text": ", the terms we are adding become progressively smaller, approaching zero. It is plausible that this sum could approach a finite value"
+      }, {
+        "text": ". This is a **konvergentna (convergent)** series, and as we will see, its sum is $"
+      }, {
+        "text": "S\u003d1$.\n\n### [[Konvergenca vrste (Convergence of a Series)]]\n\nTo formally define convergence,"
+      }, {
+        "text": " we introduce the concept of **delne vsote (partial sums)**.\n\nThe **n-ta delna vsota"
+      }, {
+        "text": " ($S_n$)** is the sum of the first $n$ terms of the series:\n$$ S_n \u003d a"
+      }, {
+        "text": "_1 + a_2 + a_3 + \\dots + a_n $$\nThe partial sums themselves form a new"
+      }, {
+        "text": " sequence: $(S_1, S_2, S_3, \\dots)$.\n\n**Definicija:** A series $\\"
+      }, {
+        "text": "sum a_n$ is **konvergentna** if the sequence of its partial sums $(S_n)$ converges to"
+      }, {
+        "text": " a finite limit $S$. This limit $S$ is then defined as the sum of the series.\n$$ S"
+      }, {
+        "text": " \u003d \\lim_{n \\to \\infty} S_n $$\nIf this limit does not exist or is infinite,"
+      }, {
+        "text": " the series is **divergentna**.\n\n### [[Geometrijska vrsta (Geometric Series)]]\n\nA geometric series is a series"
+      }, {
+        "text": " where the ratio between consecutive terms is constant. This ratio is denoted by $q$. The general form is:\n$$ \\"
+      }, {
+        "text": "sum_{n\u003d1}^{\\infty} a \\cdot q^{n-1} \u003d a + aq + aq^2 + aq"
+      }, {
+        "text": "^3 + \\dots $$\n\n**Justification (Derivation of the Sum):**\nTo find the sum,"
+      }, {
+        "text": " we first analyze its n-th partial sum, $S_n$:\n1.  $S_n \u003d a"
+      }, {
+        "text": " + aq + aq^2 + \\dots + aq^{n-1}$\n2.  Multiply the entire equation by the"
+      }, {
+        "text": " common ratio $q$:\n    $S_n q \u003d aq + aq^2 + aq^3 + \\"
+      }, {
+        "text": "dots + aq^n$\n3.  Subtract the second equation from the first:\n    $S_n"
+      }, {
+        "text": " - S_n q \u003d (a + aq + \\dots + aq^{n-1}) - (aq + aq^2"
+      }, {
+        "text": " + \\dots + aq^n)$\n    Most terms cancel out, leaving:\n    $S_n ("
+      }, {
+        "text": "1-q) \u003d a - aq^n$\n4.  Assuming $q \\neq 1$, we"
+      }, {
+        "text": " can solve for $S_n$:\n    $$ S_n \u003d \\frac{a(1-q^"
+      }, {
+        "text": "n)}{1-q} $$\n5.  Now, we find the sum of the series $S$ by"
+      }, {
+        "text": " taking the limit as $n \\to \\infty$:\n    $$ S \u003d \\lim_{n \\to \\infty"
+      }, {
+        "text": "} S_n \u003d \\lim_{n \\to \\infty} \\frac{a(1-q^n"
+      }, {
+        "text": ")}{1-q} $$\n    The behavior of this limit depends entirely on the term $q^n$.\n    *   "
+      }, {
+        "text": "If $|q| \u003c 1$, then $\\lim_{n \\to \\infty} q^n \u003d 0"
+      }, {
+        "text": "$. The sum converges to:\n        $$ S \u003d \\frac{a(1-0)}{1-q}"
+      }, {
+        "text": " \u003d \\frac{a}{1-q} $$\n    *   If $|q| \\ge 1$,"
+      }, {
+        "text": " the limit $\\lim_{n \\to \\infty} q^n$ does not converge to zero, and thus the series **"
+      }, {
+        "text": "divergira (diverges)**.\n\n**Primer:** For the series $\\sum_{n\u003d1}^{\\infty} (\\"
+      }, {
+        "text": "frac{1}{2})^n \u003d \\frac{1}{2} + \\frac{1}{4} +"
+      }, {
+        "text": " \\dots$, the first term is $a \u003d \\frac{1}{2}$ and the common ratio is $q"
+      }, {
+        "text": " \u003d \\frac{1}{2}$. Since $|q| \u003c 1$, the series converges.\nIts sum is:\n"
+      }, {
+        "text": "$$ S \u003d \\frac{a}{1-q} \u003d \\frac{1/2}{1 - 1/2"
+      }, {
+        "text": "} \u003d \\frac{1/2}{1/2} \u003d 1 $$\n\n### [[Nujni pogoj za konvergenco (Necessary Condition for Convergence)]]\n\n**Izrek (Theorem):** If a series $\\sum_{n\u003d1"
+      }, {
+        "text": "}^{\\infty} a_n$ is convergent, then the limit of its terms must be zero.\n$$ \\text"
+      }, {
+        "text": "{Če je } \\sum a_n \\text{ konvergentna} \\implies \\lim_{n \\to"
+      }, {
+        "text": " \\infty} a_n \u003d 0 $$\n\n**Warning:** This is a **necessary** but **not sufficient** condition"
+      }, {
+        "text": ". If the limit of the terms is not zero, the series definitely diverges. However, if the limit *is* zero,"
+      }, {
+        "text": " the series *might* still diverge.\n\nA classic counterexample is the **harmonična vrsta (harmonic series)**"
+      }, {
+        "text": ":\n$$ \\sum_{n\u003d1}^{\\infty} \\frac{1}{n} \u003d 1 + \\"
+      }, {
+        "text": "frac{1}{2} + \\frac{1}{3} + \\frac{1}{4} + \\"
+      }, {
+        "text": "dots $$\nHere, $\\lim_{n \\to \\infty} a_n \u003d \\lim_{n \\to \\infty"
+      }, {
+        "text": "} \\frac{1}{n} \u003d 0$. The necessary condition is met, but the series **divergira ("
+      }, {
+        "text": "diverges)**. We can show this by grouping terms (as done in the notes), where each group sums to a"
+      }, {
+        "text": " value greater than or equal to $1/2$, leading to an infinite sum.\n$$ S_1\u003d1, S_"
+      }, {
+        "text": "2 \u003d \\frac{3}{2}, S_4 \\ge \\frac{4}{2}, S_8 \\"
+      }, {
+        "text": "ge \\frac{5}{2}, \\dots, S_{2^k} \\ge \\frac{k+2}{2"
+      }, {
+        "text": "} $$\nAs $k \\to \\infty$, the partial sums diverge.\n\n## [[Konvergenčni kriteriji (Convergence Criteria)]]\n\nFor series with positive terms ($a_n \u003e 0$ for all $n"
+      }, {
+        "text": " \\in \\mathbb{N}$), several criteria can help determine convergence without calculating the sum.\n\n### [[1. Primerjalni kriterij (Comparison Test)]]\nWe have two series with positive terms, $\\sum a_n$ and $\\sum"
+      }, {
+        "text": " b_n$, such that for all $n$, $a_n \\le b_n$.\n-   "
+      }, {
+        "text": "The series $\\sum b_n$ is called the **majoranta**.\n-   The series $\\sum a_n$"
+      }, {
+        "text": " is called the **minoranta**.\n\n**Pravilo (Rule):**\n1.  If the **majoranta**"
+      }, {
+        "text": " ($\\sum b_n$) converges, then the **minoranta** ($\\sum a_n$) also converges.\n2."
+      }, {
+        "text": "  If the **minoranta** ($\\sum a_n$) diverges, then the **majoranta** ($\\sum b"
+      }, {
+        "text": "_n$) also diverges.\n\n**Primer:** Determine the convergence of $\\sum_{n\u003d1}^{\\infty} \\"
+      }, {
+        "text": "frac{1}{\\sqrt{n(n+1)}}$.\nThe term $a_n \u003d \\frac{"
+      }, {
+        "text": "1}{\\sqrt{n(n+1)}}$. We can find a simpler series to compare it to.\nNotice"
+      }, {
+        "text": " that $\\sqrt{n(n+1)} \u003e \\sqrt{n \\cdot n} \u003d n$. Therefore, $\\frac{"
+      }, {
+        "text": "1}{\\sqrt{n(n+1)}} \u003c \\frac{1}{n}$.\nHere, $\\sum a_n$"
+      }, {
+        "text": " is our series, and $\\sum b_n \u003d \\sum \\frac{1}{n}$ is the harmonic series."
+      }, {
+        "text": "\n**Warning:** Our series is *smaller* than a divergent series. This tells us nothing. The comparison test is inconclusive"
+      }, {
+        "text": " in this direction.\n\nLet\u0027s try a different comparison. $\\sqrt{n(n+1)} \u003c \\sqrt{("
+      }, {
+        "text": "n+1)(n+1)} \u003d n+1$.\nSo, $\\frac{1}{\\sqrt{n(n+"
+      }, {
+        "text": "1)}} \u003e \\frac{1}{n+1}$.\nHere, our series is the majorant, and the minor"
+      }, {
+        "text": "ant is $\\sum \\frac{1}{n+1}$, which is just the harmonic series without the first term."
+      }, {
+        "text": " It still diverges.\nSince our series is greater than a divergent series (minorant diverges), our series **divergira**.\n\n"
+      }, {
+        "text": "### [[2. Kvocientni kriterij (Ratio Test)]]\nWe calculate the limit of the ratio of"
+      }, {
+        "text": " consecutive terms:\n$$ q \u003d \\lim_{n \\to \\infty} \\frac{a_{n+1"
+      }, {
+        "text": "}}{a_n} $$\n-   If $q \u003c 1$, the series converges.\n-   If"
+      }, {
+        "text": " $q \u003e 1$, the series diverges.\n-   If $q \u003d 1$, the test is inconclusive"
+      }, {
+        "text": ".\n\n**Primer:** Test the convergence of $\\sum_{n\u003d0}^{\\infty} \\frac{5^n}{n"
+      }, {
+        "text": "!}$.\n$$ q \u003d \\lim_{n \\to \\infty} \\frac{5^{n+1}/(n"
+      }, {
+        "text": "+1)!}{5^n/n!} \u003d \\lim_{n \\to \\infty} \\frac{5"
+      }, {
+        "text": "^{n+1} \\cdot n!}{5^n \\cdot (n+1)!} \u003d \\lim_{"
+      }, {
+        "text": "n \\to \\infty} \\frac{5}{n+1} \u003d 0 $$\nSince $q\u003d0 \u003c "
+      }, {
+        "text": "1$, the series **konvergira**.\n\n### [[3. Korenski kriterij (Root Test)]]\nWe calculate"
+      }, {
+        "text": " the limit:\n$$ q \u003d \\lim_{n \\to \\infty} \\sqrt[n]{a_n} $$\n"
+      }, {
+        "text": "-   If $q \u003c 1$, the series converges.\n-   If $q \u003e 1$, the"
+      }, {
+        "text": " series diverges.\n-   If $q \u003d 1$, the test is inconclusive.\n\n### [[4. Raabejev kriterij (Raabe\u0027s Test)]]\nThis test is often used when the Ratio and Root tests are inconclusive"
+      }, {
+        "text": " ($q\u003d1$).\nWe calculate the limit:\n$$ q \u003d \\lim_{n \\to \\infty} n"
+      }, {
+        "text": "\\left(\\frac{a_n}{a_{n+1}} - 1\\right) $$\n-   "
+      }, {
+        "text": "If $q \u003e 1$, the series converges.\n-   If $q \u003c 1$, the series diverges"
+      }, {
+        "text": ".\n-   If $q \u003d 1$, the test is inconclusive.\n\n**Primer:** Test the convergence of"
+      }, {
+        "text": " $\\sum \\frac{1}{n^2}$.\nThe Ratio Test gives $q\u003d1$. Let\u0027s use"
+      }, {
+        "text": " Raabe\u0027s Test.\n$$ q \u003d \\lim_{n \\to \\infty} n\\left(\\frac"
+      }, {
+        "text": "{(n+1)^2}{n^2} - 1\\right) \u003d \\lim_{n \\to \\infty}"
+      }, {
+        "text": " n\\left(\\frac{n^2+2n+1-n^2}{n^2}\\right) \u003d \\"
+      }, {
+        "text": "lim_{n \\to \\infty} \\frac{2n^2+n}{n^2} \u003d 2"
+      }, {
+        "text": " $$\nSince $q\u003d2 \u003e 1$, the series **konvergira**.\n\n## [[Konvergenca vrst s poljubnimi členi]]\n\n### [[Alternirajoče vrste (Alternating Series)]]\nAn"
+      }, {
+        "text": " alternating series has terms that alternate in sign, e.g., $a_1 - a_2 + a_3"
+      }, {
+        "text": " - a_4 + \\dots$.\nThe general form is $\\sum (-1)^{n+1} a_n$,"
+      }, {
+        "text": " where $a_n \\ge 0$.\n\n**Leibnizov kriterij:** An alternating series converges if"
+      }, {
+        "text": " two conditions are met:\n1.  The sequence of absolute values of the terms is monotonically decreasing: $a_1 \\"
+      }, {
+        "text": "ge a_2 \\ge a_3 \\ge \\dots$.\n2.  The limit of the terms is zero:"
+      }, {
+        "text": " $\\lim_{n \\to \\infty} a_n \u003d 0$.\n\n**Primer:** The alternating harmonic series $\\sum (-"
+      }, {
+        "text": "1)^{n+1} \\frac{1}{n} \u003d 1 - \\frac{1}{2}"
+      }, {
+        "text": " + \\frac{1}{3} - \\dots$.\n1.  The sequence $a_n \u003d \\frac{"
+      }, {
+        "text": "1}{n}$ is decreasing ($1 \\ge \\frac{1}{2} \\ge \\frac{1}{3} \\"
+      }, {
+        "text": "dots$).\n2.  $\\lim_{n \\to \\infty} \\frac{1}{n} \u003d 0$.\n"
+      }, {
+        "text": "Both conditions are met, so the series **konvergira**.\n\n### [[Absolutna in pogojna konvergenca (Absolute and Conditional Convergence)]]\nFor any series $\\sum a_n$ with arbitrary terms, we can"
+      }, {
+        "text": " analyze the related series of absolute values, $\\sum |a_n|$.\n\n-   **Absolutna konverg"
+      }, {
+        "text": "enca:** The series $\\sum a_n$ is absolutely convergent if the series of absolute values $\\sum |a_n"
+      }, {
+        "text": "|$ converges.\n-   **Pogojna konvergenca:** The series $\\sum a_n$ is conditionally convergent if it"
+      }, {
+        "text": " converges, but the series $\\sum |a_n|$ diverges.\n\n**Izrek:** If a series converges absolutely"
+      }, {
+        "text": ", then it also converges.\n$$ \\sum |a_n| \\text{ konvergira} \\implies \\sum"
+      }, {
+        "text": " a_n \\text{ konvergira} $$\nThe converse is not true. The alternating harmonic series is a classic"
+      }, {
+        "text": " example of conditional convergence.\n\n## [[5.2. Funkcijske vrste (Functional Series)]]\n\nA functional series is a"
+      }, {
+        "text": " series whose terms are functions of a variable $x$.\n$$ \\sum_{n\u003d1}^{\\infty} f_n("
+      }, {
+        "text": "x) \u003d f_1(x) + f_2(x) + f_3(x) + \\dots $$"
+      }, {
+        "text": "\n\n### [[Potenčne vrste (Power Series)]]\nA power series is a special type of functional series where the terms"
+      }, {
+        "text": " are of the form $a_n (x-c)^n$. We will focus on series centered at $c"
+      }, {
+        "text": "\u003d0$:\n$$ \\sum_{n\u003d0}^{\\infty} a_n x^n $$\n\n**Konvergenca po"
+      }, {
+        "text": " točkah (Convergence by Points):** We fix a value $x \u003d x_0$ and substitute it into the series"
+      }, {
+        "text": ". This transforms the functional series into a numerical series $\\sum a_n x_0^n$, which we can"
+      }, {
+        "text": " then test for convergence using the standard criteria.\n\nThe set of all $x$ values for which the series converges is"
+      }, {
+        "text": " called the **konvergenčno območje (domain of convergence)**. For power series, this domain is always"
+      }, {
+        "text": " an interval centered at $c$.\n\n### [[Konvergenčni polmer (Radius of Convergence)]]\nThe radius of"
+      }, {
+        "text": " convergence, $R$, defines the interval $(-R, R)$ inside which the power series converges absolutely.\nIt can be calculated"
+      }, {
+        "text": " using the coefficients $a_n$ with the ratio or root test formulas:\n$$ R \u003d \\lim_{n \\to"
+      }, {
+        "text": " \\infty} \\left| \\frac{a_n}{a_{n+1}} \\right| \\quad \\text"
+      }, {
+        "text": "{or} \\quad R \u003d \\frac{1}{\\lim_{n \\to \\infty} \\sqrt[n]{|a_n|}} $$\n\n-   If $|x| \u003c R$, the series converges absolutely.\n-   "
+      }, {
+        "text": "If $|x| \u003e R$, the series diverges.\n-   If $|x| \u003d R$ (at the endpoints of"
+      }, {
+        "text": " the interval), the convergence must be checked separately.\n\n### [[Primer: Določanje konvergenčnega območja]]\n\n**Problem:** Find the convergence domain for the series $\\sum_{n\u003d1}^{\\infty} \\frac{(-4"
+      }, {
+        "text": ")^n}{n^2} (x-2)^{2n}$.\n\n**Rešitev (Solution):**\n"
+      }, {
+        "text": "1.  **Identify the general term and apply the Ratio Test.** Let\u0027s denote the entire n-th term as"
+      }, {
+        "text": " $u_n$.\n    $$ q \u003d \\lim_{n \\to \\infty} \\left| \\frac{u"
+      }, {
+        "text": "_{n+1}}{u_n} \\right| \u003d \\lim_{n \\to \\infty} \\left"
+      }, {
+        "text": "| \\frac{(-4)^{n+1}(x-2)^{2(n+1)}}{(n+1)^"
+      }, {
+        "text": "2} \\cdot \\frac{n^2}{(-4)^n(x-2)^{2n}} \\right| $$"
+      }, {
+        "text": "\n2.  **Simplify the expression.**\n    $$ q \u003d \\lim_{n \\to \\infty} \\"
+      }, {
+        "text": "left| (-4) \\cdot (x-2)^2 \\cdot \\frac{n^2}{(n+"
+      }, {
+        "text": "1)^2} \\right| $$\n    $$ q \u003d |-4| \\cdot |(x-2)^"
+      }, {
+        "text": "2| \\cdot \\lim_{n \\to \\infty} \\frac{n^2}{(n+1)^"
+      }, {
+        "text": "2} $$\n    The limit is $\\lim \\frac{n^2}{n^2+2n+1} \u003d"
+      }, {
+        "text": " 1$.\n    $$ q \u003d 4 (x-2)^2 $$\n    Note: $(x-"
+      }, {
+        "text": "2)^2$ is always non-negative, so absolute value is not needed there.\n3.  **Set"
+      }, {
+        "text": " the condition for convergence.** The series converges when $q \u003c 1$.\n    $$ 4(x-2)^"
+      }, {
+        "text": "2 \u003c 1 \\implies (x-2)^2 \u003c \\frac{1}{4} $$\n4.  "
+      }, {
+        "text": "**Solve the inequality.**\n    $$ |x-2| \u003c \\sqrt{\\frac{1}{4}} \\"
+      }, {
+        "text": "implies |x-2| \u003c \\frac{1}{2} $$\n    This means:\n    $$ -\\frac{1"
+      }, {
+        "text": "}{2} \u003c x-2 \u003c \\frac{1}{2} $$\n    $$ 2 - \\frac"
+      }, {
+        "text": "{1}{2} \u003c x \u003c 2 + \\frac{1}{2} $$\n    $$ \\frac"
+      }, {
+        "text": "{3}{2} \u003c x \u003c \\frac{5}{2} $$\n    The series converges absolutely on the"
+      }, {
+        "text": " open interval $(\\frac{3}{2}, \\frac{5}{2})$.\n5.  **Test the endpoints.**"
+      }, {
+        "text": "\n    *   **Case 1: $x \u003d \\frac{3}{2}$**\n        Substitute into the original series"
+      }, {
+        "text": ":\n        $$ \\sum_{n\u003d1}^{\\infty} \\frac{(-4)^n}{n^2}"
+      }, {
+        "text": " \\left(\\frac{3}{2}-2\\right)^{2n} \u003d \\sum_{n\u003d1}^{\\"
+      }, {
+        "text": "infty} \\frac{(-4)^n}{n^2} \\left(-\\frac{1}{2}\\right)^{"
+      }, {
+        "text": "2n} \u003d \\sum_{n\u003d1}^{\\infty} \\frac{(-1)^n 4^n}{"
+      }, {
+        "text": "n^2} \\left(\\frac{1}{4}\\right)^n \u003d \\sum_{n\u003d1}^{\\infty"
+      }, {
+        "text": "} \\frac{(-1)^n}{n^2} $$\n        This is a convergent alternating series (Leibniz"
+      }, {
+        "text": " test).\n    *   **Case 2: $x \u003d \\frac{5}{2}$**\n        Substitute"
+      }, {
+        "text": " into the original series:\n        $$ \\sum_{n\u003d1}^{\\infty} \\frac{(-4)^n}{"
+      }, {
+        "text": "n^2} \\left(\\frac{5}{2}-2\\right)^{2n} \u003d \\sum_{"
+      }, {
+        "text": "n\u003d1}^{\\infty} \\frac{(-4)^n}{n^2} \\left(\\frac{1}{"
+      }, {
+        "text": "2}\\right)^{2n} \u003d \\sum_{n\u003d1}^{\\infty} \\frac{(-1)^n}{"
+      }, {
+        "text": "n^2} $$\n        This is the same convergent alternating series.\n\n**Zaključek (Conclusion):** The"
+      }, {
+        "text": " convergence domain is the closed interval $[\\frac{3}{2}, \\frac{5}{2}]$."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

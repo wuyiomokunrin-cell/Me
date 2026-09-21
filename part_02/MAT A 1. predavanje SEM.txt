@@ -1,0 +1,272 @@
+# [[Real Numbers and Absolute Value]]
+
+This lecture covers fundamental concepts related to sets of real numbers, including their extrema (minimum, maximum, infimum, supremum), and the analysis of functions involving absolute values.
+
+## #(1) Key Concepts: min, max, inf, sup
+
+Before solving problems, let's clarify the definitions for a given set $S \subseteq \mathbb{R}$:
+
+*   **Minimum ($min(S)$):** The smallest element that is *in* the set $S$. If it exists, it is unique.
+*   **Infimum ($inf(S)$):** The greatest lower bound of the set $S$. It does not have to be an element of $S$. If a minimum exists, then $inf(S) = min(S)$.
+*   **Maximum ($max(S)$):** The largest element that is *in* the set $S$. If it exists, it is unique.
+*   **Supremum ($sup(S)$):** The least upper bound of the set $S$. It does not have to be an element of $S$. If a maximum exists, then $sup(S) = max(S)$.
+
+---
+
+## #(2) Worked Examples: Finding Extrema of Sets
+
+Here we determine the min, max, inf, and sup for the given sets.
+
+**a) Set A = $\mathbb{N}$ (Natural Numbers)**
+*   **Set elements:** $A = \{1, 2, 3, ...\}$
+*   **Analysis:** The set has a smallest element, which is 1. It is not bounded from above.
+*   **Solution:**
+    *   $min(A) = 1$
+    *   $inf(A) = 1$
+    *   $max(A) = \emptyset$ (does not exist)
+    *   $sup(A) = \emptyset$ (does not exist)
+
+**b) Set B = $\mathbb{N} \cap (-5, 5]$**
+*   **Set elements:** We are looking for natural numbers in the interval from -5 (exclusive) to 5 (inclusive). This gives us $B = \{1, 2, 3, 4, 5\}$.
+*   **Analysis:** This is a finite set, so it has both a minimum and a maximum.
+*   **Solution:**
+    *   $min(B) = 1$
+    *   $inf(B) = 1$
+    *   $max(B) = 5$
+    *   $sup(B) = 5$
+
+**c) Set C = $\{1 - \frac{1}{n} \ | \ n \in \mathbb{N}\}$**
+*   **Set elements:** Let's list the first few terms:
+    *   n=1: $1 - 1 = 0$
+    *   n=2: $1 - \frac{1}{2} = \frac{1}{2}$
+    *   n=3: $1 - \frac{2}{3} = \frac{2}{3}$
+    *   As $n \to \infty$, the term $\frac{1}{n} \to 0$, so the expression approaches 1.
+*   **Analysis:** The smallest value occurs at n=1. The values increase and approach 1 but never reach it.
+*   **Solution:**
+    *   $min(C) = 0$
+    *   $inf(C) = 0$
+    *   $max(C) = \emptyset$
+    *   $sup(C) = 1$
+
+**d) Set D = $\{1 + \frac{(-1)^n}{n} \ | \ n \in \mathbb{N}\}$**
+*   **Set elements:** This sequence oscillates.
+    *   n=1: $1 + \frac{-1}{1} = 0$
+    *   n=2: $1 + \frac{1}{2} = \frac{3}{2}$
+    *   n=3: $1 + \frac{-1}{3} = \frac{2}{3}$
+    *   n=4: $1 + \frac{1}{4} = \frac{5}{4}$
+*   **Analysis:** The smallest value is 0 (at n=1). The largest value is $\frac{3}{2}$ (at n=2). All other terms will be between these two values.
+*   **Solution:**
+    *   $min(D) = 0$
+    *   $inf(D) = 0$
+    *   $max(D) = \frac{3}{2}$
+    *   $sup(D) = \frac{3}{2}$
+
+**e) Set E = $\{\frac{2x}{x+1} \ | \ x \ge 0\}$**
+*   **Analysis:** This describes the range of the function $f(x) = \frac{2x}{x+1}$ for $x \ge 0$.
+    *   At $x=0$, $f(0) = 0$. This is the lowest value.
+    *   To find the upper bound, we can examine the limit as $x \to \infty$:
+        $$ \lim_{x\to\infty} \frac{2x}{x+1} = \lim_{x\to\infty} \frac{2}{1+\frac{1}{x}} = 2 $$
+    The function approaches 2 but never reaches it.
+*   **Solution:**
+    *   $min(E) = 0$
+    *   $inf(E) = 0$
+    *   $max(E) = \emptyset$
+    *   $sup(E) = 2$
+
+---
+
+## #(3) Function with Absolute Value: Quadratic
+
+Let's analyze the function $f(x) = |x^2 + x - 2|$.
+
+### [[Graphing f(x)]]
+
+1.  **Analyze the inner function:** First, consider $g(x) = x^2 + x - 2$. This is an upward-opening parabola.
+    *   **Roots:** $x^2 + x - 2 = 0 \implies (x+2)(x-1) = 0$. The roots are $x=-2$ and $x=1$.
+    *   The function $g(x)$ is negative between its roots, i.e., for $x \in (-2, 1)$.
+
+2.  **Apply the absolute value:** The absolute value $|g(x)|$ reflects any part of the graph that is below the x-axis to be above it.
+    *   The part of the parabola for $x \in (-2, 1)$ is reflected across the x-axis.
+
+3.  **Piecewise Definition:** This gives us the formal definition of $f(x)$:
+    $$ f(x) = \begin{cases} x^2 + x - 2 & \text{for } x \in (-\infty, -2] \cup [1, \infty) \\ -(x^2 + x - 2) & \text{for } x \in (-2, 1) \end{cases} $$
+
+### [[Solving Equations and Inequalities with f(x)]]
+
+**a) Solve $f(x) = 4$**
+We must consider both cases from the piecewise definition:
+*   **Case 1:** $x^2 + x - 2 = 4 \implies x^2 + x - 6 = 0 \implies (x+3)(x-2)=0$. Solutions are $x_1 = -3$ and $x_2 = 2$. Both are valid as they lie in the domain for this case.
+*   **Case 2:** $-(x^2 + x - 2) = 4 \implies x^2 + x - 2 = -4 \implies x^2 + x + 2 = 0$. The discriminant is $\Delta = b^2 - 4ac = 1 - 4(1)(2) = -7 < 0$. There are no real solutions in this case.
+
+The solutions are $x \in \{-3, 2\}$.
+
+**b) Solve $f(x) < 4$**
+*   **Graphical Interpretation:** We are looking for the x-values where the graph of $f(x)$ is below the line $y=4$. From the graph and our previous solution, this is the interval between $x=-3$ and $x=2$.
+*   **Solution:** $x \in (-3, 2)$.
+
+---
+
+## #(4) Function with Absolute Value: Rational
+
+Let's analyze the function $f(x) = \left|\frac{2x+1}{1-x}\right|$.
+
+### [[Solving f(x) < 2]]
+
+We need to solve the inequality $\left|\frac{2x+1}{1-x}\right| < 2$. This is equivalent to solving the double inequality:
+$$ -2 < \frac{2x+1}{1-x} < 2 $$
+This requires solving two separate inequalities and finding the intersection of their solution sets.
+
+**Inequality 1: $\frac{2x+1}{1-x} < 2$**
+$$ \frac{2x+1}{1-x} - 2 < 0 \implies \frac{2x+1 - 2(1-x)}{1-x} < 0 \implies \frac{4x-1}{1-x} < 0 $$
+The critical points are $x = \frac{1}{4}$ and $x=1$. The expression is negative for **$x \in (-\infty, \frac{1}{4}) \cup (1, \infty)$**.
+
+**Inequality 2: $\frac{2x+1}{1-x} > -2$**
+$$ \frac{2x+1}{1-x} + 2 > 0 \implies \frac{2x+1 + 2(1-x)}{1-x} > 0 \implies \frac{3}{1-x} > 0 $$
+This is true when the denominator is positive, so $1-x > 0 \implies x < 1$. The solution is **$x \in (-\infty, 1)$**.
+
+**Final Solution:**
+We need the intersection of the two solution sets:
+$$ \left( (-\infty, \frac{1}{4}) \cup (1, \infty) \right) \cap (-\infty, 1) $$
+The intersection is **$x \in (-\infty, \frac{1}{4})$**. Your final answer in the notes was correct. This structured approach makes the derivation clearer.
+
+---
+
+## #(DN) Homework: Nested Absolute Value
+
+**Problem:** Solve the inequality $||2x+1| - 3| < 2$.
+
+**Solution Strategy:** We'll "unwrap" the absolute values from the outside in.
+
+1.  **Outer Absolute Value:** The inequality $|A| < 2$ is equivalent to $-2 < A < 2$. Here, $A = |2x+1| - 3$.
+    $$ -2 < |2x+1| - 3 < 2 $$
+
+2.  **Isolate the Inner Absolute Value:** Add 3 to all parts of the inequality.
+    $$ 1 < |2x+1| < 5 $$
+
+3.  **Split into Two Conditions:** This double inequality means we must satisfy two conditions simultaneously (AND):
+    *   Condition A: $|2x+1| > 1$
+    *   Condition B: $|2x+1| < 5$
+
+4.  **Solve Condition A:** $|2x+1| > 1$
+    This splits into two possibilities (OR):
+    *   $2x+1 > 1 \implies 2x > 0 \implies x > 0$
+    *   $2x+1 < -1 \implies 2x < -2 \implies x < -1$
+    The solution for A is $x \in (-\infty, -1) \cup (0, \infty)$.
+
+5.  **Solve Condition B:** $|2x+1| < 5$
+    This is equivalent to:
+    *   $-5 < 2x+1 < 5$
+    *   $-6 < 2x < 4$
+    *   $-3 < x < 2$
+    The solution for B is $x \in (-3, 2)$.
+
+6.  **Find the Intersection:** The final answer is the intersection of the solution sets for A and B.
+    *   We need $x$ values that are in `(-∞, -1) ∪ (0, ∞)` AND in `(-3, 2)`.
+    *   Intersection of `(-3, 2)` with `(-∞, -1)` is `(-3, -1)`.
+    *   Intersection of `(-3, 2)` with `(0, ∞)` is `(0, 2)`.
+
+**Final Answer:**
+The solution set is the union of these two intervals:
+$$ x \in (-3, -1) \cup (0, 2) $$
+
+***
+# [[Mathematical Induction Examples]]
+
+Here are the structured proofs for the induction problems from your notes.
+
+## #(1) Divisibility Proof
+
+**Prove:** For all $n \in \mathbb{N}$, the statement $P(n): 31 | (2^{5n} - 1)$ is true.
+
+### ### Base Case (n=1)
+We check if $31$ divides $(2^{5(1)} - 1)$.
+$$ 2^5 - 1 = 32 - 1 = 31 $$
+Since $31 | 31$, the base case holds.
+
+### ### Inductive Step (n → n+1)
+1.  **Inductive Hypothesis (IH):** Assume $P(n)$ is true for some $n \in \mathbb{N}$. That is, assume $31 | (2^{5n} - 1)$. This means $2^{5n} - 1 = 31k$ for some integer $k$.
+
+2.  **Goal:** We want to prove $P(n+1)$ is true, i.e., $31 | (2^{5(n+1)} - 1)$.
+
+3.  **Proof:**
+    $$
+    \begin{align*}
+    2^{5(n+1)} - 1 &= 2^{5n+5} - 1 \\
+    &= 2^5 \cdot 2^{5n} - 1 \\
+    &= 32 \cdot 2^{5n} - 1 \\
+    &= (31 + 1) \cdot 2^{5n} - 1 \\
+    &= 31 \cdot 2^{5n} + 1 \cdot 2^{5n} - 1 \\
+    &= 31 \cdot 2^{5n} + (2^{5n} - 1)
+    \end{align*}
+    $$
+    The first term, $31 \cdot 2^{5n}$, is clearly divisible by 31. The second term, $(2^{5n} - 1)$, is divisible by 31 according to our Inductive Hypothesis. The sum of two numbers divisible by 31 is also divisible by 31.
+
+Therefore, by the principle of mathematical induction, the statement is true for all $n \in \mathbb{N}$.
+
+---
+
+## #(2) Inequality Proof
+
+### ### Critical Analysis: Correcting a Mistake in the Notes
+In your notes (Image 9), you incorrectly concluded that the base case for the inequality $\sum_{k=1}^{n} \frac{1}{\sqrt{k}} \le 2\sqrt{n} - 1$ fails. Let's re-examine it.
+
+*   **Problem:** Prove $\forall n \in \mathbb{N}$, $\frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} + \dots + \frac{1}{\sqrt{n}} \le 2\sqrt{n} - 1$.
+*   **Base Case (n=1):** We check if $\frac{1}{\sqrt{1}} \le 2\sqrt{1} - 1$.
+    $$ 1 \le 2(1) - 1 \implies 1 \le 1 $$
+*   **Conclusion:** This statement is **true**. The base case holds. It's a great habit to be critical, but always double-check the calculations. This is a perfect example of why that's important.
+
+### ### Proof for 
+$\sum_{k=1}^{n} \frac{1}{\sqrt{k}} \le 2\sqrt{n} - 1$
+
+1.  **Base Case (n=1):** As shown above, $1 \le 1$ holds.
+
+2.  **Inductive Step (n → n+1):**
+    *   **Inductive Hypothesis (IH):** Assume for some $n \in \mathbb{N}$ that $\sum_{k=1}^{n} \frac{1}{\sqrt{k}} \le 2\sqrt{n} - 1$.
+    *   **Goal:** Prove that $\sum_{k=1}^{n+1} \frac{1}{\sqrt{k}} \le 2\sqrt{n+1} - 1$.
+    *   **Proof:**
+        $$ \sum_{k=1}^{n+1} \frac{1}{\sqrt{k}} = \left(\sum_{k=1}^{n} \frac{1}{\sqrt{k}}\right) + \frac{1}{\sqrt{n+1}} $$
+        Using the IH, we can say:
+        $$ \le (2\sqrt{n} - 1) + \frac{1}{\sqrt{n+1}} $$
+        Now, we just need to prove that this result is less than or equal to our goal:
+        $$ (2\sqrt{n} - 1) + \frac{1}{\sqrt{n+1}} \le 2\sqrt{n+1} - 1 $$
+        This simplifies to proving:
+        $$ \frac{1}{\sqrt{n+1}} \le 2\sqrt{n+1} - 2\sqrt{n} $$
+        To make this easier, we can multiply by the "conjugate" expression's positive counterpart:
+        $$ \frac{1}{\sqrt{n+1}} \le 2(\sqrt{n+1} - \sqrt{n}) \cdot \frac{\sqrt{n+1} + \sqrt{n}}{\sqrt{n+1} + \sqrt{n}} $$
+        $$ \frac{1}{\sqrt{n+1}} \le \frac{2((n+1) - n)}{\sqrt{n+1} + \sqrt{n}} = \frac{2}{\sqrt{n+1} + \sqrt{n}} $$
+        Is it true that $\frac{1}{\sqrt{n+1}} \le \frac{2}{\sqrt{n+1} + \sqrt{n}}$? Cross-multiplying (since all terms are positive) gives:
+        $$ \sqrt{n+1} + \sqrt{n} \le 2\sqrt{n+1} $$
+        $$ \sqrt{n} \le \sqrt{n+1} $$
+        This is true for all $n \in \mathbb{N}$. Therefore, the inductive step holds, and the original inequality is proven. proven.
+
+ ### Note to Self: Alternative Proof using Squaring
+
+**Goal:** Prove that the following inequality is true for all $n \in \mathbb{N}$:
+$$ (2\sqrt{n} - 1) + \frac{1}{\sqrt{n+1}} \le 2\sqrt{n+1} - 1 $$
+
+**Step 1: Simplify the inequality.**
+First, we can add 1 to both sides, which simplifies our task to proving:
+$$ 2\sqrt{n} + \frac{1}{\sqrt{n+1}} \le 2\sqrt{n+1} $$
+
+**Step 2: Remove the fraction.**
+To make squaring cleaner, let's eliminate the fraction by multiplying the entire inequality by $\sqrt{n+1}$. Since $n \in \mathbb{N}$, $\sqrt{n+1}$ is always positive, so the direction of the inequality sign remains unchanged.
+$$ \sqrt{n+1} \left( 2\sqrt{n} + \frac{1}{\sqrt{n+1}} \right) \le \sqrt{n+1} \left( 2\sqrt{n+1} \right) $$
+Distributing on the left side gives:
+$$ 2\sqrt{n}\sqrt{n+1} + 1 \le 2(n+1) $$
+$$ 2\sqrt{n(n+1)} + 1 \le 2n + 2 $$
+
+**Step 3: Isolate the square root term.**
+Before squaring, it's best to have the square root term isolated on one side.
+$$ 2\sqrt{n(n+1)} \le 2n + 1 $$
+
+**Step 4: Square both sides.**
+Now we can square both sides. For $n \in \mathbb{N}$, both the left side ($2\sqrt{n(n+1)}$) and the right side ($2n+1$) are positive, so squaring is a valid operation that preserves the inequality.
+$$ \left( 2\sqrt{n(n+1)} \right)^2 \le (2n+1)^2 $$
+$$ 4 \cdot (n(n+1)) \le (2n)^2 + 2(2n)(1) + 1^2 $$
+$$ 4(n^2 + n) \le 4n^2 + 4n + 1 $$
+$$ 4n^2 + 4n \le 4n^2 + 4n + 1 $$
+
+**Step 5: Conclude the proof.**
+Finally, we subtract $4n^2 + 4n$ from both sides of the inequality:
+$$ 0 \le 1 $$
+This is a universally true statement. Since we arrived at a true statement through a series of valid algebraic steps, our initial inequality must also be true. This confirms the inductive step and completes the proof. This method, while involving more expansion, directly removes the roots as you suggested.

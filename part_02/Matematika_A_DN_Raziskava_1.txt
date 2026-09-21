@@ -1,0 +1,97 @@
+### File: `Matematika_A_DN_Raziskava_1.md`
+
+# [[Domače Naloge in Raziskave (Predavanje 1)]]
+
+This document contains detailed solutions and explanations for the problems and concepts that were assigned for independent study during the first Mathematics A lecture.
+
+## [[Število Diagonal v n-kotniku (Number of Diagonals in an n-gon)]]
+
+The lecture presented the formula for the number of diagonals in a convex n-sided polygon ($D_n$) and tasked us with proving it via mathematical induction.
+
+**Trditev (Statement):** The number of diagonals in a convex n-gon is given by the formula:
+$$ D_n = \frac{n(n-3)}{2} $$
+
+**Dokaz z Indukcijo (Proof by Induction):**
+
+### [[Baza Indukcije (Base Case)]]
+The simplest polygon is a triangle ($n=3$).
+*   A triangle has **0** diagonals.
+*   Let's check the formula for $n=3$:
+    $$ D_3 = \frac{3(3-3)}{2} = \frac{3 \cdot 0}{2} = 0 $$
+*   The formula holds for the base case.
+    *   *(Self-check for $n=4$, a quadrilateral): It has 2 diagonals. The formula gives $D_4 = \frac{4(4-3)}{2} = \frac{4}{2} = 2$. The formula is consistent.*
+
+### [[Indukcijski Korak (Inductive Step)]]
+1.  **Indukcijska Predpostavka (Inductive Hypothesis):**
+    Assume the formula is true for a polygon with $n$ vertices.
+    $$ D_n = \frac{n(n-3)}{2} $$
+2.  **Dokaz za n+1 (Proof for n+1):**
+    We must prove that the formula holds for a polygon with $n+1$ vertices. Our goal is to show:
+    $$ D_{n+1} = \frac{(n+1)((n+1)-3)}{2} = \frac{(n+1)(n-2)}{2} $$
+
+    **Razlaga (The "Why"):** How do we get from an $n$ -gon to an $(n+1)$ -gon? We add a new vertex. Let's count how the number of diagonals changes.
+
+    *   **Original Diagonals:** All the $D_n$ diagonals from the original $n$ -gon are still present.
+    *   **New Diagonals:** From our new vertex, we can draw a diagonal to every other vertex *except* for itself and its two immediate neighbors. This means we can draw diagonals to $(n+1) - 3 = n-2$ vertices. So, we add **$n-2$ new diagonals**.
+    *   **The Converted Side:** One of the *sides* of the original $n$ -gon that connected the two vertices adjacent to our new vertex now becomes an *internal diagonal* of the new $(n+1)$ -gon. So, we add **1 more diagonal**.
+
+    Therefore, the total number of diagonals in the new polygon is:
+    $$ D_{n+1} = (\text{original diagonals}) + (\text{new diagonals}) + (\text{converted side}) $$
+    $$ D_{n+1} = D_n + (n-2) + 1 = D_n + n - 1 $$
+
+    Now, we substitute our inductive hypothesis for $D_n$:
+    $$ D_{n+1} = \frac{n(n-3)}{2} + (n-1) $$
+    Find a common denominator:
+    $$ D_{n+1} = \frac{n(n-3) + 2(n-1)}{2} = \frac{n^2 - 3n + 2n - 2}{2} $$
+    $$ D_{n+1} = \frac{n^2 - n - 2}{2} $$
+    Factor the numerator:
+    $$ D_{n+1} = \frac{(n+1)(n-2)}{2} $$
+    This is exactly the formula we needed to prove for $n+1$. The inductive step holds.
+
+**Zaključek (Conclusion):** Since the base case and the inductive step are both true, the formula $D_n = \frac{n(n-3)}{2}$ is proven to be valid for all polygons with $n \ge 3$.
+
+## [[Primer Reševanja: Enačba z Absolutno Vrednostjo]]
+
+Your handwritten notes include the problem of solving $|x^2 - 2x| = 4$.
+
+### [[Koncept (The "Why")]]
+The absolute value function $|A|$ splits a problem into two cases. The equation $|A| = B$ is equivalent to solving two separate equations:
+1.  $A = B$
+2.  $A = -B$
+
+However, we must be careful to check which solutions are valid. A more rigorous method is to analyze the sign of the expression *inside* the absolute value.
+
+### [[Reševanje po Korakih (Step-by-Step Solution)]]
+**Naloga (Problem):** Reši enačbo $|x^2 - 2x| = 4$.
+
+**1. Določi Kritične Točke (Determine Critical Points):**
+First, find where the expression inside the absolute value equals zero. These points divide the number line into regions where the expression is either positive or negative.
+$$ x^2 - 2x = 0 \implies x(x-2) = 0 $$
+The critical points are $x=0$ and $x=2$. This gives us two main cases.
+
+**2. Analiza Primerov (Case Analysis):**
+
+*   **Primer 1: $x^2 - 2x \ge 0$**
+    This is true when $x \in (-\infty, 0] \cup [2, \infty)$.
+    In this region, the absolute value does nothing: $|x^2 - 2x| = x^2 - 2x$.
+    The equation becomes:
+    $$ x^2 - 2x = 4 \implies x^2 - 2x - 4 = 0 $$
+    Using the quadratic formula to solve for $x$:
+    $$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} = \frac{2 \pm \sqrt{(-2)^2 - 4(1)(-4)}}{2} $$
+    $$ x = \frac{2 \pm \sqrt{4 + 16}}{2} = \frac{2 \pm \sqrt{20}}{2} = \frac{2 \pm 2\sqrt{5}}{2} = 1 \pm \sqrt{5} $$
+    We must check if these solutions lie in the domain for this case:
+    *   $x_1 = 1 + \sqrt{5} \approx 3.236$. This is in $[2, \infty)$, so it is a **valid solution**.
+    *   $x_2 = 1 - \sqrt{5} \approx -1.236$. This is in $(-\infty, 0]$, so it is also a **valid solution**.
+
+*   **Primer 2: $x^2 - 2x < 0$**
+    This is true when $x \in (0, 2)$.
+    In this region, the absolute value changes the sign: $|x^2 - 2x| = -(x^2 - 2x) = -x^2 + 2x$.
+    The equation becomes:
+    $$ -x^2 + 2x = 4 \implies x^2 - 2x + 4 = 0 $$
+    Let's check the discriminant, $D = b^2 - 4ac$:
+    $$ D = (-2)^2 - 4(1)(4) = 4 - 16 = -12 $$
+    Since the discriminant is negative, there are **no real solutions** in this case.
+
+**3. Končna Rešitev (Final Solution):**
+Combining the results from both cases, the set of solutions is:
+$$ x =\{ 1 - \sqrt{5}, \, 1 + \sqrt{5} \} $$ 

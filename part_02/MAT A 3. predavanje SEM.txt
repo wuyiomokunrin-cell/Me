@@ -1,0 +1,196 @@
+# [[Realne Funkcije]]
+
+## [[Naloga 1: Določanje Definicijskega Območja (Df)]]
+### [[a) Polinomska Funkcija]]
+$f(x) = x^3 - x + 1$
+
+#### [[Analiza]]
+> **Note to Self:** Polinomske funkcije so definirane za vsa realna števila, saj operacije seštevanja, odštevanja in množenja nimajo omejitev v množici realnih števil. Ni deljenja z nič ali korenjenja negativnih vrednosti, kar bi lahko omejilo domeno.
+
+Funkcija je polinom tretje stopnje. Polinomske funkcije so definirane za vsa realna števila.
+
+#### [[Rešitev]]
+Definicijsko območje je množica vseh realnih števil.
+$D_f = \mathbb{R}$
+
+### [[b) Racionalna Funkcija]]
+$f(x) = \frac{x}{-2x^3 - x^2 + 5x - 2}$
+
+#### [[Analiza]]
+> **Critical Analysis:** Funkcija je racionalna, kar pomeni, da je kvocient dveh polinomov. Taka funkcija je definirana povsod, razen v točkah, kjer je njen imenovalec enak nič, saj deljenje z nič ni definirano. Naša naloga je torej poiskati ničle polinoma v imenovalcu.
+
+Imenovalec ne sme biti enak nič: $P(x) = -2x^3 - x^2 + 5x - 2 \neq 0$
+
+Ničle polinoma iščemo z uporabo Hornerjevega algoritma ali s preizkušanjem celoštevilskih deliteljev prostega člena (ki je -2). Možni kandidati so $\pm1, \pm2$.
+
+*   **Test za $x=1$**:
+    $-2(1)^3 - (1)^2 + 5(1) - 2 = -2 - 1 + 5 - 2 = 0$.
+    Ker je rezultat 0, je $x_1=1$ ena od ničel.
+
+*   **Test za $x=-2$**:
+    $-2(-2)^3 - (-2)^2 + 5(-2) - 2 = -2(-8) - 4 - 10 - 2 = 16 - 4 - 10 - 2 = 0$.
+    Ker je rezultat 0, je $x_2=-2$ druga ničla.
+
+*   **Test za $x=1/2$**:
+    $-2(\frac{1}{2})^3 - (\frac{1}{2})^2 + 5(\frac{1}{2}) - 2 = -2(\frac{1}{8}) - \frac{1}{4} + \frac{5}{2} - 2 = -\frac{1}{4} - \frac{1}{4} + \frac{5}{2} - 2 = -\frac{2}{4} + \frac{5}{2} - 2 = -\frac{1}{2} + \frac{5}{2} - 2 = \frac{4}{2} - 2 = 2 - 2 = 0$.
+    Ker je rezultat 0, je $x_3=\frac{1}{2}$ tretja ničla.
+
+#### [[Rešitev]]
+Funkcija ni definirana pri vrednostih $x$, ki so enake ničlam imenovalca.
+$D_f = \mathbb{R} \setminus \{-2, \frac{1}{2}, 1\}$
+
+---
+
+## [[Naloga 2: Injektivnost in Surjektivnost]]
+
+### [[Definicije]]
+*   **[[Injektivnost]] (1-na-1):** Funkcija $f: A \to B$ je injektivna, če za vsaka dva različna elementa iz domene velja, da sta tudi njuni sliki različni.
+    Formalno: $\forall x_1, x_2 \in A: x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$.
+    Ekvivalentna definicija, ki je pogosto lažja za dokazovanje: $f(x_1) = f(x_2) \implies x_1 = x_2$.
+
+*   **[[Surjektivnost]] (na):** Funkcija $f: A \to B$ je surjektivna, če je vsak element iz kodomene $B$ slika vsaj enega elementa iz domene $A$.
+    Formalno: $\forall y \in B, \exists x \in A: f(x) = y$.
+    To pomeni, da mora biti zaloga vrednosti funkcije ($Z_f$) enaka njeni kodomeni ($B$).
+
+### [[a) Funkcija z Absolutnimi Vrednostmi]]
+$f(x) = |x-1| + |x+1|$
+
+#### [[Analiza po delih]]
+> **Critical Analysis:** Ker funkcija vsebuje absolutne vrednosti, jo moramo analizirati odsekoma. Kritične točke, kjer izrazi znotraj absolutnih vrednosti spremenijo predznak, so ničle teh izrazov: $x-1=0 \implies x=1$ in $x+1=0 \implies x=-1$. Te točke razdelijo realno os na tri intervale.
+
+1.  **Interval $x < -1$:**
+    Na tem intervalu sta oba izraza, $x-1$ in $x+1$, negativna. Zato pri odpravi absolutne vrednosti oba pomnožimo z -1.
+    $f(x) = -(x-1) - (x+1) = -x + 1 - x - 1 = -2x$
+
+2.  **Interval $-1 \le x < 1$:**
+    Izraz $x-1$ je negativen, $x+1$ pa je nenegativen (pozitiven ali 0).
+    $f(x) = -(x-1) + (x+1) = -x + 1 + x + 1 = 2$
+
+3.  **Interval $x \ge 1$:**
+    Oba izraza sta nenegativna.
+    $f(x) = (x-1) + (x+1) = x - 1 + x + 1 = 2x$
+
+#### [[Odsekoma Definirana Funkcija]]
+Združimo analizo v en predpis:
+$f(x) = \begin{cases} -2x & \text{za } x < -1 \\ 2 & \text{za } -1 \le x < 1 \\ 2x & \text{za } x \ge 1 \end{cases}$
+
+![[Figure_11-1.png]]
+
+#### [[Injektivnost]]
+Funkcija **ni injektivna**.
+> **Justification:** Za dokaz neinjektivnosti zadošča en sam protiprimer. Iz analize vidimo, da je na celotnem intervalu $[-1, 1)$ vrednost funkcije konstantna in enaka 2. Na primer:
+$f(0) = 2$
+$f(0.5) = 2$
+Imamo $0 \neq 0.5$, vendar je $f(0) = f(0.5)$, kar je v nasprotju z definicijo injektivnosti.
+
+#### [[Surjektivnost]]
+Funkcija **ni surjektivna** na $\mathbb{R}$.
+> **Justification:** Iz grafa in odsekoma definiranega predpisa je razvidno, da so vse vrednosti funkcije večje ali enake 2. Najmanjša vrednost je 2. Zaloga vrednosti je torej $Z_f = [2, \infty)$.
+Ker je predpostavljena kodomena množica vseh realnih števil ($\mathbb{R}$), zaloga vrednosti ni enaka kodomeni ($[2, \infty) \neq \mathbb{R}$). Na primer, za $y=0 \in \mathbb{R}$ ne obstaja noben $x \in D_f$, za katerega bi veljalo $f(x)=0$.
+
+---
+
+## [[Naloga 5: Določanje Predpisa Funkcije]]
+Funkcija $f: \mathbb{R} \to \mathbb{R}$ je podana s predpisom $f(x-1) = x^2 - x - 2$. Izračunaj $f(x)$.
+
+### [[Rešitev z uvedbo nove spremenljivke]]
+> **Critical Analysis:** Cilj je najti predpis za $f(x)$, kar pomeni, da mora biti argument funkcije preprosto 'x', ne pa 'x-1'. To dosežemo z uvedbo nove spremenljivke, ki bo nadomestila kompleksen argument.
+
+1.  **Uvedba nove spremenljivke:**
+    Naj bo argument funkcije $f$ nova spremenljivka $t$:
+    $t = x-1$
+
+2.  **Izrazimo $x$ s $t$:**
+    Iz zgornje enačbe izrazimo prvotno spremenljivko $x$:
+    $x = t+1$
+
+3.  **Vstavimo v predpis:**
+    Sedaj v prvotno enačbo $f(x-1) = x^2 - x - 2$ zamenjamo $x-1$ z $t$ in vsak $x$ z $t+1$.
+    $f(t) = (t+1)^2 - (t+1) - 2$
+
+> **Warning:** Pogosta napaka je napačna distribucija minusa. Oklepaj `-(t+1)` postane `-t - 1`. V zapiskih je napačno prepisano kot `+ t+1`, vendar je končni rezultat pravilen, kar kaže na lapsus med prepisovanjem.
+
+4.  **Poenostavimo izraz za $f(t)$:**
+    $f(t) = (t^2 + 2t + 1) - t - 1 - 2$
+    $f(t) = t^2 + 2t - t + 1 - 1 - 2$
+    $f(t) = t^2 + t - 2$
+
+5.  **Zapišemo funkcijo z $x$:**
+    Ker je $t$ le simbol za spremenljivko, ga lahko preimenujemo nazaj v $x$, da dobimo končni predpis za $f(x)$.
+    $f(x) = x^2 + x - 2$
+
+---
+
+## [[Naloga 6: Inverz Hiperboličnega Sinusa]]
+
+### [[Definicija Hiperboličnih Funkcij]]
+*   **[[Hiperbolični Sinus]] ($sinh$):**
+    $sinh(x) = \frac{e^x - e^{-x}}{2}$
+    To je **liha funkcija**, $sinh: \mathbb{R} \to \mathbb{R}$. Njen graf je simetričen glede na izhodišče.
+*   **[[Hiperbolični Kosinus]] ($cosh$):**
+    $cosh(x) = \frac{e^x + e^{-x}}{2}$
+    To je **soda funkcija**. Njen graf je simetričen glede na y-os.
+
+![[Figure_1-4.png]]
+
+### [[Izračun Inverzne Funkcije (sinh^-1(x))]]
+> **Note to Self:** Za izračun inverzne funkcije $f^{-1}(x)$ sledimo standardnemu postopku: v enačbi $y=f(x)$ zamenjamo $x$ in $y$, nato pa iz nove enačbe izrazimo $y$.
+
+1.  **Začetna postavitev:**
+    Začnemo z $y = \sinh(x)$ in zamenjamo spremenljivki:
+    $x = \sinh(y) = \frac{e^y - e^{-y}}{2}$
+
+2.  **Preureditev v polinomsko obliko za $e^y$:**
+    $2x = e^y - e^{-y}$
+    Pomnožimo enačbo z $e^y$, da odpravimo negativni eksponent:
+    $2x \cdot e^y = (e^y)^2 - 1$
+    Preuredimo v standardno obliko kvadratne enačbe:
+    $(e^y)^2 - 2x(e^y) - 1 = 0$
+
+3.  **Reševanje kvadratne enačbe:**
+    Uvedemo substitucijo $t = e^y$ in dobimo $t^2 - 2xt - 1 = 0$. Rešimo jo z formulo:
+    $t = \frac{-(-2x) \pm \sqrt{(-2x)^2 - 4(1)(-1)}}{2(1)} = \frac{2x \pm \sqrt{4x^2 + 4}}{2}$
+    $t = \frac{2x \pm 2\sqrt{x^2 + 1}}{2} = x \pm \sqrt{x^2 + 1}$
+
+4.  **Analiza rešitev in vračanje substitucije:**
+    Ker je $t=e^y$, mora biti $t > 0$.
+    *   **Analiza pogoja $e^y > 0$:** Vemo, da je $\sqrt{x^2 + 1} > \sqrt{x^2} = |x|$.
+    *   **Rešitev z minusom:** Izraz $x - \sqrt{x^2 + 1}$ je vedno negativen, saj od $x$ odštevamo število, ki je po absolutni vrednosti večje. Ta rešitev odpade.
+    *   **Rešitev s plusom:** $x + \sqrt{x^2 + 1}$ je vedno pozitivna in je edina veljavna rešitev.
+
+5.  **Končna izpeljava:**
+    $e^y = x + \sqrt{x^2 + 1}$
+    Logaritmiramo obe strani, da izrazimo $y$:
+    $y = \ln(x + \sqrt{x^2 + 1})$
+
+Inverzna funkcija je:
+$\sinh^{-1}(x) = \ln(x + \sqrt{x^2 + 1})$
+
+---
+
+## [[Naloga 7: Sodost in Lihost Funkcij]]
+
+### [[Definicije Sodosti in Lihosti]]
+*   **[[Soda funkcija]] (Even):** $f(-x) = f(x)$. Graf je simetričen na y-os.
+*   **[[Liha funkcija]] (Odd):** $f(-x) = -f(x)$. Graf je simetričen na izhodišče.
+> **Note to Self:** Predpogoj za preverjanje je, da je definicijsko območje simetrično glede na izhodišče.
+
+#### [[Primer a: f(x) = (2^x - 1) / (2^x + 1)]]
+$f(-x) = \frac{2^{-x} - 1}{2^{-x} + 1} = \frac{\frac{1}{2^x} - 1}{\frac{1}{2^x} + 1} = \frac{1 - 2^x}{1 + 2^x} = \frac{-(2^x - 1)}{1 + 2^x} = -f(x)$
+**Sklep:** Funkcija je **liha**.
+
+#### [[Primer b: f(x) = ln((1-x) / (1+x))]]
+1.  **Definicijsko območje:** $\frac{1-x}{1+x} > 0 \implies x \in (-1, 1)$, kar je simetrično območje.
+2.  **Preverjanje:**
+    $f(-x) = \ln\left(\frac{1 - (-x)}{1 + (-x)}\right) = \ln\left(\frac{1+x}{1-x}\right) = \ln\left(\left(\frac{1-x}{1+x}\right)^{-1}\right) = -\ln\left(\frac{1-x}{1+x}\right) = -f(x)$
+**Sklep:** Funkcija je **liha**.
+
+#### [[Primer c: f(x) = ln(x + √(x^2 + 1))]]
+$f(-x) = \ln(-x + \sqrt{x^2 + 1})$
+Racionaliziramo argument:
+$f(-x) = \ln\left((\sqrt{x^2+1} - x) \cdot \frac{\sqrt{x^2+1} + x}{\sqrt{x^2+1} + x}\right) = \ln\left(\frac{(x^2+1) - x^2}{x + \sqrt{x^2+1}}\right)$
+$f(-x) = \ln\left(\frac{1}{x + \sqrt{x^2+1}}\right) = -\ln(x + \sqrt{x^2+1}) = -f(x)$
+**Sklep:** Funkcija je **liha**.
+
+#### [[Povezava med Nalogami]]
+> **Note to Self:** Funkcija iz primera 7 c je inverz hiperboličnega sinusa iz naloge 6. Ker je $sinh(x)$ liha funkcija, je tudi njena inverzna funkcija $sinh^{-1}(x)$ liha, saj je graf inverza zrcalna slika čez simetralo $y=x$, kar ohranja simetrijo glede na izhodišče. kar ohranja simetrijo glede na izhodišče.

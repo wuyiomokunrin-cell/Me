@@ -1,0 +1,251 @@
+# [[MAT A 2. predavanje SEM]]
+
+## [[Absolute Value Inequalities in the Cartesian Plane]]
+
+### [[Problem A: Sketch the set |x+y| ≤ 1]]
+
+#### [[Analysis]]
+The set is defined as $A = \{(x,y) \in \mathbb{R}^2 \mid |x+y| \leq 1\}$.
+To solve an inequality involving an absolute value, we must break it down into cases based on the sign of the expression inside the absolute value. The boundary that separates these cases is the line where the expression is zero: $x+y=0$, which simplifies to $y=-x$.
+
+> **Note to Self:** The expression $|a| \leq k$ is equivalent to the compound inequality $-k \leq a \leq k$. We could solve this problem as $-1 \leq x+y \leq 1$, which gives the two lines $y \leq 1-x$ and $y \geq -1-x$. The following case-by-case analysis is a more fundamental approach that works for more complex problems.
+
+#### [[Case Breakdown]]
+1.  **[[Case 1: The region where x+y ≥ 0]]**
+    This corresponds to the area on or above the line $y=-x$. In this region, the absolute value is redundant ($|x+y| = x+y$). The inequality becomes:
+    $$ x+y \leq 1 \implies y \leq 1-x $$
+    The solution for this case is the intersection of two regions: the area where $y \geq -x$ AND $y \leq 1-x$.
+
+2.  **[[Case 2: The region where x+y < 0]]**
+    This corresponds to the area below the line $y=-x$. In this region, the absolute value is resolved by negation ($|x+y| = -(x+y)$). The inequality becomes:
+    $$ -(x+y) \leq 1 \implies -x-y \leq 1 \implies y \geq -x-1 $$
+    The solution for this case is the intersection of two regions: the area where $y < -x$ AND $y \geq -x-1$.
+
+#### [[Solution]]
+The final solution set is the union of the results from both cases. This forms an infinite strip in the Cartesian plane bounded by the parallel lines $y=1-x$ and $y=-x-1$.
+
+#### [[Visualization]]
+![[Figure_1.png]]
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(8, 8))
+x = np.linspace(-4, 4, 400)
+
+y1 = 1 - x
+y2 = -1 - x
+
+ax.fill_between(x, y1, y2, color='lightblue', alpha=0.5, label=r'$|x+y| \leq 1$')
+ax.plot(x, y1, 'b--', label='Boundary: y = 1-x')
+ax.plot(x, y2, 'r--', label='Boundary: y = -x-1')
+ax.plot(x, -x, 'g:', label='Dividing Line: y = -x')
+
+ax.set_xlabel("x-axis")
+ax.set_ylabel("y-axis")
+ax.set_title("Sketch of the Set A: $|x+y| \leq 1$")
+ax.axhline(0, color='black', lw=0.5)
+ax.axvline(0, color='black', lw=0.5)
+ax.set_xlim(-3, 3)
+ax.set_ylim(-3, 3)
+ax.set_aspect('equal', adjustable='box')
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.legend()
+
+plt.show()
+```
+
+---
+## [[Problem B: Sketch the set |x|+|y| ≤ 1]]
+
+#### [[Analysis]]
+The set is defined as $B = \{(x,y) \in \mathbb{R}^2 \mid |x|+|y| \leq 1\}$.
+This inequality involves two separate absolute values, for $x$ and $y$. The signs of $x$ and $y$ change at the axes ($x=0$ and $y=0$), which naturally divides the Cartesian plane into four quadrants. We analyze the inequality in each quadrant separately.
+
+#### [[Case Breakdown]]
+1.  **[[Quadrant I (x ≥ 0, y ≥ 0)]]**: The inequality becomes $x+y \leq 1$, which is the region on or below the line $y=1-x$. The solution in this quadrant is a triangle with vertices at (0,0), (1,0), and (0,1).
+2.  **[[Quadrant II (x < 0, y ≥ 0)]]**: The inequality becomes $-x+y \leq 1$, or $y \leq 1+x$. The solution here is a triangle with vertices at (0,0), (-1,0), and (0,1).
+3.  **[[Quadrant III (x < 0, y < 0)]]**: The inequality becomes $-x-y \leq 1$, or $y \geq -1-x$. The solution here is a triangle with vertices at (0,0), (-1,0), and (0,-1).
+4.  **[[Quadrant IV (x ≥ 0, y < 0)]]**: The inequality becomes $x-y \leq 1$, or $y \geq x-1$. The solution here is a triangle with vertices at (0,0), (1,0), and (0,-1).
+
+#### [[Solution]]
+Combining the four triangular regions gives a solid square centered at the origin, with vertices at (1,0), (0,1), (-1,0), and (0,-1). This shape is often referred to as a "diamond".
+
+#### [[Visualization]]
+![[Figure_2.png]]
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(8, 8))
+x_coords = [1, 0, -1, 0, 1]
+y_coords = [0, 1, 0, -1, 0]
+
+ax.fill(x_coords, y_coords, 'lightblue', alpha=0.5, label=r'$|x|+|y| \leq 1$')
+ax.plot(x_coords, y_coords, 'b-')
+
+ax.set_xlabel("x-axis")
+ax.set_ylabel("y-axis")
+ax.set_title("Sketch of the Set B: $|x|+|y| \leq 1$")
+ax.axhline(0, color='black', lw=0.5)
+ax.axvline(0, color='black', lw=0.5)
+ax.set_xlim(-2, 2)
+ax.set_ylim(-2, 2)
+ax.set_aspect('equal', adjustable='box')
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.legend()
+plt.show()
+```
+
+---
+## [[Problem C: Sketch the set |x+y|+|x-2y| ≤ 2]]
+
+#### [[Analysis]]
+The set is defined as $C = \{(x,y) \in \mathbb{R}^2 \mid |x+y|+|x-2y| \leq 2\}$.
+The dividing lines are found by setting the arguments of the absolute values to zero:
+1.  $x+y=0 \implies y=-x$
+2.  $x-2y=0 \implies y=x/2$
+
+These two lines intersect at the origin and divide the plane into four angular regions, which we must analyze individually.
+
+> **Warning Note:** A common mistake in this type of problem is a sign error when resolving the absolute values. For instance, if both arguments are negative, we have `-(arg1) - (arg2)`. It's easy to accidentally distribute the negative sign incorrectly. The analysis below provides the correct breakdown for each region.
+
+#### [[Case Breakdown]]
+1.  **[[Region 1: y ≥ -x and y ≤ x/2]]**
+    *   $x+y \geq 0$ and $x-2y \geq 0$.
+    *   The inequality becomes: $(x+y) + (x-2y) \leq 2 \implies 2x-y \leq 2 \implies y \geq 2x-2$.
+    *   Solution in this region is the area bounded by $y=-x$, $y=x/2$, and $y=2x-2$.
+
+2.  **[[Region 2: y ≥ -x and y > x/2]]**
+    *   $x+y \geq 0$ and $x-2y < 0$.
+    *   The inequality becomes: $(x+y) - (x-2y) \leq 2 \implies 3y \leq 2 \implies y \leq \frac{2}{3}$.
+    *   Solution in this region is the area bounded by $y=-x$, $y=x/2$, and $y=2/3$.
+
+3.  **[[Region 3: y < -x and y > x/2]]**
+    *   $x+y < 0$ and $x-2y < 0$.
+    *   The inequality becomes: $-(x+y) - (x-2y) \leq 2 \implies -2x+y \leq 2 \implies y \leq 2x+2$.
+    *   Solution in this region is the area bounded by $y=-x$, $y=x/2$, and $y=2x+2$.
+
+4.  **[[Region 4: y < -x and y ≤ x/2]]**
+    *   $x+y < 0$ and $x-2y \geq 0$.
+    *   The inequality becomes: $-(x+y) + (x-2y) \leq 2 \implies -3y \leq 2 \implies y \geq -\frac{2}{3}$.
+    *   Solution in this region is the area bounded by $y=-x$, $y=x/2$, and $y=-2/3$.
+
+#### [[Solution]]
+The union of these four regions forms a parallelogram. The vertices of this parallelogram are the intersection points of the boundary lines: $(\frac{4}{3}, \frac{2}{3})$, $(-\frac{2}{3}, \frac{2}{3})$, $(-\frac{4}{3}, -\frac{2}{3})$, and $(\frac{2}{3}, -\frac{2}{3})$.
+
+#### [[Visualization]]
+![[Figure_3.png]]
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(8, 8))
+x_coords = [4/3, -2/3, -4/3, 2/3, 4/3]
+y_coords = [2/3, 2/3, -2/3, -2/3, 2/3]
+
+ax.fill(x_coords, y_coords, 'lightblue', alpha=0.5, label=r'$|x+y|+|x-2y| \leq 2$')
+ax.plot(x_coords, y_coords, 'b-')
+
+x = np.linspace(-3, 3, 400)
+ax.plot(x, -x, 'k--', alpha=0.7, label='Dividing Line: y = -x')
+ax.plot(x, x / 2, 'k-.', alpha=0.7, label='Dividing Line: y = x/2')
+
+ax.set_xlabel("x-axis")
+ax.set_ylabel("y-axis")
+ax.set_title("Sketch of the Set C: $|x+y|+|x-2y| \leq 2$")
+ax.axhline(0, color='black', lw=0.5)
+ax.axvline(0, color='black', lw=0.5)
+ax.set_xlim(-2.5, 2.5)
+ax.set_ylim(-2.5, 2.5)
+ax.set_aspect('equal', adjustable='box')
+ax.grid(True, linestyle='--', alpha=0.6)
+ax.legend()
+plt.show()
+```
+
+---
+## [[Complex Numbers]]
+
+### [[Problem 1: z + 1/z is a Real Number]]
+Find and sketch the set of all complex numbers `z` for which the expression $z + \frac{1}{z}$ is a real number.
+
+#### [[Analysis and Constraints]]
+The expression is defined for all complex numbers except zero.
+> **Constraint:** $z \neq 0$
+
+A complex number is real if and only if its imaginary part is zero. A more powerful property is that a number $w$ is real if and only if it equals its complex conjugate, $w = \overline{w}$.
+
+#### [[Method 1: Cartesian Form]]
+Let $z = a + bi$.
+1.  **Substitute and Rationalize:**
+    $z + \frac{1}{z} = (a+bi) + \frac{1}{a+bi} = (a+bi) + \frac{a-bi}{a^2+b^2}$
+
+2.  **Group Real and Imaginary Parts:**
+    $= \left(a + \frac{a}{a^2+b^2}\right) + i\left(b - \frac{b}{a^2+b^2}\right)$
+
+3.  **Set Imaginary Part to Zero:**
+    $\text{Im}\left(z + \frac{1}{z}\right) = b - \frac{b}{a^2+b^2} = 0 \implies b\left(1 - \frac{1}{a^2+b^2}\right) = 0$
+
+4.  **Solve for conditions:** This equation holds if either factor is zero.
+    *   **Case 1:** $b=0$. This means $z$ is a real number. With the constraint $z \neq 0$, this gives the real axis excluding the origin.
+    *   **Case 2:** $1 - \frac{1}{a^2+b^2} = 0 \implies a^2+b^2 = 1$. This is the definition of the unit circle, $|z|=1$.
+
+#### [[Method 2: Complex Conjugate Property]]
+> **Memorialization Note:** This method is often more elegant and algebraically cleaner for problems involving conditions like "real" or "purely imaginary."
+
+1.  **Set the expression equal to its conjugate:**
+    $z + \frac{1}{z} = \overline{\left(z + \frac{1}{z}\right)}$
+    Using conjugate properties:
+    $z + \frac{1}{z} = \overline{z} + \frac{1}{\overline{z}}$
+
+2.  **Rearrange and Factor:**
+    $z - \overline{z} = \frac{1}{\overline{z}} - \frac{1}{z} = \frac{z - \overline{z}}{z\overline{z}}$
+    $(z - \overline{z}) - \frac{z - \overline{z}}{z\overline{z}} = 0$
+    $(z - \overline{z})\left(1 - \frac{1}{z\overline{z}}\right) = 0$
+
+3.  **Solve for conditions:**
+    *   **Case 1:** $z - \overline{z} = 0 \implies z = \overline{z}$. A number is equal to its conjugate if and only if it is real. Thus, $z \in \mathbb{R} \setminus \{0\}$.
+    *   **Case 2:** $1 - \frac{1}{z\overline{z}} = 0 \implies z\overline{z} = 1$. Since $z\overline{z} = |z|^2$, this means $|z|^2=1$, or $|z|=1$. This is the unit circle.
+
+#### [[Solution and Visualization]]
+The solution set is the union of the real axis (excluding the origin) and the unit circle in the complex plane.
+![[Figure_4.png]]
+
+---
+## [[Problem 2: Sketching Im(z^3) ≤ 0]]
+Determine and sketch the set of complex numbers `z` for which $\text{Im}(z^3) \leq 0$.
+
+#### [[Method 1: Polar Form]]
+> **Critical Analysis:** For problems involving powers or roots of complex numbers, the polar form $z = r(\cos\phi + i\sin\phi)$ is almost always the most efficient approach because it allows the use of De Moivre's Formula.
+
+1.  **Apply De Moivre's Formula:**
+    $z^3 = [r(\cos\phi + i\sin\phi)]^3 = r^3(\cos(3\phi) + i\sin(3\phi))$
+
+2.  **Apply the Inequality:**
+    $\text{Im}(z^3) = r^3\sin(3\phi) \leq 0$
+    Since $r \geq 0$, this simplifies to the trigonometric inequality:
+    $\sin(3\phi) \leq 0$
+
+3.  **Solve the Trigonometric Inequality:**
+    The sine function is non-positive when its argument lies in the third or fourth quadrant.
+    $\pi + 2k\pi \leq 3\phi \leq 2\pi + 2k\pi, \quad k \in \mathbb{Z}$
+
+4.  **Isolate `φ`:**
+    $\frac{\pi}{3} + \frac{2k\pi}{3} \leq \phi \leq \frac{2\pi}{3} + \frac{2k\pi}{3}$
+
+5.  **Identify Angular Sectors:** By substituting $k=0, 1, 2$, we find three distinct sectors:
+    *   $k=0$: $\frac{\pi}{3} \leq \phi \leq \frac{2\pi}{3}$  (from 60° to 120°)
+    *   $k=1$: $\pi \leq \phi \leq \frac{4\pi}{3}$    (from 180° to 240°)
+    *   $k=2$: $\frac{5\pi}{3} \leq \phi \leq 2\pi$  (from 300° to 360°)
+
+#### [[Warning Note: The Cartesian Method Trap]]
+Attempting this problem in Cartesian form ($z=a+bi$) leads to a much more difficult analysis.
+The condition becomes $b(3a^2 - b^2) \leq 0$. This requires solving two separate systems of inequalities:
+1.  ($b \geq 0$) AND ($3a^2 - b^2 \leq 0 \implies b^2 \geq 3a^2 \implies b \geq \sqrt{3}|a|$). This defines the sector between the lines $y=\sqrt{3}x$ and $y=-\sqrt{3}x$ in the upper half-plane, which corresponds exactly to the angle range $[\pi/3, 2\pi/3]$.
+2.  ($b \leq 0$) AND ($3a^2 - b^2 \geq 0 \implies b^2 \leq 3a^2 \implies |b| \leq \sqrt{3}|a|$). This defines the regions in the lower half-plane bounded by the lines $y = \pm\sqrt{3}x$. This corresponds to the other two angular sectors found via the polar method.
+This confirms the polar method's results but is significantly more complex to derive and visualize.
+
+#### [[Solution and Visualization]]
+The solution set consists of three angular sectors in the complex plane, each with an angle of $\pi/3$ (or 60°).
+![[download-4.png]]

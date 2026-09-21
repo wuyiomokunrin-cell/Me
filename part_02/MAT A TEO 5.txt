@@ -1,0 +1,250 @@
+# [[Analiza - Zaporedja in Limite]]
+
+## [[Definicija Zaporedja]]
+
+Torej, zaporedje je v osnovi preslikava oziroma funkcija, ki slika iz množice naravnih števil ($$\mathbb{N}$$) v neko drugo množico $$M$$.
+
+$$
+f: \mathbb{N} \rightarrow M
+$$
+
+*   **Note to Self:** V bistvu je to samo funkcija, kjer je domena omejena na naravna števila.
+
+Množica $$M$$ je lahko množica realnih ($$\mathbb{R}$$) ali kompleksnih ($$\mathbb{C}$$) števil. V tem kontekstu se bomo osredotočili na realna zaporedja, kjer je $$M = \mathbb{R}$$.
+
+$$
+a: \mathbb{N} \rightarrow \mathbb{R}
+$$
+
+### [[Oznake in Terminologija]]
+
+Namesto standardne funkcijske oznake $$f(n)$$, pri zaporedjih običajno uporabljamo črko $$a$$ in pišemo $$a_n$$. Ta zapis poudari, da je argument funkcije naravno število.
+
+$$
+a_n
+$$
+
+Ta izraz, $$a_n$$, se imenuje **splošni člen zaporedja**. Predstavlja predpis, ki vsakemu naravnemu številu $$n$$ priredi točno določeno vrednost v zaporedju.
+
+## [[Načini Podajanja Zaporedja]]
+
+### [[1. S splošnim (eksplicitnim) členom]]
+
+Zaporedje je podano z eksplicitno formulo za $$a_n$$. To je najbolj neposreden način, saj lahko izračunamo katerikoli člen zaporedja, ne da bi poznali prejšnje.
+
+*   **Primer:**
+    $$
+    a_n = \frac{1}{n}
+    $$
+
+### [[2. Z naštevanjem členov]]
+
+Zapišemo prvih nekaj členov zaporedja, da nakažemo vzorec. Člene zapišemo v okrogel oklepaj, kar poudarja, da je vrstni red pomemben (za razliko od množice, kjer se uporablja zaviti oklepaj).
+
+*   **Primer:** Zaporedje $$a_n = \frac{1}{n}$$ lahko zapišemo kot:
+    $$
+    \left( 1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots \right)
+    $$
+    Ali bolj formalno:
+    $$
+    (a_n) = (a_1, a_2, a_3, \dots)
+    $$
+
+### [[3. Rekurzivno]]
+
+Splošni člen $$a_n$$ je izražen s pomočjo enega ali več predhodnih členov. Pri tem načinu je nujno treba podati tudi začetne člene, da se rekurzija lahko začne.
+
+*   **Formalno:**
+    $$
+    a_n = f(a_{n-1}, a_{n-2}, \dots, a_{n-k})
+    $$
+    Potrebujemo $$k$$ začetnih pogojev: $$a_1, a_2, \dots, a_k$$.
+
+*   **Primer: Fibonaccijevo zaporedje**
+    Najbolj znan primer rekurzivno podanega zaporedja.
+
+    *   **Rekurzivni predpis:** Vsak člen je vsota dveh predhodnih.
+        $$
+        a_n = a_{n-1} + a_{n-2}
+        $$
+    *   **Začetni pogoji:**
+        $$
+        a_1 = 1, \quad a_2 = 1
+        $$
+    *   **Členi zaporedja:**
+        $$
+        (1, 1, 2, 3, 5, 8, 13, 21, \dots)
+        $$
+    *   **Memorialization:** Predavateljica je omenila, da je Fibonacci to zaporedje definiral preko problema razmnoževanja zajcev in da se te številke pojavljajo v naravi, na primer v slikarstvu (zlati rez) in botaniki (filotaksija, npr. pri brokoliju). Zaporedje se označuje tudi z $$F_n$$.
+
+## [[Limita Zaporedja]]
+
+### [[Intuitivni Pristop]]
+
+Limita zaporedja opisuje, h kateremu številu se členi zaporedja približujejo, ko gre $$n$$ proti neskončnosti. To je analogno limiti funkcije, ko gre $$x \rightarrow \infty$$.
+
+*   **Primer:** Za zaporedje $$a_n = \frac{1}{n}$$
+    $$
+    (1, 0.5, 0.333\dots, 0.25, \dots)
+    $$
+    Členi se očitno približujejo vrednosti 0.
+
+*   **Vizualizacija:**
+    Člene zaporedja si lahko predstavljamo kot točke na številski premici.
+
+   ![[Figure_1-20.png]]
+### [[Formalna Definicija Limite]]
+
+Število $$A$$ je **limita** zaporedja $$(a_n)$$, če za vsako poljubno majhno okolico $$ \varepsilon > 0 $$ okoli točke $$A$$, obstaja takšen člen zaporedja $$a_{n_0}$$, da vsi nadaljnji členi ($$n > n_0$$) ležijo znotraj te okolice.
+
+**Zapis s simboli:**
+Število $$A$$ je limita zaporedja $$(a_n)$$, kar zapišemo kot $$\lim_{n \to \infty} a_n = A$$, natanko takrat, ko velja:
+$$
+\forall \varepsilon > 0, \quad \exists n_0 \in \mathbb{N} \text{, tako da } \forall n \geq n_0 \text{ velja } |a_n - A| < \varepsilon
+$$
+
+*   **Justification:** Izraz $$|a_n - A| < \varepsilon$$ pomeni, da je razdalja med členom $$a_n$$ in limito $$A$$ manjša od $$\varepsilon$$. To je ekvivalentno zapisu $$a_n \in (A - \varepsilon, A + \varepsilon)$$, kar pomeni, da $$a_n$$ leži v $$\varepsilon$$ -okolici števila $$A$$.
+
+### [[Konvergenca in Divergenca]]
+
+*   Če limita zaporedja obstaja (in je končno število), pravimo, da je zaporedje **konvergentno**.
+*   Če limita ne obstaja ali je neskončna, pravimo, da je zaporedje **divergentno**.
+
+### [[Stekališče Zaporedja]]
+
+Število $$S$$ je **stekališče** zaporedja, če vsaka poljubno majhna $$\varepsilon$$ -okolica števila $$S$$ vsebuje neskončno mnogo členov zaporedja.
+
+*   **Critical Analysis:** Razlika med limito in stekališčem je ključna.
+    *   **Limita:** *Vsi* členi od nekega člena $$n_0$$ naprej morajo biti v $$\varepsilon$$ -okolici. Zunaj okolice je lahko le končno mnogo členov.
+    *   **Stekališče:** V $$\varepsilon$$ -okolici mora biti *neskončno* mnogo členov. Zunaj okolice je lahko prav tako neskončno mnogo členov.
+
+Vsaka limita je tudi stekališče. Obratno pa ne velja!
+
+*   **Izrek:** Če ima zaporedje več kot eno stekališče, je **divergentno**.
+
+*   **Primer:** Zaporedje $$a_n = (-1)^n \frac{n+1}{n}$$
+    $$
+    (-2, \frac{3}{2}, -\frac{4}{3}, \frac{5}{4}, \dots)
+    $$
+    *   Lihi členi se približujejo -1.
+    *   Sodi členi se približujejo 1.
+    *   Zaporedje ima dve stekališči: -1 in 1.
+    *   Ker ima več kot eno stekališče, nima limite in je divergentno.
+
+## [[Lastnosti Zaporedij]]
+
+### [[Monotonost]]
+
+Zaporedje je:
+*   **Naraščajoče:** če velja $$ a_n \leq a_{n+1} $$ za vsak $$n \in \mathbb{N}$$.
+*   **Strogo naraščajoče:** če velja $$ a_n < a_{n+1} $$ za vsak $$n \in \mathbb{N}$$.
+*   **Padajoče:** če velja $$ a_n \geq a_{n+1} $$ za vsak $$n \in \mathbb{N}$$.
+*   **Strogo padajoče:** če velja $$ a_n > a_{n+1} $$ za vsak $$n \in \mathbb{N}$$.
+
+### [[Omejenost]]
+
+Množica vrednosti zaporedja $$\{a_n | n \in \mathbb{N}\}$$ je:
+*   **Navzgor omejena:** če obstaja takšna zgornja meja $$M$$, da je $$a_n \leq M$$ za vsak $$n$$. Natančno zgornjo mejo imenujemo **supremum**.
+*   **Navzdol omejena:** če obstaja takšna spodnja meja $$m$$, da je $$a_n \geq m$$ za vsak $$n$$. Natančno spodnjo mejo imenujemo **infimum**.
+*   **Omejena:** če je omejena navzgor in navzdol.
+
+### [[Ključni Izrek: Monotonost in Omejenost]]
+
+**Vsako monotono in omejeno zaporedje je konvergentno.**
+
+*   **Justification (Dokazna skica za naraščajoče zaporedje):**
+    1.  Ker je zaporedje navzgor omejeno, ima po aksiomu o polnosti realnih števil natančno zgornjo mejo (supremum). Označimo jo z $$M$$.
+    2.  Pokažemo, da je ta supremum $$M$$ ravno limita zaporedja.
+    3.  Iz definicije supremuma sledi, da za vsak $$\varepsilon > 0$$ obstaja vsaj en člen zaporedja, recimo $$a_{n_0}$$, ki je večji od $$M-\varepsilon$$.
+    4.  Ker je zaporedje naraščajoče, so vsi naslednji členi ($$a_n$$ za $$n > n_0$$) prav tako večji od $$M-\varepsilon$$.
+    5.  Hkrati pa so vsi členi manjši ali enaki $$M$$, ker je $$M$$ zgornja meja.
+    6.  Torej vsi členi za $$n > n_0$$ ležijo v intervalu $$(M-\varepsilon, M]$$, kar ustreza definiciji limite.
+    *   Če je zaporedje **naraščajoče in omejeno**, je njegova limita enaka **supremumu**.
+    *   Če je zaporedje **padajoče in omejeno**, je njegova limita enaka **infimumu**.
+
+### [[Primer Pomembnega Zaporedja: Definicija števila e]]
+
+Oglejmo si zaporedje:
+$$
+a_n = \left(1 + \frac{1}{n}\right)^n
+$$
+*   **Analiza:** Lahko se izkaže (dokaz ni preprost), da je to zaporedje **naraščajoče** in **navzgor omejeno** (npr. s 3).
+*   **Sklep:** Ker je monotono in omejeno, je konvergentno. Njegovo limito definiramo kot Eulerjevo število $$e$$.
+$$
+\lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e \approx 2.71828\dots
+$$
+
+## [[Računanje z Limitami]]
+
+Če sta zaporedji $$(a_n)$$ in $$(b_n)$$ konvergentni z limitama $$\lim a_n = A$$ in $$\lim b_n = B$$, potem velja:
+
+### [[Pravila]]
+1.  **Limita vsote/razlike:**
+    $$
+    \lim_{n \to \infty} (a_n \pm b_n) = A \pm B
+    $$
+2.  **Limita produkta:**
+    $$
+    \lim_{n \to \infty} (a_n \cdot b_n) = A \cdot B
+    $$
+3.  **Limita konstante krat zaporedje:**
+    $$
+    \lim_{n \to \infty} (c \cdot a_n) = c \cdot A
+    $$
+4.  **Limita kvocienta:**
+    $$
+    \lim_{n \to \infty} \left(\frac{a_n}{b_n}\right) = \frac{A}{B} \quad (\text{če } B \neq 0 \text{ in } b_n \neq 0)
+    $$
+
+### [[Dokaz za Limito Vsote]]
+
+**Cilj:** Dokazati, da je $$\lim_{n \to \infty} (a_n + b_n) = A + B$$.
+
+**Predpostavki:**
+1. $$\forall \varepsilon_1 > 0, \exists n_1: \forall n \ge n_1 \implies |a_n - A| < \varepsilon_1$$
+2. $$\forall \varepsilon_2 > 0, \exists n_2: \forall n \ge n_2 \implies |b_n - B| < \varepsilon_2$$
+
+**Dokaz:**
+Želimo pokazati: $$\forall \varepsilon > 0, \exists n_0: \forall n \ge n_0 \implies |(a_n + b_n) - (A+B)| < \varepsilon$$.
+
+1.  **Preuredimo izraz:**
+    $$
+    |(a_n + b_n) - (A+B)| = |(a_n - A) + (b_n - B)|
+    $$
+2.  **Uporabimo trikotniško neenakost:** $$|x+y| \le |x| + |y|$$
+    $$
+    |(a_n - A) + (b_n - B)| \le |a_n - A| + |b_n - B|
+    $$
+3.  **Justification:** Naš cilj je, da je celoten izraz manjši od $$\varepsilon$$. Ker imamo vsoto dveh delov, bomo zahtevali, da je vsak del manjši od $$\varepsilon/2$$. To je standarden "trik" pri takih dokazih. Vsota $$\varepsilon/2 + \varepsilon/2$$ bo potem enaka $$\varepsilon$$.
+4.  **Izberemo $$\varepsilon_1$$ in $$\varepsilon_2$$:** Naj bo $$\varepsilon_1 = \varepsilon_2 = \varepsilon/2$$. Iz predpostavk vemo, da za ta $$\varepsilon_1$$ in $$\varepsilon_2$$ obstajata ustrezna $$n_1$$ in $$n_2$$.
+5.  **Določimo $$n_0$$:** Da bosta veljali obe neenakosti hkrati (za $$a_n$$ in $$b_n$$), moramo izbrati večjega od indeksov $$n_1$$ in $$n_2$$. Torej, naj bo $$n_0 = \max\{n_1, n_2\}$$.
+6.  **Sklep:** Za vsak $$n \ge n_0$$ velja:
+    $$
+    |(a_n + b_n) - (A+B)| \le |a_n - A| + |b_n - B| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+    $$
+    S tem je dokaz končan.
+
+## [[Zvezne Funkcije na Zaprtem Intervalu]]
+
+### [[Izrek 1: O Ničli (Bolzano)]]
+
+Če je funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$ in sta vrednosti v krajiščih nasprotno predznačeni ($$f(a) \cdot f(b) < 0$$), potem obstaja vsaj ena točka $$c$$ znotraj intervala ($$c \in (a, b)$$), kjer je vrednost funkcije enaka nič ($$f(c) = 0$$).
+
+### [[Izrek 2: O Omejenosti]]
+
+Če je funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$, potem je na tem intervalu **omejena**.
+
+*   **Warning:** To velja samo za **zaprte** intervale. Primer je $$f(x) = \tan(x)$$ na odprtem intervalu $$(-\pi/2, \pi/2)$$, ki je zvezna, a ni omejena. Na zaprtem intervalu, npr. $$[-\pi/4, \pi/4]$$, pa je omejena.
+
+### [[Izrek 3: O Ekstremih (Weierstrass)]]
+
+Če je funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$, potem na tem intervalu doseže svojo natančno zgornjo mejo (supremum) in natančno spodnjo mejo (infimum). To pomeni, da obstajata **maksimum** in **minimum** funkcije.
+$$
+\exists c, d \in [a, b]: f(c) = \max_{x \in [a,b]} f(x) \text{ in } f(d) = \min_{x \in [a,b]} f(x)
+$$
+
+### [[Izrek 4: O Vmesnih Vrednostih]]
+
+Če je funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$, potem zavzame **vse vrednosti** med svojim minimumom ($$m$$) in maksimumom ($$M$$).
+
+*   **Posledica:** Zaloga vrednosti zvezne funkcije na zaprtem intervalu je spet zaprt interval: $$Z_f = [m, M]$$.

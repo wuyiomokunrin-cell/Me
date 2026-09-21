@@ -1,0 +1,536 @@
+{
+  "runSettings": {
+    "temperature": 0.7,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1sgAc4w1M8HM8YfzhabNwOkXyxGr7WzxQ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1kHni-QVomaNeDvEyncJBCKOHsBESNpcU"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "117a-URYLEDINH43VCider9kMczytGFIO"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1y8AI410h2sHajeW_ljRDdeF4a4TwsEjU"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1VAvqWth9tb8a09N2pbPtE7dW7AuFJFkD"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ZCbD14xTnaQRZRHs3Mmko5XHTiUtN9f8"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1SVFPlT752dfptZ9ZWqJmN7Yx4YJjPkqs"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1U63y7dgLoPbbi9xTPjM5H1wzY6qa3-Sd"
+      },
+      "role": "user",
+      "tokenCount": 160722
+    }, {
+      "text": "**Refining My Approach**\n\nI\u0027m currently focused on the best way to deal with the audio transcript. I\u0027ve pinpointed its focus on chemical calculations, like gas mixtures. I understand the lecturer discusses volume fraction. My analysis is progressing.\n\n\n**Integrating the Data**\n\nI\u0027m now integrating the handwritten notes with the audio transcript. I\u0027ve successfully connected the gas mixture problem in Image 5 to the lecture\u0027s initial discussion of volume fraction and ideal gas law. Image 6\u0027s decomposition problem aligns with the lecture\u0027s later section.  My priority is creating a structured representation of the problem-solving steps.\n\n\n**Outlining the Structure**\n\nMy current focus is on organizing all the available data. I\u0027ve broken down the lecture and notes into key sections: gas mixtures, ammonium carbonate decomposition, and general stoichiometry. My aim is a clear, structured markdown note aligning with the lecture\u0027s flow.\n\n\n**Formulating a Strategy**\n\nI\u0027ve outlined my plan for processing the lecture and the notes. I\u0027m focusing on creating a structured representation of the problems. I aim to create a detailed markdown note. I will start with gas mixtures and then address the ammonium carbonate decomposition and other stoichiometry examples. My approach prioritizes clarity and a step-by-step breakdown of the solution process for each problem, incorporating explanations of the underlying chemistry concepts.\n\n\n**Planning My Structure**\n\nI\u0027ve established a structure for my notes. I\u0027ll begin with the gas mixture problem, moving to ammonium carbonate decomposition and then to the stoichiometry problems. My focus is clear: accurately represent lecture flow. I\u0027ll carefully consider each problem step-by-step with explanations. LaTeX will be employed for equations. All calculations will be carefully verified.\n\n\n**Organizing My Approach**\n\nI\u0027m structuring the information into logical sections: gas mixtures, ammonium carbonate decomposition, and stoichiometry problems, corresponding to the lecture and notes. Each section will be a self-contained unit, clearly explaining concepts and problem-solving steps. The initial focus is on ensuring data accuracy.\n\n\n**Organizing the Content**\n\nMy primary focus now is structuring the data. I\u0027m separating the information into distinct sections for gas mixtures, ammonium carbonate decomposition, and stoichiometry problems. Within each section, I\u0027ll detail problem statements, given data, solutions, and critical analyses, all while linking key concepts within this markdown note. I will implement LaTeX formatting for equations and calculations to ensure clarity.\n\n\n**Implementing Detailed Analysis**\n\nI\u0027m now integrating comprehensive critical analysis into the note. I\u0027m focusing on identifying and explaining the \"why\" behind each calculation step, particularly in stoichiometry problems. I\u0027ve flagged and will correct any errors in the user\u0027s notes and added warnings where needed. My focus is now on ensuring the final output is accurate and pedagogically sound.\n\n\n**Analyzing the Input Data**\n\nI\u0027m now fully immersed in the given data, meticulously extracting key information. The focus is on aligning the lecture transcript with the handwritten notes. I\u0027m prioritizing understanding the problem context and identifying potential areas of confusion, especially within the user\u0027s calculations. My strategy aims to transform the raw data into a structured format for deeper analysis.\n\n\n",
+      "role": "model",
+      "tokenCount": 2275,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Refining My Approach**\n\nI\u0027m currently focused on the best way to deal with the audio transcript. I\u0027ve pinpointed its focus on chemical calculations, like gas mixtures. I understand the lecturer discusses volume fraction. My analysis is progressing.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating the Data**\n\nI\u0027m now integrating the handwritten notes with the audio transcript. I\u0027ve successfully connected the gas mixture problem in Image 5 to the lecture\u0027s initial discussion of volume fraction and ideal gas law. Image 6\u0027s decomposition problem aligns with the lecture\u0027s later section.  My priority is creating a structured representation of the problem-solving steps.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining the Structure**\n\nMy current focus is on organizing all the available data. I\u0027ve broken down the lecture and notes into key sections: gas mixtures, ammonium carbonate decomposition, and general stoichiometry. My aim is a clear, structured markdown note aligning with the lecture\u0027s flow.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating a Strategy**\n\nI\u0027ve outlined my plan for processing the lecture and the notes. I\u0027m focusing on creating a structured representation of the problems. I aim to create a detailed markdown note. I will start with gas mixtures and then address the ammonium carbonate decomposition and other stoichiometry examples. My approach prioritizes clarity and a step-by-step breakdown of the solution process for each problem, incorporating explanations of the underlying chemistry concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Planning My Structure**\n\nI\u0027ve established a structure for my notes. I\u0027ll begin with the gas mixture problem, moving to ammonium carbonate decomposition and then to the stoichiometry problems. My focus is clear: accurately represent lecture flow. I\u0027ll carefully consider each problem step-by-step with explanations. LaTeX will be employed for equations. All calculations will be carefully verified.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing My Approach**\n\nI\u0027m structuring the information into logical sections: gas mixtures, ammonium carbonate decomposition, and stoichiometry problems, corresponding to the lecture and notes. Each section will be a self-contained unit, clearly explaining concepts and problem-solving steps. The initial focus is on ensuring data accuracy.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Content**\n\nMy primary focus now is structuring the data. I\u0027m separating the information into distinct sections for gas mixtures, ammonium carbonate decomposition, and stoichiometry problems. Within each section, I\u0027ll detail problem statements, given data, solutions, and critical analyses, all while linking key concepts within this markdown note. I will implement LaTeX formatting for equations and calculations to ensure clarity.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing Detailed Analysis**\n\nI\u0027m now integrating comprehensive critical analysis into the note. I\u0027m focusing on identifying and explaining the \"why\" behind each calculation step, particularly in stoichiometry problems. I\u0027ve flagged and will correct any errors in the user\u0027s notes and added warnings where needed. My focus is now on ensuring the final output is accurate and pedagogically sound.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Input Data**\n\nI\u0027m now fully immersed in the given data, meticulously extracting key information. The focus is on aligning the lecture transcript with the handwritten notes. I\u0027m prioritizing understanding the problem context and identifying potential areas of confusion, especially within the user\u0027s calculations. My strategy aims to transform the raw data into a structured format for deeper analysis.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Računske naloge sKem SEM - 22.10.]]\n\n## [[Memorialization]]\nThe lecturer took attendance at the beginning of the session (around 02:30).\n\n## [[Problem 10.a: Gas Mixture Analysis]]\n\n### [[Problem Statement]]\nA gas mixture contains Hydrogen ($H_2$), Helium ($He$), and Methane ($CH_4$) at a temperature of 20°C and a pressure of 112.4 kPa. The density of the mixture is 0.315 g/L. Calculate the volume fraction ($X(CH_4)$) of methane in the mixture, given that every other particle in the mixture is a Helium atom.\n\n### [[Given Data]]\n*   **Components:** $H_2, He, CH_4$\n*   **Temperature (T):** $20^\\circ C \u003d 293.15 K$\n*   **Pressure (P):** $112.4 \\ kPa$\n*   **Density ($\\rho$):** $0.315 \\ g/L$\n*   **Condition:** Every other particle is a Helium atom. This directly implies that the mole fraction of Helium is 50%.\n    *   $x_{He} \u003d 0.50$\n\n### [[Theoretical Background]]\n\n1.  **[[Ideal Gas Law]]**: The relationship between pressure (P), volume (V), number of moles (n), and temperature (T) for an ideal gas is given by the equation:\n    $PV \u003d nRT$\n    Where R is the ideal gas constant ($8.314 \\ kPa \\cdot L \\cdot mol^{-1} \\cdot K^{-1}$).\n\n2.  **[[Molar Mass and Density]]**: The number of moles (n) can be expressed as mass (m) divided by molar mass (M), $n \u003d \\frac{m}{M}$. By substituting this into the ideal gas law and rearranging, we can relate density ($\\rho \u003d \\frac{m}{V}$) to molar mass:\n    $P V \u003d \\frac{m}{M} R T \\implies P M \u003d \\frac{m}{V} R T \\implies P M \u003d \\rho R T$\n    This allows us to calculate the average molar mass ($\\bar{M}$) of the gas mixture.\n\n3.  **[[Mole Fraction and Volume Fraction]]**: For ideal gases, the volume fraction of a component is equal to its mole fraction.\n    $X_{i} \u003d x_{i}$\n    Where $X_i$ is the volume fraction and $x_i$ is the mole fraction of component *i*.\n\n4.  **[[Average Molar Mass of a Mixture]]**: The average molar mass of a mixture is the weighted average of the molar masses of its components, based on their mole fractions.\n    $\\bar{M} \u003d \\sum_{i} (x_i \\cdot M_i) \u003d x_{H_2}M_{H_2} + x_{He}M_{He} + x_{CH_4}M_{CH_4}$\n    The sum of all mole fractions in a mixture is always 1.\n    $\\sum_{i} x_i \u003d x_{H_2} + x_{He} + x_{CH_4} \u003d 1$\n\n### [[Solution Derivation]]\n\n1.  **Calculate the Average Molar Mass ($\\bar{M}$) of the Mixture:**\n    We rearrange the ideal gas law equation involving density to solve for $\\bar{M}$.\n    $\\bar{M} \u003d \\frac{\\rho R T}{P}$\n    $\\bar{M} \u003d \\frac{(0.315 \\ g/L) \\cdot (8.314 \\ kPa \\cdot L \\cdot mol^{-1} \\cdot K^{-1}) \\cdot (293.15 \\ K)}{112.4 \\ kPa}$\n    $\\bar{M} \\approx 6.83 \\ g/mol$\n\n2.  **Set up the System of Equations for Mole Fractions:**\n    We have two key equations regarding mole fractions:\n    (1) $\\bar{M} \u003d x_{H_2}M_{H_2} + x_{He}M_{He} + x_{CH_4}M_{CH_4}$\n    (2) $x_{H_2} + x_{He} + x_{CH_4} \u003d 1$\n\n    We are given that $x_{He} \u003d 0.5$. Substituting this into equation (2):\n    $x_{H_2} + 0.5 + x_{CH_4} \u003d 1 \\implies x_{H_2} \u003d 0.5 - x_{CH_4}$\n\n3.  **Solve for the Mole Fraction of Methane ($x_{CH_4}$):**\n    Now, substitute the known values and the expression for $x_{H_2}$ into equation (1).\n    *   $M_{H_2} \u003d 2.02 \\ g/mol$\n    *   $M_{He} \u003d 4.00 \\ g/mol$\n    *   $M_{CH_4} \u003d 16.04 \\ g/mol$\n\n    $6.83 \u003d (0.5 - x_{CH_4})(2.02) + (0.5)(4.00) + (x_{CH_4})(16.04)$\n    $6.83 \u003d 1.01 - 2.02x_{CH_4} + 2.00 + 16.04x_{CH_4}$\n    $6.83 \u003d 3.01 + 14.02x_{CH_4}$\n    $3.82 \u003d 14.02x_{CH_4}$\n    $x_{CH_4} \u003d \\frac{3.82}{14.02} \\approx 0.272$\n\n    The mole fraction of Methane is approximately 0.272 or 27.2%.\n\n4.  **Final Answer - Volume Fraction of Methane ($X_{CH_4}$):**\n    Since the volume fraction is equal to the mole fraction for gases:\n    $X_{CH_4} \u003d x_{CH_4} \\approx 0.272 \\ (27.2\\%)$\n\n### [[Critical Analysis]]\n*   **Note to Self:** The key to this problem is the initial interpretation of \"every other particle is a Helium atom,\" which directly gives $x_{He} \u003d 0.5$. This simplifies the system of equations, leaving only one unknown to solve for.\n*   The calculation in the handwritten notes uses slightly different values (`6.8269` for $\\bar{M}$, `2.02` for $H_2$, etc.) leading to a slightly different result for $x_{CH_4}$ (0.1767). Let\u0027s re-verify with the user\u0027s numbers.\n    *   $6.83 \u003d (0.5 - x_C)(2.02) + (0.5)(4.00) + x_C(16.04)$\n    *   $6.83 \u003d 1.01 - 2.02x_C + 2 + 16.04x_C$\n    *   $6.83 \u003d 3.01 + 14.02x_C$\n    *   $3.82 \u003d 14.02x_C$\n    *   $x_C \u003d 0.272$\n    *   The user\u0027s note shows: `6.83 \u003d 2 + 8.02 - x_C(16.04+2.02)`. This rearrangement is incorrect. It seems they incorrectly factored out $x_C$. The correct expansion is shown above. This is a critical algebraic error.\n*   **Warning Note:** The handwritten notes contain an algebraic error when solving for the mole fraction. The term `(0.5 - x_C) * M_A` was not expanded correctly. Each term must be multiplied out individually before collecting like terms, as shown in the derivation above.\n\n---\n\n## [[Problem 23: Decomposition of Ammonium Carbonate]]\n\n### [[Problem Statement]]\nAmmonium carbonate decomposes upon heating according to the reaction:\n$(NH_4)_2CO_3 (s) \\rightarrow 2NH_3 (g) + H_2O (g) + CO_2 (g)$\nWhat volume does the resulting gas mixture occupy if 10 g of $(NH_4)_2CO_3$ is heated to 200°C at a pressure of 102.6 kPa? What is the partial pressure of ammonia ($NH_3$) in the mixture?\n\n### [[Given Data]]\n*   **Mass of $(NH_4)_2CO_3$:** $m \u003d 10 \\ g$\n*   **Temperature (T):** $200^\\circ C \u003d 473.15 \\ K$\n*   **Total Pressure (P_total):** $102.6 \\ kPa$\n\n### [[Solution Derivation]]\n\n1.  **Calculate Moles of Reactant:**\n    First, find the molar mass of ammonium carbonate, $(NH_4)_2CO_3$.\n    $M((NH_4)_2CO_3) \u003d 2 \\cdot (14.01 + 4 \\cdot 1.01) + 12.01 + 3 \\cdot 16.00 \u003d 96.09 \\ g/mol$\n    Now, calculate the initial number of moles.\n    $n((NH_4)_2CO_3) \u003d \\frac{m}{M} \u003d \\frac{10 \\ g}{96.09 \\ g/mol} \\approx 0.104 \\ mol$\n\n2.  **Calculate Total Moles of Gas Produced:**\n    From the stoichiometry of the balanced equation, 1 mole of solid $(NH_4)_2CO_3$ produces a total of 4 moles of gas (2 moles $NH_3$ + 1 mole $H_2O$ + 1 mole $CO_2$).\n    $n_{total\\_gas} \u003d 4 \\cdot n((NH_4)_2CO_3)$\n    $n_{total\\_gas} \u003d 4 \\cdot 0.104 \\ mol \u003d 0.416 \\ mol$\n\n3.  **Calculate the Total Volume of the Gas Mixture:**\n    Using the Ideal Gas Law, $PV\u003dnRT$, we can solve for the total volume $V_{total}$.\n    $V_{total} \u003d \\frac{n_{total\\_gas} R T}{P_{total}}$\n    $V_{total} \u003d \\frac{(0.416 \\ mol) \\cdot (8.314 \\ kPa \\cdot L \\cdot mol^{-1} \\cdot K^{-1}) \\cdot (473.15 \\ K)}{102.6 \\ kPa}$\n    $V_{total} \\approx 15.98 \\ L$\n\n4.  **Calculate the Partial Pressure of Ammonia ($P_{NH_3}$):**\n    The partial pressure of a gas in a mixture is its mole fraction times the total pressure (Dalton\u0027s Law).\n    $P_{NH_3} \u003d x_{NH_3} \\cdot P_{total}$\n\n    First, determine the mole fraction of $NH_3$ in the gas mixture. Out of the 4 total moles of gas produced, 2 are ammonia.\n    $x_{NH_3} \u003d \\frac{n_{NH_3}}{n_{total\\_gas}} \u003d \\frac{2}{4} \u003d 0.5$\n    Now, calculate the partial pressure.\n    $P_{NH_3} \u003d 0.5 \\cdot 102.6 \\ kPa \u003d 51.3 \\ kPa$\n\n### [[Critical Analysis]]\n*   **Note to Self:** The solution in the handwritten notes is correct. It correctly identifies that the total moles of gas are 4 times the moles of the initial solid reactant. It also correctly calculates the mole fraction of ammonia as 0.5 (or 50%) to find the partial pressure.\n*   The problem can be solved in two ways for partial pressure, as shown in the notes:\n    1.  Using Dalton\u0027s Law ($P_i \u003d x_i \\cdot P_{total}$), which is the most direct method.\n    2.  By first calculating the total volume and then using the ideal gas law for the specific component ($P_{NH_3} \u003d \\frac{n_{NH_3}RT}{V_{total}}$). Both methods yield the same result and serve as a good cross-check.\n\n---\n\n## [[Stoichiometry Problems (Limiting Reactant)]]\n\n### [[Theoretical Background]]\n**[[Limiting and Excess Reactants]]**: In a chemical reaction, the **limiting reactant** is the substance that is completely consumed first, thus limiting the amount of product that can be formed. The **excess reactant** is the substance that is not completely used up. To identify the limiting reactant, one must compare the mole ratio of the available reactants to the stoichiometric ratio required by the balanced chemical equation.\n\n### [[Problem 5: Reaction of CO and I₂O₅]]\n*   **Problem:** How much iodine ($I_2$) is produced, and which reactant is in excess?\n    *   a) 210 g of $CO$ reacts with 120 g of $I_2O_5$\n    *   b) 210 g of $CO$ reacts with 530 g of $I_2O_5$\n*   **Reaction:** $5CO + I_2O_5 \\rightarrow 5CO_2 + I_2$\n*   **Molar Masses:** $M(CO) \u003d 28 \\ g/mol$, $M(I_2O_5) \u003d 334 \\ g/mol$, $M(I_2) \u003d 254 \\ g/mol$\n\n#### **Part a)**\n1.  **Calculate Initial Moles:**\n    $n(CO) \u003d \\frac{210 \\ g}{28 \\ g/mol} \u003d 7.5 \\ mol$\n    $n(I_2O_5) \u003d \\frac{120 \\ g}{334 \\ g/mol} \\approx 0.359 \\ mol$\n2.  **Identify Limiting Reactant:**\n    The stoichiometric ratio is $\\frac{n(CO)}{n(I_2O_5)} \u003d \\frac{5}{1} \u003d 5$.\n    The available ratio is $\\frac{7.5 \\ mol}{0.359 \\ mol} \\approx 20.9$.\n    Since $20.9 \u003e 5$, we have an excess of $CO$. Therefore, **$I_2O_5$ is the limiting reactant.**\n3.  **Calculate Mass of Product ($I_2$):**\n    The amount of product is determined by the limiting reactant. The ratio $\\frac{n(I_2)}{n(I_2O_5)} \u003d \\frac{1}{1}$.\n    $n(I_2) \u003d n(I_2O_5) \u003d 0.359 \\ mol$\n    $m(I_2) \u003d n(I_2) \\cdot M(I_2) \u003d 0.359 \\ mol \\cdot 254 \\ g/mol \\approx 91.2 \\ g$\n\n*   **Warning Note:** The handwritten note for part (a) calculates `n(I2O5)` as `120g/334 * 5`, which is incorrect. The stoichiometric coefficient should not be included in the initial mole calculation. It is used *after* calculating the moles to compare reactants. The final answer is correct, but the intermediate step is confusingly written. The correct approach is to first find the moles of each reactant from its mass and molar mass, and *then* use the stoichiometric ratio to find the limiting reactant.\n\n#### **Part b)**\n1.  **Calculate Initial Moles:**\n    $n(CO) \u003d 7.5 \\ mol$ (same as above)\n    $n(I_2O_5) \u003d \\frac{530 \\ g}{334 \\ g/mol} \\approx 1.587 \\ mol$\n2.  **Identify Limiting Reactant:**\n    The available ratio is $\\frac{7.5 \\ mol}{1.587 \\ mol} \\approx 4.72$.\n    Since $4.72 \u003c 5$, we do not have enough $CO$ to react with all the $I_2O_5$. Therefore, **$CO$ is the limiting reactant.**\n3.  **Calculate Mass of Product ($I_2$):**\n    The amount of product is determined by the limiting reactant. The ratio $\\frac{n(I_2)}{n(CO)} \u003d \\frac{1}{5}$.\n    $n(I_2) \u003d \\frac{n(CO)}{5} \u003d \\frac{7.5 \\ mol}{5} \u003d 1.5 \\ mol$\n    $m(I_2) \u003d n(I_2) \\cdot M(I_2) \u003d 1.5 \\ mol \\cdot 254 \\ g/mol \u003d 381 \\ g$\n\n---\n\n### [[Problem 10: Preparation of NH₃]]\n*   **Problem:** Ammonia ($NH_3$) can be prepared by reacting $CaO$ with $NH_4Cl$. If we mix 112 g of $CaO$ and 224 g of $NH_4Cl$, what is the maximum mass of $NH_3(g)$ produced? How much of the excess reactant remains?\n*   **Reaction:** $CaO + 2NH_4Cl \\rightarrow CaCl_2 + 2NH_3 + H_2O$\n*   **Molar Masses:** $M(CaO) \u003d 56 \\ g/mol$, $M(NH_4Cl) \\approx 53.5 \\ g/mol$, $M(NH_3) \u003d 17 \\ g/mol$\n\n1.  **Calculate Initial Moles:**\n    $n(CaO) \u003d \\frac{112 \\ g}{56 \\ g/mol} \u003d 2.0 \\ mol$\n    $n(NH_4Cl) \u003d \\frac{224 \\ g}{53.5 \\ g/mol} \\approx 4.19 \\ mol$\n2.  **Identify Limiting Reactant:**\n    The stoichiometric ratio is $\\frac{n(NH_4Cl)}{n(CaO)} \u003d \\frac{2}{1} \u003d 2$.\n    To react with 2.0 mol of $CaO$, we would need $2.0 \\cdot 2 \u003d 4.0 \\ mol$ of $NH_4Cl$.\n    Since we have 4.19 mol of $NH_4Cl$, which is more than 4.0 mol, **$NH_4Cl$ is in excess** and **$CaO$ is the limiting reactant.**\n3.  **Calculate Mass of Product ($NH_3$):**\n    The yield is determined by the limiting reactant, $CaO$. The ratio $\\frac{n(NH_3)}{n(CaO)} \u003d \\frac{2}{1}$.\n    $n(NH_3) \u003d 2 \\cdot n(CaO) \u003d 2 \\cdot 2.0 \\ mol \u003d 4.0 \\ mol$\n    $m(NH_3) \u003d n(NH_3) \\cdot M(NH_3) \u003d 4.0 \\ mol \\cdot 17 \\ g/mol \u003d 68 \\ g$\n4.  **Calculate Mass of Excess Reactant:**\n    Moles of $NH_4Cl$ that reacted: $n_{reacted}(NH_4Cl) \u003d 2 \\cdot n(CaO) \u003d 4.0 \\ mol$\n    Moles of $NH_4Cl$ remaining: $n_{excess} \u003d n_{initial} - n_{reacted} \u003d 4.19 - 4.0 \u003d 0.19 \\ mol$\n    Mass of $NH_4Cl$ remaining: $m_{excess} \u003d 0.19 \\ mol \\cdot 53.5 \\ g/mol \\approx 10.16 \\ g$\n\n---\n\n### [[Problem 37: Production of CaS]]\n*   **Problem:** 300 g of $CaSO_4$ reacts with 96 g of $C$. How much $CaS$ is produced? Which reactant is in excess and by how much?\n*   **Reaction:** $CaSO_4 + 4C \\rightarrow CaS + 4CO$\n*   **Molar Masses:** $M(CaSO_4) \u003d 136 \\ g/mol$, $M(C) \u003d 12 \\ g/mol$, $M(CaS) \u003d 72 \\ g/mol$\n\n1.  **Calculate Initial Moles:**\n    $n(CaSO_4) \u003d \\frac{300 \\ g}{136 \\ g/mol} \\approx 2.206 \\ mol$\n    $n(C) \u003d \\frac{96 \\ g}{12 \\ g/mol} \u003d 8.0 \\ mol$\n2.  **Identify Limiting Reactant:**\n    The stoichiometric ratio is $\\frac{n(C)}{n(CaSO_4)} \u003d \\frac{4}{1} \u003d 4$.\n    To react with 2.206 mol of $CaSO_4$, we would need $2.206 \\cdot 4 \u003d 8.824 \\ mol$ of $C$.\n    Since we only have 8.0 mol of $C$, **Carbon (C) is the limiting reactant,** and **$CaSO_4$ is in excess.**\n3.  **Calculate Mass of Product ($CaS$):**\n    The yield is determined by the limiting reactant, $C$. The ratio $\\frac{n(CaS)}{n(C)} \u003d \\frac{1}{4}$.\n    $n(CaS) \u003d \\frac{n(C)}{4} \u003d \\frac{8.0 \\ mol}{4} \u003d 2.0 \\ mol$\n    $m(CaS) \u003d n(CaS) \\cdot M(CaS) \u003d 2.0 \\ mol \\cdot 72 \\ g/mol \u003d 144 \\ g$\n4.  **Calculate Mass of Excess Reactant:**\n    Moles of $CaSO_4$ that reacted: $n_{reacted}(CaSO_4) \u003d \\frac{n(C)}{4} \u003d \\frac{8.0 \\ mol}{4} \u003d 2.0 \\ mol$\n    Moles of $CaSO_4$ remaining: $n_{excess} \u003d n_{initial} - n_{reacted} \u003d 2.206 - 2.0 \u003d 0.206 \\ mol$\n    Mass of $CaSO_4$ remaining: $m_{excess} \u003d 0.206 \\ mol \\cdot 136 \\ g/mol \\approx 28.0 \\ g$\n\n*   **Warning Note:** The handwritten note incorrectly shows the calculation for the excess moles as `n(pres) \u003d n(CaSO4) - n(C)/5`. The division should be by 4, not 5, based on the stoichiometry. While the final numerical answer for the excess moles (0.206 mol) is correct, the formula written is wrong and could lead to confusion. The correct method is shown in step 4 above.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 5333,
+      "parts": [{
+        "text": "# [[Računske naloge sKem SEM - 22.10.]]\n\n## [[Memorialization]]\nThe lecturer took attendance at the beginning of the session (around 02:30).\n\n## [[Problem 10.a: Gas Mixture Analysis]]\n\n### [[Problem Statement]]\nA gas mixture contains Hydrogen ($H_"
+      }, {
+        "text": "2$), Helium ($He$), and Methane ($CH_4$) at a temperature of 20°C and"
+      }, {
+        "text": " a pressure of 112.4 kPa. The density of the mixture is 0.315 g/L"
+      }, {
+        "text": ". Calculate the volume fraction ($X(CH_4)$) of methane in the mixture, given that every other particle"
+      }, {
+        "text": " in the mixture is a Helium atom.\n\n### [[Given Data]]\n*   **Components:** $H_2,"
+      }, {
+        "text": " He, CH_4$\n*   **Temperature (T):** $20^\\circ C \u003d 29"
+      }, {
+        "text": "3.15 K$\n*   **Pressure (P):** $112.4 \\ kPa$\n*   "
+      }, {
+        "text": "**Density ($\\rho$):** $0.315 \\ g/L$\n*   **Condition:**"
+      }, {
+        "text": " Every other particle is a Helium atom. This directly implies that the mole fraction of Helium is 50%.\n    *   $"
+      }, {
+        "text": "x_{He} \u003d 0.50$\n\n### [[Theoretical Background]]\n\n1.  **[[Ideal Gas Law]]"
+      }, {
+        "text": "**: The relationship between pressure (P), volume (V), number of moles (n), and temperature (T) for an"
+      }, {
+        "text": " ideal gas is given by the equation:\n    $PV \u003d nRT$\n    Where R is the ideal gas"
+      }, {
+        "text": " constant ($8.314 \\ kPa \\cdot L \\cdot mol^{-1} \\cdot K^{-1}$).\n\n"
+      }, {
+        "text": "2.  **[[Molar Mass and Density]]**: The number of moles (n) can be expressed as mass (m"
+      }, {
+        "text": ") divided by molar mass (M), $n \u003d \\frac{m}{M}$. By substituting this into the ideal gas law and"
+      }, {
+        "text": " rearranging, we can relate density ($\\rho \u003d \\frac{m}{V}$) to molar mass:\n    $P"
+      }, {
+        "text": " V \u003d \\frac{m}{M} R T \\implies P M \u003d \\frac{m}{V} R T \\"
+      }, {
+        "text": "implies P M \u003d \\rho R T$\n    This allows us to calculate the average molar mass ($\\bar{M}$)"
+      }, {
+        "text": " of the gas mixture.\n\n3.  **[[Mole Fraction and Volume Fraction]]**: For ideal gases, the volume"
+      }, {
+        "text": " fraction of a component is equal to its mole fraction.\n    $X_{i} \u003d x_{i}$\n"
+      }, {
+        "text": "    Where $X_i$ is the volume fraction and $x_i$ is the mole fraction of component *"
+      }, {
+        "text": "i*.\n\n4.  **[[Average Molar Mass of a Mixture]]**: The average molar mass of a mixture is the"
+      }, {
+        "text": " weighted average of the molar masses of its components, based on their mole fractions.\n    $\\bar{M} \u003d \\sum_{"
+      }, {
+        "text": "i} (x_i \\cdot M_i) \u003d x_{H_2}M_{H_2"
+      }, {
+        "text": "} + x_{He}M_{He} + x_{CH_4}M_{CH_4}$\n"
+      }, {
+        "text": "    The sum of all mole fractions in a mixture is always 1.\n    $\\sum_{i} x_"
+      }, {
+        "text": "i \u003d x_{H_2} + x_{He} + x_{CH_4} \u003d 1$\n\n### [[Solution Derivation]]\n\n1.  **Calculate the Average Molar Mass ($\\bar{M}$) of the Mixture:**\n    We"
+      }, {
+        "text": " rearrange the ideal gas law equation involving density to solve for $\\bar{M}$.\n    $\\bar{M} \u003d"
+      }, {
+        "text": " \\frac{\\rho R T}{P}$\n    $\\bar{M} \u003d \\frac{(0.31"
+      }, {
+        "text": "5 \\ g/L) \\cdot (8.314 \\ kPa \\cdot L \\cdot mol^{-1"
+      }, {
+        "text": "} \\cdot K^{-1}) \\cdot (293.15 \\ K)}{112.4"
+      }, {
+        "text": " \\ kPa}$\n    $\\bar{M} \\approx 6.83 \\ g/mol$\n\n2."
+      }, {
+        "text": "  **Set up the System of Equations for Mole Fractions:**\n    We have two key equations regarding mole fractions:\n"
+      }, {
+        "text": "    (1) $\\bar{M} \u003d x_{H_2}M_{H_2} + x_{He"
+      }, {
+        "text": "}M_{He} + x_{CH_4}M_{CH_4}$\n    (2) $"
+      }, {
+        "text": "x_{H_2} + x_{He} + x_{CH_4} \u003d 1$\n\n    "
+      }, {
+        "text": "We are given that $x_{He} \u003d 0.5$. Substituting this into equation (2):\n    "
+      }, {
+        "text": "$x_{H_2} + 0.5 + x_{CH_4} \u003d 1 \\implies"
+      }, {
+        "text": " x_{H_2} \u003d 0.5 - x_{CH_4}$\n\n3.  **Solve"
+      }, {
+        "text": " for the Mole Fraction of Methane ($x_{CH_4}$):**\n    Now, substitute the known values and the expression"
+      }, {
+        "text": " for $x_{H_2}$ into equation (1).\n    *   $M_{H_2} \u003d "
+      }, {
+        "text": "2.02 \\ g/mol$\n    *   $M_{He} \u003d 4.00"
+      }, {
+        "text": " \\ g/mol$\n    *   $M_{CH_4} \u003d 16.04 \\"
+      }, {
+        "text": " g/mol$\n\n    $6.83 \u003d (0.5 - x_{CH_4})(2"
+      }, {
+        "text": ".02) + (0.5)(4.00) + (x_{CH_4})(1"
+      }, {
+        "text": "6.04)$\n    $6.83 \u003d 1.01 - 2.02x_{"
+      }, {
+        "text": "CH_4} + 2.00 + 16.04x_{CH_4}$\n"
+      }, {
+        "text": "    $6.83 \u003d 3.01 + 14.02x_{CH_4"
+      }, {
+        "text": "}$\n    $3.82 \u003d 14.02x_{CH_4}$\n    $"
+      }, {
+        "text": "x_{CH_4} \u003d \\frac{3.82}{14.02} \\approx 0.2"
+      }, {
+        "text": "72$\n\n    The mole fraction of Methane is approximately 0.272 or 27."
+      }, {
+        "text": "2%.\n\n4.  **Final Answer - Volume Fraction of Methane ($X_{CH_4}$):**\n    "
+      }, {
+        "text": "Since the volume fraction is equal to the mole fraction for gases:\n    $X_{CH_4} \u003d x"
+      }, {
+        "text": "_{CH_4} \\approx 0.272 \\ (27.2\\%)$\n\n### [[Critical Analysis]]\n*   **Note to Self:** The key to this problem is the initial interpretation of \"every other particle is"
+      }, {
+        "text": " a Helium atom,\" which directly gives $x_{He} \u003d 0.5$. This simplifies the system of equations,"
+      }, {
+        "text": " leaving only one unknown to solve for.\n*   The calculation in the handwritten notes uses slightly different values (`6.82"
+      }, {
+        "text": "69` for $\\bar{M}$, `2.02` for $H_2$, etc.) leading"
+      }, {
+        "text": " to a slightly different result for $x_{CH_4}$ (0.1767). Let\u0027s re-"
+      }, {
+        "text": "verify with the user\u0027s numbers.\n    *   $6.83 \u003d (0.5 - x_"
+      }, {
+        "text": "C)(2.02) + (0.5)(4.00) + x_C(1"
+      }, {
+        "text": "6.04)$\n    *   $6.83 \u003d 1.01 - 2."
+      }, {
+        "text": "02x_C + 2 + 16.04x_C$\n    *   $6"
+      }, {
+        "text": ".83 \u003d 3.01 + 14.02x_C$\n    *   "
+      }, {
+        "text": "$3.82 \u003d 14.02x_C$\n    *   $x_C"
+      }, {
+        "text": " \u003d 0.272$\n    *   The user\u0027s note shows: `6.83 \u003d 2"
+      }, {
+        "text": " + 8.02 - x_C(16.04+2.02)`. This rearrangement"
+      }, {
+        "text": " is incorrect. It seems they incorrectly factored out $x_C$. The correct expansion is shown above. This is a critical algebraic"
+      }, {
+        "text": " error.\n*   **Warning Note:** The handwritten notes contain an algebraic error when solving for the mole fraction. The term"
+      }, {
+        "text": " `(0.5 - x_C) * M_A` was not expanded correctly. Each term must be multiplied"
+      }, {
+        "text": " out individually before collecting like terms, as shown in the derivation above.\n\n---\n\n## [[Problem 23: Decomposition of Ammonium Carbonate]]\n\n### [[Problem Statement]]\nAmmonium carbonate decomposes upon heating according to the reaction:\n"
+      }, {
+        "text": "$(NH_4)_2CO_3 (s) \\rightarrow 2NH_3 (g) + H_2"
+      }, {
+        "text": "O (g) + CO_2 (g)$\nWhat volume does the resulting gas mixture occupy if 10 g"
+      }, {
+        "text": " of $(NH_4)_2CO_3$ is heated to 200°C at a pressure of 1"
+      }, {
+        "text": "02.6 kPa? What is the partial pressure of ammonia ($NH_3$) in the mixture?\n\n### [[Given Data]]\n*   **Mass of $(NH_4)_2CO_3$:** $m \u003d 10 \\"
+      }, {
+        "text": " g$\n*   **Temperature (T):** $200^\\circ C \u003d 473."
+      }, {
+        "text": "15 \\ K$\n*   **Total Pressure (P_total):** $102.6 \\ kPa"
+      }, {
+        "text": "$\n\n### [[Solution Derivation]]\n\n1.  **Calculate Moles of Reactant:**\n    First, find the"
+      }, {
+        "text": " molar mass of ammonium carbonate, $(NH_4)_2CO_3$.\n    $M((NH_4)_"
+      }, {
+        "text": "2CO_3) \u003d 2 \\cdot (14.01 + 4 \\cdot 1.01)"
+      }, {
+        "text": " + 12.01 + 3 \\cdot 16.00 \u003d 96.0"
+      }, {
+        "text": "9 \\ g/mol$\n    Now, calculate the initial number of moles.\n    $n((NH_4"
+      }, {
+        "text": ")_2CO_3) \u003d \\frac{m}{M} \u003d \\frac{10 \\ g}{9"
+      }, {
+        "text": "6.09 \\ g/mol} \\approx 0.104 \\ mol$\n\n2.  "
+      }, {
+        "text": "**Calculate Total Moles of Gas Produced:**\n    From the stoichiometry of the balanced equation, 1 mole of solid"
+      }, {
+        "text": " $(NH_4)_2CO_3$ produces a total of 4 moles of gas (2 moles $NH_3"
+      }, {
+        "text": "$ + 1 mole $H_2O$ + 1 mole $CO_2$).\n    $n_{"
+      }, {
+        "text": "total\\_gas} \u003d 4 \\cdot n((NH_4)_2CO_3)$\n    $n"
+      }, {
+        "text": "_{total\\_gas} \u003d 4 \\cdot 0.104 \\ mol \u003d 0.41"
+      }, {
+        "text": "6 \\ mol$\n\n3.  **Calculate the Total Volume of the Gas Mixture:**\n    Using the Ideal Gas Law,"
+      }, {
+        "text": " $PV\u003dnRT$, we can solve for the total volume $V_{total}$.\n    $V_{total} \u003d"
+      }, {
+        "text": " \\frac{n_{total\\_gas} R T}{P_{total}}$\n    $V_{total} \u003d"
+      }, {
+        "text": " \\frac{(0.416 \\ mol) \\cdot (8.314 \\ kPa \\cdot L"
+      }, {
+        "text": " \\cdot mol^{-1} \\cdot K^{-1}) \\cdot (473.15 \\ K)}{"
+      }, {
+        "text": "102.6 \\ kPa}$\n    $V_{total} \\approx 15.98 \\"
+      }, {
+        "text": " L$\n\n4.  **Calculate the Partial Pressure of Ammonia ($P_{NH_3}$):**\n    "
+      }, {
+        "text": "The partial pressure of a gas in a mixture is its mole fraction times the total pressure (Dalton\u0027s Law).\n    "
+      }, {
+        "text": "$P_{NH_3} \u003d x_{NH_3} \\cdot P_{total}$\n\n    First, determine"
+      }, {
+        "text": " the mole fraction of $NH_3$ in the gas mixture. Out of the 4 total moles of gas produced,"
+      }, {
+        "text": " 2 are ammonia.\n    $x_{NH_3} \u003d \\frac{n_{NH_3}}{n_{total"
+      }, {
+        "text": "\\_gas}} \u003d \\frac{2}{4} \u003d 0.5$\n    Now, calculate the partial"
+      }, {
+        "text": " pressure.\n    $P_{NH_3} \u003d 0.5 \\cdot 102.6"
+      }, {
+        "text": " \\ kPa \u003d 51.3 \\ kPa$\n\n### [[Critical Analysis]]\n*   **Note to Self:**"
+      }, {
+        "text": " The solution in the handwritten notes is correct. It correctly identifies that the total moles of gas are 4 times the moles"
+      }, {
+        "text": " of the initial solid reactant. It also correctly calculates the mole fraction of ammonia as 0.5 (or 5"
+      }, {
+        "text": "0%) to find the partial pressure.\n*   The problem can be solved in two ways for partial pressure, as shown in the"
+      }, {
+        "text": " notes:\n    1.  Using Dalton\u0027s Law ($P_i \u003d x_i \\cdot P_{total"
+      }, {
+        "text": "}$), which is the most direct method.\n    2.  By first calculating the total volume and then using the ideal gas law"
+      }, {
+        "text": " for the specific component ($P_{NH_3} \u003d \\frac{n_{NH_3}RT}{V"
+      }, {
+        "text": "_{total}}$). Both methods yield the same result and serve as a good cross-check.\n\n---\n\n## [[Stoichiometry Problems (Limiting Reactant)]]\n\n### [[Theoretical Background]]\n**[[Limiting and Excess Reactants]]**: In a chemical reaction, the **limiting reactant** is the substance that is completely consumed first, thus limiting the amount"
+      }, {
+        "text": " of product that can be formed. The **excess reactant** is the substance that is not completely used up. To identify"
+      }, {
+        "text": " the limiting reactant, one must compare the mole ratio of the available reactants to the stoichiometric ratio required by the balanced chemical equation.\n\n###"
+      }, {
+        "text": " [[Problem 5: Reaction of CO and I₂O₅]]\n*   **Problem:** How much iodine ($I"
+      }, {
+        "text": "_2$) is produced, and which reactant is in excess?\n    *   a) 210 g"
+      }, {
+        "text": " of $CO$ reacts with 120 g of $I_2O_5$\n    *   "
+      }, {
+        "text": "b) 210 g of $CO$ reacts with 530 g of $I_2O_5$"
+      }, {
+        "text": "\n*   **Reaction:** $5CO + I_2O_5 \\rightarrow 5CO_2 + I_"
+      }, {
+        "text": "2$\n*   **Molar Masses:** $M(CO) \u003d 28 \\ g/mol$, $M("
+      }, {
+        "text": "I_2O_5) \u003d 334 \\ g/mol$, $M(I_2)"
+      }, {
+        "text": " \u003d 254 \\ g/mol$\n\n#### **Part a)**\n1.  **Calculate Initial Moles:**"
+      }, {
+        "text": "\n    $n(CO) \u003d \\frac{210 \\ g}{28 \\ g/mol} \u003d 7"
+      }, {
+        "text": ".5 \\ mol$\n    $n(I_2O_5) \u003d \\frac{120"
+      }, {
+        "text": " \\ g}{334 \\ g/mol} \\approx 0.359 \\ mol$\n2.  **"
+      }, {
+        "text": "Identify Limiting Reactant:**\n    The stoichiometric ratio is $\\frac{n(CO)}{n(I_2O"
+      }, {
+        "text": "_5)} \u003d \\frac{5}{1} \u003d 5$.\n    The available ratio is $\\frac{7"
+      }, {
+        "text": ".5 \\ mol}{0.359 \\ mol} \\approx 20.9$.\n    Since"
+      }, {
+        "text": " $20.9 \u003e 5$, we have an excess of $CO$. Therefore, **$I_2O_"
+      }, {
+        "text": "5$ is the limiting reactant.**\n3.  **Calculate Mass of Product ($I_2$):**\n    The"
+      }, {
+        "text": " amount of product is determined by the limiting reactant. The ratio $\\frac{n(I_2)}{n(I_"
+      }, {
+        "text": "2O_5)} \u003d \\frac{1}{1}$.\n    $n(I_2) \u003d n"
+      }, {
+        "text": "(I_2O_5) \u003d 0.359 \\ mol$\n    $m(I"
+      }, {
+        "text": "_2) \u003d n(I_2) \\cdot M(I_2) \u003d 0.35"
+      }, {
+        "text": "9 \\ mol \\cdot 254 \\ g/mol \\approx 91.2 \\ g$\n\n"
+      }, {
+        "text": "*   **Warning Note:** The handwritten note for part (a) calculates `n(I2O5)` as"
+      }, {
+        "text": " `120g/334 * 5`, which is incorrect. The stoichiometric coefficient should not be included"
+      }, {
+        "text": " in the initial mole calculation. It is used *after* calculating the moles to compare reactants. The final answer is correct, but the"
+      }, {
+        "text": " intermediate step is confusingly written. The correct approach is to first find the moles of each reactant from its mass and molar mass, and"
+      }, {
+        "text": " *then* use the stoichiometric ratio to find the limiting reactant.\n\n#### **Part b)**\n1.  **Calculate"
+      }, {
+        "text": " Initial Moles:**\n    $n(CO) \u003d 7.5 \\ mol$ (same as above)\n    $"
+      }, {
+        "text": "n(I_2O_5) \u003d \\frac{530 \\ g}{334 \\ g"
+      }, {
+        "text": "/mol} \\approx 1.587 \\ mol$\n2.  **Identify Limiting Reactant"
+      }, {
+        "text": ":**\n    The available ratio is $\\frac{7.5 \\ mol}{1.587 \\ mol}"
+      }, {
+        "text": " \\approx 4.72$.\n    Since $4.72 \u003c 5$, we do not have enough $"
+      }, {
+        "text": "CO$ to react with all the $I_2O_5$. Therefore, **$CO$ is the limiting reactant.**\n"
+      }, {
+        "text": "3.  **Calculate Mass of Product ($I_2$):**\n    The amount of product is determined by"
+      }, {
+        "text": " the limiting reactant. The ratio $\\frac{n(I_2)}{n(CO)} \u003d \\frac{1}{5}$."
+      }, {
+        "text": "\n    $n(I_2) \u003d \\frac{n(CO)}{5} \u003d \\frac{7.5"
+      }, {
+        "text": " \\ mol}{5} \u003d 1.5 \\ mol$\n    $m(I_2) \u003d n"
+      }, {
+        "text": "(I_2) \\cdot M(I_2) \u003d 1.5 \\ mol \\cdot 2"
+      }, {
+        "text": "54 \\ g/mol \u003d 381 \\ g$\n\n---\n\n### [[Problem 10: Preparation of NH₃]]\n*   **Problem:** Ammonia ($NH_3$) can be prepared by reacting $CaO$ with"
+      }, {
+        "text": " $NH_4Cl$. If we mix 112 g of $CaO$ and 224 g"
+      }, {
+        "text": " of $NH_4Cl$, what is the maximum mass of $NH_3(g)$ produced? How much of the"
+      }, {
+        "text": " excess reactant remains?\n*   **Reaction:** $CaO + 2NH_4Cl \\rightarrow CaCl_2 + "
+      }, {
+        "text": "2NH_3 + H_2O$\n*   **Molar Masses:** $M(CaO) \u003d"
+      }, {
+        "text": " 56 \\ g/mol$, $M(NH_4Cl) \\approx 53.5 \\"
+      }, {
+        "text": " g/mol$, $M(NH_3) \u003d 17 \\ g/mol$\n\n1.  "
+      }, {
+        "text": "**Calculate Initial Moles:**\n    $n(CaO) \u003d \\frac{112 \\ g}{5"
+      }, {
+        "text": "6 \\ g/mol} \u003d 2.0 \\ mol$\n    $n(NH_4Cl) \u003d \\"
+      }, {
+        "text": "frac{224 \\ g}{53.5 \\ g/mol} \\approx 4.19"
+      }, {
+        "text": " \\ mol$\n2.  **Identify Limiting Reactant:**\n    The stoichiometric ratio is $\\frac{n"
+      }, {
+        "text": "(NH_4Cl)}{n(CaO)} \u003d \\frac{2}{1} \u003d 2$.\n    "
+      }, {
+        "text": "To react with 2.0 mol of $CaO$, we would need $2.0 \\cdot 2 \u003d 4"
+      }, {
+        "text": ".0 \\ mol$ of $NH_4Cl$.\n    Since we have 4.19 mol of $NH_"
+      }, {
+        "text": "4Cl$, which is more than 4.0 mol, **$NH_4Cl$ is in excess**"
+      }, {
+        "text": " and **$CaO$ is the limiting reactant.**\n3.  **Calculate Mass of Product ($NH_3$"
+      }, {
+        "text": "):**\n    The yield is determined by the limiting reactant, $CaO$. The ratio $\\frac{n(NH_"
+      }, {
+        "text": "3)}{n(CaO)} \u003d \\frac{2}{1}$.\n    $n(NH_3) \u003d"
+      }, {
+        "text": " 2 \\cdot n(CaO) \u003d 2 \\cdot 2.0 \\ mol \u003d 4.0 \\ mol"
+      }, {
+        "text": "$\n    $m(NH_3) \u003d n(NH_3) \\cdot M(NH_3"
+      }, {
+        "text": ") \u003d 4.0 \\ mol \\cdot 17 \\ g/mol \u003d 68 \\ g$"
+      }, {
+        "text": "\n4.  **Calculate Mass of Excess Reactant:**\n    Moles of $NH_4Cl$ that reacted: $n"
+      }, {
+        "text": "_{reacted}(NH_4Cl) \u003d 2 \\cdot n(CaO) \u003d 4.0 \\ mol$\n    "
+      }, {
+        "text": "Moles of $NH_4Cl$ remaining: $n_{excess} \u003d n_{initial} - n_{reacted} \u003d"
+      }, {
+        "text": " 4.19 - 4.0 \u003d 0.19 \\ mol$\n    Mass of $NH_"
+      }, {
+        "text": "4Cl$ remaining: $m_{excess} \u003d 0.19 \\ mol \\cdot 53."
+      }, {
+        "text": "5 \\ g/mol \\approx 10.16 \\ g$\n\n---\n\n### [[Problem 37: Production of CaS]]\n*   **Problem:** 300 g of $CaSO_4$ reacts"
+      }, {
+        "text": " with 96 g of $C$. How much $CaS$ is produced? Which reactant is in excess and by"
+      }, {
+        "text": " how much?\n*   **Reaction:** $CaSO_4 + 4C \\rightarrow CaS + 4"
+      }, {
+        "text": "CO$\n*   **Molar Masses:** $M(CaSO_4) \u003d 136 \\"
+      }, {
+        "text": " g/mol$, $M(C) \u003d 12 \\ g/mol$, $M(CaS)"
+      }, {
+        "text": " \u003d 72 \\ g/mol$\n\n1.  **Calculate Initial Moles:**\n    $n("
+      }, {
+        "text": "CaSO_4) \u003d \\frac{300 \\ g}{136 \\ g/mol} \\"
+      }, {
+        "text": "approx 2.206 \\ mol$\n    $n(C) \u003d \\frac{96 \\"
+      }, {
+        "text": " g}{12 \\ g/mol} \u003d 8.0 \\ mol$\n2.  **Identify Lim"
+      }, {
+        "text": "iting Reactant:**\n    The stoichiometric ratio is $\\frac{n(C)}{n(CaSO_4)}"
+      }, {
+        "text": " \u003d \\frac{4}{1} \u003d 4$.\n    To react with 2.206 mol of $Ca"
+      }, {
+        "text": "SO_4$, we would need $2.206 \\cdot 4 \u003d 8.824"
+      }, {
+        "text": " \\ mol$ of $C$.\n    Since we only have 8.0 mol of $C$, **Carbon (C)"
+      }, {
+        "text": " is the limiting reactant,** and **$CaSO_4$ is in excess.**\n3.  **Calculate Mass"
+      }, {
+        "text": " of Product ($CaS$):**\n    The yield is determined by the limiting reactant, $C$. The ratio"
+      }, {
+        "text": " $\\frac{n(CaS)}{n(C)} \u003d \\frac{1}{4}$.\n    $n"
+      }, {
+        "text": "(CaS) \u003d \\frac{n(C)}{4} \u003d \\frac{8.0 \\ mol}{"
+      }, {
+        "text": "4} \u003d 2.0 \\ mol$\n    $m(CaS) \u003d n(CaS)"
+      }, {
+        "text": " \\cdot M(CaS) \u003d 2.0 \\ mol \\cdot 72 \\ g/mol \u003d"
+      }, {
+        "text": " 144 \\ g$\n4.  **Calculate Mass of Excess Reactant:**\n    Moles of $"
+      }, {
+        "text": "CaSO_4$ that reacted: $n_{reacted}(CaSO_4) \u003d \\frac{n("
+      }, {
+        "text": "C)}{4} \u003d \\frac{8.0 \\ mol}{4} \u003d 2.0 \\ mol$\n    "
+      }, {
+        "text": "Moles of $CaSO_4$ remaining: $n_{excess} \u003d n_{initial} - n_{reacted"
+      }, {
+        "text": "} \u003d 2.206 - 2.0 \u003d 0.206 \\ mol$\n"
+      }, {
+        "text": "    Mass of $CaSO_4$ remaining: $m_{excess} \u003d 0.206 \\"
+      }, {
+        "text": " mol \\cdot 136 \\ g/mol \\approx 28.0 \\ g$\n\n*   **Warning Note"
+      }, {
+        "text": ":** The handwritten note incorrectly shows the calculation for the excess moles as `n(pres) \u003d n(CaSO4"
+      }, {
+        "text": ") - n(C)/5`. The division should be by 4, not 5, based on the stoichiometry"
+      }, {
+        "text": ". While the final numerical answer for the excess moles (0.206 mol) is correct, the formula written is wrong"
+      }, {
+        "text": " and could lead to confusion. The correct method is shown in step 4 above."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

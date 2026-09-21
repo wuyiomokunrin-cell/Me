@@ -1,0 +1,287 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3.1-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH",
+    "enableImageSearch": false,
+    "enableGoogleMaps": false
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "why does inserting an assuption work in proofs? How is it not circular reasoning?",
+      "role": "user",
+      "tokenCount": 19,
+      "createTime": "2026-03-19T15:51:18.384Z"
+    }, {
+      "text": "**Clarifying User Inquiry**\n\nOkay, I\u0027m now focused on clarifying the user\u0027s question regarding assumptions in proofs. I am zeroing in on why this technique works and ensuring the reasoning isn\u0027t circular. Specifically, I\u0027m trying to unpack the essence of why inserting assumptions is valid, and pinpoint the mechanisms by which circularity is avoided.\n\n\n**Deconstructing Proof Techniques**\n\nI am now dissecting specific proof techniques that involve inserting assumptions. I am focused on implications, contradiction, and induction. My main focus is understanding *why* they are valid, and how they sidestep circular reasoning. I am now trying to formalize why we can explore a hypothetical universe under the assumption and not get trapped in begging the question, while focusing on how logical deduction rules work.\n\n\n**Analyzing Assumption Validity**\n\nI\u0027m now clarifying the distinctions between assuming premises, opposites, or specific cases, versus circular reasoning. I\u0027m focusing on why assuming $P$ in $P \\implies Q$ is valid, as it\u0027s the premise, not the conclusion, we are exploring. I am then focusing on contradiction, where assuming the opposite leads to self-defeat. Finally, I\u0027m focusing on induction, where we\u0027re proving implications, not making blanket assumptions.\n\n\n**Defining Logical Boundaries**\n\nNow, I\u0027m defining the key components we assume in proofs: the \u0027if\u0027 part of a conditional statement ($P$) is key. I\u0027m focused on why this works: we\u0027re connecting two ideas, not asserting either in isolation, or assuming the ultimate conclusion. I\u0027m contrasting this with the core fallacy of circular reasoning, which I will summarize next. Furthermore, I will explain briefly how assumption is used in Mathematical Induction, as well as proof by contradiction. The ultimate goal is to delineate how these assumptions create context and boundaries for a logical journey.",
+      "role": "model",
+      "tokenCount": 1171,
+      "isThought": true,
+      "parts": [{
+        "text": "**Clarifying User Inquiry**\n\nOkay, I\u0027m now focused on clarifying the user\u0027s question regarding assumptions in proofs. I am zeroing in on why this technique works and ensuring the reasoning isn\u0027t circular. Specifically, I\u0027m trying to unpack the essence of why inserting assumptions is valid, and pinpoint the mechanisms by which circularity is avoided.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Deconstructing Proof Techniques**\n\nI am now dissecting specific proof techniques that involve inserting assumptions. I am focused on implications, contradiction, and induction. My main focus is understanding *why* they are valid, and how they sidestep circular reasoning. I am now trying to formalize why we can explore a hypothetical universe under the assumption and not get trapped in begging the question, while focusing on how logical deduction rules work.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Analyzing Assumption Validity**\n\nI\u0027m now clarifying the distinctions between assuming premises, opposites, or specific cases, versus circular reasoning. I\u0027m focusing on why assuming $P$ in $P \\implies Q$ is valid, as it\u0027s the premise, not the conclusion, we are exploring. I am then focusing on contradiction, where assuming the opposite leads to self-defeat. Finally, I\u0027m focusing on induction, where we\u0027re proving implications, not making blanket assumptions.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Defining Logical Boundaries**\n\nNow, I\u0027m defining the key components we assume in proofs: the \u0027if\u0027 part of a conditional statement ($P$) is key. I\u0027m focused on why this works: we\u0027re connecting two ideas, not asserting either in isolation, or assuming the ultimate conclusion. I\u0027m contrasting this with the core fallacy of circular reasoning, which I will summarize next. Furthermore, I will explain briefly how assumption is used in Mathematical Induction, as well as proof by contradiction. The ultimate goal is to delineate how these assumptions create context and boundaries for a logical journey.",
+        "thought": true
+      }],
+      "createTime": "2026-03-19T15:51:18.384Z"
+    }, {
+      "text": "\n\n\nThe reason \"inserting an assumption\" works in mathematical and logical proofs—and why it isn\u0027t circular reasoning—comes down to **what exactly you are assuming** and **what you are actually trying to prove**.\n\nIn logic, making an assumption is a way of saying, *\"Let\u0027s step into a hypothetical universe where this specific thing is true, and see what the strict rules of logic force to happen next.\"* \n\nHere is a breakdown of why this works and why it avoids being circular, based on the three most common ways assumptions are used in proofs:\n\n---\n\n### 1. Proving \"If-Then\" Statements (Direct Proof)\n**The Goal:** Prove that \"If $A$ is true, then $B$ is true\" ($A \\implies B$).\n**The Assumption:** We assume $A$ is true.\n\n**Why it works:** You are not trying to prove that $B$ is an absolute truth of the universe. You are only trying to prove that **$B$ is tethered to $A$**. By assuming $A$, you temporarily grant $A$ \"true\" status. If you can use the rules of logic to walk from $A$ to $B$, you have successfully proven the *connection* between them. \n\n**Why it’s not circular:** Circular reasoning would be assuming the conclusion ($B$) to prove the conclusion ($B$). Here, you are assuming the *premise* ($A$) to prove the *conclusion* ($B$). \n*   *Analogy:* If I want to prove \"If you drop a glass, it will shatter,\" I don\u0027t assume it shattered. I assume you dropped it. Then I watch what happens.\n\n### 2. Proof by Contradiction (Reductio ad Absurdum)\n**The Goal:** Prove statement $X$ is true.\n**The Assumption:** We assume $X$ is **false** (i.e., we assume Not-$X$).\n\n**Why it works:** Math relies on the Law of Non-Contradiction—a statement cannot be both true and false at the same time. If you assume $X$ is false, and that assumption logically causes math to break (e.g., you end up proving that $1 \u003d 0$, or that a number is both odd and even), then your starting assumption *must* be wrong. If \"Not-$X$\" is wrong, then \"$X$\" must be right.\n\n**Why it’s not circular:** This is the exact opposite of circular reasoning. Instead of assuming what you want to prove, you are deliberately assuming the **exact opposite** of what you want to prove, solely to watch it destroy itself. \n\n### 3. Mathematical Induction\n**The Goal:** Prove a rule works for all numbers (e.g., 1, 2, 3, 4, to infinity).\n**The Assumption:** We assume the rule works for some random, unspecified step $k$.\n\n**Why it works:** You are proving a chain reaction. You assume it works for step $k$, and use that to prove it must therefore work for the next step, $k+1$. Once you prove that *if* it works for one step, it works for the next, you just show it works for the very first step (step 1). Step 1 triggers Step 2, Step 2 triggers Step 3, forever.\n\n**Why it’s not circular:** You are not assuming the rule works for *all* numbers to prove it works for *all* numbers. You are assuming it works for *one specific, arbitrary step* to prove it works for the *subsequent step*. You are proving the mechanism of the domino effect, not assuming all the dominos have already fallen.\n\n---\n\n### What *Would* Be Circular Reasoning?\nCircular reasoning (also called \"begging the question\") happens when your assumption contains the very thing you are trying to prove. \n\n**Example of Circular Reasoning:**\n*   *Theorem:* $x \u003d 5$.\n*   *Proof:* Assume $x \u003d 5$. Multiply both sides by 2 to get $2x \u003d 10$. Divide by 2 to get $x \u003d 5$. Therefore, $x \u003d 5$. \n\nThis fails because the ultimate conclusion was baked into the starting assumption. \n\n### Summary\nIn valid mathematical proofs, an assumption acts as a **temporary boundary condition**. You are exploring the logical consequences of a hypothetical scenario. As long as you don\u0027t assume your final target conclusion to reach your final target conclusion, your logic remains perfectly sound and linear, not circular.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 976,
+      "parts": [{
+        "text": "\n\n\nThe reason \"inserting an assumption\" works in mathematical and logical proofs—and why it isn\u0027t circular reasoning"
+      }, {
+        "text": "—comes down to **what exactly you are assuming** and **what you are actually trying to prove**.\n\nIn logic, making"
+      }, {
+        "text": " an assumption is a way of saying, *\"Let\u0027s step into a hypothetical universe where this specific thing is true,"
+      }, {
+        "text": " and see what the strict rules of logic force to happen next.\"* \n\nHere is a breakdown of why this works and"
+      }, {
+        "text": " why it avoids being circular, based on the three most common ways assumptions are used in proofs:\n\n---\n\n### 1. Pro"
+      }, {
+        "text": "ving \"If-Then\" Statements (Direct Proof)\n**The Goal:** Prove that \"If $A$ is true"
+      }, {
+        "text": ", then $B$ is true\" ($A \\implies B$).\n**The Assumption:** We assume $A$"
+      }, {
+        "text": " is true.\n\n**Why it works:** You are not trying to prove that $B$ is an absolute truth of the"
+      }, {
+        "text": " universe. You are only trying to prove that **$B$ is tethered to $A$**. By assuming $A$,"
+      }, {
+        "text": " you temporarily grant $A$ \"true\" status. If you can use the rules of logic to walk from $A$"
+      }, {
+        "text": " to $B$, you have successfully proven the *connection* between them. \n\n**Why it’s not circular:**"
+      }, {
+        "text": " Circular reasoning would be assuming the conclusion ($B$) to prove the conclusion ($B$). Here, you are assuming the *prem"
+      }, {
+        "text": "ise* ($A$) to prove the *conclusion* ($B$). \n*   *Analogy:* If I want to prove"
+      }, {
+        "text": " \"If you drop a glass, it will shatter,\" I don\u0027t assume it shattered. I assume you dropped it."
+      }, {
+        "text": " Then I watch what happens.\n\n### 2. Proof by Contradiction (Reductio ad Absurdum)"
+      }, {
+        "text": "\n**The Goal:** Prove statement $X$ is true.\n**The Assumption:** We assume $X$ is **"
+      }, {
+        "text": "false** (i.e., we assume Not-$X$).\n\n**Why it works:** Math relies on the Law"
+      }, {
+        "text": " of Non-Contradiction—a statement cannot be both true and false at the same time. If you assume $"
+      }, {
+        "text": "X$ is false, and that assumption logically causes math to break (e.g., you end up proving that $1 \u003d"
+      }, {
+        "text": " 0$, or that a number is both odd and even), then your starting assumption *must* be wrong. If"
+      }, {
+        "text": " \"Not-$X$\" is wrong, then \"$X$\" must be right.\n\n**Why it’s not circular:** This"
+      }, {
+        "text": " is the exact opposite of circular reasoning. Instead of assuming what you want to prove, you are deliberately assuming the **exact"
+      }, {
+        "text": " opposite** of what you want to prove, solely to watch it destroy itself. \n\n### 3. Mathematical Induction\n**"
+      }, {
+        "text": "The Goal:** Prove a rule works for all numbers (e.g., 1, 2, 3,"
+      }, {
+        "text": " 4, to infinity).\n**The Assumption:** We assume the rule works for some random, unspecified step $k$.\n\n**"
+      }, {
+        "text": "Why it works:** You are proving a chain reaction. You assume it works for step $k$, and use that to prove it"
+      }, {
+        "text": " must therefore work for the next step, $k+1$. Once you prove that *if* it works for one step"
+      }, {
+        "text": ", it works for the next, you just show it works for the very first step (step 1). Step 1 triggers Step"
+      }, {
+        "text": " 2, Step 2 triggers Step 3, forever.\n\n**Why it’s not circular:** You are"
+      }, {
+        "text": " not assuming the rule works for *all* numbers to prove it works for *all* numbers. You are assuming it works for *"
+      }, {
+        "text": "one specific, arbitrary step* to prove it works for the *subsequent step*. You are proving the mechanism of the domino effect"
+      }, {
+        "text": ", not assuming all the dominos have already fallen.\n\n---\n\n### What *Would* Be Circular Reasoning?\nCircular reasoning"
+      }, {
+        "text": " (also called \"begging the question\") happens when your assumption contains the very thing you are trying to prove."
+      }, {
+        "text": " \n\n**Example of Circular Reasoning:**\n*   *Theorem:* $x \u003d 5$.\n*   *Proof"
+      }, {
+        "text": ":* Assume $x \u003d 5$. Multiply both sides by 2 to get $2x \u003d 10$. Divide"
+      }, {
+        "text": " by 2 to get $x \u003d 5$. Therefore, $x \u003d 5$. \n\nThis fails because the"
+      }, {
+        "text": " ultimate conclusion was baked into the starting assumption. \n\n### Summary\nIn valid mathematical proofs, an assumption acts as a **"
+      }, {
+        "text": "temporary boundary condition**. You are exploring the logical consequences of a hypothetical scenario. As long as you don\u0027t assume your"
+      }, {
+        "text": " final target conclusion to reach your final target conclusion, your logic remains perfectly sound and linear, not circular."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-03-19T15:51:31.993Z"
+    }, {
+      "text": "how do i bake this feeling of logic into myself? Sometimes I am not so sure if I am running circles or using actual implicit reasoning",
+      "role": "user",
+      "tokenCount": 28,
+      "createTime": "2026-03-19T15:54:24.845Z"
+    }, {
+      "text": "**Defining Logical Reasoning**\n\nI\u0027m currently dissecting the user\u0027s core request to pinpoint the essence of \"baking in\" logical reasoning and differentiating it from biases. It seems there\u0027s an underlying struggle with self-doubt regarding the user\u0027s thought processes. The goal is to create a robust methodology that instills a stronger sense of certainty.\n\n\n**Analyzing Implicit Reasoning**\n\nI\u0027m now focusing on \"implicit reasoning\" – that gut feeling. I\u0027m exploring how it relates to intuition, heuristics, and System 1 thinking, which often comes from past experiences. It\u0027s a key part of the equation and I\u0027m looking at how it intersects with the user\u0027s issue with \"running in circles\" and confirmation bias. The goal is to identify ways to make valid logic automatic. I\u0027m also developing strategies like writing down vague thoughts and translating those into a more rigid structure.\n\n\n**Developing Critical Frameworks**\n\nI\u0027m now implementing strategies for assessing my thought process. I\u0027m focusing on the Feynman Technique to ensure clear explanations and identifying crucial assumptions. I\u0027m actively watching for emotional anchors that halt reasoning and engaging in formal logic and math to shape my thinking. I will start by writing down thoughts and structuring them.\n\n\n**Internalizing Logical Principles**\n\nI\u0027m now formulating strategies for long-term habit formation to make logical reasoning automatic. My focus is on \u0027baking it in,\u0027 so it becomes implicit and intuitive. I\u0027m aiming to build a \"logic muscle\" akin to how Kahneman\u0027s System 1 can be trained by System 2. The intro has been drafted and I\u0027m validating the feeling and introducing the difference of System 1 vs. System 2. I will then explain how to train System 1.\nI\u0027m testing for circular reasoning using a new tactic: trying to prove my point without the concluding words.\n\n\n**Implementing Falsifiability Checks**\n\nI\u0027m now focusing on refining my methodologies for rigorous self-assessment. I\u0027m exploring the Falsifiability Test to identify potential dogmatic beliefs. The \"Bottom Turtles\" tactic, which helps me trace arguments back to their foundational assumptions, is also being put into practice. I\u0027m actively engaging in \"Red Teaming,\" arguing against my own points to strengthen my reasoning. I\u0027m also planning to cultivate a habit of studying disciplines that demand precision and logic, to promote faster feedback loops to improve intuition.",
+      "role": "model",
+      "tokenCount": 1260,
+      "isThought": true,
+      "parts": [{
+        "text": "**Defining Logical Reasoning**\n\nI\u0027m currently dissecting the user\u0027s core request to pinpoint the essence of \"baking in\" logical reasoning and differentiating it from biases. It seems there\u0027s an underlying struggle with self-doubt regarding the user\u0027s thought processes. The goal is to create a robust methodology that instills a stronger sense of certainty.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Analyzing Implicit Reasoning**\n\nI\u0027m now focusing on \"implicit reasoning\" – that gut feeling. I\u0027m exploring how it relates to intuition, heuristics, and System 1 thinking, which often comes from past experiences. It\u0027s a key part of the equation and I\u0027m looking at how it intersects with the user\u0027s issue with \"running in circles\" and confirmation bias. The goal is to identify ways to make valid logic automatic. I\u0027m also developing strategies like writing down vague thoughts and translating those into a more rigid structure.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Developing Critical Frameworks**\n\nI\u0027m now implementing strategies for assessing my thought process. I\u0027m focusing on the Feynman Technique to ensure clear explanations and identifying crucial assumptions. I\u0027m actively watching for emotional anchors that halt reasoning and engaging in formal logic and math to shape my thinking. I will start by writing down thoughts and structuring them.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Internalizing Logical Principles**\n\nI\u0027m now formulating strategies for long-term habit formation to make logical reasoning automatic. My focus is on \u0027baking it in,\u0027 so it becomes implicit and intuitive. I\u0027m aiming to build a \"logic muscle\" akin to how Kahneman\u0027s System 1 can be trained by System 2. The intro has been drafted and I\u0027m validating the feeling and introducing the difference of System 1 vs. System 2. I will then explain how to train System 1.\nI\u0027m testing for circular reasoning using a new tactic: trying to prove my point without the concluding words.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Implementing Falsifiability Checks**\n\nI\u0027m now focusing on refining my methodologies for rigorous self-assessment. I\u0027m exploring the Falsifiability Test to identify potential dogmatic beliefs. The \"Bottom Turtles\" tactic, which helps me trace arguments back to their foundational assumptions, is also being put into practice. I\u0027m actively engaging in \"Red Teaming,\" arguing against my own points to strengthen my reasoning. I\u0027m also planning to cultivate a habit of studying disciplines that demand precision and logic, to promote faster feedback loops to improve intuition.",
+        "thought": true
+      }],
+      "createTime": "2026-03-19T15:54:24.845Z"
+    }, {
+      "text": "\n\n\nThe fact that you are asking this question means you are already halfway there. People who are genuinely trapped in circular reasoning rarely doubt themselves; they feel absolute certainty. That feeling of, *\"Wait, am I just running in circles here?\"* is your brain\u0027s logical alarm bell working exactly as it should.\n\nHuman brains were not naturally evolved for strict logic. We evolved for heuristics (mental shortcuts)—what psychologist Daniel Kahneman famously called **System 1** (fast, intuitive, emotional) versus **System 2** (slow, deliberate, logical). \n\nTo \"bake logic in,\" your goal isn\u0027t to destroy your intuition. Your goal is to **use System 2 to train System 1**, so that logical reasoning becomes your new, natural reflex.\n\nHere is a practical toolkit for internalizing that logical \"feeling\" and testing whether you are actually reasoning, or just rationalizing in a circle.\n\n---\n\n### 1. Externalize to Break the Loop\nYou cannot easily audit a thought while it is still inside your head. The brain is excellent at smoothing over logical leaps and ignoring contradictions when thoughts are just a soup of concepts.\n*   **The Habit:** When you feel unsure, write it down. Force your thoughts into linear sentences.\n*   **The Format:** Write down: **(A)** The conclusion I want to reach is... **(B)** The evidence/steps that lead me here are...\n*   **Why it works:** Circular reasoning thrives in the fog of the mind. When forced onto paper, a circular argument looks naked and obvious (e.g., *\"A: I shouldn\u0027t trust John. B: Because John is untrustworthy.\"*)\n\n### 2. The \"Taboo\" Test (Spotting Circularity)\nIf you want to know if you are running in a circle, try to explain your reasoning while making your conclusion a \"taboo\" word. You are not allowed to use the conclusion, or any synonyms of it, in your premises.\n*   **Circular:** \"This policy is unfair because it doesn\u0027t treat people equally.\" *(Unfair and unequal are effectively the same thing here. You\u0027ve just said \u0027It\u0027s unfair because it\u0027s unfair.\u0027)*\n*   **Logical:** \"This policy is unfair because it charges a flat tax that takes up 10% of a poor person\u0027s income, but only 1% of a wealthy person\u0027s income.\"\n*   **The Habit:** If your supporting reasons sound like you just used a thesaurus on your conclusion, you are in a circle. You need to point to an outside mechanism.\n\n### 3. Ask the Falsifiability Question\nThis is the single most powerful question you can ask yourself to test your own logic: **\"What specific evidence would I need to see to admit I am wrong?\"**\n*   If you can answer that question clearly (e.g., *\"If you show me data that this tax policy actually increases poor people\u0027s take-home pay, I will change my mind\"*), you are using logic.\n*   If your answer is *\"Nothing could change my mind,\"* or if every piece of counter-evidence somehow magically proves your point even more, you are not doing logic. You are protecting a belief.\n\n### 4. Separate the \"Ought\" from the \"Is\"\nA lot of implicit circular reasoning happens because we desperately *want* something to be true, so our brain subtly reverse-engineers a reason for it to be true. \n*   **The Habit:** Notice when your reasoning relies on how the world *should* work rather than how it *does* work.\n*   \"If I study for 10 hours, I will pass.\" (Implicit assumption: Hard work is always rewarded). \n*   Logic requires you to brutally separate your desires from the mechanical reality of the situation. \n\n### 5. Play \"Devil\u0027s Advocate\" with your own mind\nTo bake logic into your intuition, you have to practice arguing against yourself. Lawyers, philosophers, and debaters do this constantly.\n*   **The Habit:** Take a belief you hold strongly, and pretend you have been hired to destroy it. What are the weakest points? What assumptions is your belief leaning on? \n*   By actively practicing the destruction of your own arguments, you build a mental \"immune system\" that automatically rejects weak arguments before you even fully form them.\n\n### How to Actually \"Bake it In\" (Long-term Training)\nTo make this implicit, you need to engage in activities that provide **immediate, objective penalties for bad logic**. You need environments where you cannot talk your way out of a contradiction.\n\n1.  **Learn basic computer programming (or play coding games):** Computers are aggressively logical. If you use circular logic or skip a step, the code simply will not run. It forces you to think in step-by-step algorithms.\n2.  **Play logical deduction games:** Sudoku, Minesweeper, or logic grid puzzles (e.g., \"Einstein\u0027s Riddle\"). These train your brain to recognize the feeling of \"If A is true, B *must* be true, therefore C *cannot* be true.\"\n3.  **Read about cognitive biases:** Familiarize yourself with the *Texas Sharpshooter Fallacy*, *Confirmation Bias*, and *Begging the Question*. Once you have names for these logical traps, your brain will start auto-tagging them when you do them.\n\n**The ultimate takeaway:** Do not fear the feeling of doubt. The person who says, *\"Wait, does this make sense?\"* is actively using logic. The person who says, *\"This is obviously true and I don\u0027t need to think about it,\"* is the one running in circles.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1216,
+      "parts": [{
+        "text": "\n\n\nThe fact that you are asking this question means you are already halfway there. People who are genuinely trapped in circular reasoning rarely"
+      }, {
+        "text": " doubt themselves; they feel absolute certainty. That feeling of, *\"Wait, am I just running in circles here?\"* is your"
+      }, {
+        "text": " brain\u0027s logical alarm bell working exactly as it should.\n\nHuman brains were not naturally evolved for strict logic. We evolved"
+      }, {
+        "text": " for heuristics (mental shortcuts)—what psychologist Daniel Kahneman famously called **System 1** (fast, intuitive, emotional) versus"
+      }, {
+        "text": " **System 2** (slow, deliberate, logical). \n\nTo \"bake logic in,\" your goal isn\u0027t to destroy"
+      }, {
+        "text": " your intuition. Your goal is to **use System 2 to train System 1**, so that logical reasoning becomes your new,"
+      }, {
+        "text": " natural reflex.\n\nHere is a practical toolkit for internalizing that logical \"feeling\" and testing whether you are actually reasoning,"
+      }, {
+        "text": " or just rationalizing in a circle.\n\n---\n\n### 1. Externalize to Break the Loop\nYou cannot easily"
+      }, {
+        "text": " audit a thought while it is still inside your head. The brain is excellent at smoothing over logical leaps and ignoring contradictions when"
+      }, {
+        "text": " thoughts are just a soup of concepts.\n*   **The Habit:** When you feel unsure, write it down. Force"
+      }, {
+        "text": " your thoughts into linear sentences.\n*   **The Format:** Write down: **(A)** The conclusion I want to"
+      }, {
+        "text": " reach is... **(B)** The evidence/steps that lead me here are...\n*   **Why it works:** Circular"
+      }, {
+        "text": " reasoning thrives in the fog of the mind. When forced onto paper, a circular argument looks naked and obvious (e."
+      }, {
+        "text": "g., *\"A: I shouldn\u0027t trust John. B: Because John is untrustworthy.\"*)\n\n### 2"
+      }, {
+        "text": ". The \"Taboo\" Test (Spotting Circularity)\nIf you want to know if you are running in"
+      }, {
+        "text": " a circle, try to explain your reasoning while making your conclusion a \"taboo\" word. You are not allowed to"
+      }, {
+        "text": " use the conclusion, or any synonyms of it, in your premises.\n*   **Circular:** \"This policy is unfair"
+      }, {
+        "text": " because it doesn\u0027t treat people equally.\" *(Unfair and unequal are effectively the same thing here. You\u0027ve just said \u0027"
+      }, {
+        "text": "It\u0027s unfair because it\u0027s unfair.\u0027)*\n*   **Logical:** \"This policy is unfair because it"
+      }, {
+        "text": " charges a flat tax that takes up 10% of a poor person\u0027s income, but only 1% of"
+      }, {
+        "text": " a wealthy person\u0027s income.\"\n*   **The Habit:** If your supporting reasons sound like you just used a thesaurus"
+      }, {
+        "text": " on your conclusion, you are in a circle. You need to point to an outside mechanism.\n\n### 3."
+      }, {
+        "text": " Ask the Falsifiability Question\nThis is the single most powerful question you can ask yourself to test your own logic:"
+      }, {
+        "text": " **\"What specific evidence would I need to see to admit I am wrong?\"**\n*   If you can answer"
+      }, {
+        "text": " that question clearly (e.g., *\"If you show me data that this tax policy actually increases poor people\u0027s"
+      }, {
+        "text": " take-home pay, I will change my mind\"*), you are using logic.\n*   If your answer is *\"Nothing"
+      }, {
+        "text": " could change my mind,\"* or if every piece of counter-evidence somehow magically proves your point even more, you are not doing"
+      }, {
+        "text": " logic. You are protecting a belief.\n\n### 4. Separate the \"Ought\" from the \"Is\"\nA"
+      }, {
+        "text": " lot of implicit circular reasoning happens because we desperately *want* something to be true, so our brain subtly reverse-engineers a"
+      }, {
+        "text": " reason for it to be true. \n*   **The Habit:** Notice when your reasoning relies on how the world *should"
+      }, {
+        "text": "* work rather than how it *does* work.\n*   \"If I study for 10 hours, I will pass"
+      }, {
+        "text": ".\" (Implicit assumption: Hard work is always rewarded). \n*   Logic requires you to brutally separate your desires from the"
+      }, {
+        "text": " mechanical reality of the situation. \n\n### 5. Play \"Devil\u0027s Advocate\" with your own mind"
+      }, {
+        "text": "\nTo bake logic into your intuition, you have to practice arguing against yourself. Lawyers, philosophers, and debaters do this constantly"
+      }, {
+        "text": ".\n*   **The Habit:** Take a belief you hold strongly, and pretend you have been hired to destroy it."
+      }, {
+        "text": " What are the weakest points? What assumptions is your belief leaning on? \n*   By actively practicing the destruction of your own arguments"
+      }, {
+        "text": ", you build a mental \"immune system\" that automatically rejects weak arguments before you even fully form them.\n\n### How to Actually"
+      }, {
+        "text": " \"Bake it In\" (Long-term Training)\nTo make this implicit, you need to engage in activities that provide"
+      }, {
+        "text": " **immediate, objective penalties for bad logic**. You need environments where you cannot talk your way out of a contradiction.\n\n1."
+      }, {
+        "text": "  **Learn basic computer programming (or play coding games):** Computers are aggressively logical. If you use circular logic or skip"
+      }, {
+        "text": " a step, the code simply will not run. It forces you to think in step-by-step algorithms."
+      }, {
+        "text": "\n2.  **Play logical deduction games:** Sudoku, Minesweeper, or logic grid puzzles (e.g., \"Einstein"
+      }, {
+        "text": "\u0027s Riddle\"). These train your brain to recognize the feeling of \"If A is true, B *must* be true"
+      }, {
+        "text": ", therefore C *cannot* be true.\"\n3.  **Read about cognitive biases:** Familiarize yourself with the *"
+      }, {
+        "text": "Texas Sharpshooter Fallacy*, *Confirmation Bias*, and *Begging the Question*. Once you have names for these"
+      }, {
+        "text": " logical traps, your brain will start auto-tagging them when you do them.\n\n**The ultimate takeaway:** Do not"
+      }, {
+        "text": " fear the feeling of doubt. The person who says, *\"Wait, does this make sense?\"* is actively using logic. The person"
+      }, {
+        "text": " who says, *\"This is obviously true and I don\u0027t need to think about it,\"* is the one running in circles."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-03-19T15:54:39.898Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

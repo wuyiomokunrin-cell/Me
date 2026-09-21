@@ -1,0 +1,456 @@
+# [[Realne Funkcije]]
+
+## [[Naloga 1: Določanje Definicijskega Območja (Df)]]
+### [[a) Polinomska Funkcija]]
+$f(x) = x^3 - x + 1$
+
+#### [[Analiza]]
+Funkcija je polinom tretje stopnje. Polinomske funkcije so definirane za vsa realna števila, saj ni nobenih omejitev, kot so deljenje z nič ali korenjenje negativnih števil.
+
+#### [[Rešitev]]
+Definicijsko območje je množica vseh realnih števil.
+$D_f = \mathbb{R}$
+
+### [[b) Racionalna Funkcija]]
+$f(x) = \frac{x}{-2x^3 - x^2 + 5x - 2}$
+
+#### [[Analiza]]
+Funkcija je racionalna, kar pomeni, da je definirana povsod, razen tam, kjer je njen imenovalec enak nič. Zato moramo poiskati ničle polinoma v imenovalcu.
+
+Imenovalec: $P(x) = -2x^3 - x^2 + 5x - 2 = 0$
+
+Ničle polinoma iščemo med kandidati, ki so delitelji prostega člena (-2), torej $\pm1, \pm2$.
+*   **Test za $x=1$**:
+    $-2(1)^3 - (1)^2 + 5(1) - 2 = -2 - 1 + 5 - 2 = 0$.
+    Torej je $x_1=1$ ena od ničel.
+*   **Test za $x=-2$**:
+    $-2(-2)^3 - (-2)^2 + 5(-2) - 2 = -2(-8) - 4 - 10 - 2 = 16 - 4 - 10 - 2 = 0$.
+    Torej je $x_2=-2$ druga ničla.
+*   **Test za $x=1/2$**:
+    $-2(\frac{1}{2})^3 - (\frac{1}{2})^2 + 5(\frac{1}{2}) - 2 = -2(\frac{1}{8}) - \frac{1}{4} + \frac{5}{2} - 2 = -\frac{1}{4} - \frac{1}{4} + \frac{5}{2} - 2 = -\frac{1}{2} + \frac{5}{2} - 2 = \frac{4}{2} - 2 = 2 - 2 = 0$.
+    Torej je $x_3=\frac{1}{2}$ tretja ničla.
+
+#### [[Rešitev]]
+Funkcija ni definirana pri vrednostih $x$, ki so enake ničlam imenovalca.
+$D_f = \mathbb{R} \setminus \{1, -2, \frac{1}{2}\}$
+
+---
+
+## [[Naloga 2: Injektivnost in Surjektivnost]]
+
+### [[Definicije]]
+*   **[[Injektivnost]] (1-na-1):** Funkcija $f: A \to B$ je injektivna, če za vsaka dva različna elementa iz domene velja, da sta tudi njuni sliki različni.
+    Formalno: $\forall x_1, x_2 \in A: x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$.
+    Ekvivalentno: $f(x_1) = f(x_2) \implies x_1 = x_2$.
+
+*   **[[Surjektivnost]] (na):** Funkcija $f: A \to B$ je surjektivna, če je vsak element iz kodomene $B$ slika vsaj enega elementa iz domene $A$.
+    Formalno: $\forall y \in B, \exists x \in A: f(x) = y$.
+    To pomeni, da mora biti zaloga vrednosti funkcije enaka njeni kodomeni ($Z_f = B$).
+
+### [[a) Funkcija z Absolutnimi Vrednostmi]]
+$f(x) = |x-1| + |x+1|$
+
+#### [[Analiza po delih]]
+Funkcijo moramo razdeliti na intervale glede na ničle izrazov znotraj absolutnih vrednosti ($x-1=0 \implies x=1$ in $x+1=0 \implies x=-1$).
+
+1.  **Interval $x < -1$:**
+    Oba izraza, $x-1$ in $x+1$, sta negativna.
+    $f(x) = -(x-1) - (x+1) = -x + 1 - x - 1 = -2x$
+
+2.  **Interval $-1 \le x < 1$:**
+    Izraz $x-1$ je negativen, $x+1$ pa je pozitiven.
+    $f(x) = -(x-1) + (x+1) = -x + 1 + x + 1 = 2$
+
+3.  **Interval $x \ge 1$:**
+    Oba izraza sta pozitivna.
+    $f(x) = (x-1) + (x+1) = x - 1 + x + 1 = 2x$
+
+#### [[Odsekoma Definirana Funkcija]]
+$f(x) = \begin{cases} -2x & \text{za } x < -1 \\ 2 & \text{za } -1 \le x < 1 \\ 2x & \text{za } x \ge 1 \end{cases}$
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+def f(x):
+    conditions = [x < -1, (x >= -1) & (x < 1), x >= 1]
+    functions = [lambda x: -2*x, lambda x: 2, lambda x: 2*x]
+    return np.piecewise(x, conditions, functions)
+
+x = np.linspace(-3, 3, 600)
+y = f(x)
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, label=r'$f(x) = |x-1| + |x+1|$')
+plt.title('Graf odsekoma definirane funkcije')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.grid(True)
+plt.axhline(y=2, color='r', linestyle='--', label='y=2')
+plt.legend()
+plt.show()
+```
+
+![[Figure_11-1.png]]
+
+#### [[Injektivnost]]
+Funkcija **ni injektivna**. Na intervalu $[-1, 1)$ funkcija konstantno vrača vrednost 2. Na primer:
+$f(0) = 2$
+$f(0.5) = 2$
+Ker različni elementi domene ($0 \neq 0.5$) preslikajo v isto sliko, injektivnost ni izpolnjena.
+
+#### [[Surjektivnost]]
+Funkcija **ni surjektivna**. Iz grafa in analize je razvidno, da je najmanjša vrednost funkcije 2. Zaloga vrednosti je $Z_f = [2, \infty)$.
+Ker je kodomena po definiciji naloge $\mathbb{R}$, in $Z_f \neq \mathbb{R}$, funkcija ni surjektivna (ne doseže vrednosti, manjših od 2).
+
+---
+## [[Conceptual Strengthening Tasks]]
+
+1.  **Naloga 1 (Določanje Domene):** Določi naravno definicijsko območje za funkcijo:
+    $f(x) = \sqrt{\frac{x-1}{x+2}} + \ln(4-x^2)$
+    *Namig: Upoštevati moraš pogoja za koren in logaritem ter ju združiti (narediti presek).*
+
+2.  **Naloga 2 (Injektivnost in Surjektivnost):** Analiziraj injektivnost in surjektivnost funkcije $g(x) = \frac{4x}{2-x}$.
+    a) Nariši graf funkcije (je racionalna funkcija).
+    b) Ali je injektivna? Dokaži z $g(x_1) = g(x_2) \implies x_1 = x_2$.
+    c) Določi zalogo vrednosti $Z_g$ in ugotovi, ali je surjektivna na $\mathbb{R}$.
+
+3.  **Naloga 3 (Izziv):** Dana je funkcija $h(x) = \lfloor x \rfloor$, ki vsakemu realnemu številu $x$ priredi največje celo število, ki ni večje od $x$ (npr. $\lfloor 3.7 \rfloor = 3$, $\lfloor -1.2 \rfloor = -2$).
+    a) Skiciraj graf te funkcije.
+    b) Ali je funkcija injektivna? Pojasni.
+    c) Ali je funkcija surjektivna, če jo gledamo kot $h: \mathbb{R} \to \mathbb{R}$? Kaj pa, če jo gledamo kot $h: \mathbb{R} \to \mathbb{Z}$ (v množico celih števil)?Z}$ (v množico celih števil)?
+
+## [[Tretji Primer]]
+
+Določi naravno definicijsko območje, zalogo vrednosti in skiciraj graf funkcije `f`. Če obstaja, izračunaj tudi `f^-1`.
+
+$f(x) = \frac{1-x}{1+x}$
+
+### [[Definicijsko Območje (Df)]]
+Ker imamo racionalno funkcijo, imenovalec ne sme biti enak 0.
+$1 + x \neq 0 \Rightarrow x \neq -1$
+
+Torej je definicijsko območje:
+$D_f = \mathbb{R} \setminus \{-1\}$
+
+### [[Zaloga Vrednosti (Zf)]]
+Zalogo vrednosti določimo z iskanjem vodoravne asimptote. Asimptoto dobimo z deljenjem vodilnih koeficientov števca in imenovalca.
+$y = \frac{-1}{1} = -1$
+
+Zaloga vrednosti so vsa realna števila, razen vrednosti vodoravne asimptote:
+$Z_f = \mathbb{R} \setminus \{-1\}$
+
+### [[Graf Funkcije]]
+1.  **Navpična asimptota:** $x = -1$
+2.  **Vodoravna asimptota:** $y = -1$
+3.  **Ničla funkcije:** $1 - x = 0 \Rightarrow x = 1$
+    Točka ničle je $(1, 0)$.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+def f(x):
+    return (1 - x) / (1 + x)
+
+x = np.linspace(-10, 10, 400)
+# Izključimo vrednosti blizu navpične asimptote za lepši prikaz
+x[x == -1] = np.nan 
+
+y = f(x)
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, label=r'$f(x) = \frac{1-x}{1+x}$')
+
+# Asimptote
+plt.axvline(x=-1, color='r', linestyle='--', label='Navpična asimptota x=-1')
+plt.axhline(y=-1, color='g', linestyle='--', label='Vodoravna asimptota y=-1')
+
+# Ničla
+plt.plot(1, 0, 'ko', label='Ničla (1, 0)')
+
+plt.title('Graf funkcije $f(x) = \\frac{1-x}{1+x}$')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend()
+plt.grid(True)
+plt.ylim(-10, 10)
+plt.show()
+```
+
+![[Figure_12.png]]
+
+### [[Inverzna Funkcija (f^-1)]]
+Če funkcijo obravnavamo kot preslikavo $f: D_f \to \mathbb{R}$, inverz ne obstaja, ker funkcija ni surjektivna ($Z_f \neq \mathbb{R}$).
+Če pa zožimo kodomeno na zalogo vrednosti, $f: D_f \to Z_f$, potem inverz obstaja.
+
+**Postopek:**
+1. Zamenjamo vlogi $x$ in $y$.
+   $x = \frac{1-y}{1+y}$
+
+2. Izrazimo $y$.
+   $x(1+y) = 1-y$
+   $x + xy = 1-y$
+   $xy + y = 1-x$
+   $y(x+1) = 1-x$
+   $y = \frac{1-x}{1+x}$
+
+Torej je inverzna funkcija enaka prvotni funkciji:
+$f^{-1}(x) = \frac{1-x}{1+x} = f(x)$
+
+Definicijsko območje inverzne funkcije je enako zalogi vrednosti prvotne funkcije: $D_{f^{-1}} = Z_f = \mathbb{R} \setminus \{-1\}$.
+
+## [[Četrti Primer]]
+
+$f(x) = 2^x + 2^{x+1}$
+
+### [[Poenostavitev Izraza]]
+Uporabimo pravilo za potence $a^{m+n} = a^m \cdot a^n$:
+$f(x) = 2^x + 2^x \cdot 2^1$
+$f(x) = 2^x(1+2)$
+$f(x) = 3 \cdot 2^x$
+
+### [[Definicijsko Območje (Df)]]
+Eksponentna funkcija je definirana za vsa realna števila.
+$D_f = \mathbb{R}$
+
+### [[Zaloga Vrednosti (Zf)]]
+Osnovna eksponentna funkcija $2^x$ ima zalogo vrednosti $(0, \infty)$. Množenje s konstanto 3 raztegne graf v smeri y-osi, vendar ne spremeni dejstva, da so vse vrednosti pozitivne.
+$Z_f = (0, \infty)$
+
+### [[Graf Funkcije]]
+Graf je raztegnjena eksponentna funkcija $y=2^x$ za faktor 3. Ima vodoravno asimptoto pri $y=0$. Presečišče z y-osjo je pri $f(0) = 3 \cdot 2^0 = 3$.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+def f(x):
+    return 3 * (2**x)
+
+x = np.linspace(-5, 5, 400)
+y = f(x)
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, label=r'$f(x) = 3 \cdot 2^x$')
+
+# Asimptota
+plt.axhline(y=0, color='r', linestyle='--', label='Vodoravna asimptota y=0')
+
+# Presečišče z y-osjo
+plt.plot(0, 3, 'ko', label='Presečišče z y-osjo (0, 3)')
+
+plt.title('Graf funkcije $f(x) = 3 \cdot 2^x$')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend()
+plt.grid(True)
+plt.ylim(-1, 15)
+plt.show()
+```
+![[Figure_1-3.png]]
+### [[Inverzna Funkcija (f^-1)]]
+Ponovno, če opazujemo $f: D_f \to Z_f$, inverz obstaja.
+1. Zamenjamo vlogi $x$ in $y$.
+   $x = 3 \cdot 2^y$
+
+2. Izrazimo $y$.
+   $\frac{x}{3} = 2^y$
+   Uporabimo logaritem z osnovo 2 na obeh straneh.
+   $y = \log_2\left(\frac{x}{3}\right)$
+
+Inverzna funkcija je:
+$f^{-1}(x) = \log_2\left(\frac{x}{3}\right)$
+Definicijsko območje inverzne funkcije je $D_{f^{-1}} = Z_f = (0, \infty)$.
+
+## [[Peta Naloga]]
+Funkcija $f: \mathbb{R} \to \mathbb{R}$ je podana s predpisom $f(x-1) = x^2 - x - 2$. Izračunaj $f(x)$.
+
+### [[Rešitev z uvedbo nove spremenljivke]]
+Uvedemo novo spremenljivko $t$, da poenostavimo argument funkcije.
+1.  **Uvedba nove spremenljivke:**
+    Naj bo $t = x-1$.
+
+2.  **Izrazimo $x$ s $t$:**
+    Iz $t = x-1$ sledi, da je $x = t+1$.
+
+3.  **Vstavimo v predpis:**
+    Sedaj povsod, kjer v enačbi nastopa $x$, vstavimo izraz $t+1$.
+    $f(t) = (t+1)^2 - (t+1) - 2$
+
+4.  **Poenostavimo izraz za $f(t)$:**
+    $f(t) = (t^2 + 2t + 1) - t - 1 - 2$
+    $f(t) = t^2 + 2t - t + 1 - 1 - 2$
+    $f(t) = t^2 + t - 2$
+
+5.  **Zapišemo funkcijo z $x$:**
+    Ker je $t$ le simbol za spremenljivko, ga lahko zamenjamo z $x$.
+    $f(x) = x^2 + x - 2$
+
+#### [[Note to Self]]
+Napaka v zapiskih: $f(t)=(t+1)^2 + t+1 - 2$ je napačen prepis iz $(t+1)^2 - (t+1) - 2$. Minus pred oklepajem spremeni predznak obeh členov v oklepaju. Končni rezultat v zapiskih je kljub temu pravilen, kar kaže na morebitno napako pri prepisovanju med reševanjem.
+
+---
+## [[Conceptual Strengthening Tasks]]
+
+1.  **Naloga 1 (Inverzna Funkcija):**
+    Dana je funkcija $f(x) = \ln(e^2 - e^{x+1})$.
+    a) Določi definicijsko območje in zalogo vrednosti funkcije $f$.
+    b) Izračunaj inverzno funkcijo $f^{-1}(x)$.
+    c) Skiciraj grafa obeh funkcij, $f(x)$ in $f^{-1}(x)$, v istem koordinatnem sistemu.
+
+2.  **Naloga 2 (Uvedba Spremenljivke):**
+    Funkcija $g$ zadošča enačbi $g(\frac{1}{x}) = \frac{x^2+1}{x^2}$ za $x \neq 0$.
+    a) Izrazi $g(t)$.
+    b) Določi $g(x)$.
+    c) **Izziv:** Kaj lahko poveš o sodosti/lihosti funkcije $g(x)$? Svojo trditev dokaži z uporabo predpisa, ki si ga izpeljal.
+
+3.  **Naloga 3 (Analiza Funkcije):**
+    Dana je funkcija $h(x) = 5^{2x} - 5^{2x-1}$.
+    a) Poenostavi predpis za funkcijo $h(x)$.
+    b) Določi $D_h$ in $Z_h$.
+    c) Poišči predpis za $h^{-1}(x)$.
+    d) **Izziv (Povezava s srednjo šolo):** Reši enačbo $h(x) = 100$. Kako ti graf funkcije $h(x)$ pomaga vizualizirati rešitev?
+## [[Naloga 6: Inverz Hiperboličnega Sinusa]]
+
+### [[Definicija Hiperboličnih Funkcij]]
+Hiperbolični sinus ($sinh$) in kosinus ($cosh$) sta funkciji, definirani s pomočjo eksponencialne funkcije:
+
+*   **Hiperbolični Sinus:**
+    $sinh(x) = \frac{e^x - e^{-x}}{2}$
+    To je **liha funkcija**, kar pomeni, da je njen graf simetričen glede na izhodišče ($sinh(-x) = -sinh(x)$). Preslikava je $sinh: \mathbb{R} \to \mathbb{R}$.
+
+*   **Hiperbolični Kosinus:**
+    $cosh(x) = \frac{e^x + e^{-x}}{2}$
+    To je **soda funkcija**, njen graf je simetričen glede na y-os ($cosh(-x) = cosh(x)$).
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-2.5, 2.5, 400)
+sinh_x = np.sinh(x)
+cosh_x = np.cosh(x)
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, sinh_x, label=r'$\sinh(x)$ (liha)')
+plt.plot(x, cosh_x, label=r'$\cosh(x)$ (soda)', linestyle='--')
+plt.axhline(0, color='black',linewidth=0.5)
+plt.axvline(0, color='black',linewidth=0.5)
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
+plt.title('Grafa Hiperboličnih Funkcij')
+plt.legend()
+plt.show()
+```
+![[Figure_1-4.png]]
+### [[Izračun Inverzne Funkcije (sinh^-1(x))]]
+Za izračun inverzne funkcije $f^{-1}(x)$ zamenjamo vlogi spremenljivk $x$ in $y$ v enačbi $y=f(x)$, torej $x=f(y)$, in nato izrazimo $y$.
+
+1.  **Začetna postavitev:**
+    Začnemo z enačbo $x = sinh(y)$:
+    $x = \frac{e^y - e^{-y}}{2}$
+
+2.  **Odprava ulomka in negativnega eksponenta:**
+    Množimo z 2:
+    $2x = e^y - e^{-y}$
+    Množimo celotno enačbo z $e^y$, da se znebimo člena $e^{-y} = \frac{1}{e^y}$:
+    $2x \cdot e^y = (e^y)^2 - e^{-y} \cdot e^y$
+    $2xe^y = e^{2y} - 1$
+
+3.  **Preureditev v kvadratno enačbo:**
+    Vse člene prenesemo na eno stran, da dobimo obliko kvadratne enačbe za neznanko $e^y$:
+    $e^{2y} - 2xe^y - 1 = 0$
+
+4.  **Uvedba nove spremenljivke:**
+    Da je oblika bolj očitna, uvedemo substitucijo $t = e^y$:
+    $t^2 - (2x)t - 1 = 0$
+
+5.  **Reševanje kvadratne enačbe:**
+    Uporabimo formulo za reševanje kvadratne enačbe $at^2+bt+c=0$, kjer je $a=1$, $b=-2x$ in $c=-1$:
+    $t = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+    $t = \frac{-(-2x) \pm \sqrt{(-2x)^2 - 4(1)(-1)}}{2(1)}$
+    $t = \frac{2x \pm \sqrt{4x^2 + 4}}{2}$
+    $t = \frac{2x \pm \sqrt{4(x^2 + 1)}}{2}$
+    $t = \frac{2x \pm 2\sqrt{x^2 + 1}}{2}$
+    $t = x \pm \sqrt{x^2 + 1}$
+
+6.  **Vračanje na prvotno spremenljivko:**
+    Zamenjamo $t$ nazaj z $e^y$:
+    $e^y = x \pm \sqrt{x^2 + 1}$
+
+#### [[Kritična Analiza Rešitve]]
+Dobili smo dve možni rešitvi, vendar vemo, da mora biti vrednost $e^y$ vedno pozitivna za vsak realen $y$.
+*   **Analiza pogoja $e^y > 0$:**
+    Oglejmo si izraz $\sqrt{x^2 + 1}$. Ker je $x^2+1 > x^2$, velja tudi $\sqrt{x^2+1} > \sqrt{x^2} = |x|$.
+*   **Analiza rešitve z minusom:**
+    Če izberemo rešitev $x - \sqrt{x^2 + 1}$, bo ta vrednost vedno negativna, saj od $x$ odštevamo število, ki je po absolutni vrednosti večje od $x$. Zato ta rešitev odpade.
+*   **Analiza rešitve s plusom:**
+    Rešitev $x + \sqrt{x^2 + 1}$ je vedno pozitivna, saj $\sqrt{x^2+1}$ premaga morebitno negativnost $x$. To je edina veljavna rešitev.
+
+7.  **Končna izpeljava:**
+    $e^y = x + \sqrt{x^2 + 1}$
+    Logaritmiramo obe strani, da izrazimo $y$:
+    $y = \ln(x + \sqrt{x^2 + 1})$
+
+Torej, inverzna funkcija hiperboličnega sinusa je:
+$\sinh^{-1}(x) = \ln(x + \sqrt{x^2 + 1})$
+
+---
+
+## [[Naloga 7: Sodost in Lihost Funkcij]]
+
+### [[Definicije Sodosti in Lihosti]]
+*   **Soda funkcija (Even):** Funkcija $f$ je soda, če za vsak $x$ iz njenega definicijskega območja velja $f(-x) = f(x)$. Graf sode funkcije je simetričen glede na y-os.
+*   **Liha funkcija (Odd):** Funkcija $f$ je liha, če za vsak $x$ iz njenega definicijskega območja velja $f(-x) = -f(x)$. Graf lihe funkcije je simetričen glede na koordinatno izhodišče.
+*   **[[Note to Self]]:** Predpogoj za preverjanje sodosti ali lihosti je, da je definicijsko območje funkcije simetrično glede na izhodišče (če $x \in D_f$, mora biti tudi $-x \in D_f$).
+
+#### [[Primer a: f(x) = (2^x - 1) / (2^x + 1)]]
+$f(-x) = \frac{2^{-x} - 1}{2^{-x} + 1} = \frac{\frac{1}{2^x} - 1}{\frac{1}{2^x} + 1}$
+Pomnožimo števec in imenovalec z $2^x$:
+$f(-x) = \frac{(\frac{1}{2^x} - 1) \cdot 2^x}{(\frac{1}{2^x} + 1) \cdot 2^x} = \frac{1 - 2^x}{1 + 2^x}$
+Izpostavimo minus v števcu:
+$f(-x) = \frac{-(2^x - 1)}{2^x + 1} = -f(x)$
+**Sklep:** Funkcija je **liha**.
+
+#### [[Primer b: f(x) = ln((1-x) / (1+x))]]
+1.  **Definicijsko območje:** Argument logaritma mora biti pozitiven:
+    $\frac{1-x}{1+x} > 0 \implies (1-x > 0 \land 1+x > 0) \lor (1-x < 0 \land 1+x < 0)$
+    To velja za $x \in (-1, 1)$, kar je simetrično območje.
+
+2.  **Preverjanje lihosti:**
+    $f(-x) = \ln\left(\frac{1 - (-x)}{1 + (-x)}\right) = \ln\left(\frac{1+x}{1-x}\right)$
+    Uporabimo lastnost logaritma $\ln(a/b) = -\ln(b/a)$:
+    $f(-x) = \ln\left(\left(\frac{1-x}{1+x}\right)^{-1}\right) = -\ln\left(\frac{1-x}{1+x}\right) = -f(x)$
+**Sklep:** Funkcija je **liha**.
+
+#### [[Primer c: f(x) = ln(x + √(x^2 + 1))]]
+$f(-x) = \ln(-x + \sqrt{(-x)^2 + 1}) = \ln(-x + \sqrt{x^2 + 1})$
+Uporabimo trik z racionalizacijo argumenta tako, da ga pomnožimo in delimo s konjugiranim izrazom $(\sqrt{x^2+1} + x)$:
+$f(-x) = \ln\left((\sqrt{x^2+1} - x) \cdot \frac{\sqrt{x^2+1} + x}{\sqrt{x^2+1} + x}\right)$
+$f(-x) = \ln\left(\frac{(x^2+1) - x^2}{\sqrt{x^2+1} + x}\right) = \ln\left(\frac{1}{x + \sqrt{x^2+1}}\right)$
+Uporabimo lastnost logaritma $\ln(1/a) = -\ln(a)$:
+$f(-x) = -\ln(x + \sqrt{x^2+1}) = -f(x)$
+**Sklep:** Funkcija je **liha**.
+
+#### [[Povezava med Nalogami]]
+Opazimo lahko, da je funkcija iz primera 7 c enaka inverzni funkciji hiperboličnega sinusa, ki smo jo izpeljali v nalogi 6. Ker je $sinh(x)$ liha funkcija, mora biti tudi njena inverzna funkcija $sinh^{-1}(x)$ liha, saj je graf inverzne funkcije le zrcalna slika prvotnega grafa čez simetralo lihih kvadrantov $y=x$. To nam potrdi pravilnost izračuna.
+
+---
+## [[Conceptual Strengthening Tasks]]
+
+1.  **Naloga 1 (Inverzna Funkcija):**
+    Funkcija hiperboličnega kosinusa je $cosh(x) = \frac{e^x + e^{-x}}{2}$.
+    a) Nariši graf funkcije $cosh(x)$ in ugotovi, zakaj funkcija na celotnem $\mathbb{R}$ nima inverza.
+    b) Zoži definicijsko območje na $[0, \infty)$, da bo funkcija injektivna, in izračunaj inverzno funkcijo $cosh^{-1}(x)$ za to vejo.
+    c) **Izziv:** Kaj je definicijsko območje dobljenega inverza? Utemelji z zalogo vrednosti funkcije $cosh(x)$.
+
+2.  **Naloga 2 (Sodost in Lihost):**
+    Preveri sodost ali lihost naslednjih funkcij:
+    a) $f(x) = x \cdot \cosh(x)$
+    b) $g(x) = \frac{\sin(x)}{\sinh(x)}$
+    c) **Izziv:** Brez računanja ugotovi, ali je funkcija $h(x) = \tanh(x) = \frac{\sinh(x)}{\cosh(x)}$ soda ali liha. Svoj odgovor utemelji z lastnostmi funkcij $sinh(x)$ in $cosh(x)$.
+
+3.  **Naloga 3 (Reševanje Enačb):**
+    Z uporabo metode kvadratne enačbe, podobno kot pri izpeljavi inverza za $sinh(x)$, reši enačbo:
+    $e^x + 6e^{-x} = 5$
+    *Namig: Enačbo najprej pomnoži z $e^x$ in uvedi primerno novo spremenljivko.*prej pomnoži z $e^x$ in uvedi primerno novo spremenljivko.*
