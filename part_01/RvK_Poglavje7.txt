@@ -1,0 +1,577 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# **7 Pogojni stavki**\n",
+        "\n",
+        "Pogojni stavki so ključni del vsakega programskega jezika, saj omogočajo, da program sprejema odločitve na podlagi določenih pogojev. Ti stavki omogočajo, da se različni deli programa izvedejo glede na to, ali določeni pogoji veljajo ali ne. Pogojne stavke pogosto uporabljamo tudi v vsakdanjem življenju:\n",
+        "\n",
+        "\n",
+        "**Zbudim se**,\n",
+        "\n",
+        "\n",
+        "če sem lačna,\n",
+        "\n",
+        "\n",
+        "\n",
+        "> jem zajtrk.\n",
+        "\n",
+        "\n",
+        "**Odidem od doma**,\n",
+        "\n",
+        "\n",
+        "  če je oblačno,\n",
+        "\n",
+        "\n",
+        "> vzamem dežnik,\n",
+        "\n",
+        "\n",
+        "če ni,\n",
+        "\n",
+        "\n",
+        "> vzamem sončna očala.  \n",
+        "\n",
+        "\n",
+        "**Grem v restavracijo**,\n",
+        "\n",
+        "\n",
+        "če želim meso,\n",
+        "\n",
+        "\n",
+        "> naročim zrezek,\n",
+        "\n",
+        "\n",
+        "če  ne in želim testenine,\n",
+        "\n",
+        "\n",
+        "> naročim špagete,\n",
+        "\n",
+        "\n",
+        "če ne,\n",
+        "\n",
+        "\n",
+        "> naročim solato.\n"
+      ],
+      "metadata": {
+        "id": "q4VDQtgNIh4c"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## **7.1 Primerjalni in logični operatorji**\n",
+        "\n",
+        "Tabela 7-1: Primerjalni operatorji\n",
+        "\n",
+        "| Znak | Pomen |\n",
+        "| --- | --- |\n",
+        "|==| enako |\n",
+        "| != | ni enako |\n",
+        "| > | večje |\n",
+        "| >= | večje ali enako |\n",
+        "| < | manjše |\n",
+        "| <= | manjše ali enako |\n",
+        "\n",
+        "\n",
+        "Tabela 7-2: Logični operatorji\n",
+        "\n",
+        "| Znak | Pomen |\n",
+        "| --- | --- |\n",
+        "|or| vsaj eden od pogojev mora biti izpolnjen |\n",
+        "|and | vsi pogoji morajo biti izpolnjeni |\n",
+        "|not | izpolnjeno mora biti nasprotje pogoja|\n",
+        "\n",
+        "\n",
+        "Logični operatorji imajo različne prioritete, kar vpliva na vrstni red izvajanja izrazov. Najvišjo prioriteto ima operator `not`, nato `and` in nazadnje `or`."
+      ],
+      "metadata": {
+        "id": "qQs6lQfvbsvR"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###Primer 7-1:\n",
+        "Prioritete logičnih operatorjev. Kaj se izpiše?"
+      ],
+      "metadata": {
+        "id": "L2MWCiNuYpW-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = 4\n",
+        "b = 5\n",
+        "c = 7\n",
+        "result = not a==3 or b>c and c>a\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "id": "GhMqEZPgYyxY"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Razlaga:**\n",
+        "Najprej se izvede izraz `not a==3`, ki je True, nato se izvede `b>c and c>a`, ki je False. Na koncu se izvede `True or False`, kar da končni rezultat True.\n",
+        "\n",
+        "Pri kompleksnih izrazih je priporočljivo uporabiti oklepaje za boljšo preglednost in preprečevanje napak, recimo v  zgornjem primeru:\n",
+        "`result = (not a==3) or (b>c and c>a)`\n"
+      ],
+      "metadata": {
+        "id": "bHUsadR2Y5TI"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## **7.2 Zapis pogojnih stavkov**\n",
+        "\n",
+        "\n",
+        "V Pythonu so pogojni stavki zapisani s ključnima besedama `if` in `else`. Za `if` zapišemo pogoj(e) in vrstico zaključimo z dvopičjem. Sledijo vrstice, ki se izvedejo, če je pogoj izpolnjen. Zapisane so zamaknjeno.  Zatem sledi beseda `else`, ki je prav tako zaključena z dvopičjem in ji zamaknjeno sledijo vrstice, ki se izvedejo, če pogoj ni izpolnjen. Ko so stavki v bloku `else` končani, se nadaljnje vrstice zapisujejo nezamaknjeno, kar je znak, da je **`if-else`** struktura končana.\n",
+        "\n",
+        "Splošna oblika `if-else`:\n",
+        "\n",
+        "```\n",
+        "if pogoj:\n",
+        "    ukazi, ki se izvedejo, če je pogoj izpolnjen (true)\n",
+        "else:\n",
+        "    ukazi, ki se izvedejo, če pogoj ni izpolnjen (false)\n",
+        "\n",
+        "nadaljevanje programa, ki ni del zanke    \n",
+        "```\n",
+        "\n",
+        "Več pogojev lahko sprogramiramo s strukturo, ki med ukaza if in else doda še enega ali več ukazov `else-if` (kratko `elif`), tj. struktura **`if-elif-else`**, ki ima naslednjo obliko:\n",
+        "\n",
+        "```\n",
+        "if pogoj_1:\n",
+        "    ukazi, ki se izvedejo, če je pogoj_1 izpolnjen (true)\n",
+        "elif pogoj_2:\n",
+        "    ukazi, ki se izvedejo, če je pogoj_2 izpolnjen (true)\n",
+        "elif pogoj_3:\n",
+        "    ukazi, ki se izvedejo, če je pogoj_3 izpolnjen (true)\n",
+        ".....\n",
+        "else:\n",
+        "    ukazi, ki se izvedejo, če noben pogoj ni izpolnjen (false)\n",
+        "```\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "5_eh4jBocBHI"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###Primer 7-2:\n",
+        "\n",
+        "Pogojni stavek z numeričnimi spremenljivkami."
+      ],
+      "metadata": {
+        "id": "PIlps0EYikUN"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=5\n",
+        "if a==4:\n",
+        "    a=2*a\n",
+        "else:\n",
+        "    a=5*a\n",
+        "print(a)\n",
+        "\n",
+        "# Spreminjajte vrednost spremenljivke a in ugotavljajte, kaj se izpiše.\n"
+      ],
+      "metadata": {
+        "id": "4MHa8DWdLSkC"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###Primer 7-3:\n",
+        "\n",
+        "V čem se naslednja različica programa razlikuje od predhodne in kaj se izpiše? Pojasnite."
+      ],
+      "metadata": {
+        "id": "VTvGERV2i0Ga"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=4\n",
+        "if a==4:\n",
+        "    a=2*a\n",
+        "else:\n",
+        "    a=5*a\n",
+        "    print(a)\n",
+        "\n",
+        "# Spreminjajte vrednost spremenljivke a in ugotavljajte, kaj se izpiše."
+      ],
+      "metadata": {
+        "id": "T5PvX4KTLz46",
+        "collapsed": true
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###Primer 7-4:\n",
+        "\n",
+        "Če obstaja specifično zaporedje ukazov samo za primer, ko je pogoj izpolnjen, lahko v strukturi pogojnega stavka else tudi izpustimo."
+      ],
+      "metadata": {
+        "id": "nob011wRi-nl"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "starost = 20\n",
+        "if starost >= 18:\n",
+        "    print(\"Oseba je polnoletna.\")\n",
+        "\n",
+        "# Spreminjajte starost in ugotavljajte, kaj se izpiše."
+      ],
+      "metadata": {
+        "id": "oDlGg253OhNu"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###Primer 7-5:\n",
+        "\n",
+        "Več pogojev z logičnimi operatorji."
+      ],
+      "metadata": {
+        "id": "p_GRT3objOk0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=4\n",
+        "b=12\n",
+        "if a==5 or b==5:\n",
+        "    c=0\n",
+        "else:\n",
+        "    c=a+b\n",
+        "print(c)\n",
+        "\n",
+        "# Spreminjajte vrednosti spremenljivk a in b in komentirajte rezultat.\n",
+        "\n",
+        "# Zamenjajte logični operator or z and in komentirajte rezultat."
+      ],
+      "metadata": {
+        "id": "69R3QdohMDQo"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###Primer 7-6:\n",
+        "\n",
+        "Pogojni stavek z logičnimi spremenljivkami."
+      ],
+      "metadata": {
+        "id": "2RxBVAtFjQAS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "je_krog = True\n",
+        "je_moder = False\n",
+        "if je_krog and je_moder:\n",
+        "    print(\"To je moder krog.\")\n",
+        "else:\n",
+        "    print(\"To ni moder krog.\")\n",
+        "\n",
+        "# Spremenite vrednost spremenljivk tako, da bo izpis To je moder krog."
+      ],
+      "metadata": {
+        "id": "ABUgVrQiMKyo"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###Primer 7-7:\n",
+        "\n",
+        "Sprogramirajmo kalkulator, v katerega bo uporabnik vnesel dve števili in želeno aritmetično operacijo +, -, / ali *."
+      ],
+      "metadata": {
+        "id": "40DsIwG4jRAa"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num1=float(input(\"Enter first number: \"))\n",
+        "op=input(\"Enter operator: \")\n",
+        "num2=float(input(\"Enter second number: \"))\n",
+        "\n",
+        "if op == \"+\":\n",
+        "    print(num1 + num2)\n",
+        "elif op == \"-\":\n",
+        "    print(num1-num2)\n",
+        "elif op == \"/\":\n",
+        "    print(num1/num2)\n",
+        "elif op == \"*\":\n",
+        "    print(num1*num2)\n",
+        "else:\n",
+        "    print(\"Invalid operator\")\n"
+      ],
+      "metadata": {
+        "id": "JfrGKqlQPFu2"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## **7.3 Problemi 7. poglavja**"
+      ],
+      "metadata": {
+        "id": "kEIlDkEuPVRF"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### **Problem 7-1:**\n",
+        "Zapišite pogojne stavke"
+      ],
+      "metadata": {
+        "id": "WFKSgQ-oWVRH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# a)\n",
+        "# Če je n enak 0, se spremenljivki x dodeli vrednost 10. Izpiši vrednost spremenljivke x.\n",
+        "n=0\n",
+        "\n",
+        "# Spreminjajte vrednost n.\n"
+      ],
+      "metadata": {
+        "id": "8jsGKhwzPbtl"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# b)\n",
+        "# Če je a večje od b, izpiši vrednost spremenljivke a.\n",
+        "a=8\n",
+        "b=6\n",
+        "\n",
+        "# Spreminjajte vrednosti a in b."
+      ],
+      "metadata": {
+        "id": "uLiEJhOwStBz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# c)\n",
+        "# Če je x večji od y in a manjši od b, se spremenljivki c dodeli vrednost z. Izpiši vrednost spremenljivke c.\n",
+        "x=8\n",
+        "y=12\n",
+        "a=3\n",
+        "b=2\n",
+        "z=22\n",
+        "\n",
+        "# Spreminjajte vrednosti vhodnih podatkov.\n",
+        "\n",
+        "# Zamenjajte operator 'in' z 'ali'."
+      ],
+      "metadata": {
+        "id": "ADVLRl3MSuz7"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# d)\n",
+        "# Če je X večji od 0, se spremenljivki Y dodeli vrednost kvadratnega korena od X.\n",
+        "# Izpiši vrednosti spremenljivk X in Y.\n",
+        "\n",
+        "X=24"
+      ],
+      "metadata": {
+        "id": "EGbSAcUVTFry"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### **Problem 7-2:**\n",
+        "Zapišite pogojne stavke\n"
+      ],
+      "metadata": {
+        "id": "96uYv4E5WdgQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# a)\n",
+        "# Če je a enak b in b enak c, izpiši \"a je enak c\". V nasprotnem primeru izpiši \"a je morda enak c\".\n",
+        "a=3\n",
+        "b=4\n",
+        "c=3\n",
+        "\n",
+        "# Spreminjajte vrednosti b."
+      ],
+      "metadata": {
+        "id": "7h6nfsEIWjBA"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# b)\n",
+        "# Če je b enak 2a, izpiši \"b = 2a\". V nasprotnem primeru izpiši \"b != 2a\".\n",
+        "\n",
+        "a=2\n",
+        "b=6\n",
+        "\n",
+        "# Spreminjajte vrednosti a in b."
+      ],
+      "metadata": {
+        "id": "hzJrtySHW2d3"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# c)\n",
+        "# Če je b delitelj števila a, izračunaj kvocient c in izpiši \"b je delitelj a\" in \"kvocient je\" in vrednost c.\n",
+        "# V nasprotnem primeru naj se izpiše \"b ni delitelj a\".\n",
+        "\n",
+        "a=8\n",
+        "b=-2"
+      ],
+      "metadata": {
+        "id": "YbIrsZoQXCe4"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Problem 7-3:\n",
+        "\n",
+        "Zapišite pogojne stavke, za `a = \"CO2\"` in` b = \"H2O\"`:\n",
+        "\n",
+        "Če je a Na ali K in b H2O, izpiši »Pazi, eksplozija!«, drugače pa izpiši »Vrei je … verjetno«.\n"
+      ],
+      "metadata": {
+        "id": "c1-fwNfyX4-S"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=\"CO2\"\n",
+        "b=\"H2O\"\n"
+      ],
+      "metadata": {
+        "id": "NpmeV5A8YEbq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###Problem 7-4:\n",
+        "\n",
+        "Zapišite pogojne stavke za `a = \"H2O\"` in` b = \"K\"`:\n",
+        "\n",
+        "Če a ni K in ne Na in tudi ne H2O ali če b ni K in ne Na in tudi ne H2O, izpiši »Ne prepoznam spojine!«.\n",
+        "\n",
+        "V nasprotnem primeru pa: če je katera koli od kombinacij a in b taka, da je nevarnost,\n",
+        "da pride do eksplozije (a je Na ali a je K in b je H2O) ali (a je H2O in b je Na ali b je K),\n",
+        "izpiši »Pazi, eksplozija!«, drugače pa izpiši »Vrei je … verjetno«."
+      ],
+      "metadata": {
+        "id": "GeEVXk9qYQUy"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a = \"H2O\"\n",
+        "b = \"K\"\n",
+        "if a != \"Na\" and a != \"K\" and a != \"H2O\" or \\\n",
+        "   b != \"Na\" and b != \"K\" and b != \"H2O\":\n",
+        "    print(\"Ne prepoznam spojine! \")\n",
+        "else:\n",
+        "    if (a == \"Na\" or a== \"K\") and b == \"H2O\" or \\\n",
+        "        a == \"H2O\" and (b==\"Na\" or b==\"K\"):\n",
+        "        print(\"Pazi, eksplozija! \")\n",
+        "    else:\n",
+        "        print(\"Vrei je… verjetno\")\n",
+        "\n",
+        "# Opomba: \\ je znak za nadaljevanje vrstice\n",
+        "# Spreminjajte spremenljivki a in b in komentirajte izpis."
+      ],
+      "metadata": {
+        "id": "FTduQ1iMYUby"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}

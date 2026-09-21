@@ -1,0 +1,61 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "How many times of \"i need you\u0027 are there: I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you I need you",
+      "role": "user",
+      "tokenCount": 73
+    }, {
+      "text": "**Determining Phrase Frequency**\n\nI\u0027m currently focused on the frequency of the specific phrase \"i need you\". My process involves meticulously scanning the text to identify each instance. Once the counting is complete, I will clearly report the final numerical count.\n\n\n",
+      "role": "model",
+      "tokenCount": 41,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": [""],
+      "parts": [{
+        "text": "**Determining Phrase Frequency**\n\nI\u0027m currently focused on the frequency of the specific phrase \"i need you\". My process involves meticulously scanning the text to identify each instance. Once the counting is complete, I will clearly report the final numerical count.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "There are 20 instances of \"I need you\" in the text you provided.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 19,
+      "parts": [{
+        "text": "There are 20 instances of \"I need you\" in the text you provided."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

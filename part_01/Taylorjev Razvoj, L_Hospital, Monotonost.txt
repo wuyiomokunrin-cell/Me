@@ -1,0 +1,341 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1Y7bfngITn_ftCnWJ4ucUYyshi8hxgS0h"
+      },
+      "role": "user",
+      "tokenCount": 69355
+    }, {
+      "driveAudio": {
+        "id": "1hB2-kdpdmitnvafW2Bql4bnxVWaWO4sf"
+      },
+      "role": "user",
+      "tokenCount": 76114
+    }, {
+      "driveAudio": {
+        "id": "1-Yj143gRiR8fa2Z_yVSy0vZ1fluWrbeD"
+      },
+      "role": "user",
+      "tokenCount": 87678
+    }, {
+      "driveImage": {
+        "id": "1v1Le_cQQB2DkofwkFZKMjAyfJGsbNR-J"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1odOAkQ6XUcBisjUS0JLtmDAnEkRFEL2D"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "11uVWVdJWU2LD8rvj6wZWfMgLrPau6wsA"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1tA-Rk9WQ_rEBxzLQT8v1nFKIHneuzMhI"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1dFeKqcJF9GWIK_oZwuSo5kDkumUyyP2U"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1RPaR0PF1NX896eA3ciNmi6jqvTUh7Jcc"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1oRRo7ztLku9Y7jEDpyupYCwU9hc5jmcN"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "text": "**Examining the Core Problem**\n\nI\u0027ve been meticulously analyzing the user\u0027s request. My focus now is on understanding the core problem: interpreting image-based data, specifically handwritten notes and whiteboards. I\u0027m considering OCR techniques as a starting point.\n\n\n**Mapping the Task Parameters**\n\nI\u0027m now fully immersed in the nuances of the task. The user aims to convert images of Slovenian Calculus notes into Obsidian-compatible Markdown, a complex task demanding a structured approach. I am focusing on the transformation, requiring me to dissect the lecture content and represent it accurately. The target topics, encompassing Taylor series and L\u0027Hôpital\u0027s rule, are clear, and I\u0027m determining the best way to handle the Slovenian math notation.\n\n\n**Refining the Structure**\n\nMy current focus is on structuring the mathematical content. I\u0027m building a section-by-section draft, iteratively refining each part. The progression is from Taylor\u0027s formula and its derivation, through specific examples, to applications like monotonicity and local extrema. I am paying close attention to the flow, ensuring a logical progression from theory to application.\n\n\n**Analyzing the Proof Details**\n\nI\u0027m currently focused on the specific steps of the derivation, which relies on Cauchy\u0027s Mean Value Theorem. I\u0027m carefully structuring Section 3, L\u0027Hôpital\u0027s Rule, to reflect the proof\u0027s logic. This includes the formula, the context in which it\u0027s applicable, and how to handle the indeterminate forms. I am also working on how to incorporate the elementary expansions like Exponential, Sine, Cosine, and Logarithm that were discussed in Section 2, to maintain the cohesiveness of the material.\n\n\n**Defining Monotonicity and Extrema**\n\nI\u0027m now zeroing in on monotonicity and local extrema, which builds upon the foundation of derivatives. I\u0027ve defined increasing and strictly increasing functions, with theorems linking derivatives to these properties. I\u0027m focusing on the proofs involving the Mean Value Theorem, aiming to translate them clearly. Section 5, Local Extrema, is next, which will define them and introduce Fermat\u0027s Theorem, along with sufficient conditions for determination via the first and second derivatives.\n\n\n**Detailing the Calculus Concepts**\n\nI\u0027m now deep-diving into the mathematical derivations, adopting the user\u0027s focus on clarity. I\u0027m explicitly connecting the factorials in the Taylor series coefficients to repeated differentiation. I\u0027m also double-checking the remainder term\u0027s index, making sure to show it includes the (n+1)-th derivative. I\u0027m keeping a sharp eye on the subtleties of the interval notation during the monotonicity proofs.\n\n\n**Confirming Output Generation**\n\nI\u0027m now fully immersed in the generation phase. My focus is on synthesizing the markdown output, ensuring a seamless flow and Slovenian language. I am adding \"Note to Self\" blocks to clarify reverse-engineering, such as explaining why we switch from  $f(x)$ to $Q_n(x)$. I am checking and double-checking to ensure that L\u0027Hôpital fails if the limit isn\u0027t $0/0$ as instructed.\n\n\n**Addressing the Output Language**\n\nI\u0027m now fully immersed in the output generation phase, and I\u0027ve switched to generating the notes entirely in Slovenian to align with the input. I will ensure consistency, and include any structural or \"Note to Self\" blocks in Slovenian as well.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Examining the Core Problem**\n\nI\u0027ve been meticulously analyzing the user\u0027s request. My focus now is on understanding the core problem: interpreting image-based data, specifically handwritten notes and whiteboards. I\u0027m considering OCR techniques as a starting point.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping the Task Parameters**\n\nI\u0027m now fully immersed in the nuances of the task. The user aims to convert images of Slovenian Calculus notes into Obsidian-compatible Markdown, a complex task demanding a structured approach. I am focusing on the transformation, requiring me to dissect the lecture content and represent it accurately. The target topics, encompassing Taylor series and L\u0027Hôpital\u0027s rule, are clear, and I\u0027m determining the best way to handle the Slovenian math notation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Structure**\n\nMy current focus is on structuring the mathematical content. I\u0027m building a section-by-section draft, iteratively refining each part. The progression is from Taylor\u0027s formula and its derivation, through specific examples, to applications like monotonicity and local extrema. I am paying close attention to the flow, ensuring a logical progression from theory to application.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Proof Details**\n\nI\u0027m currently focused on the specific steps of the derivation, which relies on Cauchy\u0027s Mean Value Theorem. I\u0027m carefully structuring Section 3, L\u0027Hôpital\u0027s Rule, to reflect the proof\u0027s logic. This includes the formula, the context in which it\u0027s applicable, and how to handle the indeterminate forms. I am also working on how to incorporate the elementary expansions like Exponential, Sine, Cosine, and Logarithm that were discussed in Section 2, to maintain the cohesiveness of the material.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining Monotonicity and Extrema**\n\nI\u0027m now zeroing in on monotonicity and local extrema, which builds upon the foundation of derivatives. I\u0027ve defined increasing and strictly increasing functions, with theorems linking derivatives to these properties. I\u0027m focusing on the proofs involving the Mean Value Theorem, aiming to translate them clearly. Section 5, Local Extrema, is next, which will define them and introduce Fermat\u0027s Theorem, along with sufficient conditions for determination via the first and second derivatives.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Detailing the Calculus Concepts**\n\nI\u0027m now deep-diving into the mathematical derivations, adopting the user\u0027s focus on clarity. I\u0027m explicitly connecting the factorials in the Taylor series coefficients to repeated differentiation. I\u0027m also double-checking the remainder term\u0027s index, making sure to show it includes the (n+1)-th derivative. I\u0027m keeping a sharp eye on the subtleties of the interval notation during the monotonicity proofs.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Confirming Output Generation**\n\nI\u0027m now fully immersed in the generation phase. My focus is on synthesizing the markdown output, ensuring a seamless flow and Slovenian language. I am adding \"Note to Self\" blocks to clarify reverse-engineering, such as explaining why we switch from  $f(x)$ to $Q_n(x)$. I am checking and double-checking to ensure that L\u0027Hôpital fails if the limit isn\u0027t $0/0$ as instructed.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Addressing the Output Language**\n\nI\u0027m now fully immersed in the output generation phase, and I\u0027ve switched to generating the notes entirely in Slovenian to align with the input. I will ensure consistency, and include any structural or \"Note to Self\" blocks in Slovenian as well.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# Analiza in Algebra: Taylorjeva vrsta, L\u0027Hospital in Monotonost\n\nTa dokument predstavlja strukturiran pregled predavanj, ki pokrivajo aproksimacijo funkcij s polinomi (Taylorjeva vrsta), računanje limit (L\u0027Hospitalovo pravilo) in analizo poteka funkcij (monotonost).\n\n---\n\n## 1. Taylorjeva formula\n\n### Motivacija in Definicija\nCilj je aproksimirati poljubno funkcijo $f(x)$, ki je $n$-krat odvedljiva, s polinomom $n$-te stopnje. Želimo, da se polinom in funkcija v okolici točke $a$ čim bolj ujemata.\n\n**Taylorjev polinom** $Q_n(x)$ stopnje $n$ za funkcijo $f(x)$ v točki $a$:\n$$\nQ_n(x) \u003d f(a) + \\frac{f\u0027(a)}{1!}(x-a) + \\frac{f\u0027\u0027(a)}{2!}(x-a)^2 + \\dots + \\frac{f^{(n)}(a)}{n!}(x-a)^n\n$$\nSplošni člen:\n$$\nQ_n(x) \u003d \\sum_{k\u003d0}^{n} \\frac{f^{(k)}(a)}{k!} (x-a)^k\n$$\n\n### Ostanek (Napaka aproksimacije)\nFunkcijo zapišemo kot vsoto polinoma in ostanka:\n$$\nf(x) \u003d Q_n(x) + r_n(x)\n$$\nKjer je $r_n(x)$ ostanek (napaka). Po **Lagrangeevi obliki ostanka** obstaja točka $\\xi$ med $a$ in $x$, da velja:\n$$\nr_n(x) \u003d \\frac{f^{(n+1)}(\\xi)}{(n+1)!} (x-a)^{n+1}\n$$\n\n\u003e **Reverse Engineering (Zakaj ta formula?):**\n\u003e Faktor $\\frac{1}{k!}$ se pojavi zaradi večkratnega odvajanja potence $(x-a)^k$. Ko $k$-krat odvajamo $(x-a)^k$, dobimo $k \\cdot (k-1) \\cdot \\dots \\cdot 1 \u003d k!$. Da bi se $k$-ti odvod polinoma ujemal s $k$-tim odvodom funkcije $f^{(k)}(a)$, moramo s tem faktorjem deliti.\n\n### Izrek (Taylorjeva formula)\nNaj bo funkcija $f$ $(n+1)$-krat odvedljiva na odprtem intervalu $I$. Naj bosta $a, x \\in I$. Potem obstaja $\\xi$ med $a$ in $x$, da velja:\n$$\nf(x) \u003d \\sum_{k\u003d0}^{n} \\frac{f^{(k)}(a)}{k!} (x-a)^k + \\frac{f^{(n+1)}(\\xi)}{(n+1)!} (x-a)^{n+1}\n$$\n\n#### Dokaz (s pomočjo Cauchyjevega izreka)\nIdeja dokaza temelji na oceni napake. Definiramo ostanek $r_n(x) \u003d f(x) - Q_n(x)$.\nUporabimo pomožno funkcijo in [[Cauchyjev izrek]] o povprečni vrednosti za funkciji $r_n(t)$ in $p(t) \u003d (x-t)^{n+1}$ na intervalu $[a, x]$.\n\n---\n\n## 2. Razvoji elementarnih funkcij (Maclaurinove vrste)\n\nKo razvijamo okoli točke $a\u003d0$, dobimo Maclaurinovo vrsto.\n\n### Eksponentna funkcija $f(x) \u003d e^x$\nKer je $(e^x)\u0027 \u003d e^x$ in $e^0 \u003d 1$, so vsi odvodi v 0 enaki 1.\n$$\ne^x \u003d 1 + x + \\frac{x^2}{2!} + \\frac{x^3}{3!} + \\dots + \\frac{x^n}{n!} + r_n(x)\n$$\n\n### Sinus in Kosinus\n*   **Sinus ($f(x) \u003d \\sin x$):** Liha funkcija, zato ima samo lihe potence.\n    $$ \\sin x \u003d x - \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\frac{x^7}{7!} + \\dots $$\n*   **Kosinus ($f(x) \u003d \\cos x$):** Soda funkcija, zato ima samo sode potence.\n    $$ \\cos x \u003d 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\frac{x^6}{6!} + \\dots $$\n\n\u003e **Note to Self (Eulerjeva formula):**\n\u003e Zapiski kažejo zanimivo povezavo:\n\u003e $$ e^{ix} \u003d \\cos x + i \\sin x $$\n\u003e Če vstavimo $ix$ v vrsto za $e^x$, se realni deli sestavijo v vrsto za $\\cos x$, imaginarni pa v vrsto za $\\sin x$ (ob upoštevanju $i^2 \u003d -1, i^3 \u003d -i, i^4\u003d1$).\n\n### Logaritem $f(x) \u003d \\ln(1+x)$\nRazvijamo $\\ln(1+x)$, ker $\\ln(x)$ v 0 ni definiran.\n$$\n\\ln(1+x) \u003d x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\frac{x^4}{4} + \\dots\n$$\n*Pozor:* Tu v imenovalcu ni fakultet, ampak navadna naravna števila. Vrsta konvergira za $x \\in (-1, 1]$.\n\n### Binomska vrsta\n$$\n(1+x)^\\alpha \u003d 1 + \\binom{\\alpha}{1}x + \\binom{\\alpha}{2}x^2 + \\dots\n$$\nKjer je $\\binom{\\alpha}{k} \u003d \\frac{\\alpha(\\alpha-1)\\dots(\\alpha-k+1)}{k!}$.\n\n---\n\n## 3. L\u0027Hospitalovo pravilo\n\n### Uporaba\nUporabljamo za računanje limit nedoločenih oblik, primarno tipa $\\frac{0}{0}$ in $\\frac{\\infty}{\\infty}$.\n\n### Izrek\nNaj bosta $f$ in $g$ odvedljivi funkciji in $g\u0027(x) \\neq 0$ v okolici točke $a$. Če velja $\\lim_{x \\to a} f(x) \u003d \\lim_{x \\to a} g(x) \u003d 0$ (ali obe $\\pm \\infty$), potem:\n$$\n\\lim_{x \\to a} \\frac{f(x)}{g(x)} \u003d \\lim_{x \\to a} \\frac{f\u0027(x)}{g\u0027(x)}\n$$\npod pogojem, da limita na desni obstaja.\n\n\u003e **Critical Analysis (Pogosta napaka):**\n\u003e Študenti pogosto odvajajo izraz kot *kvocient* $\\left(\\frac{f}{g}\\right)\u0027$. To je napačno! L\u0027Hospitalovo pravilo zahteva ločeno odvajanje števca in ločeno odvajanje imenovalca: $\\frac{f\u0027}{g\u0027}$.\n\n### Ostale nedoločene oblike\nPretvorba na osnovna tipa ($\\frac{0}{0}, \\frac{\\infty}{\\infty}$):\n1.  **Tip $0 \\cdot \\infty$:** Zapišemo $f \\cdot g \u003d \\frac{f}{1/g}$ ali $\\frac{g}{1/f}$.\n2.  **Tip $\\infty - \\infty$:** Damo na skupni imenovalec.\n3.  **Tipi $1^\\infty, \\infty^0, 0^0$:** Uporabimo logaritem. Če je $y \u003d f(x)^{g(x)}$, potem $\\ln y \u003d g(x) \\ln f(x)$. Izračunamo limito logaritma in na koncu eksponentiramo ($e^L$).\n\n---\n\n## 4. Monotonost in Ekstremi\n\n### Definicije monotonosti\nNaj bo $f: I \\to \\mathbb{R}$. Za poljubna $x_1, x_2 \\in I$, kjer $x_1 \u003c x_2$:\n*   **Naraščajoča:** $f(x_1) \\le f(x_2)$\n*   **Strogo naraščajoča:** $f(x_1) \u003c f(x_2)$\n*   **Padajoča:** $f(x_1) \\ge f(x_2)$\n*   **Strogo padajoča:** $f(x_1) \u003e f(x_2)$\n\n### Povezava z odvodom\nNaj bo $f$ odvedljiva na $(a, b)$.\n1.  Če je $f\u0027(x) \u003e 0$ za vsak $x \\in (a, b) \\implies f$ je **strogo naraščajoča**.\n2.  Če je $f\u0027(x) \u003c 0$ za vsak $x \\in (a, b) \\implies f$ je **strogo padajoča**.\n3.  Če je $f\u0027(x) \u003d 0$ za vsak $x \\in (a, b) \\implies f$ je **konstanta**.\n\n#### Dokaz (za naraščanje)\nUporabimo [[Lagrangeev izrek]]: Za $x_1 \u003c x_2$ obstaja $c \\in (x_1, x_2)$, da velja:\n$$\nf(x_2) - f(x_1) \u003d f\u0027(c)(x_2 - x_1)\n$$\nKer je $x_2 - x_1 \u003e 0$ in po predpostavki $f\u0027(c) \u003e 0$, mora biti $f(x_2) - f(x_1) \u003e 0$, torej $f(x_2) \u003e f(x_1)$.\n\n### Lokalni ekstremi\nTočka $x_0$ je lokalni ekstrem, če v neki okolici te točke funkcija zavzame največjo (maksimum) ali najmanjšo (minimum) vrednost.\n\n*   **Potreben pogoj:** Če je $f$ odvedljiva v ekstremu $x_0$, potem je $f\u0027(x_0) \u003d 0$ (stacionarna točka).\n*   **Zadosten pogoj (s prvim odvodom):**\n    *   Odvod spremeni predznak iz $+$ na $-$ $\\implies$ **Maksimum**.\n    *   Odvod spremeni predznak iz $-$ na $+$ $\\implies$ **Minimum**.\n*   **Zadosten pogoj (z drugim odvodom):**\n    *   $f\u0027(x_0) \u003d 0$ in $f\u0027\u0027(x_0) \u003c 0 \\implies$ **Maksimum**.\n    *   $f\u0027(x_0) \u003d 0$ in $f\u0027\u0027(x_0) \u003e 0 \\implies$ **Minimum**.\n\n---\n\n### Povezava konceptov (Mindmap)\n*   [[Taylorjeva vrsta]] uporablja odvode višjih redov za opis funkcije.\n*   [[L\u0027Hospitalovo pravilo]] uporablja odvode za primerjavo hitrosti rasti funkcij v limitah.\n*   [[Monotonost]] uporablja predznak odvoda za določanje oblike grafa.\n*   Vsi trije koncepti temeljijo na izrekih o povprečni vrednosti ([[Rolle]], [[Lagrange]], [[Cauchy]]).",
+      "role": "model",
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "# Analiza in Algebra: Taylorjeva vrsta, L\u0027Hospital in Monotonost\n\nTa dokument predstavlja strukturiran pregled predavanj, ki pokrivajo aproksimacijo funkcij s polinomi (Taylorjeva vrsta), račun"
+      }, {
+        "text": "anje limit (L\u0027Hospitalovo pravilo) in analizo poteka funkcij (monotonost).\n\n---"
+      }, {
+        "text": "\n\n## 1. Taylorjeva formula\n\n### Motivacija in Definicija\nCilj je aproksimirati pol"
+      }, {
+        "text": "jubno funkcijo $f(x)$, ki je $n$-krat odvedljiva, s polinomom $n"
+      }, {
+        "text": "$-te stopnje. Želimo, da se polinom in funkcija v okolici točke $a$ čim bolj"
+      }, {
+        "text": " ujemata.\n\n**Taylorjev polinom** $Q_n(x)$ stopnje $n$ za funkcijo $f(x)$ v"
+      }, {
+        "text": " točki $a$:\n$$\nQ_n(x) \u003d f(a) + \\frac{f\u0027(a)}{"
+      }, {
+        "text": "1!}(x-a) + \\frac{f\u0027\u0027(a)}{2!}(x-a)^2 + \\dots + \\frac{f"
+      }, {
+        "text": "^{(n)}(a)}{n!}(x-a)^n\n$$\nSplošni člen:\n$$\nQ_n("
+      }, {
+        "text": "x) \u003d \\sum_{k\u003d0}^{n} \\frac{f^{(k)}(a)}{k!} (x-"
+      }, {
+        "text": "a)^k\n$$\n\n### Ostanek (Napaka aproksimacije)\nFunkcijo zapišemo kot vs"
+      }, {
+        "text": "oto polinoma in ostanka:\n$$\nf(x) \u003d Q_n(x) + r_"
+      }, {
+        "text": "n(x)\n$$\nKjer je $r_n(x)$ ostanek (napaka)."
+      }, {
+        "text": " Po **Lagrangeevi obliki ostanka** obstaja točka $\\xi$ med $a$ in $x$,"
+      }, {
+        "text": " da velja:\n$$\nr_n(x) \u003d \\frac{f^{(n+1)}(\\xi)}{(n+1)!}"
+      }, {
+        "text": " (x-a)^{n+1}\n$$\n\n\u003e **Reverse Engineering (Zakaj ta formula?):**\n\u003e Faktor $\\frac"
+      }, {
+        "text": "{1}{k!}$ se pojavi zaradi večkratnega odvajanja potence $(x-a)^k$. Ko $k$-k"
+      }, {
+        "text": "rat odvajamo $(x-a)^k$, dobimo $k \\cdot (k-1) \\cdot \\dots \\"
+      }, {
+        "text": "cdot 1 \u003d k!$. Da bi se $k$-ti odvod polinoma ujemal s $k$-tim od"
+      }, {
+        "text": "vodom funkcije $f^{(k)}(a)$, moramo s tem faktorjem deliti.\n\n### Izrek ("
+      }, {
+        "text": "Taylorjeva formula)\nNaj bo funkcija $f$ $(n+1)$-krat odvedljiva na od"
+      }, {
+        "text": "prtem intervalu $I$. Naj bosta $a, x \\in I$. Potem obstaja $\\xi$"
+      }, {
+        "text": " med $a$ in $x$, da velja:\n$$\nf(x) \u003d \\sum_{k"
+      }, {
+        "text": "\u003d0}^{n} \\frac{f^{(k)}(a)}{k!} (x-a)^k + \\"
+      }, {
+        "text": "frac{f^{(n+1)}(\\xi)}{(n+1)!} (x-a)^{n+1}"
+      }, {
+        "text": "\n$$\n\n#### Dokaz (s pomočjo Cauchyjevega izreka)\nIdeja dokaza temel"
+      }, {
+        "text": "ji na oceni napake. Definiramo ostanek $r_n(x) \u003d f(x) - Q"
+      }, {
+        "text": "_n(x)$.\nUporabimo pomožno funkcijo in [[Cauchyjev izrek]] o povprečni vrednosti za funkci"
+      }, {
+        "text": "ji $r_n(t)$ in $p(t) \u003d (x-t)^{n+1}$"
+      }, {
+        "text": " na intervalu $[a, x]$.\n\n---\n\n## 2. Razvoji elementarnih funkcij (Mac"
+      }, {
+        "text": "laurinove vrste)\n\nKo razvijamo okoli točke $a\u003d0$, dobimo Maclaurinovo vrsto.\n\n###"
+      }, {
+        "text": " Eksponentna funkcija $f(x) \u003d e^x$\nKer je $(e^x)\u0027 \u003d e^x$"
+      }, {
+        "text": " in $e^0 \u003d 1$, so vsi odvodi v 0 enaki 1.\n$$"
+      }, {
+        "text": "\ne^x \u003d 1 + x + \\frac{x^2}{2!} + \\frac{x^"
+      }, {
+        "text": "3}{3!} + \\dots + \\frac{x^n}{n!} + r_n(x)\n$$\n\n"
+      }, {
+        "text": "### Sinus in Kosinus\n*   **Sinus ($f(x) \u003d \\sin x$):** Liha funkcija,"
+      }, {
+        "text": " zato ima samo lihe potence.\n    $$ \\sin x \u003d x - \\frac{x^3}{3!} + \\"
+      }, {
+        "text": "frac{x^5}{5!} - \\frac{x^7}{7!} + \\dots $$\n*"
+      }, {
+        "text": "   **Kosinus ($f(x) \u003d \\cos x$):** Soda funkcija, zato ima samo"
+      }, {
+        "text": " sode potence.\n    $$ \\cos x \u003d 1 - \\frac{x^2}{2!}"
+      }, {
+        "text": " + \\frac{x^4}{4!} - \\frac{x^6}{6!} + \\dots $$"
+      }, {
+        "text": "\n\n\u003e **Note to Self (Eulerjeva formula):**\n\u003e Zapiski kažejo zanimivo povezavo:"
+      }, {
+        "text": "\n\u003e $$ e^{ix} \u003d \\cos x + i \\sin x $$\n\u003e Če vstavimo $"
+      }, {
+        "text": "ix$ v vrsto za $e^x$, se realni deli sestavijo v vrsto za $\\cos x$, imaginarni"
+      }, {
+        "text": " pa v vrsto za $\\sin x$ (ob upoštevanju $i^2 \u003d -1, i^3"
+      }, {
+        "text": " \u003d -i, i^4\u003d1$).\n\n### Logaritem $f(x) \u003d \\ln(1+x)$\nRaz"
+      }, {
+        "text": "vijamo $\\ln(1+x)$, ker $\\ln(x)$ v 0 ni definiran.\n$$\n\\ln(1+"
+      }, {
+        "text": "x) \u003d x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\frac{x^"
+      }, {
+        "text": "4}{4} + \\dots\n$$\n*Pozor:* Tu v imenovalcu ni fakultet, ampak nav"
+      }, {
+        "text": "adna naravna števila. Vrsta konvergira za $x \\in (-1, 1"
+      }, {
+        "text": "]$.\n\n### Binomska vrsta\n$$\n(1+x)^\\alpha \u003d 1 + \\binom{\\alpha}{1}x +"
+      }, {
+        "text": " \\binom{\\alpha}{2}x^2 + \\dots\n$$\nKjer je $\\binom{\\alpha}{k} \u003d \\"
+      }, {
+        "text": "frac{\\alpha(\\alpha-1)\\dots(\\alpha-k+1)}{k!}$.\n\n---\n\n## "
+      }, {
+        "text": "3. L\u0027Hospitalovo pravilo\n\n### Uporaba\nUporabljamo za računanje limit ned"
+      }, {
+        "text": "oločenih oblik, primarno tipa $\\frac{0}{0}$ in $\\frac{\\infty}{\\infty}$.\n\n### Izrek\nNaj"
+      }, {
+        "text": " bosta $f$ in $g$ odvedljivi funkciji in $g\u0027(x) \\neq 0"
+      }, {
+        "text": "$ v okolici točke $a$. Če velja $\\lim_{x \\to a} f(x)"
+      }, {
+        "text": " \u003d \\lim_{x \\to a} g(x) \u003d 0$ (ali obe $\\pm \\infty$), potem:"
+      }, {
+        "text": "\n$$\n\\lim_{x \\to a} \\frac{f(x)}{g(x)} \u003d \\"
+      }, {
+        "text": "lim_{x \\to a} \\frac{f\u0027(x)}{g\u0027(x)}\n$$\npod pogojem, da limita"
+      }, {
+        "text": " na desni obstaja.\n\n\u003e **Critical Analysis (Pogosta napaka):**\n\u003e Študenti pogosto od"
+      }, {
+        "text": "vajajo izraz kot *kvocient* $\\left(\\frac{f}{g}\\right)\u0027$. To je napačno!"
+      }, {
+        "text": " L\u0027Hospitalovo pravilo zahteva ločeno odvajanje števca in ločeno odvajanje imenovalca: $\\frac{"
+      }, {
+        "text": "f\u0027}{g\u0027}$.\n\n### Ostale nedoločene oblike\nPretvorba na osnovna tipa ($\\frac{0}{0"
+      }, {
+        "text": "}, \\frac{\\infty}{\\infty}$):\n1.  **Tip $0 \\cdot \\infty$:** Z"
+      }, {
+        "text": "apišemo $f \\cdot g \u003d \\frac{f}{1/g}$ ali $\\frac{g}{1/f}$.\n2"
+      }, {
+        "text": ".  **Tip $\\infty - \\infty$:** Damo na skupni imenovalec.\n3.  **T"
+      }, {
+        "text": "ipi $1^\\infty, \\infty^0, 0^0$:** Uporabimo logaritem."
+      }, {
+        "text": " Če je $y \u003d f(x)^{g(x)}$, potem $\\ln y \u003d g(x) \\ln f"
+      }, {
+        "text": "(x)$. Izračunamo limito logaritma in na koncu eksponentiramo ($e^L$).\n\n---\n\n## 4"
+      }, {
+        "text": ". Monotonost in Ekstremi\n\n### Definicije monotonosti\nNaj bo $f: I \\to \\mathbb{R}$."
+      }, {
+        "text": " Za poljubna $x_1, x_2 \\in I$, kjer $x_1 \u003c x_2$:"
+      }, {
+        "text": "\n*   **Naraščajoča:** $f(x_1) \\le f(x_2"
+      }, {
+        "text": ")$\n*   **Strogo naraščajoča:** $f(x_1) \u003c f(x"
+      }, {
+        "text": "_2)$\n*   **Padajoča:** $f(x_1) \\ge f(x_"
+      }, {
+        "text": "2)$\n*   **Strogo padajoča:** $f(x_1) \u003e f(x"
+      }, {
+        "text": "_2)$\n\n### Povezava z odvodom\nNaj bo $f$ odvedljiva na $("
+      }, {
+        "text": "a, b)$.\n1.  Če je $f\u0027(x) \u003e 0$ za vsak $"
+      }, {
+        "text": "x \\in (a, b) \\implies f$ je **strogo naraščajoča**.\n2.  Če je $"
+      }, {
+        "text": "f\u0027(x) \u003c 0$ za vsak $x \\in (a, b) \\implies f$"
+      }, {
+        "text": " je **strogo padajoča**.\n3.  Če je $f\u0027(x) \u003d 0$"
+      }, {
+        "text": " za vsak $x \\in (a, b) \\implies f$ je **konstanta**.\n\n####"
+      }, {
+        "text": " Dokaz (za naraščanje)\nUporabimo [[Lagrangeev izrek]]: Za $x_1 \u003c x_2$"
+      }, {
+        "text": " obstaja $c \\in (x_1, x_2)$, da velja:\n$$\nf(x_2) - f"
+      }, {
+        "text": "(x_1) \u003d f\u0027(c)(x_2 - x_1)\n$$\nKer je $"
+      }, {
+        "text": "x_2 - x_1 \u003e 0$ in po predpostavki $f\u0027(c) \u003e 0$, mora"
+      }, {
+        "text": " biti $f(x_2) - f(x_1) \u003e 0$, torej $f("
+      }, {
+        "text": "x_2) \u003e f(x_1)$.\n\n### Lokalni ekstremi\nTočka $x_"
+      }, {
+        "text": "0$ je lokalni ekstrem, če v neki okolici te točke funkcija zavzame največjo (maks"
+      }, {
+        "text": "imum) ali najmanjšo (minimum) vrednost.\n\n*   **Potreben pogoj:** Če je $f$ odvedlj"
+      }, {
+        "text": "iva v ekstremu $x_0$, potem je $f\u0027(x_0) \u003d 0$ (st"
+      }, {
+        "text": "acionarna točka).\n*   **Zadosten pogoj (s prvim odvodom):**\n"
+      }, {
+        "text": "    *   Odvod spremeni predznak iz $+$ na $-$ $\\implies$ **Maksimum**.\n    *   "
+      }, {
+        "text": "Odvod spremeni predznak iz $-$ na $+$ $\\implies$ **Minimum**.\n*   **Zadosten pog"
+      }, {
+        "text": "oj (z drugim odvodom):**\n    *   $f\u0027(x_0) \u003d 0$"
+      }, {
+        "text": " in $f\u0027\u0027(x_0) \u003c 0 \\implies$ **Maksimum**.\n    *   $"
+      }, {
+        "text": "f\u0027(x_0) \u003d 0$ in $f\u0027\u0027(x_0) \u003e 0 \\implies$"
+      }, {
+        "text": " **Minimum**.\n\n---\n\n### Povezava konceptov (Mindmap)\n*   [[Taylorjeva vrsta]] upor"
+      }, {
+        "text": "ablja odvode višjih redov za opis funkcije.\n*   [[L\u0027Hospitalovo pravilo]] uporabl"
+      }, {
+        "text": "ja odvode za primerjavo hitrosti rasti funkcij v limitah.\n*   [[Monoton"
+      }, {
+        "text": "ost]] uporablja predznak odvoda za določanje oblike grafa.\n*   Vsi tri"
+      }, {
+        "text": "je koncepti temeljijo na izrekih o povprečni vrednosti ([[Rolle]], [[Lagrange]], [[Cauchy]])."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

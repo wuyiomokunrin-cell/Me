@@ -1,0 +1,421 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1dDeFtU2Vleb6a0KkdlR2AEF1brVpxMHg"
+      },
+      "role": "user",
+      "tokenCount": 88930
+    }, {
+      "driveAudio": {
+        "id": "1UcWWUnuloHb32fwlAbQpVmhUY8umZ8lV"
+      },
+      "role": "user",
+      "tokenCount": 98365
+    }, {
+      "driveImage": {
+        "id": "1HZ4Fx7K_IDp8YqXJ_iYPdasb9SRXJ6IV"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ZT0QdqtzfOr2dPG9g91z3QrounkcEPIp"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1sHN9PAgovv4-EdNCIVBN0mCDE6Kofx_M"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "**Processing User Input**\n\nI\u0027ve begun analyzing the user\u0027s input, which consists of a Slovenian audio transcript and handwritten notes, also in Slovenian. It\u0027s safe to assume the lecture and notes relate to each other. My initial focus is on language identification and understanding the nature of the data. The next step is to initiate transcription and translation.\n\n\n**Structuring Raw Data**\n\nI\u0027m currently structuring the raw data, separating the lecture transcript and handwritten notes. My aim is to accurately reflect the chronological flow, prioritizing content capture as presented. I\u0027m focusing on identifying key concepts in dynamics, friction, and pulleys, preparing for the formalization into markdown. I\u0027m setting up LaTeX blocks for formulas.\n\n\n**Formalizing the Approach**\n\nI\u0027m now fully immersed in developing the methodology for this project, acting as an Academic Assistant. My plan involves breaking down the provided audio and notes, creating a structured Obsidian note.  I\u0027ll emphasize capturing content chronologically, using LaTeX for formulas, and focusing on clear explanations and error handling. I\u0027ll maintain the Slovenian language of the source, and will wikilink all headers.\n\n\n**Developing Obsidian Workflow**\n\nI\u0027m now outlining a detailed Obsidian workflow, acting as an academic assistant.  I\u0027ll analyze the audio and notes, transcribing and structuring content chronologically. Formulas will use LaTeX. Errors will be identified with warnings, and vague areas clarified. I\u0027m focusing on \"how\" and \"why,\" maintaining Slovenian, and wikilinking headers.  I\u0027m focusing on transcribing and structuring the provided material.\n\n\n**Refining Obsidian Strategy**\n\nI\u0027m now fully immersed in developing my Obsidian Assistant persona, drawing from my experience as an academic tutor. My strategy involves analyzing the user\u0027s audio and handwritten notes to produce a structured Obsidian note.  I\u0027ll emphasize detailed explanations, error detection, and sequential presentation, utilizing LaTeX for all formulas. I\u0027m focusing on \"how\" and \"why,\" using Slovenian throughout and employing wikilinks for all headers to maintain clarity and context.\n\n\n**Formulating the Markdown Note**\n\nI\u0027ve been meticulously transcribing the audio and analyzing the handwritten notes to ensure a smooth transition into Markdown format. I\u0027m focusing on capturing the precise wording and structure from the source material, paying close attention to formulas and diagrams. I\u0027m also preparing to incorporate LaTeX and wikilinks. The goal is a clear, sequential, and comprehensive representation of the lecture content, suitable for an Obsidian note.\n\n\n**Constructing Obsidian Note**\n\nI\u0027m now deeply engaged in constructing the Obsidian note, meticulously transcribing the lecture and handwritten notes.  I\u0027m making sure to mirror the original structure, include LaTeX formulas, and incorporate necessary explanations. I\u0027m focusing on \"how\" and \"why\" to provide thorough clarity.\n\n\n**Constructing the Obsidian Map**\n\nI\u0027m now fully immersed in developing the Obsidian note, meticulously transcribing the lecture and the accompanying handwritten notes. I am diligently mirroring the original structure, making sure to embed LaTeX formulas and including any necessary explanations. My focus is on thoroughly exploring how and why the content is presented.\n\n\n\n**Constructing the Obsidian Map**\n\nI\u0027ve been meticulously transcribing the audio lecture, focusing on the mechanics and dynamics. The associated handwritten notes are invaluable, particularly in showing the step-by-step calculations and visual representations. I\u0027m taking care to format each part properly, utilizing LaTeX to ensure correct notation, and employing wikilinks to organize the content.\n\n\n**Revising Note Structure**\n\nI\u0027ve been working on refining the organization of the Obsidian note. I\u0027ve focused on clarity, sequential presentation, and the use of LaTeX for formulas. I have now completed an in-depth analysis of the system, complete with free-body diagrams, and will include the equations of motion for each body. I will clearly explain my thought processes.\n\n\n**Refining Note Construction**\n\nI\u0027m presently building the Obsidian note, meticulously aligning with the original structure. I\u0027m prioritizing accurate transcription, LaTeX integration for formulas, and the incorporation of pertinent explanations. My focus is always on \"how\" and \"why,\" ensuring clarity and sequential presentation.\n\n\n**Refining Markdown Generation**\n\nI\u0027m now fully immersed in developing the detailed markdown file, transforming the audio and notes into a structured Obsidian note. I\u0027m focusing on LaTeX integration for formulas, detailed explanations of each step, and clear, sequential presentation. The ultimate goal is an academically sound representation of the physics lecture.\n\n\n",
+      "role": "model",
+      "tokenCount": 2986,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Processing User Input**\n\nI\u0027ve begun analyzing the user\u0027s input, which consists of a Slovenian audio transcript and handwritten notes, also in Slovenian. It\u0027s safe to assume the lecture and notes relate to each other. My initial focus is on language identification and understanding the nature of the data. The next step is to initiate transcription and translation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Raw Data**\n\nI\u0027m currently structuring the raw data, separating the lecture transcript and handwritten notes. My aim is to accurately reflect the chronological flow, prioritizing content capture as presented. I\u0027m focusing on identifying key concepts in dynamics, friction, and pulleys, preparing for the formalization into markdown. I\u0027m setting up LaTeX blocks for formulas.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formalizing the Approach**\n\nI\u0027m now fully immersed in developing the methodology for this project, acting as an Academic Assistant. My plan involves breaking down the provided audio and notes, creating a structured Obsidian note.  I\u0027ll emphasize capturing content chronologically, using LaTeX for formulas, and focusing on clear explanations and error handling. I\u0027ll maintain the Slovenian language of the source, and will wikilink all headers.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Obsidian Workflow**\n\nI\u0027m now outlining a detailed Obsidian workflow, acting as an academic assistant.  I\u0027ll analyze the audio and notes, transcribing and structuring content chronologically. Formulas will use LaTeX. Errors will be identified with warnings, and vague areas clarified. I\u0027m focusing on \"how\" and \"why,\" maintaining Slovenian, and wikilinking headers.  I\u0027m focusing on transcribing and structuring the provided material.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Obsidian Strategy**\n\nI\u0027m now fully immersed in developing my Obsidian Assistant persona, drawing from my experience as an academic tutor. My strategy involves analyzing the user\u0027s audio and handwritten notes to produce a structured Obsidian note.  I\u0027ll emphasize detailed explanations, error detection, and sequential presentation, utilizing LaTeX for all formulas. I\u0027m focusing on \"how\" and \"why,\" using Slovenian throughout and employing wikilinks for all headers to maintain clarity and context.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Markdown Note**\n\nI\u0027ve been meticulously transcribing the audio and analyzing the handwritten notes to ensure a smooth transition into Markdown format. I\u0027m focusing on capturing the precise wording and structure from the source material, paying close attention to formulas and diagrams. I\u0027m also preparing to incorporate LaTeX and wikilinks. The goal is a clear, sequential, and comprehensive representation of the lecture content, suitable for an Obsidian note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing Obsidian Note**\n\nI\u0027m now deeply engaged in constructing the Obsidian note, meticulously transcribing the lecture and handwritten notes.  I\u0027m making sure to mirror the original structure, include LaTeX formulas, and incorporate necessary explanations. I\u0027m focusing on \"how\" and \"why\" to provide thorough clarity.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing the Obsidian Map**\n\nI\u0027m now fully immersed in developing the Obsidian note, meticulously transcribing the lecture and the accompanying handwritten notes. I am diligently mirroring the original structure, making sure to embed LaTeX formulas and including any necessary explanations. My focus is on thoroughly exploring how and why the content is presented.\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing the Obsidian Map**\n\nI\u0027ve been meticulously transcribing the audio lecture, focusing on the mechanics and dynamics. The associated handwritten notes are invaluable, particularly in showing the step-by-step calculations and visual representations. I\u0027m taking care to format each part properly, utilizing LaTeX to ensure correct notation, and employing wikilinks to organize the content.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Revising Note Structure**\n\nI\u0027ve been working on refining the organization of the Obsidian note. I\u0027ve focused on clarity, sequential presentation, and the use of LaTeX for formulas. I have now completed an in-depth analysis of the system, complete with free-body diagrams, and will include the equations of motion for each body. I will clearly explain my thought processes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Note Construction**\n\nI\u0027m presently building the Obsidian note, meticulously aligning with the original structure. I\u0027m prioritizing accurate transcription, LaTeX integration for formulas, and the incorporation of pertinent explanations. My focus is always on \"how\" and \"why,\" ensuring clarity and sequential presentation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Markdown Generation**\n\nI\u0027m now fully immersed in developing the detailed markdown file, transforming the audio and notes into a structured Obsidian note. I\u0027m focusing on LaTeX integration for formulas, detailed explanations of each step, and clear, sequential presentation. The ultimate goal is an academically sound representation of the physics lecture.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Dinamika in Statika: Sistemi Teles in Ravnovesje]]\n\n## [[Problem 1: Sistem Treh Teles]]\n\n### [[Postavitev Problema]]\n\nAnaliziramo gibanje sistema treh teles z masami $m_1$, $m_2$ in $m_3$. Telesa so med seboj povezana z lahkimi, neraztegljivimi vrvicami, ki tečejo preko lahkih škripcev.\n- **Telo 1** visi navpično.\n- **Telo 2** drsi po vodoravni podlagi.\n- **Telo 3** drsi po klancu z naklonskim kotom $\\phi \u003d 30^\\circ$.\n\nCilj naloge je izračunati pospešek sistema ($a$) in sile v obeh vrvicah ($F_{v1}$ in $F_{v2}$). Predpostavimo smer gibanja, kot je prikazano na skici (telo 1 se spušča, telesi 2 in 3 se pomikata v desno).\n\n### [[Analiza Sil po Telesih]]\n\nProblem rešujemo tako, da vsako telo obravnavamo posebej in zapišemo gibalne enačbe (drugi Newtonov zakon) za vsako izmed njih.\n\n#### [[Telo 1 (Viseče)]]\nNa prvo telo, ki visi, delujeta dve sili v navpični smeri:\n1.  **Sila teže:** $F_{g1} \u003d m_1g$, usmerjena navzdol.\n2.  **Sila vrvice 1:** $F_{v1}$, usmerjena navzgor.\n\nZa smer gibanja predpostavimo, da se telo spušča. Postavimo koordinatni sistem z osjo $y$ usmerjeno navzdol. Gibalna enačba je:\n$$ \\sum F_y \u003d m_1a $$\n$$ F_{g1} - F_{v1} \u003d m_1a $$\n\n \u003c!-- Placeholder za sliko diagrama sil za Telo 1 --\u003e\n\n#### [[Telo 2 (Drsenje po ravnini)]]\nNa drugo telo, ki drsi po vodoravni podlagi, deluje več sil:\n- **V vodoravni smeri (os x):**\n  1. **Sila vrvice 1:** $F\u0027_{v1}$, vleče v desno.\n  2. **Sila vrvice 2:** $F_{v2}$, vleče v levo.\n  3. **Sila trenja:** $F_{tr2}$, nasprotuje gibanju, torej v levo.\n- **V navpični smeri (os y):**\n  1. **Sila teže:** $F_{g2}$, navzdol.\n  2. **Sila podlage (pravokotna):** $F_{n2}$, navzgor.\n\nGibalne enačbe:\n- **Smer x:**\n  $$ \\sum F_x \u003d m_2a $$\n  $$ F\u0027_{v1} - F_{v2} - F_{tr2} \u003d m_2a $$\n- **Smer y:** Ker ni gibanja v navpični smeri, je vsota sil enaka nič.\n  $$ \\sum F_y \u003d 0 $$\n  $$ F_{n2} - F_{g2} \u003d 0 \\implies F_{n2} \u003d F_{g2} \u003d m_2g $$\n\nSila trenja je $F_{tr2} \u003d k \\cdot F_{n2} \u003d k \\cdot m_2g$.\n\n \u003c!-- Placeholder za sliko diagrama sil za Telo 2 --\u003e\n\n#### [[Telo 3 (Drsenje po klancu)]]\nNa tretje telo na klancu delujejo sile, ki jih analiziramo v koordinatnem sistemu, zasukanem vzporedno s klancem:\n- **Vzporedno s klancem (os x\u0027):**\n  1. **Sila vrvice 2:** $F\u0027_{v2}$, vleče navzgor po klancu.\n  2. **Sila trenja:** $F_{tr3}$, nasprotuje gibanju, torej navzdol po klancu.\n  3. **Dinamična komponenta teže:** $F_{d3} \u003d m_3g \\sin\\phi$, navzdol po klancu.\n- **Pravokotno na klanec (os y\u0027):**\n  1. **Statična komponenta teže:** $F_{s3} \u003d m_3g \\cos\\phi$, pravokotno v podlago.\n  2. **Sila podlage (pravokotna):** $F_{n3}$, pravokotno iz podlage.\n\nGibalne enačbe:\n- **Smer x\u0027:**\n  $$ \\sum F_{x\u0027} \u003d m_3a $$\n  $$ F\u0027_{v2} - F_{tr3} - F_{d3} \u003d m_3a $$\n- **Smer y\u0027:**\n  $$ \\sum F_{y\u0027} \u003d 0 $$\n  $$ F_{n3} - F_{s3} \u003d 0 \\implies F_{n3} \u003d F_{s3} \u003d m_3g \\cos\\phi $$\n\nSila trenja je $F_{tr3} \u003d k \\cdot F_{n3} \u003d k \\cdot m_3g \\cos\\phi$.\n\n \u003c!-- Placeholder za sliko diagrama sil za Telo 3 --\u003e\n\n**Note to Self:** Ker sta vrvici in škripca lahka, se sila po celotni dolžini vrvice ohranja. To pomeni:\n- $|F_{v1}| \u003d |F\u0027_{v1}|$\n- $|F_{v2}| \u003d |F\u0027_{v2}|$\nTo nam omogoča, da enačbe združimo v enoten sistem.\n\n### [[Sistemska Enačba in Rešitev]]\n\nZ združitvijo vseh treh gibalnih enačb za smer gibanja dobimo eno sistemsko enačbo. Sile vrvic se med seboj odštejejo, saj so notranje sile sistema.\n\n1.  $m_1g - F_{v1} \u003d m_1a$\n2.  $F_{v1} - F_{v2} - k m_2g \u003d m_2a$\n3.  $F_{v2} - k m_3g \\cos\\phi - m_3g \\sin\\phi \u003d m_3a$\n\nČe seštejemo vse tri enačbe, dobimo:\n$$ m_1g - k m_2g - k m_3g \\cos\\phi - m_3g \\sin\\phi \u003d (m_1+m_2+m_3)a $$\n\nIzrazimo pospešek $a$:\n$$ a \u003d \\frac{g(m_1 - k m_2 - m_3(k \\cos\\phi + \\sin\\phi))}{m_1+m_2+m_3} $$\n\nZ vstavljanjem numeričnih vrednosti ($m_1\u003dm_2\u003dm_3\u003dm\u003d1kg$, $g\u003d9.81 m/s^2$, $k\u003d0.1$, $\\phi\u003d30^\\circ$) dobimo:\n$$ a \u003d \\frac{9.81(1 - 0.1 \\cdot 1 - 1(0.1 \\cos30^\\circ + \\sin30^\\circ))}{1+1+1} \\approx 1.025 \\, m/s^2 $$\n\nSile v vrvicah izračunamo z vstavljanjem pospeška nazaj v enačbe za posamezna telesa:\n- **Sila vrvice 1:**\n  $$ F_{v1} \u003d m_1g - m_1a \u003d m_1(g-a) \\approx 1(9.81 - 1.025) \\approx 8.78 N \\approx 9N $$\n- **Sila vrvice 2:**\n  $$ F_{v2} \u003d F_{v1} - k m_2g - m_2a \\approx 8.78 - 0.1 \\cdot 1 \\cdot 9.81 - 1 \\cdot 1.025 \\approx 6.77 N \\approx 7N $$\n\n### [[Splošne Formule]]\n- **Drugi Newtonov zakon:** $\\sum \\vec{F} \u003d m\\vec{a}$\n- **Sila trenja (dinamično):** $F_{tr} \u003d k \\cdot F_n$\n- **Komponente sile teže na klancu:**\n  - Dinamična (vzporedna): $F_d \u003d mg \\sin\\phi$\n  - Statična (pravokotna): $F_s \u003d mg \\cos\\phi$\n\n### [[Kritična Analiza]]\n**Kaj če predpostavimo napačno smer gibanja?**\nPredavatelj je omenil, da če bi predpostavili obratno smer gibanja (v levo), bi dobili drugačno enačbo. Poglejmo, zakaj:\n- Če bi se sistem gibal v levo, bi se sile trenja ($F_{tr2}$ in $F_{tr3}$) obrnile in kazale v desno.\n- Sistemska enačba bi postala:\n  $$ -m_1g + k m_2g + m_3(k \\cos\\phi + \\sin\\phi) \u003d (m_1+m_2+m_3)a\u0027 $$\n- Če bi izračunali $a\u0027$, bi dobili negativno vrednost. Negativen predznak pospeška pomeni, da smo smer gibanja predpostavili napačno in da sistem v resnici pospešuje v nasprotni smeri (v desno), kar je skladno z našo prvotno, pravilno rešitvijo.\n- **Warning Note:** Pomembno je, da pri spremembi predpostavljene smeri gibanja pravilno obrnemo vse vektorje, ki so odvisni od smeri gibanja, kot je sila trenja. Končni fizikalni rezultat bo vedno konsistenten.\n\n***\n\n## [[Problem 2: Ravnovesje Deske na Robu Strehe]]\n\n### [[Postavitev Problema in Teorija]]\nHomogena lesena deska z dolžino $d \u003d 5.25 \\, m$ in maso $m_d \u003d 47 \\, kg$ leži na robu ravne strehe, tako da del dolžine $a \u003d 3.3 \\, m$ gleda preko roba.\n\n**Naloga:** Kolikšno najmanjšo maso uteži ($m_m$) moramo postaviti na konec deske, ki je na strehi, da bo moški z maso $m_č \u003d 73 \\, kg$ lahko varno prehodil desko do skrajnega zunanjega roba?\n\nProblem obravnavamo s pogoji za **statično ravnovesje**. Telo je v ravnovesju, če je vsota vseh zunanjih sil in vsota vseh navorov enaka nič.\n$$ \\sum \\vec{F}_{zun} \u003d 0 \\quad \\text{in} \\quad \\sum \\vec{M}_{zun} \u003d 0 $$\nKer nas zanima mejni primer, ko se deska skoraj prekucne, bomo analizirali ravnovesje navorov (momentov).\n\n### [[Analiza Navorov]]\nZa os vrtenja strateško izberemo točko, kjer je deska podprta – **rob strehe**. S to izbiro se izognemo potrebi po računanju sile podlage, saj je njen navor glede na to os enak nič (ročica je enaka nič).\n\nV mejnem primeru, ko moški stoji na skrajnem desnem robu deske, mora biti vsota navorov, ki desko vrtijo v smeri urinega kazalca, enaka vsoti navorov, ki jo vrtijo v nasprotni smeri.\n\n**Sile, ki povzročajo navore:**\n1.  **Sila teže moškega ($F_{gč}$):** Vrti desko v smeri urinega kazalca (pozitiven navor v naši konvenciji). Ročica je $r_č \u003d a$.\n2.  **Sila teže deske ($F_{gd}$):** Deska je homogena, zato njena teža prijemlje v težišču, ki je na polovici dolžine ($d/2$). Ta navor prav tako vrti v smeri urinega kazalca. Ročica je razdalja od osi (roba) do težišča deske:\n    $$ r_d \u003d a - \\frac{d}{2} $$\n    *Opomba:* Del deske na strehi je dolg $d-a$. Težišče je od levega roba oddaljeno za $d/2$. Razdalja od osi do težišča je torej $(d/2) - (d-a) \u003d a - d/2$.\n3.  **Sila teže uteži ($F_{gm}$):** Vrti desko v nasprotni smeri urinega kazalca (negativen navor). Utež je na skrajnem levem koncu. Ročica je $r_m \u003d d-a$.\n\n**Enačba za ravnovesje navorov:**\n$$ \\sum M \u003d 0 $$\n$$ M_{č} + M_{d} - M_{m} \u003d 0 $$\n$$ (F_{gč} \\cdot r_č) + (F_{gd} \\cdot r_d) - (F_{gm} \\cdot r_m) \u003d 0 $$\n$$ (m_č g \\cdot a) + (m_d g \\cdot (a - \\frac{d}{2})) - (m_m g \\cdot (d-a)) \u003d 0 $$\n\n### [[Rešitev]]\nIz zgornje enačbe izrazimo iskano maso $m_m$. Faktor $g$ lahko pokrajšamo.\n$$ m_m (d-a) \u003d m_č a + m_d (a - \\frac{d}{2}) $$\n$$ m_m \u003d \\frac{m_č a + m_d (a - \\frac{d}{2})}{d-a} $$\n\nVstavimo numerične vrednosti:\n- $d \u003d 5.25 \\, m$\n- $a \u003d 3.3 \\, m$\n- $m_d \u003d 47 \\, kg$\n- $m_č \u003d 73 \\, kg$\n\n$$ m_m \u003d \\frac{73 \\cdot 3.3 + 47 \\cdot (3.3 - \\frac{5.25}{2})}{5.25 - 3.3} $$\n$$ m_m \u003d \\frac{240.9 + 47 \\cdot (0.675)}{1.95} $$\n$$ m_m \u003d \\frac{240.9 + 31.725}{1.95} \u003d \\frac{272.625}{1.95} \\approx 139.8 \\, kg $$\n\nMinimalna masa uteži mora biti približno $139.8 \\, kg$.\n\n### [[Splošne Formule]]\n- **Navor (moment sile):** $M \u003d F \\cdot r_{\\perp}$\n- **Pogoj za statično ravnovesje:**\n  - Translacijsko: $\\sum \\vec{F} \u003d 0$\n  - Rotacijsko: $\\sum \\vec{M} \u003d 0$\n\n### [[Kritična Analiza]]\n- **Mejni primer stabilnosti:** Izračun predstavlja minimalno maso, potrebno za ohranitev ravnovesja. Vsaka manjša masa bi povzročila, da bi se deska prekucnila.\n- **Izbira osi vrtenja:** Izbira osi na robu strehe je ključna za poenostavitev problema. Če bi os postavili drugam (npr. v težišče deske), bi morali v enačbo vključiti tudi navor sile podlage, kar bi zahtevalo dodaten korak – izračun te sile iz ravnovesja sil. Končni rezultat bi bil seveda enak.\n\n### [[Memorialization]]\n- **27:35:** V predavalnici je na steni ura, ki kaže čas približno 11:35.\n- Predavatelj sistematično razčleni vsak problem na posamezne komponente, kar je ključna strategija za reševanje kompleksnih fizikalnih nalog. Analiza vsakega telesa posebej preprečuje napake.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3883,
+      "parts": [{
+        "text": "# [[Dinamika in Statika: Sistemi Teles in Ravnovesje]]\n\n## [[Problem 1: Sistem Treh Teles]]\n\n### [[Postavitev Problema]]\n\nAnaliziramo gibanje sistema treh teles"
+      }, {
+        "text": " z masami $m_1$, $m_2$ in $m_3$. Telesa so med seboj povezana"
+      }, {
+        "text": " z lahkimi, neraztegljivimi vrvicami, ki tečejo preko lahkih škrip"
+      }, {
+        "text": "cev.\n- **Telo 1** visi navpično.\n- **Telo 2** dr"
+      }, {
+        "text": "si po vodoravni podlagi.\n- **Telo 3** drsi po klancu z"
+      }, {
+        "text": " naklonskim kotom $\\phi \u003d 30^\\circ$.\n\nCilj naloge je izračunati"
+      }, {
+        "text": " pospešek sistema ($a$) in sile v obeh vrvicah ($F_{v1}$ in $F_{"
+      }, {
+        "text": "v2}$). Predpostavimo smer gibanja, kot je prikazano na skici (telo 1 se sp"
+      }, {
+        "text": "ušča, telesi 2 in 3 se pomikata v desno).\n\n### [[Analiza Sil po Telesih]]\n\nProblem rešujemo tako, da vsako telo obravnavamo posebej in zapišemo gib"
+      }, {
+        "text": "alne enačbe (drugi Newtonov zakon) za vsako izmed njih.\n\n#### [[Telo 1 (Viseče)]]\nNa prvo telo, ki visi, delujeta dve sili v navpični smeri"
+      }, {
+        "text": ":\n1.  **Sila teže:** $F_{g1} \u003d m_1g$, us"
+      }, {
+        "text": "merjena navzdol.\n2.  **Sila vrvice 1:** $F_{v1}$,"
+      }, {
+        "text": " usmerjena navzgor.\n\nZa smer gibanja predpostavimo, da se telo spušča. Post"
+      }, {
+        "text": "avimo koordinatni sistem z osjo $y$ usmerjeno navzdol. Gibalna enačba"
+      }, {
+        "text": " je:\n$$ \\sum F_y \u003d m_1a $$\n$$ F_{g1} - F"
+      }, {
+        "text": "_{v1} \u003d m_1a $$\n\n"
+      }, {
+        "text": " \u003c!-- Placeholder za sliko diagrama sil za Telo 1 --\u003e\n\n#### [[Telo 2 (Drsenje po ravnini)]]\nNa drugo telo, ki drsi po vodoravni podlagi"
+      }, {
+        "text": ", deluje več sil:\n- **V vodoravni smeri (os x):**\n  1. **"
+      }, {
+        "text": "Sila vrvice 1:** $F\u0027_{v1}$, vleče v desno.\n  2. **"
+      }, {
+        "text": "Sila vrvice 2:** $F_{v2}$, vleče v levo.\n  3. **S"
+      }, {
+        "text": "ila trenja:** $F_{tr2}$, nasprotuje gibanju, torej v levo.\n-"
+      }, {
+        "text": " **V navpični smeri (os y):**\n  1. **Sila teže:** $F_{g2"
+      }, {
+        "text": "}$, navzdol.\n  2. **Sila podlage (pravokotna):** $F_{n"
+      }, {
+        "text": "2}$, navzgor.\n\nGibalne enačbe:\n- **Smer x:**\n  $$ \\sum F"
+      }, {
+        "text": "_x \u003d m_2a $$\n  $$ F\u0027_{v1} - F_{v2} - F"
+      }, {
+        "text": "_{tr2} \u003d m_2a $$\n- **Smer y:** Ker ni gibanja v navpični smeri"
+      }, {
+        "text": ", je vsota sil enaka nič.\n  $$ \\sum F_y \u003d 0 $$\n  $$"
+      }, {
+        "text": " F_{n2} - F_{g2} \u003d 0 \\implies F_{n2} \u003d F_{g2}"
+      }, {
+        "text": " \u003d m_2g $$\n\nSila trenja je $F_{tr2} \u003d k \\cdot F_{n2}"
+      }, {
+        "text": " \u003d k \\cdot m_2g$.\n\n"
+      }, {
+        "text": " \u003c!-- Placeholder za sliko diagrama sil za Telo 2 --\u003e\n\n#### [[Telo 3 (Drsenje po klancu)]]\nNa tretje telo na klancu delujejo sile,"
+      }, {
+        "text": " ki jih analiziramo v koordinatnem sistemu, zasukanem vzporedno s klancem:"
+      }, {
+        "text": "\n- **Vzporedno s klancem (os x\u0027):**\n  1. **Sila vrvice "
+      }, {
+        "text": "2:** $F\u0027_{v2}$, vleče navzgor po klancu.\n  2. **Sila trenja"
+      }, {
+        "text": ":** $F_{tr3}$, nasprotuje gibanju, torej navzdol po klancu.\n"
+      }, {
+        "text": "  3. **Dinamična komponenta teže:** $F_{d3} \u003d m_3g \\sin\\"
+      }, {
+        "text": "phi$, navzdol po klancu.\n- **Pravokotno na klanec (os y\u0027):**"
+      }, {
+        "text": "\n  1. **Statična komponenta teže:** $F_{s3} \u003d m_3g"
+      }, {
+        "text": " \\cos\\phi$, pravokotno v podlago.\n  2. **Sila podlage ("
+      }, {
+        "text": "pravokotna):** $F_{n3}$, pravokotno iz podlage.\n\nGibalne ena"
+      }, {
+        "text": "čbe:\n- **Smer x\u0027:**\n  $$ \\sum F_{x\u0027} \u003d m_3a $$"
+      }, {
+        "text": "\n  $$ F\u0027_{v2} - F_{tr3} - F_{d3} \u003d m_3"
+      }, {
+        "text": "a $$\n- **Smer y\u0027:**\n  $$ \\sum F_{y\u0027} \u003d 0 $$\n"
+      }, {
+        "text": "  $$ F_{n3} - F_{s3} \u003d 0 \\implies F_{n3} \u003d"
+      }, {
+        "text": " F_{s3} \u003d m_3g \\cos\\phi $$\n\nSila trenja je $F_{"
+      }, {
+        "text": "tr3} \u003d k \\cdot F_{n3} \u003d k \\cdot m_3g \\cos\\phi"
+      }, {
+        "text": "$.\n\n"
+      }, {
+        "text": " \u003c!-- Placeholder za"
+      }, {
+        "text": " sliko diagrama sil za Telo 3 --\u003e\n\n**Note to Self:** Ker sta vrvici in škripca"
+      }, {
+        "text": " lahka, se sila po celotni dolžini vrvice ohranja. To pomeni:\n"
+      }, {
+        "text": "- $|F_{v1}| \u003d |F\u0027_{v1}|$\n- $|F_{v2}| \u003d |"
+      }, {
+        "text": "F\u0027_{v2}|$\nTo nam omogoča, da enačbe združimo v enoten sistem.\n\n###"
+      }, {
+        "text": " [[Sistemska Enačba in Rešitev]]\n\nZ združitvijo vseh treh gib"
+      }, {
+        "text": "alnih enačb za smer gibanja dobimo eno sistemsko enačbo. Sile vrv"
+      }, {
+        "text": "ic se med seboj odštejejo, saj so notranje sile sistema.\n\n1.  $m"
+      }, {
+        "text": "_1g - F_{v1} \u003d m_1a$\n2.  $F_{v1}"
+      }, {
+        "text": " - F_{v2} - k m_2g \u003d m_2a$\n3.  $F"
+      }, {
+        "text": "_{v2} - k m_3g \\cos\\phi - m_3g \\sin\\phi \u003d m_"
+      }, {
+        "text": "3a$\n\nČe seštejemo vse tri enačbe, dobimo:\n$$ m_1g"
+      }, {
+        "text": " - k m_2g - k m_3g \\cos\\phi - m_3g \\sin\\phi \u003d"
+      }, {
+        "text": " (m_1+m_2+m_3)a $$\n\nIzrazimo pospešek $a$:\n$$"
+      }, {
+        "text": " a \u003d \\frac{g(m_1 - k m_2 - m_3(k \\cos\\phi + \\"
+      }, {
+        "text": "sin\\phi))}{m_1+m_2+m_3} $$\n\nZ vstavljanjem numer"
+      }, {
+        "text": "ičnih vrednosti ($m_1\u003dm_2\u003dm_3\u003dm\u003d1kg$, $g"
+      }, {
+        "text": "\u003d9.81 m/s^2$, $k\u003d0.1$, $\\phi\u003d30^\\circ$)"
+      }, {
+        "text": " dobimo:\n$$ a \u003d \\frac{9.81(1 - 0.1 \\cdot 1 -"
+      }, {
+        "text": " 1(0.1 \\cos30^\\circ + \\sin30^\\circ))}{1+1+1"
+      }, {
+        "text": "} \\approx 1.025 \\, m/s^2 $$\n\nSile v vrvicah"
+      }, {
+        "text": " izračunamo z vstavljanjem pospeška nazaj v enačbe za posamezna telesa:"
+      }, {
+        "text": "\n- **Sila vrvice 1:**\n  $$ F_{v1} \u003d m_1g - m_"
+      }, {
+        "text": "1a \u003d m_1(g-a) \\approx 1(9.81 - 1.0"
+      }, {
+        "text": "25) \\approx 8.78 N \\approx 9N $$\n- **Sila vrv"
+      }, {
+        "text": "ice 2:**\n  $$ F_{v2} \u003d F_{v1} - k m_2g"
+      }, {
+        "text": " - m_2a \\approx 8.78 - 0.1 \\cdot 1 \\cdot "
+      }, {
+        "text": "9.81 - 1 \\cdot 1.025 \\approx 6.77 N \\approx 7"
+      }, {
+        "text": "N $$\n\n### [[Splošne Formule]]\n- **Drugi Newtonov zakon:** $\\sum \\vec{"
+      }, {
+        "text": "F} \u003d m\\vec{a}$\n- **Sila trenja (dinamično):** $F_{tr"
+      }, {
+        "text": "} \u003d k \\cdot F_n$\n- **Komponente sile teže na klancu:**\n  "
+      }, {
+        "text": "- Dinamična (vzporedna): $F_d \u003d mg \\sin\\phi$\n  -"
+      }, {
+        "text": " Statična (pravokotna): $F_s \u003d mg \\cos\\phi$\n\n### [[Kritična Analiza]]\n**Kaj če predpostavimo napačno smer gibanja?**\nPredavatelj je"
+      }, {
+        "text": " omenil, da če bi predpostavili obratno smer gibanja (v levo), bi dobili druga"
+      }, {
+        "text": "čno enačbo. Poglejmo, zakaj:\n- Če bi se sistem gibal v levo, bi se"
+      }, {
+        "text": " sile trenja ($F_{tr2}$ in $F_{tr3}$) obrnile in kazale v des"
+      }, {
+        "text": "no.\n- Sistemska enačba bi postala:\n  $$ -m_1g + k"
+      }, {
+        "text": " m_2g + m_3(k \\cos\\phi + \\sin\\phi) \u003d (m_1+"
+      }, {
+        "text": "m_2+m_3)a\u0027 $$\n- Če bi izračunali $a\u0027$, bi dob"
+      }, {
+        "text": "ili negativno vrednost. Negativen predznak pospeška pomeni, da smo smer gibanja predpostavili n"
+      }, {
+        "text": "apačno in da sistem v resnici pospešuje v nasprotni smeri (v desno), kar je"
+      }, {
+        "text": " skladno z našo prvotno, pravilno rešitvijo.\n- **Warning Note:** Pomembno je,"
+      }, {
+        "text": " da pri spremembi predpostavljene smeri gibanja pravilno obrnemo vse vektorje, ki so od"
+      }, {
+        "text": "visni od smeri gibanja, kot je sila trenja. Končni fizikalni rezultat bo vedno konsistent"
+      }, {
+        "text": "en.\n\n***\n\n## [[Problem 2: Ravnovesje Deske na Robu Strehe]]\n\n### [[Postavitev Problema in Teorija]]\nHomogena lesena deska z dolžino $d \u003d 5"
+      }, {
+        "text": ".25 \\, m$ in maso $m_d \u003d 47 \\, kg$ leži na robu rav"
+      }, {
+        "text": "ne strehe, tako da del dolžine $a \u003d 3.3 \\, m$ gleda preko roba.\n\n"
+      }, {
+        "text": "**Naloga:** Kolikšno najmanjšo maso uteži ($m_m$) moramo postaviti na"
+      }, {
+        "text": " konec deske, ki je na strehi, da bo moški z maso $m_č \u003d "
+      }, {
+        "text": "73 \\, kg$ lahko varno prehodil desko do skrajnega zunanjega roba?\n\nProblem"
+      }, {
+        "text": " obravnavamo s pogoji za **statično ravnovesje**. Telo je v ravnovesju,"
+      }, {
+        "text": " če je vsota vseh zunanjih sil in vsota vseh navorov enaka nič.\n"
+      }, {
+        "text": "$$ \\sum \\vec{F}_{zun} \u003d 0 \\quad \\text{in} \\quad \\sum \\"
+      }, {
+        "text": "vec{M}_{zun} \u003d 0 $$\nKer nas zanima mejni primer, ko se deska skor"
+      }, {
+        "text": "aj prekucne, bomo analizirali ravnovesje navorov (momentov).\n\n### [[Analiza Navorov]]\nZa os vrtenja strateško izberemo točko, kjer je deska pod"
+      }, {
+        "text": "prta – **rob strehe**. S to izbiro se izognemo potrebi po računanju sile pod"
+      }, {
+        "text": "lage, saj je njen navor glede na to os enak nič (ročica je enaka nič).\n\nV"
+      }, {
+        "text": " mejnem primeru, ko moški stoji na skrajnem desnem robu deske, mora biti vs"
+      }, {
+        "text": "ota navorov, ki desko vrtijo v smeri urinega kazalca, enaka vsoti navorov,"
+      }, {
+        "text": " ki jo vrtijo v nasprotni smeri.\n\n**Sile, ki povzročajo navore:**"
+      }, {
+        "text": "\n1.  **Sila teže moškega ($F_{gč}$):** Vrti desko v smeri"
+      }, {
+        "text": " urinega kazalca (pozitiven navor v naši konvenciji). Ročica je $"
+      }, {
+        "text": "r_č \u003d a$.\n2.  **Sila teže deske ($F_{gd}$):** Des"
+      }, {
+        "text": "ka je homogena, zato njena teža prijemlje v težišču, ki je na polovici dolžine"
+      }, {
+        "text": " ($d/2$). Ta navor prav tako vrti v smeri urinega kazalca. Ročica je"
+      }, {
+        "text": " razdalja od osi (roba) do težišča deske:\n    $$ r_d \u003d"
+      }, {
+        "text": " a - \\frac{d}{2} $$\n    *Opomba:* Del deske na strehi je dol"
+      }, {
+        "text": "g $d-a$. Težišče je od levega roba oddaljeno za $d/2"
+      }, {
+        "text": "$. Razdalja od osi do težišča je torej $(d/2) - (d-"
+      }, {
+        "text": "a) \u003d a - d/2$.\n3.  **Sila teže uteži ($F_{gm"
+      }, {
+        "text": "}$):** Vrti desko v nasprotni smeri urinega kazalca (negativen navor). U"
+      }, {
+        "text": "tež je na skrajnem levem koncu. Ročica je $r_m \u003d d-a"
+      }, {
+        "text": "$.\n\n**Enačba za ravnovesje navorov:**\n$$ \\sum M \u003d 0 $$\n"
+      }, {
+        "text": "$$ M_{č} + M_{d} - M_{m} \u003d 0 $$\n$$ (F_{gč"
+      }, {
+        "text": "} \\cdot r_č) + (F_{gd} \\cdot r_d) - (F_{gm"
+      }, {
+        "text": "} \\cdot r_m) \u003d 0 $$\n$$ (m_č g \\cdot a) + ("
+      }, {
+        "text": "m_d g \\cdot (a - \\frac{d}{2})) - (m_m g \\cdot (d-"
+      }, {
+        "text": "a)) \u003d 0 $$\n\n### [[Rešitev]]\nIz zgornje enačbe izrazimo is"
+      }, {
+        "text": "kano maso $m_m$. Faktor $g$ lahko pokrajšamo.\n$$ m_m ("
+      }, {
+        "text": "d-a) \u003d m_č a + m_d (a - \\frac{d}{2}) $$"
+      }, {
+        "text": "\n$$ m_m \u003d \\frac{m_č a + m_d (a - \\frac{d"
+      }, {
+        "text": "}{2})}{d-a} $$\n\nVstavimo numerične vrednosti:\n- $d \u003d "
+      }, {
+        "text": "5.25 \\, m$\n- $a \u003d 3.3 \\, m$\n- $m_"
+      }, {
+        "text": "d \u003d 47 \\, kg$\n- $m_č \u003d 73 \\, kg$\n\n$$ m"
+      }, {
+        "text": "_m \u003d \\frac{73 \\cdot 3.3 + 47 \\cdot (3.3 - \\frac"
+      }, {
+        "text": "{5.25}{2})}{5.25 - 3.3} $$\n$$ m_m \u003d \\frac"
+      }, {
+        "text": "{240.9 + 47 \\cdot (0.675)}{1.95}"
+      }, {
+        "text": " $$\n$$ m_m \u003d \\frac{240.9 + 31.725}{"
+      }, {
+        "text": "1.95} \u003d \\frac{272.625}{1.95} \\approx 1"
+      }, {
+        "text": "39.8 \\, kg $$\n\nMinimalna masa uteži mora biti približno $139.8 \\,"
+      }, {
+        "text": " kg$.\n\n### [[Splošne Formule]]\n- **Navor (moment sile):** $M"
+      }, {
+        "text": " \u003d F \\cdot r_{\\perp}$\n- **Pogoj za statično ravnovesje:**\n  - Transl"
+      }, {
+        "text": "acijsko: $\\sum \\vec{F} \u003d 0$\n  - Rotacijsko: $\\sum \\vec{"
+      }, {
+        "text": "M} \u003d 0$\n\n### [[Kritična Analiza]]\n- **Mejni primer stabilnosti:** Iz"
+      }, {
+        "text": "račun predstavlja minimalno maso, potrebno za ohranitev ravnovesja. Vsaka manjša masa bi"
+      }, {
+        "text": " povzročila, da bi se deska prekucnila.\n- **Izbira osi vrtenja"
+      }, {
+        "text": ":** Izbira osi na robu strehe je ključna za poenostavitev problema. Če bi os"
+      }, {
+        "text": " postavili drugam (npr. v težišče deske), bi morali v enačbo vključiti"
+      }, {
+        "text": " tudi navor sile podlage, kar bi zahtevalo dodaten korak – izračun te sile iz rav"
+      }, {
+        "text": "novesja sil. Končni rezultat bi bil seveda enak.\n\n### [[Memorialization]]\n- **2"
+      }, {
+        "text": "7:35:** V predavalnici je na steni ura, ki kaže čas približno 11:35."
+      }, {
+        "text": "\n- Predavatelj sistematično razčleni vsak problem na posamezne komponente, kar je"
+      }, {
+        "text": " ključna strategija za reševanje kompleksnih fizikalnih nalog. Analiza vsakega telesa pose"
+      }, {
+        "text": "bej preprečuje napake."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

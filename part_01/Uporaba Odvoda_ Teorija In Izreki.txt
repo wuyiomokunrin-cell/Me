@@ -1,0 +1,643 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1eDH4pORfmYPYZzhILQPLvSfKVf4RsQRF"
+      },
+      "role": "user",
+      "tokenCount": 134579
+    }, {
+      "driveAudio": {
+        "id": "1ZtGzlhKrHvu84dUgfrS8tGFZ7dlvDa7N"
+      },
+      "role": "user",
+      "tokenCount": 128172
+    }, {
+      "driveImage": {
+        "id": "1FRwjfn6vPUX9ByEU-dutXUWCBC6dzBDo"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1EK6DvA2reyepTYFysMUuWzrrsa3H9aXG"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1Y7MbqWlsFBLS7f_NcdJXlNVlQpIMsoT8"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1o4YNv-Sxh4YPf2FQ6KTY-upn_WYNMODg"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1R75Y5s789TRRa2NFo9mxaePyTXgFB0sX"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1E6sHM_lHhBdc3KKi7Y_aby7r0XaYaahJ"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1iuP94c6SA0t4S1cJenL1y9LvLbZCN2tx"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1zgP-WNjxvJJcFzsm502nkridnI8Y4Zok"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "text": "**Examining the Core Task**\n\nI\u0027ve been meticulously analyzing the user\u0027s request, focusing on the core goal: building a robust and comprehensive Obsidian note. I\u0027m breaking down the inputs to grasp the user\u0027s implicit needs and constraints, ensuring the note serves its intended purpose effectively.\n\n\n**Synthesizing Source Data**\n\nI\u0027ve made significant progress in structuring the note. The lecture materials are now parsed, and I\u0027m beginning to integrate the Slovenian transcript with the handwritten mathematical derivations. My focus is to create a clear, logical flow, incorporating explanations and warnings where necessary. I\u0027m prioritizing accuracy and adherence to LaTeX formatting for the mathematical expressions. Wikilinks are implemented where relevant.\n\n\n**Integrating Linguistic Elements**\n\nI\u0027m now incorporating Slovenian language considerations. I\u0027m building on the existing structure by adding the Slovenian terminology into the note content. I\u0027ll translate key terms like \"differential,\" \"derivative,\" and the names of the theorems, ensuring the note is accessible to a Slovenian audience.\n\n\n**Developing Content: Derivatives**\n\nI\u0027m expanding the note\u0027s section on the application of derivatives, specifically focusing on differentials. I\u0027ve formulated the core concepts and the formula, which I derived from the derivative definition. Also, I\u0027ve started including a concrete example illustrating how a function, like ln(x), can be linearly approximated. Next, I\u0027ll integrate the example in a way that shows the practical application of the concepts. I\u0027m focusing on adding internal checks to the content.\n\n\n**Refining Mathematical Examples**\n\nI\u0027m currently working to expand and refine the mathematical examples within the note. I\u0027ve corrected a slight numerical error in Example 1b, ensuring clarity and accuracy in the setup. Additionally, I\u0027m developing Example 2, focusing on the approximation of $(1+\\epsilon)^{-1/2}$ using binomial expansion, and I\u0027ve started the section on Mean Value Theorems, including Rolle\u0027s and Lagrange\u0027s theorems, with illustrative sketches and problem-solving strategies. I\u0027m focusing on rigorous proofs and clear explanations.\n\n\n**Calculating with L\u0027Hopital**\n\nI\u0027m now expanding the note with examples of L\u0027Hopital\u0027s rule. I\u0027ve formulated the core principles and conditions, focusing on the $\\frac{0}{0}$ and $\\frac{\\infty}{\\infty}$ cases. I\u0027m adding examples like the calculation of $\\lim_{x\\to 0} \\frac{\\ln(1+x) - \\sin x}{x}$. I am making sure to note the iterative application of the rule. I\u0027m carefully transcribing and clarifying the messy handwritten steps, for instance, dealing with $(1+2x)^{1/x^2}$ and its transformation to an exponential limit. I am paying close attention to any algebraic errors.\n\n\n**Developing Taylor Approximations**\n\nI\u0027m now diving into the Taylor Formula section. I\u0027ve sketched the core concept of approximating functions with polynomials and defined the structure, including the Taylor polynomial and the Lagrange remainder. Specifically, I\u0027m working through an example, focusing on the approximation of $\\cos^2 x$ around $0$ up to the 5th order. The tricky part lies in efficiently calculating the derivatives of $\\cos^2 x$, so I\u0027m using the identity $\\cos^2 x \u003d \\frac{1+\\cos(2x)}{2}$. After calculating the derivatives, I\u0027ll evaluate the polynomial and estimate the error within the specified range.\n\n\n**Emphasizing Derivative Calculation**\n\nI\u0027m now focusing on the Taylor approximation example, and I must highlight a crucial \"Tutor Tip\". The note uses $f(x) \u003d \\cos^2 x$, and instead of directly calculating the derivatives, the double angle identity $\\cos^2 x \u003d \\frac{1}{2}(1+\\cos 2x)$ significantly simplifies the process. It\u0027s a key shortcut to emphasize. I\u0027m prioritizing mathematical correctness and clarity. I will need to check LaTeX formatting, and I\u0027ll include the relevant Slovenian terminology as I revise.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Examining the Core Task**\n\nI\u0027ve been meticulously analyzing the user\u0027s request, focusing on the core goal: building a robust and comprehensive Obsidian note. I\u0027m breaking down the inputs to grasp the user\u0027s implicit needs and constraints, ensuring the note serves its intended purpose effectively.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Source Data**\n\nI\u0027ve made significant progress in structuring the note. The lecture materials are now parsed, and I\u0027m beginning to integrate the Slovenian transcript with the handwritten mathematical derivations. My focus is to create a clear, logical flow, incorporating explanations and warnings where necessary. I\u0027m prioritizing accuracy and adherence to LaTeX formatting for the mathematical expressions. Wikilinks are implemented where relevant.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Linguistic Elements**\n\nI\u0027m now incorporating Slovenian language considerations. I\u0027m building on the existing structure by adding the Slovenian terminology into the note content. I\u0027ll translate key terms like \"differential,\" \"derivative,\" and the names of the theorems, ensuring the note is accessible to a Slovenian audience.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Content: Derivatives**\n\nI\u0027m expanding the note\u0027s section on the application of derivatives, specifically focusing on differentials. I\u0027ve formulated the core concepts and the formula, which I derived from the derivative definition. Also, I\u0027ve started including a concrete example illustrating how a function, like ln(x), can be linearly approximated. Next, I\u0027ll integrate the example in a way that shows the practical application of the concepts. I\u0027m focusing on adding internal checks to the content.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Mathematical Examples**\n\nI\u0027m currently working to expand and refine the mathematical examples within the note. I\u0027ve corrected a slight numerical error in Example 1b, ensuring clarity and accuracy in the setup. Additionally, I\u0027m developing Example 2, focusing on the approximation of $(1+\\epsilon)^{-1/2}$ using binomial expansion, and I\u0027ve started the section on Mean Value Theorems, including Rolle\u0027s and Lagrange\u0027s theorems, with illustrative sketches and problem-solving strategies. I\u0027m focusing on rigorous proofs and clear explanations.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Calculating with L\u0027Hopital**\n\nI\u0027m now expanding the note with examples of L\u0027Hopital\u0027s rule. I\u0027ve formulated the core principles and conditions, focusing on the $\\frac{0}{0}$ and $\\frac{\\infty}{\\infty}$ cases. I\u0027m adding examples like the calculation of $\\lim_{x\\to 0} \\frac{\\ln(1+x) - \\sin x}{x}$. I am making sure to note the iterative application of the rule. I\u0027m carefully transcribing and clarifying the messy handwritten steps, for instance, dealing with $(1+2x)^{1/x^2}$ and its transformation to an exponential limit. I am paying close attention to any algebraic errors.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Taylor Approximations**\n\nI\u0027m now diving into the Taylor Formula section. I\u0027ve sketched the core concept of approximating functions with polynomials and defined the structure, including the Taylor polynomial and the Lagrange remainder. Specifically, I\u0027m working through an example, focusing on the approximation of $\\cos^2 x$ around $0$ up to the 5th order. The tricky part lies in efficiently calculating the derivatives of $\\cos^2 x$, so I\u0027m using the identity $\\cos^2 x \u003d \\frac{1+\\cos(2x)}{2}$. After calculating the derivatives, I\u0027ll evaluate the polynomial and estimate the error within the specified range.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Emphasizing Derivative Calculation**\n\nI\u0027m now focusing on the Taylor approximation example, and I must highlight a crucial \"Tutor Tip\". The note uses $f(x) \u003d \\cos^2 x$, and instead of directly calculating the derivatives, the double angle identity $\\cos^2 x \u003d \\frac{1}{2}(1+\\cos 2x)$ significantly simplifies the process. It\u0027s a key shortcut to emphasize. I\u0027m prioritizing mathematical correctness and clarity. I will need to check LaTeX formatting, and I\u0027ll include the relevant Slovenian terminology as I revise.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Tukaj so urejeni in strukturirani zapiski predavanj, pripravljeni za tvoj Obsidian vault. Zapiski sledijo kronološkemu poteku predavanja in so obogateni s kritičnimi pojasnili ter izpeljavami, kot bi jih predstavil inštruktor.\n\n***\n\n# [[Uporaba odvoda]]\n\nTema zajema praktično uporabo diferencialnega računa: od linearnih približkov (diferencial), preko izrekov o srednji vrednosti (Rolle, Lagrange), do računanja limit (L\u0027Hopital) in aproksimacije funkcij s polinomi (Taylor).\n\n---\n\n## 1. Diferencial in linearna aproksimacija\n\nOsnovna ideja diferenciala je, da lahko vrednost funkcije v točki blizu $a$ ocenimo s pomočjo tangente v točki $a$.\n\n**Formula za približek:**\n$$ f(a+h) \\approx f(a) + f\u0027(a) \\cdot h $$\n\nKjer je:\n*   $a$: točka, kjer vrednost poznamo (lepa točka).\n*   $h$: majhen odmik (napaka).\n*   $f\u0027(a) \\cdot h \u003d df$: diferencial funkcije.\n\n### Primeri uporabe\n\n#### a) Približek za $\\ln(1.25)$\n*   **Funkcija:** $f(x) \u003d \\ln x$\n*   **Točka:** $a \u003d 1$ (ker vemo, da je $\\ln 1 \u003d 0$)\n*   **Odmik:** $h \u003d 0.25$\n*   **Odvod:** $f\u0027(x) \u003d \\frac{1}{x} \\Rightarrow f\u0027(1) \u003d 1$\n\n$$ \\ln(1.25) \\approx \\ln(1) + \\frac{1}{1} \\cdot 0.25 \u003d 0 + 0.25 \u003d 0.25 $$\n\n#### b) Približek za $\\sqrt{24.8}$\n*   **Funkcija:** $f(x) \u003d \\sqrt{x}$\n*   **Točka:** $a \u003d 25$ (najbližji popoln kvadrat)\n*   **Odmik:** $h \u003d 24.8 - 25 \u003d -0.2$\n*   **Odvod:** $f\u0027(x) \u003d \\frac{1}{2\\sqrt{x}} \\Rightarrow f\u0027(25) \u003d \\frac{1}{10}$\n\n$$ \\sqrt{24.8} \\approx 5 + \\frac{1}{10} \\cdot (-0.2) \u003d 5 - 0.02 \u003d 4.98 $$\n\n\u003e [!TIP] Nasvet pri izbiri točke $a$\n\u003e Vedno izberi točko $a$ tako, da znaš $f(a)$ in $f\u0027(a)$ izračunati \"na pamet\" in da je $h$ čim manjše število.\n\n#### c) Splošni približek za $\\frac{1}{\\sqrt{1+\\epsilon}}$\nDokazujemo formulo za majhne $\\epsilon$:\n$$ \\frac{1}{\\sqrt{1+\\epsilon}} \\approx 1 - \\frac{\\epsilon}{2} $$\n\n*   **Funkcija:** $f(x) \u003d \\frac{1}{\\sqrt{x}} \u003d x^{-\\frac{1}{2}}$\n*   **Točka:** $a \u003d 1$\n*   **Odmik:** $h \u003d \\epsilon$\n*   **Odvod:** $f\u0027(x) \u003d -\\frac{1}{2}x^{-\\frac{3}{2}} \\Rightarrow f\u0027(1) \u003d -\\frac{1}{2}$\n\n$$ f(1+\\epsilon) \\approx f(1) + f\u0027(1)\\cdot \\epsilon \u003d 1 - \\frac{1}{2}\\epsilon $$\n\n---\n\n## 2. [[Izreki o srednji vrednosti]]\n\nTi izreki povezujejo vrednosti funkcije z njenim odvodom na intervalu.\n\n### 2.1 Rolleov izrek\nČe je funkcija $f$ zvezna na $[a,b]$, odvedljiva na $(a,b)$ in velja $f(a) \u003d f(b)$, potem obstaja vsaj ena točka $c \\in (a,b)$, kjer je tangenta vodoravna:\n$$ \\exists c \\in (a,b): f\u0027(c) \u003d 0 $$\n\n### 2.2 Lagrangeov izrek\nPosplošitev Rolleovega izreka. Naklon sekante skozi $A$ in $B$ je enak naklonu tangente v neki vmesni točki $c$.\n$$ f(b) - f(a) \u003d f\u0027(c) \\cdot (b-a) $$\noziroma:\n$$ \\frac{f(b)-f(a)}{b-a} \u003d f\u0027(c) $$\n\n### Uporaba pri dokazovanju neenakosti in identitet\n\n#### Primer A: Dokaz neenakosti $\\ln(x+1) \\le x$\nDokaži, da za $x \\in [0, \\infty)$ velja zgornja neenakost.\n\n**Metoda s pomočjo funkcije:**\n1.  Definiramo $f(x) \u003d x - \\ln(x+1)$.\n2.  Preverimo rob: $f(0) \u003d 0 - \\ln 1 \u003d 0$.\n3.  Odvajamo: $f\u0027(x) \u003d 1 - \\frac{1}{x+1} \u003d \\frac{x+1-1}{x+1} \u003d \\frac{x}{x+1}$.\n4.  **Analiza:** Za $x \\ge 0$ je $f\u0027(x) \\ge 0$. Funkcija je naraščajoča.\n5.  **Sklep:** Ker startamo pri 0 in funkcija raste, je $f(x) \\ge 0$ za vse $x \\ge 0$.\n    $$ x - \\ln(x+1) \\ge 0 \\Rightarrow x \\ge \\ln(x+1) $$\n\n\u003e [!NOTE] Alternativa z Lagrangeom\n\u003e Lahko bi vzeli $g(t) \u003d \\ln(1+t)$ na intervalu $[0, x]$.\n\u003e $g(x) - g(0) \u003d g\u0027(c)(x-0) \\Rightarrow \\ln(1+x) \u003d \\frac{1}{1+c} \\cdot x$.\n\u003e Ker je $c \u003e 0$, je $\\frac{1}{1+c} \u003c 1$, torej $\\ln(1+x) \u003c x$.\n\n#### Primer B: Konstantna funkcija\nDokaži: $\\arcsin x + \\arccos x \u003d \\frac{\\pi}{2}$ za $\\forall x \\in [-1, 1]$.\n\n**Postopek:**\n1.  Definiraj $f(x) \u003d \\arcsin x + \\arccos x$.\n2.  Odvajaj:\n    $$ f\u0027(x) \u003d \\frac{1}{\\sqrt{1-x^2}} - \\frac{1}{\\sqrt{1-x^2}} \u003d 0 $$\n3.  Če je odvod povsod 0, je funkcija **konstanta**.\n4.  Vstavi poljubno točko (npr. $x\u003d0$) za določitev konstante:\n    $$ f(0) \u003d \\arcsin 0 + \\arccos 0 \u003d 0 + \\frac{\\pi}{2} \u003d \\frac{\\pi}{2} $$\n5.  Sklep: $f(x) \u003d \\frac{\\pi}{2}$ za vse $x$.\n\n#### Primer C: Lipschitzova lastnost za arctan\nDokaži: $|\\arctan b - \\arctan a| \\le |b-a|$.\n\nUporabimo Lagrangeov izrek na funkciji $f(x) \u003d \\arctan x$:\n$$ \\frac{\\arctan b - \\arctan a}{b-a} \u003d f\u0027(c) \u003d \\frac{1}{1+c^2} $$\nKer je $c^2 \\ge 0$, je imenovalec $1+c^2 \\ge 1$, ulomek pa $\\le 1$.\nSledi:\n$$ \\left| \\frac{\\arctan b - \\arctan a}{b-a} \\right| \\le 1 \\Rightarrow |\\arctan b - \\arctan a| \\le |b-a| $$\n\n---\n\n## 3. [[L\u0027Hopitalovo pravilo]]\n\nUporablja se za računanje limit oblike $\\frac{0}{0}$ ali $\\frac{\\infty}{\\infty}$.\n$$ \\lim_{x \\to a} \\frac{f(x)}{g(x)} \u003d \\lim_{x \\to a} \\frac{f\u0027(x)}{g\u0027(x)} $$\n\n\u003e [!WARNING] Pozor pri odvajanju\n\u003e Ne odvajaj kot kvocient! Odvajaj števec posebej in imenovalec posebej.\n\n### Primeri nalog\n\n1.  **Limit s trig in exp funkcijami ($\\frac{0}{0}$):**\n    $$ \\lim_{x \\to 0} \\frac{x^2 + e^{x^3} - 1}{\\ln(1+x) - \\sin x} $$\n    *   Uporabi L\u0027Hopitala večkrat (LH), dokler imenovalec ni več 0 ali pa se da pokrajšati.\n    *   *Pozor:* Pri odvajanju $e^{x^3}$ ne pozabi verižnega pravila: $e^{x^3} \\cdot 3x^2$.\n\n2.  **Limit $0 \\cdot \\infty$:**\n    $$ \\lim_{x \\to 0} x \\ln x $$\n    *   Preoblikuj v ulomek: $\\lim_{x \\to 0} \\frac{\\ln x}{\\frac{1}{x}}$ (tip $\\frac{\\infty}{\\infty}$).\n    *   Odvajaj: $\\frac{1/x}{-1/x^2} \u003d -x \\to 0$.\n\n3.  **Limit $1^\\infty$ (eksponentni tip):**\n    $$ \\lim_{x \\to 0} (1+2x)^{\\frac{1}{x^2}} $$\n    *   **Trik:** Uporabi $A^B \u003d e^{B \\ln A}$.\n    *   Limitiraš eksponent: $\\lim_{x \\to 0} \\frac{\\ln(1+2x)}{x^2}$.\n    *   Uporabi L\u0027Hopitala na eksponentu.\n\n---\n\n## 4. [[Taylorjeva vrsta]] in Taylorjev polinom\n\nVsako (dovolj lepo) funkcijo lahko v okolici točke $a$ aproksimiramo s polinomom.\n\n**Formula:**\n$$ f(x) \u003d Q_n(x) + R_n(x) $$\n$$ Q_n(x) \u003d f(a) + \\frac{f\u0027(a)}{1!}(x-a) + \\frac{f\u0027\u0027(a)}{2!}(x-a)^2 + \\dots + \\frac{f^{(n)}(a)}{n!}(x-a)^n $$\n\n**Ostanek (napaka) v Lagrangeovi obliki:**\n$$ R_n(x) \u003d \\frac{f^{(n+1)}(\\xi)}{(n+1)!}(x-a)^{n+1}, \\quad \\xi \\in (a, x) $$\n\n### Naloga: Taylorjev polinom za $f(x) \u003d \\cos^2 x$\nRazvij funkcijo v Taylorjev polinom stopnje 5 okoli točke $a\u003d0$ in oceni napako na intervalu $[-\\frac{\\pi}{4}, \\frac{\\pi}{4}]$.\n\n**1. Korak: Poenostavitev funkcije za odvajanje**\nNamesto, da odvajaš $\\cos^2 x$ s verižnim pravilom (kar hitro postane grdo), uporabi formulo za dvojni kot:\n$$ f(x) \u003d \\cos^2 x \u003d \\frac{1 + \\cos(2x)}{2} \u003d \\frac{1}{2} + \\frac{1}{2}\\cos(2x) $$\n\n**2. Korak: Računanje odvodov v $a\u003d0$**\n*   $f(0) \u003d 1$\n*   $f\u0027(x) \u003d -\\sin(2x) \\Rightarrow f\u0027(0) \u003d 0$\n*   $f\u0027\u0027(x) \u003d -2\\cos(2x) \\Rightarrow f\u0027\u0027(0) \u003d -2$\n*   $f\u0027\u0027\u0027(x) \u003d 4\\sin(2x) \\Rightarrow f\u0027\u0027\u0027(0) \u003d 0$\n*   $f^{(4)}(x) \u003d 8\\cos(2x) \\Rightarrow f^{(4)}(0) \u003d 8$\n*   $f^{(5)}(x) \u003d -16\\sin(2x) \\Rightarrow f^{(5)}(0) \u003d 0$\n\n**3. Korak: Zapis polinoma $Q_5(x)$**\nUpoštevamo samo člene, ki niso 0:\n$$ Q_5(x) \u003d 1 + \\frac{-2}{2!}x^2 + \\frac{8}{4!}x^4 $$\n$$ Q_5(x) \u003d 1 - x^2 + \\frac{1}{3}x^4 $$\n\n**4. Korak: Ocena napake $R_5(x)$**\nPotrebujemo 6. odvod za oceno napake pri stopnji $n\u003d5$.\n*   $f^{(6)}(x) \u003d -32\\cos(2x)$\n*   Formula za ostanek:\n    $$ R_5(x) \u003d \\frac{f^{(6)}(\\xi)}{6!}x^6 \u003d \\frac{-32\\cos(2\\xi)}{720}x^6 $$\n*   **Ocena:** Ker iščemo *maksimalno* napako, ocenimo dele navzgor.\n    *   $|\\cos(2\\xi)| \\le 1$\n    *   Maksimalni $x$ na intervalu $[-\\frac{\\pi}{4}, \\frac{\\pi}{4}]$ je $\\frac{\\pi}{4}$.\n    *   Vstavimo v absolutno vrednost:\n    $$ |R_5(x)| \\le \\frac{32}{720} \\cdot \\left(\\frac{\\pi}{4}\\right)^6 \\approx 0.011 $$\n\n\u003e [!INFO] Opomba o stopnjah\n\u003e Čeprav smo zahtevali polinom stopnje 5, je koeficient pri $x^5$ enak 0. To je značilno za sode funkcije (kot je $\\cos^2 x$), ki imajo v razvoju okoli 0 samo sode potence. Napako ocenjujemo s prvim naslednjim odvodom ($n+1\u003d6$).",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3399,
+      "parts": [{
+        "text": "Tukaj so urejeni in strukturirani zapiski predavanj, pripravljeni za tvoj Obsidian vault. Zapiski sledijo kronološkemu poteku predavanja"
+      }, {
+        "text": " in so obogateni s kritičnimi pojasnili ter izpeljavami, kot bi jih predstavil in"
+      }, {
+        "text": "štruktor.\n\n***\n\n# [[Uporaba odvoda]]\n\nTema zajema praktično uporabo diferencial"
+      }, {
+        "text": "nega računa: od linearnih približkov (diferencial), preko izrekov o srednji vred"
+      }, {
+        "text": "nosti (Rolle, Lagrange), do računanja limit (L\u0027Hopital) in aproksimacije funkcij s polin"
+      }, {
+        "text": "omi (Taylor).\n\n---\n\n## 1. Diferencial in linearna aproksimacija\n\nOsnovna ideja diferenciala je,"
+      }, {
+        "text": " da lahko vrednost funkcije v točki blizu $a$ ocenimo s pomočjo tangente v točki $a"
+      }, {
+        "text": "$.\n\n**Formula za približek:**\n$$ f(a+h) \\approx f(a) + f\u0027(a) \\cdot h"
+      }, {
+        "text": " $$\n\nKjer je:\n*   $a$: točka, kjer vrednost poznamo (lepa"
+      }, {
+        "text": " točka).\n*   $h$: majhen odmik (napaka).\n*   $f\u0027(a)"
+      }, {
+        "text": " \\cdot h \u003d df$: diferencial funkcije.\n\n### Primeri uporabe\n\n#### a) Približek za"
+      }, {
+        "text": " $\\ln(1.25)$\n*   **Funkcija:** $f(x) \u003d \\ln x"
+      }, {
+        "text": "$\n*   **Točka:** $a \u003d 1$ (ker vemo, da je $\\ln "
+      }, {
+        "text": "1 \u003d 0$)\n*   **Odmik:** $h \u003d 0.25$\n*"
+      }, {
+        "text": "   **Odvod:** $f\u0027(x) \u003d \\frac{1}{x} \\Rightarrow f\u0027(1) \u003d 1$"
+      }, {
+        "text": "\n\n$$ \\ln(1.25) \\approx \\ln(1) + \\frac{1}{1} \\"
+      }, {
+        "text": "cdot 0.25 \u003d 0 + 0.25 \u003d 0.25 $$\n\n#### b"
+      }, {
+        "text": ") Približek za $\\sqrt{24.8}$\n*   **Funkcija:** $f(x) \u003d \\sqrt{"
+      }, {
+        "text": "x}$\n*   **Točka:** $a \u003d 25$ (najbližji popoln kvadrat)\n*   **O"
+      }, {
+        "text": "dmik:** $h \u003d 24.8 - 25 \u003d -0.2$\n*   **Odvod:** $f"
+      }, {
+        "text": "\u0027(x) \u003d \\frac{1}{2\\sqrt{x}} \\Rightarrow f\u0027(25) \u003d \\"
+      }, {
+        "text": "frac{1}{10}$\n\n$$ \\sqrt{24.8} \\approx 5 + \\frac{1}{10}"
+      }, {
+        "text": " \\cdot (-0.2) \u003d 5 - 0.02 \u003d 4.98 $$\n\n\u003e [!TIP"
+      }, {
+        "text": "] Nasvet pri izbiri točke $a$\n\u003e Vedno izberi točko $a$ tako, da zna"
+      }, {
+        "text": "š $f(a)$ in $f\u0027(a)$ izračunati \"na pamet\" in da je $h$ čim manjše"
+      }, {
+        "text": " število.\n\n#### c) Splošni približek za $\\frac{1}{\\sqrt{1+\\"
+      }, {
+        "text": "epsilon}}$\nDokazujemo formulo za majhne $\\epsilon$:\n$$ \\frac{1}{\\sqrt{1+\\epsilon}}"
+      }, {
+        "text": " \\approx 1 - \\frac{\\epsilon}{2} $$\n\n*   **Funkcija:** $f(x"
+      }, {
+        "text": ") \u003d \\frac{1}{\\sqrt{x}} \u003d x^{-\\frac{1}{2}}$\n*   **Točka:** $"
+      }, {
+        "text": "a \u003d 1$\n*   **Odmik:** $h \u003d \\epsilon$\n*   **Od"
+      }, {
+        "text": "vod:** $f\u0027(x) \u003d -\\frac{1}{2}x^{-\\frac{3}{2}} \\Rightarrow f\u0027(1) \u003d -\\"
+      }, {
+        "text": "frac{1}{2}$\n\n$$ f(1+\\epsilon) \\approx f(1) + f\u0027(1)\\cdot"
+      }, {
+        "text": " \\epsilon \u003d 1 - \\frac{1}{2}\\epsilon $$\n\n---\n\n## 2. [[Izreki o srednji vred"
+      }, {
+        "text": "nosti]]\n\nTi izreki povezujejo vrednosti funkcije z njenim odvodom na intervalu.\n\n### "
+      }, {
+        "text": "2.1 Rolleov izrek\nČe je funkcija $f$ zvezna na $[a,b]$,"
+      }, {
+        "text": " odvedljiva na $(a,b)$ in velja $f(a) \u003d f(b)$, potem"
+      }, {
+        "text": " obstaja vsaj ena točka $c \\in (a,b)$, kjer je tangenta vodoravna:\n$$ \\exists c"
+      }, {
+        "text": " \\in (a,b): f\u0027(c) \u003d 0 $$\n\n### 2.2 Lagrangeov izrek"
+      }, {
+        "text": "\nPosplošitev Rolleovega izreka. Naklon sekante skozi $A$ in $B$ je enak"
+      }, {
+        "text": " naklonu tangente v neki vmesni točki $c$.\n$$ f(b) - f(a) \u003d f\u0027(c)"
+      }, {
+        "text": " \\cdot (b-a) $$\noziroma:\n$$ \\frac{f(b)-f(a)}{"
+      }, {
+        "text": "b-a} \u003d f\u0027(c) $$\n\n### Uporaba pri dokazovanju neenakosti in ident"
+      }, {
+        "text": "itet\n\n#### Primer A: Dokaz neenakosti $\\ln(x+1) \\le x$\nDokaži"
+      }, {
+        "text": ", da za $x \\in [0, \\infty)$ velja zgornja neenakost.\n\n**"
+      }, {
+        "text": "Metoda s pomočjo funkcije:**\n1.  Definiramo $f(x) \u003d x - \\"
+      }, {
+        "text": "ln(x+1)$.\n2.  Preverimo rob: $f(0) \u003d 0 - \\ln "
+      }, {
+        "text": "1 \u003d 0$.\n3.  Odvajamo: $f\u0027(x) \u003d 1 - \\frac{"
+      }, {
+        "text": "1}{x+1} \u003d \\frac{x+1-1}{x+1} \u003d \\frac{x}{x+1}$."
+      }, {
+        "text": "\n4.  **Analiza:** Za $x \\ge 0$ je $f\u0027(x) \\ge 0"
+      }, {
+        "text": "$. Funkcija je naraščajoča.\n5.  **Sklep:** Ker startamo pri 0 in funkcija r"
+      }, {
+        "text": "aste, je $f(x) \\ge 0$ za vse $x \\ge 0$.\n    "
+      }, {
+        "text": "$$ x - \\ln(x+1) \\ge 0 \\Rightarrow x \\ge \\ln(x+1"
+      }, {
+        "text": ") $$\n\n\u003e [!NOTE] Alternativa z Lagrangeom\n\u003e Lahko bi vzeli $g(t) \u003d \\ln("
+      }, {
+        "text": "1+t)$ na intervalu $[0, x]$.\n\u003e $g(x) - g(0) \u003d g\u0027(c)("
+      }, {
+        "text": "x-0) \\Rightarrow \\ln(1+x) \u003d \\frac{1}{1+c} \\cdot x$.\n\u003e Ker"
+      }, {
+        "text": " je $c \u003e 0$, je $\\frac{1}{1+c} \u003c 1$, torej $\\ln(1+"
+      }, {
+        "text": "x) \u003c x$.\n\n#### Primer B: Konstantna funkcija\nDokaži: $\\arcsin x + \\arccos x"
+      }, {
+        "text": " \u003d \\frac{\\pi}{2}$ za $\\forall x \\in [-1, 1]$.\n\n**Postopek:**\n1.  Def"
+      }, {
+        "text": "iniraj $f(x) \u003d \\arcsin x + \\arccos x$.\n2.  Odvajaj:\n"
+      }, {
+        "text": "    $$ f\u0027(x) \u003d \\frac{1}{\\sqrt{1-x^2}} - \\frac{"
+      }, {
+        "text": "1}{\\sqrt{1-x^2}} \u003d 0 $$\n3.  Če je odvod pov"
+      }, {
+        "text": "sod 0, je funkcija **konstanta**.\n4.  Vstavi poljubno točko (npr."
+      }, {
+        "text": " $x\u003d0$) za določitev konstante:\n    $$ f(0) \u003d \\arcsin 0 +"
+      }, {
+        "text": " \\arccos 0 \u003d 0 + \\frac{\\pi}{2} \u003d \\frac{\\pi}{2} $$"
+      }, {
+        "text": "\n5.  Sklep: $f(x) \u003d \\frac{\\pi}{2}$ za vse $x$.\n\n#### Primer C"
+      }, {
+        "text": ": Lipschitzova lastnost za arctan\nDokaži: $|\\arctan b - \\arctan a| \\le |b-a|$."
+      }, {
+        "text": "\n\nUporabimo Lagrangeov izrek na funkciji $f(x) \u003d \\arctan x$:\n$$ \\frac"
+      }, {
+        "text": "{\\arctan b - \\arctan a}{b-a} \u003d f\u0027(c) \u003d \\frac{1}{1+c^2"
+      }, {
+        "text": "} $$\nKer je $c^2 \\ge 0$, je imenovalec $1+c^2"
+      }, {
+        "text": " \\ge 1$, ulomek pa $\\le 1$.\nSledi:\n$$ \\left| \\frac{\\arctan b -"
+      }, {
+        "text": " \\arctan a}{b-a} \\right| \\le 1 \\Rightarrow |\\arctan b - \\arctan a"
+      }, {
+        "text": "| \\le |b-a| $$\n\n---\n\n## 3. [[L\u0027Hopitalovo pravilo"
+      }, {
+        "text": "]]\n\nUporablja se za računanje limit oblike $\\frac{0}{0}$ ali $\\frac{\\infty}{\\infty}$."
+      }, {
+        "text": "\n$$ \\lim_{x \\to a} \\frac{f(x)}{g(x)} \u003d \\lim_{x \\to a} \\"
+      }, {
+        "text": "frac{f\u0027(x)}{g\u0027(x)} $$\n\n\u003e [!WARNING] Pozor pri odvajanju\n\u003e Ne od"
+      }, {
+        "text": "vajaj kot kvocient! Odvajaj števec posebej in imenovalec posebej.\n\n### Primeri n"
+      }, {
+        "text": "alog\n\n1.  **Limit s trig in exp funkcijami ($\\frac{0}{0}$):**\n    $$ \\lim_{"
+      }, {
+        "text": "x \\to 0} \\frac{x^2 + e^{x^3} - 1}{\\ln(1+x) - \\"
+      }, {
+        "text": "sin x} $$\n    *   Uporabi L\u0027Hopitala večkrat (LH), dokler imen"
+      }, {
+        "text": "ovalec ni več 0 ali pa se da pokrajšati.\n    *   *Pozor:* Pri odv"
+      }, {
+        "text": "ajanju $e^{x^3}$ ne pozabi verižnega pravila: $e^{x^3} \\cdot 3x"
+      }, {
+        "text": "^2$.\n\n2.  **Limit $0 \\cdot \\infty$:**\n    $$ \\lim_{x \\"
+      }, {
+        "text": "to 0} x \\ln x $$\n    *   Preoblikuj v ulomek: $\\lim_{x \\"
+      }, {
+        "text": "to 0} \\frac{\\ln x}{\\frac{1}{x}}$ (tip $\\frac{\\infty}{\\infty"
+      }, {
+        "text": "}$).\n    *   Odvajaj: $\\frac{1/x}{-1/x^2} \u003d -"
+      }, {
+        "text": "x \\to 0$.\n\n3.  **Limit $1^\\infty$ (eksponentni tip):**\n    $$ \\lim_{"
+      }, {
+        "text": "x \\to 0} (1+2x)^{\\frac{1}{x^2}} $$\n    *   **"
+      }, {
+        "text": "Trik:** Uporabi $A^B \u003d e^{B \\ln A}$.\n    *   Limitira"
+      }, {
+        "text": "š eksponent: $\\lim_{x \\to 0} \\frac{\\ln(1+2x)}{x^2}$.\n    *   "
+      }, {
+        "text": "Uporabi L\u0027Hopitala na eksponentu.\n\n---\n\n## 4. [[Taylorjeva vrsta"
+      }, {
+        "text": "]] in Taylorjev polinom\n\nVsako (dovolj lepo) funkcijo lahko v okolici točke $a$ aproks"
+      }, {
+        "text": "imiramo s polinomom.\n\n**Formula:**\n$$ f(x) \u003d Q_n(x) +"
+      }, {
+        "text": " R_n(x) $$\n$$ Q_n(x) \u003d f(a) + \\frac{f\u0027(a)}{"
+      }, {
+        "text": "1!}(x-a) + \\frac{f\u0027\u0027(a)}{2!}(x-a)^2 +"
+      }, {
+        "text": " \\dots + \\frac{f^{(n)}(a)}{n!}(x-a)^n $$\n\n**O"
+      }, {
+        "text": "stanek (napaka) v Lagrangeovi obliki:**\n$$ R_n(x) \u003d \\frac{f^{(n+"
+      }, {
+        "text": "1)}(\\xi)}{(n+1)!}(x-a)^{n+1}, \\quad \\xi \\in (a"
+      }, {
+        "text": ", x) $$\n\n### Naloga: Taylorjev polinom za $f(x) \u003d \\cos^2 x$\n"
+      }, {
+        "text": "Razvij funkcijo v Taylorjev polinom stopnje 5 okoli točke $a\u003d0$ in oceni napako na intervalu"
+      }, {
+        "text": " $[-\\frac{\\pi}{4}, \\frac{\\pi}{4}]$.\n\n**1. Korak: Poenostavitev funk"
+      }, {
+        "text": "cije za odvajanje**\nNamesto, da odvajaš $\\cos^2 x$ s verižnim pravil"
+      }, {
+        "text": "om (kar hitro postane grdo), uporabi formulo za dvojni kot:\n$$ f(x) \u003d \\"
+      }, {
+        "text": "cos^2 x \u003d \\frac{1 + \\cos(2x)}{2} \u003d \\frac{1}{2}"
+      }, {
+        "text": " + \\frac{1}{2}\\cos(2x) $$\n\n**2. Korak: Računanje odvodov v $a"
+      }, {
+        "text": "\u003d0$**\n*   $f(0) \u003d 1$\n*   $f\u0027(x) \u003d -\\sin"
+      }, {
+        "text": "(2x) \\Rightarrow f\u0027(0) \u003d 0$\n*   $f\u0027\u0027(x) \u003d -"
+      }, {
+        "text": "2\\cos(2x) \\Rightarrow f\u0027\u0027(0) \u003d -2$\n*   $f\u0027\u0027\u0027("
+      }, {
+        "text": "x) \u003d 4\\sin(2x) \\Rightarrow f\u0027\u0027\u0027(0) \u003d 0$\n*"
+      }, {
+        "text": "   $f^{(4)}(x) \u003d 8\\cos(2x) \\Rightarrow f^{(4)}(0) \u003d"
+      }, {
+        "text": " 8$\n*   $f^{(5)}(x) \u003d -16\\sin(2x) \\"
+      }, {
+        "text": "Rightarrow f^{(5)}(0) \u003d 0$\n\n**3. Korak: Zapis polinoma $Q_5(x)$**\n"
+      }, {
+        "text": "Upoštevamo samo člene, ki niso 0:\n$$ Q_5(x) \u003d 1 + \\frac{-"
+      }, {
+        "text": "2}{2!}x^2 + \\frac{8}{4!}x^4 $$\n$$ Q_5"
+      }, {
+        "text": "(x) \u003d 1 - x^2 + \\frac{1}{3}x^4 $$\n\n**"
+      }, {
+        "text": "4. Korak: Ocena napake $R_5(x)$**\nPotrebujemo 6. odvod za"
+      }, {
+        "text": " oceno napake pri stopnji $n\u003d5$.\n*   $f^{(6)}(x) \u003d -32\\cos(2"
+      }, {
+        "text": "x)$\n*   Formula za ostanek:\n    $$ R_5(x) \u003d \\frac{"
+      }, {
+        "text": "f^{(6)}(\\xi)}{6!}x^6 \u003d \\frac{-32\\cos(2\\xi)}{"
+      }, {
+        "text": "720}x^6 $$\n*   **Ocena:** Ker iščemo *maksimalno* napako, ocen"
+      }, {
+        "text": "imo dele navzgor.\n    *   $|\\cos(2\\xi)| \\le 1$\n    *"
+      }, {
+        "text": "   Maksimalni $x$ na intervalu $[-\\frac{\\pi}{4}, \\frac{\\pi}{4}]$ je $\\frac{\\"
+      }, {
+        "text": "pi}{4}$.\n    *   Vstavimo v absolutno vrednost:\n    $$ |R_5(x)|"
+      }, {
+        "text": " \\le \\frac{32}{720} \\cdot \\left(\\frac{\\pi}{4}\\right)^6 \\approx 0"
+      }, {
+        "text": ".011 $$\n\n\u003e [!INFO] Opomba o stopnjah\n\u003e Čeprav smo zahtevali polinom stop"
+      }, {
+        "text": "nje 5, je koeficient pri $x^5$ enak 0. To je značilno za s"
+      }, {
+        "text": "ode funkcije (kot je $\\cos^2 x$), ki imajo v razvoju okoli 0 samo sode potence"
+      }, {
+        "text": ". Napako ocenjujemo s prvim naslednjim odvodom ($n+1\u003d6$)."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }, {
+      "text": "what is the point of rolles and lagrange? why do I need to know that in mathematical analysis?",
+      "role": "user",
+      "tokenCount": 23
+    }, {
+      "text": "**Defining Theorem Purpose**\n\nI\u0027ve started by deeply examining the user\u0027s core question: the utility of Rolle\u0027s and Lagrange\u0027s theorems in mathematical analysis. I\u0027m focusing on why these concepts hold significance, rather than just what they state. It\u0027s key to identify the practical relevance and conceptual underpinning for an expert audience. I\u0027m moving toward distilling the core ideas of the question so I can formulate a concise explanation.\n\n\n**Refining Theorem Relevance**\n\nI\u0027m now zeroing in on the user\u0027s mindset: they\u0027re keen on the *why* and *how*, not just the *what*. My focus has shifted to framing Rolle\u0027s and Lagrange\u0027s theorems as the conceptual links between a function\u0027s local properties and its global behavior. I\u0027m aiming to articulate their significance as the foundation for broader proofs and theoretical frameworks within calculus, highlighting their role in unifying local and global aspects. I have a clearer picture of their application as essential tools in mathematical analysis.\n\n\n**Elaborating on Global Connections**\n\nI\u0027m now focusing on how the Mean Value Theorem (MVT) links local derivatives to global function behavior. Building upon the speeding ticket and geometric interpretations, I\u0027m illustrating MVT\u0027s role in rigorous proofs, not just intuition. I\u0027m exploring how it bridges local slopes ($f\u0027(x)$) to global increasing/decreasing trends. Highlighting error estimation, particularly within Taylor series, is critical. I\u0027m actively integrating the conceptual framework into the user\u0027s expertise.\n\n\n**Analyzing MVT\u0027s Utility**\n\nMy focus has shifted to MVT\u0027s practical applications. I\u0027m exploring its role in proving inequalities, like $\\ln(1+x) \u003c x$, which can\u0027t be done just by plugging in numbers. I\u0027m highlighting MVT\u0027s foundational role in L\u0027Hopital\u0027s rule. I\u0027m also emphasizing its crucial link to Taylor series error, particularly the Lagrange remainder term $R_n$. I\u0027m exploring how Rolle\u0027s theorem provides a simplified visual base for MVT.\n\n\n**Highlighting Key Uses**\n\nI\u0027m now integrating specific examples from the user\u0027s notes, particularly the use of MVT in proving inequalities and the significance of constant functions. My focus is on ensuring the response resonates directly with *their* existing material. I\u0027m structuring the explanation with a \u0027big picture\u0027 overview, followed by intuitive examples, concrete applications, and a comparison between Rolle\u0027s and Lagrange\u0027s theorems. I aim to create a clear and complete picture of the theorems\u0027 functionality.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Defining Theorem Purpose**\n\nI\u0027ve started by deeply examining the user\u0027s core question: the utility of Rolle\u0027s and Lagrange\u0027s theorems in mathematical analysis. I\u0027m focusing on why these concepts hold significance, rather than just what they state. It\u0027s key to identify the practical relevance and conceptual underpinning for an expert audience. I\u0027m moving toward distilling the core ideas of the question so I can formulate a concise explanation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Theorem Relevance**\n\nI\u0027m now zeroing in on the user\u0027s mindset: they\u0027re keen on the *why* and *how*, not just the *what*. My focus has shifted to framing Rolle\u0027s and Lagrange\u0027s theorems as the conceptual links between a function\u0027s local properties and its global behavior. I\u0027m aiming to articulate their significance as the foundation for broader proofs and theoretical frameworks within calculus, highlighting their role in unifying local and global aspects. I have a clearer picture of their application as essential tools in mathematical analysis.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Elaborating on Global Connections**\n\nI\u0027m now focusing on how the Mean Value Theorem (MVT) links local derivatives to global function behavior. Building upon the speeding ticket and geometric interpretations, I\u0027m illustrating MVT\u0027s role in rigorous proofs, not just intuition. I\u0027m exploring how it bridges local slopes ($f\u0027(x)$) to global increasing/decreasing trends. Highlighting error estimation, particularly within Taylor series, is critical. I\u0027m actively integrating the conceptual framework into the user\u0027s expertise.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing MVT\u0027s Utility**\n\nMy focus has shifted to MVT\u0027s practical applications. I\u0027m exploring its role in proving inequalities, like $\\ln(1+x) \u003c x$, which can\u0027t be done just by plugging in numbers. I\u0027m highlighting MVT\u0027s foundational role in L\u0027Hopital\u0027s rule. I\u0027m also emphasizing its crucial link to Taylor series error, particularly the Lagrange remainder term $R_n$. I\u0027m exploring how Rolle\u0027s theorem provides a simplified visual base for MVT.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Highlighting Key Uses**\n\nI\u0027m now integrating specific examples from the user\u0027s notes, particularly the use of MVT in proving inequalities and the significance of constant functions. My focus is on ensuring the response resonates directly with *their* existing material. I\u0027m structuring the explanation with a \u0027big picture\u0027 overview, followed by intuitive examples, concrete applications, and a comparison between Rolle\u0027s and Lagrange\u0027s theorems. I aim to create a clear and complete picture of the theorems\u0027 functionality.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "That is an excellent question. When you first encounter **Rolle\u0027s Theorem** and the **Mean Value Theorem (Lagrange)**, they often feel like \"useless\" existence theorems because they say *\"there exists a point $c$,\"* but they never tell you **where** that point is or how to find it.\n\nHowever, in the grand scheme of Mathematical Analysis, they are arguably the most important theorems in differential calculus. Here is the critical breakdown of **why** they exist and **what** they actually do for you.\n\n### 1. The Core Philosophy: The Bridge Between \"Local\" and \"Global\"\n\nThis is the most profound reason.\n*   **The Derivative ($f\u0027(x)$)** is a **local** property. It tells you the slope at *one specific microscopic point*.\n*   **The Function ($f(x)$)** describes behavior over a **global** interval (from $a$ to $b$).\n\n**The Point:** Lagrange\u0027s Mean Value Theorem (MVT) is the **bridge** that allows us to use information about the derivative (local) to draw conclusions about the function\u0027s shape over a whole interval (global).\n\n\u003e **Without Lagrange, we cannot prove that a positive derivative means the function is increasing.**\n\nIt sounds obvious ($f\u0027(x) \u003e 0 \\Rightarrow$ going up), but mathematically, you need Lagrange to prove that $f(b) \u003e f(a)$ based solely on the derivative.\n\n### 2. The Intuitive \"Real World\" Meaning\nBefore getting abstract, think of the physical interpretation (this is the **Reverse Engineering** of the theorem\u0027s motivation):\n\n*   **Lagrange (Mean Value Theorem):** Imagine driving from Ljubljana to Koper. Your **average speed** was 100 km/h. Lagrange guarantees that at **at least one specific moment**, your speedometer read *exactly* 100 km/h.\n    $$ \\underbrace{f\u0027(c)}_{\\text{Instant speed}} \u003d \\underbrace{\\frac{f(b)-f(a)}{b-a}}_{\\text{Average speed}} $$\n*   **Rolle:** This is just a special case. If you drive from home and return to home ($f(a) \u003d f(b)$), at some point your velocity must have been 0 (you had to stop to turn around).\n\n### 3. The \"Academic\" Utility: Why you need them for exams\n\nYou need these theorems to rigorous prove things that otherwise seem like \"guessing.\"\n\n#### A. Proving Inequalities (as seen in your notes)\nLook at **Primer A** in your notes: $\\ln(x+1) \\le x$.\nYou cannot check every single number from $0$ to $\\infty$.\n*   **How Lagrange helps:** You treat the difference as a function. By analyzing the derivative (which is easier to handle), Lagrange allows you to bound the function values.\n*   **Logic:** If the derivative is bounded (e.g., $f\u0027(c) \u003c 1$), then the growth of the function is restricted.\n\n#### B. The \"Constant Function\" Test\nLook at **Primer B** in your notes: $\\arcsin x + \\arccos x \u003d \\frac{\\pi}{2}$.\nHow do you prove an expression is constant without calculating it for every $x$?\n1.  Calculate the derivative.\n2.  If $f\u0027(x) \u003d 0$ everywhere, **Lagrange implies** $f(x)$ is constant.\n3.  Without Lagrange, $f\u0027(x)\u003d0$ implies horizontal tangent, but it doesn\u0027t mathematically force the function to stay flat (it could theoretically jump, though continuity prevents that—Lagrange ties it all together).\n\n#### C. Error Estimation (The Taylor Connection)\nThis is the most practical application for engineers and physicists.\nWhen you approximate a function using [[Taylorjeva vrsta]] (e.g., $\\cos x \\approx 1 - x^2/2$), you make an error.\n*   **How big is the error?**\n*   The error term $R_n(x)$ contains a derivative $f^{(n+1)}(\\xi)$.\n*   That $\\xi$ comes directly from **Lagrange/Rolle**.\n*   **The Result:** It allows us to say: \"I am 100% sure the true value is within $\\pm 0.001$ of my calculation.\"\n\n### 4. Critical Analysis: Why Rolle first?\n\nIf Lagrange is the useful one, why do we learn Rolle?\n*   **Pedagogy:** Rolle is easier to prove visually (maxima/minima must have a flat tangent).\n*   **Derivation:** Mathematicians use Rolle to *prove* Lagrange. You define a new \"tilted\" function that subtracts the secant line, forcing the endpoints to be equal ($0$), and then apply Rolle to get Lagrange.\n\n### Summary for your Revision\n\n1.  **Rolle:** \"If you come back to where you started, you stopped somewhere.\" (Used to prove Lagrange).\n2.  **Lagrange:** \"At some point, you went exactly your average speed.\" (Used to connect derivatives to function geometry).\n3.  **Usage:** Crucial for proving **Inequalities**, determining **Monotonicity** (increasing/decreasing), and estimating **Errors** in approximations.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1145,
+      "parts": [{
+        "text": "That is an excellent question. When you first encounter **Rolle\u0027s Theorem** and the **Mean Value Theorem (Lagrange)**, they often feel"
+      }, {
+        "text": " like \"useless\" existence theorems because they say *\"there exists a point $c$,\"* but they never tell you **"
+      }, {
+        "text": "where** that point is or how to find it.\n\nHowever, in the grand scheme of Mathematical Analysis, they are arguably"
+      }, {
+        "text": " the most important theorems in differential calculus. Here is the critical breakdown of **why** they exist and **what** they actually do for"
+      }, {
+        "text": " you.\n\n### 1. The Core Philosophy: The Bridge Between \"Local\" and \"Global\"\n\nThis is the most"
+      }, {
+        "text": " profound reason.\n*   **The Derivative ($f\u0027(x)$)** is a **local** property. It tells you the"
+      }, {
+        "text": " slope at *one specific microscopic point*.\n*   **The Function ($f(x)$)** describes behavior over a"
+      }, {
+        "text": " **global** interval (from $a$ to $b$).\n\n**The Point:** Lagrange\u0027s Mean Value Theorem (MVT) is the"
+      }, {
+        "text": " **bridge** that allows us to use information about the derivative (local) to draw conclusions about the function\u0027s shape"
+      }, {
+        "text": " over a whole interval (global).\n\n\u003e **Without Lagrange, we cannot prove that a positive derivative means the function is increasing.**"
+      }, {
+        "text": "\n\nIt sounds obvious ($f\u0027(x) \u003e 0 \\Rightarrow$ going up), but mathematically, you need Lagrange to prove that $"
+      }, {
+        "text": "f(b) \u003e f(a)$ based solely on the derivative.\n\n### 2. The Intuitive \""
+      }, {
+        "text": "Real World\" Meaning\nBefore getting abstract, think of the physical interpretation (this is the **Reverse Engineering** of the theorem"
+      }, {
+        "text": "\u0027s motivation):\n\n*   **Lagrange (Mean Value Theorem):** Imagine driving from Ljubljana to Koper. Your"
+      }, {
+        "text": " **average speed** was 100 km/h. Lagrange guarantees that at **at least one specific moment**, your speedometer"
+      }, {
+        "text": " read *exactly* 100 km/h.\n    $$ \\underbrace{f\u0027(c)}_{\\text{Instant speed"
+      }, {
+        "text": "}} \u003d \\underbrace{\\frac{f(b)-f(a)}{b-a}}_{\\text{Average speed}}"
+      }, {
+        "text": " $$\n*   **Rolle:** This is just a special case. If you drive from home and return to home ($"
+      }, {
+        "text": "f(a) \u003d f(b)$), at some point your velocity must have been 0 (you had to stop to"
+      }, {
+        "text": " turn around).\n\n### 3. The \"Academic\" Utility: Why you need them for exams\n\nYou need these theorems to rigorous"
+      }, {
+        "text": " prove things that otherwise seem like \"guessing.\"\n\n#### A. Proving Inequalities (as seen in your notes)\nLook"
+      }, {
+        "text": " at **Primer A** in your notes: $\\ln(x+1) \\le x$.\nYou cannot check"
+      }, {
+        "text": " every single number from $0$ to $\\infty$.\n*   **How Lagrange helps:** You treat the difference as a"
+      }, {
+        "text": " function. By analyzing the derivative (which is easier to handle), Lagrange allows you to bound the function values.\n*"
+      }, {
+        "text": "   **Logic:** If the derivative is bounded (e.g., $f\u0027(c) \u003c 1$), then the growth"
+      }, {
+        "text": " of the function is restricted.\n\n#### B. The \"Constant Function\" Test\nLook at **Primer B** in your notes"
+      }, {
+        "text": ": $\\arcsin x + \\arccos x \u003d \\frac{\\pi}{2}$.\nHow do you prove an expression is constant"
+      }, {
+        "text": " without calculating it for every $x$?\n1.  Calculate the derivative.\n2.  If $f\u0027(x) \u003d 0$"
+      }, {
+        "text": " everywhere, **Lagrange implies** $f(x)$ is constant.\n3.  Without Lagrange, $f\u0027(x)\u003d0$ implies"
+      }, {
+        "text": " horizontal tangent, but it doesn\u0027t mathematically force the function to stay flat (it could theoretically jump, though continuity prevents that—"
+      }, {
+        "text": "Lagrange ties it all together).\n\n#### C. Error Estimation (The Taylor Connection)\nThis is the most practical"
+      }, {
+        "text": " application for engineers and physicists.\nWhen you approximate a function using [[Taylorjeva vrsta]] (e.g., $\\"
+      }, {
+        "text": "cos x \\approx 1 - x^2/2$), you make an error.\n*   **How big"
+      }, {
+        "text": " is the error?**\n*   The error term $R_n(x)$ contains a derivative $f^{(n+1)}(\\"
+      }, {
+        "text": "xi)$.\n*   That $\\xi$ comes directly from **Lagrange/Rolle**.\n*   **The"
+      }, {
+        "text": " Result:** It allows us to say: \"I am 100% sure the true value is within $\\pm 0.001$"
+      }, {
+        "text": " of my calculation.\"\n\n### 4. Critical Analysis: Why Rolle first?\n\nIf Lagrange is the useful one, why do we learn Rolle?"
+      }, {
+        "text": "\n*   **Pedagogy:** Rolle is easier to prove visually (maxima/minima must have a flat tangent).\n*   **"
+      }, {
+        "text": "Derivation:** Mathematicians use Rolle to *prove* Lagrange. You define a new \"tilted\" function that subtract"
+      }, {
+        "text": "s the secant line, forcing the endpoints to be equal ($0$), and then apply Rolle to get Lagrange.\n\n### Summary for"
+      }, {
+        "text": " your Revision\n\n1.  **Rolle:** \"If you come back to where you started, you stopped somewhere.\" ("
+      }, {
+        "text": "Used to prove Lagrange).\n2.  **Lagrange:** \"At some point, you went exactly your average speed.\" (Used"
+      }, {
+        "text": " to connect derivatives to function geometry).\n3.  **Usage:** Crucial for proving **Inequalities**, determining **Mon"
+      }, {
+        "text": "otonicity** (increasing/decreasing), and estimating **Errors** in approximations."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }, {
+      "text": "what about cauchy? what\u0027s the point of his theory/",
+      "role": "user",
+      "tokenCount": 15
+    }, {
+      "text": "**Considering the Core Theorem**\n\nI\u0027m focusing now on understanding the core of Cauchy\u0027s Mean Value Theorem. I need to break down the user\u0027s question and see how it fits into the broader context. What are the key elements needed to grasp the theorem? Are there examples I can use? I\u0027m examining this within the frame of the previous topic I was looking at.\n\n\n**Unpacking the Generalized MVT**\n\nI\u0027m now zeroing in on why Cauchy\u0027s Mean Value Theorem matters, especially its relationship to Lagrange\u0027s. This includes understanding the motivation for it. Why would we bother with this more complex version? I\u0027m examining its formula and constraints closely, noting that it simplifies to Lagrange\u0027s under certain conditions. The key is clearly the application, which I\u0027m now exploring to grasp the real value.\n\n\n**Examining the Core Distinction**\n\nI\u0027m now zeroing in on the crucial difference: why Cauchy\u0027s guarantees a shared critical point \u0027c\u0027 unlike separate Lagrange applications. It\u0027s becoming clearer through the breakdown. Applying Lagrange separately yields potentially different c values, but Cauchy\u0027s Mean Value Theorem ensures a synchronous relationship, vital for parametric curve analysis. This \u0027synchronization\u0027 is the key \"Aha!\" moment!\n\n\n**Analyzing L\u0027Hopital\u0027s Use**\n\nI\u0027m now diving into L\u0027Hopital\u0027s rule, seeing it as the \"killer app\" for Cauchy. The $\\frac{0}{0}$ case, it turns out, is the crux. I\u0027m unpacking the rule, understanding the relation between the function ratio and the ratio of derivatives.  The synchronization of $c$ provided by Cauchy is the key for the rule to work rigorously. My explanation needs to explain *why* L\u0027Hopital depends on this core.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Considering the Core Theorem**\n\nI\u0027m focusing now on understanding the core of Cauchy\u0027s Mean Value Theorem. I need to break down the user\u0027s question and see how it fits into the broader context. What are the key elements needed to grasp the theorem? Are there examples I can use? I\u0027m examining this within the frame of the previous topic I was looking at.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Unpacking the Generalized MVT**\n\nI\u0027m now zeroing in on why Cauchy\u0027s Mean Value Theorem matters, especially its relationship to Lagrange\u0027s. This includes understanding the motivation for it. Why would we bother with this more complex version? I\u0027m examining its formula and constraints closely, noting that it simplifies to Lagrange\u0027s under certain conditions. The key is clearly the application, which I\u0027m now exploring to grasp the real value.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Examining the Core Distinction**\n\nI\u0027m now zeroing in on the crucial difference: why Cauchy\u0027s guarantees a shared critical point \u0027c\u0027 unlike separate Lagrange applications. It\u0027s becoming clearer through the breakdown. Applying Lagrange separately yields potentially different c values, but Cauchy\u0027s Mean Value Theorem ensures a synchronous relationship, vital for parametric curve analysis. This \u0027synchronization\u0027 is the key \"Aha!\" moment!\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing L\u0027Hopital\u0027s Use**\n\nI\u0027m now diving into L\u0027Hopital\u0027s rule, seeing it as the \"killer app\" for Cauchy. The $\\frac{0}{0}$ case, it turns out, is the crux. I\u0027m unpacking the rule, understanding the relation between the function ratio and the ratio of derivatives.  The synchronization of $c$ provided by Cauchy is the key for the rule to work rigorously. My explanation needs to explain *why* L\u0027Hopital depends on this core.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "To je naravno naslednje vprašanje. Če je Lagrange \"most\" med odvodom in funkcijo, je **Cauchyjev izrek o srednji vrednosti** (Cauchy\u0027s Mean Value Theorem) \"gradbeni element\", ki omogoča, da ta most zgradiš za **dve funkciji hkrati**.\n\nMorda se zdi kot nepotreben zaplet formule, vendar ima eno **ključno nalogo**, brez katere bi se velik del analize (zlasti limit) porušil.\n\nTukaj je razčlemba, zakaj ga potrebujemo.\n\n### 1. Cauchyjev izrek: \"Posplošeni Lagrange\"\n\nNajprej poglejva formulo. Če sta $f$ in $g$ zvezni na $[a,b]$ in odvedljivi na $(a,b)$ (in $g\u0027(x) \\neq 0$), potem obstaja točka $c$:\n\n$$ \\frac{f(b) - f(a)}{g(b) - g(a)} \u003d \\frac{f\u0027(c)}{g\u0027(c)} $$\n\nČe bi vzel $g(x) \u003d x$, bi dobil $g(b)-g(a) \u003d b-a$ in $g\u0027(c) \u003d 1$, kar nas vrne nazaj na navadnega Lagrangea.\n\n### 2. \"Zakaj ne morem uporabiti Lagrangea dvakrat?\" (Kritična točka)\n\nTo je najpogostejša napaka študentov in razlog, zakaj Cauchy sploh obstaja.\nRecimo, da želiš analizirati razmerje dveh funkcij. Študent bi rekel:\n*\"Uporabil bom Lagrangea za $f$ in Lagrangea za $g$ ter ju delil.\"*\n\n*   Za $f$: $f(b) - f(a) \u003d f\u0027(c_1)(b-a)$\n*   Za $g$: $g(b) - g(a) \u003d g\u0027(c_2)(b-a)$\n\nČe to deliš, dobiš:\n$$ \\frac{f(b)-f(a)}{g(b)-g(a)} \u003d \\frac{f\u0027(c_1)}{g\u0027(c_2)} $$\n\n**Težava:** Dobil si dve **različni** točki, $c_1$ in $c_2$. Ni nujno, da sta na istem mestu. To ti v analizi ne pomaga, ker ne moreš primerjati odvoda $f$ in odvoda $g$ v **istem trenutku**.\n\n**Cauchyjeva moč:** Cauchyjev izrek zagotavlja, da obstaja **ena sama točka** $c$, kjer ta enakost velja za obe funkciji hkrati. To je \"sinhronizacija\".\n\n### 3. \"Killer App\": Dokaz L\u0027Hopitalovega pravila\n\nTo je glavni razlog, zakaj se učiš Cauchyja. Brez njega ne moreš strogo dokazati [[L\u0027Hopitalovo pravilo]].\n\nPoglejva limito oblike $\\frac{0}{0}$. Če $x \\to a$ in $f(a)\u003dg(a)\u003d0$:\nUporabimo Cauchyja na intervalu $[a, x]$:\n\n$$ \\frac{f(x) - f(a)}{g(x) - g(a)} \u003d \\frac{f\u0027(c)}{g\u0027(c)} $$\n\nKer sta $f(a)$ in $g(a)$ enaka 0, ostane:\n$$ \\frac{f(x)}{g(x)} \u003d \\frac{f\u0027(c)}{g\u0027(c)} $$\n\nKo gre $x \\to a$, mora tudi tista vmesna točka $c$ stisniti proti $a$ ($a \u003c c \u003c x$). Zato:\n$$ \\lim_{x \\to a} \\frac{f(x)}{g(x)} \u003d \\lim_{c \\to a} \\frac{f\u0027(c)}{g\u0027(c)} $$\n\n**Brez Cauchyja tega ne bi mogli dokazati**, saj bi imeli $c_1$ in $c_2$, ki bi se premikala različno hitro, in ne bi mogli preiti na limito kvocienta odvodov.\n\n### 4. Geometrijska (kinematična) interpretacija\n\nČe ti abstraktna razlaga ne leži, si predstavljaj gibanje v ravnini.\nNaj bo tvoje gibanje podano parametrično:\n*   $x$-koordinata je določena s funkcijo $g(t)$.\n*   $y$-koordinata je določena s funkcijo $f(t)$.\n\nKaj pravi Cauchy?\nPravi, da če se pelješ od točke $A$ do točke $B$ po neki krivulji, je v nekem trenutku tvoj **trenutni smerni koeficient** (tangenta na pot) enak **smernemu koeficientu daljice**, ki povezuje začetek in konec.\n\n$$ \\underbrace{\\frac{f\u0027(c)}{g\u0027(c)}}_{\\text{trenutni naklon } dy/dx} \u003d \\underbrace{\\frac{f(b)-f(a)}{g(b)-g(a)}}_{\\text{naklon sekante}} $$\n\n### Povzetek za izpit\n\n1.  **Kaj je?** Posplošitev Lagrangea za dve funkciji.\n2.  **Bistvo:** Zagotavlja, da najdemo **isto točko** $c$ za obe funkciji.\n3.  **Uporaba:** Absolutno nujen za dokaz in razumevanje **L\u0027Hopitalovega pravila**. Če te profesor vpraša \"Kako vemo, da L\u0027Hopital deluje?\", je odgovor \"Zaradi Cauchyjevega izreka o srednji vrednosti.\"",
+      "role": "model",
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "To je naravno naslednje vprašanje. Če je Lagrange \"most\" med odvodom in funkcijo, je **Cauchyjev izrek o srednji vrednosti** (Cau"
+      }, {
+        "text": "chy\u0027s Mean Value Theorem) \"gradbeni element\", ki omogoča, da ta most zgradiš za **dve funkci"
+      }, {
+        "text": "ji hkrati**.\n\nMorda se zdi kot nepotreben zaplet formule, vendar ima eno **"
+      }, {
+        "text": "ključno nalogo**, brez katere bi se velik del analize (zlasti limit) porušil.\n\nTuk"
+      }, {
+        "text": "aj je razčlemba, zakaj ga potrebujemo.\n\n### 1. Cauchyjev izrek: \"Pos"
+      }, {
+        "text": "plošeni Lagrange\"\n\nNajprej poglejva formulo. Če sta $f$ in $g$"
+      }, {
+        "text": " zvezni na $[a,b]$ in odvedljivi na $(a,b)$ (in $g\u0027(x)"
+      }, {
+        "text": " \\neq 0$), potem obstaja točka $c$:\n\n$$ \\frac{f(b) - f(a)}{g(b"
+      }, {
+        "text": ") - g(a)} \u003d \\frac{f\u0027(c)}{g\u0027(c)} $$\n\nČe bi vzel"
+      }, {
+        "text": " $g(x) \u003d x$, bi dobil $g(b)-g(a) \u003d b-a"
+      }, {
+        "text": "$ in $g\u0027(c) \u003d 1$, kar nas vrne nazaj na navadnega Lagrangea.\n\n###"
+      }, {
+        "text": " 2. \"Zakaj ne morem uporabiti Lagrangea dvakrat?\" (Kritična točka)\n\nTo je najpog"
+      }, {
+        "text": "ostejša napaka študentov in razlog, zakaj Cauchy sploh obstaja.\nRecimo, da ž"
+      }, {
+        "text": "eliš analizirati razmerje dveh funkcij. Študent bi rekel:\n*\"Uporabil bom Lagrangea"
+      }, {
+        "text": " za $f$ in Lagrangea za $g$ ter ju delil.\"*\n\n*   Za $f$:"
+      }, {
+        "text": " $f(b) - f(a) \u003d f\u0027(c_1)(b-a)$\n*   Za"
+      }, {
+        "text": " $g$: $g(b) - g(a) \u003d g\u0027(c_2)(b-a)$"
+      }, {
+        "text": "\n\nČe to deliš, dobiš:\n$$ \\frac{f(b)-f(a)}{g(b)-g"
+      }, {
+        "text": "(a)} \u003d \\frac{f\u0027(c_1)}{g\u0027(c_2)} $$\n\n**Težava:** D"
+      }, {
+        "text": "obil si dve **različni** točki, $c_1$ in $c_2$. Ni n"
+      }, {
+        "text": "ujno, da sta na istem mestu. To ti v analizi ne pomaga, ker ne moreš primerjati odvoda"
+      }, {
+        "text": " $f$ in odvoda $g$ v **istem trenutku**.\n\n**Cauchyjeva moč:** Cauchy"
+      }, {
+        "text": "jev izrek zagotavlja, da obstaja **ena sama točka** $c$, kjer ta enakost velja za obe"
+      }, {
+        "text": " funkciji hkrati. To je \"sinhronizacija\".\n\n### 3. \"Killer App\": Dokaz L\u0027Hopitalove"
+      }, {
+        "text": "ga pravila\n\nTo je glavni razlog, zakaj se učiš Cauchyja. Brez njega ne more"
+      }, {
+        "text": "š strogo dokazati [[L\u0027Hopitalovo pravilo]].\n\nPoglejva limito oblike $\\frac{0}{"
+      }, {
+        "text": "0}$. Če $x \\to a$ in $f(a)\u003dg(a)\u003d0$:\nUporab"
+      }, {
+        "text": "imo Cauchyja na intervalu $[a, x]$:\n\n$$ \\frac{f(x) - f(a)}{g(x"
+      }, {
+        "text": ") - g(a)} \u003d \\frac{f\u0027(c)}{g\u0027(c)} $$\n\nKer sta $f(a)$"
+      }, {
+        "text": " in $g(a)$ enaka 0, ostane:\n$$ \\frac{f(x)}{g(x)} \u003d \\frac{"
+      }, {
+        "text": "f\u0027(c)}{g\u0027(c)} $$\n\nKo gre $x \\to a$, mora tudi tista vmesna točka $c"
+      }, {
+        "text": "$ stisniti proti $a$ ($a \u003c c \u003c x$). Zato:\n$$ \\lim_{x \\to"
+      }, {
+        "text": " a} \\frac{f(x)}{g(x)} \u003d \\lim_{c \\to a} \\frac{f"
+      }, {
+        "text": "\u0027(c)}{g\u0027(c)} $$\n\n**Brez Cauchyja tega ne bi mogli dokazati**, saj bi imeli $c_1"
+      }, {
+        "text": "$ in $c_2$, ki bi se premikala različno hitro, in ne bi mogli preiti na limito kv"
+      }, {
+        "text": "ocienta odvodov.\n\n### 4. Geometrijska (kinematična) interpretacija\n\nČ"
+      }, {
+        "text": "e ti abstraktna razlaga ne leži, si predstavljaj gibanje v ravnini.\nNaj"
+      }, {
+        "text": " bo tvoje gibanje podano parametrično:\n*   $x$-koordinata je določena s funkcijo $g("
+      }, {
+        "text": "t)$.\n*   $y$-koordinata je določena s funkcijo $f(t)$.\n\n"
+      }, {
+        "text": "Kaj pravi Cauchy?\nPravi, da če se pelješ od točke $A$ do točke $B$"
+      }, {
+        "text": " po neki krivulji, je v nekem trenutku tvoj **trenutni smerni koeficient** (tang"
+      }, {
+        "text": "enta na pot) enak **smernemu koeficientu daljice**, ki povezuje začetek in konec."
+      }, {
+        "text": "\n\n$$ \\underbrace{\\frac{f\u0027(c)}{g\u0027(c)}}_{\\text{trenutni naklon } dy"
+      }, {
+        "text": "/dx} \u003d \\underbrace{\\frac{f(b)-f(a)}{g(b)-g(a)}"
+      }, {
+        "text": "}_{\\text{naklon sekante}} $$\n\n### Povzetek za izpit\n\n1.  **Kaj je?** Pos"
+      }, {
+        "text": "plošitev Lagrangea za dve funkciji.\n2.  **Bistvo:** Zagotavlja, da"
+      }, {
+        "text": " najdemo **isto točko** $c$ za obe funkciji.\n3.  **Uporaba:** Abs"
+      }, {
+        "text": "olutno nujen za dokaz in razumevanje **L\u0027Hopitalovega pravila**. Če te profesor"
+      }, {
+        "text": " vpraša \"Kako vemo, da L\u0027Hopital deluje?\", je odgovor \"Zaradi Cauchyjevega izreka"
+      }, {
+        "text": " o srednji vrednosti.\""
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

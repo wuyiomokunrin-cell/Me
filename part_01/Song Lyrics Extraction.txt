@@ -1,0 +1,78 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "responseMimeType": "text/plain",
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveVideo": {
+        "id": "1d_6M__1MfbZMaPF-oj6cuuy7nU3tARFE"
+      },
+      "role": "user",
+      "tokenCount": 6196,
+      "videoMetadata": {
+        "fps": 24.0
+      }
+    }, {
+      "text": "Please extract the lyrics from this song in the video",
+      "role": "user",
+      "tokenCount": 11
+    }, {
+      "text": "**Defining the Objective**\n\nI\u0027ve understood the user\u0027s intent: they desire the lyrics from the video, which features a Spanish song. I\u0027m now focused on transcribing those lyrics accurately, a task that has begun with close listening to the audio.\n\n\n**Extracting the Lyrics**\n\nI\u0027ve successfully transcribed the lyrics from the video, a process that involved meticulous listening and analysis of the Spanish audio. My focus was on capturing the words precisely. After careful review, I\u0027m confident in the accuracy of the transcription. I\u0027m ready to present the lyrics to the user.\n\n\n",
+      "role": "model",
+      "tokenCount": 204,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", ""]
+    }, {
+      "text": "The lyrics from the video are:\n\nNoche de sound, la fiesta\nVamos a la playa, a mí me gusta bailar\nEl ritmo de la noche, sound of fiesta\nVamos a la playa, a mí me gusta bailar\nEl ritmo de la noche, sound of fiesta\nVamos a la playa, a mí me gusta bailar",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 69
+    }, {
+      "text": "now put them in all caps and in between every word put an emoji corresponding to the previous text",
+      "role": "user",
+      "tokenCount": 20
+    }, {
+      "text": "**Transforming the Lyrics**\n\nI\u0027m currently focused on transforming the lyrics. My plan is to convert them into all capital letters and then insert an emoji after each word based on its relationship to the preceding one. This will give them a unique visual structure!\n\n\n**Analyzing Emoji Placement**\n\nI\u0027ve converted the lyrics to uppercase and am now focusing on emoji insertion. I\u0027m exploring how to strategically place emojis after each word to visually represent relationships between them. For instance, \"NOCHE 🌃 DE 👉 SOUND 🔊\" aims to establish a visual connection between \"NOCHE\" and \"SOUND.\" This approach will ensure a dynamic and engaging visual representation of the original text.\n\n\n**Reviewing Emojis**\n\nI\u0027ve completed the emoji insertion and am now reviewing the final output. The capitalization is consistent, and the emojis seem appropriate. I feel that \"De,\" \"A,\" \"La,\" \"El,\" and \"Of\" are generic and could use a pointing emoji. I have added it and am ready for further refinements.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", ""]
+    }, {
+      "text": "NOCHE 🌃 DE 👉 SOUND 🔊, LA ➡️ FIESTA 🎉\nVAMOS 🚶 A 👉 LA ➡️ PLAYA 🏖️, A 👉 MÍ 🙋 ME ❤️ GUSTA 👍 BAILAR 💃\nEL 👉 RITMO 🎶 DE 👉 LA ➡️ NOCHE 🌃, SOUND 🔊 OF 👉 FIESTA 🎉\nVAMOS 🚶 A 👉 LA ➡️ PLAYA 🏖️, A 👉 MÍ 🙋 ME ❤️ GUSTA 👍 BAILAR 💃\nEL 👉 RITMO 🎶 DE 👉 LA ➡️ NOCHE 🌃, SOUND 🔊 OF 👉 FIESTA 🎉\nVAMOS 🚶 A 👉 LA ➡️ PLAYA 🏖️, A 👉 MÍ 🙋 ME ❤️ GUSTA 👍 BAILAR 💃",
+      "role": "model",
+      "finishReason": "STOP"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

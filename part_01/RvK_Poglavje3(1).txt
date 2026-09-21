@@ -1,0 +1,463 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#**3\tSpremenljivke in vrste podatkov**\n",
+        "Spremenljivke shranjujejo različne podatke, ki so v glavnem treh vrst:\n",
+        "\n",
+        "a)\tnumerični;\n",
+        "\n",
+        "b)\tznakovni oz. tekstovni (*string*);\n",
+        "\n",
+        "c)\tlogični.\n",
+        "\n",
+        "Ime spremenljivke je lahko sestavljeno iz črk, številk in podčrtaja. Na prvem mestu morata biti črka ali podčrtaj. Presledki in drugi posebni znaki v imenih spremenljivk niso dovoljeni. Prav tako za imena spremenljivk ni dovoljeno uporabiti ključnih besed programa Python, kot so `if, break, try` ipd. Priporočeno je, da so imena spremenljivk kratka in čim bolj opisna, da se takoj spomnimo, kaj predstavljajo. Program razlikuje med velikimi in malimi črkami, tako da npr.\n",
+        "\n",
+        "`ime_spremenljivke`\tni enako kot `Ime_spremenljivke`."
+      ],
+      "metadata": {
+        "id": "q25j3p5vLpqU"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**3.1 Numerične spremenljivke**\n",
+        "So za kemike in kemijske inženirje najbolj uporabna vrsta spremenljivk. Z njimi shranjujemo številčne vrednosti in izvajamo aritmetične operacije za izračun želenih vrednosti."
+      ],
+      "metadata": {
+        "id": "jNlhyRwXM0Ae"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Primer 3-1**:\n",
+        "\n",
+        "V naslednjem programu se spremenljivka imenuje `ime_sprem` in ji je najprej dodeljena numerična vrednost 24. Nato se izračuna dvakratnik te vrednosti."
+      ],
+      "metadata": {
+        "id": "zhrYHYkfM80Y"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "SmHJMtisLjqf"
+      },
+      "outputs": [],
+      "source": [
+        "ime_sprem = 24\n",
+        "print(ime_sprem)\n",
+        "ime_sprem = ime_sprem*2\n",
+        "print(ime_sprem)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Primer 3-1 ponazarja, da je vrstni red ukazov zelo pomemben. Ukazi se izvajajo po vrsti eden za drugim. V prvi vrstici je bila spremenljivki `ime_sprem` dodeljena vrednost 24, ki se je nato v tretji vrstici »prepisala« z dvakratnikom prejšnje vrednosti. Tako je prvotna vrednost pozabljena.\n",
+        "\n",
+        "Nekatere spremenljivke shranjujejo vrednosti, ki se v programu ne spreminjajo, zato jih imenujemo konstante. V programu jih lahko podamo kar s številskimi vrednostmi, lahko pa tudi z imenom; podobno kot spremenljivke, le da njihovih vrednosti praviloma ne spreminjamo več.  Splošni plinski konstanti lahko na primer v programu dodelimo ime, enako kot kateri koli numerični spremenljivki, vendar se njena vrednost ne bo spreminjala:\n",
+        "\n",
+        "`R = 8.314`\n",
+        "\n",
+        "V nadaljevanju programa konstanto z imenom R, ki ima vrednost 8,314, uporabljamo v izračunih, kjer jo potrebujemo, npr. v plinski enačbi.\n"
+      ],
+      "metadata": {
+        "id": "UpSFm1s-NLIQ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Primer 3-2:**\n",
+        "Kaj izračuna naslednji program?"
+      ],
+      "metadata": {
+        "id": "4bFZdUCXNyeu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "74MOjN5UEiIE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "bHYqffnfEidU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "p=1.21590E+05\n",
+        "T=296\n",
+        "m=100\n",
+        "M=28\n",
+        "R=8.314\n",
+        "n=m/M\n",
+        "V=n*R*T/p*1000\n",
+        "print(T, p, n, V)"
+      ],
+      "metadata": {
+        "id": "8zzwNjwCNySi"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**3.2 Znakovne spremenljivke (nizi)**\n",
+        "Znakovne spremenljivke ali nizi (angl. *strings*) so zaporedja znakov oz. besedila, ki jih želimo v programu. Njihove vrednosti se podajo v narekovajih; uporabimo lahko enojni ali dvojni narekovaj.\n"
+      ],
+      "metadata": {
+        "id": "KVssY6aAN-mU"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Primer 3-3:**\n",
+        "V naslednjem programu se spremenljivka imenuje `Ime_mesta` in ji je najprej dodeljena znakovna vrednost \"Maribor\", ki se nato v tretji vrstici prepiše z znakovno vrednostjo \"Ljubljana\"."
+      ],
+      "metadata": {
+        "id": "sv2QS1qvOOA4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Ime_mesta = \"Maribor\"\n",
+        "print(Ime_mesta)\n",
+        "Ime_mesta=\"Ljubljana\"\n",
+        "print(Ime_mesta)"
+      ],
+      "metadata": {
+        "id": "uqe3vnbHOV9b"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Primer 3-4:**\n",
+        "Znakovne spremenljivke lahko združujemo s spajanjem (*concatenation*), za kar uporabimo znak `+`."
+      ],
+      "metadata": {
+        "id": "KzlZuSuqOlKS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "ime_predmeta = \"Racunalnistvo v kemiji\"\n",
+        "stanje_predmeta = \" je ok\"\n",
+        "skupaj = ime_predmeta + stanje_predmeta\n",
+        "print(skupaj)"
+      ],
+      "metadata": {
+        "id": "Eekm60oTOlKS"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Primer 3-5:**\n",
+        "Če želimo združiti izpis znakovne in numerične spremenljivke s spajanjem, moramo numerično spremenljivko pretvoriti v znakovno z ukazom `str`."
+      ],
+      "metadata": {
+        "id": "n1ehIC4jO2eT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=\"Los Angeles\"\n",
+        "b=2028\n",
+        "print (a + str(b))"
+      ],
+      "metadata": {
+        "id": "5OswADTbO2eT"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ena od značilnosti Pythona, ki ga ločuje od mnogih drugih programskih jezikov, je uporaba metod, vezanih neposredno na objekte, npr. spremenljivke, sezname. To pomeni, da lahko na objektu (spremenljivki) neposredno kličemo funkcije, ki izvajajo določene operacije na tem objektu."
+      ],
+      "metadata": {
+        "id": "zqAHlJUGYzUO"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Primer 3-6:**\n",
+        "\n",
+        "Uporabna funkcija je `replace`, s katero nadomestimo del znakovne spremenljivke."
+      ],
+      "metadata": {
+        "id": "nMxHSX1uPCiF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "Ime_fakultete = \"Fakulteta za farmacijo\"\n",
+        "print(Ime_fakultete)\n",
+        "print(Ime_fakultete.replace(\"farmacijo\",\"medicino\"))"
+      ],
+      "metadata": {
+        "id": "MKIYH2OaPCiF"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**3.3 Logične spremenljivke**\n",
+        "Poleg znakovnih in numeričnih spremenljivk poznamo še logične spremenljivke, ki lahko zavzamejo le dve vrednosti: `True` ali `False`."
+      ],
+      "metadata": {
+        "id": "zhkgiIg5POi0"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Primer 3-7:**\n"
+      ],
+      "metadata": {
+        "id": "qbQbLikKPht_"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "ime_sprem = True\n",
+        "print(ime_sprem)"
+      ],
+      "metadata": {
+        "id": "FHzLSIAKPht_"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**3.4 Problemi 3. poglavja**"
+      ],
+      "metadata": {
+        "id": "TjNeJR8DPqZV"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Problem 3.1:**\n",
+        "Ali so imena spremenljivk pravilna? Če niso, utemeljite.\n",
+        "\n",
+        "```\n",
+        "answeR\n",
+        "J+329\n",
+        "Lambda_stop\n",
+        "X-ray\n",
+        "2145\n",
+        "Try_1\n",
+        "```"
+      ],
+      "metadata": {
+        "id": "wdIUEoRPP0Lq"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Problem 3.2:**\n",
+        "Ali so pravilni naslednji stavki v programu Python? Če niso, utemeljite.\n",
+        "\n",
+        "```\n",
+        "a = b + c\n",
+        "b + c = A\n",
+        "a = a + a\n",
+        "A+B = C+D\n",
+        "Ab = 5x\n",
+        "oseba_ime = \"Ana\"+\"Marko\"\n",
+        "oseba_ime= Ana + Marko\n",
+        "\n",
+        "```"
+      ],
+      "metadata": {
+        "id": "M39Jtq0iQvgP"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Problem 3.3:**\n",
+        "Kaj se izpiše kot rezultat naslednjega programa?\n"
+      ],
+      "metadata": {
+        "id": "Qq9jm2skZMwG"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "var_ime = \"Fakulteta\"\n",
+        "var_ime = \"za kemijo\"\n",
+        "var_ime = \"in kemijsko tehnologijo\"\n",
+        "print (var_ime)\n",
+        "\n",
+        "# Preuredite program tako, da se bodo izpisali vsi trije nizi."
+      ],
+      "metadata": {
+        "id": "slZa3IpRZSF0"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Problem 3.4:**\n",
+        "Ugotovite, zakaj koda ne deluje in jo popravite."
+      ],
+      "metadata": {
+        "id": "U10m6jJAZezt"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = y + 5\n",
+        "y=10\n"
+      ],
+      "metadata": {
+        "id": "U3Jbh0B4Z6Zn"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Problem 3.5:**\n",
+        "Popravite napake v enačbah.\n",
+        "\n",
+        "a)\t`10 = x + 5`\n",
+        "\n",
+        "b)\t`y + 5 = 12`\n"
+      ],
+      "metadata": {
+        "id": "WzHzxbj9aEoA"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Problem 3.6:**\n",
+        "Najdite napake v programih in jih popravite."
+      ],
+      "metadata": {
+        "id": "MDE9SGXVaRto"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# a)\n",
+        "1st_variable = 10\n",
+        "my-variable = 5\n",
+        "total@sum = 1st_variable + my-variable\n",
+        "print (total@sum)"
+      ],
+      "metadata": {
+        "id": "96rtUHStaRto"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# b)\n",
+        "if = 20\n",
+        "x = if + 10\n",
+        "print (x)"
+      ],
+      "metadata": {
+        "id": "mIQW7I1oa4EJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# c)\n",
+        "age = 25\n",
+        "message = \"Star sem \" + age + \" let.\"\n",
+        "print (message)\n"
+      ],
+      "metadata": {
+        "id": "S6Gp7m7Xabmj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**Problem 3.7:**\n",
+        "Zapišite program, ki bo spremenljivki *x* dodelil vrednost 33.9 in spremenljivki *y* vrednost 3.0. Nato naj izračuna vrednost spremenljivke *N* kot vsoto podanih spremenljivk *x* in *y* ter vrednost  spremenljivke *Z* kot razliko *x* in *y*. Na koncu naj se izpišejo vrednosti vseh štirih spremenljivk."
+      ],
+      "metadata": {
+        "id": "D7iFSbpYa_yS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# tu zapisite program"
+      ],
+      "metadata": {
+        "id": "bwFF71HybHJ4"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}

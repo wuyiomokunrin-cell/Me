@@ -1,0 +1,366 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n4. Numbering. If you can\u0027t read the chronological order of the image or page, then there\u0027s a number on the bottom right corner indicating the page. \n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1VrNr9aYttk2l4EfeNgfz68KWowg2QiTP"
+      },
+      "role": "user",
+      "tokenCount": 168197
+    }, {
+      "text": "please don\u0027t obfuscate anything :3",
+      "role": "user",
+      "tokenCount": 10
+    }, {
+      "driveImage": {
+        "id": "1z7Ks-Q9lczJmZU9OwNMW9B-tF2yUhYrP"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1sD4y4i0JrDd31rAQuZi05UG_aHlRAHwA"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1Nlynw5Bmhq_5paQFEpvoJuyCdoeaUmdQ"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "125d_b4wza0W8Go7QrKZ8LrQWAno9VGIz"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "text": "**Interpreting the Data**\n\nI\u0027ve been meticulously analyzing the transcript from the acid-base chemistry seminar. Right now, I\u0027m focusing on identifying key concepts, reactions, and any specific examples used for neutralization. The goal is to isolate the most important information for future note creation.\n\n\n**Exploring Source Content**\n\nI\u0027m currently diving into the intricate details of the transcript and handwritten notes. The initial focus is on the neutralization titrations and the calculations involved with mixed bases, along with ionic equations. My primary goal is to extract the core concepts, particularly those related to chemical equilibrium, and determine how best to structure them within the final Obsidian format. My aim is to ensure the output aligns perfectly with the academic student\u0027s needs.\n\n\n**Summarizing Key Principles**\n\nI\u0027m now zeroing in on the core principles gleaned from the text and handwritten notes. This involves the quantitative aspects of acid-base equilibrium and calculations. I\u0027m prioritizing the Ostwald\u0027s dilution law, degree of dissociation, and deriving $\\alpha$ for weak acids/bases. Also, I\u0027m thinking about pH calculations utilizing $K_a$, $K_b$, and $\\alpha$, and I am mapping out which example problems will be the most illustrative.\n\n\n**Analyzing Reaction Details**\n\nCurrently, I\u0027m integrating the provided notes on neutralization titrations. I am now combining the details for problems involving NaOH and KOH with those involving the acid $H_2SO_4$. Then, I\u0027ll move on to the mixture of acids and bases. After that, I will combine sections on ionic reactions with the theory of chemical equilibrium. I will also make sure to focus on the step-by-step breakdown from molecular to net ionic equations for students.\n\n\n**Developing Formulae and Examples**\n\nI\u0027m now focusing on deriving the crucial $K_a$ equation for Ostwald\u0027s dilution law. I\u0027ll explain when to approximate $1-\\alpha$, and when the quadratic formula is necessary. In this new section, I\u0027ll then move onto pH calculations for weak acids and bases, including the relationship between $pK_a$ and $pK_b$. I\u0027m paying close attention to specifics like the 200mL volume example, and I\u0027ll carefully check stoichiometric accuracy, such as in the $H_2SO_4$ equation. I\u0027m also considering the rationale behind calculating the moles of $N_2$ in the example problem.\n\n\n**Explaining Alpha and Constants**\n\nI\u0027m now focusing on deriving the $K_a$ equation for Ostwald\u0027s dilution law and incorporating the formula for $\\alpha$. I also remember to include a warning about common errors in stoichiometry, highlighting the differences between initial and equilibrium concentrations. Additionally, I will focus on integrating the persona throughout the text, and start building wikilinks. I\u0027ll use callouts to highlight the critical and general formulas.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Interpreting the Data**\n\nI\u0027ve been meticulously analyzing the transcript from the acid-base chemistry seminar. Right now, I\u0027m focusing on identifying key concepts, reactions, and any specific examples used for neutralization. The goal is to isolate the most important information for future note creation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Exploring Source Content**\n\nI\u0027m currently diving into the intricate details of the transcript and handwritten notes. The initial focus is on the neutralization titrations and the calculations involved with mixed bases, along with ionic equations. My primary goal is to extract the core concepts, particularly those related to chemical equilibrium, and determine how best to structure them within the final Obsidian format. My aim is to ensure the output aligns perfectly with the academic student\u0027s needs.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing Key Principles**\n\nI\u0027m now zeroing in on the core principles gleaned from the text and handwritten notes. This involves the quantitative aspects of acid-base equilibrium and calculations. I\u0027m prioritizing the Ostwald\u0027s dilution law, degree of dissociation, and deriving $\\alpha$ for weak acids/bases. Also, I\u0027m thinking about pH calculations utilizing $K_a$, $K_b$, and $\\alpha$, and I am mapping out which example problems will be the most illustrative.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Reaction Details**\n\nCurrently, I\u0027m integrating the provided notes on neutralization titrations. I am now combining the details for problems involving NaOH and KOH with those involving the acid $H_2SO_4$. Then, I\u0027ll move on to the mixture of acids and bases. After that, I will combine sections on ionic reactions with the theory of chemical equilibrium. I will also make sure to focus on the step-by-step breakdown from molecular to net ionic equations for students.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Formulae and Examples**\n\nI\u0027m now focusing on deriving the crucial $K_a$ equation for Ostwald\u0027s dilution law. I\u0027ll explain when to approximate $1-\\alpha$, and when the quadratic formula is necessary. In this new section, I\u0027ll then move onto pH calculations for weak acids and bases, including the relationship between $pK_a$ and $pK_b$. I\u0027m paying close attention to specifics like the 200mL volume example, and I\u0027ll carefully check stoichiometric accuracy, such as in the $H_2SO_4$ equation. I\u0027m also considering the rationale behind calculating the moles of $N_2$ in the example problem.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Explaining Alpha and Constants**\n\nI\u0027m now focusing on deriving the $K_a$ equation for Ostwald\u0027s dilution law and incorporating the formula for $\\alpha$. I also remember to include a warning about common errors in stoichiometry, highlighting the differences between initial and equilibrium concentrations. Additionally, I will focus on integrating the persona throughout the text, and start building wikilinks. I\u0027ll use callouts to highlight the critical and general formulas.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Tukaj je strukturiran in obdelan zapis seminarja, pripravljen za tvoj Obsidian vault. Zapis združuje transkript predavanja in tvoje ročne zapiske, s poudarkom na izpeljavah in kritični analizi postopkov.\n\n***\n\n# Seminar: Kisline, Baze in Kemijsko Ravnotežje\n\n**Datum:** 3. december 2025\n**Tema:** Nevtralizacijska titracija, ionske reakcije, kemijsko ravnotežje, šibki elektroliti.\n**Povezave:** [[Stehiometrija]], [[Kemijsko Ravnotežje]], [[pH in pOH]]\n\n---\n\n## 1. Nevtralizacijska Titracija Zmesi Baz\n\nPrvi del seminarja se nanaša na računanje koncentracije kisline pri titraciji zmesi dveh baz.\n\n### Problem 1: Titracija zmesi NaOH in KOH\nImamo zmes $NaOH$ in $KOH$.\n*   **Podatki:**\n    *   Volumen porabljene kisline $H_2SO_4$: $V \u003d 24,8\\ ml$.\n    *   Koncentracija kisline: $c(H_2SO_4) \u003d 0,025\\ mol/L$.\n    *   Masa zmesi: $m_{zmesi} \u003d 50\\ g$.\n    *   Masni delež $NaOH$: $w(NaOH) \u003d 0,32\\%$.\n\n### Postopek Reševanja\n\n1.  **Izračun množine kisline:**\n    $$n(H_2SO_4) \u003d c \\cdot V \u003d 0,025\\, mol/L \\cdot 0,0248\\, L \u003d 6,2 \\cdot 10^{-4}\\, mol$$\n\n2.  **Stehiometrija (Ključni korak):**\n    Reakcija poteka v razmerju 2:1 (baza : kislina), ker je žveplova(VI) kislina dprotonska:\n    $$2NaOH + H_2SO_4 \\rightarrow Na_2SO_4 + 2H_2O$$\n    $$2KOH + H_2SO_4 \\rightarrow K_2SO_4 + 2H_2O$$\n\n    To pomeni, da je celotna množina bazičnih ionov ($OH^-$) enaka dvakratni množini kisline.\n    $$n(OH^-)_{skupni} \u003d 2 \\cdot n(H_2SO_4) \u003d 1,24 \\cdot 10^{-3}\\, mol$$\n\n3.  **Določitev množin posameznih baz:**\n    *   Iz masnega deleža in mase zmesi izračunamo maso $NaOH$:\n        $$m(NaOH) \u003d m_{zmesi} \\cdot w(NaOH) \u003d 50\\, g \\cdot 0,0032 \u003d 0,16\\, g$$\n    *   Izračunamo množino $NaOH$:\n        $$n(NaOH) \u003d \\frac{m(NaOH)}{M(NaOH)} \u003d \\frac{0,16\\, g}{40\\, g/mol} \u003d 0,004\\, mol$$\n\n\u003e [!WARNING] **Kritična Analiza: Neskladje v podatkih**\n\u003e Pri analizi zapiskov in transkripta se pojavi logična težava. Množina samega $NaOH$ ($0,004\\, mol$) je večja od izračunane *skupne* množine bazičnih ionov, potrebnih za nevtralizacijo ($0,00124\\, mol$).\n\u003e\n\u003e **Možna razlaga:**\n\u003e 1.  Šlo je za alikvot (vzet je bil le delec zmesi za titracijo, npr. 20 mL od 100 mL raztopine).\n\u003e 2.  Napaka v prepisu podatka o volumnu titracije ali koncentraciji kisline.\n\u003e *V nadaljevanju zapiskov (slika 1) je omenjen \"prebitek\", kar nakazuje na to, da smo morda računali prebitek kisline po reakciji, ali pa je naloga zahtevala izračun prebitka baze.*\n\n---\n\n## 2. Plinska Zmes in Parcialni Tlaki\n\n### Problem 2: Reakcija HCl in $N_2$\nAnaliza zmesi plinov dušika ($N_2$) in klorovodika ($HCl$).\n\n*   **Podatki:**\n    *   $V \u003d 200\\, mL$\n    *   $p \u003d 97,2\\, kPa$\n    *   $T \u003d 25^\\circ C \u003d 298,15\\, K$\n    *   Po nevtralizaciji HCl ostane dušik.\n\n### Splošne Formule\nUporabimo splošno plinsko enačbo:\n$$pV \u003d nRT \\implies n \u003d \\frac{pV}{RT}$$\n\n1.  **Celotna množina plinov:**\n    $$n_{skupna} \u003d \\frac{97,2 \\cdot 0,2}{8,314 \\cdot 298,15} \\approx 0,0078\\, mol$$\n\n2.  **Množinski delež ($x$):**\n    Če poznamo množino HCl (iz titracije), lahko izračunamo delež:\n    $$x(HCl) \u003d \\frac{n(HCl)}{n_{skupna}}$$\n    $$x(N_2) \u003d 1 - x(HCl)$$\n\n3.  **Parcialni tlak ($p_i$):**\n    $$p(HCl) \u003d x(HCl) \\cdot p_{celotni}$$\n\n4.  **Povprečna molska masa zmesi ($\\overline{M}$):**\n    $$\\overline{M} \u003d x(HCl) \\cdot M(HCl) + x(N_2) \\cdot M(N_2)$$\n\n---\n\n## 3. [[Ionske Reakcije]]\n\nIonske reakcije v vodnih raztopinah potečejo, če se ioni izločijo iz raztopine. To se zgodi v treh primerih:\n\n1.  **Nastane plin ($\\uparrow$):** Npr. $CO_2, H_2S, NH_3$.\n2.  **Nastane oborina ($\\downarrow$):** Težko topna sol (uporabimo topnostna pravila).\n3.  **Nastane šibki elektrolit:** Najpogosteje voda ($H_2O$) ali šibka kislina/baza.\n\n### Primeri zapisa\nReakcija med srebrovim nitratom in kalijevim kloridom:\n\n1.  **Molekulski zapis:**\n    $$AgNO_3(aq) + KCl(aq) \\rightarrow AgCl(s) + KNO_3(aq)$$\n2.  **Popolni ionski zapis:**\n    $$Ag^+ + NO_3^- + K^+ + Cl^- \\rightarrow AgCl(s) \\downarrow + K^+ + NO_3^-$$\n3.  **Neto ionski zapis (bistvo):**\n    $$Ag^+(aq) + Cl^-(aq) \\rightarrow AgCl(s)$$\n\n\u003e [!NOTE] **Opomba o spektatorskih ionih**\n\u003e Ioni, ki se ne spremenijo ($K^+$ in $NO_3^-$), so \"spektatorji\" in jih v neto ionski enačbi izpustimo.\n\n---\n\n## 4. [[Kemijsko Ravnotežje]]\n\nPri reverzibilnih reakcijah hitrost premočrtne reakcije s časom pada, hitrost povratne pa narašča, dokler se ne izenačita.\n\n### Zakon o delovanju mas\nZa splošno reakcijo:\n$$aA + bB \\rightleftharpoons cC + dD$$\n\nRavnotežna konstanta $K_c$ je definirana kot:\n$$K_c \u003d \\frac{[C]^c \\cdot [D]^d}{[A]^a \\cdot [B]^b}$$\n\n*   **Pomembno:** V izraz za $K_c$ vstavljamo le koncentracije snovi v plinastem ($g$) ali raztopljenem ($aq$) stanju. Čistih tekočin ($l$) in trdnin ($s$) ne pišemo (njihova koncentracija je konstantna).\n\n---\n\n## 5. Ostwaldov Zakon Razredčenja (Šibki Elektroliti)\n\nTo je ključni del za razumevanje pH šibkih kislin. Povezuje konstanto disociacije ($K_a$ ali $K_b$) s stopnjo disociacije ($\\alpha$) in koncentracijo ($c$).\n\n### Izpeljava formule\nRecimo, da imamo šibko kislino $HA$ z začetno koncentracijo $c_0$.\n\n1.  **Reakcija:**\n    $$HA \\rightleftharpoons H^+ + A^-$$\n\n2.  **Tabela stanj (ICE table):**\n\n| Snov | Začetno ($t\u003d0$) | Sprememba ($\\Delta$) | Ravnotežje ($eq$) |\n| :--- | :---: | :---: | :---: |\n| $HA$ | $c_0$ | $-c_0 \\alpha$ | $c_0(1 - \\alpha)$ |\n| $H^+$ | $0$ | $+c_0 \\alpha$ | $c_0 \\alpha$ |\n| $A^-$ | $0$ | $+c_0 \\alpha$ | $c_0 \\alpha$ |\n\n*   $\\alpha$ (stopnja disociacije) \u003d delež molekul, ki razpadejo.\n\n3.  **Vstavljanje v $K_a$:**\n    $$K_a \u003d \\frac{[H^+][A^-]}{[HA]} \u003d \\frac{(c_0 \\alpha) \\cdot (c_0 \\alpha)}{c_0(1 - \\alpha)}$$\n\n    $$K_a \u003d \\frac{c_0 \\cdot \\alpha^2}{1 - \\alpha}$$\n\n### Reševanje za $\\alpha$\n\n#### Primer A: Zelo šibka kislina (Aproksimacija)\nČe je $\\alpha \\ll 1$ (običajno, ko je $K_a \u003c 10^{-4}$ ali pri visokih koncentracijah), lahko imenovalec poenostavimo:\n$$1 - \\alpha \\approx 1$$\n$$K_a \\approx c_0 \\alpha^2 \\implies \\alpha \u003d \\sqrt{\\frac{K_a}{c_0}}$$\n\n#### Primer B: Kvadratna enačba (Točna rešitev)\nČe aproksimacija ne drži (npr. pri večjih $K_a$ ali zelo razredčenih raztopinah), moramo rešiti kvadratno enačbo (razvidno iz 3. strani ročnih zapiskov):\n\n$$K_a(1-\\alpha) \u003d c_0 \\alpha^2$$\n$$c_0 \\alpha^2 + K_a \\alpha - K_a \u003d 0$$\n\nRešitev za $\\alpha$ (upoštevamo le pozitivni koren):\n$$\\alpha \u003d \\frac{-K_a + \\sqrt{K_a^2 + 4 c_0 K_a}}{2 c_0}$$\n\n\u003e [!TIP] **Uporaba kalkulatorja**\n\u003e Pri izpitih najprej preveri aproksimacijo. Če je izračunani $\\alpha \u003e 0,05$ (5%), moraš nujno uporabiti kvadratno enačbo.\n\n---\n\n## 6. Računanje pH\n\n### Šibka kislina ($CH_3COOH$)\n1.  Izračunamo $\\alpha$ (po zgornji metodi).\n2.  Izračunamo koncentracijo oksonijevih ionov:\n    $$[H_3O^+] \u003d c_0 \\cdot \\alpha$$\n    *Alternativno (direktno iz aproksimacije):* $[H_3O^+] \u003d \\sqrt{K_a \\cdot c_0}$\n3.  Izračunamo pH:\n    $$pH \u003d -\\log[H_3O^+]$$\n\n### Šibka baza ($NH_3$ ali $B$)\nReakcija: $B + H_2O \\rightleftharpoons BH^+ + OH^-$\n1.  Uporabimo $K_b$ (konstanta baze).\n2.  Izračunamo koncentracijo hidroksidnih ionov:\n    $$[OH^-] \u003d \\sqrt{K_b \\cdot c_0}$$ (ob aproksimaciji)\n3.  Izračunamo pOH:\n    $$pOH \u003d -\\log[OH^-]$$\n4.  Pretvorba v pH:\n    $$pH \u003d 14 - pOH$$\n\n\u003e [!WARNING] **Past pri nalogah**\n\u003e Pogosto je podan $pK_a$ za konjugirano kislino, imamo pa reakcijo baze.\n\u003e Uporabi zvezo: $$pK_a + pK_b \u003d 14$$ ali $$K_a \\cdot K_b \u003d K_w \u003d 10^{-14}$$\n\u003e Ne mešaj $K_a$ v formulo za baze!\n\n### Primer iz vaj (Stran 4 zapiskov)\n*   **Naloga:** Izračunaj koncentracijo kisline, če je podan pH \u003d 4,8 in $K_d$ (konstanta disociacije) \u003d $1,75 \\cdot 10^{-5}$.\n*   **Postopek (Reverse engineering):**\n    1.  Iz pH dobimo $[H_3O^+] \u003d 10^{-pH} \u003d 10^{-4,8}$.\n    2.  Izraz za $K_a$:\n        $$K_a \u003d \\frac{[H_3O^+]^2}{c_k - [H_3O^+]} \\approx \\frac{[H_3O^+]^2}{c_k}$$\n    3.  Izrazimo $c_k$:\n        $$c_k \u003d \\frac{[H_3O^+]^2}{K_a} \u003d \\frac{(10^{-4,8})^2}{1,75 \\cdot 10^{-5}} \u003d 1,44 \\cdot 10^{-5}\\, mol/L$$\n\n---\n\n## 7. Slovarček / Pomembne Konstante\n\n*   **$K_w$**: Ionska konstanta vode ($10^{-14}$ pri 25°C).\n*   **$\\alpha$**: Stopnja disociacije.\n*   **Spektatorski ioni**: Ioni, ki ne reagirajo.\n*   **M (molska masa)**: g/mol.\n*   **$c$ (množinska koncentracija)**: mol/L.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3475,
+      "parts": [{
+        "text": "Tukaj je strukturiran in obdelan zapis seminarja, pripravljen za tvoj Obsidian vault. Zapis združuje transkript predavanja in tvoje ročne"
+      }, {
+        "text": " zapiske, s poudarkom na izpeljavah in kritični analizi postopkov.\n\n***"
+      }, {
+        "text": "\n\n# Seminar: Kisline, Baze in Kemijsko Ravnotežje\n\n**Datum:** 3. december 2025"
+      }, {
+        "text": "\n**Tema:** Nevtralizacijska titracija, ionske reakcije, kemijsko ravnotežje, š"
+      }, {
+        "text": "ibki elektroliti.\n**Povezave:** [[Stehiometrija]], [[Kemijsko Ravnotežje]], [["
+      }, {
+        "text": "pH in pOH]]\n\n---\n\n## 1. Nevtralizacijska Titracija Zmesi Baz\n\nPrvi"
+      }, {
+        "text": " del seminarja se nanaša na računanje koncentracije kisline pri titraciji zmesi dveh baz.\n\n### Problem "
+      }, {
+        "text": "1: Titracija zmesi NaOH in KOH\nImamo zmes $NaOH$ in $KOH$.\n*   **Pod"
+      }, {
+        "text": "atki:**\n    *   Volumen porabljene kisline $H_2SO_4$: $"
+      }, {
+        "text": "V \u003d 24,8\\ ml$.\n    *   Koncentracija kisline: $c(H_"
+      }, {
+        "text": "2SO_4) \u003d 0,025\\ mol/L$.\n    *   Masa z"
+      }, {
+        "text": "mesi: $m_{zmesi} \u003d 50\\ g$.\n    *   Masni delež $NaOH$: $w("
+      }, {
+        "text": "NaOH) \u003d 0,32\\%$.\n\n### Postopek Reševanja\n\n1.  **Izračun množ"
+      }, {
+        "text": "ine kisline:**\n    $$n(H_2SO_4) \u003d c \\cdot V \u003d 0,025"
+      }, {
+        "text": "\\, mol/L \\cdot 0,0248\\, L \u003d 6,2 \\cdot 10"
+      }, {
+        "text": "^{-4}\\, mol$$\n\n2.  **Stehiometrija (Ključni korak):**\n    Reakcija"
+      }, {
+        "text": " poteka v razmerju 2:1 (baza : kislina), ker je žveplova("
+      }, {
+        "text": "VI) kislina dprotonska:\n    $$2NaOH + H_2SO_4 \\rightarrow Na_2SO_4 +"
+      }, {
+        "text": " 2H_2O$$\n    $$2KOH + H_2SO_4 \\rightarrow K_2"
+      }, {
+        "text": "SO_4 + 2H_2O$$\n\n    To pomeni, da je celotna množina b"
+      }, {
+        "text": "azičnih ionov ($OH^-$) enaka dvakratni množini kisline.\n    $$n(OH"
+      }, {
+        "text": "^-)_{skupni} \u003d 2 \\cdot n(H_2SO_4) \u003d 1,24 \\cdot"
+      }, {
+        "text": " 10^{-3}\\, mol$$\n\n3.  **Določitev množin posameznih baz:**\n    "
+      }, {
+        "text": "*   Iz masnega deleža in mase zmesi izračunamo maso $NaOH$:\n        $$"
+      }, {
+        "text": "m(NaOH) \u003d m_{zmesi} \\cdot w(NaOH) \u003d 50\\, g \\cdot 0,003"
+      }, {
+        "text": "2 \u003d 0,16\\, g$$\n    *   Izračunamo množino $NaOH$:\n"
+      }, {
+        "text": "        $$n(NaOH) \u003d \\frac{m(NaOH)}{M(NaOH)} \u003d \\frac{0,"
+      }, {
+        "text": "16\\, g}{40\\, g/mol} \u003d 0,004\\, mol$$\n\n\u003e ["
+      }, {
+        "text": "!WARNING] **Kritična Analiza: Neskladje v podatkih**\n\u003e Pri analizi zapiskov in transkript"
+      }, {
+        "text": "a se pojavi logična težava. Množina samega $NaOH$ ($0,004\\, mol$)"
+      }, {
+        "text": " je večja od izračunane *skupne* množine bazičnih ionov, potrebnih za nev"
+      }, {
+        "text": "tralizacijo ($0,00124\\, mol$).\n\u003e\n\u003e **Možna razlaga:**\n"
+      }, {
+        "text": "\u003e 1.  Šlo je za alikvot (vzet je bil le delec zmesi za tit"
+      }, {
+        "text": "racijo, npr. 20 mL od 100 mL raztopine).\n\u003e 2.  "
+      }, {
+        "text": "Napaka v prepisu podatka o volumnu titracije ali koncentraciji kisline.\n\u003e *V nadal"
+      }, {
+        "text": "jevanju zapiskov (slika 1) je omenjen \"prebitek\", kar nakazuje na"
+      }, {
+        "text": " to, da smo morda računali prebitek kisline po reakciji, ali pa je naloga zaht"
+      }, {
+        "text": "evala izračun prebitka baze.*\n\n---\n\n## 2. Plinska Zmes in Par"
+      }, {
+        "text": "cialni Tlaki\n\n### Problem 2: Reakcija HCl in $N_2$\nAnaliza z"
+      }, {
+        "text": "mesi plinov dušika ($N_2$) in klorovodika ($HCl$).\n\n*   **Podatki:**\n    *   "
+      }, {
+        "text": "$V \u003d 200\\, mL$\n    *   $p \u003d 97,2\\, kPa$\n    *   $T"
+      }, {
+        "text": " \u003d 25^\\circ C \u003d 298,15\\, K$\n    *   Po nev"
+      }, {
+        "text": "tralizaciji HCl ostane dušik.\n\n### Splošne Formule\nUporabimo splošno plinsko enač"
+      }, {
+        "text": "bo:\n$$pV \u003d nRT \\implies n \u003d \\frac{pV}{RT}$$\n\n1.  **"
+      }, {
+        "text": "Celotna množina plinov:**\n    $$n_{skupna} \u003d \\frac{97,2 \\"
+      }, {
+        "text": "cdot 0,2}{8,314 \\cdot 298,15} \\approx 0,0078"
+      }, {
+        "text": "\\, mol$$\n\n2.  **Množinski delež ($x$):**\n    Če poz"
+      }, {
+        "text": "namo množino HCl (iz titracije), lahko izračunamo delež:\n    $$x(HCl) \u003d"
+      }, {
+        "text": " \\frac{n(HCl)}{n_{skupna}}$$\n    $$x(N_2) \u003d 1 - x(HCl)$$"
+      }, {
+        "text": "\n\n3.  **Parcialni tlak ($p_i$):**\n    $$p(HCl) \u003d x(HCl"
+      }, {
+        "text": ") \\cdot p_{celotni}$$\n\n4.  **Povprečna molska masa zmesi ($\\overline{M}$):**\n    "
+      }, {
+        "text": "$$\\overline{M} \u003d x(HCl) \\cdot M(HCl) + x(N_2) \\"
+      }, {
+        "text": "cdot M(N_2)$$\n\n---\n\n## 3. [[Ionske Reakcije]]\n\nIonske reakcije v"
+      }, {
+        "text": " vodnih raztopinah potečejo, če se ioni izločijo iz raztopine. To se zgodi v"
+      }, {
+        "text": " treh primerih:\n\n1.  **Nastane plin ($\\uparrow$):** Npr. $CO_2,"
+      }, {
+        "text": " H_2S, NH_3$.\n2.  **Nastane oborina ($\\downarrow$):** Te"
+      }, {
+        "text": "žko topna sol (uporabimo topnostna pravila).\n3.  **Nastane š"
+      }, {
+        "text": "ibki elektrolit:** Najpogosteje voda ($H_2O$) ali šibka kislina/"
+      }, {
+        "text": "baza.\n\n### Primeri zapisa\nReakcija med srebrovim nitratom in kalijevim klor"
+      }, {
+        "text": "idom:\n\n1.  **Molekulski zapis:**\n    $$AgNO_3(aq) + KCl("
+      }, {
+        "text": "aq) \\rightarrow AgCl(s) + KNO_3(aq)$$\n2.  **Popolni ionski zapis:**\n    $$Ag"
+      }, {
+        "text": "^+ + NO_3^- + K^+ + Cl^- \\rightarrow AgCl(s) \\downarrow + K^+ + NO_3"
+      }, {
+        "text": "^-$$\n3.  **Neto ionski zapis (bistvo):**\n    $$Ag^+(aq) + Cl^"
+      }, {
+        "text": "-(aq) \\rightarrow AgCl(s)$$\n\n\u003e [!NOTE] **Opomba o spektatorskih ionih**\n\u003e Ioni"
+      }, {
+        "text": ", ki se ne spremenijo ($K^+$ in $NO_3^-$), so \"spektatorji\" in jih v"
+      }, {
+        "text": " neto ionski enačbi izpustimo.\n\n---\n\n## 4. [[Kemijsko Ravnotežje]]"
+      }, {
+        "text": "\n\nPri reverzibilnih reakcijah hitrost premočrtne reakcije s časom pada, hitrost pov"
+      }, {
+        "text": "ratne pa narašča, dokler se ne izenačita.\n\n### Zakon o delovanju mas\n"
+      }, {
+        "text": "Za splošno reakcijo:\n$$aA + bB \\rightleftharpoons cC + dD$$"
+      }, {
+        "text": "\n\nRavnotežna konstanta $K_c$ je definirana kot:\n$$K_c \u003d \\"
+      }, {
+        "text": "frac{[C]^c \\cdot [D]^d}{[A]^a \\cdot [B]^b}$$\n\n*"
+      }, {
+        "text": "   **Pomembno:** V izraz za $K_c$ vstavljamo le koncentracije snov"
+      }, {
+        "text": "i v plinastem ($g$) ali raztopljenem ($aq$) stanju. Čistih te"
+      }, {
+        "text": "kočin ($l$) in trdnin ($s$) ne pišemo (njihova koncentracija je konstant"
+      }, {
+        "text": "na).\n\n---\n\n## 5. Ostwaldov Zakon Razredčenja (Šibki Elektroliti"
+      }, {
+        "text": ")\n\nTo je ključni del za razumevanje pH šibkih kislin. Povezuje konst"
+      }, {
+        "text": "anto disociacije ($K_a$ ali $K_b$) s stopnjo disociacije ($\\alpha$)"
+      }, {
+        "text": " in koncentracijo ($c$).\n\n### Izpeljava formule\nRecimo, da imamo šibko kislino $HA$ z"
+      }, {
+        "text": " začetno koncentracijo $c_0$.\n\n1.  **Reakcija:**\n    $$HA \\rightleftharpoons"
+      }, {
+        "text": " H^+ + A^-$$\n\n2.  **Tabela stanj (ICE table):**\n\n| Snov | Začetno ($"
+      }, {
+        "text": "t\u003d0$) | Sprememba ($\\Delta$) | Ravnotežje ($eq$) |\n| :--- | :"
+      }, {
+        "text": "---: | :---: | :---: |\n| $HA$ | $c_0$ | $-c_"
+      }, {
+        "text": "0 \\alpha$ | $c_0(1 - \\alpha)$ |\n| $H^+$ | $0$ | $+"
+      }, {
+        "text": "c_0 \\alpha$ | $c_0 \\alpha$ |\n| $A^-$ | $0"
+      }, {
+        "text": "$ | $+c_0 \\alpha$ | $c_0 \\alpha$ |\n\n*   $\\alpha$ ("
+      }, {
+        "text": "stopnja disociacije) \u003d delež molekul, ki razpadejo.\n\n3.  **Vstavljanje"
+      }, {
+        "text": " v $K_a$:**\n    $$K_a \u003d \\frac{[H^+][A^-]}{[HA]}"
+      }, {
+        "text": " \u003d \\frac{(c_0 \\alpha) \\cdot (c_0 \\alpha)}{c_0(1 - \\alpha)}$"
+      }, {
+        "text": "$\n\n    $$K_a \u003d \\frac{c_0 \\cdot \\alpha^2}{1 - \\"
+      }, {
+        "text": "alpha}$$\n\n### Reševanje za $\\alpha$\n\n#### Primer A: Zelo šibka kislina ("
+      }, {
+        "text": "Aproksimacija)\nČe je $\\alpha \\ll 1$ (običajno, ko je $K_"
+      }, {
+        "text": "a \u003c 10^{-4}$ ali pri visokih koncentracijah), lahko imenovalec poenostavimo:\n$$1 -"
+      }, {
+        "text": " \\alpha \\approx 1$$\n$$K_a \\approx c_0 \\alpha^2 \\implies \\alpha \u003d \\sqrt{\\"
+      }, {
+        "text": "frac{K_a}{c_0}}$$\n\n#### Primer B: Kvadratna enačba (To"
+      }, {
+        "text": "čna rešitev)\nČe aproksimacija ne drži (npr. pri večjih $K_a$ ali zelo"
+      }, {
+        "text": " razredčenih raztopinah), moramo rešiti kvadratno enačbo (razvidno iz 3. strani"
+      }, {
+        "text": " ročnih zapiskov):\n\n$$K_a(1-\\alpha) \u003d c_0 \\alpha^2$$\n$$c"
+      }, {
+        "text": "_0 \\alpha^2 + K_a \\alpha - K_a \u003d 0$$\n\nRešitev za $\\alpha$"
+      }, {
+        "text": " (upoštevamo le pozitivni koren):\n$$\\alpha \u003d \\frac{-K_a + \\sqrt{K_a^2 + "
+      }, {
+        "text": "4 c_0 K_a}}{2 c_0}$$\n\n\u003e [!TIP] **Uporaba kalk"
+      }, {
+        "text": "ulatorja**\n\u003e Pri izpitih najprej preveri aproksimacijo. Če je izračunani"
+      }, {
+        "text": " $\\alpha \u003e 0,05$ (5%), moraš nujno uporabiti kvadratno enačbo.\n\n---\n\n## 6"
+      }, {
+        "text": ". Računanje pH\n\n### Šibka kislina ($CH_3COOH$)\n1.  Izračunamo $\\alpha$ ("
+      }, {
+        "text": "po zgornji metodi).\n2.  Izračunamo koncentracijo oksonijevih ionov:\n    "
+      }, {
+        "text": "$$[H_3O^+] \u003d c_0 \\cdot \\alpha$$\n    *Alternativno ("
+      }, {
+        "text": "direktno iz aproksimacije):* $[H_3O^+] \u003d \\sqrt{K_a \\cdot c_0}$"
+      }, {
+        "text": "\n3.  Izračunamo pH:\n    $$pH \u003d -\\log[H_3O^+]$"
+      }, {
+        "text": "$\n\n### Šibka baza ($NH_3$ ali $B$)\nReakcija: $B + H_2O \\"
+      }, {
+        "text": "rightleftharpoons BH^+ + OH^-$\n1.  Uporabimo $K_b$ (konstanta"
+      }, {
+        "text": " baze).\n2.  Izračunamo koncentracijo hidroksidnih ionov:\n    $$[OH^-]"
+      }, {
+        "text": " \u003d \\sqrt{K_b \\cdot c_0}$$ (ob aproksimaciji)\n3.  Izračunamo pOH:"
+      }, {
+        "text": "\n    $$pOH \u003d -\\log[OH^-]$$\n4.  Pretvorba v pH:\n    $$"
+      }, {
+        "text": "pH \u003d 14 - pOH$$\n\n\u003e [!WARNING] **Past pri nalogah**\n\u003e Pogosto je"
+      }, {
+        "text": " podan $pK_a$ za konjugirano kislino, imamo pa reakcijo baze.\n\u003e U"
+      }, {
+        "text": "porabi zvezo: $$pK_a + pK_b \u003d 14$$ ali $$K_a \\cdot K_"
+      }, {
+        "text": "b \u003d K_w \u003d 10^{-14}$$\n\u003e Ne mešaj $K_a$ v"
+      }, {
+        "text": " formulo za baze!\n\n### Primer iz vaj (Stran 4 zapiskov)\n*   **N"
+      }, {
+        "text": "aloga:** Izračunaj koncentracijo kisline, če je podan pH \u003d 4,8 in $K_"
+      }, {
+        "text": "d$ (konstanta disociacije) \u003d $1,75 \\cdot 10^{-5}$.\n*   "
+      }, {
+        "text": "**Postopek (Reverse engineering):**\n    1.  Iz pH dobimo $[H_3O^+]"
+      }, {
+        "text": " \u003d 10^{-pH} \u003d 10^{-4,8}$.\n    2.  Izraz za $K_a$:"
+      }, {
+        "text": "\n        $$K_a \u003d \\frac{[H_3O^+]^2}{c_k - [H_3O^+]} \\"
+      }, {
+        "text": "approx \\frac{[H_3O^+]^2}{c_k}$$\n    3.  Izrazimo $c_k$:\n        "
+      }, {
+        "text": "$$c_k \u003d \\frac{[H_3O^+]^2}{K_a} \u003d \\frac{("
+      }, {
+        "text": "10^{-4,8})^2}{1,75 \\cdot 10^{-5}} \u003d 1,44 \\cdot 1"
+      }, {
+        "text": "0^{-5}\\, mol/L$$\n\n---\n\n## 7. Slovarček / Pomembne Konstante\n\n*   **"
+      }, {
+        "text": "$K_w$**: Ionska konstanta vode ($10^{-14}$ pri 25°C).\n*   "
+      }, {
+        "text": "**$\\alpha$**: Stopnja disociacije.\n*   **Spektatorski ioni**: Ioni, ki"
+      }, {
+        "text": " ne reagirajo.\n*   **M (molska masa)**: g/mol.\n*   **$"
+      }, {
+        "text": "c$ (množinska koncentracija)**: mol/L."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

@@ -1,0 +1,514 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ code blocks rather than explicit ```()``` mention. \n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1b8dJxzieAzYeS8wy7vorzTN9Ov3pt93B"
+      },
+      "role": "user",
+      "tokenCount": 74374
+    }, {
+      "driveAudio": {
+        "id": "1wtWwMSAYlcjg6S1TTw1JVV1mOmi9Nuvs"
+      },
+      "role": "user",
+      "tokenCount": 90547
+    }, {
+      "driveAudio": {
+        "id": "10XqT_a0fgVt7j9r89dFXnASMMAb0Kcp1"
+      },
+      "role": "user",
+      "tokenCount": 83833
+    }, {
+      "driveImage": {
+        "id": "1aLfhlGxQDGj1bXJqjQKcJwtVbyXqlOU8"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "15ygobZY-PhQn7ZiGeMhCkdamT8s8XYb4"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "12Yhux0zN-31kLHF0j6oSUpmQWdzETnhk"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "17yvuCbrNL7F98vuRaim5DmgFHCMXI40s"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1uiUzyoRmWkAxBhj3xZ_BrCF8lykBehGm"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "13zDC39PP2vD1o1t9YvPbfc4rzfNZ0PQh"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1EJHueVqmk__OkGcPZVrRCxMs7LEOjL8w"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "113XqeQYAkr52Snpuk0zY8e-lTJx3iaVm"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1yWuSZLBXkVnU5W0WrhjroLeCMFF2OsMz"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1CXj2XilX7fDD_sK0wnkIPzLnC1a1eEfV"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ISpxi5Bo83hONYFUsOI-zRsAhNAy2I9_"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1G58PRI24aqgud3zINadQeihimsEsasex"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1gUIi0KbqVKrBUmwdcy6GZgdbxoh45Ai8"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "15iH_z4REPlQKchgvFB5F2p90Lqbji_lM"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "**Analyzing Input Sources**\n\nI\u0027m currently focused on the initial data ingestion, figuring out the best way to handle the mix of audio transcript and handwritten notes. It\u0027s a bit tricky but I\u0027ve outlined the core requirements: a structured Obsidian note about sequences (zaporedja) and their limits.\n\n\n**Developing the Note Structure**\n\nI\u0027ve refined my approach to structuring the Obsidian note. Now, I\u0027m integrating the audio and handwritten data with more defined sections for definitions, problems, and methods. I\u0027m prioritizing the lecture\u0027s chronological flow, ensuring all formulas are in LaTeX. I\u0027m also preparing to incorporate visualizations using Matplotlib where relevant to the sequences. I\u0027m confident in handling potential errors and ambiguities in the source material, ensuring a robust and clear output.\n\n\n**Implementing Note Structure**\n\nI\u0027m now implementing the structure, working directly with the content. I\u0027m focusing on those specific sections (definitions, problems, and methods) and ensuring all formulas are neatly rendered in LaTeX. The chronological flow is being carefully followed, and I\u0027m ready to add visualizations using Matplotlib as needed. I\u0027m actively looking for potential errors or ambiguities in the original material. I plan to provide detailed justifications for each step to make the understanding easier.\n\n\n**Refining Structure and Content**\n\nI\u0027ve finalized the structure and am adding the content. I\u0027m focusing on the core concepts of sequences, their representation, and limits. Definitions, problems, and methods are neatly sectioned, and formulas are consistently rendered in LaTeX. The lecture\u0027s chronological order is preserved. I am ready to integrate the handwritten notes seamlessly, paying careful attention to potential errors. I\u0027ll provide justification for each step to enhance clarity. I plan to add visual aids using Matplotlib for illustrative sequences.\n\n\n**Developing Note Content**\n\nI\u0027m now diving into the core of the note, starting with the fundamental definitions and representations of sequences. I\u0027m focusing on the epsilon-n0 definition of a limit and working through examples, including the alternating sequence. I\u0027m actively incorporating the handwritten notes, ensuring a seamless flow and adding visualizations using Matplotlib where relevant. My goal is to ensure a tutor\u0027s tone and clear explanations, particularly when discussing key theorems. I will meticulously document the process.\n\n\n**Transforming Raw Data**\n\nI\u0027m now fully immersed in the core task: organizing the information from both audio and handwritten sources into a coherent Obsidian note. I\u0027ve broken the structure into definitions, representations, and limit properties of sequences. My focus is on the epsilon-n_0 definition. Visualizations are planned for clarity, and I will be meticulously documenting the process. I am now working on the convergence and divergence examples, starting with the `1/n` sequence.\n\n\n",
+      "role": "model",
+      "tokenCount": 1239,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Analyzing Input Sources**\n\nI\u0027m currently focused on the initial data ingestion, figuring out the best way to handle the mix of audio transcript and handwritten notes. It\u0027s a bit tricky but I\u0027ve outlined the core requirements: a structured Obsidian note about sequences (zaporedja) and their limits.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Note Structure**\n\nI\u0027ve refined my approach to structuring the Obsidian note. Now, I\u0027m integrating the audio and handwritten data with more defined sections for definitions, problems, and methods. I\u0027m prioritizing the lecture\u0027s chronological flow, ensuring all formulas are in LaTeX. I\u0027m also preparing to incorporate visualizations using Matplotlib where relevant to the sequences. I\u0027m confident in handling potential errors and ambiguities in the source material, ensuring a robust and clear output.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing Note Structure**\n\nI\u0027m now implementing the structure, working directly with the content. I\u0027m focusing on those specific sections (definitions, problems, and methods) and ensuring all formulas are neatly rendered in LaTeX. The chronological flow is being carefully followed, and I\u0027m ready to add visualizations using Matplotlib as needed. I\u0027m actively looking for potential errors or ambiguities in the original material. I plan to provide detailed justifications for each step to make the understanding easier.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Structure and Content**\n\nI\u0027ve finalized the structure and am adding the content. I\u0027m focusing on the core concepts of sequences, their representation, and limits. Definitions, problems, and methods are neatly sectioned, and formulas are consistently rendered in LaTeX. The lecture\u0027s chronological order is preserved. I am ready to integrate the handwritten notes seamlessly, paying careful attention to potential errors. I\u0027ll provide justification for each step to enhance clarity. I plan to add visual aids using Matplotlib for illustrative sequences.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Note Content**\n\nI\u0027m now diving into the core of the note, starting with the fundamental definitions and representations of sequences. I\u0027m focusing on the epsilon-n0 definition of a limit and working through examples, including the alternating sequence. I\u0027m actively incorporating the handwritten notes, ensuring a seamless flow and adding visualizations using Matplotlib where relevant. My goal is to ensure a tutor\u0027s tone and clear explanations, particularly when discussing key theorems. I will meticulously document the process.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Transforming Raw Data**\n\nI\u0027m now fully immersed in the core task: organizing the information from both audio and handwritten sources into a coherent Obsidian note. I\u0027ve broken the structure into definitions, representations, and limit properties of sequences. My focus is on the epsilon-n_0 definition. Visualizations are planned for clarity, and I will be meticulously documenting the process. I am now working on the convergence and divergence examples, starting with the `1/n` sequence.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Analiza - Zaporedja in Limite]]\n\n## [[Definicija Zaporedja]]\n\nTorej, zaporedje je v osnovi preslikava oziroma funkcija, ki slika iz množice naravnih števil ($$\\mathbb{N}$$) v neko drugo množico $$M$$.\n\n$$\nf: \\mathbb{N} \\rightarrow M\n$$\n\n*   **Note to Self:** V bistvu je to samo funkcija, kjer je domena omejena na naravna števila.\n\nMnožica $$M$$ je lahko množica realnih ($$\\mathbb{R}$$) ali kompleksnih ($$\\mathbb{C}$$) števil. V tem kontekstu se bomo osredotočili na realna zaporedja, kjer je $$M \u003d \\mathbb{R}$$.\n\n$$\na: \\mathbb{N} \\rightarrow \\mathbb{R}\n$$\n\n### [[Oznake in Terminologija]]\n\nNamesto standardne funkcijske oznake $$f(n)$$, pri zaporedjih običajno uporabljamo črko $$a$$ in pišemo $$a_n$$. Ta zapis poudari, da je argument funkcije naravno število.\n\n$$\na_n\n$$\n\nTa izraz, $$a_n$$, se imenuje **splošni člen zaporedja**. Predstavlja predpis, ki vsakemu naravnemu številu $$n$$ priredi točno določeno vrednost v zaporedju.\n\n## [[Načini Podajanja Zaporedja]]\n\n### [[1. S splošnim (eksplicitnim) členom]]\n\nZaporedje je podano z eksplicitno formulo za $$a_n$$. To je najbolj neposreden način, saj lahko izračunamo katerikoli člen zaporedja, ne da bi poznali prejšnje.\n\n*   **Primer:**\n    $$\n    a_n \u003d \\frac{1}{n}\n    $$\n\n### [[2. Z naštevanjem členov]]\n\nZapišemo prvih nekaj členov zaporedja, da nakažemo vzorec. Člene zapišemo v okrogel oklepaj, kar poudarja, da je vrstni red pomemben (za razliko od množice, kjer se uporablja zaviti oklepaj).\n\n*   **Primer:** Zaporedje $$a_n \u003d \\frac{1}{n}$$ lahko zapišemo kot:\n    $$\n    \\left( 1, \\frac{1}{2}, \\frac{1}{3}, \\frac{1}{4}, \\dots \\right)\n    $$\n    Ali bolj formalno:\n    $$\n    (a_n) \u003d (a_1, a_2, a_3, \\dots)\n    $$\n\n### [[3. Rekurzivno]]\n\nSplošni člen $$a_n$$ je izražen s pomočjo enega ali več predhodnih členov. Pri tem načinu je nujno treba podati tudi začetne člene, da se rekurzija lahko začne.\n\n*   **Formalno:**\n    $$\n    a_n \u003d f(a_{n-1}, a_{n-2}, \\dots, a_{n-k})\n    $$\n    Potrebujemo $$k$$ začetnih pogojev: $$a_1, a_2, \\dots, a_k$$.\n\n*   **Primer: Fibonaccijevo zaporedje**\n    Najbolj znan primer rekurzivno podanega zaporedja.\n\n    *   **Rekurzivni predpis:** Vsak člen je vsota dveh predhodnih.\n        $$\n        a_n \u003d a_{n-1} + a_{n-2}\n        $$\n    *   **Začetni pogoji:**\n        $$\n        a_1 \u003d 1, \\quad a_2 \u003d 1\n        $$\n    *   **Členi zaporedja:**\n        $$\n        (1, 1, 2, 3, 5, 8, 13, 21, \\dots)\n        $$\n    *   **Memorialization:** Predavateljica je omenila, da je Fibonacci to zaporedje definiral preko problema razmnoževanja zajcev in da se te številke pojavljajo v naravi, na primer v slikarstvu (zlati rez) in botaniki (filotaksija, npr. pri brokoliju). Zaporedje se označuje tudi z $$F_n$$.\n\n## [[Limita Zaporedja]]\n\n### [[Intuitivni Pristop]]\n\nLimita zaporedja opisuje, h kateremu številu se členi zaporedja približujejo, ko gre $$n$$ proti neskončnosti. To je analogno limiti funkcije, ko gre $$x \\rightarrow \\infty$$.\n\n*   **Primer:** Za zaporedje $$a_n \u003d \\frac{1}{n}$$\n    $$\n    (1, 0.5, 0.333\\dots, 0.25, \\dots)\n    $$\n    Členi se očitno približujejo vrednosti 0.\n\n*   **Vizualizacija:**\n    Člene zaporedja si lahko predstavljamo kot točke na številski premici.\n\n    ```python\n    import matplotlib.pyplot as plt\n    import numpy as np\n\n    n \u003d np.arange(1, 21)\n    an \u003d 1/n\n\n    plt.figure(figsize\u003d(10, 2))\n    plt.scatter(an, np.zeros_like(an), c\u003dn, cmap\u003d\u0027viridis\u0027)\n    plt.yticks([])\n    plt.xlabel(\u0027Vrednosti členov $a_n$\u0027)\n    plt.title(\u0027Členi zaporedja $a_n \u003d 1/n$ na številski premici\u0027)\n    plt.axvline(x\u003d0, color\u003d\u0027r\u0027, linestyle\u003d\u0027--\u0027, label\u003d\u0027Limita \u003d 0\u0027)\n    plt.legend()\n    plt.grid(True)\n    plt.show()\n    ```\n\n### [[Formalna Definicija Limite]]\n\nŠtevilo $$A$$ je **limita** zaporedja $$(a_n)$$, če za vsako poljubno majhno okolico $$ \\varepsilon \u003e 0 $$ okoli točke $$A$$, obstaja takšen člen zaporedja $$a_{n_0}$$, da vsi nadaljnji členi ($$n \u003e n_0$$) ležijo znotraj te okolice.\n\n**Zapis s simboli:**\nŠtevilo $$A$$ je limita zaporedja $$(a_n)$$, kar zapišemo kot $$\\lim_{n \\to \\infty} a_n \u003d A$$, natanko takrat, ko velja:\n$$\n\\forall \\varepsilon \u003e 0, \\quad \\exists n_0 \\in \\mathbb{N} \\text{, tako da } \\forall n \\geq n_0 \\text{ velja } |a_n - A| \u003c \\varepsilon\n$$\n\n*   **Justification:** Izraz $$|a_n - A| \u003c \\varepsilon$$ pomeni, da je razdalja med členom $$a_n$$ in limito $$A$$ manjša od $$\\varepsilon$$. To je ekvivalentno zapisu $$a_n \\in (A - \\varepsilon, A + \\varepsilon)$$, kar pomeni, da $$a_n$$ leži v $$\\varepsilon$$-okolici števila $$A$$.\n\n### [[Konvergenca in Divergenca]]\n\n*   Če limita zaporedja obstaja (in je končno število), pravimo, da je zaporedje **konvergentno**.\n*   Če limita ne obstaja ali je neskončna, pravimo, da je zaporedje **divergentno**.\n\n### [[Stekališče Zaporedja]]\n\nŠtevilo $$S$$ je **stekališče** zaporedja, če vsaka poljubno majhna $$\\varepsilon$$-okolica števila $$S$$ vsebuje neskončno mnogo členov zaporedja.\n\n*   **Critical Analysis:** Razlika med limito in stekališčem je ključna.\n    *   **Limita:** *Vsi* členi od nekega člena $$n_0$$ naprej morajo biti v $$\\varepsilon$$-okolici. Zunaj okolice je lahko le končno mnogo členov.\n    *   **Stekališče:** V $$\\varepsilon$$-okolici mora biti *neskončno* mnogo členov. Zunaj okolice je lahko prav tako neskončno mnogo členov.\n\nVsaka limita je tudi stekališče. Obratno pa ne velja!\n\n*   **Izrek:** Če ima zaporedje več kot eno stekališče, je **divergentno**.\n\n*   **Primer:** Zaporedje $$a_n \u003d (-1)^n \\frac{n+1}{n}$$\n    $$\n    (-2, \\frac{3}{2}, -\\frac{4}{3}, \\frac{5}{4}, \\dots)\n    $$\n    *   Lihi členi se približujejo -1.\n    *   Sodi členi se približujejo 1.\n    *   Zaporedje ima dve stekališči: -1 in 1.\n    *   Ker ima več kot eno stekališče, nima limite in je divergentno.\n\n## [[Lastnosti Zaporedij]]\n\n### [[Monotonost]]\n\nZaporedje je:\n*   **Naraščajoče:** če velja $$ a_n \\leq a_{n+1} $$ za vsak $$n \\in \\mathbb{N}$$.\n*   **Strogo naraščajoče:** če velja $$ a_n \u003c a_{n+1} $$ za vsak $$n \\in \\mathbb{N}$$.\n*   **Padajoče:** če velja $$ a_n \\geq a_{n+1} $$ za vsak $$n \\in \\mathbb{N}$$.\n*   **Strogo padajoče:** če velja $$ a_n \u003e a_{n+1} $$ za vsak $$n \\in \\mathbb{N}$$.\n\n### [[Omejenost]]\n\nMnožica vrednosti zaporedja $$\\{a_n | n \\in \\mathbb{N}\\}$$ je:\n*   **Navzgor omejena:** če obstaja takšna zgornja meja $$M$$, da je $$a_n \\leq M$$ za vsak $$n$$. Natančno zgornjo mejo imenujemo **supremum**.\n*   **Navzdol omejena:** če obstaja takšna spodnja meja $$m$$, da je $$a_n \\geq m$$ za vsak $$n$$. Natančno spodnjo mejo imenujemo **infimum**.\n*   **Omejena:** če je omejena navzgor in navzdol.\n\n### [[Ključni Izrek: Monotonost in Omejenost]]\n\n**Vsako monotono in omejeno zaporedje je konvergentno.**\n\n*   **Justification (Dokazna skica za naraščajoče zaporedje):**\n    1.  Ker je zaporedje navzgor omejeno, ima po aksiomu o polnosti realnih števil natančno zgornjo mejo (supremum). Označimo jo z $$M$$.\n    2.  Pokažemo, da je ta supremum $$M$$ ravno limita zaporedja.\n    3.  Iz definicije supremuma sledi, da za vsak $$\\varepsilon \u003e 0$$ obstaja vsaj en člen zaporedja, recimo $$a_{n_0}$$, ki je večji od $$M-\\varepsilon$$.\n    4.  Ker je zaporedje naraščajoče, so vsi naslednji členi ($$a_n$$ za $$n \u003e n_0$$) prav tako večji od $$M-\\varepsilon$$.\n    5.  Hkrati pa so vsi členi manjši ali enaki $$M$$, ker je $$M$$ zgornja meja.\n    6.  Torej vsi členi za $$n \u003e n_0$$ ležijo v intervalu $$(M-\\varepsilon, M]$$, kar ustreza definiciji limite.\n    *   Če je zaporedje **naraščajoče in omejeno**, je njegova limita enaka **supremumu**.\n    *   Če je zaporedje **padajoče in omejeno**, je njegova limita enaka **infimumu**.\n\n### [[Primer Pomembnega Zaporedja: Definicija števila e]]\n\nOglejmo si zaporedje:\n$$\na_n \u003d \\left(1 + \\frac{1}{n}\\right)^n\n$$\n*   **Analiza:** Lahko se izkaže (dokaz ni preprost), da je to zaporedje **naraščajoče** in **navzgor omejeno** (npr. s 3).\n*   **Sklep:** Ker je monotono in omejeno, je konvergentno. Njegovo limito definiramo kot Eulerjevo število $$e$$.\n$$\n\\lim_{n \\to \\infty} \\left(1 + \\frac{1}{n}\\right)^n \u003d e \\approx 2.71828\\dots\n$$\n\n## [[Računanje z Limitami]]\n\nČe sta zaporedji $$(a_n)$$ in $$(b_n)$$ konvergentni z limitama $$\\lim a_n \u003d A$$ in $$\\lim b_n \u003d B$$, potem velja:\n\n### [[Pravila]]\n1.  **Limita vsote/razlike:**\n    $$\n    \\lim_{n \\to \\infty} (a_n \\pm b_n) \u003d A \\pm B\n    $$\n2.  **Limita produkta:**\n    $$\n    \\lim_{n \\to \\infty} (a_n \\cdot b_n) \u003d A \\cdot B\n    $$\n3.  **Limita konstante krat zaporedje:**\n    $$\n    \\lim_{n \\to \\infty} (c \\cdot a_n) \u003d c \\cdot A\n    $$\n4.  **Limita kvocienta:**\n    $$\n    \\lim_{n \\to \\infty} \\left(\\frac{a_n}{b_n}\\right) \u003d \\frac{A}{B} \\quad (\\text{če } B \\neq 0 \\text{ in } b_n \\neq 0)\n    $$\n\n### [[Dokaz za Limito Vsote]]\n\n**Cilj:** Dokazati, da je $$\\lim_{n \\to \\infty} (a_n + b_n) \u003d A + B$$.\n\n**Predpostavki:**\n1. $$\\forall \\varepsilon_1 \u003e 0, \\exists n_1: \\forall n \\ge n_1 \\implies |a_n - A| \u003c \\varepsilon_1$$\n2. $$\\forall \\varepsilon_2 \u003e 0, \\exists n_2: \\forall n \\ge n_2 \\implies |b_n - B| \u003c \\varepsilon_2$$\n\n**Dokaz:**\nŽelimo pokazati: $$\\forall \\varepsilon \u003e 0, \\exists n_0: \\forall n \\ge n_0 \\implies |(a_n + b_n) - (A+B)| \u003c \\varepsilon$$.\n\n1.  **Preuredimo izraz:**\n    $$\n    |(a_n + b_n) - (A+B)| \u003d |(a_n - A) + (b_n - B)|\n    $$\n2.  **Uporabimo trikotniško neenakost:** $$|x+y| \\le |x| + |y|$$\n    $$\n    |(a_n - A) + (b_n - B)| \\le |a_n - A| + |b_n - B|\n    $$\n3.  **Justification:** Naš cilj je, da je celoten izraz manjši od $$\\varepsilon$$. Ker imamo vsoto dveh delov, bomo zahtevali, da je vsak del manjši od $$\\varepsilon/2$$. To je standarden \"trik\" pri takih dokazih. Vsota $$\\varepsilon/2 + \\varepsilon/2$$ bo potem enaka $$\\varepsilon$$.\n4.  **Izberemo $$\\varepsilon_1$$ in $$\\varepsilon_2$$:** Naj bo $$\\varepsilon_1 \u003d \\varepsilon_2 \u003d \\varepsilon/2$$. Iz predpostavk vemo, da za ta $$\\varepsilon_1$$ in $$\\varepsilon_2$$ obstajata ustrezna $$n_1$$ in $$n_2$$.\n5.  **Določimo $$n_0$$:** Da bosta veljali obe neenakosti hkrati (za $$a_n$$ in $$b_n$$), moramo izbrati večjega od indeksov $$n_1$$ in $$n_2$$. Torej, naj bo $$n_0 \u003d \\max\\{n_1, n_2\\}$$.\n6.  **Sklep:** Za vsak $$n \\ge n_0$$ velja:\n    $$\n    |(a_n + b_n) - (A+B)| \\le |a_n - A| + |b_n - B| \u003c \\frac{\\varepsilon}{2} + \\frac{\\varepsilon}{2} \u003d \\varepsilon\n    $$\n    S tem je dokaz končan.\n\n## [[Zvezne Funkcije na Zaprtem Intervalu]]\n\n### [[Izrek 1: O Ničli (Bolzano)]]\n\nČe je funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$ in sta vrednosti v krajiščih nasprotno predznačeni ($$f(a) \\cdot f(b) \u003c 0$$), potem obstaja vsaj ena točka $$c$$ znotraj intervala ($$c \\in (a, b)$$), kjer je vrednost funkcije enaka nič ($$f(c) \u003d 0$$).\n\n### [[Izrek 2: O Omejenosti]]\n\nČe je funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$, potem je na tem intervalu **omejena**.\n\n*   **Warning:** To velja samo za **zaprte** intervale. Primer je $$f(x) \u003d \\tan(x)$$ na odprtem intervalu $$(-\\pi/2, \\pi/2)$$, ki je zvezna, a ni omejena. Na zaprtem intervalu, npr. $$[-\\pi/4, \\pi/4]$$, pa je omejena.\n\n### [[Izrek 3: O Ekstremih (Weierstrass)]]\n\nČe je funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$, potem na tem intervalu doseže svojo natančno zgornjo mejo (supremum) in natančno spodnjo mejo (infimum). To pomeni, da obstajata **maksimum** in **minimum** funkcije.\n$$\n\\exists c, d \\in [a, b]: f(c) \u003d \\max_{x \\in [a,b]} f(x) \\text{ in } f(d) \u003d \\min_{x \\in [a,b]} f(x)\n$$\n\n### [[Izrek 4: O Vmesnih Vrednostih]]\n\nČe je funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$, potem zavzame **vse vrednosti** med svojim minimumom ($$m$$) in maksimumom ($$M$$).\n\n*   **Posledica:** Zaloga vrednosti zvezne funkcije na zaprtem intervalu je spet zaprt interval: $$Z_f \u003d [m, M]$$.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 25,
+      "parts": [{
+        "text": "# [[Analiza - Zaporedja in Limite]]\n\n## [[Definicija Zaporedja]]\n\nT"
+      }, {
+        "text": "orej, zaporedje je v osnovi preslikava oziroma funkcija, ki slika iz množice"
+      }, {
+        "text": " naravnih števil ($$\\mathbb{N}$$) v neko drugo množico $$M$$.\n\n$$\n"
+      }, {
+        "text": "f: \\mathbb{N} \\rightarrow M\n$$\n\n*   **Note to Self:** V bistvu je to samo"
+      }, {
+        "text": " funkcija, kjer je domena omejena na naravna števila.\n\nMnožica $$M$$ je"
+      }, {
+        "text": " lahko množica realnih ($$\\mathbb{R}$$) ali kompleksnih ($$\\mathbb{C}$$) števil. V"
+      }, {
+        "text": " tem kontekstu se bomo osredotočili na realna zaporedja, kjer je $$M \u003d \\mathbb{"
+      }, {
+        "text": "R}$$.\n\n$$\na: \\mathbb{N} \\rightarrow \\mathbb{R}\n$$\n\n### [[Oznake in Terminologija]]\n\nNamesto standardne funkcijske oznake $$f(n)$$, pri zaporedjih obič"
+      }, {
+        "text": "ajno uporabljamo črko $$a$$ in pišemo $$a_n$$. Ta zapis poudari"
+      }, {
+        "text": ", da je argument funkcije naravno število.\n\n$$\na_n\n$$\n\nTa izraz, $$"
+      }, {
+        "text": "a_n$$, se imenuje **splošni člen zaporedja**. Predstavlja predpis, ki"
+      }, {
+        "text": " vsakemu naravnemu številu $$n$$ priredi točno določeno vrednost v zaporedju."
+      }, {
+        "text": "\n\n## [[Načini Podajanja Zaporedja]]\n\n### [[1. S splošnim (eksplicitnim) členom]]\n\nZaporedje je podano z eksplicitno formulo za $$a_n"
+      }, {
+        "text": "$$. To je najbolj neposreden način, saj lahko izračunamo katerikoli člen zaporedja, ne"
+      }, {
+        "text": " da bi poznali prejšnje.\n\n*   **Primer:**\n    $$\n    a_n \u003d \\frac{1"
+      }, {
+        "text": "}{n}\n    $$\n\n### [[2. Z naštevanjem členov]]\n\nZapišemo prv"
+      }, {
+        "text": "ih nekaj členov zaporedja, da nakažemo vzorec. Člene zapišemo v okrog"
+      }, {
+        "text": "el oklepaj, kar poudarja, da je vrstni red pomemben (za razliko od množ"
+      }, {
+        "text": "ice, kjer se uporablja zaviti oklepaj).\n\n*   **Primer:** Zaporedje $$a"
+      }, {
+        "text": "_n \u003d \\frac{1}{n}$$ lahko zapišemo kot:\n    $$\n    \\left("
+      }, {
+        "text": " 1, \\frac{1}{2}, \\frac{1}{3}, \\frac{1}{4}, \\"
+      }, {
+        "text": "dots \\right)\n    $$\n    Ali bolj formalno:\n    $$\n    (a_n)"
+      }, {
+        "text": " \u003d (a_1, a_2, a_3, \\dots)\n    $$\n\n### [[3. Rekurzivno]]\n\nSplošni člen $$a_n$$ je izražen s pomočjo enega ali več pred"
+      }, {
+        "text": "hodnih členov. Pri tem načinu je nujno treba podati tudi začetne člene, da"
+      }, {
+        "text": " se rekurzija lahko začne.\n\n*   **Formalno:**\n    $$\n    a_n \u003d f("
+      }, {
+        "text": "a_{n-1}, a_{n-2}, \\dots, a_{n-k})\n    $$"
+      }, {
+        "text": "\n    Potrebujemo $$k$$ začetnih pogojev: $$a_1, a_2,"
+      }, {
+        "text": " \\dots, a_k$$.\n\n*   **Primer: Fibonaccijevo zaporedje**\n    Najbol"
+      }, {
+        "text": "j znan primer rekurzivno podanega zaporedja.\n\n    *   **Rekurzivni"
+      }, {
+        "text": " predpis:** Vsak člen je vsota dveh predhodnih.\n        $$\n        a_n \u003d a_{"
+      }, {
+        "text": "n-1} + a_{n-2}\n        $$\n    *   **Začetni pogoji:**\n"
+      }, {
+        "text": "        $$\n        a_1 \u003d 1, \\quad a_2 \u003d 1\n        $$\n    "
+      }, {
+        "text": "*   **Členi zaporedja:**\n        $$\n        (1, 1, 2, "
+      }, {
+        "text": "3, 5, 8, 13, 21, \\dots)\n        $$\n    "
+      }, {
+        "text": "*   **Memorialization:** Predavateljica je omenila, da je Fibonacci to zaporedje definiral preko"
+      }, {
+        "text": " problema razmnoževanja zajcev in da se te številke pojavljajo v naravi, na primer v sl"
+      }, {
+        "text": "ikarstvu (zlati rez) in botaniki (filotaksija, npr. pri brokoliju)."
+      }, {
+        "text": " Zaporedje se označuje tudi z $$F_n$$.\n\n## [[Limita Zaporedja]]\n\n### [[Intuitivni Pristop]]\n\nLimita zaporedja opisuje, h kateremu številu se člen"
+      }, {
+        "text": "i zaporedja približujejo, ko gre $$n$$ proti neskončnosti. To je analogno limiti"
+      }, {
+        "text": " funkcije, ko gre $$x \\rightarrow \\infty$$.\n\n*   **Primer:** Za zaporedje $$a"
+      }, {
+        "text": "_n \u003d \\frac{1}{n}$$\n    $$\n    (1, 0.5, 0.3"
+      }, {
+        "text": "33\\dots, 0.25, \\dots)\n    $$\n    Členi se očitno pribli"
+      }, {
+        "text": "žujejo vrednosti 0.\n\n*   **Vizualizacija:**\n    Člene zaporedja si"
+      }, {
+        "text": " lahko predstavljamo kot točke na številski premici.\n\n    "
+      }, {
+        "text": "```python\n    import matplotlib.pyplot"
+      }, {
+        "text": " as plt\n    import numpy as np\n\n    n \u003d np.arange(1, 21)\n    an"
+      }, {
+        "text": " \u003d 1/n\n\n    plt.figure(figsize\u003d(10, 2))\n    plt.scatter(an"
+      }, {
+        "text": ", np.zeros_like(an), c\u003dn, cmap\u003d\u0027viridis\u0027)\n    plt.yticks([])\n    plt."
+      }, {
+        "text": "xlabel(\u0027Vrednosti členov $a_n$\u0027)\n    plt.title(\u0027Členi zaporedja"
+      }, {
+        "text": " $a_n \u003d 1/n$ na številski premici\u0027)\n    plt.axvline(x"
+      }, {
+        "text": "\u003d0, color\u003d\u0027r\u0027, linestyle\u003d\u0027--\u0027, label\u003d\u0027Limita \u003d 0\u0027)\n    plt.legend()\n    plt"
+      }, {
+        "text": ".grid(True)\n    plt.show()\n    "
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n### [[Formalna Definicija Limite]]\n\nŠ"
+      }, {
+        "text": "tevilo $$A$$ je **limita** zaporedja $$(a_n)$$, če za vsako pol"
+      }, {
+        "text": "jubno majhno okolico $$ \\varepsilon \u003e 0 $$ okoli točke $$A$$, obstaja tak"
+      }, {
+        "text": "šen člen zaporedja $$a_{n_0}$$, da vsi nadaljnji členi ($$n \u003e"
+      }, {
+        "text": " n_0$$) ležijo znotraj te okolice.\n\n**Zapis s simboli:**\n"
+      }, {
+        "text": "Število $$A$$ je limita zaporedja $$(a_n)$$, kar zapišemo kot"
+      }, {
+        "text": " $$\\lim_{n \\to \\infty} a_n \u003d A$$, natanko takrat, ko velja:\n$$"
+      }, {
+        "text": "\n\\forall \\varepsilon \u003e 0, \\quad \\exists n_0 \\in \\mathbb{N} \\text"
+      }, {
+        "text": "{, tako da } \\forall n \\geq n_0 \\text{ velja } |a_n - A|"
+      }, {
+        "text": " \u003c \\varepsilon\n$$\n\n*   **Justification:** Izraz $$|a_n - A| \u003c \\varepsilon"
+      }, {
+        "text": "$$ pomeni, da je razdalja med členom $$a_n$$ in limito $$A$$ manjša od"
+      }, {
+        "text": " $$\\varepsilon$$. To je ekvivalentno zapisu $$a_n \\in (A - \\varepsilon, A + \\"
+      }, {
+        "text": "varepsilon)$$, kar pomeni, da $$a_n$$ leži v $$\\varepsilon$$-okolici števila $$A"
+      }, {
+        "text": "$$.\n\n### [[Konvergenca in Divergenca]]\n\n*   Če limita zaporedja obstaja ("
+      }, {
+        "text": "in je končno število), pravimo, da je zaporedje **konvergentno**.\n*   Č"
+      }, {
+        "text": "e limita ne obstaja ali je neskončna, pravimo, da je zaporedje **divergentno**.\n\n###"
+      }, {
+        "text": " [[Stekališče Zaporedja]]\n\nŠtevilo $$S$$ je **stekališče** zaporedja,"
+      }, {
+        "text": " če vsaka poljubno majhna $$\\varepsilon$$-okolica števila $$S$$ vsebuje neskončno mnogo člen"
+      }, {
+        "text": "ov zaporedja.\n\n*   **Critical Analysis:** Razlika med limito in stekališčem je ključna."
+      }, {
+        "text": "\n    *   **Limita:** *Vsi* členi od nekega člena $$n_0$$"
+      }, {
+        "text": " naprej morajo biti v $$\\varepsilon$$-okolici. Zunaj okolice je lahko le končno mnogo"
+      }, {
+        "text": " členov.\n    *   **Stekališče:** V $$\\varepsilon$$-okolici mora biti *neskončno*"
+      }, {
+        "text": " mnogo členov. Zunaj okolice je lahko prav tako neskončno mnogo členov.\n\nVsaka limita je tudi"
+      }, {
+        "text": " stekališče. Obratno pa ne velja!\n\n*   **Izrek:** Če ima zaporedje več"
+      }, {
+        "text": " kot eno stekališče, je **divergentno**.\n\n*   **Primer:** Zaporedje $$a"
+      }, {
+        "text": "_n \u003d (-1)^n \\frac{n+1}{n}$$\n    $$\n    (-2, \\"
+      }, {
+        "text": "frac{3}{2}, -\\frac{4}{3}, \\frac{5}{4}, \\dots)\n    "
+      }, {
+        "text": "$$\n    *   Lihi členi se približujejo -1.\n    *   Sodi člen"
+      }, {
+        "text": "i se približujejo 1.\n    *   Zaporedje ima dve stekališči: -1"
+      }, {
+        "text": " in 1.\n    *   Ker ima več kot eno stekališče, nima limite in je divergent"
+      }, {
+        "text": "no.\n\n## [[Lastnosti Zaporedij]]\n\n### [[Monotonost]]\n\nZaporedje je:"
+      }, {
+        "text": "\n*   **Naraščajoče:** če velja $$ a_n \\leq a_{n+1} $$ za"
+      }, {
+        "text": " vsak $$n \\in \\mathbb{N}$$.\n*   **Strogo naraščajoče:**"
+      }, {
+        "text": " če velja $$ a_n \u003c a_{n+1} $$ za vsak $$n \\in \\mathbb"
+      }, {
+        "text": "{N}$$.\n*   **Padajoče:** če velja $$ a_n \\geq a_{n"
+      }, {
+        "text": "+1} $$ za vsak $$n \\in \\mathbb{N}$$.\n*   **Strogo"
+      }, {
+        "text": " padajoče:** če velja $$ a_n \u003e a_{n+1} $$ za vsak $$n"
+      }, {
+        "text": " \\in \\mathbb{N}$$.\n\n### [[Omejenost]]\n\nMnožica vrednosti zaporedja"
+      }, {
+        "text": " $$\\{a_n | n \\in \\mathbb{N}\\}$$ je:\n*   **Navzgor omejena"
+      }, {
+        "text": ":** če obstaja takšna zgornja meja $$M$$, da je $$a_n \\leq M$$ za vs"
+      }, {
+        "text": "ak $$n$$. Natančno zgornjo mejo imenujemo **supremum**.\n*   **"
+      }, {
+        "text": "Navzdol omejena:** če obstaja takšna spodnja meja $$m$$, da je $$a_n"
+      }, {
+        "text": " \\geq m$$ za vsak $$n$$. Natančno spodnjo mejo imenujemo **infimum**.\n"
+      }, {
+        "text": "*   **Omejena:** če je omejena navzgor in navzdol.\n\n### [[Ključni Izrek: Monotonost in Omejenost]]\n\n**Vsako monotono in omejeno zaporedje je kon"
+      }, {
+        "text": "vergentno.**\n\n*   **Justification (Dokazna skica za naraščajoče zaporedje):"
+      }, {
+        "text": "**\n    1.  Ker je zaporedje navzgor omejeno, ima po aksiomu o polnosti"
+      }, {
+        "text": " realnih števil natančno zgornjo mejo (supremum). Označimo jo z $$M$$."
+      }, {
+        "text": "\n    2.  Pokažemo, da je ta supremum $$M$$ ravno limita zaporedja.\n    "
+      }, {
+        "text": "3.  Iz definicije supremuma sledi, da za vsak $$\\varepsilon \u003e 0$$ obstaja"
+      }, {
+        "text": " vsaj en člen zaporedja, recimo $$a_{n_0}$$, ki je večji od $$M"
+      }, {
+        "text": "-\\varepsilon$$.\n    4.  Ker je zaporedje naraščajoče, so vsi naslednji členi ($"
+      }, {
+        "text": "$a_n$$ za $$n \u003e n_0$$) prav tako večji od $$M-\\varepsilon$$."
+      }, {
+        "text": "\n    5.  Hkrati pa so vsi členi manjši ali enaki $$M$$, ker"
+      }, {
+        "text": " je $$M$$ zgornja meja.\n    6.  Torej vsi členi za $$n \u003e"
+      }, {
+        "text": " n_0$$ ležijo v intervalu $$(M-\\varepsilon, M]$$, kar ustreza definic"
+      }, {
+        "text": "iji limite.\n    *   Če je zaporedje **naraščajoče in omejeno**, je"
+      }, {
+        "text": " njegova limita enaka **supremumu**.\n    *   Če je zaporedje **padajoče in ome"
+      }, {
+        "text": "jeno**, je njegova limita enaka **infimumu**.\n\n### [[Primer Pomembnega Zaporedja: Definicija števila e]]\n\nOglejmo si zaporedje:\n$$\na_n \u003d \\"
+      }, {
+        "text": "left(1 + \\frac{1}{n}\\right)^n\n$$\n*   **Analiza:** Lah"
+      }, {
+        "text": "ko se izkaže (dokaz ni preprost), da je to zaporedje **naraščajoče"
+      }, {
+        "text": "** in **navzgor omejeno** (npr. s 3).\n*   **Sklep:** Ker je"
+      }, {
+        "text": " monotono in omejeno, je konvergentno. Njegovo limito definiramo kot Eulerjevo štev"
+      }, {
+        "text": "ilo $$e$$.\n$$\n\\lim_{n \\to \\infty} \\left(1 + \\frac{1}{"
+      }, {
+        "text": "n}\\right)^n \u003d e \\approx 2.71828\\dots\n$$\n\n## [[Računanje z Limitami]]\n\nČe sta zaporedji $$(a_n)$$ in $$(b_n)$$ kon"
+      }, {
+        "text": "vergentni z limitama $$\\lim a_n \u003d A$$ in $$\\lim b_n \u003d B$$, potem"
+      }, {
+        "text": " velja:\n\n### [[Pravila]]\n1.  **Limita vsote/razlike:**\n    $$\n"
+      }, {
+        "text": "    \\lim_{n \\to \\infty} (a_n \\pm b_n) \u003d A \\pm B\n    "
+      }, {
+        "text": "$$\n2.  **Limita produkta:**\n    $$\n    \\lim_{n \\to \\infty} (a"
+      }, {
+        "text": "_n \\cdot b_n) \u003d A \\cdot B\n    $$\n3.  **Limita konstante krat"
+      }, {
+        "text": " zaporedje:**\n    $$\n    \\lim_{n \\to \\infty} (c \\cdot a_n"
+      }, {
+        "text": ") \u003d c \\cdot A\n    $$\n4.  **Limita kvocienta:**\n    $$\n"
+      }, {
+        "text": "    \\lim_{n \\to \\infty} \\left(\\frac{a_n}{b_n}\\right) \u003d \\"
+      }, {
+        "text": "frac{A}{B} \\quad (\\text{če } B \\neq 0 \\text{ in } b_n"
+      }, {
+        "text": " \\neq 0)\n    $$\n\n### [[Dokaz za Limito Vsote]]\n\n**Cilj:** Dok"
+      }, {
+        "text": "azati, da je $$\\lim_{n \\to \\infty} (a_n + b_n) \u003d A +"
+      }, {
+        "text": " B$$.\n\n**Predpostavki:**\n1. $$\\forall \\varepsilon_1 \u003e 0, \\exists"
+      }, {
+        "text": " n_1: \\forall n \\ge n_1 \\implies |a_n - A| \u003c \\varepsilon_"
+      }, {
+        "text": "1$$\n2. $$\\forall \\varepsilon_2 \u003e 0, \\exists n_2: \\forall n"
+      }, {
+        "text": " \\ge n_2 \\implies |b_n - B| \u003c \\varepsilon_2$$\n\n**Dokaz"
+      }, {
+        "text": ":**\nŽelimo pokazati: $$\\forall \\varepsilon \u003e 0, \\exists n_0: \\forall n \\ge"
+      }, {
+        "text": " n_0 \\implies |(a_n + b_n) - (A+B)| \u003c \\varepsilon"
+      }, {
+        "text": "$$.\n\n1.  **Preuredimo izraz:**\n    $$\n    |(a_n + b_n"
+      }, {
+        "text": ") - (A+B)| \u003d |(a_n - A) + (b_n - B)|"
+      }, {
+        "text": "\n    $$\n2.  **Uporabimo trikotniško neenakost:** $$|x+y"
+      }, {
+        "text": "| \\le |x| + |y|$$\n    $$\n    |(a_n - A) +"
+      }, {
+        "text": " (b_n - B)| \\le |a_n - A| + |b_n - B|"
+      }, {
+        "text": "\n    $$\n3.  **Justification:** Naš cilj je, da je celoten izraz manj"
+      }, {
+        "text": "ši od $$\\varepsilon$$. Ker imamo vsoto dveh delov, bomo zahtevali, da je vsak del"
+      }, {
+        "text": " manjši od $$\\varepsilon/2$$. To je standarden \"trik\" pri takih dokazih."
+      }, {
+        "text": " Vsota $$\\varepsilon/2 + \\varepsilon/2$$ bo potem enaka $$\\varepsilon$$.\n4.  **Iz"
+      }, {
+        "text": "beremo $$\\varepsilon_1$$ in $$\\varepsilon_2$$:** Naj bo $$\\varepsilon_1 \u003d \\varepsilon_"
+      }, {
+        "text": "2 \u003d \\varepsilon/2$$. Iz predpostavk vemo, da za ta $$\\varepsilon_1$$ in $$\\varepsilon_"
+      }, {
+        "text": "2$$ obstajata ustrezna $$n_1$$ in $$n_2$$.\n5.  **D"
+      }, {
+        "text": "oločimo $$n_0$$:** Da bosta veljali obe neenakosti hkrati (za $$a_"
+      }, {
+        "text": "n$$ in $$b_n$$), moramo izbrati večjega od indeksov $$n_1$$ in"
+      }, {
+        "text": " $$n_2$$. Torej, naj bo $$n_0 \u003d \\max\\{n_1, n_2\\}$"
+      }, {
+        "text": "$.\n6.  **Sklep:** Za vsak $$n \\ge n_0$$ velja:\n    "
+      }, {
+        "text": "$$\n    |(a_n + b_n) - (A+B)| \\le |a_n"
+      }, {
+        "text": " - A| + |b_n - B| \u003c \\frac{\\varepsilon}{2} + \\frac{\\varepsilon"
+      }, {
+        "text": "}{2} \u003d \\varepsilon\n    $$\n    S tem je dokaz končan.\n\n## [[Zvezne Funkcije na Zaprtem Intervalu]]\n\n### [[Izrek 1: O Ničli (Bolzano)]]\n\nČe je funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$ in sta vrednosti v krajiščih nasprotno predznačeni ($$f(a)"
+      }, {
+        "text": " \\cdot f(b) \u003c 0$$), potem obstaja vsaj ena točka $$c$$ znotraj interval"
+      }, {
+        "text": "a ($$c \\in (a, b)$$), kjer je vrednost funkcije enaka nič ($$f(c"
+      }, {
+        "text": ") \u003d 0$$).\n\n### [[Izrek 2: O Omejenosti]]\n\nČe je"
+      }, {
+        "text": " funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$, potem je na"
+      }, {
+        "text": " tem intervalu **omejena**.\n\n*   **Warning:** To velja samo za **zaprte** interval"
+      }, {
+        "text": "e. Primer je $$f(x) \u003d \\tan(x)$$ na odprtem intervalu $$(-\\pi"
+      }, {
+        "text": "/2, \\pi/2)$$, ki je zvezna, a ni omejena. Na zaprtem intervalu"
+      }, {
+        "text": ", npr. $$[-\\pi/4, \\pi/4]$$, pa je omejena.\n\n### [[Izrek 3: O Ekstremih (Weierstrass)]]\n\nČe je funkcija $$f$$ zvezna"
+      }, {
+        "text": " na zaprtem intervalu $$[a, b]$$, potem na tem intervalu doseže svojo natančno zg"
+      }, {
+        "text": "ornjo mejo (supremum) in natančno spodnjo mejo (infimum). To pomeni,"
+      }, {
+        "text": " da obstajata **maksimum** in **minimum** funkcije.\n$$\n\\exists c, d \\in"
+      }, {
+        "text": " [a, b]: f(c) \u003d \\max_{x \\in [a,b]} f(x"
+      }, {
+        "text": ") \\text{ in } f(d) \u003d \\min_{x \\in [a,b]} f(x"
+      }, {
+        "text": ")\n$$\n\n### [[Izrek 4: O Vmesnih Vrednostih]]\n\nČe je"
+      }, {
+        "text": " funkcija $$f$$ zvezna na zaprtem intervalu $$[a, b]$$, potem zavzame **"
+      }, {
+        "text": "vse vrednosti** med svojim minimumom ($$m$$) in maksimumom ($$M$$).\n\n*   **Pos"
+      }, {
+        "text": "ledica:** Zaloga vrednosti zvezne funkcije na zaprtem intervalu je spet zaprt interval"
+      }, {
+        "text": ": $$Z_f \u003d [m, M]$$."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

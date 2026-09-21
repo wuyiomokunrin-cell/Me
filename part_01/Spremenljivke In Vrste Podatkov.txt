@@ -1,0 +1,493 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes to know:\n1. The user\u0027s files are chronologically labeled, so the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other, given the topic.\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT PROTOCOL**\n\n1.  **Initial Output Protocol:** Begin your response *only* with the content note itself. Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The foundational structure of the notes must accurately reflect the material presented (what was said/seen). Your first duty is to record the lecturer\u0027s content and the user\u0027s notes, **as they are**. Minimal AI interjection should occur in the main body; use dedicated analytical sections for added insight.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  **Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5.  **Conceptual Strengthening Tasks (NEW):** At the conclusion of the synthesized notes, generate a section of \u0027Conceptual Strengthening Tasks\u0027. These tasks must:\n    *   Mimic the structure and difficulty of the examples/problems presented in the current lecture material.\n    *   Include \u0027Challenges\u0027 designed to connect the current university concepts with foundational knowledge from high school or prior courses, forcing the user to utilize a broad, integrated understanding.\n\n### **4. OBSIDIAN LINKING \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a highly knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveDocument": {
+        "id": "1hp9T21G-T-gfFuqK8iv2vOvLxinGfh0F"
+      },
+      "role": "user",
+      "tokenCount": 44032
+    }, {
+      "driveDocument": {
+        "id": "1erlu8tgpG5w0BL5qOMehYqU-oupQyJzD"
+      },
+      "role": "user",
+      "tokenCount": 4638
+    }, {
+      "driveAudio": {
+        "id": "1Yctg9jj1dZJICkqjaQgmVqBL75Sv7lJX"
+      },
+      "role": "user",
+      "tokenCount": 45270
+    }, {
+      "driveAudio": {
+        "id": "1ZskpaIeVDH8BwEUNLTaL31HJz3dy2EFn"
+      },
+      "role": "user",
+      "tokenCount": 72754
+    }, {
+      "driveAudio": {
+        "id": "1ENLNgOItgDtf0NZpI0iHY_UJsSORz9Gs"
+      },
+      "role": "user",
+      "tokenCount": 77675
+    }, {
+      "text": "Racunalnistvo pri kemiji, 2. lecture theory, computers, by dr. Novak Pintaric Zorka",
+      "role": "user",
+      "tokenCount": 25
+    }, {
+      "text": "**Initiating the Synthesis**\n\nI\u0027m beginning to synthesize the lectures. My focus is initially on establishing the foundational understanding of variables and data types, drawing from the \"3 Spremenljivke in vrste podatkov\" material. From here, I will move to the arithmetic expressions in a way that resonates with Chemistry students.\n\n\n**Analyzing the Flow**\n\nI\u0027ve just finished the initial synthesis of the variables lecture, including definitions, data types (numeric, string, boolean), and integrated examples. I also transcribed the lecturer\u0027s audio content related to variables, and added analytical notes on variable overwriting and type conversion. I now have a solid foundation to transition into arithmetic expressions, since the lecturer\u0027s audio already segued into operators!\n\n\n**Extending the Framework**\n\nI am now moving into the arithmetic expressions lecture. I will begin by listing the basic operators and then focus on the order of operations, using the lecturer\u0027s examples to illustrate step-by-step calculations. I\u0027m also preparing to transcribe the lecturer\u0027s discussion on built-in math functions, creating tables and integrating the relevant examples. I\u0027ll need to pay close attention to the conversion of degrees to radians, highlighting this example as it\u0027s relevant to many chemistry applications.\n\n\n**Planning the Integration**\n\nOkay, I\u0027ve got the overall plan outlined. I\u0027ll begin with the variables lecture, focusing on definitions, data types, and integrated examples, including transcription of the lecturer\u0027s audio content. Analytical notes on variable overwriting and type conversion are added. Next, I\u0027ll transition to arithmetic expressions, listing operators and the order of operations, and preparing to transcribe discussions on built-in math functions. This will include creating tables and integrating relevant examples. I\u0027ll need to pay close attention to the degrees-to-radians example and the modulo operator\u0027s uses.\n\n\n**Mapping the Content**\n\nI\u0027m now outlining a detailed plan to synthesize both the variables and arithmetic expressions lectures, focusing on a logical flow from foundational concepts to practical applications for chemistry students. I\u0027ll define variables, explore data types, integrate examples, and transcribe the lecturer\u0027s audio content. Then, I\u0027ll move on to arithmetic operators, the order of operations, and built-in math functions. I\u0027ll pay attention to radians, modulo, and add exercises.\n\n\n**Formulating the Synthesis**\n\nI\u0027m now implementing the detailed plan, starting with a meticulous synthesis of the \"Spremenljivke\" lecture. I\u0027m focusing on definitions, data types, integrated examples, and transcribing the lecturer\u0027s audio. Analytical notes are being added, especially for variable overwriting and type conversion. The audio\u0027s transition to arithmetic operators is a perfect segue. I\u0027ll need to pay close attention to the degrees-to-radians example and the modulo operator\u0027s uses.\n\n\n",
+      "role": "model",
+      "tokenCount": 1220,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Initiating the Synthesis**\n\nI\u0027m beginning to synthesize the lectures. My focus is initially on establishing the foundational understanding of variables and data types, drawing from the \"3 Spremenljivke in vrste podatkov\" material. From here, I will move to the arithmetic expressions in a way that resonates with Chemistry students.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Flow**\n\nI\u0027ve just finished the initial synthesis of the variables lecture, including definitions, data types (numeric, string, boolean), and integrated examples. I also transcribed the lecturer\u0027s audio content related to variables, and added analytical notes on variable overwriting and type conversion. I now have a solid foundation to transition into arithmetic expressions, since the lecturer\u0027s audio already segued into operators!\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Extending the Framework**\n\nI am now moving into the arithmetic expressions lecture. I will begin by listing the basic operators and then focus on the order of operations, using the lecturer\u0027s examples to illustrate step-by-step calculations. I\u0027m also preparing to transcribe the lecturer\u0027s discussion on built-in math functions, creating tables and integrating the relevant examples. I\u0027ll need to pay close attention to the conversion of degrees to radians, highlighting this example as it\u0027s relevant to many chemistry applications.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Planning the Integration**\n\nOkay, I\u0027ve got the overall plan outlined. I\u0027ll begin with the variables lecture, focusing on definitions, data types, and integrated examples, including transcription of the lecturer\u0027s audio content. Analytical notes on variable overwriting and type conversion are added. Next, I\u0027ll transition to arithmetic expressions, listing operators and the order of operations, and preparing to transcribe discussions on built-in math functions. This will include creating tables and integrating relevant examples. I\u0027ll need to pay close attention to the degrees-to-radians example and the modulo operator\u0027s uses.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping the Content**\n\nI\u0027m now outlining a detailed plan to synthesize both the variables and arithmetic expressions lectures, focusing on a logical flow from foundational concepts to practical applications for chemistry students. I\u0027ll define variables, explore data types, integrate examples, and transcribe the lecturer\u0027s audio content. Then, I\u0027ll move on to arithmetic operators, the order of operations, and built-in math functions. I\u0027ll pay attention to radians, modulo, and add exercises.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Synthesis**\n\nI\u0027m now implementing the detailed plan, starting with a meticulous synthesis of the \"Spremenljivke\" lecture. I\u0027m focusing on definitions, data types, integrated examples, and transcribing the lecturer\u0027s audio. Analytical notes are being added, especially for variable overwriting and type conversion. The audio\u0027s transition to arithmetic operators is a perfect segue. I\u0027ll need to pay close attention to the degrees-to-radians example and the modulo operator\u0027s uses.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[3 Spremenljivke in vrste podatkov]]\n\nSpremenljivke so ključni gradniki programov, ki shranjujejo različne podatke. V osnovi jih delimo v tri glavne vrste:\na) numerični\nb) znakovni oz. tekstovni (*string*)\nc) logični\n\nIme spremenljivke je lahko sestavljeno iz črk, številk in podčrtaja (`_`). Pri tem se moramo držati pravila, da je na prvem mestu vedno črka ali podčrtaj. Presledki in drugi posebni znaki (`+`, `-`, `@`, itd.) v imenih niso dovoljeni. Prav tako ne smemo uporabiti ključnih besed jezika Python, kot so `if`, `break`, `try`, ipd.\n\n**Note to Self:** Dobra praksa je, da so imena spremenljivk kratka in opisna, da takoj vemo, kaj predstavljajo. Python razlikuje med velikimi in malimi črkami, zato `ime_spremenljivke` ni ista spremenljivka kot `Ime_spremenljivke`.\n\n## [[3.1 Numerične spremenljivke]]\n\nZa kemike in kemijske inženirje je to najpomembnejša vrsta spremenljivk, saj z njimi shranjujemo številčne vrednosti in izvajamo aritmetične operacije.\n\n### [[Primer 3-1: Dodeljevanje in posodabljanje vrednosti]]\n\nV spodnjem programu spremenljivki `ime_sprem` najprej dodelimo vrednost 24. Nato to vrednost \"prepišemo\" z njenim dvakratnikom.\n\n```python\nime_sprem \u003d 24\nprint(ime_sprem)\nime_sprem \u003d ime_sprem * 2\nprint(ime_sprem)\n```\n\n**Critical Analysis:** Ukazi se izvajajo zaporedno, eden za drugim. V prvi vrstici je bila spremenljivki dodeljena vrednost 24. V tretji vrstici se je zgodilo naslednje:\n1.  Program je vzel *trenutno* vrednost spremenljivke `ime_sprem` (to je 24).\n2.  To vrednost je pomnožil z 2 (rezultat je 48).\n3.  Nov rezultat (48) je znova shranil v spremenljivko `ime_sprem`, s čimer je **prepisal in za vedno pozabil** prejšnjo vrednost (24). To ni matematična enačba, ampak ukaz za dodelitev vrednosti.\n\nNekatere spremenljivke, ki se v programu ne spreminjajo, imenujemo **konstante**. Čeprav jih Python obravnava enako kot druge spremenljivke, jih po dogovoru ne spreminjamo.\n\nPrimer: Splošna plinska konstanta\n`R \u003d 8.314`\n\n### [[Primer 3-2: Uporaba konstant v izračunu]]\n\nProgram izračuna volumen plina po plinski enačbi $PV\u003dnRT$.\n\n```python\np \u003d 1.21590E+05\nT \u003d 296\nm \u003d 100\nM \u003d 28\nR \u003d 8.314\nn \u003d m / M\nV \u003d n * R * T / p * 1000\nprint(T, p, n, V)\n```\n**Justification:** Vrednosti za tlak (`p`), temperaturo (`T`), maso (`m`), molsko maso (`M`) in plinsko konstanto (`R`) so definirane. Iz mase in molske mase se izračuna množina `n`, nato pa se iz plinske enačbe, preoblikovane v $V \u003d \\frac{nRT}{P}$, izračuna volumen. Množenje s 1000 na koncu verjetno pretvori enote v litre.\n\n## [[3.2 Znakovne spremenljivke (nizi)]]\n\nZnakovne spremenljivke ali nizi (angl. *strings*) so zaporedja znakov (besedila). Njihove vrednosti vedno podamo znotraj enojnih (`\u0027`) ali dvojnih (`\"`) narekovajev.\n\n### [[Primer 3-3: Prepisovanje znakovnih spremenljivk]]\n\n```python\nIme_mesta \u003d \"Maribor\"\nprint(Ime_mesta)\nIme_mesta \u003d \"Ljubljana\"\nprint(Ime_mesta)```\nPrincip je enak kot pri numeričnih spremenljivkah: nova vrednost \"Ljubljana\" prepiše staro vrednost \"Maribor\".\n\n### [[Primer 3-4: Spajanje (Concatenation) nizov]]\n\nZnakovne spremenljivke lahko združujemo z operaterjem `+`.\n\n```python\nime_predmeta \u003d \"Racunalnistvo v kemiji\"\nstanje_predmeta \u003d \" je ok\"\nskupaj \u003d ime_predmeta + stanje_predmeta\nprint(skupaj)\n```\n**Note to Self:** Bodite pozorni na presledke. Presledek pred \"je ok\" je nujen, da besedilo ni zlepljeno (`Racunalnistvo v kemijije ok`).\n\n### [[Primer 3-5: Združevanje niza in števila]]\n\nČe želimo združiti znakovno in numerično spremenljivko, moramo numerično eksplicitno pretvoriti v znakovno z ukazom `str()`.\n\n```python\na \u003d \"Los Angeles \"\nb \u003d 2028\nprint(a + str(b))\n```\n**Warning Note:** Poskus `print(a + b)` bi povzročil napako (`TypeError`), ker Python ne zna sešteti niza in števila. Vedno je potrebna pretvorba tipa podatkov.\n\n### [[Primer 3-6: Metoda `replace`]]\n\nMetode so funkcije, vezane neposredno na objekte (npr. spremenljivke). Kličemo jih s piko (`.`). Metoda `replace` zamenja del niza z novim.\n\n```python\nIme_fakultete \u003d \"Fakulteta za farmacijo\"\nprint(Ime_fakultete)\nprint(Ime_fakultete.replace(\"farmacijo\", \"medicino\"))\n```\n\n## [[3.3 Logične spremenljivke]]\n\nLogične (Boolean) spremenljivke lahko zavzamejo le dve vrednosti: `True` ali `False`.\n\n### [[Primer 3-7]]\n\n```python\nime_sprem \u003d True\nprint(ime_sprem)```\n\n---\n\n# [[4 Aritmetični izrazi]]\n\nAritmetični izrazi so sestavljeni iz konstant, spremenljivk in aritmetičnih operatorjev. Osnovni operatorji, ki so nam **dobro znani**, so:\n*   Seštevanje: `+`\n*   Odštevanje: `-`\n*   Množenje: `*`\n*   Deljenje: `/`\n*   Potenciranje: `**`\n\n**Memorialization:** Predavateljica je poudarila, da so to \"dobro znane\" operacije, in nato razširila seznam na vgrajene matematične funkcije.\n\nPri aritmetičnem izrazu mora biti na levi strani enačaja vedno ena sama spremenljivka, ki ji dodeljujemo izračunano vrednost.\n`spremenljivka \u003d aritmetični izraz`\n\nVse spremenljivke na desni strani morajo biti predhodno definirane.\n\n### [[Primer 4-1: Osnovni aritmetični izraz]]\n\nProgram izračuna vrednost spremenljivke `z`, ki je vsota kvadratov `x` in `y`.\n$z \u003d x^2 + y^2$\n\n```python\nx \u003d 3\ny \u003d 4\nz \u003d x**2 + y**2\nprint(x, y, z)\n```\nIzpis bo `3 4 25`.\n\n## [[4.1 Vrstni red izvajanja aritmetičnih operacij]]\n\nZa pravilen izračun je ključen vrstni red operacij, ki sledi standardnim matematičnim pravilom:\n1.  **Oklepaji** `()`\n2.  **Potenciranje** `**`\n3.  **Množenje** `*` in **Deljenje** `/` (enakovredni, izvajata se od leve proti desni)\n4.  **Seštevanje** `+` in **Odštevanje** `-` (enakovredni, izvajata se od leve proti desni)\n\n### [[Primer 4-2: Analiza vrstnega reda]]\n\nDane vrednosti: $a\u003d2, b\u003d4, c\u003d10, d\u003d12$.\n\na) $x \u003d b + \\frac{d-c}{a}$\n   1. Oklepaj (števec): $(d-c) \u003d (12-10) \u003d 2$\n   2. Deljenje: $2 / a \u003d 2 / 2 \u003d 1$\n   3. Seštevanje: $x \u003d b + 1 \u003d 4 + 1 \u003d 5.0$\n\nb) $x \u003d a \\cdot \\frac{d}{b} \\cdot c^a - d$\n   1. Potenciranje: $c^a \u003d 10^2 \u003d 100$\n   2. Množenje/Deljenje (od leve proti desni):\n      * $a \\cdot d \u003d 2 \\cdot 12 \u003d 24$\n      * $24 / b \u003d 24 / 4 \u003d 6.0$\n      * $6.0 \\cdot 100 \u003d 600.0$\n   3. Odštevanje: $x \u003d 600.0 - d \u003d 600.0 - 12 \u003d 588.0$\n\nc) $x \u003d (a \\cdot \\frac{d}{b} \\cdot c)^a - d$\n   1. Oklepaj:\n      * $a \\cdot d \u003d 2 \\cdot 12 \u003d 24$\n      * $24 / b \u003d 24 / 4 \u003d 6.0$\n      * $6.0 \\cdot c \u003d 6.0 \\cdot 10 \u003d 60.0$\n   2. Potenciranje: $(60.0)^a \u003d 60.0^2 \u003d 3600.0$\n   3. Odštevanje: $x \u003d 3600.0 - d \u003d 3600.0 - 12 \u003d 3588.0$\n\n```python\na \u003d 2\nb \u003d 4\nc \u003d 10\nd \u003d 12\nx \u003d b + (d - c) / a\nprint(x)\nx \u003d a * d / b * c**a - d\nprint(x)\nx \u003d (a * d / b * c)**a - d\nprint(x)```\n\n### [[Primer 4-3: Pomen oklepajev]]\n\nDane vrednosti: $a\u003d12, b\u003d3, c\u003d4$.\n\na) $x \u003d \\frac{a}{b} \\cdot c$\n   1. Deljenje (levo): $a / b \u003d 12 / 3 \u003d 4.0$\n   2. Množenje (desno): $4.0 \\cdot c \u003d 4.0 \\cdot 4 \u003d 16.0$\n\nb) $x \u003d \\frac{a}{b \\cdot c}$\n   1. Oklepaj (imenovalec): $b \\cdot c \u003d 3 \\cdot 4 \u003d 12$\n   2. Deljenje: $a / 12 \u003d 12 / 12 \u003d 1.0$\n\n```python\na \u003d 12\nb \u003d 3\nc \u003d 4\nx \u003d a / b * c\nprint(x)\nx \u003d a / (b * c)\nprint(x)\n```\n\n## [[4.2 Vgrajene matematične funkcije]]\n\nPoleg osnovnih operatorjev Python ponuja številne vgrajene matematične funkcije. Nekatere so dostopne neposredno, za druge pa je potreben uvoz knjižnice `math`.\n\n#### [[Osnovne funkcije (brez uvoza)]]\n\n| Funkcija | Opis | Sintaksa |\n| :--- | :--- | :--- |\n| Absolutna vrednost | Vrne absolutno vrednost števila. | `abs(x)` |\n| Potenciranje | Vrne $x^y$. Alternativa operatorju `**`. | `pow(x, y)` |\n| Največja vrednost | Vrne največje število iz niza argumentov. | `max(x1, x2, ...)` |\n| Najmanjša vrednost | Vrne najmanjše število iz niza argumentov. | `min(x1, x2, ...)` |\n| Zaokroževanje | Zaokroži na najbližje celo število. | `round(x)` |\n| Pretvorba v celo število | Odreže decimalni del (ne zaokrožuje). | `int(x)` |\n| Ostanek pri deljenju | Modulo; vrne ostanek pri deljenju `x` z `y`. | `x % y` |\n\n**Contextual Capture:** Predavateljica je na primeru `20 % 3` pojasnila modulo: 20 deljeno s 3 je 6, ostanek pa 2. Torej `20 % 3` vrne `2`.\n\n#### [[Funkcije iz knjižnice `math`]]\n\nZa uporabo naprednejših funkcij je treba na začetku programa uvoziti knjižnico `math`.\n`from math import *`  (uvozi vse funkcije)\nali specifično, npr.:\n`from math import sqrt, log`\n\n| Funkcija | Opis | Sintaksa |\n| :--- | :--- | :--- |\n| Zaokroževanje navzdol | Vrne največje celo število, manjše ali enako `x`. | `floor(x)` |\n| Zaokroževanje navzgor | Vrne najmanjše celo število, večje ali enako `x`. | `ceil(x)` |\n| Kvadratni koren | Vrne $\\sqrt{x}$. | `sqrt(x)` |\n| Naravni logaritem | Vrne $\\ln(x)$. | `log(x)` |\n| Desetiški logaritem | Vrne $\\log_{10}(x)$. | `log10(x)` |\n| Kotne funkcije | `sin(x), cos(x), tan(x)` (koti v **radianih**) |\n| Krožne funkcije | `asin(x), acos(x), atan(x)` |\n| Eksponentna funkcija | Vrne $e^x$. | `exp(x)` |\n\n**Note to Self:** Vse kotne funkcije v knjižnici `math` pričakujejo kote v **radianih**. Za pretvorbo iz stopinj v radiane uporabimo formulo:\n$\\text{radiani} \u003d \\text{stopinje} \\cdot \\frac{\\pi}{180}$\n\n### [[Primer 4-5: Uporaba funkcij iz `math`]]\n\n```python\nfrom math import *\nalfa \u003d 60\nalfarad \u003d alfa * pi / 180  # Uporabimo konstanto pi iz knjižnice math\nx \u003d cos(alfarad)\nprint(x) # Izpis bo ~0.5\n```\n\n### [[Primer 4-6: Primerjava `floor`, `int`, `ceil` in `round`]]\n\n*   `floor(x)` vedno zaokroži **navzdol** proti $-\\infty$.\n*   `int(x)` vedno **odreže** decimalni del (gre proti 0).\n*   `ceil(x)` vedno zaokroži **navzgor** proti $+\\infty$.\n*   `round(x)` zaokroži na **najbližje** celo število.\n\n```python\nfrom math import *\na \u003d 5.8\nb \u003d -5.8\nprint(floor(a), int(a))   # Izpis: 5 5\nprint(floor(b), int(b))   # Izpis: -6 -5  \u003c-- Tu je razlika!\n\nc \u003d 3.6\nd \u003d -3.6\nprint(ceil(c), round(c))  # Izpis: 4 4\nprint(ceil(d), round(d))  # Izpis: -3 -4 \u003c-- Tu je razlika!\n```\n\n---\n### [[Conceptual Strengthening Tasks]]\n\n1.  **Vrstni red operacij:** Izračunaj vrednost izraza $y \u003d (k + m/n)^2 - p \\cdot q$ za vrednosti $k\u003d2, m\u003d10, n\u003d5, p\u003d3, q\u003d4$. Zapiši vrstni red izračunov in končni rezultat preveri s Python kodo.\n\n2.  **Matematične funkcije:** Ploščino trikotnika lahko izračunamo s Heronovo formulo, če poznamo dolžine vseh treh stranic ($a, b, c$): $P \u003d \\sqrt{s(s-a)(s-b)(s-c)}$, kjer je $s \u003d \\frac{a+b+c}{2}$. Zapiši program, ki izračuna ploščino trikotnika s stranicami $a\u003d5, b\u003d6, c\u003d7$. Uporabi funkcijo `sqrt()` iz knjižnice `math`.\n\n3.  **Challenge (Modulo):** V kemijskem laboratoriju imate 1000 ml raztopine. Želite jo razdeliti v epruvete s prostornino 75 ml. Koliko polnih epruvet boste dobili in koliko mililitrov raztopine vam bo ostalo? (Namig: Uporabi deljenje in operator modulo `%`).\n\n4.  **Challenge (Integracija):** Napiši program, ki izračuna tlak plina v posodi s prostornino 20 L pri temperaturi 25 °C, če se v njej nahaja 2 mol plina. Rezultat izpiši skupaj z enotami (npr. \"Tlak je X Pascalov.\"). Uporabi splošno plinsko konstanto in pretvori temperaturo iz Celzijevih stopinj v Kelvine. $(T_K \u003d T_C + 273.15)$.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 4366,
+      "parts": [{
+        "text": "# [[3 Spremenljivke in vrste podatkov]]\n\nSpremenljivke so ključni gradniki"
+      }, {
+        "text": " programov, ki shranjujejo različne podatke. V osnovi jih delimo v tri glavne vrste:"
+      }, {
+        "text": "\na) numerični\nb) znakovni oz. tekstovni (*string*)\nc) log"
+      }, {
+        "text": "ični\n\nIme spremenljivke je lahko sestavljeno iz črk, številk in podč"
+      }, {
+        "text": "rtaja (`_`). Pri tem se moramo držati pravila, da je na prvem mestu vedno č"
+      }, {
+        "text": "rka ali podčrtaj. Presledki in drugi posebni znaki (`+`, `-`, `@`, itd"
+      }, {
+        "text": ".) v imenih niso dovoljeni. Prav tako ne smemo uporabiti ključnih besed jezika Python, kot so"
+      }, {
+        "text": " `if`, `break`, `try`, ipd.\n\n**Note to Self:** Dobra praksa je, da"
+      }, {
+        "text": " so imena spremenljivk kratka in opisna, da takoj vemo, kaj predstavljajo. Python"
+      }, {
+        "text": " razlikuje med velikimi in malimi črkami, zato `ime_spremenljivke` ni ista spremenljiv"
+      }, {
+        "text": "ka kot `Ime_spremenljivke`.\n\n## [[3.1 Numerične spremenljivke]]\n\n"
+      }, {
+        "text": "Za kemike in kemijske inženirje je to najpomembnejša vrsta spremenljivk, saj z"
+      }, {
+        "text": " njimi shranjujemo številčne vrednosti in izvajamo aritmetične operacije.\n\n###"
+      }, {
+        "text": " [[Primer 3-1: Dodeljevanje in posodabljanje vrednosti]]\n\nV spodnjem programu sprem"
+      }, {
+        "text": "enljivki `ime_sprem` najprej dodelimo vrednost 24. Nato to vrednost \""
+      }, {
+        "text": "prepišemo\" z njenim dvakratnikom.\n\n"
+      }, {
+        "text": "```python\nime_sprem \u003d 24"
+      }, {
+        "text": "\nprint(ime_sprem)\nime_sprem \u003d ime_sprem * 2\nprint(ime_"
+      }, {
+        "text": "sprem)\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n**Critical Analysis:** Ukazi se izvajajo zaporedno, eden za drugim. V"
+      }, {
+        "text": " prvi vrstici je bila spremenljivki dodeljena vrednost 24. V tretji vrstici se"
+      }, {
+        "text": " je zgodilo naslednje:\n1.  Program je vzel *trenutno* vrednost spremenljivke `ime"
+      }, {
+        "text": "_sprem` (to je 24).\n2.  To vrednost je pomnožil z "
+      }, {
+        "text": "2 (rezultat je 48).\n3.  Nov rezultat (48) je znova shranil v sprem"
+      }, {
+        "text": "enljivko `ime_sprem`, s čimer je **prepisal in za vedno pozabil** prejšn"
+      }, {
+        "text": "jo vrednost (24). To ni matematična enačba, ampak ukaz za dodelitev vrednosti."
+      }, {
+        "text": "\n\nNekatere spremenljivke, ki se v programu ne spreminjajo, imenujemo **konst"
+      }, {
+        "text": "ante**. Čeprav jih Python obravnava enako kot druge spremenljivke, jih po dogovoru ne spre"
+      }, {
+        "text": "minjamo.\n\nPrimer: Splošna plinska konstanta\n`R \u003d 8.314"
+      }, {
+        "text": "`\n\n### [[Primer 3-2: Uporaba konstant v izračunu]]\n\nProgram izračuna volumen"
+      }, {
+        "text": " plina po plinski enačbi $PV\u003dnRT$.\n\n"
+      }, {
+        "text": "```python\np \u003d 1.21"
+      }, {
+        "text": "590E+05\nT \u003d 296\nm \u003d 100\nM \u003d 2"
+      }, {
+        "text": "8\nR \u003d 8.314\nn \u003d m / M\nV \u003d n * R * T / p"
+      }, {
+        "text": " * 1000\nprint(T, p, n, V)\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n**Justification:** Vred"
+      }, {
+        "text": "nosti za tlak (`p`), temperaturo (`T`), maso (`m`), molsko maso (`M`) in pl"
+      }, {
+        "text": "insko konstanto (`R`) so definirane. Iz mase in molske mase se izračuna množ"
+      }, {
+        "text": "ina `n`, nato pa se iz plinske enačbe, preoblikovane v $V \u003d \\frac"
+      }, {
+        "text": "{nRT}{P}$, izračuna volumen. Množenje s 1000 na koncu ver"
+      }, {
+        "text": "jetno pretvori enote v litre.\n\n## [[3.2 Znakovne spremenljivke (nizi)]]\n\nZnakovne spremenljivke ali nizi (angl. *strings*) so zaporedja znak"
+      }, {
+        "text": "ov (besedila). Njihove vrednosti vedno podamo znotraj enojnih (`\u0027`) ali dvojnih ("
+      }, {
+        "text": "`\"`) narekovajev.\n\n### [[Primer 3-3: Prepisovanje znakovnih spremenljivk]]\n\n"
+      }, {
+        "text": "```python\nIme_mesta \u003d \"Maribor\"\nprint(Ime_m"
+      }, {
+        "text": "esta)\nIme_mesta \u003d \"Ljubljana\"\nprint(Ime_mesta)"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\nPrincip je enak kot pri numeričnih spremenljivkah: nova vrednost \"Ljubljana"
+      }, {
+        "text": "\" prepiše staro vrednost \"Maribor\".\n\n### [[Primer 3-4: Spajanje (Concatenation) nizov]]\n\nZnakovne spremenljivke lahko združujemo z operaterjem `+`."
+      }, {
+        "text": "\n\n"
+      }, {
+        "text": "```python\nime_predmeta \u003d \"Racunalnistvo v kemiji\"\nstanje_predmeta \u003d \" je"
+      }, {
+        "text": " ok\"\nskupaj \u003d ime_predmeta + stanje_predmeta\nprint(skupaj)\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n**Note to Self:** Bodite pozorni na presledke. Presledek pred \"je ok\" je"
+      }, {
+        "text": " nujen, da besedilo ni zlepljeno (`Racunalnistvo v kemijije ok`).\n\n###"
+      }, {
+        "text": " [[Primer 3-5: Združevanje niza in števila]]\n\nČe želimo združiti znak"
+      }, {
+        "text": "ovno in numerično spremenljivko, moramo numerično eksplicitno pretvoriti v znakovno z ukaz"
+      }, {
+        "text": "om `str()`.\n\n"
+      }, {
+        "text": "```python\na \u003d \"Los Angeles \"\nb \u003d 2028\nprint"
+      }, {
+        "text": "(a + str(b))\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n**Warning Note:** Poskus `print(a + b)` bi pov"
+      }, {
+        "text": "zročil napako (`TypeError`), ker Python ne zna sešteti niza in števila. Vedno"
+      }, {
+        "text": " je potrebna pretvorba tipa podatkov.\n\n### [[Primer 3-6: Metoda `replace`]]\n\nMetode so funkcije, vezane neposredno na objekte (npr. spremenljiv"
+      }, {
+        "text": "ke). Kličemo jih s piko (`.`). Metoda `replace` zamenja del niza z"
+      }, {
+        "text": " novim.\n\n"
+      }, {
+        "text": "```python\nIme_fakultete \u003d \"Fakulteta za farmacijo\"\nprint"
+      }, {
+        "text": "(Ime_fakultete)\nprint(Ime_fakultete.replace(\"farmacijo\","
+      }, {
+        "text": " \"medicino\"))\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n## [[3.3 Logične spremenljivke]]\n\nLogične ("
+      }, {
+        "text": "Boolean) spremenljivke lahko zavzamejo le dve vrednosti: `True` ali `False`.\n\n### [[Primer 3-7]]\n\n"
+      }, {
+        "text": "```python\nime_sprem \u003d True\nprint(ime_sprem)"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n---\n\n# [[4 Aritmetični izrazi]]\n\nAritmetični izrazi so sest"
+      }, {
+        "text": "avljeni iz konstant, spremenljivk in aritmetičnih operatorjev. Osnovni operatorji, ki"
+      }, {
+        "text": " so nam **dobro znani**, so:\n*   Seštevanje: `+`\n*   Od"
+      }, {
+        "text": "števanje: `-`\n*   Množenje: `*`\n*   Deljenje: `/"
+      }, {
+        "text": "`\n*   Potenciranje: `**`\n\n**Memorialization:** Predavateljica je poudarila,"
+      }, {
+        "text": " da so to \"dobro znane\" operacije, in nato razširila seznam na vgrajene matem"
+      }, {
+        "text": "atične funkcije.\n\nPri aritmetičnem izrazu mora biti na levi strani enačaja vedno ena sama spremen"
+      }, {
+        "text": "ljivka, ki ji dodeljujemo izračunano vrednost.\n`spremenljivka \u003d aritmetični iz"
+      }, {
+        "text": "raz`\n\nVse spremenljivke na desni strani morajo biti predhodno definirane.\n\n### [[Primer 4-1: Osnovni aritmetični izraz]]\n\nProgram izračuna vrednost spremenljivke "
+      }, {
+        "text": "`z`, ki je vsota kvadratov `x` in `y`.\n$z \u003d x^2 + y^2"
+      }, {
+        "text": "$\n\n"
+      }, {
+        "text": "```python\nx \u003d 3\ny \u003d 4\nz \u003d x**2 + y**2\nprint("
+      }, {
+        "text": "x, y, z)\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\nIzpis bo `3 4 25`.\n\n## [[4.1 Vrstni red izvajanja aritmetičnih operacij]]\n\nZa pravilen izračun je"
+      }, {
+        "text": " ključen vrstni red operacij, ki sledi standardnim matematičnim pravilom:\n1.  **"
+      }, {
+        "text": "Oklepaji** `()`\n2.  **Potenciranje** `**`\n3.  **M"
+      }, {
+        "text": "noženje** `*` in **Deljenje** `/` (enakovredni, izvajata se od leve"
+      }, {
+        "text": " proti desni)\n4.  **Seštevanje** `+` in **Odštevanje** `-` (enakov"
+      }, {
+        "text": "redni, izvajata se od leve proti desni)\n\n### [[Primer 4-2: Analiza vrstnega reda]]\n\nDane vrednosti: $a\u003d2, b\u003d4, c\u003d10, d\u003d"
+      }, {
+        "text": "12$.\n\na) $x \u003d b + \\frac{d-c}{a}$\n   1. Ok"
+      }, {
+        "text": "lepaj (števec): $(d-c) \u003d (12-10) \u003d 2$\n"
+      }, {
+        "text": "   2. Deljenje: $2 / a \u003d 2 / 2 \u003d 1$\n   3. Se"
+      }, {
+        "text": "števanje: $x \u003d b + 1 \u003d 4 + 1 \u003d 5.0$\n\nb"
+      }, {
+        "text": ") $x \u003d a \\cdot \\frac{d}{b} \\cdot c^a - d$\n   1"
+      }, {
+        "text": ". Potenciranje: $c^a \u003d 10^2 \u003d 100$\n   2. M"
+      }, {
+        "text": "noženje/Deljenje (od leve proti desni):\n      * $a \\cdot d \u003d 2 \\"
+      }, {
+        "text": "cdot 12 \u003d 24$\n      * $24 / b \u003d 24 / 4"
+      }, {
+        "text": " \u003d 6.0$\n      * $6.0 \\cdot 100 \u003d 600"
+      }, {
+        "text": ".0$\n   3. Odštevanje: $x \u003d 600.0 - d \u003d 60"
+      }, {
+        "text": "0.0 - 12 \u003d 588.0$\n\nc) $x \u003d (a \\cdot \\frac"
+      }, {
+        "text": "{d}{b} \\cdot c)^a - d$\n   1. Oklepaj:\n      *"
+      }, {
+        "text": " $a \\cdot d \u003d 2 \\cdot 12 \u003d 24$\n      * $24 /"
+      }, {
+        "text": " b \u003d 24 / 4 \u003d 6.0$\n      * $6.0 \\cdot c"
+      }, {
+        "text": " \u003d 6.0 \\cdot 10 \u003d 60.0$\n   2. Potenciranje"
+      }, {
+        "text": ": $(60.0)^a \u003d 60.0^2 \u003d 3600.0"
+      }, {
+        "text": "$\n   3. Odštevanje: $x \u003d 3600.0 - d \u003d 3"
+      }, {
+        "text": "600.0 - 12 \u003d 3588.0$\n\n"
+      }, {
+        "text": "```python\na \u003d 2"
+      }, {
+        "text": "\nb \u003d 4\nc \u003d 10\nd \u003d 12\nx \u003d b + (d"
+      }, {
+        "text": " - c) / a\nprint(x)\nx \u003d a * d / b * c**a - d\n"
+      }, {
+        "text": "print(x)\nx \u003d (a * d / b * c)**a - d\nprint(x)"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n### [[Primer 4-3: Pomen oklepajev]]\n\nDane vrednosti: $"
+      }, {
+        "text": "a\u003d12, b\u003d3, c\u003d4$.\n\na) $x \u003d \\frac{a}{"
+      }, {
+        "text": "b} \\cdot c$\n   1. Deljenje (levo): $a / b \u003d 12 / "
+      }, {
+        "text": "3 \u003d 4.0$\n   2. Množenje (desno): $4.0 \\"
+      }, {
+        "text": "cdot c \u003d 4.0 \\cdot 4 \u003d 16.0$\n\nb) $x \u003d"
+      }, {
+        "text": " \\frac{a}{b \\cdot c}$\n   1. Oklepaj (imenovalec): $b \\cdot c"
+      }, {
+        "text": " \u003d 3 \\cdot 4 \u003d 12$\n   2. Deljenje: $a / 12 \u003d "
+      }, {
+        "text": "12 / 12 \u003d 1.0$\n\n"
+      }, {
+        "text": "```python\na \u003d 12\nb \u003d"
+      }, {
+        "text": " 3\nc \u003d 4\nx \u003d a / b * c\nprint(x)\nx \u003d a"
+      }, {
+        "text": " / (b * c)\nprint(x)\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n## [[4.2 Vgrajene matematične funkcije]]\n\nPoleg osnovnih operatorjev Python ponuja številne vgrajene matematične funkcije."
+      }, {
+        "text": " Nekatere so dostopne neposredno, za druge pa je potreben uvoz knjižnice "
+      }, {
+        "text": "`math`.\n\n#### [[Osnovne funkcije (brez uvoza)]]\n\n| Funkcija | Op"
+      }, {
+        "text": "is | Sintaksa |\n| :--- | :--- | :--- |\n| Absolutna vrednost | V"
+      }, {
+        "text": "rne absolutno vrednost števila. | `abs(x)` |\n| Potenciranje | Vrne"
+      }, {
+        "text": " $x^y$. Alternativa operatorju `**`. | `pow(x, y)` |\n| Največja"
+      }, {
+        "text": " vrednost | Vrne največje število iz niza argumentov. | `max(x1, x2,"
+      }, {
+        "text": " ...)` |\n| Najmanjša vrednost | Vrne najmanjše število iz niza argument"
+      }, {
+        "text": "ov. | `min(x1, x2, ...)` |\n| Zaokroževanje | Za"
+      }, {
+        "text": "okroži na najbližje celo število. | `round(x)` |\n| Pretvorba v cel"
+      }, {
+        "text": "o število | Odreže decimalni del (ne zaokrožuje). | `int(x)"
+      }, {
+        "text": "` |\n| Ostanek pri deljenju | Modulo; vrne ostanek pri deljenju `x"
+      }, {
+        "text": "` z `y`. | `x % y` |\n\n**Contextual Capture:** Predavateljica je na"
+      }, {
+        "text": " primeru `20 % 3` pojasnila modulo: 20 deljeno s 3 je 6,"
+      }, {
+        "text": " ostanek pa 2. Torej `20 % 3` vrne `2`.\n\n#### [[Funkcije iz knjižnice `math`]]\n\nZa uporabo naprednejših funkcij je treba na začetku programa"
+      }, {
+        "text": " uvoziti knjižnico `math`.\n`from math import *`  (uvozi vse funkcije)"
+      }, {
+        "text": "\nali specifično, npr.:\n`from math import sqrt, log`\n\n| Funkcija | Op"
+      }, {
+        "text": "is | Sintaksa |\n| :--- | :--- | :--- |\n| Zaokroževanje"
+      }, {
+        "text": " navzdol | Vrne največje celo število, manjše ali enako `x`. | "
+      }, {
+        "text": "`floor(x)` |\n| Zaokroževanje navzgor | Vrne najmanjše celo štev"
+      }, {
+        "text": "ilo, večje ali enako `x`. | `ceil(x)` |\n| Kvadratni k"
+      }, {
+        "text": "oren | Vrne $\\sqrt{x}$. | `sqrt(x)` |\n| Naravni logaritem | V"
+      }, {
+        "text": "rne $\\ln(x)$. | `log(x)` |\n| Desetiški logaritem | Vrne $\\log"
+      }, {
+        "text": "_{10}(x)$. | `log10(x)` |\n| Kotne funkcije | `sin(x),"
+      }, {
+        "text": " cos(x), tan(x)` (koti v **radianih**) |\n| Krožne funkcije |"
+      }, {
+        "text": " `asin(x), acos(x), atan(x)` |\n| Eksponentna funkcija | V"
+      }, {
+        "text": "rne $e^x$. | `exp(x)` |\n\n**Note to Self:** Vse kotne funkcije v"
+      }, {
+        "text": " knjižnici `math` pričakujejo kote v **radianih**. Za pretvorbo iz stopinj v rad"
+      }, {
+        "text": "iane uporabimo formulo:\n$\\text{radiani} \u003d \\text{stopinje} \\cdot \\frac{\\pi"
+      }, {
+        "text": "}{180}$\n\n### [[Primer 4-5: Uporaba funkcij iz `math`]]\n\n"
+      }, {
+        "text": "```python\nfrom math import *\nalfa \u003d 60\nalfarad \u003d alfa * pi / 18"
+      }, {
+        "text": "0  # Uporabimo konstanto pi iz knjižnice math\nx \u003d cos(alfarad)\nprint("
+      }, {
+        "text": "x) # Izpis bo ~0.5\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n### [[Primer 4-6: Primerjava `floor`, `int`, `ceil` in `round`]]\n\n*   `floor(x)` vedno zaokroži"
+      }, {
+        "text": " **navzdol** proti $-\\infty$.\n*   `int(x)` vedno **odreže** decimalni del ("
+      }, {
+        "text": "gre proti 0).\n*   `ceil(x)` vedno zaokroži **navzgor** proti"
+      }, {
+        "text": " $+\\infty$.\n*   `round(x)` zaokroži na **najbližje** celo"
+      }, {
+        "text": " število.\n\n"
+      }, {
+        "text": "```python\nfrom math import *\na \u003d 5.8\nb \u003d -5.8\n"
+      }, {
+        "text": "print(floor(a), int(a))   # Izpis: 5 5\nprint(floor(b), int"
+      }, {
+        "text": "(b))   # Izpis: -6 -5  \u003c-- Tu je razlika!\n\nc \u003d 3"
+      }, {
+        "text": ".6\nd \u003d -3.6\nprint(ceil(c), round(c))  # Izpis:"
+      }, {
+        "text": " 4 4\nprint(ceil(d), round(d))  # Izpis: -3 -4 \u003c--"
+      }, {
+        "text": " Tu je razlika!\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n---\n### [[Conceptual Strengthening Tasks]]\n\n1.  **Vrstni red oper"
+      }, {
+        "text": "acij:** Izračunaj vrednost izraza $y \u003d (k + m/n)^2 - p \\cdot q$"
+      }, {
+        "text": " za vrednosti $k\u003d2, m\u003d10, n\u003d5, p\u003d3, q\u003d4"
+      }, {
+        "text": "$. Zapiši vrstni red izračunov in končni rezultat preveri s Python kodo.\n\n2.  **"
+      }, {
+        "text": "Matematične funkcije:** Ploščino trikotnika lahko izračunamo s Heronovo formulo,"
+      }, {
+        "text": " če poznamo dolžine vseh treh stranic ($a, b, c$): $P \u003d \\sqrt"
+      }, {
+        "text": "{s(s-a)(s-b)(s-c)}$, kjer je $s \u003d \\frac{a"
+      }, {
+        "text": "+b+c}{2}$. Zapiši program, ki izračuna ploščino trikotnika s stran"
+      }, {
+        "text": "icami $a\u003d5, b\u003d6, c\u003d7$. Uporabi funkcijo `sqrt()` iz"
+      }, {
+        "text": " knjižnice `math`.\n\n3.  **Challenge (Modulo):** V kemijskem laboratoriju"
+      }, {
+        "text": " imate 1000 ml raztopine. Želite jo razdeliti v epruvete s prostornino"
+      }, {
+        "text": " 75 ml. Koliko polnih epruvet boste dobili in koliko mililitrov raztopine vam"
+      }, {
+        "text": " bo ostalo? (Namig: Uporabi deljenje in operator modulo `%`).\n\n4.  **Challenge"
+      }, {
+        "text": " (Integracija):** Napiši program, ki izračuna tlak plina v posodi s prostornino"
+      }, {
+        "text": " 20 L pri temperaturi 25 °C, če se v njej nahaja 2 mol plina."
+      }, {
+        "text": " Rezultat izpiši skupaj z enotami (npr. \"Tlak je X Pascalov.\"). Uporabi spl"
+      }, {
+        "text": "ošno plinsko konstanto in pretvori temperaturo iz Celzijevih stopinj v Kelvine. $("
+      }, {
+        "text": "T_K \u003d T_C + 273.15)$."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

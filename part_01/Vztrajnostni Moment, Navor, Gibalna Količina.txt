@@ -1,0 +1,409 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1Zq3qqrVOlbvq7EWCILTXJ7yno7a20VBJ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "19igs24BCJRNqMbIr2iUtncVoDR6Gl3vb"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1zflhM6KAwXK0tFUKifVQNs89i5Vym1QH"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1XduHbihu-8Qsdhe8yQOKbpGn1vcIa689"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1PL9BIXqciDWRo6V_M7Q_BiK9Q6lKkEFl"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ppLk4O1HDAH_ZQnfMiycnvNIpGvLxGIu"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1PURHx3sxpBEXy5hPNvE1B3RgXygEBNgd"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "15JKeKR8wZFxM9jfU4jIwlbgeVLjge_Gn"
+      },
+      "role": "user",
+      "tokenCount": 62766
+    }, {
+      "driveAudio": {
+        "id": "10QLreaiBgGKb2gsNtyFHXN8mQwNoGrXK"
+      },
+      "role": "user",
+      "tokenCount": 89948
+    }, {
+      "driveAudio": {
+        "id": "1rP0WrDn0Sd3TylI9-sj4KAzknh97Ggua"
+      },
+      "role": "user",
+      "tokenCount": 96688
+    }, {
+      "text": "**Processing Raw Input**\n\nMy goal is to integrate these diverse inputs into a coherent knowledge base. I\u0027m focusing on parsing the handwritten notes and transcripts, identifying key concepts, and establishing relationships between them.  I\u0027m exploring automated methods to extract crucial information and structure it effectively within my Obsidian vault.\n\n\n**Analyzing Core Concepts**\n\nI\u0027ve just finished the initial scan of the physics lecture notes and transcript. Key topics include moment of inertia for various shapes, Steiner\u0027s theorem, equilibrium conditions, non-inertial frames with fictitious forces, and impulse/momentum. The progression of the notes seems logical, which is helpful. Now, I need to begin the extraction process to build a more usable markdown note.\n\n\n**Initiating Structure \u0026 Translation**\n\nI\u0027m now diving into the Slovenian translation and note structuring. First, I\u0027ll transcribe the raw content, preserving the lecture\u0027s flow.  I\u0027ll then build the framework with main sections on moment of inertia, Steiner\u0027s theorem, equilibrium, non-inertial frames, and momentum principles, which the audio transcript will enrich. The overarching goal remains a detailed, interconnected Markdown note within Obsidian.\n\n\n**Structuring Raw Data**\n\nI\u0027m now focusing on transcribing the handwritten notes and audio, ensuring Slovenian terms are used. I\u0027m building a markdown structure with sections for moment of inertia, Steiner\u0027s theorem, equilibrium, non-inertial frames, and momentum. Formulas are being converted to LaTeX and the entire structure will mirror the professor\u0027s logical flow.\n\n\n**Revising Structure \u0026 Translation**\n\nI\u0027m now focusing on transcribing and integrating the audio, while applying structural elements. I\u0027ll maintain the Slovenian terminology, adding headers for each concept like \"Vztrajnostni Moment\" and wikilinking throughout. I\u0027ve begun transcribing the audio, matching it with the corresponding sections from the handwritten notes, and converting the equations to LaTeX format.\n\n\n**Finalizing Note \u0026 Formulas**\n\nI\u0027ve just finished transcribing the last sections and compiling the formulas. I\u0027ve integrated all the audio, linked key terms, and double-checked the calculations. Now, I will format the finished note, reviewing the entire structure for clarity and consistency. The entire lecture is now faithfully represented in my Obsidian vault.\n\n\n**Finalizing Note Integration**\n\nI\u0027m now fully immersed in the final formatting. I\u0027m ensuring consistency with Slovenian terminology, double-checking the LaTeX conversions for all formulas and diagrams, and crafting those crucial mind-map-style links to facilitate intuitive navigation and cross-referencing within my Obsidian vault. This phase demands meticulousness to guarantee a well-organized and user-friendly knowledge base.\n\n\n**Integrating Insights and Structure**\n\nI\u0027m now integrating the notes and audio, ensuring a cohesive structure. I\u0027m focusing on crafting headers for each concept, linking them within the note, and providing concise summaries and relevant formulas. I\u0027m carefully translating formulas into LaTeX, and the audio transcript provides the contextual explanations. The wiki-linking system enhances the structural integrity and facilitates navigation through the detailed content.\n\n\n**Structuring Initial Data**\n\nI\u0027m now focusing on the initial organization. I\u0027ve finished the transcription of the lecture audio. Using the audio notes as my guide, I\u0027m building section titles in Slovenian, as requested. With key concepts like \"Vztrajnostni Moment\" leading the way, I\u0027m weaving in formulas in LaTeX, and linking to related concepts. Now, I will re-structure the notes, prioritizing the flow of theory and derivation and organizing the problem-solving parts to follow.\n\n\n**Structuring Content \u0026 Linking**\n\nI\u0027m currently finalizing the structure, transcribing key formulas into LaTeX, and establishing the wiki-links. I\u0027ve built the headers in Slovenian, aligning with the lecturer\u0027s flow. I\u0027m focusing on crafting concise descriptions and preparing for integrating the audio explanations to build meaningful connections between concepts.\n\n\n",
+      "role": "model",
+      "tokenCount": 2625,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Processing Raw Input**\n\nMy goal is to integrate these diverse inputs into a coherent knowledge base. I\u0027m focusing on parsing the handwritten notes and transcripts, identifying key concepts, and establishing relationships between them.  I\u0027m exploring automated methods to extract crucial information and structure it effectively within my Obsidian vault.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Core Concepts**\n\nI\u0027ve just finished the initial scan of the physics lecture notes and transcript. Key topics include moment of inertia for various shapes, Steiner\u0027s theorem, equilibrium conditions, non-inertial frames with fictitious forces, and impulse/momentum. The progression of the notes seems logical, which is helpful. Now, I need to begin the extraction process to build a more usable markdown note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Initiating Structure \u0026 Translation**\n\nI\u0027m now diving into the Slovenian translation and note structuring. First, I\u0027ll transcribe the raw content, preserving the lecture\u0027s flow.  I\u0027ll then build the framework with main sections on moment of inertia, Steiner\u0027s theorem, equilibrium, non-inertial frames, and momentum principles, which the audio transcript will enrich. The overarching goal remains a detailed, interconnected Markdown note within Obsidian.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Raw Data**\n\nI\u0027m now focusing on transcribing the handwritten notes and audio, ensuring Slovenian terms are used. I\u0027m building a markdown structure with sections for moment of inertia, Steiner\u0027s theorem, equilibrium, non-inertial frames, and momentum. Formulas are being converted to LaTeX and the entire structure will mirror the professor\u0027s logical flow.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Revising Structure \u0026 Translation**\n\nI\u0027m now focusing on transcribing and integrating the audio, while applying structural elements. I\u0027ll maintain the Slovenian terminology, adding headers for each concept like \"Vztrajnostni Moment\" and wikilinking throughout. I\u0027ve begun transcribing the audio, matching it with the corresponding sections from the handwritten notes, and converting the equations to LaTeX format.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing Note \u0026 Formulas**\n\nI\u0027ve just finished transcribing the last sections and compiling the formulas. I\u0027ve integrated all the audio, linked key terms, and double-checked the calculations. Now, I will format the finished note, reviewing the entire structure for clarity and consistency. The entire lecture is now faithfully represented in my Obsidian vault.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing Note Integration**\n\nI\u0027m now fully immersed in the final formatting. I\u0027m ensuring consistency with Slovenian terminology, double-checking the LaTeX conversions for all formulas and diagrams, and crafting those crucial mind-map-style links to facilitate intuitive navigation and cross-referencing within my Obsidian vault. This phase demands meticulousness to guarantee a well-organized and user-friendly knowledge base.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Insights and Structure**\n\nI\u0027m now integrating the notes and audio, ensuring a cohesive structure. I\u0027m focusing on crafting headers for each concept, linking them within the note, and providing concise summaries and relevant formulas. I\u0027m carefully translating formulas into LaTeX, and the audio transcript provides the contextual explanations. The wiki-linking system enhances the structural integrity and facilitates navigation through the detailed content.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Initial Data**\n\nI\u0027m now focusing on the initial organization. I\u0027ve finished the transcription of the lecture audio. Using the audio notes as my guide, I\u0027m building section titles in Slovenian, as requested. With key concepts like \"Vztrajnostni Moment\" leading the way, I\u0027m weaving in formulas in LaTeX, and linking to related concepts. Now, I will re-structure the notes, prioritizing the flow of theory and derivation and organizing the problem-solving parts to follow.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Content \u0026 Linking**\n\nI\u0027m currently finalizing the structure, transcribing key formulas into LaTeX, and establishing the wiki-links. I\u0027ve built the headers in Slovenian, aligning with the lecturer\u0027s flow. I\u0027m focusing on crafting concise descriptions and preparing for integrating the audio explanations to build meaningful connections between concepts.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# Fizika: Vztrajnostni Moment, Navor in Gibalna Količina\n\n## [[Vztrajnostni Momenti]]\n\nVztrajnostni moment je fizikalna količina, ki opisuje, kako se telo upira vrtenju okoli določene osi. Je rotacijski ekvivalent mase pri premem gibanju.\n\nSplošna formula za izračun vztrajnostnega momenta je:\n$$ J \u003d \\int r^2 dm $$\nkjer je $r$ razdalja masnega delčka $dm$ od osi vrtenja.\n\n### [[Primeri Vztrajnostnih Momentov za Različna Telesa]]\n\nTo so standardne formule za homogena telesa, ki se vrtijo okoli svoje simetrijske osi.\n\n*   **Tanek obroč ali votel valj:**\n    $$ J_{obroč} \u003d m R^2 $$\n*   **Poln valj ali disk:**\n    $$ J_{valj} \u003d \\frac{m R^2}{2} $$\n*   **Krogla:**\n    $$ J_{krogla} \u003d \\frac{2}{5} m R^2 $$\n*   **Stožec (vrtanje okoli osi simetrije):**\n    $$ J_{stožec} \u003d \\frac{3}{10} m R^2 $$\n\n\u003e **Note to Self:** Te formule so ključne in jih je dobro znati na pamet za hitro reševanje nalog. Vedno pa je pomembno preveriti, okoli katere osi se telo vrti.\n\n### [[Izpeljava Vztrajnostnega Momenta za Poln Valj]]\n\nProblem je izračunati vztrajnostni moment za poln, homogen valj z maso $m$, radijem $R$ in višino $h$, ki se vrti okoli svoje osi simetrije.\n\n1.  **Postavitev integrala:** Začnemo z osnovno definicijo $dJ \u003d r^2 dm$. Valj razdelimo na neskončno tanke votle valje (lupine) z radijem $r$ in debelino $dr$.\n2.  **Diferencial mase (dm):** Maso lupine $dm$ izrazimo z gostoto $\\rho$ in volumnom lupine $dV$.\n    *   Gostota valja: $\\rho \u003d \\frac{\\text{skupna masa}}{\\text{skupni volumen}} \u003d \\frac{m}{\\pi R^2 h}$.\n    *   Volumen tanke lupine $dV$ je približno enak ploščini plašča ($2\\pi r h$) pomnoženi z debelino ($dr$):\n        $$ dV \\approx (2\\pi r h) dr $$\n    *   Tako je diferencial mase:\n        $$ dm \u003d \\rho dV \u003d \\frac{m}{\\pi R^2 h} (2\\pi r h) dr \u003d \\frac{2m}{R^2} r dr $$\n3.  **Integracija:** Vstavimo $dm$ v začetno enačbo za $dJ$ in integriramo od središča ($r\u003d0$) do roba ($r\u003dR$).\n    $$ dJ \u003d r^2 \\left( \\frac{2m}{R^2} r dr \\right) \u003d \\frac{2m}{R^2} r^3 dr $$\n    $$ J \u003d \\int_{0}^{R} \\frac{2m}{R^2} r^3 dr $$\n    Ker sta $m$ in $R$ konstanti, ju lahko izpostavimo pred integral:\n    $$ J \u003d \\frac{2m}{R^2} \\int_{0}^{R} r^3 dr \u003d \\frac{2m}{R^2} \\left[ \\frac{r^4}{4} \\right]_{0}^{R} $$\n    $$ J \u003d \\frac{2m}{R^2} \\left( \\frac{R^4}{4} - 0 \\right) \u003d \\frac{2mR^4}{4R^2} $$\n    $$ J_{valj} \u003d \\frac{1}{2} m R^2 $$\n\n## [[Aditivnost Vztrajnostnih Momentov]]\n\nVztrajnostni momenti so aditivni. Če je telo sestavljeno iz več delov, je skupni vztrajnostni moment enak vsoti vztrajnostnih momentov posameznih delov:\n$$ J_{skupni} \u003d J_1 + J_2 + ... $$\n\n## [[Steinerjev Izrek]]\n\nSteinerjev izrek (ali izrek o vzporednih oseh) nam omogoča izračun vztrajnostnega momenta telesa okoli poljubne osi, če poznamo vztrajnostni moment okoli vzporedne osi, ki poteka skozi težišče telesa.\n\nFormula izreka je:\n$$ J_{os} \u003d J^{*} + m d^2 $$\nkjer je:\n*   $J_{os}$ vztrajnostni moment okoli nove, vzporedne osi.\n*   $J^{*}$ vztrajnostni moment okoli osi, ki gre skozi težišče.\n*   $m$ je masa telesa.\n*   $d$ je pravokotna razdalja med obema osema.\n\n\u003e **Kritična Analiza:** Steinerjev izrek je izjemno uporaben, ker nam ni treba za vsako os posebej računati zapletenih integralov. Dovolj je poznati vztrajnostni moment okoli težiščne osi (ki je za simetrična telesa pogosto tabeliran) in ga le prišteti k produktu $md^2$.\n\n### [[Primer: Vztrajnostni Moment Palice okoli Krajišča]]\n\nProblem je izračunati vztrajnostni moment tanke palice dolžine $l$ in mase $m$, ki se vrti okoli osi na enem izmed svojih krajišč.\n\n1.  **Podatki:** Poznamo vztrajnostni moment palice okoli težišča (sredine):\n    $$ J^{*} \u003d \\frac{1}{12} m l^2 $$\n2.  **Razdalja med osema (d):** Os vrtenja je na krajišču, težišče pa na sredini. Razdalja med njima je:\n    $$ d \u003d \\frac{l}{2} $$\n3.  **Uporaba Steinerjevega Izreka:**\n    $$ J_{palice, krajišče} \u003d J^{*} + m d^2 $$\n    $$ J_{palice, krajišče} \u003d \\frac{1}{12} m l^2 + m \\left(\\frac{l}{2}\\right)^2 \u003d \\frac{1}{12} m l^2 + \\frac{1}{4} m l^2 $$\n    $$ J_{palice, krajišče} \u003d \\left(\\frac{1}{12} + \\frac{3}{12}\\right) m l^2 \u003d \\frac{4}{12} m l^2 \u003d \\frac{1}{3} m l^2 $$\n\n## [[Pogoji za Ravnovesje Toga Telesa]]\n\nDa je togo telo v statičnem ravnovesju, morata biti izpolnjena dva pogoja:\n\n1.  **Ravnovesje sil:** Vsota vseh zunanjih sil, ki delujejo na telo, mora biti enaka nič. To zagotavlja, da se težišče telesa ne pospešuje (translacijsko ravnovesje).\n    $$ \\sum \\vec{F}_{zun} \u003d 0 $$\n2.  **Ravnovesje navorov:** Vsota vseh navorov glede na poljubno os mora biti enaka nič. To zagotavlja, da telo nima kotnega pospeška (rotacijsko ravnovesje).\n    $$ \\sum \\vec{M} \u003d 0 $$\n\n### [[Navor (Vektorski Produkt)]]\n\nNavor sile $\\vec{F}$ glede na izhodišče (os) je definiran kot:\n$$ \\vec{M} \u003d \\vec{r} \\times \\vec{F} $$\nkjer je $\\vec{r}$ krajevni vektor od izhodišča do prijemališča sile.\n\n\u003e **Kritična Analiza:** Pri pogoju za ravnovesje navorov lahko os izberemo kjerkoli. Če je telo v ravnovesju, bo vsota navorov enaka nič ne glede na izbiro osi. Pametna izbira osi (npr. v prijemališču neznane sile) lahko močno poenostavi računanje, saj bo navor tiste sile enak nič.\n\n## [[Neinercialni Opazovalni Sistemi]]\n\n\u003e **Spominski Zapis:** Predavatelj je to temo navezal na prejšnjo uro, kjer so bili obravnavani Newtonovi zakoni v pospešenih sistemih.\n\nV neinercialnih (pospešenih) opazovalnih sistemih Newtonovi zakoni v svoji osnovni obliki ne veljajo. Da jih lahko uporabljamo, moramo vpeljati navidezne ali sistemske (fiktivne) sile.\n\nSplošna oblika drugega Newtonovega zakona v neinercialnem sistemu:\n$$ m\\vec{a}\u0027 \u003d \\sum \\vec{F}_{realne} + \\vec{F}_{sistemske} $$\n\n### [[Sistemske (Fiktivne) Sile]]\n\n1.  **Translacijsko pospeševanje:** Če se opazovalni sistem giblje premo s pospeškom $\\vec{a}_0$, se pojavi sila:\n    $$ \\vec{F}_{s} \u003d -m \\vec{a}_0 $$\n2.  **Centrifugalna sila:** Pojavi se v vrtečih sistemih in kaže navzven, stran od osi vrtenja.\n    $$ F_{centrifugalna} \u003d m \\omega^2 r $$\n3.  **Coriolisova sila:** Deluje na telesa, ki se *gibljejo* znotraj vrtečega sistema.\n    $$ \\vec{F}_{Cor} \u003d -2m (\\vec{\\omega} \\times \\vec{v}\u0027) $$\n    kjer je $\\vec{v}\u0027$ hitrost telesa v vrtečem sistemu.\n\n## [[Izreki o Gibanju]]\n\n### [[Sunk Sile in Gibalna Količina]]\n\n*   **Gibalna količina** ($\\vec{G}$) je produkt mase in hitrosti telesa.\n    $$ \\vec{G} \u003d m \\vec{v} \\quad [\\text{kg} \\frac{\\text{m}}{\\text{s}}] $$\n*   **Sunk sile** je integral sile po času in pove, kako sunek zunanje sile spremeni gibalno količino telesa.\n    $$ \\int \\vec{F}_{zun} dt \u003d \\Delta \\vec{G} \u003d \\vec{G}_{končna} - \\vec{G}_{začetna} $$\n*   **Diferencialna oblika (2. Newtonov zakon):** Sila je enaka odvodu gibalne količine po času. Ta oblika je splošnejša, saj velja tudi za sisteme s spremenljivo maso.\n    $$ \\vec{F} \u003d \\frac{d\\vec{G}}{dt} $$\n\n### [[Izrek o Ohranjanju Gibalne Količine]]\n\nČe je vsota vseh **zunanjih** sil na sistem enaka nič, se skupna gibalna količina sistema ohranja.\n$$ \\text{Če } \\sum \\vec{F}_{zun} \u003d 0, \\text{ potem je } \\Delta \\vec{G} \u003d 0 \\implies \\vec{G}_{končna} \u003d \\vec{G}_{začetna} $$\nTo velja za sisteme točkastih delcev in za toga telesa. Za sistem delcev je skupna gibalna količina vektorska vsota gibalnih količin posameznih delcev.\n\n### [[Primer: Odriv dveh vozičkov]]\nDva vozička z masama $m_1$ in $m_2$ na začetku mirujeta. Po odrivu (npr. z vzmetjo med njima) se začneta gibati s hitrostma $\\vec{v}_1\u0027$ in $\\vec{v}_2\u0027$.\n\n1.  **Uporaba ohranitve gibalne količine:** Zunanjih sil v vodoravni smeri ni (sile med vozičkoma so notranje). Začetna gibalna količina je nič.\n    $$ \\vec{G}_{začetna} \u003d 0 $$\n    $$ \\vec{G}_{končna} \u003d m_1 \\vec{v}_1\u0027 + m_2 \\vec{v}_2\u0027 $$\n2.  **Ohranitev:**\n    $$ m_1 \\vec{v}_1\u0027 + m_2 \\vec{v}_2\u0027 \u003d 0 $$\n    $$ \\vec{v}_1\u0027 \u003d -\\frac{m_2}{m_1} \\vec{v}_2\u0027 $$\n    Vozička se odrineta v nasprotnih smereh. Razmerje njunih hitrosti je obratno sorazmerno razmerju njunih mas.\n\n### [[Sila Curka]]\nSila curka je primer uporabe 2. Newtonovega zakona v obliki $\\vec{F} \u003d d\\vec{G}/dt$ za sistem s spreminjajočo se maso (odprt sistem).\n\n*   **Masni pretok** ($\\Phi_m$): Pove, koliko mase preteče skozi presek v časovni enoti.\n    $$ \\Phi_m \u003d \\frac{dm}{dt} \\quad [\\frac{\\text{kg}}{\\text{s}}] $$\n*   **Volumski pretok** ($\\Phi_V$):\n    $$ \\Phi_V \u003d \\frac{dV}{dt} \u003d S \\cdot v \\quad [\\frac{\\text{m}^3}{\\text{s}}] $$\n    kjer je $S$ ploščina preseka in $v$ hitrost curka.\n\nSila, s katero curek deluje na oviro (npr. steno), je odvisna od spremembe gibalne količine curka.\n$$ \\vec{F}_c \u003d -\\vec{F}_s \u003d \\frac{\\Delta \\vec{G}}{\\Delta t} $$\nČe se curek na steni popolnoma ustavi ($\\vec{v}_{končna}\u003d0$):\n$$ F_c \u003d \\frac{\\Delta m \\cdot v\u0027}{\\Delta t} \u003d \\Phi_m v\u0027 $$\nČe se curek odbije od stene s hitrostjo $\\vec{v}$ (nasprotna smer od $\\vec{v}\u0027$), je sila:\n$$ \\vec{F}_c \u003d \\Phi_m (\\vec{v}\u0027 - \\vec{v}) $$\n\n\u003e **Kritična Analiza:** To je klasičen primer, kjer je razmišljanje o spremembi gibalne količine sistema veliko bolj intuitivno kot pa direktna uporaba $F\u003dma$. Sistem, ki ga opazujemo, je \"kos\" tekočine, ki v časovnem intervalu $\\Delta t$ trči ob oviro. Njegova gibalna količina se spremeni in sila je posledica te spremembe.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3557,
+      "parts": [{
+        "text": "# Fizika: Vztrajnostni Moment, Navor in Gibalna Količina\n\n## [[Vztrajnostni Momenti]]\n\nVztrajnostni moment je fizikalna količina, ki opisuje, kako se telo up"
+      }, {
+        "text": "ira vrtenju okoli določene osi. Je rotacijski ekvivalent mase pri premem"
+      }, {
+        "text": " gibanju.\n\nSplošna formula za izračun vztrajnostnega momenta je:\n$$ J \u003d \\int"
+      }, {
+        "text": " r^2 dm $$\nkjer je $r$ razdalja masnega delčka $dm$ od osi vr"
+      }, {
+        "text": "tenja.\n\n### [[Primeri Vztrajnostnih Momentov za Različna Telesa]]\n\nTo"
+      }, {
+        "text": " so standardne formule za homogena telesa, ki se vrtijo okoli svoje simetrijske osi.\n\n"
+      }, {
+        "text": "*   **Tanek obroč ali votel valj:**\n    $$ J_{obroč} \u003d m R"
+      }, {
+        "text": "^2 $$\n*   **Poln valj ali disk:**\n    $$ J_{valj} \u003d \\"
+      }, {
+        "text": "frac{m R^2}{2} $$\n*   **Krogla:**\n    $$ J_{k"
+      }, {
+        "text": "rogla} \u003d \\frac{2}{5} m R^2 $$\n*   **Stožec ("
+      }, {
+        "text": "vrtanje okoli osi simetrije):**\n    $$ J_{stožec} \u003d \\frac{3}{"
+      }, {
+        "text": "10} m R^2 $$\n\n\u003e **Note to Self:** Te formule so ključne in jih je dobro"
+      }, {
+        "text": " znati na pamet za hitro reševanje nalog. Vedno pa je pomembno preveriti, ok"
+      }, {
+        "text": "oli katere osi se telo vrti.\n\n### [[Izpeljava Vztrajnostnega Momenta za Poln Valj]]\n\nProblem je izračunati vztrajnostni moment za poln, homogen valj z maso $m$,"
+      }, {
+        "text": " radijem $R$ in višino $h$, ki se vrti okoli svoje osi simetrije.\n\n"
+      }, {
+        "text": "1.  **Postavitev integrala:** Začnemo z osnovno definicijo $dJ \u003d r"
+      }, {
+        "text": "^2 dm$. Valj razdelimo na neskončno tanke votle valje (lupine) z radij"
+      }, {
+        "text": "em $r$ in debelino $dr$.\n2.  **Diferencial mase (dm):** Mas"
+      }, {
+        "text": "o lupine $dm$ izrazimo z gostoto $\\rho$ in volumnom lupine $dV$."
+      }, {
+        "text": "\n    *   Gostota valja: $\\rho \u003d \\frac{\\text{skupna masa}}{\\text{skup"
+      }, {
+        "text": "ni volumen}} \u003d \\frac{m}{\\pi R^2 h}$.\n    *   Volumen tanke lupine $"
+      }, {
+        "text": "dV$ je približno enak ploščini plašča ($2\\pi r h$) pomnoženi z debelino"
+      }, {
+        "text": " ($dr$):\n        $$ dV \\approx (2\\pi r h) dr $$\n    *   "
+      }, {
+        "text": "Tako je diferencial mase:\n        $$ dm \u003d \\rho dV \u003d \\frac{m}{\\pi R^"
+      }, {
+        "text": "2 h} (2\\pi r h) dr \u003d \\frac{2m}{R^2} r dr"
+      }, {
+        "text": " $$\n3.  **Integracija:** Vstavimo $dm$ v začetno enačbo za $"
+      }, {
+        "text": "dJ$ in integriramo od središča ($r\u003d0$) do roba ($r\u003dR$)."
+      }, {
+        "text": "\n    $$ dJ \u003d r^2 \\left( \\frac{2m}{R^2} r dr \\right)"
+      }, {
+        "text": " \u003d \\frac{2m}{R^2} r^3 dr $$\n    $$ J \u003d \\int_{"
+      }, {
+        "text": "0}^{R} \\frac{2m}{R^2} r^3 dr $$\n    Ker sta $"
+      }, {
+        "text": "m$ in $R$ konstanti, ju lahko izpostavimo pred integral:\n    $$ J \u003d \\frac"
+      }, {
+        "text": "{2m}{R^2} \\int_{0}^{R} r^3 dr \u003d \\frac{2"
+      }, {
+        "text": "m}{R^2} \\left[ \\frac{r^4}{4} \\right]_{0}^{R"
+      }, {
+        "text": "} $$\n    $$ J \u003d \\frac{2m}{R^2} \\left( \\frac{R"
+      }, {
+        "text": "^4}{4} - 0 \\right) \u003d \\frac{2mR^4}{4R^2} $$"
+      }, {
+        "text": "\n    $$ J_{valj} \u003d \\frac{1}{2} m R^2 $$\n\n## [[Aditivnost Vztrajnostnih Momentov]]\n\nVztrajnostni momenti so aditivni. Če je"
+      }, {
+        "text": " telo sestavljeno iz več delov, je skupni vztrajnostni moment enak vsoti vztrajnostnih moment"
+      }, {
+        "text": "ov posameznih delov:\n$$ J_{skupni} \u003d J_1 + J_2 + ..."
+      }, {
+        "text": " $$\n\n## [[Steinerjev Izrek]]\n\nSteinerjev izrek (ali izrek o vzporednih o"
+      }, {
+        "text": "seh) nam omogoča izračun vztrajnostnega momenta telesa okoli poljubne osi, če"
+      }, {
+        "text": " poznamo vztrajnostni moment okoli vzporedne osi, ki poteka skozi težišče teles"
+      }, {
+        "text": "a.\n\nFormula izreka je:\n$$ J_{os} \u003d J^{*} + m d^2 $$\n"
+      }, {
+        "text": "kjer je:\n*   $J_{os}$ vztrajnostni moment okoli nove, vzpored"
+      }, {
+        "text": "ne osi.\n*   $J^{*}$ vztrajnostni moment okoli osi, ki gre skozi teži"
+      }, {
+        "text": "šče.\n*   $m$ je masa telesa.\n*   $d$ je pravokotna raz"
+      }, {
+        "text": "dalja med obema osema.\n\n\u003e **Kritična Analiza:** Steinerjev izrek je iz"
+      }, {
+        "text": "jemno uporaben, ker nam ni treba za vsako os posebej računati zapletenih integralov. D"
+      }, {
+        "text": "ovolj je poznati vztrajnostni moment okoli težiščne osi (ki je za simetrična telesa"
+      }, {
+        "text": " pogosto tabeliran) in ga le prišteti k produktu $md^2$.\n\n### [[Primer: Vztrajnostni Moment Palice okoli Krajišča]]\n\nProblem je izračunati vztrajnostni moment"
+      }, {
+        "text": " tanke palice dolžine $l$ in mase $m$, ki se vrti okoli osi na"
+      }, {
+        "text": " enem izmed svojih krajišč.\n\n1.  **Podatki:** Poznamo vztrajnostni moment"
+      }, {
+        "text": " palice okoli težišča (sredine):\n    $$ J^{*} \u003d \\frac{1}{1"
+      }, {
+        "text": "2} m l^2 $$\n2.  **Razdalja med osema (d):** Os vr"
+      }, {
+        "text": "tenja je na krajišču, težišče pa na sredini. Razdalja med njima je:"
+      }, {
+        "text": "\n    $$ d \u003d \\frac{l}{2} $$\n3.  **Uporaba Steinerjevega Iz"
+      }, {
+        "text": "reka:**\n    $$ J_{palice, krajišče} \u003d J^{*} + m d^2 $$\n    "
+      }, {
+        "text": "$$ J_{palice, krajišče} \u003d \\frac{1}{12} m l^2"
+      }, {
+        "text": " + m \\left(\\frac{l}{2}\\right)^2 \u003d \\frac{1}{12} m l^2"
+      }, {
+        "text": " + \\frac{1}{4} m l^2 $$\n    $$ J_{palice, krajiš"
+      }, {
+        "text": "če} \u003d \\left(\\frac{1}{12} + \\frac{3}{12}\\right)"
+      }, {
+        "text": " m l^2 \u003d \\frac{4}{12} m l^2 \u003d \\frac{1}{3"
+      }, {
+        "text": "} m l^2 $$\n\n## [[Pogoji za Ravnovesje Toga Telesa]]\n\nDa je"
+      }, {
+        "text": " togo telo v statičnem ravnovesju, morata biti izpolnjena dva pogoja:"
+      }, {
+        "text": "\n\n1.  **Ravnovesje sil:** Vsota vseh zunanjih sil, ki delujejo na"
+      }, {
+        "text": " telo, mora biti enaka nič. To zagotavlja, da se težišče telesa ne pospešuje ("
+      }, {
+        "text": "translacijsko ravnovesje).\n    $$ \\sum \\vec{F}_{zun} \u003d 0 $$\n2"
+      }, {
+        "text": ".  **Ravnovesje navorov:** Vsota vseh navorov glede na poljubno os mora"
+      }, {
+        "text": " biti enaka nič. To zagotavlja, da telo nima kotnega pospeška (rotacijsko ravnov"
+      }, {
+        "text": "esje).\n    $$ \\sum \\vec{M} \u003d 0 $$\n\n### [[Navor (Vektorski Produkt)]]\n\nNavor sile $\\vec{F}$ glede na izhodišče (os"
+      }, {
+        "text": ") je definiran kot:\n$$ \\vec{M} \u003d \\vec{r} \\times \\vec{F} $$"
+      }, {
+        "text": "\nkjer je $\\vec{r}$ krajevni vektor od izhodišča do prijemališča sile"
+      }, {
+        "text": ".\n\n\u003e **Kritična Analiza:** Pri pogoju za ravnovesje navorov lahko os"
+      }, {
+        "text": " izberemo kjerkoli. Če je telo v ravnovesju, bo vsota navorov enaka"
+      }, {
+        "text": " nič ne glede na izbiro osi. Pametna izbira osi (npr. v pri"
+      }, {
+        "text": "jemališču neznane sile) lahko močno poenostavi računanje, saj bo navor t"
+      }, {
+        "text": "iste sile enak nič.\n\n## [[Neinercialni Opazovalni Sistemi]]\n\n\u003e **Spom"
+      }, {
+        "text": "inski Zapis:** Predavatelj je to temo navezal na prejšnjo uro, kjer so bili ob"
+      }, {
+        "text": "ravnavani Newtonovi zakoni v pospešenih sistemih.\n\nV neinercialnih (pospešenih)"
+      }, {
+        "text": " opazovalnih sistemih Newtonovi zakoni v svoji osnovni obliki ne veljajo. Da jih"
+      }, {
+        "text": " lahko uporabljamo, moramo vpeljati navidezne ali sistemske (fiktivne) sile.\n\nS"
+      }, {
+        "text": "plošna oblika drugega Newtonovega zakona v neinercialnem sistemu:\n$$ m\\"
+      }, {
+        "text": "vec{a}\u0027 \u003d \\sum \\vec{F}_{realne} + \\vec{F}_{sistemske"
+      }, {
+        "text": "} $$\n\n### [[Sistemske (Fiktivne) Sile]]\n\n1.  **Translacijsko"
+      }, {
+        "text": " pospeševanje:** Če se opazovalni sistem giblje premo s pospeškom $\\vec{"
+      }, {
+        "text": "a}_0$, se pojavi sila:\n    $$ \\vec{F}_{s} \u003d -m \\vec{a}_"
+      }, {
+        "text": "0 $$\n2.  **Centrifugalna sila:** Pojavi se v vrtečih sistemih in kaže"
+      }, {
+        "text": " navzven, stran od osi vrtenja.\n    $$ F_{centrifugalna} \u003d m \\"
+      }, {
+        "text": "omega^2 r $$\n3.  **Coriolisova sila:** Deluje na telesa, ki se"
+      }, {
+        "text": " *gibljejo* znotraj vrtečega sistema.\n    $$ \\vec{F}_{Cor} \u003d"
+      }, {
+        "text": " -2m (\\vec{\\omega} \\times \\vec{v}\u0027) $$\n    kjer je $\\vec{v}\u0027$"
+      }, {
+        "text": " hitrost telesa v vrtečem sistemu.\n\n## [[Izreki o Gibanju]]\n\n###"
+      }, {
+        "text": " [[Sunk Sile in Gibalna Količina]]\n\n*   **Gibalna količina** ($\\vec{G"
+      }, {
+        "text": "}$) je produkt mase in hitrosti telesa.\n    $$ \\vec{G} \u003d m \\vec{v}"
+      }, {
+        "text": " \\quad [\\text{kg} \\frac{\\text{m}}{\\text{s}}] $$\n*   **Sunk sile**"
+      }, {
+        "text": " je integral sile po času in pove, kako sunek zunanje sile spremeni gibalno količino telesa.\n"
+      }, {
+        "text": "    $$ \\int \\vec{F}_{zun} dt \u003d \\Delta \\vec{G} \u003d \\vec{G}_{"
+      }, {
+        "text": "končna} - \\vec{G}_{začetna} $$\n*   **Diferencialna oblika ("
+      }, {
+        "text": "2. Newtonov zakon):** Sila je enaka odvodu gibalne količine po času. Ta oblika je spl"
+      }, {
+        "text": "ošnejša, saj velja tudi za sisteme s spremenljivo maso.\n    $$ \\vec{F"
+      }, {
+        "text": "} \u003d \\frac{d\\vec{G}}{dt} $$\n\n### [[Izrek o Ohranjanju Gibalne Količine]]\n\nČe je vsota vseh **zunanjih** sil na sistem enaka nič, se"
+      }, {
+        "text": " skupna gibalna količina sistema ohranja.\n$$ \\text{Če } \\sum \\vec"
+      }, {
+        "text": "{F}_{zun} \u003d 0, \\text{ potem je } \\Delta \\vec{G} \u003d 0 \\"
+      }, {
+        "text": "implies \\vec{G}_{končna} \u003d \\vec{G}_{začetna} $$\nTo velja za"
+      }, {
+        "text": " sisteme točkastih delcev in za toga telesa. Za sistem delcev je skupna gibalna količ"
+      }, {
+        "text": "ina vektorska vsota gibalnih količin posameznih delcev.\n\n### [[Primer: Odriv dveh vozičkov]]\nDva vozička z masama $m_1$ in $"
+      }, {
+        "text": "m_2$ na začetku mirujeta. Po odrivu (npr. z vzmetjo med"
+      }, {
+        "text": " njima) se začneta gibati s hitrostma $\\vec{v}_1\u0027$ in $\\vec{v}_"
+      }, {
+        "text": "2\u0027$.\n\n1.  **Uporaba ohranitve gibalne količine:** Zunanjih sil v"
+      }, {
+        "text": " vodoravni smeri ni (sile med vozičkoma so notranje). Začetna gibal"
+      }, {
+        "text": "na količina je nič.\n    $$ \\vec{G}_{začetna} \u003d 0 $$\n    "
+      }, {
+        "text": "$$ \\vec{G}_{končna} \u003d m_1 \\vec{v}_1\u0027 + m_2 \\vec"
+      }, {
+        "text": "{v}_2\u0027 $$\n2.  **Ohranitev:**\n    $$ m_1 \\vec{v}_1"
+      }, {
+        "text": "\u0027 + m_2 \\vec{v}_2\u0027 \u003d 0 $$\n    $$ \\vec{v}_"
+      }, {
+        "text": "1\u0027 \u003d -\\frac{m_2}{m_1} \\vec{v}_2\u0027 $$\n    "
+      }, {
+        "text": "Vozička se odrineta v nasprotnih smereh. Razmerje njunih hitrost"
+      }, {
+        "text": "i je obratno sorazmerno razmerju njunih mas.\n\n### [[Sila Curka]]\n"
+      }, {
+        "text": "Sila curka je primer uporabe 2. Newtonovega zakona v obliki $\\vec{F} \u003d"
+      }, {
+        "text": " d\\vec{G}/dt$ za sistem s spreminjajočo se maso (odprt sistem).\n\n*"
+      }, {
+        "text": "   **Masni pretok** ($\\Phi_m$): Pove, koliko mase preteče skozi pre"
+      }, {
+        "text": "sek v časovni enoti.\n    $$ \\Phi_m \u003d \\frac{dm}{dt} \\quad [\\frac{\\text{kg}}{\\text{s}}] $$\n*   **Volumski pretok** ($\\Phi_V"
+      }, {
+        "text": "$):\n    $$ \\Phi_V \u003d \\frac{dV}{dt} \u003d S \\cdot v \\quad [\\frac{\\text{m}^3}{\\text{s}}] $$\n    kjer je $S$ ploščina preseka in $v"
+      }, {
+        "text": "$ hitrost curka.\n\nSila, s katero curek deluje na oviro (npr. st"
+      }, {
+        "text": "eno), je odvisna od spremembe gibalne količine curka.\n$$ \\vec{F}_c \u003d -\\"
+      }, {
+        "text": "vec{F}_s \u003d \\frac{\\Delta \\vec{G}}{\\Delta t} $$\nČe se curek na"
+      }, {
+        "text": " steni popolnoma ustavi ($\\vec{v}_{končna}\u003d0$):\n$$ F_c \u003d \\"
+      }, {
+        "text": "frac{\\Delta m \\cdot v\u0027}{\\Delta t} \u003d \\Phi_m v\u0027 $$\nČe se curek"
+      }, {
+        "text": " odbije od stene s hitrostjo $\\vec{v}$ (nasprotna smer od $\\vec{v}\u0027"
+      }, {
+        "text": "$), je sila:\n$$ \\vec{F}_c \u003d \\Phi_m (\\vec{v}\u0027 - \\vec{v"
+      }, {
+        "text": "}) $$\n\n\u003e **Kritična Analiza:** To je klasičen primer, kjer je razmišljanje o sprem"
+      }, {
+        "text": "embi gibalne količine sistema veliko bolj intuitivno kot pa direktna uporaba $F\u003dma$. Sistem"
+      }, {
+        "text": ", ki ga opazujemo, je \"kos\" tekočine, ki v časovnem intervalu $\\"
+      }, {
+        "text": "Delta t$ trči ob oviro. Njegova gibalna količina se spremeni in sila je"
+      }, {
+        "text": " posledica te spremembe."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

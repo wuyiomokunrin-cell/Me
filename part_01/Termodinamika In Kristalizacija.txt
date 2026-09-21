@@ -1,0 +1,405 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1_VYhZMLDq9Pep4d9jGun-sVnrYNz4nTW"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "15rFKeEG-sXFLpl8jAN9H5g1Rs8Sk_G-1"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1aCbmzSDTehsBYleLsY1eGtEJZJTzAfGQ"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveAudio": {
+        "id": "1kahoNW7QJkG_TASP_qNEe_C1hrUTEhlJ"
+      },
+      "role": "user",
+      "tokenCount": 90212
+    }, {
+      "driveAudio": {
+        "id": "1UwrRzLJXkA-BOTrKYmLrQpI1qAZi4sLH"
+      },
+      "role": "user",
+      "tokenCount": 169499
+    }, {
+      "text": "**Examining the Core Task**\n\nI\u0027ve been meticulously analyzing the provided request, focusing on the core role of an academic assistant and the specifics of the input. I\u0027m now transitioning towards identifying the essential components for crafting effective Obsidian notes. I\u0027m honing in on the key tasks and the expected output to ensure the final result aligns perfectly.\n\n\n**Processing the Data Stream**\n\nI\u0027m now fully immersed in the image data, starting with the thermodynamic principles and calculations presented. I\u0027m actively translating Slovenian terms and deciphering the handwritten equations. My focus is on extracting the core concepts, such as Gibbs free energy, enthalpy, and entropy. I am constructing a conceptual map. My goal is to organize these initial findings into a cohesive narrative, ready for LaTeX implementation.\n\n\n**Dissecting the Recrystallization**\n\nMy focus has shifted to the detailed recrystallization problem. I\u0027m carefully examining the solubility data and how it\u0027s used within the calculations. I\u0027m breaking down the steps, particularly the mass fraction and yield calculations. I\u0027m focusing on the specific data given and the relationships between the data to derive the calculations needed to solve for the final mass.\n\n\n**Modeling the Mass Balances**\n\nI\u0027m now deeply immersed in the mass balance problem, focusing on the specific distinction between anhydrous salt and crystal hydrate. I\u0027m noting the initial values: 30g hydrate with an anhydrous mass fraction of 0.544. I\u0027ve calculated the individual masses of the anhydrous salt and water within the initial hydrate. Next, I\u0027m analyzing the solubility data at 80°C and cooling to 20°C, preparing to calculate the precipitated crystal mass. My current focus is on the mass of crystals precipitated and the overall yield of the process.\n\n\n**Interrogating Thermodynamic Principles**\n\nI\u0027m now interrogating the thermodynamic principles. I\u0027m focusing on the relationship between Gibbs Free Energy and equilibrium constants. I\u0027m exploring the nuances of using Kelvin and the significance of positive or negative $\\Delta G$ values. I\u0027m also preparing to articulate the solubility principles and mass balance logic related to the problem.\n\n\n\n**Determining the Equilibrium**\n\nI\u0027ve calculated the equilibrium temperature using the provided enthalpy and entropy values. It\u0027s approximately 575 K. I\u0027m carefully noting the need for consistent units between $\\Delta H$ (kJ) and $\\Delta S$ (J). I\u0027m also preparing to apply this thermodynamic data to the specific recrystallization problem. Now, I\u0027m focusing on how the phase change temp affects recrystallization.\n\n\n**Calculating the Crystallization**\n\nI\u0027m working on the mass balance for the crystallization step, using the given solubility data at 20°C. I am calculating the total mass of water and applying that to the solubility data to find the mass of anhydrous salt that remains in the solution at the lower temperature. Then, I will compute the amount of crystallized salt. My focus is on the difference in solubility and how much is precipitated as crystals.\n\n\n**Refining the Crystallization**\n\nI\u0027m now zeroing in on the nuanced calculations for the crystallized mass. I\u0027m focusing on the critical relationship between the mass of anhydrous salt and the hydrate. My primary approach revolves around calculating the anhydrous mass within the precipitated crystals, denoted as $w \\cdot x$. I\u0027ve formulated the equations and am reconciling the approaches used in the notes. There is the alternative calculation, using the solubility difference.\n\n\n**Refining Crystallization Calculations**\n\nI\u0027ve formulated the equations representing the mass balance and am now refining the crystallization calculations. I\u0027m focusing on the input of anhydrous mass, and considering the precipitation of the hydrate. Using a precise mass balance equation, I am calculating the solubility, considering the solubility at 20°C. My central focus is calculating $x$, the theoretical yield and the amount of hydrate formed. This will allow for the computation of the final actual yield, which will be computed using the theoretical calculation.\n\n\n**Updating the Structure**\n\nI\u0027m now refining the overall structure of the notes. I\u0027m focusing on the \"Critical Analysis\" and \"Warnings\" callouts to highlight crucial points. Unit conversions, particularly between J and kJ, and the correct calculation of hydrate water are paramount. I\u0027m reviewing the provided lecturer\u0027s notes.\n\n\n**Organizing the Concepts**\n\nI\u0027m now integrating the key concepts into the structure. I\u0027m focusing on adding Wikilinks for important terms like Gibbs free energy and mass balance. My current effort concentrates on ensuring the Slovenian phrasing is accurate and suitable for academic notes. I\u0027m working to refine the overall organization.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Examining the Core Task**\n\nI\u0027ve been meticulously analyzing the provided request, focusing on the core role of an academic assistant and the specifics of the input. I\u0027m now transitioning towards identifying the essential components for crafting effective Obsidian notes. I\u0027m honing in on the key tasks and the expected output to ensure the final result aligns perfectly.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Processing the Data Stream**\n\nI\u0027m now fully immersed in the image data, starting with the thermodynamic principles and calculations presented. I\u0027m actively translating Slovenian terms and deciphering the handwritten equations. My focus is on extracting the core concepts, such as Gibbs free energy, enthalpy, and entropy. I am constructing a conceptual map. My goal is to organize these initial findings into a cohesive narrative, ready for LaTeX implementation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Dissecting the Recrystallization**\n\nMy focus has shifted to the detailed recrystallization problem. I\u0027m carefully examining the solubility data and how it\u0027s used within the calculations. I\u0027m breaking down the steps, particularly the mass fraction and yield calculations. I\u0027m focusing on the specific data given and the relationships between the data to derive the calculations needed to solve for the final mass.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Modeling the Mass Balances**\n\nI\u0027m now deeply immersed in the mass balance problem, focusing on the specific distinction between anhydrous salt and crystal hydrate. I\u0027m noting the initial values: 30g hydrate with an anhydrous mass fraction of 0.544. I\u0027ve calculated the individual masses of the anhydrous salt and water within the initial hydrate. Next, I\u0027m analyzing the solubility data at 80°C and cooling to 20°C, preparing to calculate the precipitated crystal mass. My current focus is on the mass of crystals precipitated and the overall yield of the process.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Interrogating Thermodynamic Principles**\n\nI\u0027m now interrogating the thermodynamic principles. I\u0027m focusing on the relationship between Gibbs Free Energy and equilibrium constants. I\u0027m exploring the nuances of using Kelvin and the significance of positive or negative $\\Delta G$ values. I\u0027m also preparing to articulate the solubility principles and mass balance logic related to the problem.\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Determining the Equilibrium**\n\nI\u0027ve calculated the equilibrium temperature using the provided enthalpy and entropy values. It\u0027s approximately 575 K. I\u0027m carefully noting the need for consistent units between $\\Delta H$ (kJ) and $\\Delta S$ (J). I\u0027m also preparing to apply this thermodynamic data to the specific recrystallization problem. Now, I\u0027m focusing on how the phase change temp affects recrystallization.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Calculating the Crystallization**\n\nI\u0027m working on the mass balance for the crystallization step, using the given solubility data at 20°C. I am calculating the total mass of water and applying that to the solubility data to find the mass of anhydrous salt that remains in the solution at the lower temperature. Then, I will compute the amount of crystallized salt. My focus is on the difference in solubility and how much is precipitated as crystals.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Crystallization**\n\nI\u0027m now zeroing in on the nuanced calculations for the crystallized mass. I\u0027m focusing on the critical relationship between the mass of anhydrous salt and the hydrate. My primary approach revolves around calculating the anhydrous mass within the precipitated crystals, denoted as $w \\cdot x$. I\u0027ve formulated the equations and am reconciling the approaches used in the notes. There is the alternative calculation, using the solubility difference.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Crystallization Calculations**\n\nI\u0027ve formulated the equations representing the mass balance and am now refining the crystallization calculations. I\u0027m focusing on the input of anhydrous mass, and considering the precipitation of the hydrate. Using a precise mass balance equation, I am calculating the solubility, considering the solubility at 20°C. My central focus is calculating $x$, the theoretical yield and the amount of hydrate formed. This will allow for the computation of the final actual yield, which will be computed using the theoretical calculation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Updating the Structure**\n\nI\u0027m now refining the overall structure of the notes. I\u0027m focusing on the \"Critical Analysis\" and \"Warnings\" callouts to highlight crucial points. Unit conversions, particularly between J and kJ, and the correct calculation of hydrate water are paramount. I\u0027m reviewing the provided lecturer\u0027s notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Concepts**\n\nI\u0027m now integrating the key concepts into the structure. I\u0027m focusing on adding Wikilinks for important terms like Gibbs free energy and mass balance. My current effort concentrates on ensuring the Slovenian phrasing is accurate and suitable for academic notes. I\u0027m working to refine the overall organization.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Tu so strukturirani, akademski zapiski predavanj, ki pokrivajo termodinamiko in proces prekristalizacije, pretvorjeni v format, optimiziran za Obsidian.\n\nZapiski sledijo kronološkemu zaporedju predavanja, vključujejo analitične izpeljave in opozorila na mestih, kjer študentje pogosto delajo napake.\n\n***\n\n# 2025-11-23 Termodinamika in Kristalizacija\n\n**Datum:** 23. november 2025\n**Lokacija:** Slovenija\n**Predmet:** Kemijsko inženirstvo / Splošna kemija\n**Tags:** #kemija #termodinamika #kristalizacija #masna-bilanca #naloge\n\n---\n\n## 1. Termodinamika: Gibbsova prosta energija\n\nOsnovna predpostavka za določanje spontanosti kemijskih reakcij je [[Gibbsova prosta energija]] ($\\Delta G^\\circ$). Povezuje entalpijo in entropijo sistema.\n\n### Splošne formule\n\n$$\n\\Delta G^\\circ \u003d \\Delta H^\\circ - T \\Delta S^\\circ\n$$\n$$\n\\Delta G^\\circ \u003d -RT \\ln K\n$$\n\nKjer je:\n*   $\\Delta H^\\circ$: Standardna reakcijska [[Entalpija]] [kJ/mol]\n*   $\\Delta S^\\circ$: Standardna reakcijska [[Entropija]] [J/molK]\n*   $T$: Temperatura [K] (Vedno v Kelvinih!)\n*   $K$: Ravnotežna konstanta\n*   $R$: Plinska konstanta ($8.314 \\text{ J/molK}$)\n\n\u003e [!warning] Opozorilo: Pretvorba enot\n\u003e Bodite izjemno pozorni na enote. $\\Delta H$ je običajno podana v **kJ**, medtem ko je $\\Delta S$ in plinska konstanta $R$ v **J**. Pred izračunom $\\Delta G$ morate $\\Delta S$ deliti s 1000 ali $\\Delta H$ množiti s 1000!\n\n---\n\n### Primer 1: Razpad magnezijevega karbonata\n\n**Reakcija:**\n$$ \\text{MgCO}_3(s) \\rightarrow \\text{MgO}(s) + \\text{CO}_2(g) $$\n\n**Podatki:**\n*   $\\Delta H^\\circ_f (\\text{MgO}) \u003d -601.7 \\text{ kJ/mol}$\n*   $\\Delta H^\\circ_f (\\text{MgCO}_3) \u003d -1095.8 \\text{ kJ/mol}$\n*   $\\Delta H^\\circ_f (\\text{CO}_2) \u003d -393.5 \\text{ kJ/mol}$\n*   $S^\\circ (\\text{MgO}) \u003d 26.9 \\text{ J/molK}$\n*   $S^\\circ (\\text{MgCO}_3) \u003d 65.7 \\text{ J/molK}$\n*   $S^\\circ (\\text{CO}_2) \u003d 213.7 \\text{ J/molK}$\n*   $T \u003d 25^\\circ\\text{C} \u003d 298.15 \\text{ K}$\n\n#### 1. Izračun reakcijske entalpije ($\\Delta H_r^\\circ$)\nUporabimo Hessov zakon: $\\Delta H_r \u003d \\sum \\Delta H_f (\\text{produkti}) - \\sum \\Delta H_f (\\text{reaktanti})$.\n\n$$\n\\Delta H_r^\\circ \u003d [-601.7 + (-393.5)] - [-1095.8] \u003d \\mathbf{100.6 \\text{ kJ/mol}}\n$$\n*Analiza:* Pozitivna entalpija pomeni, da je reakcija **endotermna** (potrebuje toploto).\n\n#### 2. Izračun reakcijske entropije ($\\Delta S_r^\\circ$)\n$$\n\\Delta S_r^\\circ \u003d [26.9 + 213.7] - [65.7] \u003d \\mathbf{174.9 \\text{ J/molK}}\n$$\n*Analiza:* Entropija se poveča, kar je logičen rezultat, saj iz trdne snovi nastaja plin ($CO_2$), ki ima višjo stopnjo neurejenosti.\n\n#### 3. Izračun Gibbsove proste energije ($\\Delta G^\\circ$)\n$$\n\\Delta G^\\circ \u003d 100.6 \\text{ kJ/mol} - (298.15 \\text{ K} \\cdot 0.1749 \\text{ kJ/molK})\n$$\n$$\n\\Delta G^\\circ \u003d 48.5 \\text{ kJ/mol}\n$$\n\n**Zaključek:** Ker je $\\Delta G^\\circ \u003e 0$, reakcija pri sobni temperaturi **ne poteče spontano**.\n\n#### 4. Izračun ravnotežne konstante ($K$)\n$$\nK \u003d e^{-\\frac{\\Delta G^\\circ}{RT}} \u003d e^{-\\frac{48500 \\text{ J/mol}}{8.314 \\cdot 298.15}} \u003d 3.2 \\cdot 10^{-9}\n$$\nZelo majhna konstanta $K$ potrjuje, da je ravnotežje močno pomaknjeno v levo (k reaktantom).\n\n#### 5. Izračun temperature razpada\nPri kateri temperaturi postane reakcija spontana? Meja je, ko $\\Delta G^\\circ \u003d 0$.\n$$\n0 \u003d \\Delta H^\\circ - T \\Delta S^\\circ \\Rightarrow T \u003d \\frac{\\Delta H^\\circ}{\\Delta S^\\circ}\n$$\n$$\nT \u003d \\frac{100600 \\text{ J/mol}}{174.9 \\text{ J/molK}} \u003d 575.2 \\text{ K} \\approx \\mathbf{302.2^\\circ\\text{C}}\n$$\n\n---\n\n### Primer 2: Sinteza metana in amoniaka\n\n**Reakcija 1:** $C + 2H_2(g) \\rightarrow CH_4(g)$\n*   $\\Delta H_r \u003d -74.8 \\text{ kJ/mol}$\n*   $\\Delta S_{sist} \u003d -80.8 \\text{ J/molK}$ (Sistem postane bolj urejen, manj molov plina).\n*   $\\Delta G^\\circ \u003d -74.8 - (298 \\cdot (-0.0808)) \u003d \\mathbf{-50.7 \\text{ kJ/mol}}$.\n*   *Zaključek:* Reakcija je spontana.\n\n**Reakcija 2:** $N_2 + 3H_2 \\rightleftharpoons 2NH_3$\n*   Podano: $\\Delta G_{re} \u003d -32.9 \\text{ kJ}$.\n*   Izračun $K$:\n    $$\n    K \u003d e^{\\frac{-(-32900)}{8.314 \\cdot 298}} \u003d \\mathbf{5.8 \\cdot 10^5}\n    $$\n    Velik $K$ pomeni, da so produkti močno favorizirani.\n\n---\n\n## 2. Topnost in Prekristalizacija\n\nTa del predavanja se osredotoča na ločevalne postopke na podlagi različne topnosti snovi pri različnih temperaturah.\n\n### Ključni koncepti\n*   **[[Topnost]] ($s$):** Običajno podana kot masa topljenca na 100 g topila (vode). Enota: $g/100g H_2O$.\n*   **[[Kristalhidrat]] vs. Brezvodna sol:**\n    *   *Brezvodna sol:* Kemijska formula brez vezane vode (npr. $KAl(SO_4)_2$).\n    *   *Kristalhidrat:* Sol, ki v svojo kristalno strukturo veže vodo (npr. $KAl(SO_4)_2 \\cdot 12H_2O$).\n    *   \u003e [!note] Critical Analysis: Masni delež\n        Pri izračunih topnosti moramo vedno pretvarjati maso hidrata v maso brezvodne soli, saj se topnost nanaša na brezvodno obliko, voda iz hidrata pa postane del topila!\n\n---\n\n### Naloga: Prekristalizacija galuna ($KAl(SO_4)_2 \\cdot 12H_2O$)\n\n**Cilj:** Izračunaj teoretski izkoristek pri prekristalizaciji $30 \\text{ g}$ kristalhidrata.\n\n**Podatki:**\n*   Vhodna masa hidrata: $m_{KH} \u003d 30 \\text{ g}$.\n*   Topnost pri $80^\\circ\\text{C}$ ($T_{visoka}$): $s_{80} \u003d 71 \\text{ g} / 100 \\text{ g} H_2O$ (nasičena raztopina).\n*   Topnost pri $20^\\circ\\text{C}$ ($T_{nizka}$): $s_{20} \u003d 11.4 \\text{ g} / 100 \\text{ g} H_2O$.\n*   Molske mase:\n    *   $M_{\\text{brezvodna}} \u003d 258.2 \\text{ g/mol}$\n    *   $M_{\\text{hidrat}} \u003d 474.4 \\text{ g/mol}$\n\n#### 1. Korak: Priprava nasičene raztopine pri $80^\\circ\\text{C}$\n\nNajprej moramo ugotoviti, koliko vode potrebujemo, da raztopimo vseh $30 \\text{ g}$ hidrata pri $80^\\circ\\text{C}$.\n\n1.  **Masni delež brezvodne soli v hidratu ($w$):**\n    $$ w \u003d \\frac{M_{\\text{brezvodna}}}{M_{\\text{hidrat}}} \u003d \\frac{258.2}{474.4} \u003d 0.544 $$\n2.  **Sestava vhodnega materiala ($30 \\text{ g}$ hidrata):**\n    *   Masa soli ($m_{sol}$): $30 \\cdot 0.544 \u003d \\mathbf{16.32 \\text{ g}}$\n    *   Masa vezane vode ($m_{voda, vezana}$): $30 - 16.32 \u003d \\mathbf{13.68 \\text{ g}}$\n3.  **Potrebna voda za nasičenje pri $80^\\circ\\text{C}$:**\n    Uporabimo topnost $71 \\text{ g} / 100 \\text{ g} H_2O$.\n    $$ \\frac{71 \\text{ g soli}}{100 \\text{ g vode}} \u003d \\frac{16.32 \\text{ g soli}}{m_{voda, skupna}} $$\n    $$ m_{voda, skupna} \u003d \\frac{16.32 \\cdot 100}{71} \u003d \\mathbf{22.99 \\text{ g}} $$\n4.  **Dodatek vode:**\n    Ker smo v sistem prinesli že $13.68 \\text{ g}$ vode s hidratom, moramo dodati le razliko:\n    $$ m_{voda, dodana} \u003d 22.99 - 13.68 \u003d \\mathbf{9.31 \\text{ g}} $$\n\n**Stanje pri $80^\\circ\\text{C}$ (pred hlajenjem):**\n*   Masa soli: $16.32 \\text{ g}$\n*   Masa vode: $22.99 \\text{ g}$\n*   Skupna masa raztopine: $39.31 \\text{ g}$\n\n---\n\n#### 2. Korak: Hlajenje na $20^\\circ\\text{C}$ in kristalizacija\n\nPri hlajenju topnost pade na $11.4 \\text{ g} / 100 \\text{ g} H_2O$. Presežek soli izpade v obliki **kristalhidrata**.\n\n\u003e [!info] Metoda \"Masna bilanca\" (Reverzni inženiring postopka)\n\u003e Najbolj robusten način reševanja je postavitev masne bilance za brezvodno sol v tekoči fazi.\n\u003e\n\u003e $m_{\\text{sol, začetna}} \u003d m_{\\text{sol, v kristalih}} + m_{\\text{sol, v raztopini}}$\n\nNaj bo $x$ masa izločenih kristalov (hidrata).\n\n1.  **Masa soli, ki ostane v raztopini:**\n    Ko se izloči $x$ gramov hidrata, ta hidrat s seboj odnese sol in vodo.\n    *   Masa soli v kristalih: $0.544 \\cdot x$\n    *   Masa vode v kristalih: $(1 - 0.544) \\cdot x \u003d 0.456 \\cdot x$\n2.  **Sestava matične lužnice (preostale raztopine):**\n    *   Masa preostale soli: $16.32 - 0.544x$\n    *   Masa preostale vode: $22.99 - 0.456x$\n3.  **Enačba topnosti pri $20^\\circ\\text{C}$:**\n    Razmerje med preostalo soljo in preostalo vodo mora ustrezati topnosti pri $20^\\circ\\text{C}$.\n    $$ \\frac{m_{sol, preostala}}{m_{voda, preostala}} \u003d \\frac{11.4}{100} \u003d 0.114 $$\n    $$ \\frac{16.32 - 0.544x}{22.99 - 0.456x} \u003d 0.114 $$\n4.  **Reševanje za $x$ (Teoretski izplen):**\n    $$ 16.32 - 0.544x \u003d 0.114 \\cdot (22.99 - 0.456x) $$\n    $$ 16.32 - 0.544x \u003d 2.62 - 0.052x $$\n    $$ 13.7 \u003d 0.492x $$\n    $$ x \\approx \\mathbf{27.85 \\text{ g}} $$\n\n*(Opomba: V zapiskih je končni rezultat okoli 28 g, odvisno od zaokroževanja vmesnih masnih deležev)*.\n\n---\n\n### Teoretski izkoristek ($\\eta$)\n\nIzkoristek procesa se računa kot razmerje med maso izločenih kristalov in začetno maso kristalhidrata (če predpostavimo popoln proces brez izgub).\n\n$$ \\eta \u003d \\frac{m_{\\text{kristalov}}}{m_{\\text{vhodnega hidrata}}} \\cdot 100\\% $$\n$$ \\eta \u003d \\frac{27.85}{30} \\cdot 100\\% \\approx 92.8\\% $$\n\n---\n\n### Slovarček in Formule\n\n*   **[[Masni delež]] ($w$):** $w_{sol} \u003d \\frac{s}{100+s}$ (kjer je $s$ topnost v g/100g vode).\n*   **Prekristalizacija:** Metoda čiščenja trdnih snovi. Nečistoče ostanejo v raztopini, čista snov kristalizira.\n*   **Eksotermna reakcija:** $\\Delta H \u003c 0$ (sprošča toploto).\n*   **Endotermna reakcija:** $\\Delta H \u003e 0$ (porablja toploto).",
+      "role": "model",
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "Tu so strukturirani, akademski zapiski predavanj, ki pokrivajo termodinamiko in proces prekristalizacije,"
+      }, {
+        "text": " pretvorjeni v format, optimiziran za Obsidian.\n\nZapiski sledijo kronološkemu zaporedju predavanja,"
+      }, {
+        "text": " vključujejo analitične izpeljave in opozorila na mestih, kjer študentje"
+      }, {
+        "text": " pogosto delajo napake.\n\n***\n\n# 2025-11-23 Termodinamika in Krist"
+      }, {
+        "text": "alizacija\n\n**Datum:** 23. november 2025\n**Lokacija:** Slovenija\n**Pred"
+      }, {
+        "text": "met:** Kemijsko inženirstvo / Splošna kemija\n**Tags:** #kemija #termodinamika #k"
+      }, {
+        "text": "ristalizacija #masna-bilanca #naloge\n\n---\n\n## 1. Termodinamika: Gibb"
+      }, {
+        "text": "sova prosta energija\n\nOsnovna predpostavka za določanje spontanosti kemijskih reakcij je [[Gibbsova"
+      }, {
+        "text": " prosta energija]] ($\\Delta G^\\circ$). Povezuje entalpijo in entropijo sistema.\n\n### Splošne"
+      }, {
+        "text": " formule\n\n$$\n\\Delta G^\\circ \u003d \\Delta H^\\circ - T \\Delta S^\\circ\n$$\n"
+      }, {
+        "text": "$$\n\\Delta G^\\circ \u003d -RT \\ln K\n$$\n\nKjer je:\n*   $\\Delta H^\\"
+      }, {
+        "text": "circ$: Standardna reakcijska [[Entalpija]] [kJ/mol]\n*   $\\Delta S^\\circ"
+      }, {
+        "text": "$: Standardna reakcijska [[Entropija]] [J/molK]\n*   $T$: Temperatura"
+      }, {
+        "text": " [K] (Vedno v Kelvinih!)\n*   $K$: Ravnotežna konstanta\n"
+      }, {
+        "text": "*   $R$: Plinska konstanta ($8.314 \\text{ J/molK}$)\n\n\u003e [!warning"
+      }, {
+        "text": "] Opozorilo: Pretvorba enot\n\u003e Bodite izjemno pozorni na enote."
+      }, {
+        "text": " $\\Delta H$ je običajno podana v **kJ**, medtem ko je $\\Delta S$ in plinska konstanta $R$ v **"
+      }, {
+        "text": "J**. Pred izračunom $\\Delta G$ morate $\\Delta S$ deliti s 1000 ali"
+      }, {
+        "text": " $\\Delta H$ množiti s 1000!\n\n---\n\n### Primer 1: Razpad mag"
+      }, {
+        "text": "nezijevega karbonata\n\n**Reakcija:**\n$$ \\text{MgCO}_3(s) \\rightarrow"
+      }, {
+        "text": " \\text{MgO}(s) + \\text{CO}_2(g) $$\n\n**Podatki:**"
+      }, {
+        "text": "\n*   $\\Delta H^\\circ_f (\\text{MgO}) \u003d -601.7 \\text{ kJ/mol}$"
+      }, {
+        "text": "\n*   $\\Delta H^\\circ_f (\\text{MgCO}_3) \u003d -1095.8 \\text{ kJ/"
+      }, {
+        "text": "mol}$\n*   $\\Delta H^\\circ_f (\\text{CO}_2) \u003d -393"
+      }, {
+        "text": ".5 \\text{ kJ/mol}$\n*   $S^\\circ (\\text{MgO}) \u003d 2"
+      }, {
+        "text": "6.9 \\text{ J/molK}$\n*   $S^\\circ (\\text{MgCO}_"
+      }, {
+        "text": "3) \u003d 65.7 \\text{ J/molK}$\n*   $S^\\circ (\\"
+      }, {
+        "text": "text{CO}_2) \u003d 213.7 \\text{ J/molK}$\n*   "
+      }, {
+        "text": "$T \u003d 25^\\circ\\text{C} \u003d 298.15 \\text{ K"
+      }, {
+        "text": "}$\n\n#### 1. Izračun reakcijske entalpije ($\\Delta H_r^\\circ$)\nU"
+      }, {
+        "text": "porabimo Hessov zakon: $\\Delta H_r \u003d \\sum \\Delta H_f (\\text{produkti}) - \\sum"
+      }, {
+        "text": " \\Delta H_f (\\text{reaktanti})$.\n\n$$\n\\Delta H_r^\\circ \u003d [-"
+      }, {
+        "text": "601.7 + (-393.5)] - [-1095.8] \u003d \\"
+      }, {
+        "text": "mathbf{100.6 \\text{ kJ/mol}}\n$$\n*Analiza:* Pozitivna ent"
+      }, {
+        "text": "alpija pomeni, da je reakcija **endotermna** (potrebuje toploto).\n\n#### 2. Izračun"
+      }, {
+        "text": " reakcijske entropije ($\\Delta S_r^\\circ$)\n$$\n\\Delta S_r^\\circ \u003d"
+      }, {
+        "text": " [26.9 + 213.7] - [65.7] \u003d \\mathbf{1"
+      }, {
+        "text": "74.9 \\text{ J/molK}}\n$$\n*Analiza:* Entropija se poveča, kar"
+      }, {
+        "text": " je logičen rezultat, saj iz trdne snovi nastaja plin ($CO_2$), ki"
+      }, {
+        "text": " ima višjo stopnjo neurejenosti.\n\n#### 3. Izračun Gibbsove proste energije ($\\Delta G^\\circ$)"
+      }, {
+        "text": "\n$$\n\\Delta G^\\circ \u003d 100.6 \\text{ kJ/mol} - (2"
+      }, {
+        "text": "98.15 \\text{ K} \\cdot 0.1749 \\text{ kJ/molK})"
+      }, {
+        "text": "\n$$\n$$\n\\Delta G^\\circ \u003d 48.5 \\text{ kJ/mol}\n$$\n\n**Zakl"
+      }, {
+        "text": "juček:** Ker je $\\Delta G^\\circ \u003e 0$, reakcija pri sobni temperaturi **ne pote"
+      }, {
+        "text": "če spontano**.\n\n#### 4. Izračun ravnotežne konstante ($K$)\n$$\nK"
+      }, {
+        "text": " \u003d e^{-\\frac{\\Delta G^\\circ}{RT}} \u003d e^{-\\frac{48500 \\text{ J"
+      }, {
+        "text": "/mol}}{8.314 \\cdot 298.15}} \u003d 3.2 \\cdot"
+      }, {
+        "text": " 10^{-9}\n$$\nZelo majhna konstanta $K$ potrjuje, da je"
+      }, {
+        "text": " ravnotežje močno pomaknjeno v levo (k reaktantom).\n\n#### 5. Izračun"
+      }, {
+        "text": " temperature razpada\nPri kateri temperaturi postane reakcija spontana? Meja je, ko $\\Delta G^\\circ \u003d 0$."
+      }, {
+        "text": "\n$$\n0 \u003d \\Delta H^\\circ - T \\Delta S^\\circ \\Rightarrow T \u003d \\frac{\\Delta H^\\"
+      }, {
+        "text": "circ}{\\Delta S^\\circ}\n$$\n$$\nT \u003d \\frac{100600 \\"
+      }, {
+        "text": "text{ J/mol}}{174.9 \\text{ J/molK}} \u003d 575"
+      }, {
+        "text": ".2 \\text{ K} \\approx \\mathbf{302.2^\\circ\\text{C}}\n$$"
+      }, {
+        "text": "\n\n---\n\n### Primer 2: Sinteza metana in amoniaka\n\n**Reakcija 1:** $"
+      }, {
+        "text": "C + 2H_2(g) \\rightarrow CH_4(g)$\n*   $\\Delta H_r \u003d -7"
+      }, {
+        "text": "4.8 \\text{ kJ/mol}$\n*   $\\Delta S_{sist} \u003d -80."
+      }, {
+        "text": "8 \\text{ J/molK}$ (Sistem postane bolj urejen, manj molov plina).\n*   $\\"
+      }, {
+        "text": "Delta G^\\circ \u003d -74.8 - (298 \\cdot (-0.0808"
+      }, {
+        "text": ")) \u003d \\mathbf{-50.7 \\text{ kJ/mol}}$.\n*   *Zaključek:* Re"
+      }, {
+        "text": "akcija je spontana.\n\n**Reakcija 2:** $N_2 + 3H_2"
+      }, {
+        "text": " \\rightleftharpoons 2NH_3$\n*   Podano: $\\Delta G_{re} \u003d -32.9"
+      }, {
+        "text": " \\text{ kJ}$.\n*   Izračun $K$:\n    $$\n    K \u003d e^{\\frac{-"
+      }, {
+        "text": "(-32900)}{8.314 \\cdot 298}} \u003d \\mathbf{5.8 \\"
+      }, {
+        "text": "cdot 10^5}\n    $$\n    Velik $K$ pomeni, da so produkti mo"
+      }, {
+        "text": "čno favorizirani.\n\n---\n\n## 2. Topnost in Prekristalizacija\n\nTa del pred"
+      }, {
+        "text": "avanja se osredotoča na ločevalne postopke na podlagi različne topnosti snovi pri različnih"
+      }, {
+        "text": " temperaturah.\n\n### Ključni koncepti\n*   **[[Topnost]] ($s$):** Ob"
+      }, {
+        "text": "ičajno podana kot masa topljenca na 100 g topila (vode). Enota: $g/100"
+      }, {
+        "text": "g H_2O$.\n*   **[[Kristalhidrat]] vs. Brezvodna sol:**\n"
+      }, {
+        "text": "    *   *Brezvodna sol:* Kemijska formula brez vezane vode (npr. $KAl(SO_4)_"
+      }, {
+        "text": "2$).\n    *   *Kristalhidrat:* Sol, ki v svojo kristalno strukturo veže v"
+      }, {
+        "text": "odo (npr. $KAl(SO_4)_2 \\cdot 12H_2O$)."
+      }, {
+        "text": "\n    *   \u003e [!note] Critical Analysis: Masni delež\n        Pri izračunih top"
+      }, {
+        "text": "nosti moramo vedno pretvarjati maso hidrata v maso brezvodne soli, saj se topnost nanaša na brezvodno"
+      }, {
+        "text": " obliko, voda iz hidrata pa postane del topila!\n\n---\n\n### Naloga: Prekristalizacija gal"
+      }, {
+        "text": "una ($KAl(SO_4)_2 \\cdot 12H_2O$)\n\n**Cilj:**"
+      }, {
+        "text": " Izračunaj teoretski izkoristek pri prekristalizaciji $30 \\text{ g}$ kristalhid"
+      }, {
+        "text": "rata.\n\n**Podatki:**\n*   Vhodna masa hidrata: $m_{KH} \u003d 30 \\text{ g"
+      }, {
+        "text": "}$.\n*   Topnost pri $80^\\circ\\text{C}$ ($T_{visoka}$): $s_{80}"
+      }, {
+        "text": " \u003d 71 \\text{ g} / 100 \\text{ g} H_2O$"
+      }, {
+        "text": " (nasičena raztopina).\n*   Topnost pri $20^\\circ\\text{C}$ ($T"
+      }, {
+        "text": "_{nizka}$): $s_{20} \u003d 11.4 \\text{ g} /"
+      }, {
+        "text": " 100 \\text{ g} H_2O$.\n*   Molske mase:\n    *   $M_{\\"
+      }, {
+        "text": "text{brezvodna}} \u003d 258.2 \\text{ g/mol}$\n    *   $M_{\\text{hidrat"
+      }, {
+        "text": "}} \u003d 474.4 \\text{ g/mol}$\n\n#### 1. Korak: Priprava nasi"
+      }, {
+        "text": "čene raztopine pri $80^\\circ\\text{C}$\n\nNajprej moramo ugotov"
+      }, {
+        "text": "iti, koliko vode potrebujemo, da raztopimo vseh $30 \\text{ g}$ hidrata pri $80^\\"
+      }, {
+        "text": "circ\\text{C}$.\n\n1.  **Masni delež brezvodne soli v hidratu ($w$"
+      }, {
+        "text": "):**\n    $$ w \u003d \\frac{M_{\\text{brezvodna}}}{M_{\\text{hidrat"
+      }, {
+        "text": "}}} \u003d \\frac{258.2}{474.4} \u003d 0.544"
+      }, {
+        "text": " $$\n2.  **Sestava vhodnega materiala ($30 \\text{ g}$ hidrata):**\n    *"
+      }, {
+        "text": "   Masa soli ($m_{sol}$): $30 \\cdot 0.544 \u003d \\mathbf{16.32 \\"
+      }, {
+        "text": "text{ g}}$\n    *   Masa vezane vode ($m_{voda, vezana}$): $30 - 1"
+      }, {
+        "text": "6.32 \u003d \\mathbf{13.68 \\text{ g}}$\n3.  **Pot"
+      }, {
+        "text": "rebna voda za nasičenje pri $80^\\circ\\text{C}$:**\n    Uporabimo topnost $7"
+      }, {
+        "text": "1 \\text{ g} / 100 \\text{ g} H_2O$.\n    $$ \\frac"
+      }, {
+        "text": "{71 \\text{ g soli}}{100 \\text{ g vode}} \u003d \\frac{16.32 \\"
+      }, {
+        "text": "text{ g soli}}{m_{voda, skupna}} $$\n    $$ m_{voda, skupna} \u003d \\frac"
+      }, {
+        "text": "{16.32 \\cdot 100}{71} \u003d \\mathbf{22.9"
+      }, {
+        "text": "9 \\text{ g}} $$\n4.  **Dodatek vode:**\n    Ker smo v sistem prinesli že $13.6"
+      }, {
+        "text": "8 \\text{ g}$ vode s hidratom, moramo dodati le razliko:\n    $$ m_{"
+      }, {
+        "text": "voda, dodana} \u003d 22.99 - 13.68 \u003d \\mathbf{"
+      }, {
+        "text": "9.31 \\text{ g}} $$\n\n**Stanje pri $80^\\circ\\text{C}$ ("
+      }, {
+        "text": "pred hlajenjem):**\n*   Masa soli: $16.32 \\text{ g}$\n*   M"
+      }, {
+        "text": "asa vode: $22.99 \\text{ g}$\n*   Skupna masa raztopine: $3"
+      }, {
+        "text": "9.31 \\text{ g}$\n\n---\n\n#### 2. Korak: Hlajenje na $20^\\circ\\text{"
+      }, {
+        "text": "C}$ in kristalizacija\n\nPri hlajenju topnost pade na $11.4 \\text{"
+      }, {
+        "text": " g} / 100 \\text{ g} H_2O$. Presežek soli izpade v"
+      }, {
+        "text": " obliki **kristalhidrata**.\n\n\u003e [!info] Metoda \"Masna bilanca\" (Rever"
+      }, {
+        "text": "zni inženiring postopka)\n\u003e Najbolj robusten način reševanja je postavitev masne bilance za"
+      }, {
+        "text": " brezvodno sol v tekoči fazi.\n\u003e\n\u003e $m_{\\text{sol, začetna"
+      }, {
+        "text": "}} \u003d m_{\\text{sol, v kristalih}} + m_{\\text{sol, v raztopini}}$"
+      }, {
+        "text": "\n\nNaj bo $x$ masa izločenih kristalov (hidrata).\n\n1.  **Masa soli,"
+      }, {
+        "text": " ki ostane v raztopini:**\n    Ko se izloči $x$ gramov hidrata, ta"
+      }, {
+        "text": " hidrat s seboj odnese sol in vodo.\n    *   Masa soli v kristalih: $0"
+      }, {
+        "text": ".544 \\cdot x$\n    *   Masa vode v kristalih: $(1 - 0.544"
+      }, {
+        "text": ") \\cdot x \u003d 0.456 \\cdot x$\n2.  **Sestava matične"
+      }, {
+        "text": " lužnice (preostale raztopine):**\n    *   Masa preostale soli: $1"
+      }, {
+        "text": "6.32 - 0.544x$\n    *   Masa preostale vode:"
+      }, {
+        "text": " $22.99 - 0.456x$\n3.  **Enačba top"
+      }, {
+        "text": "nosti pri $20^\\circ\\text{C}$:**\n    Razmerje med preostalo soljo in preostalo"
+      }, {
+        "text": " vodo mora ustrezati topnosti pri $20^\\circ\\text{C}$.\n    $$ \\frac{m_{"
+      }, {
+        "text": "sol, preostala}}{m_{voda, preostala}} \u003d \\frac{11.4}{100} \u003d"
+      }, {
+        "text": " 0.114 $$\n    $$ \\frac{16.32 - 0.54"
+      }, {
+        "text": "4x}{22.99 - 0.456x} \u003d 0.114"
+      }, {
+        "text": " $$\n4.  **Reševanje za $x$ (Teoretski izplen):**\n    $$ 1"
+      }, {
+        "text": "6.32 - 0.544x \u003d 0.114 \\cdot (22.99 -"
+      }, {
+        "text": " 0.456x) $$\n    $$ 16.32 - 0.54"
+      }, {
+        "text": "4x \u003d 2.62 - 0.052x $$\n    $$ 13.7 \u003d"
+      }, {
+        "text": " 0.492x $$\n    $$ x \\approx \\mathbf{27.85 \\text{ g}} $$\n\n"
+      }, {
+        "text": "*(Opomba: V zapiskih je končni rezultat okoli 28 g, odvisno od za"
+      }, {
+        "text": "okroževanja vmesnih masnih deležev)*.\n\n---\n\n### Teoretski izkoristek ($\\"
+      }, {
+        "text": "eta$)\n\nIzkoristek procesa se računa kot razmerje med maso izločenih kristalov"
+      }, {
+        "text": " in začetno maso kristalhidrata (če predpostavimo popoln proces brez izgub).\n\n$$ \\eta \u003d \\frac{m"
+      }, {
+        "text": "_{\\text{kristalov}}}{m_{\\text{vhodnega hidrata}}} \\cdot 100\\% $$\n"
+      }, {
+        "text": "$$ \\eta \u003d \\frac{27.85}{30} \\cdot 100\\% \\"
+      }, {
+        "text": "approx 92.8\\% $$\n\n---\n\n### Slovarček in Formule\n\n*   **[[Masni"
+      }, {
+        "text": " delež]] ($w$):** $w_{sol} \u003d \\frac{s}{100+s}$"
+      }, {
+        "text": " (kjer je $s$ topnost v g/100g vode).\n*   **Prekristalizacija:** Met"
+      }, {
+        "text": "oda čiščenja trdnih snovi. Nečistoče ostanejo v raztopini, čista snov krist"
+      }, {
+        "text": "alizira.\n*   **Eksotermna reakcija:** $\\Delta H \u003c 0$ (spro"
+      }, {
+        "text": "šča toploto).\n*   **Endotermna reakcija:** $\\Delta H \u003e 0$ ("
+      }, {
+        "text": "porablja toploto)."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

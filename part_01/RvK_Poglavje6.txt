@@ -1,0 +1,623 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#**6 Oblikovanje izpisa**\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "PlEXkKlj8F5t"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**6.1 Število decimalnih mest**\n",
+        "\n",
+        "Realno število oblikujemo za izpis z določenim številom decimalnih mest na dva načina:\n",
+        "\n",
+        "a)\tdoločimo skupno število vseh števk, ki jih želimo v številu ali\n",
+        "\n",
+        "\n",
+        "b)\tdoločimo, koliko števk želimo za decimalno piko."
+      ],
+      "metadata": {
+        "id": "p7j7sd0Q876c"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**6.1.1 Skupno število števk v številu**\n",
+        "\n",
+        "Uporabimo `f-string`:\n",
+        "\n",
+        "Splošna oblika: **f\" {spremenljivka:.n} \"**\n",
+        "\n",
+        "kjer je n število vseh števk brez decimalne pike. Med narekovaje lahko vstavimo poljuben tekst, presledke in nastavitve za več spremenljivk, pri čemer morajo biti spremenljivke v zavitih oklepajih."
+      ],
+      "metadata": {
+        "id": "XYPh519c8yct"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-1:**\n",
+        "\n",
+        "Izpišimo število na dve decimalni mesti."
+      ],
+      "metadata": {
+        "id": "XM-JEN5u9Gom"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "collapsed": true,
+        "id": "3x2_w8HM8AmT"
+      },
+      "outputs": [],
+      "source": [
+        "x=4863.4363091\n",
+        "print(f\"{x:.6} je rezultat.\")\n",
+        "\n",
+        "\n",
+        "# Spreminjajte število n v print stavku in opazujte zaokroževanje ob tem.\n",
+        "\n",
+        "# Dodajte v print stavek še izpis dvakratnika števila x na 3 decimalna mesta.\n",
+        "\n",
+        "# Kaj se zgodi, če nastavite za n vrednost 2 ali 3, torej manj kot je števk v celem delu števila?"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-2:**\n",
+        "\n",
+        "Izpis števila v svojo vrstico. Na koliko decimalnih mest bo izpisano prvo in na koliko drugo število?"
+      ],
+      "metadata": {
+        "id": "_VDw69P0-F5w"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=4863.4363091\n",
+        "a=14.2345\n",
+        "print(f\"{x:.6}\")\n",
+        "print(f\"{a:.5}\")\n",
+        "\n",
+        "# Nadomestite dva print stavka z enim tako, da bosta obe števili enkrat zapisani v isti vrstici, drugič pa vsaka v svoji."
+      ],
+      "metadata": {
+        "id": "YD9dgeJG-P9P"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-3:**\n",
+        "\n",
+        "Če definiramo manjše ali enako število števk, kot jih vsebuje celoštevilski del števila, dobimo eksponentni zapis."
+      ],
+      "metadata": {
+        "id": "fAkNgJGg-JrS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=4863.4363091\n",
+        "print(f\"{x:.3}\")"
+      ],
+      "metadata": {
+        "collapsed": true,
+        "id": "jKwVwlxR_Hvv"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "###**6.1.2 Število decimalnih mest**\n",
+        "\n",
+        "Splošna oblika: **f\"{spremenljivka:.nf}\"**\n",
+        "\n",
+        "kjer je n število vseh števk brez decimalne pike."
+      ],
+      "metadata": {
+        "id": "7vRvZ1x9_Khn"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-4:**\n",
+        "\n",
+        "Kaj se izpiše?"
+      ],
+      "metadata": {
+        "id": "AXFv7BlJA7h3"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=4863.4363091\n",
+        "print(f\"{x:.3f}\")"
+      ],
+      "metadata": {
+        "id": "sdOPwR62BCDa"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-5:**\n",
+        "\n",
+        "Če uporabimo samo črko f brez definiranega števila decimalnih mest, je privzetih 6 decimalnih mest."
+      ],
+      "metadata": {
+        "id": "0Bot4v9jBG3y"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=4863.4363091\n",
+        "print(f\"{x:f}\")"
+      ],
+      "metadata": {
+        "id": "sIKYX80iBPAk"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**6.2 Ločevanje tisočic**\n"
+      ],
+      "metadata": {
+        "id": "oYB0eZxQBOXz"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-6:**\n",
+        "\n",
+        "Pri velikih številih zaradi lažjega branja pogosto ločujemo tisočice z znaki, kot so pika, vejica ali presledek.\n"
+      ],
+      "metadata": {
+        "id": "c_5-22PfBGps"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=1000000\n",
+        "print(f\"{x:,}\")\n",
+        "print(f\"{x:,}\".replace(\",\" , \" \"))"
+      ],
+      "metadata": {
+        "id": "bYuGxuTFBklp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-7:**\n",
+        "\n",
+        "Združimo lahko določitev števila decimalnih mest in ločevanje tisočic, pri čemer zapišemo znak za ločevanje, npr. vejico, pred število decimalnih mest."
+      ],
+      "metadata": {
+        "id": "FMW4i24zBrw2"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=4863.4363091\n",
+        "print(f\"{x:,.3f}\")"
+      ],
+      "metadata": {
+        "id": "4MyRU5NtB3AZ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**6.3 Oblikovanje števil kot odstotki**\n",
+        "\n",
+        "Število lahko zapišemo kot odstotek, tako da črko f zamenjamo z znakom %, številka pred njim pa označuje število decimalnih mest."
+      ],
+      "metadata": {
+        "id": "kAGUfgovB6ot"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-8:**\n",
+        "\n",
+        "Kaj se izpiše?"
+      ],
+      "metadata": {
+        "id": "qG9E1-A2CDz0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=0.34567\n",
+        "print(f\"{x:.2%}\")\n",
+        "\n",
+        "# Spremenite vrednost x in spremenite število decimalnih mest."
+      ],
+      "metadata": {
+        "id": "NMvI01SMCHGy"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-9:**\n",
+        "\n",
+        "Za izpis z odstotki lahko oblikujemo tudi rezultat aritmetičnega izraza."
+      ],
+      "metadata": {
+        "id": "z7gZEjZ6CKYY"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=34\n",
+        "b=116\n",
+        "print(f\"{a/b:.4%}\")\n"
+      ],
+      "metadata": {
+        "id": "1kasZO4qCOuz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**6-4 Poravnava**\n",
+        "\n",
+        "Pri oblikovanju izpisa zaradi preglednosti pogosto želimo določeno število presledkov med izpisanimi spremenljivkami in tudi, da so te poravnane bodisi levo, desno ipd."
+      ],
+      "metadata": {
+        "id": "DWmW7h3KEWBe"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-10:**\n",
+        "\n",
+        "Navaden print stavek izpiše imena treh kemikalij ločena s po enim presledkom."
+      ],
+      "metadata": {
+        "id": "xKhdPvtMEcOW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"etanol\",\"metanol\",\"formaldehid\")"
+      ],
+      "metadata": {
+        "id": "8CXMGSN9Elcr"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Če želimo za vsako ime rezervirati določeno minimalno število mest in ga poravnati levo, uporabimo znak **:<n**, kjer je n število mest."
+      ],
+      "metadata": {
+        "id": "nKs-kViiEr6Q"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(f\"{'etanol':<10}{'metanol':<10}{'formaldehid':<10}\")"
+      ],
+      "metadata": {
+        "id": "NRYAyR3CEzAE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "V nekaterih urejevalnikih bi se v zgornjem primeru pojavil konflikt, če bi uporabili istovrstne narekovaje v f-stringu in pri navajanju znakovnih spremenljivk. Temu se izognemo z uporabo različnih narekovajev.\n",
+        "\n",
+        "Za desno poravnavo bi uporabili znak :>10. Število predstavlja minimalno širino polja. Če je dejanska beseda daljša od določene širine, bo vseeno prikazana v celoti in polje bo razširjeno tako, da bo vsebovalo celotno besedo."
+      ],
+      "metadata": {
+        "id": "z23ZdkHjE19E"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**6.5 Izpisovanje teksta in števil**"
+      ],
+      "metadata": {
+        "id": "LkVK6zBfCS3c"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-11:**\n",
+        "\n",
+        "Kaj se izpiše?"
+      ],
+      "metadata": {
+        "id": "8Pi4UXaELn2w"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mesec = \"marec\"\n",
+        "dan = 27\n",
+        "print(f\"Danes je {dan}. {mesec}.\")\n",
+        "\n",
+        "# Spreminjajte vsebino f-stringa med narekovaji in opazujte, kako spremembe vplivajo na izpis."
+      ],
+      "metadata": {
+        "id": "er9_JALgCc1E"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Za izpis bi lahko uporabili tudi združevanje (concatenation)."
+      ],
+      "metadata": {
+        "id": "lr-c3jRaQbVO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mesec = \"marec\"\n",
+        "dan = 27\n",
+        "print()\n",
+        "\n",
+        "# Dopolnite print stavek z združevanjem (concatenation), da dobite enak izpis."
+      ],
+      "metadata": {
+        "id": "j4zgcn85Qf9T"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##**6.6 Komentarji**\n",
+        "\n",
+        "Komentarji so vrstice v programu, ki jih Python ignorira, to pomeni, da se ne izvedejo. Pomembni so za razvijalce ali uporabnike programa, da podajo kratko razlago, pojasnilo ali drugo opombo. Vrstico, v kateri bomo zapisali komentar, pričnemo z znakom **#**. Komentar lahko zapišemo tudi na koncu vrstice. Komentarji se ob zagonu ne izpišejo."
+      ],
+      "metadata": {
+        "id": "Dt0zi_AMCeJk"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-12:**\n",
+        "\n",
+        "Kaj se izpiše?"
+      ],
+      "metadata": {
+        "id": "Hj5z6sqjClco"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Program izracuna absolutno vrednost stevila.\n",
+        "# Uporabnik vstavi stevilo interaktivno.\n",
+        "# Rezultat se izpise na 4 decimalna mesta.\n",
+        "\n",
+        "a=input(\"Vnesi število: \")\n",
+        "a=float(a)\n",
+        "b=abs(a)       # izracun absolutne vrednosti\n",
+        "print(f\"Absolutna vrednost je {b:.4f}\")\n"
+      ],
+      "metadata": {
+        "id": "I-yQ6bmUCq3P"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Primer 6-13:**\n",
+        "Za vnos daljših komentarjev preko več vrstic, lahko uporabimo pred in za komentarjem znak, sestavljen iz treh enojnih ali dvojnih narekovajev  (''' ali \"\"\"), med katerimi ne sme biti presledkov."
+      ],
+      "metadata": {
+        "id": "Hnc8g3xUCtkE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "'''\n",
+        "Program izracuna absolutno vrednost stevila. Uporabnik\n",
+        "vstavi stevilo interaktivno. Rezultat se izpise na 4\n",
+        "decimalna mesta.\n",
+        "'''\n",
+        "a=input(\"Vnesi število: \")\n",
+        "a = float(a)\n",
+        "b=abs(a)       # izracun absolutne vrednosti\n",
+        "print(f\"Absolutna vrednost je {b:.4f}\")\n"
+      ],
+      "metadata": {
+        "id": "wukEI_KfC1Ao"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#**6.7 Problemi 6. poglavja**"
+      ],
+      "metadata": {
+        "id": "oxjQTmb_DOT0"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Problem 6-1:**\n",
+        "\n",
+        "Izpiši število 4.56744 kot:\n",
+        "\n",
+        "a)\tSamo celi del števila\n",
+        "\n",
+        "b)\tSamo decimalni del števila\n",
+        "\n",
+        "c)\tNavzgor zaokroženo celo število\n",
+        "\n",
+        "d)\tNavzdol zaokroženo celo število\n",
+        "\n",
+        "e)\tŠtevilo z dvema decimalnima mestoma, zaokroženo navzdol (4.56)\n",
+        "\n",
+        "f)\tŠtevilo z dvema decimalnima mestoma, zaokroženo navzgor (4.57)\n",
+        "\n",
+        "g)\tKot 4,56744\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "rvpT-OlVDTX4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=4.56744\n",
+        "\n",
+        "# Dopolni print stavek\n",
+        "print(x)\n"
+      ],
+      "metadata": {
+        "id": "OM2u2MaTDbUa"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Problem 6-2:**\n",
+        "\n",
+        "Zapiši stavek print za izpis naslednjih števil:\n",
+        "\n",
+        "12.34567 na tri decimalna mesta,\n",
+        "\n",
+        "152.1 kot celo število,\n",
+        "\n",
+        "–1115.3 na dve decimalni mesti.\n",
+        "\n",
+        "Števila naj bodo izpisana v isti vrstici, levo poravnana, za vsako število predvidimo 10 mest."
+      ],
+      "metadata": {
+        "id": "DeOUCkuJDmiE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=12.34567\n",
+        "b=152.1\n",
+        "c=-1115.3\n",
+        "\n",
+        "# Dopolni print stavek\n",
+        "print(a,b,c)"
+      ],
+      "metadata": {
+        "id": "g8VfqB9QD4CQ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Problem 6-3:**\n",
+        "\n",
+        "Želimo, da uporabnik vnese spremenljivko tipa float. Na to smo ga prijazno opozorili. Razmislite in naštejte možne stvari, ki lahko gredo narobe pri vnosu? Namig: uporabnik bo vnesel vse, razen tega, kar se od njega pričakuje.\n",
+        "\n",
+        "Nekaj primerov vnosov za število 7.02:\n",
+        "\n",
+        "```\n",
+        "7,02  \t  decimalna vejica namesto pike\n",
+        "\n",
+        "7. 02\t   presledek za decimalno piko (problematičen je lahko tudi pred prvo števko ali za zadnjo)\n",
+        "\n",
+        "z.O2   \t 7 pogosto postane z in 0 pogosto (bližina tipk na tipkovnici)\n",
+        "\n",
+        "abc   \t  popolnoma napačen tip spremenljivke\n",
+        "\n",
+        "       \tbrez kakršnegakoli vnosa\n",
+        "```\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "CYKoocWHDscm"
+      }
+    }
+  ]
+}
