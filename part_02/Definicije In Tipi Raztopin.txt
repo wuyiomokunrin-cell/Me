@@ -1,0 +1,436 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1Z_cuoNCSlMWrZB9sV5SoRZ1C61h0BlhO"
+      },
+      "role": "user",
+      "tokenCount": 169599
+    }, {
+      "driveImage": {
+        "id": "1KEb-Anr7DO231Tj7YG_4SxB12ZGkbtg-"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "13nNwkyojj3qHobz0Nrv5T9ihKkylgJAf"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1sal9h5VdNUduvgHeIqp_WzCzlWVqtakU"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1leoxi3arQrq-MgzEVNXpRTwPXI-ln_-P"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "**Processing Multimodal Input**\n\nI\u0027m currently focused on the combined audio transcript and handwritten notes. The initial focus is the audio, which began with a review of thermochemistry and an outline of the session plan. I am beginning to correlate this information with the handwritten notes to fully understand the lecture and its key themes.\n\n\n**Understanding Lecture Structure**\n\nI\u0027ve made good progress! I\u0027ve zeroed in on the lecture structure. The professor began with a thermochemistry review and then outlined the session plan. Today\u0027s primary topic, \"Solutions,\" is being defined, emphasizing aqueous solutions. I\u0027m noting the distinction between homogeneous and heterogeneous solutions, with examples. I\u0027m now moving to the composition, concentrating on concentration calculation and the mass fraction (w).\n\n\n**Extracting Key Concepts**\n\nThe lecture\u0027s content on solutions is starting to become clear. I\u0027ve focused on breaking down the various concentration measures – mass fraction, molarity, mass concentration, and molality – along with their respective formulas. I\u0027m now delving into the derivation linking molar concentration, mass fraction, and density, as well as the formula for mass concentration. This is being applied to the example problem of preparing a silver nitrate solution, focusing on calculating the mass of solute required and its mass fraction.\n\n\n**Deciphering Solution Concepts**\n\nI\u0027m now integrating the audio transcript and handwritten notes. The lecture starts with a quick thermochemistry review and then dives into solutions, with a focus on aqueous ones. I\u0027m noting the distinctions between homogeneous and heterogeneous solutions, understanding definitions like solute and solvent. The lecture then moved to concentration calculations, exploring mass fraction, molarity, mass concentration, and molality, along with the derived equations and an example. Now, I am focused on the mixing of solutions, exploring the non-additivity of volumes, and the conservation of mass.\n\n\n**Connecting Concentration Concepts**\n\nI\u0027m now focusing on connecting various concentration measures. The lecture continues with the derivation of relationships between molarity, mass fraction, mass concentration, and density. I\u0027m noting the application of these formulas, particularly in the example problem of preparing a silver nitrate solution, to calculate the mass of solute and mass fraction. The lecture then transitions to the mixing of solutions, with an emphasis on the non-additivity of volumes and the application of mass balance. I am now proceeding to additional problems on mixing solutions and dilution.\n\n\n**Correlating Lecture \u0026 Notes**\n\nI\u0027m now integrating the audio transcript and the handwritten notes. I\u0027m noting that the lecture begins with a review, then dives into solutions, highlighting their components (solute and solvent), and the distinction between homogeneous and heterogeneous solutions, including illustrative examples. I am now reconciling the different concentration definitions presented, mass fraction, molarity, mass concentration, and molality, along with derived formulas.\n\n\n**Integrating Audio and Notes**\n\nThe lecture\u0027s content on solutions is starting to solidify as I compare the audio and the handwritten notes. I\u0027m focusing on key concepts: mass fraction, molarity, molality, and their derived formulas. Problem solving is a clear focus, with the silver nitrate example illustrating how these concentrations relate to mass calculations. I\u0027m now transitioning to the mixing and dilution principles.\n\n\n**Summarizing Lecture \u0026 Notes**\n\nI\u0027ve integrated the lecture audio and the handwritten notes. The initial focus was the audio transcript, beginning with a thermochemistry review and then outlining lecture plans. I\u0027ve now completed correlating these with the handwritten notes, which closely match the lecture content. The definitions and formulas, including the solution, solute, solvent, and concentrations are now clear. The example problems are also understood.\n\n\n**Integrating Diverse Problems**\n\nI\u0027m now focusing on a more comprehensive understanding of solution concepts. I\u0027m combining lecture content on mass fraction, molarity, mass concentration, and molality, and working through the provided problem set. The example problem with silver nitrate (AgNO₃) serves as a key to illustrate calculation of concentrations. I am considering the derivations of key formulas.\n\n\n\n**Integrating Concepts \u0026 Problems**\n\nI\u0027m now integrating the lecture, audio, and example problems. I\u0027ve focused on problem-solving, which has helped clarify the practical applications of key concepts like mass fraction, molarity, and molality. I\u0027m now linking these concentration measures with the derivations presented.\n\n\n**Reconciling Problem Solutions**\n\nI am now focusing on the practical application of the concepts. I\u0027m connecting the theoretical background from the lecture with the example problems and the problem set. I\u0027m noting the formulas to solve the silver nitrate example. I am also working through the mixing and dilution problems, ensuring I grasp each step.\n\n\n**Consolidating Concentration Insights**\n\nI\u0027ve been working on integrating concepts from various concentrations measures with specific examples. The Silver Nitrate problem\u0027s been key. The lecture covers Mass Balance, discussing non-additive volumes. Now, I\u0027m focusing on the dilution and concentration aspects, especially constant solute mass. \n\n\n**Summarizing Solution Concepts**\n\nI\u0027m now integrating the lecture and handwritten notes to compile a comprehensive guide on solutions. The plan is to create a well-structured Obsidian note, starting with definitions of homogeneous and heterogeneous solutions, then delving into concentration measures like mass fraction, molarity, mass concentration, and molality, along with the formulas and their derivations. I will then present example problems and their solutions, covering mass balance, mixing, dilution, and neutralization. I intend to include critical insights, ensuring each concept is explained in a clear, analytical manner.\n\n\n",
+      "role": "model",
+      "tokenCount": 3716,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Processing Multimodal Input**\n\nI\u0027m currently focused on the combined audio transcript and handwritten notes. The initial focus is the audio, which began with a review of thermochemistry and an outline of the session plan. I am beginning to correlate this information with the handwritten notes to fully understand the lecture and its key themes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Understanding Lecture Structure**\n\nI\u0027ve made good progress! I\u0027ve zeroed in on the lecture structure. The professor began with a thermochemistry review and then outlined the session plan. Today\u0027s primary topic, \"Solutions,\" is being defined, emphasizing aqueous solutions. I\u0027m noting the distinction between homogeneous and heterogeneous solutions, with examples. I\u0027m now moving to the composition, concentrating on concentration calculation and the mass fraction (w).\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Extracting Key Concepts**\n\nThe lecture\u0027s content on solutions is starting to become clear. I\u0027ve focused on breaking down the various concentration measures – mass fraction, molarity, mass concentration, and molality – along with their respective formulas. I\u0027m now delving into the derivation linking molar concentration, mass fraction, and density, as well as the formula for mass concentration. This is being applied to the example problem of preparing a silver nitrate solution, focusing on calculating the mass of solute required and its mass fraction.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Deciphering Solution Concepts**\n\nI\u0027m now integrating the audio transcript and handwritten notes. The lecture starts with a quick thermochemistry review and then dives into solutions, with a focus on aqueous ones. I\u0027m noting the distinctions between homogeneous and heterogeneous solutions, understanding definitions like solute and solvent. The lecture then moved to concentration calculations, exploring mass fraction, molarity, mass concentration, and molality, along with the derived equations and an example. Now, I am focused on the mixing of solutions, exploring the non-additivity of volumes, and the conservation of mass.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Connecting Concentration Concepts**\n\nI\u0027m now focusing on connecting various concentration measures. The lecture continues with the derivation of relationships between molarity, mass fraction, mass concentration, and density. I\u0027m noting the application of these formulas, particularly in the example problem of preparing a silver nitrate solution, to calculate the mass of solute and mass fraction. The lecture then transitions to the mixing of solutions, with an emphasis on the non-additivity of volumes and the application of mass balance. I am now proceeding to additional problems on mixing solutions and dilution.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Correlating Lecture \u0026 Notes**\n\nI\u0027m now integrating the audio transcript and the handwritten notes. I\u0027m noting that the lecture begins with a review, then dives into solutions, highlighting their components (solute and solvent), and the distinction between homogeneous and heterogeneous solutions, including illustrative examples. I am now reconciling the different concentration definitions presented, mass fraction, molarity, mass concentration, and molality, along with derived formulas.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Audio and Notes**\n\nThe lecture\u0027s content on solutions is starting to solidify as I compare the audio and the handwritten notes. I\u0027m focusing on key concepts: mass fraction, molarity, molality, and their derived formulas. Problem solving is a clear focus, with the silver nitrate example illustrating how these concentrations relate to mass calculations. I\u0027m now transitioning to the mixing and dilution principles.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing Lecture \u0026 Notes**\n\nI\u0027ve integrated the lecture audio and the handwritten notes. The initial focus was the audio transcript, beginning with a thermochemistry review and then outlining lecture plans. I\u0027ve now completed correlating these with the handwritten notes, which closely match the lecture content. The definitions and formulas, including the solution, solute, solvent, and concentrations are now clear. The example problems are also understood.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Diverse Problems**\n\nI\u0027m now focusing on a more comprehensive understanding of solution concepts. I\u0027m combining lecture content on mass fraction, molarity, mass concentration, and molality, and working through the provided problem set. The example problem with silver nitrate (AgNO₃) serves as a key to illustrate calculation of concentrations. I am considering the derivations of key formulas.\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Concepts \u0026 Problems**\n\nI\u0027m now integrating the lecture, audio, and example problems. I\u0027ve focused on problem-solving, which has helped clarify the practical applications of key concepts like mass fraction, molarity, and molality. I\u0027m now linking these concentration measures with the derivations presented.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Reconciling Problem Solutions**\n\nI am now focusing on the practical application of the concepts. I\u0027m connecting the theoretical background from the lecture with the example problems and the problem set. I\u0027m noting the formulas to solve the silver nitrate example. I am also working through the mixing and dilution problems, ensuring I grasp each step.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Consolidating Concentration Insights**\n\nI\u0027ve been working on integrating concepts from various concentrations measures with specific examples. The Silver Nitrate problem\u0027s been key. The lecture covers Mass Balance, discussing non-additive volumes. Now, I\u0027m focusing on the dilution and concentration aspects, especially constant solute mass. \n\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing Solution Concepts**\n\nI\u0027m now integrating the lecture and handwritten notes to compile a comprehensive guide on solutions. The plan is to create a well-structured Obsidian note, starting with definitions of homogeneous and heterogeneous solutions, then delving into concentration measures like mass fraction, molarity, mass concentration, and molality, along with the formulas and their derivations. I will then present example problems and their solutions, covering mass balance, mixing, dilution, and neutralization. I intend to include critical insights, ensuring each concept is explained in a clear, analytical manner.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Raztopine]]\n\n## [[Definicije in Tipi Raztopin]]\nMi bomo danes nadaljevali z raztopinami. Raztopina je disperzni sistem, ki je sestavljen iz dveh ali več snovi in je navidezno homogen. Sestavljen je iz topljenca (snov, ki se raztaplja) in topila (snov, v kateri se topljenec raztaplja).\n\n### [[Homogene Raztopine]]\nHomogena raztopina nastane, ko se delci topljenca popolnoma porazdelijo med delce topila, tako da raztopina navzven izgleda kot enotna faza. Posameznih komponent s prostim očesom ne moremo ločiti.\n\n**Primeri iz vsakdanjega življenja:**\n- Kuhinjska sol raztopljena v vodi.\n- Sladkor raztopljen v vodi.\n- Sirup (npr. malinovec) zmešan z vodo.\n\n### [[Heterogene Raztopine (Suspenzije)]]\nHeterogena raztopina oziroma suspenzija je zmes, v kateri komponente niso enakomerno porazdeljene in lahko opazimo več ločenih faz. Delci topljenca so dovolj veliki, da jih lahko vidimo in se sčasoma posedejo.\n\n**Primeri iz vsakdanjega življenja:**\n- Pesek v vodi (pesek se posede na dno).\n- Kava (delci kavne usedline se posedejo).\n- Olje in voda (tvorita dve ločeni plasti).\n- Kosmiči v mleku.\n\n## [[Sestava Raztopin in Koncentracije]]\nSestavo raztopin podajamo z različnimi koncentracijami, ki opisujejo razmerje med količino topljenca in količino topila ali celotne raztopine. Pri nalogah, kjer topilo ni eksplicitno navedeno, privzamemo, da je topilo voda ($H_2O$).\n\n**Oznake:**\n- **r** ali **raz**: celotna raztopina\n- **tpc**: topljenec (pogosto tudi **bs** za brezvodno sol)\n- **top**: topilo (pogosto $H_2O$)\n\n### [[Masni Delež (w)]]\nMasni delež je razmerje med maso topljenca in maso celotne raztopine. Običajno ga izražamo v odstotkih (%).\n$$\nw_{tpc} \u003d \\frac{m_{tpc}}{m_{raz}} \u003d \\frac{m_{tpc}}{m_{tpc} + m_{top}}\n$$\n\n### [[Množinska Koncentracija (Molarnost) (c)]]\nMnožinska koncentracija je razmerje med množino topljenca in prostornino celotne raztopine.\n$$\nc \u003d \\frac{n_{tpc}}{V_{raz}} \\quad [\\frac{mol}{L}]\n$$\n\n\u003e **Opomba:** Enota za molarnost je mol/L, ki se pogosto zapisuje z veliko črko **M**. Na primer, 2 M pomeni 2 mol/L.\n\n### [[Masna Koncentracija (γ)]]\nMasna koncentracija je razmerje med maso topljenca in prostornino celotne raztopine.\n$$\n\\gamma \u003d \\frac{m_{tpc}}{V_{raz}} \\quad [\\frac{g}{L}]\n$$\n\n### [[Molalnost (b)]]\nMolalnost je razmerje med množino topljenca in maso **topila** (ne celotne raztopine).\n$$\nb \u003d \\frac{n_{tpc}}{m_{top}} \\quad [\\frac{mol}{kg}]\n$$\n\u003e **Kritična Analiza:** Ključna razlika med molarnostjo (c) in molalnostjo (b) je v imenovalcu. Molarnost uporablja volumen raztopine, ki se spreminja s temperaturo, medtem ko molalnost uporablja maso topila, ki je od temperature neodvisna. Zato je molalnost bolj natančna mera koncentracije pri delu s spremenljivimi temperaturami.\n\n## [[Povezave med Koncentracijami]]\n\n### [[Izpeljava: Molarnost (c) iz Masnega Deleža (w)]]\nPovezavo med molarnostjo, masnim deležem in gostoto raztopine lahko izpeljemo na naslednji način:\n1.  Začnemo z definicijo molarnosti: $c \u003d \\frac{n_{tpc}}{V_{raz}}$\n2.  Množino topljenca ($n_{tpc}$) izrazimo z maso ($m_{tpc}$) in molsko maso ($M_{tpc}$): $n_{tpc} \u003d \\frac{m_{tpc}}{M_{tpc}}$\n3.  Prostornino raztopine ($V_{raz}$) izrazimo z maso ($m_{raz}$) in gostoto ($\\rho_{raz}$): $V_{raz} \u003d \\frac{m_{raz}}{\\rho_{raz}}$\n4.  Vstavimo izraza v prvotno enačbo:\n    $$\n    c \u003d \\frac{\\frac{m_{tpc}}{M_{tpc}}}{\\frac{m_{raz}}{\\rho_{raz}}} \u003d \\frac{m_{tpc}}{m_{raz}} \\cdot \\frac{\\rho_{raz}}{M_{tpc}}\n    $$\n5.  Ker je $\\frac{m_{tpc}}{m_{raz}}$ enako masnemu deležu $w_{tpc}$, dobimo končno formulo:\n    $$\n    c \u003d \\frac{w_{tpc} \\cdot \\rho_{raz}}{M_{tpc}}\n    $$\n\n### [[Povezava: Masna Koncentracija (γ) in Masni Delež (w)]]\nPodobno lahko izpeljemo zvezo za masno koncentracijo:\n$$\n\\gamma \u003d \\frac{m_{tpc}}{V_{raz}} \u003d \\frac{m_{tpc}}{\\frac{m_{raz}}{\\rho_{raz}}} \u003d \\frac{m_{tpc}}{m_{raz}} \\cdot \\rho_{raz}\n$$\n$$\n\\gamma \u003d w_{tpc} \\cdot \\rho_{raz}\n$$\n\n## [[Reševanje Nalog: Primeri]]\n\n### [[Naloga 1: Priprava raztopine Srebrovega(I) Nitrata]]\nNa voljo imamo sol srebrovega(I) nitrata ($AgNO_3$). Želimo pripraviti 250 mL raztopine z množinsko koncentracijo $c \u003d 1,248 \\ M$.\n\n**a) Kolikšno maso $AgNO_3$ moramo natehtati?**\n**b) Kolikšen je masni delež $AgNO_3$ v pripravljeni raztopini, če je njena gostota $\\rho \u003d 1,239 \\ g/mL$?**\n**c) Izračunajte masno koncentracijo in molalnost končne raztopine.**\n\n---\n**Podatki:**\n- $V_{raz} \u003d 250 \\ mL \u003d 0,250 \\ L$\n- $c(AgNO_3) \u003d 1,248 \\ mol/L$\n- $\\rho_{raz} \u003d 1,239 \\ g/mL \u003d 1239 \\ g/L$\n- $M(AgNO_3) \u003d 107,87 + 14,01 + 3 \\cdot 16,00 \u003d 169,88 \\ g/mol \\approx 170 \\ g/mol$\n\n**Rešitev:**\n\n**a) Masa $AgNO_3$**\nIz formule za molarnost izrazimo množino topljenca:\n$$\nc \u003d \\frac{n}{V} \\implies n \u003d c \\cdot V\n$$\n$$\nn(AgNO_3) \u003d 1,248 \\frac{mol}{L} \\cdot 0,250 \\ L \u003d 0,312 \\ mol\n$$\nIz množine izračunamo potrebno maso:\n$$\nm \u003d n \\cdot M\n$$\n$$\nm(AgNO_3) \u003d 0,312 \\ mol \\cdot 169,88 \\frac{g}{mol} \\approx 53,0 \\ g\n$$\n*(Opomba: v zapiskih je izračun 52,728g, kar je posledica drugačnega zaokroževanja. Uporabili bomo natančnejšo vrednost.)*\n\n**b) Masni delež $w(AgNO_3)$**\nUporabimo izpeljano formulo, ki povezuje molarnost in masni delež:\n$$\nw \u003d \\frac{c \\cdot M}{\\rho} \u003d \\frac{1,248 \\frac{mol}{L} \\cdot 169,88 \\frac{g}{mol}}{1239 \\frac{g}{L}} \u003d 0,171\n$$\nMasni delež je **17,1 %**.\n\n**c) Masna koncentracija ($\\gamma$) in Molalnost ($b$)**\nMasno koncentracijo izračunamo s formulo:\n$$\n\\gamma \u003d w \\cdot \\rho \u003d 0,171 \\cdot 1239 \\frac{g}{L} \\approx 212 \\frac{g}{L}\n$$\nZa izračun molalnosti potrebujemo maso topila (vode). Najprej izračunamo maso celotne raztopine:\n$$\nm_{raz} \u003d V_{raz} \\cdot \\rho_{raz} \u003d 250 \\ mL \\cdot 1,239 \\frac{g}{mL} \u003d 309,75 \\ g\n$$\nMasa topila (vode) je razlika med maso raztopine in maso topljenca:\n$$\nm_{H_2O} \u003d m_{raz} - m_{AgNO_3} \u003d 309,75 \\ g - 53,0 \\ g \u003d 256,75 \\ g \u003d 0,25675 \\ kg\n$$\nMolalnost je torej:\n$$\nb \u003d \\frac{n_{AgNO_3}}{m_{H_2O}} \u003d \\frac{0,312 \\ mol}{0,25675 \\ kg} \\approx 1,22 \\frac{mol}{kg}\n$$\n\n## [[Mešanje, Redčenje in Koncentriranje Raztopin]]\n\n### [[Masna Bilanca pri Mešanju]]\nPri mešanju dveh ali več raztopin velja zakon o ohranitvi mase. Celotna masa končne raztopine je vsota mas začetnih raztopin, enako velja za maso topljenca.\n\n\u003e **Opozorilo:** Volumen pri mešanju **ni** nujno aditiven! Zaradi medmolekulskih interakcij je lahko končni volumen manjši ali večji od vsote začetnih volumnov ($V_{končni} \\neq V_1 + V_2$). Zato se pri izračunih vedno zanašamo na ohranitev mase.\n\n**Osnovne enačbe masne bilance:**\n- **Ohranitev celotne mase:** $m_{3} \u003d m_{1} + m_{2}$\n- **Ohranitev mase topljenca:** $m_{tpc, 3} \u003d m_{tpc, 1} + m_{tpc, 2}$\n\nČe maso topljenca izrazimo z maso raztopine in masnim deležem ($m_{tpc} \u003d m_{raz} \\cdot w$), dobimo ključno enačbo za mešanje:\n$$\nm_{3} \\cdot w_{3} \u003d m_{1} \\cdot w_{1} + m_{2} \\cdot w_{2}\n$$\n\n### [[Redčenje in Koncentriranje]]\n- **Redčenje:** Dodajanje topila (npr. vode).\n- **Koncentriranje:** Odstranjevanje topila (npr. z izparevanjem).\n\nPri obeh procesih ostane količina (množina ali masa) **topljenca nespremenjena**.\n$$\nm_{tpc, 1} \u003d m_{tpc, 2} \\implies m_{1} \\cdot w_{1} \u003d m_{2} \\cdot w_{2}\n$$\n\n### [[Naloga 2: Koncentriranje Raztopine NaCl]]\nKoliko gramov vode moramo odpariti iz **150 g 5 % raztopine NaCl**, da dobimo **20 % raztopino NaCl**?\n\n**Rešitev:**\n1.  **Količina topljenca ostane enaka.** Izračunamo maso NaCl v začetni raztopini.\n    $m_1 \u003d 150 \\ g$, $w_1 \u003d 5\\% \u003d 0,05$\n    $$\n    m_{NaCl} \u003d m_1 \\cdot w_1 \u003d 150 \\ g \\cdot 0,05 \u003d 7,5 \\ g\n    $$\n2.  Ta masa NaCl bo prisotna tudi v končni, bolj koncentrirani raztopini. Izračunamo maso končne raztopine.\n    $w_2 \u003d 20\\% \u003d 0,20$\n    $$\n    m_2 \u003d \\frac{m_{NaCl}}{w_2} \u003d \\frac{7,5 \\ g}{0,20} \u003d 37,5 \\ g\n    $$\n3.  Razlika med začetno in končno maso raztopine je masa vode, ki smo jo odparili.\n    $$\n    m_{vode, \\text{odparjene}} \u003d m_1 - m_2 \u003d 150 \\ g - 37,5 \\ g \u003d 112,5 \\ g\n    $$\n    Odpariti moramo **112,5 g** vode.\n\n### [[Naloga 3 (Naloga 80 iz zapiskov): Mešanje dveh raztopin HCl]]\nZmešamo **150 g 5 % raztopine HCl** z **850 mL 0,2 M raztopine HCl**, katere gostota je $\\rho_2 \u003d 1,01 \\ g/mL$. Kolikšen je masni delež končne raztopine? (M(HCl) \u003d 36,5 g/mol)\n\n**Rešitev:**\nUporabili bomo masno bilanco. Najprej moramo za obe začetni raztopini izračunati njuno maso in maso topljenca (HCl).\n\n**Raztopina 1:**\n- $m_1 \u003d 150 \\ g$\n- $w_1 \u003d 5\\% \u003d 0,05$\n- $m_{HCl, 1} \u003d m_1 \\cdot w_1 \u003d 150 \\ g \\cdot 0,05 \u003d 7,5 \\ g$\n\n**Raztopina 2:**\n- $V_2 \u003d 850 \\ mL$, $c_2 \u003d 0,2 \\ M$, $\\rho_2 \u003d 1,01 \\ g/mL$\n- Najprej izračunamo maso raztopine 2:\n  $m_2 \u003d V_2 \\cdot \\rho_2 \u003d 850 \\ mL \\cdot 1,01 \\ g/mL \u003d 858,5 \\ g$\n- Nato izračunamo maso topljenca (HCl) v raztopini 2. Uporabimo formulo za molarnost, da dobimo množino, nato pa maso.\n  $n_{HCl, 2} \u003d c_2 \\cdot V_2 \u003d 0,2 \\ mol/L \\cdot 0,850 \\ L \u003d 0,17 \\ mol$\n  $m_{HCl, 2} \u003d n_{HCl, 2} \\cdot M_{HCl} \u003d 0,17 \\ mol \\cdot 36,5 \\ g/mol \u003d 6,205 \\ g$\n\n**Končna raztopina (3):**\n- Celotna masa raztopine:\n  $m_3 \u003d m_1 + m_2 \u003d 150 \\ g + 858,5 \\ g \u003d 1008,5 \\ g$\n- Celotna masa topljenca:\n  $m_{HCl, 3} \u003d m_{HCl, 1} + m_{HCl, 2} \u003d 7,5 \\ g + 6,205 \\ g \u003d 13,705 \\ g$\n- Končni masni delež:\n  $$\n  w_3 \u003d \\frac{m_{HCl, 3}}{m_3} \u003d \\frac{13,705 \\ g}{1008,5 \\ g} \\approx 0,0136\n  $$\n  Končna raztopina je **1,36 %**.\n\n## [[Splošne Formule in Identitete]]\n- **Masni delež:** $w_{tpc} \u003d \\frac{m_{tpc}}{m_{raz}}$\n- **Molarnost:** $c \u003d \\frac{n_{tpc}}{V_{raz}}$\n- **Masna koncentracija:** $\\gamma \u003d \\frac{m_{tpc}}{V_{raz}}$\n- **Molalnost:** $b \u003d \\frac{n_{tpc}}{m_{top}}$\n- **Zveza c in w:** $c \u003d \\frac{w \\cdot \\rho}{M}$\n- **Zveza γ in w:** $\\gamma \u003d w \\cdot \\rho$\n- **Masna bilanca (mešanje):** $m_{3} \\cdot w_{3} \u003d m_{1} \\cdot w_{1} + m_{2} \\cdot w_{2}$\n- **Masna bilanca (redčenje/koncentriranje):** $m_{1} \\cdot w_{1} \u003d m_{2} \\cdot w_{2}$",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 4181,
+      "parts": [{
+        "text": "# [[Raztopine]]\n\n## [[Definicije in Tipi Raztopin]]\nMi bomo dan"
+      }, {
+        "text": "es nadaljevali z raztopinami. Raztopina je disperzni sistem, ki je sestavljen iz"
+      }, {
+        "text": " dveh ali več snovi in je navidezno homogen. Sestavljen je iz topljenca (s"
+      }, {
+        "text": "nov, ki se raztaplja) in topila (snov, v kateri se topljenec raztap"
+      }, {
+        "text": "lja).\n\n### [[Homogene Raztopine]]\nHomogena raztopina nastane, ko se del"
+      }, {
+        "text": "ci topljenca popolnoma porazdelijo med delce topila, tako da raztopina navzven izgleda kot"
+      }, {
+        "text": " enotna faza. Posameznih komponent s prostim očesom ne moremo ločiti.\n\n**"
+      }, {
+        "text": "Primeri iz vsakdanjega življenja:**\n- Kuhinjska sol raztopljena v vodi."
+      }, {
+        "text": "\n- Sladkor raztopljen v vodi.\n- Sirup (npr. malinovec) zme"
+      }, {
+        "text": "šan z vodo.\n\n### [[Heterogene Raztopine (Suspenzije)]]\nHeterogena raztop"
+      }, {
+        "text": "ina oziroma suspenzija je zmes, v kateri komponente niso enakomerno poraz"
+      }, {
+        "text": "deljene in lahko opazimo več ločenih faz. Delci topljenca so dovolj veliki, da"
+      }, {
+        "text": " jih lahko vidimo in se sčasoma posedejo.\n\n**Primeri iz vsakdanjega življenja:**"
+      }, {
+        "text": "\n- Pesek v vodi (pesek se posede na dno).\n- Kava (delci kav"
+      }, {
+        "text": "ne usedline se posedejo).\n- Olje in voda (tvorita dve ločeni plasti).\n-"
+      }, {
+        "text": " Kosmiči v mleku.\n\n## [[Sestava Raztopin in Koncentracije]]\nS"
+      }, {
+        "text": "estavo raztopin podajamo z različnimi koncentracijami, ki opisujejo razmerje med"
+      }, {
+        "text": " količino topljenca in količino topila ali celotne raztopine. Pri nalogah, kjer"
+      }, {
+        "text": " topilo ni eksplicitno navedeno, privzamemo, da je topilo voda ($H_2O$).\n\n"
+      }, {
+        "text": "**Oznake:**\n- **r** ali **raz**: celotna raztopina\n- **tpc"
+      }, {
+        "text": "**: topljenec (pogosto tudi **bs** za brezvodno sol)\n- **top**: topilo ("
+      }, {
+        "text": "pogosto $H_2O$)\n\n### [[Masni Delež (w)]]\nMasni delež je"
+      }, {
+        "text": " razmerje med maso topljenca in maso celotne raztopine. Običajno ga iz"
+      }, {
+        "text": "ražamo v odstotkih (%).\n$$\nw_{tpc} \u003d \\frac{m_{tpc}}{m_{"
+      }, {
+        "text": "raz}} \u003d \\frac{m_{tpc}}{m_{tpc} + m_{top}}\n$$\n\n### [[Množinska Koncentracija (Molarnost) (c)]]\nMnožinska koncentracija je raz"
+      }, {
+        "text": "merje med množino topljenca in prostornino celotne raztopine.\n$$\nc \u003d \\"
+      }, {
+        "text": "frac{n_{tpc}}{V_{raz}} \\quad [\\frac{mol}{L}]\n$$\n\n\u003e **Op"
+      }, {
+        "text": "omba:** Enota za molarnost je mol/L, ki se pogosto zapisuje z veliko črko **"
+      }, {
+        "text": "M**. Na primer, 2 M pomeni 2 mol/L.\n\n### [[Masna Koncentracija (γ)]]\nMasna koncentracija je razmerje med maso topljenca in prostornino celotne raz"
+      }, {
+        "text": "topine.\n$$\n\\gamma \u003d \\frac{m_{tpc}}{V_{raz}} \\quad [\\frac{g}{L}]\n$$\n\n### [[Molalnost (b)]]\nMolalnost je razmerje med množ"
+      }, {
+        "text": "ino topljenca in maso **topila** (ne celotne raztopine).\n$$\nb"
+      }, {
+        "text": " \u003d \\frac{n_{tpc}}{m_{top}} \\quad [\\frac{mol}{kg}]\n$$\n"
+      }, {
+        "text": "\u003e **Kritična Analiza:** Ključna razlika med molarnostjo (c) in molal"
+      }, {
+        "text": "nostjo (b) je v imenovalcu. Molarnost uporablja volumen raztopine, ki se"
+      }, {
+        "text": " spreminja s temperaturo, medtem ko molalnost uporablja maso topila, ki je od"
+      }, {
+        "text": " temperature neodvisna. Zato je molalnost bolj natančna mera koncentracije pri delu s sprem"
+      }, {
+        "text": "enljivimi temperaturami.\n\n## [[Povezave med Koncentracijami]]\n\n### [[Izpeljava: Molarnost (c) iz Masnega Deleža (w)]]\nPovezavo med molarnostjo"
+      }, {
+        "text": ", masnim deležem in gostoto raztopine lahko izpeljemo na naslednji način:\n1.  "
+      }, {
+        "text": "Začnemo z definicijo molarnosti: $c \u003d \\frac{n_{tpc}}{V_{raz}}$"
+      }, {
+        "text": "\n2.  Množino topljenca ($n_{tpc}$) izrazimo z maso ($m_{"
+      }, {
+        "text": "tpc}$) in molsko maso ($M_{tpc}$): $n_{tpc} \u003d \\frac{m_{tpc"
+      }, {
+        "text": "}}{M_{tpc}}$\n3.  Prostornino raztopine ($V_{raz}$) izrazimo z"
+      }, {
+        "text": " maso ($m_{raz}$) in gostoto ($\\rho_{raz}$): $V_{raz} \u003d \\frac{"
+      }, {
+        "text": "m_{raz}}{\\rho_{raz}}$\n4.  Vstavimo izraza v prvotno enačbo:\n    "
+      }, {
+        "text": "$$\n    c \u003d \\frac{\\frac{m_{tpc}}{M_{tpc}}}{\\frac{m_{raz}}{\\rho_{"
+      }, {
+        "text": "raz}}} \u003d \\frac{m_{tpc}}{m_{raz}} \\cdot \\frac{\\rho_{raz}}{M_{tpc}}"
+      }, {
+        "text": "\n    $$\n5.  Ker je $\\frac{m_{tpc}}{m_{raz}}$ enako masnemu"
+      }, {
+        "text": " deležu $w_{tpc}$, dobimo končno formulo:\n    $$\n    c \u003d \\frac{"
+      }, {
+        "text": "w_{tpc} \\cdot \\rho_{raz}}{M_{tpc}}\n    $$\n\n### [[Povezava: Masna Koncentracija (γ) in Masni Delež (w)]]\nPodobno lahko izpel"
+      }, {
+        "text": "jemo zvezo za masno koncentracijo:\n$$\n\\gamma \u003d \\frac{m_{tpc}}{V"
+      }, {
+        "text": "_{raz}} \u003d \\frac{m_{tpc}}{\\frac{m_{raz}}{\\rho_{raz}}} \u003d \\frac{m_{"
+      }, {
+        "text": "tpc}}{m_{raz}} \\cdot \\rho_{raz}\n$$\n$$\n\\gamma \u003d w_{tpc} \\"
+      }, {
+        "text": "cdot \\rho_{raz}\n$$\n\n## [[Reševanje Nalog: Primeri]]\n\n### [[Naloga 1: Priprava raztopine Srebrovega(I) Nitrata]]\nNa voljo imamo sol"
+      }, {
+        "text": " srebrovega(I) nitrata ($AgNO_3$). Želimo pripraviti 250 mL raztopine"
+      }, {
+        "text": " z množinsko koncentracijo $c \u003d 1,248 \\ M$.\n\n**a) Kol"
+      }, {
+        "text": "ikšno maso $AgNO_3$ moramo natehtati?**\n**b) Kolikšen je mas"
+      }, {
+        "text": "ni delež $AgNO_3$ v pripravljeni raztopini, če je njena gostota $\\rho \u003d 1"
+      }, {
+        "text": ",239 \\ g/mL$?**\n**c) Izračunajte masno koncentracijo in"
+      }, {
+        "text": " molalnost končne raztopine.**\n\n---\n**Podatki:**\n- $V_{raz} \u003d 2"
+      }, {
+        "text": "50 \\ mL \u003d 0,250 \\ L$\n- $c(AgNO_3) \u003d 1"
+      }, {
+        "text": ",248 \\ mol/L$\n- $\\rho_{raz} \u003d 1,239 \\ g/"
+      }, {
+        "text": "mL \u003d 1239 \\ g/L$\n- $M(AgNO_3) \u003d "
+      }, {
+        "text": "107,87 + 14,01 + 3 \\cdot 16,00"
+      }, {
+        "text": " \u003d 169,88 \\ g/mol \\approx 170 \\ g/mol$\n\n**"
+      }, {
+        "text": "Rešitev:**\n\n**a) Masa $AgNO_3$**\nIz formule za molarnost iz"
+      }, {
+        "text": "razimo množino topljenca:\n$$\nc \u003d \\frac{n}{V} \\implies n \u003d c \\cdot"
+      }, {
+        "text": " V\n$$\n$$\nn(AgNO_3) \u003d 1,248 \\frac{mol}{L"
+      }, {
+        "text": "} \\cdot 0,250 \\ L \u003d 0,312 \\ mol\n$$\nIz"
+      }, {
+        "text": " množine izračunamo potrebno maso:\n$$\nm \u003d n \\cdot M\n$$\n$$\nm(Ag"
+      }, {
+        "text": "NO_3) \u003d 0,312 \\ mol \\cdot 169,88 \\frac"
+      }, {
+        "text": "{g}{mol} \\approx 53,0 \\ g\n$$\n*(Opomba: v zapiskih je"
+      }, {
+        "text": " izračun 52,728g, kar je posledica drugačnega zaokroževanja"
+      }, {
+        "text": ". Uporabili bomo natančnejšo vrednost.)*\n\n**b) Masni delež $"
+      }, {
+        "text": "w(AgNO_3)$**\nUporabimo izpeljano formulo, ki povezuje mol"
+      }, {
+        "text": "arnost in masni delež:\n$$\nw \u003d \\frac{c \\cdot M}{\\rho} \u003d \\"
+      }, {
+        "text": "frac{1,248 \\frac{mol}{L} \\cdot 169,88 \\"
+      }, {
+        "text": "frac{g}{mol}}{1239 \\frac{g}{L}} \u003d 0,171\n"
+      }, {
+        "text": "$$\nMasni delež je **17,1 %**.\n\n**c) Masna koncentracija ($\\gamma$) in"
+      }, {
+        "text": " Molalnost ($b$)**\nMasno koncentracijo izračunamo s formulo:\n$$\n\\gamma \u003d"
+      }, {
+        "text": " w \\cdot \\rho \u003d 0,171 \\cdot 1239 \\frac{g}{"
+      }, {
+        "text": "L} \\approx 212 \\frac{g}{L}\n$$\nZa izračun molalnosti potreb"
+      }, {
+        "text": "ujemo maso topila (vode). Najprej izračunamo maso celotne raztopine:\n"
+      }, {
+        "text": "$$\nm_{raz} \u003d V_{raz} \\cdot \\rho_{raz} \u003d 250 \\"
+      }, {
+        "text": " mL \\cdot 1,239 \\frac{g}{mL} \u003d 309,75"
+      }, {
+        "text": " \\ g\n$$\nMasa topila (vode) je razlika med maso raztopine in maso topl"
+      }, {
+        "text": "jenca:\n$$\nm_{H_2O} \u003d m_{raz} - m_{AgNO_3}"
+      }, {
+        "text": " \u003d 309,75 \\ g - 53,0 \\ g \u003d 256,"
+      }, {
+        "text": "75 \\ g \u003d 0,25675 \\ kg\n$$\nMolalnost je torej:\n$$"
+      }, {
+        "text": "\nb \u003d \\frac{n_{AgNO_3}}{m_{H_2O}} \u003d \\frac{"
+      }, {
+        "text": "0,312 \\ mol}{0,25675 \\ kg} \\approx 1,2"
+      }, {
+        "text": "2 \\frac{mol}{kg}\n$$\n\n## [[Mešanje, Redčenje in Koncentriranje Raztopin]]\n\n### [[Masna Bilanca pri Mešanju]]\nPri mešanju dveh ali"
+      }, {
+        "text": " več raztopin velja zakon o ohranitvi mase. Celotna masa končne raztopine je"
+      }, {
+        "text": " vsota mas začetnih raztopin, enako velja za maso topljenca.\n\n\u003e **O"
+      }, {
+        "text": "pozorilo:** Volumen pri mešanju **ni** nujno aditiven! Zaradi medmolekul"
+      }, {
+        "text": "skih interakcij je lahko končni volumen manjši ali večji od vsote začetnih volumnov ($V"
+      }, {
+        "text": "_{končni} \\neq V_1 + V_2$). Zato se pri izračunih vedno zana"
+      }, {
+        "text": "šamo na ohranitev mase.\n\n**Osnovne enačbe masne bilance:**\n- **"
+      }, {
+        "text": "Ohranitev celotne mase:** $m_{3} \u003d m_{1} + m_{2}$\n"
+      }, {
+        "text": "- **Ohranitev mase topljenca:** $m_{tpc, 3} \u003d m_{tpc, "
+      }, {
+        "text": "1} + m_{tpc, 2}$\n\nČe maso topljenca izrazimo z maso"
+      }, {
+        "text": " raztopine in masnim deležem ($m_{tpc} \u003d m_{raz} \\cdot w$), dobimo kl"
+      }, {
+        "text": "jučno enačbo za mešanje:\n$$\nm_{3} \\cdot w_{3} \u003d m_{1"
+      }, {
+        "text": "} \\cdot w_{1} + m_{2} \\cdot w_{2}\n$$\n\n### [[Redčenje in Koncentriranje]]\n- **Redčenje:** Dodajanje topila (npr. vode).\n"
+      }, {
+        "text": "- **Koncentriranje:** Odstranjevanje topila (npr. z izparevanjem).\n\nPri ob"
+      }, {
+        "text": "eh procesih ostane količina (množina ali masa) **topljenca nespremenjena**."
+      }, {
+        "text": "\n$$\nm_{tpc, 1} \u003d m_{tpc, 2} \\implies m_{1} \\"
+      }, {
+        "text": "cdot w_{1} \u003d m_{2} \\cdot w_{2}\n$$\n\n### [[Naloga 2: Koncentriranje Raztopine NaCl]]\nKoliko gramov vode moramo odpariti iz"
+      }, {
+        "text": " **150 g 5 % raztopine NaCl**, da dobimo **20 % raztopino NaCl**"
+      }, {
+        "text": "?\n\n**Rešitev:**\n1.  **Količina topljenca ostane enaka.** Iz"
+      }, {
+        "text": "računamo maso NaCl v začetni raztopini.\n    $m_1 \u003d 150 \\"
+      }, {
+        "text": " g$, $w_1 \u003d 5\\% \u003d 0,05$\n    $$\n    m_{"
+      }, {
+        "text": "NaCl} \u003d m_1 \\cdot w_1 \u003d 150 \\ g \\cdot 0,0"
+      }, {
+        "text": "5 \u003d 7,5 \\ g\n    $$\n2.  Ta masa NaCl bo prisotna tudi v kon"
+      }, {
+        "text": "čni, bolj koncentrirani raztopini. Izračunamo maso končne raztopine.\n    $w_"
+      }, {
+        "text": "2 \u003d 20\\% \u003d 0,20$\n    $$\n    m_2 \u003d \\frac"
+      }, {
+        "text": "{m_{NaCl}}{w_2} \u003d \\frac{7,5 \\ g}{0,20}"
+      }, {
+        "text": " \u003d 37,5 \\ g\n    $$\n3.  Razlika med začetno in končno maso raz"
+      }, {
+        "text": "topine je masa vode, ki smo jo odparili.\n    $$\n    m_{vode, \\"
+      }, {
+        "text": "text{odparjene}} \u003d m_1 - m_2 \u003d 150 \\ g - 37"
+      }, {
+        "text": ",5 \\ g \u003d 112,5 \\ g\n    $$\n    Odpariti moramo **11"
+      }, {
+        "text": "2,5 g** vode.\n\n### [[Naloga 3 (Naloga 80 iz zapiskov): Mešanje dveh raztopin HCl]]\nZmešamo **150 g 5 % raz"
+      }, {
+        "text": "topine HCl** z **850 mL 0,2 M raztopine HCl**, katere gostota je"
+      }, {
+        "text": " $\\rho_2 \u003d 1,01 \\ g/mL$. Kolikšen je masni delež kon"
+      }, {
+        "text": "čne raztopine? (M(HCl) \u003d 36,5 g/mol)\n\n**Reš"
+      }, {
+        "text": "itev:**\nUporabili bomo masno bilanco. Najprej moramo za obe začetni raztop"
+      }, {
+        "text": "ini izračunati njuno maso in maso topljenca (HCl).\n\n**Raztopina 1"
+      }, {
+        "text": ":**\n- $m_1 \u003d 150 \\ g$\n- $w_1 \u003d 5"
+      }, {
+        "text": "\\% \u003d 0,05$\n- $m_{HCl, 1} \u003d m_1 \\cdot w_"
+      }, {
+        "text": "1 \u003d 150 \\ g \\cdot 0,05 \u003d 7,5 \\ g$\n\n"
+      }, {
+        "text": "**Raztopina 2:**\n- $V_2 \u003d 850 \\ mL$, $c_2"
+      }, {
+        "text": " \u003d 0,2 \\ M$, $\\rho_2 \u003d 1,01 \\ g/mL$\n"
+      }, {
+        "text": "- Najprej izračunamo maso raztopine 2:\n  $m_2 \u003d V_2"
+      }, {
+        "text": " \\cdot \\rho_2 \u003d 850 \\ mL \\cdot 1,01 \\ g/mL"
+      }, {
+        "text": " \u003d 858,5 \\ g$\n- Nato izračunamo maso topljenca (HCl)"
+      }, {
+        "text": " v raztopini 2. Uporabimo formulo za molarnost, da dobimo množino,"
+      }, {
+        "text": " nato pa maso.\n  $n_{HCl, 2} \u003d c_2 \\cdot V_2 \u003d"
+      }, {
+        "text": " 0,2 \\ mol/L \\cdot 0,850 \\ L \u003d 0,17 \\ mol"
+      }, {
+        "text": "$\n  $m_{HCl, 2} \u003d n_{HCl, 2} \\cdot M_{HCl} \u003d "
+      }, {
+        "text": "0,17 \\ mol \\cdot 36,5 \\ g/mol \u003d 6,205"
+      }, {
+        "text": " \\ g$\n\n**Končna raztopina (3):**\n- Celotna masa raztopine:"
+      }, {
+        "text": "\n  $m_3 \u003d m_1 + m_2 \u003d 150 \\ g + 8"
+      }, {
+        "text": "58,5 \\ g \u003d 1008,5 \\ g$\n- Celotna masa topl"
+      }, {
+        "text": "jenca:\n  $m_{HCl, 3} \u003d m_{HCl, 1} + m_{"
+      }, {
+        "text": "HCl, 2} \u003d 7,5 \\ g + 6,205 \\ g \u003d 1"
+      }, {
+        "text": "3,705 \\ g$\n- Končni masni delež:\n  $$\n  w_3 \u003d"
+      }, {
+        "text": " \\frac{m_{HCl, 3}}{m_3} \u003d \\frac{13,705"
+      }, {
+        "text": " \\ g}{1008,5 \\ g} \\approx 0,0136\n  $$\n  "
+      }, {
+        "text": "Končna raztopina je **1,36 %**.\n\n## [[Splošne Formule in Identitete]]"
+      }, {
+        "text": "\n- **Masni delež:** $w_{tpc} \u003d \\frac{m_{tpc}}{m_{raz}}$\n-"
+      }, {
+        "text": " **Molarnost:** $c \u003d \\frac{n_{tpc}}{V_{raz}}$\n- **Masna koncentrac"
+      }, {
+        "text": "ija:** $\\gamma \u003d \\frac{m_{tpc}}{V_{raz}}$\n- **Molalnost:** $b \u003d \\"
+      }, {
+        "text": "frac{n_{tpc}}{m_{top}}$\n- **Zveza c in w:** $c \u003d \\frac{"
+      }, {
+        "text": "w \\cdot \\rho}{M}$\n- **Zveza γ in w:** $\\gamma \u003d w \\cdot \\rho$"
+      }, {
+        "text": "\n- **Masna bilanca (mešanje):** $m_{3} \\cdot w_{3}"
+      }, {
+        "text": " \u003d m_{1} \\cdot w_{1} + m_{2} \\cdot w_{2}$\n-"
+      }, {
+        "text": " **Masna bilanca (redčenje/koncentriranje):** $m_{1} \\cdot w_{"
+      }, {
+        "text": "1} \u003d m_{2} \\cdot w_{2}$"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

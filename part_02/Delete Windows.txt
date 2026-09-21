@@ -1,0 +1,129 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "I tried to delete with del Windows.old and it\u0027s not working. ",
+      "role": "user",
+      "tokenCount": 18
+    }, {
+      "text": "**Initiating Problem Analysis**\n\nI\u0027m initially focused on understanding the user\u0027s objective: deleting the `Windows.old` folder. The attempted method was a direct `del Windows.old` command. I\u0027m exploring the nuances of this command in the context of Windows file system permissions and the potential need for elevated privileges.\n\n\n**Evaluating Deletion Methods**\n\nI\u0027ve determined the initial command, `del Windows.old`, is incorrect for directory removal. The system\u0027s permissions are likely blocking standard deletion. Now, I\u0027m focusing on better options: the safe approach (Disk Cleanup), the modern equivalent (Settings App\u0027s Storage Sense), and the more forceful command-line methods involving `rd /s /q` (and likely needing ownership adjustments like `takeown` and `icacls`) if the UI fails. I am now focused on evaluating the benefits and drawbacks of each.\n\n\n**Prioritizing User-Friendly Solutions**\n\nI\u0027ve decided that a step-by-step response is necessary. I\u0027m prioritizing the user-friendliness of solutions. I\u0027m focusing on the Disk Cleanup utility and the Settings App\u0027s Storage Sense as the preferred methods. I\u0027ll explain why `del` failed, the need for `rd`, and the importance of permissions. I\u0027m also including concise instructions for both methods, along with the correct selection options to ensure the user can find the intended options.\n\n\n**Detailing Advanced Commands**\n\nI\u0027m now detailing the command-line solution, focusing on the `rd /s /q` command, which is more appropriate. I\u0027m providing clear instructions for the administrator\u0027s prerequisite and highlighting the necessary contingency steps if the initial command fails due to access denied. The \"nuclear option\" involves `takeown`, `icacls`, and a final `rd` command.\n\nI\u0027m also refining the response to be easily readable, with bullet points and bolding. I\u0027m reaffirming the prioritization of the Disk Cleanup utility and the Settings App methods due to their safety. Lastly, I\u0027m making sure to address any assumptions I\u0027ve made on my own, like the assumption the directory is on the C: drive. I\u0027m now making it clear to address the user directly. I\u0027ve decided against mentioning third-party tools.\n\n\n",
+      "role": "model",
+      "tokenCount": 998,
+      "isThought": true,
+      "parts": [{
+        "text": "**Initiating Problem Analysis**\n\nI\u0027m initially focused on understanding the user\u0027s objective: deleting the `Windows.old` folder. The attempted method was a direct `del Windows.old` command. I\u0027m exploring the nuances of this command in the context of Windows file system permissions and the potential need for elevated privileges.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Evaluating Deletion Methods**\n\nI\u0027ve determined the initial command, `del Windows.old`, is incorrect for directory removal. The system\u0027s permissions are likely blocking standard deletion. Now, I\u0027m focusing on better options: the safe approach (Disk Cleanup), the modern equivalent (Settings App\u0027s Storage Sense), and the more forceful command-line methods involving `rd /s /q` (and likely needing ownership adjustments like `takeown` and `icacls`) if the UI fails. I am now focused on evaluating the benefits and drawbacks of each.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Prioritizing User-Friendly Solutions**\n\nI\u0027ve decided that a step-by-step response is necessary. I\u0027m prioritizing the user-friendliness of solutions. I\u0027m focusing on the Disk Cleanup utility and the Settings App\u0027s Storage Sense as the preferred methods. I\u0027ll explain why `del` failed, the need for `rd`, and the importance of permissions. I\u0027m also including concise instructions for both methods, along with the correct selection options to ensure the user can find the intended options.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Detailing Advanced Commands**\n\nI\u0027m now detailing the command-line solution, focusing on the `rd /s /q` command, which is more appropriate. I\u0027m providing clear instructions for the administrator\u0027s prerequisite and highlighting the necessary contingency steps if the initial command fails due to access denied. The \"nuclear option\" involves `takeown`, `icacls`, and a final `rd` command.\n\nI\u0027m also refining the response to be easily readable, with bullet points and bolding. I\u0027m reaffirming the prioritization of the Disk Cleanup utility and the Settings App methods due to their safety. Lastly, I\u0027m making sure to address any assumptions I\u0027ve made on my own, like the assumption the directory is on the C: drive. I\u0027m now making it clear to address the user directly. I\u0027ve decided against mentioning third-party tools.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "The command `del` only deletes files, not folders, and `Windows.old` is a special system folder protected by high-level permissions (TrustedInstaller).\n\nHere are the three ways to delete it, ranked from easiest to most forceful.\n\n### Method 1: Disk Cleanup (The Correct Way)\nThis is the safest method because Windows handles the permissions for you.\n\n1.  Press the **Start** button and type **Disk Cleanup**.\n2.  Right-click the result and choose **Run as administrator**.\n3.  Select your **C:** drive and click OK.\n4.  **Crucial Step:** Click the button labeled **Clean up system files** (bottom left).\n5.  Wait for it to scan again.\n6.  Scroll down the list and check the box for **Previous Windows installation(s)**.\n7.  Click **OK** and then **Delete Files**.\n\n---\n\n### Method 2: Storage Settings (The Modern Way)\nIf you are on Windows 10 or 11, you can use the Settings menu.\n\n1.  Go to **Settings** \u003e **System** \u003e **Storage**.\n2.  Click on **Temporary files**.\n3.  Wait for the scan to finish.\n4.  Check the box for **Previous Windows installation(s)**.\n5.  Click **Remove files**.\n\n---\n\n### Method 3: Command Prompt (The \"Force\" Way)\nIf you prefer the command line, `del` won\u0027t work. You must use `rd` (remove directory) and you usually need to take ownership of the folder first.\n\n**Run Command Prompt as Administrator** and enter these commands one by one:\n\n1.  **Take ownership of the folder:**\n    ```cmd\n    takeown /F C:\\Windows.old /A /R /D Y\n    ```\n    *(This may take a minute as it scrolls through all files)*\n\n2.  **Grant full permission to Administrators:**\n    ```cmd\n    icacls C:\\Windows.old /grant *S-1-5-32-544:F /T /C /Q\n    ```\n\n3.  **Delete the folder:**\n    ```cmd\n    rd /s /q C:\\Windows.old\n    ```\n\n*Note: If `rd` still gives you an error, reboot your computer and try the command again; sometimes a file inside the folder is locked by a running process.*",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 528,
+      "parts": [{
+        "text": "The command `del` only deletes files, not folders, and `Windows.old"
+      }, {
+        "text": "` is a special system folder protected by high-level permissions (TrustedInstaller).\n\nHere are the three ways to delete it,"
+      }, {
+        "text": " ranked from easiest to most forceful.\n\n### Method 1: Disk Cleanup (The Correct Way)\nThis is the safest"
+      }, {
+        "text": " method because Windows handles the permissions for you.\n\n1.  Press the **Start** button and type **Disk Cleanup**.\n2"
+      }, {
+        "text": ".  Right-click the result and choose **Run as administrator**.\n3.  Select your **C:** drive and"
+      }, {
+        "text": " click OK.\n4.  **Crucial Step:** Click the button labeled **Clean up system files** (bottom"
+      }, {
+        "text": " left).\n5.  Wait for it to scan again.\n6.  Scroll down the list and check the box for"
+      }, {
+        "text": " **Previous Windows installation(s)**.\n7.  Click **OK** and then **Delete Files**.\n\n---"
+      }, {
+        "text": "\n\n### Method 2: Storage Settings (The Modern Way)\nIf you are on Windows 10 or 11"
+      }, {
+        "text": ", you can use the Settings menu.\n\n1.  Go to **Settings** \u003e **System** \u003e **Storage"
+      }, {
+        "text": "**.\n2.  Click on **Temporary files**.\n3.  Wait for the scan to finish.\n4"
+      }, {
+        "text": ".  Check the box for **Previous Windows installation(s)**.\n5.  Click **Remove files**.\n\n---\n\n"
+      }, {
+        "text": "### Method 3: Command Prompt (The \"Force\" Way)\nIf you prefer the command line, `del` won"
+      }, {
+        "text": "\u0027t work. You must use `rd` (remove directory) and you usually need to take ownership of the folder"
+      }, {
+        "text": " first.\n\n**Run Command Prompt as Administrator** and enter these commands one by one:\n\n1.  **Take ownership of"
+      }, {
+        "text": " the folder:**\n    ```cmd\n    takeown /F C:\\Windows.old /A /R /D Y\n"
+      }, {
+        "text": "    ```\n    *(This may take a minute as it scrolls through all files)*\n\n2.  **Grant full"
+      }, {
+        "text": " permission to Administrators:**\n    ```cmd\n    icacls C:\\Windows.old /grant *S-1-"
+      }, {
+        "text": "5-32-544:F /T /C /Q\n    ```\n\n3.  **"
+      }, {
+        "text": "Delete the folder:**\n    ```cmd\n    rd /s /q C:\\Windows.old\n    ```\n\n"
+      }, {
+        "text": "*Note: If `rd` still gives you an error, reboot your computer and try the command again; sometimes a file inside"
+      }, {
+        "text": " the folder is locked by a running process.*"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }, {
+      "driveImage": {
+        "id": "1JJfHGSKejb9L03Znvdp8ISwjKvMocwCR"
+      },
+      "role": "user",
+      "tokenCount": 1065
+    }, {
+      "text": "is this a normal directory it\u0027s outputting?",
+      "role": "user",
+      "tokenCount": 12
+    }, {
+      "text": "",
+      "role": "model",
+      "errorMessage": "You\u0027ve reached your rate limit. Please try again later."
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

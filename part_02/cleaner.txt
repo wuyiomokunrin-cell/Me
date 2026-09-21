@@ -1,0 +1,49 @@
+from pathlib import Path
+
+# Change '.' to the specific folder path if needed (e.g., Path("/path/to/folder"))
+FOLDER_PATH = Path(".")
+
+# Subdirectories: Set to True if you want to include subfolders
+RECURSIVE = False
+
+# File extensions to delete (case-insensitive)
+DELETE_EXTENSIONS = {
+    # HTML
+    ".html", ".htm",
+    # PDFs
+    ".pdf",
+    # Common image formats
+    ".png", ".jpg", ".jpeg", ".gif", ".webp",
+    ".bmp", ".svg", ".tiff", ".tif", ".ico", ".heic"
+}
+
+def clean_and_rename(folder: Path, recursive: bool = False):
+    items = folder.rglob("*") if recursive else folder.iterdir()
+
+    for item in items:
+        # Only process files, skip directories
+        if not item.is_file():
+            continue
+
+        ext = item.suffix.lower()
+
+        # 1. Delete HTML, PDF, and Image files
+        if ext in DELETE_EXTENSIONS:
+            print(f"Deleting: {item.name}")
+            item.unlink()
+
+        # 2. Rename extensionless files to .txt
+        # (excludes hidden dotfiles like .gitignore or .env)
+        elif ext == "" and not item.name.startswith("."):
+            new_path = item.with_suffix(".txt")
+            
+            # Avoid overwriting if a .txt file with that name already exists
+            if not new_path.exists():
+                print(f"Renaming: {item.name} -> {new_path.name}")
+                item.rename(new_path)
+            else:
+                print(f"Skipped renaming '{item.name}': '{new_path.name}' already exists.")
+
+if __name__ == "__main__":
+    clean_and_rename(FOLDER_PATH, recursive=RECURSIVE)
+    print("Done!")

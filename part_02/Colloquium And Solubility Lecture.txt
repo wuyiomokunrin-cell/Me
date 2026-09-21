@@ -1,0 +1,531 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1_Qek82hf2PYi2APP8AW-ZXBmwALjuDU0"
+      },
+      "role": "user",
+      "tokenCount": 168093
+    }, {
+      "driveImage": {
+        "id": "190xyhVxYwniYVebJlyySJwJvnegA6tDI"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "12bGg42_To8B30TTv-q13m7XJQTodbcum"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "13N3xaQsTQnIkx83JYarFO-MydOIR9O9h"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "**Analyzing the Request \u0026 Prompt**\n\nI\u0027ve been meticulously analyzing the user\u0027s request. My focus now is on understanding the core role as an Academic Obsidian Assistant, and the main objective of converting lecture materials into structured markdown files for Obsidian. I\u0027m carefully reviewing the provided inputs, which include a lecture transcript and handwritten notes, to identify key elements for transformation.\n\n\n**Defining the Conversion Strategy**\n\nI\u0027m now formulating a detailed strategy for converting the lecture transcript and handwritten notes. My plan centers on prioritizing chronological accuracy in the markdown output. I will also incorporate LaTeX for formulas and SMILES for chemical structures, when suitable. The main goal is to generate output that follows the specific requirements that were laid out in the request. The user\u0027s input includes two files, the lecture and the handwritten notes.\n\n\n**Prioritizing Structure \u0026 Content**\n\nMy current focus is on organizing the lecture transcript and handwritten notes. I\u0027m prioritizing the structure, beginning with separate sections for theory, problems, and solving methods. I\u0027m ensuring chronological accuracy and incorporating LaTeX for formulas and SMILES where necessary. I\u0027m also mindful of the required Obsidian wikilinks for headers and subheaders, ensuring linked topics aren\u0027t expanded in the current note. The goal is a clear, concise, and academically sound markdown document.\n\n\n**Formulating a Response Plan**\n\nI\u0027ve been working on a structured response plan. First, I\u0027ll extract relevant technical content from the audio transcript, identifying key concepts and definitions. Next, I will convert the lecture into Obsidian markdown with the proper format using the given guidelines.  I will then ensure all requirements are met: wikilinks, LaTeX, and a clear organization.\n\n\n**Processing Input and Requirements**\n\nI\u0027m now fully immersed in the processing of the lecture transcript and handwritten notes. I\u0027m focusing on parsing the administrative details and technical content, paying close attention to the requested sections for the markdown structure, the wikilinks, and formatting. The priority is to incorporate LaTeX for formulas and SMILES when relevant, while maintaining chronological accuracy. I\u0027m aiming for a clear, concise, and academically valid output.\n\n\n**Structuring the Data Flow**\n\nI\u0027m now fully immersed in the details of the lecture content and requirements. The audio transcript provides administrative and technical information on solubility and recrystallization. I\u0027m focusing on parsing these details for the proper structure and the wiki-links. I will use LaTeX for formulas and SMILES when applicable, aiming for academic accuracy. I\u0027m prioritizing the integration of all required outputs.\n\n\n**Synthesizing Lecture \u0026 Notes**\n\nI\u0027m now fully immersed in synthesizing the lecture\u0027s audio with the handwritten notes. My focus is on cross-referencing the problem-solving steps and the related concepts. I\u0027ll translate the lecture into a structured markdown document, weaving the problems together with the explanations. The integration of both sources allows for a comprehensive and accurate final markdown file.\n\n\n**Structuring the Data**\n\nI\u0027ve successfully processed the user\u0027s requirements and the input lecture and notes. I\u0027ve begun structuring the data, with a clear focus on the requested sections and the proper wikilinks. I\u0027m prioritizing the LaTeX for formulas and SMILES, as well as chronological accuracy. The key is now ensuring the final output meets the requirements, and is in a clear, concise, and academically sound markdown document.\n\n\n**Formulating the Output Structure**\n\nI\u0027ve been working on structuring the output markdown file. I\u0027m focusing on organizing the content into the required sections: theory, problems, and solving methods. I will integrate the lecture transcript and handwritten notes to produce an accurate and comprehensive final markdown file. LaTeX and SMILES will be incorporated where needed.\n\n\n**Formulating Output \u0026 Integration**\n\nI\u0027m now integrating the lecture transcript and handwritten notes into a structured markdown document. My primary focus is on producing a final output that is clear, concise, and academically sound. I will also make sure that all requirements are met: wikilinks, LaTeX, and a structured layout.\n\n\n**Structuring the Output Strategy**\n\nI\u0027m developing a step-by-step strategy to integrate the administrative details with the technical content, ensuring chronological accuracy. My primary goal is producing the final markdown, fully formatted to the user\u0027s requirements. This involves a clear structure, appropriate formatting, and the integration of formulas and structures where applicable.\n\n\n**Finalizing Output and Structure**\n\nI\u0027ve been meticulously finalizing the structure and content of the markdown output. I\u0027m ensuring all the calculations and explanations from the lecture and handwritten notes are correctly incorporated and that the output strictly follows the prescribed format. All requirements are met, I\u0027m confident in the structure and accuracy of the output.\n\n\n**Structuring the Content Plan**\n\nI\u0027m currently working to organize the content for the markdown output. I am preparing to implement the plan described above. The focus is on implementing the plan to create a final file structured according to the outlined requirements, including wiki-links, LaTeX formatting, and specific sections for clarity and completeness.\n\n\n**Implementing the Synthesis Plan**\n\nI\u0027m now fully immersed in the implementation phase, creating the markdown file. I\u0027m focusing on creating sections with wikilinks, integrating formulas in LaTeX, and ensuring the final structure accurately represents the lecture and notes. All content requirements are being met.\n\n\n",
+      "role": "model",
+      "tokenCount": 3676,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Analyzing the Request \u0026 Prompt**\n\nI\u0027ve been meticulously analyzing the user\u0027s request. My focus now is on understanding the core role as an Academic Obsidian Assistant, and the main objective of converting lecture materials into structured markdown files for Obsidian. I\u0027m carefully reviewing the provided inputs, which include a lecture transcript and handwritten notes, to identify key elements for transformation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Conversion Strategy**\n\nI\u0027m now formulating a detailed strategy for converting the lecture transcript and handwritten notes. My plan centers on prioritizing chronological accuracy in the markdown output. I will also incorporate LaTeX for formulas and SMILES for chemical structures, when suitable. The main goal is to generate output that follows the specific requirements that were laid out in the request. The user\u0027s input includes two files, the lecture and the handwritten notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Prioritizing Structure \u0026 Content**\n\nMy current focus is on organizing the lecture transcript and handwritten notes. I\u0027m prioritizing the structure, beginning with separate sections for theory, problems, and solving methods. I\u0027m ensuring chronological accuracy and incorporating LaTeX for formulas and SMILES where necessary. I\u0027m also mindful of the required Obsidian wikilinks for headers and subheaders, ensuring linked topics aren\u0027t expanded in the current note. The goal is a clear, concise, and academically sound markdown document.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating a Response Plan**\n\nI\u0027ve been working on a structured response plan. First, I\u0027ll extract relevant technical content from the audio transcript, identifying key concepts and definitions. Next, I will convert the lecture into Obsidian markdown with the proper format using the given guidelines.  I will then ensure all requirements are met: wikilinks, LaTeX, and a clear organization.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Processing Input and Requirements**\n\nI\u0027m now fully immersed in the processing of the lecture transcript and handwritten notes. I\u0027m focusing on parsing the administrative details and technical content, paying close attention to the requested sections for the markdown structure, the wikilinks, and formatting. The priority is to incorporate LaTeX for formulas and SMILES when relevant, while maintaining chronological accuracy. I\u0027m aiming for a clear, concise, and academically valid output.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Data Flow**\n\nI\u0027m now fully immersed in the details of the lecture content and requirements. The audio transcript provides administrative and technical information on solubility and recrystallization. I\u0027m focusing on parsing these details for the proper structure and the wiki-links. I will use LaTeX for formulas and SMILES when applicable, aiming for academic accuracy. I\u0027m prioritizing the integration of all required outputs.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Lecture \u0026 Notes**\n\nI\u0027m now fully immersed in synthesizing the lecture\u0027s audio with the handwritten notes. My focus is on cross-referencing the problem-solving steps and the related concepts. I\u0027ll translate the lecture into a structured markdown document, weaving the problems together with the explanations. The integration of both sources allows for a comprehensive and accurate final markdown file.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Data**\n\nI\u0027ve successfully processed the user\u0027s requirements and the input lecture and notes. I\u0027ve begun structuring the data, with a clear focus on the requested sections and the proper wikilinks. I\u0027m prioritizing the LaTeX for formulas and SMILES, as well as chronological accuracy. The key is now ensuring the final output meets the requirements, and is in a clear, concise, and academically sound markdown document.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating the Output Structure**\n\nI\u0027ve been working on structuring the output markdown file. I\u0027m focusing on organizing the content into the required sections: theory, problems, and solving methods. I will integrate the lecture transcript and handwritten notes to produce an accurate and comprehensive final markdown file. LaTeX and SMILES will be incorporated where needed.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formulating Output \u0026 Integration**\n\nI\u0027m now integrating the lecture transcript and handwritten notes into a structured markdown document. My primary focus is on producing a final output that is clear, concise, and academically sound. I will also make sure that all requirements are met: wikilinks, LaTeX, and a structured layout.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Output Strategy**\n\nI\u0027m developing a step-by-step strategy to integrate the administrative details with the technical content, ensuring chronological accuracy. My primary goal is producing the final markdown, fully formatted to the user\u0027s requirements. This involves a clear structure, appropriate formatting, and the integration of formulas and structures where applicable.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing Output and Structure**\n\nI\u0027ve been meticulously finalizing the structure and content of the markdown output. I\u0027m ensuring all the calculations and explanations from the lecture and handwritten notes are correctly incorporated and that the output strictly follows the prescribed format. All requirements are met, I\u0027m confident in the structure and accuracy of the output.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Content Plan**\n\nI\u0027m currently working to organize the content for the markdown output. I am preparing to implement the plan described above. The focus is on implementing the plan to create a final file structured according to the outlined requirements, including wiki-links, LaTeX formatting, and specific sections for clarity and completeness.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing the Synthesis Plan**\n\nI\u0027m now fully immersed in the implementation phase, creating the markdown file. I\u0027m focusing on creating sections with wikilinks, integrating formulas in LaTeX, and ensuring the final structure accurately represents the lecture and notes. All content requirements are being met.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Solubility and Recrystallization]]\n\n## [[Administrative Information - Colloquium]]\n*   **Memorialization Note:** The professor dedicated the beginning of the lecture to discuss the upcoming first colloquium.\n*   **Date \u0026 Time:** Next week, at 4 PM.\n*   **Location:** The regularly scheduled lecture hall.\n*   **Content:** 5 calculation-based problems covering topics from the beginning of the semester up to and including today\u0027s lecture on solubility and recrystallization.\n*   **Passing Grade:** A minimum of 5 out of 10 total points is required to pass. Each problem is worth 2 points.\n*   **Required Materials:** Pen and a calculator.\n*   **Provided Materials:** All necessary formulas, tables, and a periodic system will be provided.\n*   **Prohibited Items:** All smart devices (including smartwatches) must be put away.\n*   **Registration:** No pre-registration is required for the colloquium.\n*   **Results:** Will be released as quickly as possible, likely within one to two weeks.\n*   **Retakes:** Retakes are possible. If a student takes the colloquium again, the higher of the two scores will be kept.\n*   **Practice Session:** The seminar next week will be dedicated to solving problems from a previous year\u0027s colloquium to give a feel for the format and difficulty.\n\n## [[Theory]]\n\n### [[Solubility (Topnost)]]\nSolubility is defined as the maximum concentration of a solute that can be dissolved in a solvent at a given temperature to form a **saturated solution** (nasičena raztopina). It represents a state of **dynamic equilibrium**, where the rate of dissolution of the solid solute is equal to the rate of its crystallization from the solution.\n\n*   **Units:** Typically expressed as grams of solute per 100 grams of solvent ($$g_{solute}/100g_{solvent}$$). Water is the most common solvent.\n*   **Notation:** Represented by the symbol $$t$$. For example, the solubility of NaCl at 20°C is $$t\u003d36$$, which means 36 g of NaCl dissolves in 100 g of water.\n*   **Precipitate (Oborina):** If more solute is added to a solution than its solubility allows, the excess solid will not dissolve and remains as a precipitate.\n\n### [[Factors Affecting Solubility]]\n1.  **[[Temperature]]**: This is the most significant factor for the solubility of solids in liquids.\n    *   **Solubility Increases with Temperature:** The most common behavior. As temperature rises, the solvent can dissolve more solute (e.g., $$KNO_3$$, $$KCl$$). This is the principle behind recrystallization.\n    *   **Solubility is Nearly Unchanged:** Some substances show very little change in solubility with temperature (e.g., $$NaCl$$).\n    *   **Solubility Decreases with Temperature:** Less common, but some substances become less soluble as the temperature increases (e.g., $$Ce_2(SO_4)_3$$).\n2.  **[[Pressure]]**: Has a negligible effect on the solubility of solids and liquids but is a major factor for gases.\n3.  **[[Chemical Nature]]**: The \"like dissolves like\" principle applies. The chemical structure and polarity of the solute and solvent determine how well they interact.\n\n### [[Crystal Hydrates and Solubility]]\n*   **Critical Analysis:** This is a crucial point that is often a source of error. When dealing with crystal hydrates (solids that incorporate water molecules into their crystal structure, like $$CuSO_4 \\cdot 5H_2O$$), the tabulated solubility value ($$t$$) **always refers to the mass of the anhydrous salt** (the salt without water, e.g., $$CuSO_4$$) that dissolves in 100 g of solvent. The mass of the crystal water is not included in this value.\n\n### [[Recrystallization (Prekristalizacija)]]\nRecrystallization is a fundamental laboratory technique used to purify a solid compound by leveraging its differential solubility at different temperatures.\n\n**Procedure:**\n1.  **Dissolution:** Dissolve the impure solid in a minimum amount of a suitable hot solvent to create a near-saturated solution.\n2.  **Hot Filtration:** Quickly filter the hot solution to remove any insoluble impurities.\n3.  **Crystallization:** Allow the hot, clear filtrate to cool slowly. As the solution cools, the solubility of the desired compound decreases, causing it to crystallize out. Soluble impurities remain dissolved in the solvent.\n4.  **Isolation:** Separate the purified crystals from the cold solvent (mother liquor) via filtration, typically using a Büchner funnel.\n5.  **Drying:** Dry the crystals to remove any residual solvent.\n\n*   **Note on Crystal Size:**\n    *   **Slow cooling** promotes the formation of large, well-defined crystals.\n    *   **Rapid cooling and agitation** lead to the formation of many small crystals.\n\n## [[General Formulas and Relationships]]\n\n1.  **[[Solubility (t)]]**\n    $$ t \u003d \\frac{\\text{mass of solute } (g)}{\\text{mass of solvent } (g)} \\times 100 $$\n    *(Note: This is often stated as grams of solute per 100 g of solvent)*\n\n2.  **[[Mass Fraction of Solute (w)]]**\n    $$ w_{solute} \u003d \\frac{m_{solute}}{m_{solution}} \u003d \\frac{m_{solute}}{m_{solute} + m_{solvent}} $$\n\n3.  **[[Relationship between Solubility and Mass Fraction]]**\n    *   **Critical Analysis:** This conversion is fundamental for solving most problems. Mass fraction relates the part to the *whole solution*, while solubility relates the solute to the *solvent*.\n    $$ w \u003d \\frac{t}{100 + t} $$\n    *   **Derivation:** Starting with the definition of mass fraction, $$w \u003d \\frac{m_{solute}}{m_{solute} + m_{solvent}}$$. If we assume a basis of 100 g of solvent, then $$m_{solvent} \u003d 100 \\text{ g}$$, and by the definition of solubility, $$m_{solute} \u003d t \\text{ g}$$. Substituting these gives the formula.\n\n4.  **[[Mass Balance for Recrystallization]]**\n    *   **Overall Mass:**\n        $$ m_{solution}(T_{hot}) \u003d m_{solution}(T_{cold}) + m_{precipitate} $$\n    *   **Solute Mass:**\n        $$ m_{solution}(T_{hot}) \\times w(T_{hot}) \u003d m_{solution}(T_{cold}) \\times w(T_{cold}) + m_{solute\\_in\\_precipitate} $$\n\n5.  **[[Mass Fraction of Anhydrous Salt in a Crystal Hydrate]]**\n    $$ w_{\\text{anhydrous in hydrate}} \u003d \\frac{M_{\\text{anhydrous salt}}}{M_{\\text{crystal hydrate}}} $$\n\n6.  **[[Theoretical Yield (Izkoristek) - η_t]]**\n    $$ \\eta_t (\\%) \u003d \\frac{m_{\\text{precipitated solute (actual)}}_}{m_{\\text{solute (initial, theoretical)}}} \\times 100 $$\n\n## [[Problems]]\n\n### [[Problem 1: Calculating Solute Mass in a Saturated Solution (KCl)]]\nHow many grams of potassium chloride ($$KCl$$) are in 150 g of a saturated solution at 25°C if the solubility is 35.7 g per 100 g of water?\n\n### [[Problem 2: Recrystallization of a Crystal Hydrate (CuSO₄·5H₂O)]]\nHow many grams of copper(II) sulfate pentahydrate ($$CuSO_4 \\cdot 5H_2O$$) will crystallize if 150 g of a saturated solution is cooled from 100°C to 20°C?\n*   Given solubility at 100°C ($$t_{100}$$) \u003d 75.4 g $$CuSO_4$$ / 100 g H₂O.\n*   Given solubility at 20°C ($$t_{20}$$) \u003d 20.7 g $$CuSO_4$$ / 100 g H₂O.\n\n### [[Problem 3: Saturating an Existing Solution (KNO₃)]]\nHow many grams of solid potassium nitrate ($$KNO_3$$) must be added to 100 g of a 20% $$KNO_3$$ solution at 40°C to make it saturated?\n*   Given solubility at 40°C ($$t_{40}$$) \u003d 62.9 g $$KNO_3$$ / 100 g H₂O.\n\n### [[Problem 4: Preparing a Saturated Solution from a Hydrate (FeSO₄·7H₂O)]]\nHow many milliliters of water are needed to add to 40 g of iron(II) sulfate heptahydrate ($$FeSO_4 \\cdot 7H_2O$$) to prepare a saturated solution at 20°C?\n*   Given solubility at 20°C ($$t_{20}$$) \u003d 26.6 g $$FeSO_4$$ / 100 g H₂O.\n\n### [[Problem 5: Calculating Initial Mass from Precipitate (KMnO₄)]]\nA saturated solution of potassium permanganate ($$KMnO_4$$) is cooled from 60°C to 10°C, causing 20 g of $$KMnO_4$$ to crystallize. What was the initial mass of the saturated solution at 60°C?\n*   Given solubility at 60°C ($$t_{60}$$) \u003d 16.7 g / 100 g H₂O.\n*   Given solubility at 10°C ($$t_{10}$$) \u003d 4.7 g / 100 g H₂O.\n\n### [[Problem 6: Mass-Volume Calculation (K₂Cr₂O₇)]]\nA saturated solution is made by dissolving 340 g of potassium dichromate ($$K_2Cr_2O_7$$) at 100°C. How much water in milliliters is required?\n*   Given solubility at 100°C ($$t_{100}$$) \u003d 75.1 g / 100 g H₂O.\n\n## [[Problem Solving Methods]]\n\n### [[Solution to Problem 1 (KCl)]]\n1.  **Objective:** Find the mass of solute ($$m_{KCl}$$) in a given mass of saturated solution ($$m_{sol}$$).\n2.  **Strategy:** The most direct way is to convert the given solubility ($$t$$) into a mass fraction ($$w$$), which relates the mass of solute to the total mass of the solution.\n3.  **Step 1: Convert solubility to mass fraction.**\n    $$ w_{KCl} \u003d \\frac{t}{100 + t} \u003d \\frac{35.7}{100 + 35.7} \u003d \\frac{35.7}{135.7} \\approx 0.2631 $$\n4.  **Step 2: Calculate the mass of KCl.**\n    The mass fraction is the ratio of solute mass to solution mass: $$w \u003d \\frac{m_{KCl}}{m_{sol}}$$.\n    $$ m_{KCl} \u003d w_{KCl} \\times m_{sol} \u003d 0.2631 \\times 150 \\text{ g} \u003d 39.46 \\text{ g} $$\n    **Answer:** There are approximately 39.5 g of KCl in the solution.\n\n### [[Solution to Problem 2 (CuSO₄·5H₂O)]]\n1.  **Objective:** Find the mass of the precipitated *crystal hydrate* ($$m_{cryst}$$).\n2.  **Strategy:** This requires a mass balance on the *anhydrous solute* ($$CuSO_4$$). We will find the total mass of anhydrous $$CuSO_4$$ in the initial hot solution and subtract the mass of anhydrous $$CuSO_4$$ remaining in the cold solution. The difference is the mass of $$CuSO_4$$ that went into the crystals. We then use this to find the total mass of the crystal hydrate.\n3.  **Step 1: Calculate molar masses.**\n    *   $$M(CuSO_4) \u003d 159.61 \\text{ g/mol}$$\n    *   $$M(CuSO_4 \\cdot 5H_2O) \u003d 159.61 + 5 \\times 18.02 \u003d 249.71 \\text{ g/mol}$$\n4.  **Step 2: Calculate mass fractions ($$w$$) from solubilities ($$t$$).**\n    *   At 100°C: $$ w_{100} \u003d \\frac{t_{100}}{100 + t_{100}} \u003d \\frac{75.4}{175.4} \\approx 0.430 $$\n    *   At 20°C: $$ w_{20} \u003d \\frac{t_{20}}{100 + t_{20}} \u003d \\frac{20.7}{120.7} \\approx 0.171 $$\n5.  **Step 3: Set up the mass balance.**\n    Let $$m_{cryst}$$ be the mass of the precipitated $$CuSO_4 \\cdot 5H_2O$$.\n    *   Initial mass of solution (hot): $$m_{sol, 100} \u003d 150 \\text{ g}$$\n    *   Final mass of solution (cold): $$m_{sol, 20} \u003d m_{sol, 100} - m_{cryst} \u003d 150 - m_{cryst}$$\n    *   Mass of anhydrous $$CuSO_4$$ in the precipitate: $$m_{CuSO4, cryst} \u003d m_{cryst} \\times \\frac{M(CuSO_4)}{M(CuSO_4 \\cdot 5H_2O)} \u003d m_{cryst} \\times \\frac{159.61}{249.71} \\approx 0.639 \\times m_{cryst}$$\n6.  **Step 4: Solve the solute mass balance equation.**\n    *(Mass of $$CuSO_4$$ initially) \u003d (Mass of $$CuSO_4$$ finally in solution) + (Mass of $$CuSO_4$$ in crystals)*\n    $$ m_{sol, 100} \\times w_{100} \u003d (m_{sol, 100} - m_{cryst}) \\times w_{20} + (0.639 \\times m_{cryst}) $$\n    $$ 150 \\times 0.430 \u003d (150 - m_{cryst}) \\times 0.171 + 0.639 \\times m_{cryst} $$\n    $$ 64.5 \u003d 25.65 - 0.171 \\times m_{cryst} + 0.639 \\times m_{cryst} $$\n    $$ 38.85 \u003d 0.468 \\times m_{cryst} $$\n    $$ m_{cryst} \u003d \\frac{38.85}{0.468} \\approx 83.0 \\text{ g} $$\n    **Answer:** Approximately 83.0 g of $$CuSO_4 \\cdot 5H_2O$$ will crystallize.\n\n### [[Solution to Problem 3 (KNO₃)]]\n1.  **Objective:** Find the mass of $$KNO_3$$ to add to achieve saturation.\n2.  **Strategy:** First, determine the mass of water in the initial solution. Then, use the solubility at 40°C to calculate the maximum mass of $$KNO_3$$ that can be dissolved in that amount of water. The difference between this maximum mass and the initial mass of $$KNO_3$$ is the amount to add.\n3.  **Step 1: Analyze the initial solution.**\n    *   Total mass: $$m_{sol} \u003d 100 \\text{ g}$$\n    *   Mass fraction: $$w \u003d 20\\% \u003d 0.20$$\n    *   Mass of $$KNO_3$$: $$m_{KNO3, initial} \u003d 100 \\text{ g} \\times 0.20 \u003d 20 \\text{ g}$$\n    *   Mass of water: $$m_{H2O} \u003d 100 \\text{ g} - 20 \\text{ g} \u003d 80 \\text{ g}$$\n4.  **Step 2: Calculate the mass of $$KNO_3$$ needed for saturation.**\n    Solubility at 40°C is 62.9 g per 100 g of water. We can set up a proportion to find the mass needed for 80 g of water.\n    $$ \\frac{62.9 \\text{ g } KNO_3}{100 \\text{ g } H_2O} \u003d \\frac{m_{KNO3, sat}}{80 \\text{ g } H_2O} $$\n    $$ m_{KNO3, sat} \u003d \\frac{62.9 \\times 80}{100} \u003d 50.32 \\text{ g} $$\n    This is the *total* mass of $$KNO_3$$ the solution can hold.\n5.  **Step 3: Find the difference.**\n    $$ m_{add} \u003d m_{KNO3, sat} - m_{KNO3, initial} \u003d 50.32 \\text{ g} - 20 \\text{ g} \u003d 30.32 \\text{ g} $$\n    **Answer:** 30.3 g of $$KNO_3$$ must be added.\n\n### [[Solution to Problem 4 (FeSO₄·7H₂O)]]\n1.  **Objective:** Find the volume of water to add to a given mass of crystal hydrate.\n2.  **Strategy:** First, find the mass of anhydrous $$FeSO_4$$ and the mass of water *already present* in the 40 g of crystal hydrate. Then, use the solubility to determine how much *total* water is needed to dissolve that mass of anhydrous salt. The difference between the total needed water and the water already in the hydrate is the amount to add.\n3.  **Step 1: Analyze the crystal hydrate.**\n    *   $$M(FeSO_4) \\approx 151.9 \\text{ g/mol}$$\n    *   $$M(FeSO_4 \\cdot 7H_2O) \\approx 278.0 \\text{ g/mol}$$\n    *   Mass of anhydrous $$FeSO_4$$ in 40 g of hydrate:\n        $$ m_{FeSO4} \u003d 40 \\text{ g} \\times \\frac{151.9}{278.0} \\approx 21.86 \\text{ g} $$\n    *   Mass of water in 40 g of hydrate:\n        $$ m_{H2O, hydrate} \u003d 40 \\text{ g} - 21.86 \\text{ g} \u003d 18.14 \\text{ g} $$\n4.  **Step 2: Calculate the total water needed for saturation.**\n    Solubility at 20°C is 26.6 g $$FeSO_4$$ per 100 g H₂O. Set up a proportion:\n    $$ \\frac{26.6 \\text{ g } FeSO_4}{100 \\text{ g } H_2O} \u003d \\frac{21.86 \\text{ g } FeSO_4}{m_{H2O, total}} $$\n    $$ m_{H2O, total} \u003d \\frac{21.86 \\times 100}{26.6} \\approx 82.18 \\text{ g} $$\n5.  **Step 3: Find the amount of water to add.**\n    $$ m_{H2O, add} \u003d m_{H2O, total} - m_{H2O, hydrate} \u003d 82.18 \\text{ g} - 18.14 \\text{ g} \u003d 64.04 \\text{ g} $$\n6.  **Step 4: Convert mass to volume.**\n    Assuming the density of water is $$ \\rho \\approx 1.0 \\text{ g/mL} $$:\n    $$ V_{H2O, add} \u003d \\frac{m}{\\rho} \u003d \\frac{64.04 \\text{ g}}{1.0 \\text{ g/mL}} \u003d 64.04 \\text{ mL} $$\n    **Answer:** Approximately 64 mL of water must be added.\n\n### [[Solution to Problem 5 (KMnO₄)]]\n1.  **Objective:** Find the initial mass of the solution ($$m_{sol, 60}$$).\n2.  **Strategy:** Use the difference in solubility to determine how much solution is needed to produce 20 g of precipitate.\n3.  **Step 1: Calculate the mass of precipitate per 100 g of water.**\n    When 100 g of water is cooled from 60°C to 10°C, the mass of $$KMnO_4$$ that precipitates is the difference in solubilities.\n    $$ \\Delta m \u003d t_{60} - t_{10} \u003d 16.7 \\text{ g} - 4.7 \\text{ g} \u003d 12.0 \\text{ g} $$\n    So, 12.0 g of precipitate forms from a solution containing 100 g of water.\n4.  **Step 2: Calculate the mass of the solution that corresponds to this.**\n    The mass of the saturated solution at 60°C that contains 100 g of water is:\n    $$ m_{sol, 60} \u003d m_{H2O} + m_{KMnO4} \u003d 100 \\text{ g} + 16.7 \\text{ g} \u003d 116.7 \\text{ g} $$\n5.  **Step 3: Set up a proportion.**\n    If 116.7 g of solution produces 12.0 g of precipitate, what mass of solution ($$x$$) produces 20 g of precipitate?\n    $$ \\frac{116.7 \\text{ g solution}}{12.0 \\text{ g precipitate}} \u003d \\frac{x}{20 \\text{ g precipitate}} $$\n    $$ x \u003d \\frac{116.7 \\times 20}{12.0} \\approx 194.5 \\text{ g} $$\n    **Answer:** The initial mass of the saturated solution was 194.5 g.\n\n### [[Solution to Problem 6 (K₂Cr₂O₇)]]\n1.  **Objective:** Find the volume of water needed to dissolve a given mass of solute.\n2.  **Strategy:** Use a simple proportion based on the definition of solubility.\n3.  **Step 1: Set up the proportion.**\n    Solubility at 100°C is 75.1 g $$K_2Cr_2O_7$$ per 100 g H₂O. We want to dissolve 340 g.\n    $$ \\frac{75.1 \\text{ g } K_2Cr_2O_7}{100 \\text{ g } H_2O} \u003d \\frac{340 \\text{ g } K_2Cr_2O_7}{m_{H2O}} $$\n    $$ m_{H2O} \u003d \\frac{340 \\times 100}{75.1} \\approx 452.7 \\text{ g} $$\n4.  **Step 2: Convert mass to volume.**\n    Assuming $$ \\rho_{H2O} \\approx 1.0 \\text{ g/mL} $$:\n    $$ V_{H2O} \u003d 452.7 \\text{ mL} $$\n    **Answer:** Approximately 453 mL of water is required.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 5538,
+      "parts": [{
+        "text": "# [[Solubility and Recrystallization]]\n\n## [[Administrative Information - Colloquium]]\n*   **Memorialization Note:** The"
+      }, {
+        "text": " professor dedicated the beginning of the lecture to discuss the upcoming first colloquium.\n*   **Date \u0026 Time:** Next"
+      }, {
+        "text": " week, at 4 PM.\n*   **Location:** The regularly scheduled lecture hall.\n*   **Content:** 5"
+      }, {
+        "text": " calculation-based problems covering topics from the beginning of the semester up to and including today\u0027s lecture on solubility and recrystallization."
+      }, {
+        "text": "\n*   **Passing Grade:** A minimum of 5 out of 10 total points is required to pass. Each"
+      }, {
+        "text": " problem is worth 2 points.\n*   **Required Materials:** Pen and a calculator.\n*   **Provided"
+      }, {
+        "text": " Materials:** All necessary formulas, tables, and a periodic system will be provided.\n*   **Prohibited Items:** All"
+      }, {
+        "text": " smart devices (including smartwatches) must be put away.\n*   **Registration:** No pre-registration is required for the colloqu"
+      }, {
+        "text": "ium.\n*   **Results:** Will be released as quickly as possible, likely within one to two weeks.\n*"
+      }, {
+        "text": "   **Retakes:** Retakes are possible. If a student takes the colloquium again, the higher of the two"
+      }, {
+        "text": " scores will be kept.\n*   **Practice Session:** The seminar next week will be dedicated to solving problems from a previous"
+      }, {
+        "text": " year\u0027s colloquium to give a feel for the format and difficulty.\n\n## [[Theory]]\n\n### [[Solubility (Topnost)]]\nSolubility is defined as the maximum concentration of a solute that can be dissolved in a solvent at a given temperature to"
+      }, {
+        "text": " form a **saturated solution** (nasičena raztopina). It represents a state of **dynamic equilibrium**, where"
+      }, {
+        "text": " the rate of dissolution of the solid solute is equal to the rate of its crystallization from the solution.\n\n*   **Units"
+      }, {
+        "text": ":** Typically expressed as grams of solute per 100 grams of solvent ($$g_{solute}/10"
+      }, {
+        "text": "0g_{solvent}$$). Water is the most common solvent.\n*   **Notation:** Represented by the symbol"
+      }, {
+        "text": " $$t$$. For example, the solubility of NaCl at 20°C is $$t\u003d36$$,"
+      }, {
+        "text": " which means 36 g of NaCl dissolves in 100 g of water.\n*   **Precipitate (Ob"
+      }, {
+        "text": "orina):** If more solute is added to a solution than its solubility allows, the excess solid will not dissolve and"
+      }, {
+        "text": " remains as a precipitate.\n\n### [[Factors Affecting Solubility]]\n1.  **[[Temperature]]**: This is the most significant"
+      }, {
+        "text": " factor for the solubility of solids in liquids.\n    *   **Solubility Increases with Temperature:** The most common behavior"
+      }, {
+        "text": ". As temperature rises, the solvent can dissolve more solute (e.g., $$KNO_3$$, $$KCl"
+      }, {
+        "text": "$$). This is the principle behind recrystallization.\n    *   **Solubility is Nearly Unchanged:** Some substances show very little"
+      }, {
+        "text": " change in solubility with temperature (e.g., $$NaCl$$).\n    *   **Solubility Decreases with"
+      }, {
+        "text": " Temperature:** Less common, but some substances become less soluble as the temperature increases (e.g., $$Ce_2(SO_"
+      }, {
+        "text": "4)_3$$).\n2.  **[[Pressure]]**: Has a negligible effect on the solubility of solids and"
+      }, {
+        "text": " liquids but is a major factor for gases.\n3.  **[[Chemical Nature]]**: The \"like dissolves like\" principle"
+      }, {
+        "text": " applies. The chemical structure and polarity of the solute and solvent determine how well they interact.\n\n### [[Crystal Hydrates and Solubility]]\n*   **Critical Analysis:** This is a crucial point that is often a source of error. When dealing"
+      }, {
+        "text": " with crystal hydrates (solids that incorporate water molecules into their crystal structure, like $$CuSO_4 \\cdot 5"
+      }, {
+        "text": "H_2O$$), the tabulated solubility value ($$t$$) **always refers to the mass of the anhydrous salt**"
+      }, {
+        "text": " (the salt without water, e.g., $$CuSO_4$$) that dissolves in 100 g"
+      }, {
+        "text": " of solvent. The mass of the crystal water is not included in this value.\n\n### [[Recrystallization (Prekristalizacija)]]\nRecrystallization is a fundamental laboratory technique used to purify a solid compound by leveraging its"
+      }, {
+        "text": " differential solubility at different temperatures.\n\n**Procedure:**\n1.  **Dissolution:** Dissolve the impure solid in a"
+      }, {
+        "text": " minimum amount of a suitable hot solvent to create a near-saturated solution.\n2.  **Hot Filtration:** Quickly"
+      }, {
+        "text": " filter the hot solution to remove any insoluble impurities.\n3.  **Crystallization:** Allow the hot, clear filtrate to cool"
+      }, {
+        "text": " slowly. As the solution cools, the solubility of the desired compound decreases, causing it to crystallize out. Soluble impurities remain dissolved"
+      }, {
+        "text": " in the solvent.\n4.  **Isolation:** Separate the purified crystals from the cold solvent (mother liquor) via filtration"
+      }, {
+        "text": ", typically using a Büchner funnel.\n5.  **Drying:** Dry the crystals to remove any residual solvent.\n\n*"
+      }, {
+        "text": "   **Note on Crystal Size:**\n    *   **Slow cooling** promotes the formation of large, well-defined"
+      }, {
+        "text": " crystals.\n    *   **Rapid cooling and agitation** lead to the formation of many small crystals.\n\n## [[General Formulas and Relationships]]\n\n1.  **[[Solubility (t)]]**\n    $$ t \u003d \\frac{\\"
+      }, {
+        "text": "text{mass of solute } (g)}{\\text{mass of solvent } (g)} \\times 100"
+      }, {
+        "text": " $$\n    *(Note: This is often stated as grams of solute per 100 g of solvent)*\n\n"
+      }, {
+        "text": "2.  **[[Mass Fraction of Solute (w)]]**\n    $$ w_{solute} \u003d \\frac"
+      }, {
+        "text": "{m_{solute}}{m_{solution}} \u003d \\frac{m_{solute}}{m_{solute}"
+      }, {
+        "text": " + m_{solvent}} $$\n\n3.  **[[Relationship between Solubility and Mass Fraction]]**\n    *   "
+      }, {
+        "text": "**Critical Analysis:** This conversion is fundamental for solving most problems. Mass fraction relates the part to the *whole solution*, while solubility"
+      }, {
+        "text": " relates the solute to the *solvent*.\n    $$ w \u003d \\frac{t}{100 + t} $$"
+      }, {
+        "text": "\n    *   **Derivation:** Starting with the definition of mass fraction, $$w \u003d \\frac{m_{solute"
+      }, {
+        "text": "}}{m_{solute} + m_{solvent}}$$. If we assume a basis of 100 g of solvent"
+      }, {
+        "text": ", then $$m_{solvent} \u003d 100 \\text{ g}$$, and by the definition of solubility,"
+      }, {
+        "text": " $$m_{solute} \u003d t \\text{ g}$$. Substituting these gives the formula.\n\n4.  "
+      }, {
+        "text": "**[[Mass Balance for Recrystallization]]**\n    *   **Overall Mass:**\n        $$ m_{solution"
+      }, {
+        "text": "}(T_{hot}) \u003d m_{solution}(T_{cold}) + m_{precipitate} $$\n    *"
+      }, {
+        "text": "   **Solute Mass:**\n        $$ m_{solution}(T_{hot}) \\times w(T_{hot})"
+      }, {
+        "text": " \u003d m_{solution}(T_{cold}) \\times w(T_{cold}) + m_{solute\\_in"
+      }, {
+        "text": "\\_precipitate} $$\n\n5.  **[[Mass Fraction of Anhydrous Salt in a Crystal Hydrate]]**\n"
+      }, {
+        "text": "    $$ w_{\\text{anhydrous in hydrate}} \u003d \\frac{M_{\\text{anhydrous salt}}}{M_{\\"
+      }, {
+        "text": "text{crystal hydrate}}} $$\n\n6.  **[[Theoretical Yield (Izkoristek) - η_t]]"
+      }, {
+        "text": "**\n    $$ \\eta_t (\\%) \u003d \\frac{m_{\\text{precipitated solute (actual)}}"
+      }, {
+        "text": "_}{m_{\\text{solute (initial, theoretical)}}} \\times 100 $$\n\n## [[Problems]]\n\n### [[Problem 1: Calculating Solute Mass in a Saturated Solution (KCl)]]\nHow many"
+      }, {
+        "text": " grams of potassium chloride ($$KCl$$) are in 150 g of a saturated solution at 25"
+      }, {
+        "text": "°C if the solubility is 35.7 g per 100 g of water?\n\n### [[Problem 2: Recrystallization of a Crystal Hydrate (CuSO₄·5H₂O)]]\nHow"
+      }, {
+        "text": " many grams of copper(II) sulfate pentahydrate ($$CuSO_4 \\cdot 5H_"
+      }, {
+        "text": "2O$$) will crystallize if 150 g of a saturated solution is cooled from 100°C"
+      }, {
+        "text": " to 20°C?\n*   Given solubility at 100°C ($$t_{100"
+      }, {
+        "text": "}$$) \u003d 75.4 g $$CuSO_4$$ / 100 g H₂O.\n*"
+      }, {
+        "text": "   Given solubility at 20°C ($$t_{20}$$) \u003d 20.7 g $$CuSO"
+      }, {
+        "text": "_4$$ / 100 g H₂O.\n\n### [[Problem 3: Saturating an Existing Solution (KNO₃)]]\nHow many grams of solid potassium nitrate ($$KNO_3$$) must be added"
+      }, {
+        "text": " to 100 g of a 20% $$KNO_3$$ solution at 40°C"
+      }, {
+        "text": " to make it saturated?\n*   Given solubility at 40°C ($$t_{40}$$) \u003d "
+      }, {
+        "text": "62.9 g $$KNO_3$$ / 100 g H₂O.\n\n### [[Problem 4: Preparing a Saturated Solution from a Hydrate (FeSO₄·7H₂O)]]"
+      }, {
+        "text": "\nHow many milliliters of water are needed to add to 40 g of iron(II) sulfate heptahydrate"
+      }, {
+        "text": " ($$FeSO_4 \\cdot 7H_2O$$) to prepare a saturated solution at 20°"
+      }, {
+        "text": "C?\n*   Given solubility at 20°C ($$t_{20}$$) \u003d 2"
+      }, {
+        "text": "6.6 g $$FeSO_4$$ / 100 g H₂O.\n\n### [[Problem 5: Calculating Initial Mass from Precipitate (KMnO₄)]]\nA saturated solution of potassium permanganate ($$"
+      }, {
+        "text": "KMnO_4$$) is cooled from 60°C to 10°C, causing 20 g of"
+      }, {
+        "text": " $$KMnO_4$$ to crystallize. What was the initial mass of the saturated solution at 60°C?\n"
+      }, {
+        "text": "*   Given solubility at 60°C ($$t_{60}$$) \u003d 16.7"
+      }, {
+        "text": " g / 100 g H₂O.\n*   Given solubility at 10°C ($$t_{"
+      }, {
+        "text": "10}$$) \u003d 4.7 g / 100 g H₂O.\n\n### [[Problem 6: Mass-Volume Calculation (K₂Cr₂O₇)]]\nA saturated solution is made by dissolving"
+      }, {
+        "text": " 340 g of potassium dichromate ($$K_2Cr_2O_7$$) at"
+      }, {
+        "text": " 100°C. How much water in milliliters is required?\n*   Given solubility at 100°"
+      }, {
+        "text": "C ($$t_{100}$$) \u003d 75.1 g / 100 g H"
+      }, {
+        "text": "₂O.\n\n## [[Problem Solving Methods]]\n\n### [[Solution to Problem 1 (KCl)]]\n1.  **"
+      }, {
+        "text": "Objective:** Find the mass of solute ($$m_{KCl}$$) in a given mass of saturated solution ($$m_{sol"
+      }, {
+        "text": "}$$).\n2.  **Strategy:** The most direct way is to convert the given solubility ($$t$$)"
+      }, {
+        "text": " into a mass fraction ($$w$$), which relates the mass of solute to the total mass of the solution.\n3"
+      }, {
+        "text": ".  **Step 1: Convert solubility to mass fraction.**\n    $$ w_{KCl} \u003d \\frac{t}{1"
+      }, {
+        "text": "00 + t} \u003d \\frac{35.7}{100 + 35.7}"
+      }, {
+        "text": " \u003d \\frac{35.7}{135.7} \\approx 0.2631"
+      }, {
+        "text": " $$\n4.  **Step 2: Calculate the mass of KCl.**\n    The mass fraction is the ratio of"
+      }, {
+        "text": " solute mass to solution mass: $$w \u003d \\frac{m_{KCl}}{m_{sol}}$$.\n    $$"
+      }, {
+        "text": " m_{KCl} \u003d w_{KCl} \\times m_{sol} \u003d 0.2631 \\"
+      }, {
+        "text": "times 150 \\text{ g} \u003d 39.46 \\text{ g} $$\n"
+      }, {
+        "text": "    **Answer:** There are approximately 39.5 g of KCl in the solution.\n\n### [[Solution to Problem 2 (CuSO₄·5H₂O)]]\n1.  **Objective:** Find the mass of"
+      }, {
+        "text": " the precipitated *crystal hydrate* ($$m_{cryst}$$).\n2.  **Strategy:** This requires a"
+      }, {
+        "text": " mass balance on the *anhydrous solute* ($$CuSO_4$$). We will find the total mass of anhydrous"
+      }, {
+        "text": " $$CuSO_4$$ in the initial hot solution and subtract the mass of anhydrous $$CuSO_4$$ remaining in"
+      }, {
+        "text": " the cold solution. The difference is the mass of $$CuSO_4$$ that went into the crystals. We then use this to"
+      }, {
+        "text": " find the total mass of the crystal hydrate.\n3.  **Step 1: Calculate molar masses.**\n    *   "
+      }, {
+        "text": "$$M(CuSO_4) \u003d 159.61 \\text{ g/mol}$$\n"
+      }, {
+        "text": "    *   $$M(CuSO_4 \\cdot 5H_2O) \u003d 159"
+      }, {
+        "text": ".61 + 5 \\times 18.02 \u003d 249.71 \\text"
+      }, {
+        "text": "{ g/mol}$$\n4.  **Step 2: Calculate mass fractions ($$w$$) from solubilities ($"
+      }, {
+        "text": "$t$$).**\n    *   At 100°C: $$ w_{100} \u003d \\frac"
+      }, {
+        "text": "{t_{100}}{100 + t_{100}} \u003d \\frac{75."
+      }, {
+        "text": "4}{175.4} \\approx 0.430 $$\n    *   At 20°C"
+      }, {
+        "text": ": $$ w_{20} \u003d \\frac{t_{20}}{100 + t_{20"
+      }, {
+        "text": "}} \u003d \\frac{20.7}{120.7} \\approx 0.171"
+      }, {
+        "text": " $$\n5.  **Step 3: Set up the mass balance.**\n    Let $$m_{cryst}$$ be the"
+      }, {
+        "text": " mass of the precipitated $$CuSO_4 \\cdot 5H_2O$$.\n    *   Initial"
+      }, {
+        "text": " mass of solution (hot): $$m_{sol, 100} \u003d 150 \\text{ g"
+      }, {
+        "text": "}$$\n    *   Final mass of solution (cold): $$m_{sol, 20} \u003d m_{"
+      }, {
+        "text": "sol, 100} - m_{cryst} \u003d 150 - m_{cryst}$$"
+      }, {
+        "text": "\n    *   Mass of anhydrous $$CuSO_4$$ in the precipitate: $$m_{CuSO4,"
+      }, {
+        "text": " cryst} \u003d m_{cryst} \\times \\frac{M(CuSO_4)}{M(CuSO_"
+      }, {
+        "text": "4 \\cdot 5H_2O)} \u003d m_{cryst} \\times \\frac{159"
+      }, {
+        "text": ".61}{249.71} \\approx 0.639 \\times m_{c"
+      }, {
+        "text": "ryst}$$\n6.  **Step 4: Solve the solute mass balance equation.**\n    *(Mass of $$"
+      }, {
+        "text": "CuSO_4$$ initially) \u003d (Mass of $$CuSO_4$$ finally in solution) + (Mass of $$Cu"
+      }, {
+        "text": "SO_4$$ in crystals)*\n    $$ m_{sol, 100} \\times w_{100"
+      }, {
+        "text": "} \u003d (m_{sol, 100} - m_{cryst}) \\times w_{20} + ("
+      }, {
+        "text": "0.639 \\times m_{cryst}) $$\n    $$ 150 \\times 0"
+      }, {
+        "text": ".430 \u003d (150 - m_{cryst}) \\times 0.171 + 0."
+      }, {
+        "text": "639 \\times m_{cryst} $$\n    $$ 64.5 \u003d 25.6"
+      }, {
+        "text": "5 - 0.171 \\times m_{cryst} + 0.639 \\times"
+      }, {
+        "text": " m_{cryst} $$\n    $$ 38.85 \u003d 0.468 \\times m_{c"
+      }, {
+        "text": "ryst} $$\n    $$ m_{cryst} \u003d \\frac{38.85}{0.4"
+      }, {
+        "text": "68} \\approx 83.0 \\text{ g} $$\n    **Answer:** Approximately 83."
+      }, {
+        "text": "0 g of $$CuSO_4 \\cdot 5H_2O$$ will crystallize.\n\n### [[Solution to Problem 3 (KNO₃)]]\n1.  **Objective:** Find the mass of $$K"
+      }, {
+        "text": "NO_3$$ to add to achieve saturation.\n2.  **Strategy:** First, determine the mass of water"
+      }, {
+        "text": " in the initial solution. Then, use the solubility at 40°C to calculate the maximum mass of $$KNO_"
+      }, {
+        "text": "3$$ that can be dissolved in that amount of water. The difference between this maximum mass and the initial mass of $$K"
+      }, {
+        "text": "NO_3$$ is the amount to add.\n3.  **Step 1: Analyze the initial solution.**"
+      }, {
+        "text": "\n    *   Total mass: $$m_{sol} \u003d 100 \\text{ g}$$\n    *   Mass"
+      }, {
+        "text": " fraction: $$w \u003d 20\\% \u003d 0.20$$\n    *   Mass of $$KNO_3"
+      }, {
+        "text": "$$: $$m_{KNO3, initial} \u003d 100 \\text{ g} \\times 0."
+      }, {
+        "text": "20 \u003d 20 \\text{ g}$$\n    *   Mass of water: $$m_{H2"
+      }, {
+        "text": "O} \u003d 100 \\text{ g} - 20 \\text{ g} \u003d 80 \\"
+      }, {
+        "text": "text{ g}$$\n4.  **Step 2: Calculate the mass of $$KNO_3$$ needed for"
+      }, {
+        "text": " saturation.**\n    Solubility at 40°C is 62.9 g per 100"
+      }, {
+        "text": " g of water. We can set up a proportion to find the mass needed for 80 g of water.\n    $$ \\"
+      }, {
+        "text": "frac{62.9 \\text{ g } KNO_3}{100 \\text{ g } H_2O"
+      }, {
+        "text": "} \u003d \\frac{m_{KNO3, sat}}{80 \\text{ g } H_2O} $$"
+      }, {
+        "text": "\n    $$ m_{KNO3, sat} \u003d \\frac{62.9 \\times 80}{"
+      }, {
+        "text": "100} \u003d 50.32 \\text{ g} $$\n    This is the *total* mass"
+      }, {
+        "text": " of $$KNO_3$$ the solution can hold.\n5.  **Step 3: Find the difference"
+      }, {
+        "text": ".**\n    $$ m_{add} \u003d m_{KNO3, sat} - m_{KNO3,"
+      }, {
+        "text": " initial} \u003d 50.32 \\text{ g} - 20 \\text{ g} \u003d"
+      }, {
+        "text": " 30.32 \\text{ g} $$\n    **Answer:** 30.3 g of $$KNO"
+      }, {
+        "text": "_3$$ must be added.\n\n### [[Solution to Problem 4 (FeSO₄·7H₂O)]]\n1.  **Objective:** Find the volume of water to add to a given mass of crystal hydrate.\n2"
+      }, {
+        "text": ".  **Strategy:** First, find the mass of anhydrous $$FeSO_4$$ and the mass of water *"
+      }, {
+        "text": "already present* in the 40 g of crystal hydrate. Then, use the solubility to determine how much *total* water is"
+      }, {
+        "text": " needed to dissolve that mass of anhydrous salt. The difference between the total needed water and the water already in the hydrate is the"
+      }, {
+        "text": " amount to add.\n3.  **Step 1: Analyze the crystal hydrate.**\n    *   $$M"
+      }, {
+        "text": "(FeSO_4) \\approx 151.9 \\text{ g/mol}$$\n    *   $$M"
+      }, {
+        "text": "(FeSO_4 \\cdot 7H_2O) \\approx 278.0 \\text"
+      }, {
+        "text": "{ g/mol}$$\n    *   Mass of anhydrous $$FeSO_4$$ in 40 g of"
+      }, {
+        "text": " hydrate:\n        $$ m_{FeSO4} \u003d 40 \\text{ g} \\times \\frac{1"
+      }, {
+        "text": "51.9}{278.0} \\approx 21.86 \\text{ g}"
+      }, {
+        "text": " $$\n    *   Mass of water in 40 g of hydrate:\n        $$ m_{H2O, hydrate"
+      }, {
+        "text": "} \u003d 40 \\text{ g} - 21.86 \\text{ g} \u003d "
+      }, {
+        "text": "18.14 \\text{ g} $$\n4.  **Step 2: Calculate the total water needed for saturation"
+      }, {
+        "text": ".**\n    Solubility at 20°C is 26.6 g $$FeSO_4$$ per 1"
+      }, {
+        "text": "00 g H₂O. Set up a proportion:\n    $$ \\frac{26.6 \\text"
+      }, {
+        "text": "{ g } FeSO_4}{100 \\text{ g } H_2O} \u003d \\frac"
+      }, {
+        "text": "{21.86 \\text{ g } FeSO_4}{m_{H2O, total}}"
+      }, {
+        "text": " $$\n    $$ m_{H2O, total} \u003d \\frac{21.86 \\times "
+      }, {
+        "text": "100}{26.6} \\approx 82.18 \\text{ g} $$\n"
+      }, {
+        "text": "5.  **Step 3: Find the amount of water to add.**\n    $$ m_{H2O"
+      }, {
+        "text": ", add} \u003d m_{H2O, total} - m_{H2O, hydrate} \u003d 8"
+      }, {
+        "text": "2.18 \\text{ g} - 18.14 \\text{ g} \u003d 6"
+      }, {
+        "text": "4.04 \\text{ g} $$\n6.  **Step 4: Convert mass to volume.**\n"
+      }, {
+        "text": "    Assuming the density of water is $$ \\rho \\approx 1.0 \\text{ g/mL} $$:"
+      }, {
+        "text": "\n    $$ V_{H2O, add} \u003d \\frac{m}{\\rho} \u003d \\frac{64"
+      }, {
+        "text": ".04 \\text{ g}}{1.0 \\text{ g/mL}} \u003d 64.04 \\text"
+      }, {
+        "text": "{ mL} $$\n    **Answer:** Approximately 64 mL of water must be added.\n\n### [[Solution to Problem 5 (KMnO₄)]]\n1.  **Objective:** Find the initial mass of the solution"
+      }, {
+        "text": " ($$m_{sol, 60}$$).\n2.  **Strategy:** Use the difference in solubility to determine"
+      }, {
+        "text": " how much solution is needed to produce 20 g of precipitate.\n3.  **Step 1: Calculate"
+      }, {
+        "text": " the mass of precipitate per 100 g of water.**\n    When 100 g of water is cooled"
+      }, {
+        "text": " from 60°C to 10°C, the mass of $$KMnO_4$$ that precipitates is the"
+      }, {
+        "text": " difference in solubilities.\n    $$ \\Delta m \u003d t_{60} - t_{10} \u003d "
+      }, {
+        "text": "16.7 \\text{ g} - 4.7 \\text{ g} \u003d 12."
+      }, {
+        "text": "0 \\text{ g} $$\n    So, 12.0 g of precipitate forms from a solution containing 10"
+      }, {
+        "text": "0 g of water.\n4.  **Step 2: Calculate the mass of the solution that corresponds to this.**"
+      }, {
+        "text": "\n    The mass of the saturated solution at 60°C that contains 100 g of water is"
+      }, {
+        "text": ":\n    $$ m_{sol, 60} \u003d m_{H2O} + m_{KMnO"
+      }, {
+        "text": "4} \u003d 100 \\text{ g} + 16.7 \\text{ g} \u003d 1"
+      }, {
+        "text": "16.7 \\text{ g} $$\n5.  **Step 3: Set up a proportion.**"
+      }, {
+        "text": "\n    If 116.7 g of solution produces 12.0 g of precipitate, what mass of solution"
+      }, {
+        "text": " ($$x$$) produces 20 g of precipitate?\n    $$ \\frac{116.7 \\text{"
+      }, {
+        "text": " g solution}}{12.0 \\text{ g precipitate}} \u003d \\frac{x}{20 \\text{"
+      }, {
+        "text": " g precipitate}} $$\n    $$ x \u003d \\frac{116.7 \\times 20}{1"
+      }, {
+        "text": "2.0} \\approx 194.5 \\text{ g} $$\n    **Answer:** The"
+      }, {
+        "text": " initial mass of the saturated solution was 194.5 g.\n\n### [[Solution to Problem 6 (K₂Cr₂O₇)]]\n1.  **Objective:** Find the volume of water needed to dissolve a"
+      }, {
+        "text": " given mass of solute.\n2.  **Strategy:** Use a simple proportion based on the definition of solubility.\n3.  "
+      }, {
+        "text": "**Step 1: Set up the proportion.**\n    Solubility at 100°C is 7"
+      }, {
+        "text": "5.1 g $$K_2Cr_2O_7$$ per 100 g H₂O."
+      }, {
+        "text": " We want to dissolve 340 g.\n    $$ \\frac{75.1 \\text{ g } K"
+      }, {
+        "text": "_2Cr_2O_7}{100 \\text{ g } H_2O} \u003d \\"
+      }, {
+        "text": "frac{340 \\text{ g } K_2Cr_2O_7}{m_{H2"
+      }, {
+        "text": "O}} $$\n    $$ m_{H2O} \u003d \\frac{340 \\times 100"
+      }, {
+        "text": "}{75.1} \\approx 452.7 \\text{ g} $$\n4.  "
+      }, {
+        "text": "**Step 2: Convert mass to volume.**\n    Assuming $$ \\rho_{H2O} \\approx 1"
+      }, {
+        "text": ".0 \\text{ g/mL} $$:\n    $$ V_{H2O} \u003d 452."
+      }, {
+        "text": "7 \\text{ mL} $$\n    **Answer:** Approximately 453 mL of water is required."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

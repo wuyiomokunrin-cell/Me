@@ -1,0 +1,648 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1F_GoDg7dxhlWPEwJxgEJAC4qV_IGducJ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1LF47lf5uzKVOcZ5YO8SzFSfV8jxNbodd"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1uhH87HPIMeTZZqRPtCAufs8nYfJvv8RF"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ylODBTaYmfB9HdYZgYEVjvdrRiD1J9rW"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1sxf11D9BMadU56gqTeDYKjt53xzEFVFa"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1kIyzYYiEa6yFG5PTXrn9POB6wXF5NDIm"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1rr6rsFkdQ3uYYT-DrmR1qdW5OY6nc-R0"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1HOd4bWgDsFt5uX1C1vYSDIysiepaxcgq"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1bxDkOrRIflq6R0AYGR0hLj4hVxp-p5ME"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1GrRmDCF3ael_shQ0Z-bF3V-f0VQagH2m"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "15qHgu9NZjZ4MAbL30Rkz-9JkD7bQwVHM"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "17Nk7mAC3GQCsqlJnXdB2V4O1qfqdUwbk"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1tcTOn54AYl-QkXl3aC3vtKA_pyGlAlx7"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Bj2J5kPP1PHbaMvIwO5oHRDbAc_sHtPG"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1wiShHqc2FFEgKc62ZdxksdglB5-3FyEZ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1YZv76ASNaf35kq0N69aRr7wAKAbs3oaq"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "12I_lNZFSADUuJljWCkKAGP1eY9tJCAR1"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ktJOe0deIQgx06xe_B7glUaH_BKPJBno"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1bsiZo-vlCJhZLqJF31ZJIvtGM2P2xYaE"
+      },
+      "role": "user",
+      "tokenCount": 107443
+    }, {
+      "driveAudio": {
+        "id": "1HI853QKDKiN8WhaXK_JN7YXzkSo-AC97"
+      },
+      "role": "user",
+      "tokenCount": 146170
+    }, {
+      "text": "**Processing Notes**\n\nI\u0027m currently focused on extracting information from the handwritten notes within the images. I\u0027m seeing mathematical notations and concepts taking shape. My next step will be transcribing the audio lecture to gain further insights and fill in any gaps from the written notes.\n\n\n**Unpacking Mathematical Concepts**\n\nI\u0027m deep into analyzing the handwritten notes and have identified key mathematical concepts and notations, particularly regarding function continuity and sequences. I\u0027ve successfully extracted two problems related to function continuity, including piecewise functions, and several examples related to sequences. I can discern the process of solving limit problems for these sequences and am working to understand from which term `n` the sequences diverge, given certain parameters.\n\n\n**Examining Sequences \u0026 Functions**\n\nI\u0027ve been analyzing the content and am now focused on the examples of sequences provided. I\u0027m exploring the nuances of their limits, monotonicity, and convergence. Furthermore, I\u0027ve successfully identified the structure and properties of the two problems on function continuity, determining which terms are of interest. I\u0027m also now linking the audio transcript to the handwritten notes to make sure everything lines up in the right order.\n\n\n**Synthesizing Lecture Content**\n\nI\u0027ve been meticulously analyzing the combined data set. I\u0027m focusing on organizing the mathematical concepts covered in the lecture. I\u0027m working now to generate the overall structure of the Markdown note in Obsidian, integrating both the images and the audio transcript. I\u0027m actively establishing the relationships between theory, problems, and solutions for the function continuity problems.\n\n\n**Reorganizing Lecture Structure**\n\nI\u0027ve been going through the combined material and I\u0027m reorganizing it into an Obsidian-friendly structure. Right now, I\u0027m making sure that the problems related to function continuity are placed first, and then will follow the examples of sequence analysis. In the Obsidian notes, I\u0027ll make sure to integrate the visual elements from the image files and the verbal explanations from the audio transcript.\n\n\n**Organizing the Sequence Materials**\n\nI\u0027ve been analyzing the notes and audio transcription related to sequences. I\u0027m carefully organizing the various examples of limit calculations, including both those with straightforward solutions and the more complex cases. I am creating a systematic structure in the Obsidian note, starting with the theoretical definitions, moving through example calculations, and then tackling the more intricate problems that require deeper analysis, like `n^5 / 5^n`. I\u0027m integrating any \"tricks\" or insights from the lecturer\u0027s remarks.\n\n\n**Constructing Obsidian Structure**\n\nI\u0027m now fully immersed in the details of sequence analysis, particularly with the `n^5 / 5^n` example. My task now is to ensure this complex analysis is clearly structured, with the lecturer\u0027s \"trick\" highlighted, and that the conclusion about its eventual convergence to zero and why the first terms are misleading is explicit. I\u0027m also preparing for the integration of recursive sequence problems.\n\n\n**Analyzing Mathematical Content**\n\nI\u0027m now formulating a robust structure for the Obsidian note, starting with the function continuity problems to establish a framework. The sequence problems will be organized logically next, to ensure that I clearly differentiate among theory, problems, and detailed solutions. I\u0027m focusing on integrating the lecturer\u0027s insights within the Markdown structure.\n\n\n",
+      "role": "model",
+      "tokenCount": 1736,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Processing Notes**\n\nI\u0027m currently focused on extracting information from the handwritten notes within the images. I\u0027m seeing mathematical notations and concepts taking shape. My next step will be transcribing the audio lecture to gain further insights and fill in any gaps from the written notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Unpacking Mathematical Concepts**\n\nI\u0027m deep into analyzing the handwritten notes and have identified key mathematical concepts and notations, particularly regarding function continuity and sequences. I\u0027ve successfully extracted two problems related to function continuity, including piecewise functions, and several examples related to sequences. I can discern the process of solving limit problems for these sequences and am working to understand from which term `n` the sequences diverge, given certain parameters.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Examining Sequences \u0026 Functions**\n\nI\u0027ve been analyzing the content and am now focused on the examples of sequences provided. I\u0027m exploring the nuances of their limits, monotonicity, and convergence. Furthermore, I\u0027ve successfully identified the structure and properties of the two problems on function continuity, determining which terms are of interest. I\u0027m also now linking the audio transcript to the handwritten notes to make sure everything lines up in the right order.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Lecture Content**\n\nI\u0027ve been meticulously analyzing the combined data set. I\u0027m focusing on organizing the mathematical concepts covered in the lecture. I\u0027m working now to generate the overall structure of the Markdown note in Obsidian, integrating both the images and the audio transcript. I\u0027m actively establishing the relationships between theory, problems, and solutions for the function continuity problems.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Reorganizing Lecture Structure**\n\nI\u0027ve been going through the combined material and I\u0027m reorganizing it into an Obsidian-friendly structure. Right now, I\u0027m making sure that the problems related to function continuity are placed first, and then will follow the examples of sequence analysis. In the Obsidian notes, I\u0027ll make sure to integrate the visual elements from the image files and the verbal explanations from the audio transcript.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Sequence Materials**\n\nI\u0027ve been analyzing the notes and audio transcription related to sequences. I\u0027m carefully organizing the various examples of limit calculations, including both those with straightforward solutions and the more complex cases. I am creating a systematic structure in the Obsidian note, starting with the theoretical definitions, moving through example calculations, and then tackling the more intricate problems that require deeper analysis, like `n^5 / 5^n`. I\u0027m integrating any \"tricks\" or insights from the lecturer\u0027s remarks.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing Obsidian Structure**\n\nI\u0027m now fully immersed in the details of sequence analysis, particularly with the `n^5 / 5^n` example. My task now is to ensure this complex analysis is clearly structured, with the lecturer\u0027s \"trick\" highlighted, and that the conclusion about its eventual convergence to zero and why the first terms are misleading is explicit. I\u0027m also preparing for the integration of recursive sequence problems.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Mathematical Content**\n\nI\u0027m now formulating a robust structure for the Obsidian note, starting with the function continuity problems to establish a framework. The sequence problems will be organized logically next, to ensure that I clearly differentiate among theory, problems, and detailed solutions. I\u0027m focusing on integrating the lecturer\u0027s insights within the Markdown structure.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Analiza Funkcij in Zaporedij]]\n\n# [[Zveznost Funkcij]]\n\n## [[Teorija]]\n\n### [[Definicija zveznosti]]\nFunkcija $f$ je zvezna v točki $a$, če velja:\n$$ \\forall \\epsilon \u003e 0, \\exists \\delta \u003e 0 : |x-a| \u003c \\delta \\implies |f(x) - f(a)| \u003c \\epsilon $$\nPraktično to preverjamo z limitami. Funkcija $f$ je zvezna v točki $a$, če so izpolnjeni trije pogoji:\n1.  Funkcija $f$ je v točki $a$ definirana (obstaja $f(a)$).\n2.  Limita funkcije $f$, ko se $x$ približuje $a$, obstaja. To pomeni, da sta leva in desna limita enaki:\n    $$ \\lim_{x \\to a^-} f(x) \u003d \\lim_{x \\to a^+} f(x) $$\n3.  Vrednost limite je enaka funkcijski vrednosti v točki $a$:\n    $$ \\lim_{x \\to a} f(x) \u003d f(a) $$\n\n## [[Naloge]]\n\n**Naloga 9:** Ali je funkcija $f(x)$ zvezna?\n$$ f(x) \u003d \\begin{cases} \\frac{e^{x-1}+x-2}{x-1} \u0026 ; \\ x\u003c1 \\\\ 2 \u0026 ; \\ x\u003d1 \\\\ \\frac{x^x}{x^{x-1}} \u0026 ; \\ x\u003e1 \\end{cases} $$\n\n**Naloga 10:** Ali obstaja tak polinom $p(x) \u003d ax+b$, da bo funkcija $f(x)$ zvezna na celotnem $\\mathbb{R}$?\n$$ f(x) \u003d \\begin{cases} (1+2x^2)^{\\frac{1}{x \\ln(1-x)}} \u0026 ; \\ x\u003c0 \\\\ p(x) \u0026 ; \\ 0 \\le x \\le 8 \\\\ \\frac{\\ln(x-7)}{\\sqrt{x}-2} \u0026 ; \\ x\u003e8 \\end{cases} $$\n\n## [[Reševanje]]\n\n### [[Rešitev Naloge 9]]\nPreveriti moramo zveznost v točki $a\u003d1$. Po definiciji morata biti leva in desna limita enaki funkcijski vrednosti $f(1)\u003d2$.\n\n**Leva limita:**\n$$ \\lim_{x \\to 1^-} f(x) \u003d \\lim_{x \\to 1^-} \\frac{e^{x-1}+x-2}{x-1} $$\nIzraz preoblikujemo tako, da ločimo znane limite:\n$$ \\lim_{x \\to 1^-} \\left( \\frac{e^{x-1}-1}{x-1} + \\frac{x-1}{x-1} \\right) \u003d \\lim_{x \\to 1^-} \\frac{e^{x-1}-1}{x-1} + \\lim_{x \\to 1^-} 1 $$\nUporabimo znano limito $\\lim_{t \\to 0} \\frac{e^t-1}{t} \u003d 1$, kjer je $t\u003dx-1$.\n$$ \u003d 1 + 1 \u003d 2 $$\nLeva limita je enaka $f(1)$.\n\n**Desna limita:**\n$$ \\lim_{x \\to 1^+} f(x) \u003d \\lim_{x \\to 1^+} \\frac{x^x}{x^{x-1}} \u003d \\lim_{x \\to 1^+} x^{x-(x-1)} \u003d \\lim_{x \\to 1^+} x^1 \u003d 1 $$\n\n***Kritična Analiza:***\nV zapisu rešitve je alternativni izračun desne limite, ki vodi do napačnega zaključka:\n$$ \\lim_{x \\to 1^+} \\frac{x^x}{x^{x-1}} \u003d \\lim_{x \\to 1^+} \\left( 1 + (x-1) \\right)^{\\frac{1}{x-1} \\cdot x} \u003d e^1 \u003d e $$\n**Opozorilo:** Ta pristop je napačen. Pravilo $\\lim (1+t)^{1/t} \u003d e$ velja, ko $t \\to 0$. Tukaj je $t\u003dx-1$, kar je pravilno. Vendar je eksponent preoblikovan v $\\frac{1}{x-1} \\cdot x$, in ker $x \\to 1$, se celoten eksponent obnaša kot $1 \\cdot 1 \u003d 1$. Zato dobimo $e^1 \u003d e$. Problem je v tem, da je osnova $x^x / x^{x-1}$ enaka preprosto $x$, zato je pravilna limita $1$. Prekompliciranje izraza je vodilo do napake.\n\n**Zaključek:**\nKer leva in desna limita nista enaki ($2 \\ne 1$), funkcija **ni zvezna** v točki $a\u003d1$.\n\n### [[Rešitev Naloge 10]]\nDa bi bila funkcija zvezna, morajo biti limiti v stičnih točkah ($x\u003d0$ in $x\u003d8$) enake vrednostim polinoma $p(x)$ v teh točkah.\n\n**Zveznost v točki $x\u003d0$:**\nMoramo izenačiti $\\lim_{x \\to 0^-} f(x)$ in $\\lim_{x \\to 0^+} f(x) \u003d p(0)$.\n$$ \\lim_{x \\to 0^-} (1+2x^2)^{\\frac{1}{x \\ln(1-x)}} $$\nTo je limita tipa $1^\\infty$, zato jo preoblikujemo z uporabo $e$:\n$$ \u003d \\lim_{x \\to 0^-} e^{\\ln\\left((1+2x^2)^{\\frac{1}{x \\ln(1-x)}}\\right)} \u003d e^{\\lim_{x \\to 0^-} \\frac{\\ln(1+2x^2)}{x \\ln(1-x)}} $$\nUporabimo znani limiti $\\lim_{t\\to 0} \\frac{\\ln(1+t)}{t} \u003d 1$ in $\\lim_{t\\to 0} \\frac{\\ln(1-t)}{-t} \u003d 1$:\n$$ \\lim_{x \\to 0^-} \\frac{\\ln(1+2x^2)}{2x^2} \\cdot \\frac{-x}{\\ln(1-x)} \\cdot \\frac{2x^2}{-x} \u003d 1 \\cdot 1 \\cdot \\lim_{x \\to 0^-} (-2x) \u003d 0 $$\nTako je eksponent enak 0 in limita je $e^0\u003d1$.\n\n***Kritična Analiza:***\nV zapiskih je prišlo do napake pri izračunu limite eksponenta: $\\lim \\frac{\\ln(1+2x^2)}{x \\ln(1-x)} \u003d \\lim \\frac{2x^2}{x(-x)} \u003d -2$.\n**Pravilna izpeljava:**\n$$ \\lim_{x \\to 0^-} \\frac{\\ln(1+2x^2)}{x \\ln(1-x)} \u003d \\lim_{x \\to 0^-} \\frac{2x^2}{x(-x)} \u003d -2 $$\nTorej je limita $e^{-2}$.\nVrednost polinoma v točki 0 je:\n$$ \\lim_{x \\to 0^+} p(x) \u003d \\lim_{x \\to 0^+} (ax+b) \u003d b $$\nZa zveznost v $x\u003d0$ mora veljati: $b \u003d e^{-2}$.\n\n**Zveznost v točki $x\u003d8$:**\nMoramo izenačiti $\\lim_{x \\to 8^-} f(x) \u003d p(8)$ in $\\lim_{x \\to 8^+} f(x)$.\nVrednost polinoma v točki 8 je:\n$$ \\lim_{x \\to 8^-} p(x) \u003d a(8)+b \u003d 8a + e^{-2} $$\nLimita funkcije, ko $x \\to 8^+$:\n$$ \\lim_{x \\to 8^+} \\frac{\\ln(x-7)}{\\sqrt{x}-2} $$\nUvedemo novo spremenljivko $t\u003dx-8$, torej $x\u003dt+8$. Ko $x \\to 8$, gre $t \\to 0$.\n$$ \\lim_{t \\to 0} \\frac{\\ln(t+1)}{\\sqrt{t+8}-2} \u003d \\lim_{t \\to 0} \\frac{\\ln(1+t)}{2\\sqrt{1+t/8}-2} \u003d \\lim_{t \\to 0} \\frac{t}{2((1+t/8)^{1/3}-1)} $$\nZ uporabo posplošitve binomskega izreka $(1+u)^k \\approx 1+ku$ za majhne $u$:\n$$ \\approx \\lim_{t \\to 0} \\frac{t}{2(1 + \\frac{1}{3}\\frac{t}{8} - 1)} \u003d \\lim_{t \\to 0} \\frac{t}{2(\\frac{t}{24})} \u003d \\lim_{t \\to 0} \\frac{t}{t/12} \u003d 12 $$\nZa zveznost v $x\u003d8$ mora veljati:\n$$ 8a + e^{-2} \u003d 12 \\implies 8a \u003d 12 - e^{-2} \\implies a \u003d \\frac{12 - e^{-2}}{8} $$\n**Opozorilo:** V zapiskih je izračun $a \u003d \\frac{3-e^{-2}}{2}$, kar se zdi, da je posledica deljenja $12/8 \u003d 3/2$. To je pravilno.\n\n**Zaključek:**\nIskani polinom je:\n$$ p(x) \u003d \\left(\\frac{12-e^{-2}}{8}\\right)x + e^{-2} \u003d \\frac{3}{2}x - \\frac{e^{-2}}{8}x + e^{-2} $$\nV zapiskih je rešitev $p(x) \u003d \\frac{3-e^{-2}}{2}x + e^{-2}$, kar je posledica napake pri poenostavljanju. Pravilno bi bilo $a \u003d \\frac{12-e^{-2}}{8} \u003d \\frac{3}{2} - \\frac{e^{-2}}{8}$.\n\n---\n\n# [[Zaporedja]]\n\n## [[Teorija]]\n### [[Definicija Zaporedja]]\nZaporedje je funkcija, ki preslika množico naravnih števil $\\mathbb{N}$ v množico realnih števil $\\mathbb{R}$.\n*   $a_n$: n-ti člen zaporedja.\n*   $(a_n)$: zaporedje s členi $a_n$.\n\n### [[Limita Zaporedja]]\nŠtevilo $a$ je limita zaporedja $(a_n)$, če za vsako poljubno majhno pozitivno število $\\epsilon$ obstaja tak člen zaporedja $a_{n_0}$, da so vsi naslednji členi znotraj $\\epsilon$-okolice števila $a$.\n$$ a \u003d \\lim_{n \\to \\infty} a_n \\iff \\forall \\epsilon \u003e 0, \\exists n_0 \\in \\mathbb{N} : \\forall n \\ge n_0 \\implies |a_n - a| \u003c \\epsilon $$\n*   **Konvergentno zaporedje:** Zaporedje, ki ima limito.\n*   **Divergentno zaporedje:** Zaporedje, ki nima limite.\n\n### [[Lastnosti Zaporedij]]\n*   **Monotonost:**\n    *   **Naraščajoče:** $\\forall n \\in \\mathbb{N}: a_n \\le a_{n+1}$\n    *   **Padajoče:** $\\forall n \\in \\mathbb{N}: a_n \\ge a_{n+1}$\n*   **Omejenost:**\n    *   **Navzgor omejeno:** Obstaja zgornja meja $M$, tako da $\\forall n \\in \\mathbb{N}: a_n \\le M$.\n    *   **Navzdol omejeno:** Obstaja spodnja meja $m$, tako da $\\forall n \\in \\mathbb{N}: a_n \\ge m$.\n    *   **Omejeno:** Če je omejeno navzgor in navzdol.\n\n**Izrek:** Vsako monotono in omejeno zaporedje je konvergentno.\n\n## [[Splošne Formule in Identitete]]\n*   **Limita tipa $1^\\infty$**: $\\lim_{n \\to \\infty} \\left(1 + \\frac{1}{n}\\right)^n \u003d e$\n*   **Primerjava rasti**: Eksponentne funkcije rastejo hitreje od polinomskih funkcij. $\\lim_{n \\to \\infty} \\frac{n^k}{a^n} \u003d 0$ za $a \u003e 1$.\n\n## [[Naloge]]\n\n1.  **Izračunaj limite zaporedij:**\n    a) $\\lim_{n \\to \\infty} \\frac{n^2}{2n^3+1}$\n    b) $\\lim_{n \\to \\infty} \\frac{n^2}{2n^2+1}$\n    c) $\\lim_{n \\to \\infty} \\frac{n^3}{2n^2+1}$\n    d) $\\lim_{n \\to \\infty} \\left(\\frac{n+2}{3n+4}\\right)^n$\n    e) $\\lim_{n \\to \\infty} \\frac{1+2^n}{3+4 \\cdot 5^n}$\n    f) $\\lim_{n \\to \\infty} \\frac{3^n+5^n}{3^{n+1}+5^{n+1}}$\n    g) $\\lim_{n \\to \\infty} (n - \\sqrt{n^2+1})$\n    h) $\\lim_{n \\to \\infty} (n + \\sqrt{n^2-n^3})$\n    i) $\\lim_{n \\to \\infty} \\left(\\frac{n^3+n-2}{n^3-1}\\right)^{n^2}$\n\n2.  **Za zaporedja preveri monotonost, omejenost in konvergenco:**\n    a) $a_n \u003d \\frac{1000n}{n^2+1}$\n    b) $a_n \u003d \\frac{n^2+2}{3n+4}$\n    c) $a_n \u003d 1 + \\frac{(-1)^n}{n}$\n\n3.  **Razišči zaporedje:** $a_n \u003d \\frac{n^5}{5^n}$.\n\n4.  **Od katerega člena naprej se členi zaporedja $a_n \u003d \\frac{2n^2+1}{1-3n^2}$ razlikujejo od limitne vrednosti za manj kot $\\frac{1}{20}$?**\n\n5.  **Razišči rekurzivno podana zaporedja:**\n    a) $a_1\u003d3, \\quad a_{n+1} \u003d \\frac{1}{3}a_n+2$\n    b) $a_1\u003d3, \\quad a_{n+1} \u003d \\frac{1}{2}a_n+2$\n    c) $a_1\u003d3, \\quad a_{n+1} \u003d a_n^2-2$\n    d) $a_n \u003d \\sqrt{10\\sqrt{10\\sqrt{... \\sqrt{10}}}}$ ($n$-krat)\n\n## [[Reševanje]]\n\n### [[Rešitev Naloge 1]]\na) $\\lim_{n \\to \\infty} \\frac{n^2}{2n^3+1} \u003d 0$ (stopnja imenovalca je višja od števca)\nb) $\\lim_{n \\to \\infty} \\frac{n^2}{2n^2+1} \u003d \\frac{1}{2}$ (stopnji sta enaki, gledamo vodilne koeficiente)\nc) $\\lim_{n \\to \\infty} \\frac{n^3}{2n^2+1} \u003d \\infty$ (stopnja števca je višja od imenovalca)\nd) $\\lim_{n \\to \\infty} \\left(\\frac{n+2}{3n+4}\\right)^n \u003d \\lim_{n \\to \\infty} \\left(\\frac{1}{3}\\right)^n \u003d 0$\ne) $\\lim_{n \\to \\infty} \\frac{1+2^n}{3+4 \\cdot 5^n} \u003d \\lim_{n \\to \\infty} \\frac{5^n(\\frac{1}{5^n} + (\\frac{2}{5})^n)}{5^n(\\frac{3}{5^n} + 4)} \u003d \\frac{0}{4}\u003d0$\nf) $\\lim_{n \\to \\infty} \\frac{5^n((\\frac{3}{5})^n+1)}{5^{n+1}((\\frac{3}{5})^{n+1}+1)} \u003d \\lim_{n \\to \\infty} \\frac{1}{5} \\cdot \\frac{1}{1} \u003d \\frac{1}{5}$\ng) $\\lim_{n \\to \\infty} (n - \\sqrt{n^2+1}) \\cdot \\frac{n + \\sqrt{n^2+1}}{n + \\sqrt{n^2+1}} \u003d \\lim_{n \\to \\infty} \\frac{n^2-(n^2+1)}{n + \\sqrt{n^2+1}} \u003d \\lim_{n \\to \\infty} \\frac{-1}{n + \\sqrt{n^2+1}} \u003d 0$\nh) $\\lim_{n \\to \\infty} (n - \\sqrt{n^3-n^2}) \u003d \\lim_{n \\to \\infty} \\frac{n^3-(n^3-n^2)}{n^2+n\\sqrt{n^3-n^2}+(\\sqrt{n^3-n^2})^2} \u003d \\lim_{n \\to \\infty} \\frac{n^2}{n^2(1+\\sqrt{1-1/n}+\\sqrt{(1-1/n)^2})} \u003d \\frac{1}{1+1+1} \u003d \\frac{1}{3}$\ni) $\\lim_{n \\to \\infty} \\left(1 + \\frac{n-1}{n^3-1}\\right)^{n^2} \u003d \\lim_{n \\to \\infty} \\left(1 + \\frac{1}{n^2+n+1}\\right)^{n^2} \u003d \\lim_{n \\to \\infty} \\left[\\left(1 + \\frac{1}{n^2+n+1}\\right)^{n^2+n+1}\\right]^{\\frac{n^2}{n^2+n+1}} \u003d e^1 \u003d e$\n\n### [[Rešitev Naloge 3]]\n**Razišči zaporedje:** $a_n \u003d \\frac{n^5}{5^n}$.\nPreverimo monotonost, omejenost in konvergenco.\n\n***Spominska Beležka:*** Predavatelj je najprej izračunal prvih nekaj členov: $a_1 \u003d 1/5$, $a_2 \u003d 32/25 \u003d 1.28$, $a_3 \u003d 243/125 \\approx 1.94$. To je ustvarilo vtis, da zaporedje narašča. To je bila namerna past, ki poudarja, da opazovanje prvih nekaj členov ni dovolj za dokaz.\n\n**Monotonost:** Preverimo, ali velja $a_n \\le a_{n+1}$:\n$$ \\frac{n^5}{5^n} \\le \\frac{(n+1)^5}{5^{n+1}} $$\n$$ 5n^5 \\le (n+1)^5 \\implies \\sqrt{5} \\cdot n \\le n+1 \\implies n(\\sqrt{5}-1) \\le 1 \\implies n \\le \\frac{1}{\\sqrt{5}-1} \\approx 2.53 $$\nNeenakost velja samo za $n\u003d1, 2$. Zaporedje narašča do drugega (ali tretjega) člena, nato pa začne padati. Torej zaporedje **ni monotono**.\n\n***Kritična Analiza:*** Eksponencialna funkcija v imenovalcu ($5^n$) raste bistveno hitreje kot potenčna funkcija v števcu ($n^5$). Čeprav na začetku potenčna funkcija \"vodi\", bo eksponentna rast sčasoma prevladala in ulomek potisnila proti nič.\n\n**Konvergenca:**\n$$ \\lim_{n \\to \\infty} \\frac{n^5}{5^n} \u003d 0 $$\nLimita je 0, ker eksponentna funkcija z osnovo večjo od 1 raste hitreje od katerekoli potenčne funkcije. Zaporedje **konvergira**.\n\n**Omejenost:**\nKer zaporedje konvergira, je **omejeno**.\n*   **Spodnja meja:** Ker so vsi členi pozitivni, je ena od spodnjih mej 0. Ker je limita 0, je $m \u003d \\inf(a_n) \u003d 0$.\n*   **Zgornja meja:** Ker zaporedje najprej narašča, nato pa pada, bo maksimum dosežen pri enem od prvih členov. Izračunamo: $a_2\u003d1.28, a_3 \\approx 1.94, a_4 \\approx 1.64$. Maksimum je $M\u003d\\sup(a_n) \u003d a_3$.\n\n### [[Rešitev Naloge 5d]]\n**Razišči zaporedje:** $a_n \u003d \\sqrt{10\\sqrt{10\\sqrt{... \\sqrt{10}}}}$ ($n$-krat).\n\n**Rekurzivni zapis:**\n$$ a_1 \u003d \\sqrt{10}, \\quad a_{n+1} \u003d \\sqrt{10 \\cdot a_n} $$\n\n**Monotonost:** Dokažimo z indukcijo, da je zaporedje naraščajoče ($a_n \\le a_{n+1}$).\n*   **Baza:** $a_1 \u003d \\sqrt{10} \\approx 3.16$, $a_2 \u003d \\sqrt{10\\sqrt{10}} \\approx 5.62$. $a_1 \\le a_2$. Drži.\n*   **Indukcijski korak:** Predpostavimo $a_n \\le a_{n+1}$. Dokazujemo $a_{n+1} \\le a_{n+2}$.\n    $$ a_n \\le a_{n+1} \\implies 10a_n \\le 10a_{n+1} \\implies \\sqrt{10a_n} \\le \\sqrt{10a_{n+1}} \\implies a_{n+1} \\le a_{n+2} $$\nZaporedje je **naraščajoče**.\n\n**Omejenost:** Dokažimo z indukcijo, da je navzgor omejeno z 10 ($a_n \\le 10$).\n*   **Baza:** $a_1 \u003d \\sqrt{10} \\le 10$. Drži.\n*   **Indukcijski korak:** Predpostavimo $a_n \\le 10$. Dokazujemo $a_{n+1} \\le 10$.\n    $$ a_n \\le 10 \\implies 10a_n \\le 100 \\implies \\sqrt{10a_n} \\le \\sqrt{100} \\implies a_{n+1} \\le 10 $$\nZaporedje je navzgor omejeno z 10. Ker je naraščajoče, je navzdol omejeno z $a_1 \u003d \\sqrt{10}$. Torej je zaporedje **omejeno**.\n\n**Konvergenca:**\nKer je zaporedje monotono in omejeno, **konvergira**. Izračunajmo limito $L$.\n$$ L \u003d \\lim_{n \\to \\infty} a_{n+1} \u003d \\lim_{n \\to \\infty} \\sqrt{10 a_n} \u003d \\sqrt{10 \\lim_{n \\to \\infty} a_n} \u003d \\sqrt{10L} $$\n$$ L \u003d \\sqrt{10L} \\implies L^2 \u003d 10L \\implies L(L-10) \u003d 0 $$\nMožni rešitvi sta $L\u003d0$ in $L\u003d10$. Ker je zaporedje naraščajoče in se začne pri $\\sqrt{10}$, limita ne more biti 0.\n$$ \\lim_{n \\to \\infty} a_n \u003d 10 $$",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 5860,
+      "parts": [{
+        "text": "# [[Analiza Funkcij in Zaporedij]]\n\n# [[Zveznost Funkcij]]\n\n## [[Teorija]]\n\n### [[Definicija zveznosti]]\nFunkcija $f$ je zvezna v to"
+      }, {
+        "text": "čki $a$, če velja:\n$$ \\forall \\epsilon \u003e 0, \\exists \\delta \u003e 0"
+      }, {
+        "text": " : |x-a| \u003c \\delta \\implies |f(x) - f(a)| \u003c \\epsilon"
+      }, {
+        "text": " $$\nPraktično to preverjamo z limitami. Funkcija $f$ je zvezna v točki $"
+      }, {
+        "text": "a$, če so izpolnjeni trije pogoji:\n1.  Funkcija $f$ je v"
+      }, {
+        "text": " točki $a$ definirana (obstaja $f(a)$).\n2.  Limita funkcije $f$,"
+      }, {
+        "text": " ko se $x$ približuje $a$, obstaja. To pomeni, da sta leva in desna"
+      }, {
+        "text": " limita enaki:\n    $$ \\lim_{x \\to a^-} f(x) \u003d \\lim_{x \\"
+      }, {
+        "text": "to a^+} f(x) $$\n3.  Vrednost limite je enaka funkcijski vrednosti v"
+      }, {
+        "text": " točki $a$:\n    $$ \\lim_{x \\to a} f(x) \u003d f(a) $$\n\n"
+      }, {
+        "text": "## [[Naloge]]\n\n**Naloga 9:** Ali je funkcija $f(x)$ zvez"
+      }, {
+        "text": "na?\n$$ f(x) \u003d \\begin{cases} \\frac{e^{x-1}+x-2"
+      }, {
+        "text": "}{x-1} \u0026 ; \\ x\u003c1 \\\\ 2 \u0026 ; \\ x\u003d1 \\\\ \\frac{x"
+      }, {
+        "text": "^x}{x^{x-1}} \u0026 ; \\ x\u003e1 \\end{cases} $$\n\n**Nal"
+      }, {
+        "text": "oga 10:** Ali obstaja tak polinom $p(x) \u003d ax+b$, da bo funkcija $f("
+      }, {
+        "text": "x)$ zvezna na celotnem $\\mathbb{R}$?\n$$ f(x) \u003d \\begin{"
+      }, {
+        "text": "cases} (1+2x^2)^{\\frac{1}{x \\ln(1-x)}} \u0026 ;"
+      }, {
+        "text": " \\ x\u003c0 \\\\ p(x) \u0026 ; \\ 0 \\le x \\le 8 \\\\ \\frac"
+      }, {
+        "text": "{\\ln(x-7)}{\\sqrt{x}-2} \u0026 ; \\ x\u003e8 \\end{cases}"
+      }, {
+        "text": " $$\n\n## [[Reševanje]]\n\n### [[Rešitev Naloge 9]]\nPreveriti moramo zvez"
+      }, {
+        "text": "nost v točki $a\u003d1$. Po definiciji morata biti leva in desna limita enaki funkci"
+      }, {
+        "text": "jski vrednosti $f(1)\u003d2$.\n\n**Leva limita:**\n$$ \\lim_{x \\to 1^-"
+      }, {
+        "text": "} f(x) \u003d \\lim_{x \\to 1^-} \\frac{e^{x-1"
+      }, {
+        "text": "}+x-2}{x-1} $$\nIzraz preoblikujemo tako, da ločimo zn"
+      }, {
+        "text": "ane limite:\n$$ \\lim_{x \\to 1^-} \\left( \\frac{e^{x-"
+      }, {
+        "text": "1}-1}{x-1} + \\frac{x-1}{x-1} \\right) \u003d"
+      }, {
+        "text": " \\lim_{x \\to 1^-} \\frac{e^{x-1}-1}{x-1"
+      }, {
+        "text": "} + \\lim_{x \\to 1^-} 1 $$\nUporabimo znano limito $\\lim_{"
+      }, {
+        "text": "t \\to 0} \\frac{e^t-1}{t} \u003d 1$, kjer je $t\u003dx"
+      }, {
+        "text": "-1$.\n$$ \u003d 1 + 1 \u003d 2 $$\nLeva limita je enaka $f("
+      }, {
+        "text": "1)$.\n\n**Desna limita:**\n$$ \\lim_{x \\to 1^+} f(x)"
+      }, {
+        "text": " \u003d \\lim_{x \\to 1^+} \\frac{x^x}{x^{x-1}}"
+      }, {
+        "text": " \u003d \\lim_{x \\to 1^+} x^{x-(x-1)} \u003d \\lim_{x \\"
+      }, {
+        "text": "to 1^+} x^1 \u003d 1 $$\n\n***Kritična Analiza:***\nV"
+      }, {
+        "text": " zapisu rešitve je alternativni izračun desne limite, ki vodi do napačnega zaključka:"
+      }, {
+        "text": "\n$$ \\lim_{x \\to 1^+} \\frac{x^x}{x^{x-1"
+      }, {
+        "text": "}} \u003d \\lim_{x \\to 1^+} \\left( 1 + (x-1) \\right)^{\\frac"
+      }, {
+        "text": "{1}{x-1} \\cdot x} \u003d e^1 \u003d e $$\n**Opozorilo:** Ta"
+      }, {
+        "text": " pristop je napačen. Pravilo $\\lim (1+t)^{1/t} \u003d e$ vel"
+      }, {
+        "text": "ja, ko $t \\to 0$. Tukaj je $t\u003dx-1$, kar je pravilno. V"
+      }, {
+        "text": "endar je eksponent preoblikovan v $\\frac{1}{x-1} \\cdot x$, in ker $x \\"
+      }, {
+        "text": "to 1$, se celoten eksponent obnaša kot $1 \\cdot 1 \u003d 1$. Zato dob"
+      }, {
+        "text": "imo $e^1 \u003d e$. Problem je v tem, da je osnova $x^x / x^{x-"
+      }, {
+        "text": "1}$ enaka preprosto $x$, zato je pravilna limita $1$. Prekompliciranje izraza je vod"
+      }, {
+        "text": "ilo do napake.\n\n**Zaključek:**\nKer leva in desna limita nista enaki ($"
+      }, {
+        "text": "2 \\ne 1$), funkcija **ni zvezna** v točki $a\u003d1$.\n\n### [[Rešitev Naloge 10]]\nDa bi bila funkcija zvezna, morajo biti limiti v st"
+      }, {
+        "text": "ičnih točkah ($x\u003d0$ in $x\u003d8$) enake vrednostim polinoma $"
+      }, {
+        "text": "p(x)$ v teh točkah.\n\n**Zveznost v točki $x\u003d0$:**\n"
+      }, {
+        "text": "Moramo izenačiti $\\lim_{x \\to 0^-} f(x)$ in $\\lim_{x \\to "
+      }, {
+        "text": "0^+} f(x) \u003d p(0)$.\n$$ \\lim_{x \\to 0^-}"
+      }, {
+        "text": " (1+2x^2)^{\\frac{1}{x \\ln(1-x)}} $$\nTo je limita"
+      }, {
+        "text": " tipa $1^\\infty$, zato jo preoblikujemo z uporabo $e$:\n$$ \u003d \\lim_{x \\"
+      }, {
+        "text": "to 0^-} e^{\\ln\\left((1+2x^2)^{\\frac{1}{x \\ln"
+      }, {
+        "text": "(1-x)}}\\right)} \u003d e^{\\lim_{x \\to 0^-} \\frac{\\ln(1+"
+      }, {
+        "text": "2x^2)}{x \\ln(1-x)}} $$\nUporabimo znani limiti $\\lim_{t"
+      }, {
+        "text": "\\to 0} \\frac{\\ln(1+t)}{t} \u003d 1$ in $\\lim_{t\\to"
+      }, {
+        "text": " 0} \\frac{\\ln(1-t)}{-t} \u003d 1$:\n$$ \\lim_{"
+      }, {
+        "text": "x \\to 0^-} \\frac{\\ln(1+2x^2)}{2x^2}"
+      }, {
+        "text": " \\cdot \\frac{-x}{\\ln(1-x)} \\cdot \\frac{2x^2}{-x} \u003d "
+      }, {
+        "text": "1 \\cdot 1 \\cdot \\lim_{x \\to 0^-} (-2x) \u003d 0"
+      }, {
+        "text": " $$\nTako je eksponent enak 0 in limita je $e^0\u003d1$.\n\n***Kritič"
+      }, {
+        "text": "na Analiza:***\nV zapiskih je prišlo do napake pri izračunu limite eksponenta:"
+      }, {
+        "text": " $\\lim \\frac{\\ln(1+2x^2)}{x \\ln(1-x)} \u003d \\lim \\"
+      }, {
+        "text": "frac{2x^2}{x(-x)} \u003d -2$.\n**Pravilna izpeljava:**\n$$"
+      }, {
+        "text": " \\lim_{x \\to 0^-} \\frac{\\ln(1+2x^2)}{x \\"
+      }, {
+        "text": "ln(1-x)} \u003d \\lim_{x \\to 0^-} \\frac{2x^2"
+      }, {
+        "text": "}{x(-x)} \u003d -2 $$\nTorej je limita $e^{-2}$.\nVrednost polin"
+      }, {
+        "text": "oma v točki 0 je:\n$$ \\lim_{x \\to 0^+} p(x) \u003d"
+      }, {
+        "text": " \\lim_{x \\to 0^+} (ax+b) \u003d b $$\nZa zveznost v"
+      }, {
+        "text": " $x\u003d0$ mora veljati: $b \u003d e^{-2}$.\n\n**Zveznost v točki $"
+      }, {
+        "text": "x\u003d8$:**\nMoramo izenačiti $\\lim_{x \\to 8^-} f(x"
+      }, {
+        "text": ") \u003d p(8)$ in $\\lim_{x \\to 8^+} f(x)$.\nVrednost polinoma"
+      }, {
+        "text": " v točki 8 je:\n$$ \\lim_{x \\to 8^-} p(x) \u003d"
+      }, {
+        "text": " a(8)+b \u003d 8a + e^{-2} $$\nLimita funkcije, ko $x \\"
+      }, {
+        "text": "to 8^+$:\n$$ \\lim_{x \\to 8^+} \\frac{\\ln(x-"
+      }, {
+        "text": "7)}{\\sqrt{x}-2} $$\nUvedemo novo spremenljivko $t\u003dx"
+      }, {
+        "text": "-8$, torej $x\u003dt+8$. Ko $x \\to 8$, gre $t \\to"
+      }, {
+        "text": " 0$.\n$$ \\lim_{t \\to 0} \\frac{\\ln(t+1)}{\\sqrt{"
+      }, {
+        "text": "t+8}-2} \u003d \\lim_{t \\to 0} \\frac{\\ln(1+t)}{"
+      }, {
+        "text": "2\\sqrt{1+t/8}-2} \u003d \\lim_{t \\to 0} \\frac"
+      }, {
+        "text": "{t}{2((1+t/8)^{1/3}-1)} $$\nZ uporabo posplošit"
+      }, {
+        "text": "ve binomskega izreka $(1+u)^k \\approx 1+ku$ za majhne $u"
+      }, {
+        "text": "$:\n$$ \\approx \\lim_{t \\to 0} \\frac{t}{2(1 + \\frac{1"
+      }, {
+        "text": "}{3}\\frac{t}{8} - 1)} \u003d \\lim_{t \\to 0} \\frac"
+      }, {
+        "text": "{t}{2(\\frac{t}{24})} \u003d \\lim_{t \\to 0} \\frac{"
+      }, {
+        "text": "t}{t/12} \u003d 12 $$\nZa zveznost v $x\u003d8$ mora veljati:"
+      }, {
+        "text": "\n$$ 8a + e^{-2} \u003d 12 \\implies 8a \u003d 12 - e"
+      }, {
+        "text": "^{-2} \\implies a \u003d \\frac{12 - e^{-2}}{8} $$\n**Opozor"
+      }, {
+        "text": "ilo:** V zapiskih je izračun $a \u003d \\frac{3-e^{-2}}{2}$,"
+      }, {
+        "text": " kar se zdi, da je posledica deljenja $12/8 \u003d 3/2$. To je pravil"
+      }, {
+        "text": "no.\n\n**Zaključek:**\nIskani polinom je:\n$$ p(x) \u003d \\"
+      }, {
+        "text": "left(\\frac{12-e^{-2}}{8}\\right)x + e^{-2} \u003d \\frac{3"
+      }, {
+        "text": "}{2}x - \\frac{e^{-2}}{8}x + e^{-2} $$\nV zapiskih"
+      }, {
+        "text": " je rešitev $p(x) \u003d \\frac{3-e^{-2}}{2}x + e^{-2"
+      }, {
+        "text": "}$, kar je posledica napake pri poenostavljanju. Pravilno bi bilo $a \u003d \\frac{"
+      }, {
+        "text": "12-e^{-2}}{8} \u003d \\frac{3}{2} - \\frac{e^{-2}}{"
+      }, {
+        "text": "8}$.\n\n---\n\n# [[Zaporedja]]\n\n## [[Teorija]]\n### [[Definicija Zaporedja]]\nZaporedje je funkcija, ki preslika množico naravnih števil $\\mathbb{N}$ v množ"
+      }, {
+        "text": "ico realnih števil $\\mathbb{R}$.\n*   $a_n$: n-ti člen zaporedja.\n"
+      }, {
+        "text": "*   $(a_n)$: zaporedje s členi $a_n$.\n\n### [[Limita Zaporedja]]\nŠtevilo $a$ je limita zaporedja $(a_n)$, če za vsako pol"
+      }, {
+        "text": "jubno majhno pozitivno število $\\epsilon$ obstaja tak člen zaporedja $a_{n_0"
+      }, {
+        "text": "}$, da so vsi naslednji členi znotraj $\\epsilon$-okolice števila $a$.\n$$ a"
+      }, {
+        "text": " \u003d \\lim_{n \\to \\infty} a_n \\iff \\forall \\epsilon \u003e 0, \\"
+      }, {
+        "text": "exists n_0 \\in \\mathbb{N} : \\forall n \\ge n_0 \\implies |a"
+      }, {
+        "text": "_n - a| \u003c \\epsilon $$\n*   **Konvergentno zaporedje:** Zaporedje"
+      }, {
+        "text": ", ki ima limito.\n*   **Divergentno zaporedje:** Zaporedje, ki n"
+      }, {
+        "text": "ima limite.\n\n### [[Lastnosti Zaporedij]]\n*   **Monotonost:**\n    *   **"
+      }, {
+        "text": "Naraščajoče:** $\\forall n \\in \\mathbb{N}: a_n \\le a_{n+1}$"
+      }, {
+        "text": "\n    *   **Padajoče:** $\\forall n \\in \\mathbb{N}: a_n \\ge a_{"
+      }, {
+        "text": "n+1}$\n*   **Omejenost:**\n    *   **Navzgor omejeno:**"
+      }, {
+        "text": " Obstaja zgornja meja $M$, tako da $\\forall n \\in \\mathbb{N}: a_n"
+      }, {
+        "text": " \\le M$.\n    *   **Navzdol omejeno:** Obstaja spodnja meja $m$, tako da $\\"
+      }, {
+        "text": "forall n \\in \\mathbb{N}: a_n \\ge m$.\n    *   **Omejeno"
+      }, {
+        "text": ":** Če je omejeno navzgor in navzdol.\n\n**Izrek:** Vsako monotono in ome"
+      }, {
+        "text": "jeno zaporedje je konvergentno.\n\n## [[Splošne Formule in Identitete]]"
+      }, {
+        "text": "\n*   **Limita tipa $1^\\infty$**: $\\lim_{n \\to \\infty} \\left("
+      }, {
+        "text": "1 + \\frac{1}{n}\\right)^n \u003d e$\n*   **Primerjava rasti**:"
+      }, {
+        "text": " Eksponentne funkcije rastejo hitreje od polinomskih funkcij. $\\lim_{n \\to \\infty}"
+      }, {
+        "text": " \\frac{n^k}{a^n} \u003d 0$ za $a \u003e 1$.\n\n## [[Naloge]]\n\n1.  **Izračunaj limite zaporedij:**\n    a) $\\lim_{n"
+      }, {
+        "text": " \\to \\infty} \\frac{n^2}{2n^3+1}$\n    b) $\\"
+      }, {
+        "text": "lim_{n \\to \\infty} \\frac{n^2}{2n^2+1}$\n    "
+      }, {
+        "text": "c) $\\lim_{n \\to \\infty} \\frac{n^3}{2n^2+1"
+      }, {
+        "text": "}$\n    d) $\\lim_{n \\to \\infty} \\left(\\frac{n+2}{3"
+      }, {
+        "text": "n+4}\\right)^n$\n    e) $\\lim_{n \\to \\infty} \\frac{1+2"
+      }, {
+        "text": "^n}{3+4 \\cdot 5^n}$\n    f) $\\lim_{n \\to \\infty} \\"
+      }, {
+        "text": "frac{3^n+5^n}{3^{n+1}+5^{n+1}}$\n    "
+      }, {
+        "text": "g) $\\lim_{n \\to \\infty} (n - \\sqrt{n^2+1})$\n"
+      }, {
+        "text": "    h) $\\lim_{n \\to \\infty} (n + \\sqrt{n^2-"
+      }, {
+        "text": "n^3})$\n    i) $\\lim_{n \\to \\infty} \\left(\\frac{n^"
+      }, {
+        "text": "3+n-2}{n^3-1}\\right)^{n^2}$\n\n2.  **Za"
+      }, {
+        "text": " zaporedja preveri monotonost, omejenost in konvergenco:**\n    a) $a_n \u003d \\"
+      }, {
+        "text": "frac{1000n}{n^2+1}$\n    b) $a_n \u003d \\"
+      }, {
+        "text": "frac{n^2+2}{3n+4}$\n    c) $a_n \u003d 1 +"
+      }, {
+        "text": " \\frac{(-1)^n}{n}$\n\n3.  **Razišči zaporedje:** $a_n"
+      }, {
+        "text": " \u003d \\frac{n^5}{5^n}$.\n\n4.  **Od katerega člena nap"
+      }, {
+        "text": "rej se členi zaporedja $a_n \u003d \\frac{2n^2+1}{1-3n^"
+      }, {
+        "text": "2}$ razlikujejo od limitne vrednosti za manj kot $\\frac{1}{20}$?**\n\n5."
+      }, {
+        "text": "  **Razišči rekurzivno podana zaporedja:**\n    a) $a_"
+      }, {
+        "text": "1\u003d3, \\quad a_{n+1} \u003d \\frac{1}{3}a_n+2"
+      }, {
+        "text": "$\n    b) $a_1\u003d3, \\quad a_{n+1} \u003d \\frac{"
+      }, {
+        "text": "1}{2}a_n+2$\n    c) $a_1\u003d3, \\quad a"
+      }, {
+        "text": "_{n+1} \u003d a_n^2-2$\n    d) $a_n \u003d \\sqrt{"
+      }, {
+        "text": "10\\sqrt{10\\sqrt{... \\sqrt{10}}}}$ ($n$-krat)\n\n"
+      }, {
+        "text": "## [[Reševanje]]\n\n### [[Rešitev Naloge 1]]\na) $\\lim_{n"
+      }, {
+        "text": " \\to \\infty} \\frac{n^2}{2n^3+1} \u003d 0$ ("
+      }, {
+        "text": "stopnja imenovalca je višja od števca)\nb) $\\lim_{n \\to \\infty} \\"
+      }, {
+        "text": "frac{n^2}{2n^2+1} \u003d \\frac{1}{2}$ (stopnji"
+      }, {
+        "text": " sta enaki, gledamo vodilne koeficiente)\nc) $\\lim_{n \\to \\infty}"
+      }, {
+        "text": " \\frac{n^3}{2n^2+1} \u003d \\infty$ (stopnja števca"
+      }, {
+        "text": " je višja od imenovalca)\nd) $\\lim_{n \\to \\infty} \\left(\\frac"
+      }, {
+        "text": "{n+2}{3n+4}\\right)^n \u003d \\lim_{n \\to \\infty} \\left(\\"
+      }, {
+        "text": "frac{1}{3}\\right)^n \u003d 0$\ne) $\\lim_{n \\to \\infty} \\"
+      }, {
+        "text": "frac{1+2^n}{3+4 \\cdot 5^n} \u003d \\lim_{n \\to \\infty"
+      }, {
+        "text": "} \\frac{5^n(\\frac{1}{5^n} + (\\frac{2}{5})^"
+      }, {
+        "text": "n)}{5^n(\\frac{3}{5^n} + 4)} \u003d \\frac{0}{4}\u003d"
+      }, {
+        "text": "0$\nf) $\\lim_{n \\to \\infty} \\frac{5^n((\\frac{3"
+      }, {
+        "text": "}{5})^n+1)}{5^{n+1}((\\frac{3}{5})^{n+1}+"
+      }, {
+        "text": "1)} \u003d \\lim_{n \\to \\infty} \\frac{1}{5} \\cdot \\frac{"
+      }, {
+        "text": "1}{1} \u003d \\frac{1}{5}$\ng) $\\lim_{n \\to \\infty}"
+      }, {
+        "text": " (n - \\sqrt{n^2+1}) \\cdot \\frac{n + \\sqrt{n^"
+      }, {
+        "text": "2+1}}{n + \\sqrt{n^2+1}} \u003d \\lim_{n \\to \\infty"
+      }, {
+        "text": "} \\frac{n^2-(n^2+1)}{n + \\sqrt{n^2+1"
+      }, {
+        "text": "}} \u003d \\lim_{n \\to \\infty} \\frac{-1}{n + \\sqrt{n^2+1"
+      }, {
+        "text": "}} \u003d 0$\nh) $\\lim_{n \\to \\infty} (n - \\sqrt{n^3-n^2}) \u003d \\lim_{n \\to \\infty} \\frac{n^3-("
+      }, {
+        "text": "n^3-n^2)}{n^2+n\\sqrt{n^3-n^"
+      }, {
+        "text": "2}+(\\sqrt{n^3-n^2})^2} \u003d \\lim_{n \\to \\infty}"
+      }, {
+        "text": " \\frac{n^2}{n^2(1+\\sqrt{1-1/n}+\\sqrt"
+      }, {
+        "text": "{(1-1/n)^2})} \u003d \\frac{1}{1+1+1} \u003d \\frac"
+      }, {
+        "text": "{1}{3}$\ni) $\\lim_{n \\to \\infty} \\left(1 + \\frac{n"
+      }, {
+        "text": "-1}{n^3-1}\\right)^{n^2} \u003d \\lim_{n \\to \\infty} \\"
+      }, {
+        "text": "left(1 + \\frac{1}{n^2+n+1}\\right)^{n^2} \u003d \\"
+      }, {
+        "text": "lim_{n \\to \\infty} \\left[\\left(1 + \\frac{1}{n^2+n+1}\\right)^{n^2+n+1}\\right]^{\\frac{n^2}{n^2+n+"
+      }, {
+        "text": "1}} \u003d e^1 \u003d e$\n\n### [[Rešitev Naloge 3]]\n**Razišči zap"
+      }, {
+        "text": "oredje:** $a_n \u003d \\frac{n^5}{5^n}$.\nPreverimo monotonost, ome"
+      }, {
+        "text": "jenost in konvergenco.\n\n***Spominska Beležka:*** Predavatelj je najprej izrač"
+      }, {
+        "text": "unal prvih nekaj členov: $a_1 \u003d 1/5$, $a_2 \u003d 3"
+      }, {
+        "text": "2/25 \u003d 1.28$, $a_3 \u003d 243/125 \\"
+      }, {
+        "text": "approx 1.94$. To je ustvarilo vtis, da zaporedje narašča. To"
+      }, {
+        "text": " je bila namerna past, ki poudarja, da opazovanje prvih nekaj členov ni dovolj za dok"
+      }, {
+        "text": "az.\n\n**Monotonost:** Preverimo, ali velja $a_n \\le a_{n+1"
+      }, {
+        "text": "}$:\n$$ \\frac{n^5}{5^n} \\le \\frac{(n+1)^5}{5^{"
+      }, {
+        "text": "n+1}} $$\n$$ 5n^5 \\le (n+1)^5 \\implies \\sqrt{5} \\cdot n \\le n+1 \\implies n(\\sqrt{5}-1) \\le 1"
+      }, {
+        "text": " \\implies n \\le \\frac{1}{\\sqrt{5}-1} \\approx 2.53"
+      }, {
+        "text": " $$\nNeenakost velja samo za $n\u003d1, 2$. Zaporedje narašča do druge"
+      }, {
+        "text": "ga (ali tretjega) člena, nato pa začne padati. Torej zaporedje **ni monot"
+      }, {
+        "text": "ono**.\n\n***Kritična Analiza:*** Eksponencialna funkcija v imenovalcu ($5^n$)"
+      }, {
+        "text": " raste bistveno hitreje kot potenčna funkcija v števcu ($n^5$). Čeprav na"
+      }, {
+        "text": " začetku potenčna funkcija \"vodi\", bo eksponentna rast sčasoma prevladala in ulome"
+      }, {
+        "text": "k potisnila proti nič.\n\n**Konvergenca:**\n$$ \\lim_{n \\to \\infty} \\"
+      }, {
+        "text": "frac{n^5}{5^n} \u003d 0 $$\nLimita je 0, ker eksponentna funkcija"
+      }, {
+        "text": " z osnovo večjo od 1 raste hitreje od katerekoli potenčne funkcije. Zaporedje **"
+      }, {
+        "text": "konvergira**.\n\n**Omejenost:**\nKer zaporedje konvergira, je **omejeno**.\n"
+      }, {
+        "text": "*   **Spodnja meja:** Ker so vsi členi pozitivni, je ena od spodnjih mej 0. Ker"
+      }, {
+        "text": " je limita 0, je $m \u003d \\inf(a_n) \u003d 0$.\n*   **Z"
+      }, {
+        "text": "gornja meja:** Ker zaporedje najprej narašča, nato pa pada, bo maksimum dosežen pri"
+      }, {
+        "text": " enem od prvih členov. Izračunamo: $a_2\u003d1.28, a_3 \\"
+      }, {
+        "text": "approx 1.94, a_4 \\approx 1.64$. Maksimum je $M\u003d\\"
+      }, {
+        "text": "sup(a_n) \u003d a_3$.\n\n### [[Rešitev Naloge 5d]]\n**R"
+      }, {
+        "text": "azišči zaporedje:** $a_n \u003d \\sqrt{10\\sqrt{10\\sqrt"
+      }, {
+        "text": "{... \\sqrt{10}}}}$ ($n$-krat).\n\n**Rekurzivni zapis:**\n$$ a_1"
+      }, {
+        "text": " \u003d \\sqrt{10}, \\quad a_{n+1} \u003d \\sqrt{10 \\cdot a_n"
+      }, {
+        "text": "} $$\n\n**Monotonost:** Dokažimo z indukcijo, da je zaporedje naraščajo"
+      }, {
+        "text": "če ($a_n \\le a_{n+1}$).\n*   **Baza:** $a_1"
+      }, {
+        "text": " \u003d \\sqrt{10} \\approx 3.16$, $a_2 \u003d \\sqrt{1"
+      }, {
+        "text": "0\\sqrt{10}} \\approx 5.62$. $a_1 \\le a_2$. Dr"
+      }, {
+        "text": "ži.\n*   **Indukcijski korak:** Predpostavimo $a_n \\le a_{n+1"
+      }, {
+        "text": "}$. Dokazujemo $a_{n+1} \\le a_{n+2}$.\n    $$ a_"
+      }, {
+        "text": "n \\le a_{n+1} \\implies 10a_n \\le 10a_{"
+      }, {
+        "text": "n+1} \\implies \\sqrt{10a_n} \\le \\sqrt{10a_{"
+      }, {
+        "text": "n+1}} \\implies a_{n+1} \\le a_{n+2} $$\nZaporedje je **"
+      }, {
+        "text": "naraščajoče**.\n\n**Omejenost:** Dokažimo z indukcijo, da je"
+      }, {
+        "text": " navzgor omejeno z 10 ($a_n \\le 10$).\n*   **Baza:**"
+      }, {
+        "text": " $a_1 \u003d \\sqrt{10} \\le 10$. Drži.\n*   **"
+      }, {
+        "text": "Indukcijski korak:** Predpostavimo $a_n \\le 10$. Dokazujemo $"
+      }, {
+        "text": "a_{n+1} \\le 10$.\n    $$ a_n \\le 10 \\"
+      }, {
+        "text": "implies 10a_n \\le 100 \\implies \\sqrt{10a_n}"
+      }, {
+        "text": " \\le \\sqrt{100} \\implies a_{n+1} \\le 10 $$\n"
+      }, {
+        "text": "Zaporedje je navzgor omejeno z 10. Ker je naraščajoče, je navzdol omejeno"
+      }, {
+        "text": " z $a_1 \u003d \\sqrt{10}$. Torej je zaporedje **omejeno**.\n\n**Kon"
+      }, {
+        "text": "vergenca:**\nKer je zaporedje monotono in omejeno, **konvergira**. Izračunajmo"
+      }, {
+        "text": " limito $L$.\n$$ L \u003d \\lim_{n \\to \\infty} a_{n+1}"
+      }, {
+        "text": " \u003d \\lim_{n \\to \\infty} \\sqrt{10 a_n} \u003d \\sqrt{1"
+      }, {
+        "text": "0 \\lim_{n \\to \\infty} a_n} \u003d \\sqrt{10L} $$\n"
+      }, {
+        "text": "$$ L \u003d \\sqrt{10L} \\implies L^2 \u003d 10L \\implies L("
+      }, {
+        "text": "L-10) \u003d 0 $$\nMožni rešitvi sta $L\u003d0$ in $L\u003d1"
+      }, {
+        "text": "0$. Ker je zaporedje naraščajoče in se začne pri $\\sqrt{10}$, limita ne"
+      }, {
+        "text": " more biti 0.\n$$ \\lim_{n \\to \\infty} a_n \u003d 10 $$"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}
