@@ -1,0 +1,227 @@
+$x=2m$
+$x\implies$ physical quantity
+$2 \implies$ measured number
+$m \implies$ measuring unit
+
+$x = 2m$  => physical quantity value
+
+Physical quantities:
+# Fizikalne količine
+
+| Fizikalna količina | Oznaka | Enote |
+| ------------------ | ------ | ----------------- |
+| čas                | t      | s, h (sekunde, ure) |
+| masa               | m      | kg                |
+| dolžina            | s, l, h  | m, cm             |
+| temperatura        | T      | K, °C             |
+| el. tok            | I      | A (ampera)        |
+| svetilnost         | Iᵥ (Lu) | cd (Ca)           |
+
+### Derived Units
+
+| Quantity | Symbol | Unit |
+| :--- | :--- | :--- |
+| Pritisk | p | Pa (N/m²) |
+| Delo | A | J (Nm) |
+| Moč | P | W (Watt) |
+
+### Prefixes
+
+| Symbol | Prefix | Value |
+| :----- | :----- | :---- |
+| G      | giga   | 10⁹   |
+| M      | mega   | 10⁶   |
+| k      | kilo   | 10³   |
+| d      | deci   | 10⁻¹  |
+| c      | centi  | 10⁻²  |
+| m      | mili   | 10⁻³  |
+| µ      | mikro  | 10⁻⁶  |
+
+---
+## 1. Error Calculations (Računi z napakami)
+
+### Relative vs. Absolute Error
+
+| Relative Error (Relativna napaka) | Absolute Error (Absolutna napaka) |
+| :--- | :--- |
+| **Example:** $X = 2.1 \cdot (1 \pm \frac{0.2}{2.1})$ | **Example:** $X = 2.1 \, \text{m} \pm 0.2 \, \text{m}$ |
+| Represents the error as a fraction of the average value. | Represents the direct uncertainty in the measurement. |
+
+---
+
+### Example Task: Calculating Average and Error
+
+Given the following measurements:
+- $X_1 = 102.3 \, \text{m}$
+- $X_2 = 102.2 \, \text{m}$
+- $X_3 = 102.4 \, \text{m}$
+- $X_4 = 102.1 \, \text{m}$
+- $X_5 = 102.2 \, \text{m}$
+- $X_6 = 102.0 \, \text{m}$
+
+**1. Calculate the average (povprečje):**
+$$
+\bar{X} = \frac{\sum X_i}{n}
+$$
+$$
+\bar{X} = \frac{102.3 + 102.2 + 102.4 + 102.1 + 102.2 + 102.0}{6} \approx 102.2 \, \text{m}
+$$
+
+**2. Calculate the deviations (Δ):**
+- $\Delta_1 = |102.3 - 102.2| = 0.1$
+- $\Delta_2 = |102.2 - 102.2| = 0.0$
+- $\Delta_3 = |102.4 - 102.2| = 0.2$
+- $\Delta_4 = |102.1 - 102.2| = 0.1$
+- $\Delta_5 = |102.2 - 102.2| = 0.0$
+- $\Delta_6 = |102.0 - 102.2| = 0.2$
+
+The final result is presented with the calculated average and the estimated error.
+
+---
+
+### Operations with Absolute Errors
+
+**Addition:**
+> When adding measurements, their absolute errors are added together.
+$$
+X_1 = 1.2 \, \text{m} \pm 0.1 \, \text{m}
+$$
+$$
+X_2 = 1.4 \, \text{m} \pm 0.2 \, \text{m}
+$$
+$$
+X = X_1 + X_2 = (1.2 + 1.4) \pm (0.1 + 0.2) = 2.6 \, \text{m} \pm 0.3 \, \text{m}
+$$
+
+**Subtraction:**
+> Even when subtracting measurements, their absolute errors are **still added** together.
+$$
+X = X_1 - X_2 = (1.2 - 1.4) \pm (0.1 + 0.2) = -0.2 \, \text{m} \pm 0.3 \, \text{m}
+$$
+
+**Multiplication and Division:**
+> For multiplication and division, we use and sum the **relative errors**.
+$$
+a = 5.1(1 \pm 0.3) \, \text{m}
+$$
+$$
+b = 2.0(1 \pm 0.2) \, \text{m}
+$$
+$$
+S = a \cdot b = (5.1 \cdot 2.0) \cdot (1 \pm (0.3 + 0.2)) = 10.0 (1 \pm 0.5) \, \text{m}^2
+$$
+
+---
+
+## 2. Kinematics Formulas
+
+**Velocity (hitrost):**
+$$
+v = \frac{x}{t} \implies v = \frac{dx}{dt}
+$$
+
+**Position (lega):**
+$$
+x = x_0 + v \cdot t \quad (\text{for constant } v)
+$$
+
+### Free Fall vs. Throw
+A simple diagram illustrating vertical motion under gravity.
+```
+Prosti pad (Free Fall)        Met (Throw)
+      ↓                         ↑ ↓  
+      ●                         ● ●
+      |                         | ↓ 
+    -----                     -----
+```
+
+---
+
+## 3. Dynamics
+
+### Forces on an Inclined Plane (Sile na klancu)
+
+This diagram shows the forces acting on a block on an inclined plane.
+- $F_g$: Force of gravity
+- $F_n$: Normal force
+- $F_d$: Driving force
+- $F_{tr}$: Force of friction
+
+```mermaid
+graph TD
+    subgraph Inclined Plane
+        A[Block]
+    end
+
+    subgraph Forces
+        Fg[(& #8595 ; F_g)]
+        Fn[(& #8599 ; F_n)]
+        Fd[(& #8600 ; F_d)]
+        Ftr[(& #8598 ; F_tr)]
+    end
+
+    A -- applied to center --> Fg
+    A -- perpendicular from surface --> Fn
+    A -- parallel to surface, up --> Fd
+    A -- parallel to surface, down --> Ftr
+
+    style A fill: #f9f ,stroke: #333 ,stroke-width:2px
+    
+```
+
+
+### Pulleys (Škripci)
+
+**Fixed Pulley (Obremen):**
+The pulling force equals the gravitational force.
+$$ \vec{F}_B = \vec{F}_g $$
+
+```mermaid
+graph TD
+    A(Ceiling) -- Rope --> P(Pulley);
+    P -- Rope --> W 1(Weight F_g ↓);
+    P -- Rope --> F(Pull F_B ↓);
+
+    style P fill: #f9f ,stroke: #333 ,stroke-width:2px
+```
+
+
+**Movable Pulley (Prosti, gibljivi):**
+A system with a movable pulley.
+$$ \sum \vec{F}_v = \vec{F}_g $$
+$$ F_v + F_v = F_g \implies 2 F_v = F_g $$
+
+```mermaid
+graph TD
+    subgraph System
+        A(Support) -- Rope --> P 1(Fixed Pulley);
+        P 1 -- Rope --> F(Pull F_v ↑);
+        RopeEnd -- Rope --> P 2(Movable Pulley);
+        A -- Rope --> RopeEnd;
+        P 2 -- attached --> W(Weight F_g ↓);
+        F -.-> P 2;
+    end
+
+    style P 1 fill: #f9f ,stroke: #333 ,stroke-width:2px
+    style P 2 fill: #f9f ,stroke: #333 ,stroke-width:2px
+```
+
+
+---
+
+## 4. Thermodynamics (Termodinamika)
+
+**Specific Heat:**
+The heat required to change the temperature of a substance.
+$$
+Q = m \cdot c \cdot \Delta T
+$$
+- For water: $c_{\text{voda}} = 4200 \, \text{J/kgK}$
+
+**Latent Heat:**
+The heat required to change the phase of a substance (e.g., melting or boiling).
+$$
+Q = m \cdot q
+$$
+- $q$: Specific latent heat of fusion (talilna) or vaporization (izparilna).
+- Latent heat of fusion for water: $q_{t, H_2 O} = 336 \, \text{kJ/kg}$

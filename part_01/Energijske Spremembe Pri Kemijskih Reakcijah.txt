@@ -1,0 +1,452 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes to know:\n1. The user\u0027s files (metadata) are chronologically labeled, so the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other, given the topic.\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT PROTOCOL**\n\n1.  **Initial Output Protocol:** Begin your response *only* with the content note itself. Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The foundational structure of the notes must accurately reflect the material presented (what was said/seen). Your first duty is to record the lecturer\u0027s content and the user\u0027s notes, **as they are**. Minimal AI interjection should occur in the main body; use dedicated analytical sections for added insight.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  **Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5.  **Conceptual Strengthening Tasks (NEW):** At the conclusion of the synthesized notes, generate a section of \u0027Conceptual Strengthening Tasks\u0027. These tasks must:\n    *   Mimic the structure and difficulty of the examples/problems presented in the current lecture material.\n    *   Include \u0027Challenges\u0027 designed to connect the current university concepts with foundational knowledge from high school or prior courses, forcing the user to utilize a broad, integrated understanding.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a highly knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1sIrSkL96OUjQSMyosPVB55LQDiKB-7zg"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1xxJ-SjGkJTGcAd5yUEhoVCOuR7-z_2Od"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1CrxP8QvLef2_3MAX_mNCnAB93yfMa7on"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "12I3nDILrX-IJa-qZ5zcqZRuct525B_he"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1okqVT_eTOnHVDqWNEmsaye6Lzk95n_aM"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1nYzoEhROyPBTHX5TuS5zcyfew21Ik_Ao"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1HXUAsDd6Nh8-EaqunkImuPQznVtmLwGF"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1qToNogY3tgeudHjQQafedexrTNHtlmHh"
+      },
+      "role": "user",
+      "tokenCount": 68417
+    }, {
+      "driveAudio": {
+        "id": "17nsib_Er4hlbDcgRV-uxLrcsAJeE21Sx"
+      },
+      "role": "user",
+      "tokenCount": 148640
+    }, {
+      "text": "**Integrating Information:**\n\nI\u0027m currently working on structuring an Obsidian note that combines the user\u0027s handwritten notes and audio transcript on thermochemistry. My primary goal is to synthesize the information into a clear and organized format. I\u0027m focusing on identifying and extracting key concepts from both sources, and I plan to build a cohesive outline that reflects the user\u0027s learning journey. I\u0027m aiming for easy navigability and a solid framework.\n\n\n**Outlining the Structure**\n\nMy focus is shifting to building a strong structure for the Obsidian note. I\u0027m prioritizing clarity and logical flow, aiming to create a user-friendly resource that effectively combines handwritten and audio insights on thermochemistry. I\u0027ve begun to identify key concepts like the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law, along with representing reactions in Thermochemical Equations and Enthalpy Diagrams. I\u0027m working to arrange these elements into a comprehensible hierarchy, so that this will serve as a handy reference guide.\n\n\n**Synthesizing Concepts**\n\nMy focus is now on extracting and synthesizing the key thermochemistry concepts from the user\u0027s notes and transcript. I\u0027m prioritizing clarity and accuracy, organizing the information around core principles like the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law. I\u0027m also ensuring that different types of Enthalpy Changes are clearly defined, along with examples. My aim is to create a well-structured and comprehensive reference. Additionally, I am including the material on the Kinetic Theory of Gases in a separate section to acknowledge its different origins.\n\n\n**Prioritizing Structure**\n\nI\u0027m now prioritizing the structure of the Obsidian note, starting with the key concepts in the thermochemistry material. I\u0027ve begun to incorporate definitions and explanations of the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law, along with reactions and types of Enthalpy. I\u0027m aiming for clarity and a logical flow, using headings and subheadings for an organized and user-friendly resource. I\u0027ve separated Kinetic Theory of Gases into its own section to provide a clear distinction. I\u0027m leveraging LaTeX for equations and using SMILES for chemical structures for better legibility.\n\n\n**Consolidating \u0026 Refining**\n\nI\u0027ve been working on refining the structure and content of the Obsidian note. I\u0027ve successfully incorporated key concepts like the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law, along with detailed explanations and examples. I\u0027ve also added a dedicated section for the Kinetic Theory of Gases. I\u0027m focusing on ensuring clarity, logical flow, and adding insightful \"critical analysis\" sections. I am also working on providing justifications and warnings on certain key points. I\u0027m aiming for a comprehensive and user-friendly resource.\n\n\n**Synthesizing Knowledge**\n\nI\u0027m now fully immersed in the process of extracting, organizing, and integrating key concepts on thermochemistry from the user\u0027s notes and the audio transcript. I\u0027m prioritizing clarity and logical flow within the Obsidian note. I\u0027m focusing on providing concise explanations for important concepts such as the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law. Furthermore, I\u0027ve created dedicated sections for defining various types of Enthalpy Changes. I\u0027m also preparing to introduce the \"Critical Analysis\" and \"Justification\" layer as I flesh out the main structure.\n\n\n**Organizing \u0026 Integrating Concepts**\n\nI\u0027ve been working on structuring the Obsidian note, starting by integrating the main thermochemistry concepts with clear definitions and relevant examples from the handwritten notes and the audio transcript. I\u0027m prioritizing the inclusion of key elements such as the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law, along with different reaction types. I\u0027m using a logical order and including LaTeX for formulas. I\u0027m preparing to insert conceptual strengthening tasks to cement understanding.\n\n\n",
+      "role": "model",
+      "tokenCount": 1793,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Integrating Information:**\n\nI\u0027m currently working on structuring an Obsidian note that combines the user\u0027s handwritten notes and audio transcript on thermochemistry. My primary goal is to synthesize the information into a clear and organized format. I\u0027m focusing on identifying and extracting key concepts from both sources, and I plan to build a cohesive outline that reflects the user\u0027s learning journey. I\u0027m aiming for easy navigability and a solid framework.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining the Structure**\n\nMy focus is shifting to building a strong structure for the Obsidian note. I\u0027m prioritizing clarity and logical flow, aiming to create a user-friendly resource that effectively combines handwritten and audio insights on thermochemistry. I\u0027ve begun to identify key concepts like the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law, along with representing reactions in Thermochemical Equations and Enthalpy Diagrams. I\u0027m working to arrange these elements into a comprehensible hierarchy, so that this will serve as a handy reference guide.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Concepts**\n\nMy focus is now on extracting and synthesizing the key thermochemistry concepts from the user\u0027s notes and transcript. I\u0027m prioritizing clarity and accuracy, organizing the information around core principles like the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law. I\u0027m also ensuring that different types of Enthalpy Changes are clearly defined, along with examples. My aim is to create a well-structured and comprehensive reference. Additionally, I am including the material on the Kinetic Theory of Gases in a separate section to acknowledge its different origins.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Prioritizing Structure**\n\nI\u0027m now prioritizing the structure of the Obsidian note, starting with the key concepts in the thermochemistry material. I\u0027ve begun to incorporate definitions and explanations of the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law, along with reactions and types of Enthalpy. I\u0027m aiming for clarity and a logical flow, using headings and subheadings for an organized and user-friendly resource. I\u0027ve separated Kinetic Theory of Gases into its own section to provide a clear distinction. I\u0027m leveraging LaTeX for equations and using SMILES for chemical structures for better legibility.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Consolidating \u0026 Refining**\n\nI\u0027ve been working on refining the structure and content of the Obsidian note. I\u0027ve successfully incorporated key concepts like the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law, along with detailed explanations and examples. I\u0027ve also added a dedicated section for the Kinetic Theory of Gases. I\u0027m focusing on ensuring clarity, logical flow, and adding insightful \"critical analysis\" sections. I am also working on providing justifications and warnings on certain key points. I\u0027m aiming for a comprehensive and user-friendly resource.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Knowledge**\n\nI\u0027m now fully immersed in the process of extracting, organizing, and integrating key concepts on thermochemistry from the user\u0027s notes and the audio transcript. I\u0027m prioritizing clarity and logical flow within the Obsidian note. I\u0027m focusing on providing concise explanations for important concepts such as the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law. Furthermore, I\u0027ve created dedicated sections for defining various types of Enthalpy Changes. I\u0027m also preparing to introduce the \"Critical Analysis\" and \"Justification\" layer as I flesh out the main structure.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing \u0026 Integrating Concepts**\n\nI\u0027ve been working on structuring the Obsidian note, starting by integrating the main thermochemistry concepts with clear definitions and relevant examples from the handwritten notes and the audio transcript. I\u0027m prioritizing the inclusion of key elements such as the First Law, Enthalpy, Calorimetry, and Hess\u0027s Law, along with different reaction types. I\u0027m using a logical order and including LaTeX for formulas. I\u0027m preparing to insert conceptual strengthening tasks to cement understanding.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Termokemija in Entalpija]]\n\n## [[Informacije o Reakciji]]\n\nInformacijo o energijskih spremembah med kemijsko reakcijo lahko dobimo na dva glavna načina: s termokemijskimi enačbami in z entalpijskimi diagrami.\n\n### [[Termokemijska Enačba]]\n\nTo je standardna kemijska enačba, ki pa vključuje tudi podatek o spremembi entalpije ($\\Delta H$).\n\n**Primer razpada vode:**\n$$\n\\text{H}_2\\text{O}_{(g)} \\rightarrow \\text{H}_{2(g)} + \\frac{1}{2}\\text{O}_{2(g)} \\quad \\Delta H \u003d +286 \\, \\text{kJ}\n$$\n*   **Pozitiven predznak $\\Delta H$** pomeni, da je reakcija **endotermna**. Sistem (reaktanti) je moral prejeti energijo (toploto) iz okolice, da je reakcija potekla.\n*   Agregatna stanja (g, l, s, aq) so **obvezna**, saj je vrednost $\\Delta H$ odvisna od njih.\n\n**Primer sinteze vode (obratna reakcija):**\n$$\n\\text{H}_{2(g)} + \\frac{1}{2}\\text{O}_{2(g)} \\rightarrow \\text{H}_2\\text{O}_{(g)} \\quad \\Delta H \u003d -286 \\, \\text{kJ}\n$$\n*   **Negativen predznak $\\Delta H$** pomeni, da je reakcija **eksotermna**. Sistem je med reakcijo sprostil energijo (toploto) v okolico.\n\n\u003e #### **Note to Self: Logika Predznaka**\n\u003e Ko obrnemo smer kemijske reakcije, se spremeni tudi predznak $\\Delta H$. To je logična posledica **prvega zakona termodinamike (zakon o ohranitvi energije)**. Če je za razpad molekule potrebna določena količina energije, se mora natanko enaka količina energije sprostiti, ko ista molekula nastane iz elementov. Energija ne more izginiti ali nastati iz nič.\n\n### [[Entalpijski Diagram]]\n\nTo je grafični prikaz energijskih nivojev reaktantov in produktov.\n\n*   **y-os:** Predstavlja entalpijo ($H$). Višje na osi pomeni višjo energijo.\n*   **x-os:** Predstavlja potek reakcije.\n\n**Primer sinteze in razpada vode:**\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Setting up the plot\nfig, ax \u003d plt.subplots(figsize\u003d(10, 7))\n\n# Energy levels\nreactants_level \u003d 0\nproducts_gas_level \u003d -241.8  # Corrected value for H2O(g) formation\nproducts_liquid_level \u003d -286.0 # Value for H2O(l) formation\n\n# Reactants\nax.hlines(reactants_level, 0, 1, colors\u003d\u0027blue\u0027, linestyles\u003d\u0027solid\u0027, label\u003d\u0027Reaktanti (H₂ + ½O₂)\u0027)\nax.text(0.5, reactants_level + 10, \u0027H₂(g) + ½O₂(g)\u0027, ha\u003d\u0027center\u0027, fontsize\u003d12, color\u003d\u0027blue\u0027)\n\n# Products (Gas)\nax.hlines(products_gas_level, 1.5, 2.5, colors\u003d\u0027red\u0027, linestyles\u003d\u0027solid\u0027, label\u003d\u0027Produkt (H₂O(g))\u0027)\nax.text(2.0, products_gas_level + 10, \u0027H₂O(g)\u0027, ha\u003d\u0027center\u0027, fontsize\u003d12, color\u003d\u0027red\u0027)\n\n# Products (Liquid)\nax.hlines(products_liquid_level, 1.5, 2.5, colors\u003d\u0027purple\u0027, linestyles\u003d\u0027solid\u0027, label\u003d\u0027Produkt (H₂O(l))\u0027)\nax.text(2.0, products_liquid_level - 20, \u0027H₂O(l)\u0027, ha\u003d\u0027center\u0027, fontsize\u003d12, color\u003d\u0027purple\u0027)\n\n\n# Arrows and Labels\n# Exothermic reaction (gas formation)\nax.arrow(1, reactants_level, 0, products_gas_level - reactants_level + 5,\n         head_width\u003d0.05, head_length\u003d10, fc\u003d\u0027black\u0027, ec\u003d\u0027black\u0027)\nax.text(1.1, (reactants_level + products_gas_level) / 2, \u0027Eksotermno\\nΔH \u003d -241.8 kJ\u0027, va\u003d\u0027center\u0027, ha\u003d\u0027left\u0027, fontsize\u003d11)\n\n# Endothermic reaction (gas decomposition)\nax.arrow(1.6, products_gas_level, 0, reactants_level - products_gas_level - 5,\n         head_width\u003d0.05, head_length\u003d10, fc\u003d\u0027gray\u0027, ec\u003d\u0027gray\u0027)\nax.text(1.7, (reactants_level + products_gas_level) / 2, \u0027Endotermno\\nΔH \u003d +241.8 kJ\u0027, va\u003d\u0027center\u0027, ha\u003d\u0027left\u0027, fontsize\u003d11, color\u003d\u0027gray\u0027)\n\n\n# Condensation\nax.arrow(2.4, products_gas_level, 0, products_liquid_level - products_gas_level + 5,\n         head_width\u003d0.05, head_length\u003d5, fc\u003d\u0027green\u0027, ec\u003d\u0027green\u0027)\nax.text(2.5, (products_gas_level + products_liquid_level) / 2, \u0027Kondenzacija\\nΔH \u003d -44.2 kJ\u0027, va\u003d\u0027center\u0027, ha\u003d\u0027left\u0027, fontsize\u003d10, color\u003d\u0027green\u0027)\n\n\n# Plot settings\nax.set_xlim(0, 3.5)\nax.set_ylim(products_liquid_level - 40, reactants_level + 50)\nax.set_ylabel(\u0027Entalpija (H) [kJ]\u0027, fontsize\u003d12)\nax.set_xticks([])\nax.set_title(\u0027Entalpijski Diagram za Sintezo Vode\u0027, fontsize\u003d14)\nax.spines[\u0027top\u0027].set_visible(False)\nax.spines[\u0027right\u0027].set_visible(False)\nax.spines[\u0027bottom\u0027].set_visible(False)\nax.get_yaxis().set_ticks([])\nax.grid(axis\u003d\u0027y\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.7)\n\nplt.show()\n```*   **Puščica navzdol:** Eksotermna reakcija (energija se sprošča).\n*   **Puščica navzgor:** Endotermna reakcija (energija se porablja).\n\n## [[Entalpije Faznih Prehodov]]\n\nSpremembe agregatnega stanja so prav tako povezane z energijskimi spremembami.\n\n*   **Taljenje (trdno → tekoče):** Endotermno. `[[entalpija taljenja]]` ($\\Delta H_{fus}$).\n*   **Izparevanje (tekoče → plinasto):** Endotermno. `[[entalpija izparevanja]]` ($\\Delta H_{vap}$).\n*   **Kondenzacija (plinasto → tekoče):** Eksotermno.\n*   **Zmrzovanje (tekoče → trdno):** Eksotermno.\n\n**Primer: Segrevanje ledu v paro**\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Heat values (qualitative)\nheat1 \u003d np.linspace(0, 20)\nheat_fus \u003d 20\nheat2 \u003d np.linspace(20, 70)\nheat_vap \u003d 70\nheat3 \u003d np.linspace(70, 90)\n\n# Temperature values\ntemp1 \u003d np.linspace(-20, 0, len(heat1))\ntemp_fus \u003d np.full_like(np.linspace(0, 15), 0)\nheat_fus_range \u003d np.linspace(heat1[-1], heat1[-1] + 15)\ntemp2 \u003d np.linspace(0, 100, len(heat2))\ntemp_vap \u003d np.full_like(np.linspace(0, 25), 100)\nheat_vap_range \u003d np.linspace(heat2[-1], heat2[-1] + 25)\ntemp3 \u003d np.linspace(100, 120, len(heat3))\n\n# Plotting\nfig, ax \u003d plt.subplots(figsize\u003d(10, 6))\n\nax.plot(heat1, temp1, label\u003d\u0027Segrevanje ledu\u0027)\nax.plot(heat_fus_range, temp_fus, label\u003d\u0027Taljenje (Melting)\u0027, color\u003d\u0027red\u0027)\nax.plot(heat2, temp2, label\u003d\u0027Segrevanje vode\u0027)\nax.plot(heat_vap_range, temp_vap, label\u003d\u0027Izparevanje (Boiling)\u0027, color\u003d\u0027green\u0027)\nax.plot(heat3, temp3, label\u003d\u0027Segrevanje pare\u0027)\n\n# Annotations\nax.text(10, -10, \u0027Led (s)\u0027, ha\u003d\u0027center\u0027)\nax.text(27.5, 5, \u0027Taljenje\u0027, ha\u003d\u0027center\u0027, color\u003d\u0027red\u0027)\nax.text(45, 50, \u0027Voda (l)\u0027, ha\u003d\u0027center\u0027)\nax.text(82.5, 105, \u0027Vrenje\u0027, ha\u003d\u0027center\u0027, color\u003d\u0027green\u0027)\nax.text(85, 115, \u0027Para (g)\u0027, ha\u003d\u0027center\u0027)\n\n# Axis and Title\nax.set_xlabel(\u0027Absorbirana Toplota (Q) [kJ]\u0027, fontsize\u003d12)\nax.set_ylabel(\u0027Temperatura (T) [°C]\u0027, fontsize\u003d12)\nax.set_title(\u0027Krivulja Segrevanja Vode\u0027, fontsize\u003d14)\nax.grid(True, linestyle\u003d\u0027--\u0027, alpha\u003d0.6)\nax.legend()\n\nplt.show()```\n\u003e #### **Kritična Analiza: Pomen platojev**\n\u003e Vodoravni deli grafa (platoji) predstavljajo fazne prehode. Čeprav sistemu nenehno dovajamo toploto, se temperatura ne spreminja. Vsa dovedena energija se porabi za prekinitev medmolekulskih vezi (npr. vodikovih vezi v ledu ali vodi), ne pa za povečanje kinetične energije molekul (kar bi se kazalo kot dvig temperature). To je ključnega pomena za razumevanje, da toplota in temperatura nista ista stvar.\n\n## [[Hessov Zakon]]\n\n**Sprememba entalpije za celotno reakcijo je enaka vsoti sprememb entalpij posameznih korakov, ne glede na pot, po kateri reakcija poteka.** To pomeni, da je entalpija **funkcija stanja**.\n\n$$\n\\Delta H_{reakcije}^\\circ \u003d \\sum \\Delta H_{tvorbena}^\\circ (\\text{produkti}) - \\sum \\Delta H_{tvorbena}^\\circ (\\text{reaktanti})\n$$\n\n\u003e #### **Kritična Analiza: Zakaj je Hessov zakon uporaben?**\n\u003e Mnogih reakcij ni mogoče izvesti v laboratoriju pod čistimi pogoji. Na primer, pri nepopolnem gorenju ogljika v ogljikov monoksid ($C + \\frac{1}{2}O_2 \\rightarrow CO$) vedno nastane tudi nekaj $CO_2$. Zato je direktno merjenje $\\Delta H$ za to reakcijo zelo težko.\n\u003e Hessov zakon nam omogoča, da to vrednost **izračunamo** s pomočjo reakcij, ki jih **lahko** izmerimo:\n\u003e 1. Popolno gorenje ogljika: $C_{(s)} + O_{2(g)} \\rightarrow CO_{2(g)}$  ($\\Delta H_1$)\n\u003e 2. Gorenje ogljikovega monoksida: $CO_{(g)} + \\frac{1}{2}O_{2(g)} \\rightarrow CO_{2(g)}$ ($\\Delta H_2$)\n\u003e\n\u003e Ker želimo reakcijo $C \\rightarrow CO$, lahko drugo enačbo obrnemo in seštejemo:\n\u003e $$\n\u003e C_{(s)} + O_{2(g)} \\rightarrow CO_{2(g)} \\quad (\\Delta H_1)\n\u003e $$\n\u003e $$\n\u003e CO_{2(g)} \\rightarrow CO_{(g)} + \\frac{1}{2}O_{2(g)} \\quad (-\\Delta H_2)\n\u003e $$\n\u003e $$\n\u003e \\text{------------------------------------------}\n\u003e $$\n\u003e $$\n\u003e C_{(s)} + \\frac{1}{2}O_{2(g)} \\rightarrow CO_{(g)} \\quad \\Delta H_{reakcije} \u003d \\Delta H_1 - \\Delta H_2\n\u003e $$\n\u003e S tem smo zaobšli eksperimentalno težavo.\n\n## [[Tipi Entalpijskih Spremem]]\n\n### [[Vezne Entalpije]]\nEnergija, potrebna za prekinitev 1 mola določene vezi v plinastem stanju.\n*   **Prekinitev vezi:** Vedno endotermna (zahteva energijo).\n*   **Nastanek vezi:** Vedno eksotermna (sprošča energijo).\n\n**Primer: Razpad metana ($CH_4$)**\n$$\n\\text{CH}_4 \\rightarrow \\text{C} + 4\\text{H} \\quad \\Delta H \u003d +1664 \\, \\text{kJ/mol}\n$$\n\u003e #### **Warning: Povprečna vs. specifična vezna entalpija**\n\u003e Energija, potrebna za prekinitev prve C-H vezi v metanu ($CH_4 \\rightarrow CH_3 + H$), ni enaka energiji za prekinitev druge ($CH_3 \\rightarrow CH_2 + H$). Kemično okolje vpliva na moč vezi. Vrednosti, ki jih najdemo v tabelah, so običajno **povprečne vezne entalpije**, izračunane iz velikega števila različnih molekul, in so zato približek. V našem primeru bi bila povprečna C-H vezna entalpija $1664 / 4 \u003d 416$ kJ/mol.\n\n### [[Drugi Tipi Entalpij]]\n*   **[[Tvorbena Entalpija]] ($\\Delta H_f^\\circ$):** Sprememba entalpije, ko 1 mol snovi nastane iz svojih elementov v njihovih standardnih stanjih.\n*   **[[Sežigna Entalpija]] ($\\Delta H_c^\\circ$):** Sproščena toplota, ko 1 mol snovi popolnoma zgori v kisiku pod standardnimi pogoji.\n*   **[[Disociacijska Entalpija]]:** Energija, potrebna za razpad molekule na dva radikala (npr. $Cl_2 \\rightarrow 2Cl\\cdot$).\n*   **[[Atomizacijska Entalpija]]:** Energija, potrebna za nastanek 1 mola plinastih atomov iz elementa v standardnem stanju (npr. $\\frac{1}{2}Cl_2 \\rightarrow Cl_{(g)}$).\n*   **[[Sublimacijska Entalpija]]:** Energija za prehod snovi direktno iz trdnega v plinasto stanje (npr. $Na_{(s)} \\rightarrow Na_{(g)}$).\n*   **[[Ionizacijska Entalpija]]:** Energija, potrebna za odstranitev elektrona iz 1 mola plinastih atomov ali ionov.\n*   **[[Elektronska Afiniteta]]:** Energijska sprememba, ko 1 mol plinastih atomov sprejme elektron.\n\n---\n### **Conceptual Strengthening Tasks**\n\n1.  **Naloga:** Izračunajte standardno reakcijsko entalpijo za reakcijo:\n    $$\n    2\\text{CO}_{(g)} + \\text{O}_{2(g)} \\rightarrow 2\\text{CO}_{2(g)}\n    $$\n    Uporabite naslednje standardne tvorbene entalpije ($\\Delta H_f^\\circ$):\n    *   $\\Delta H_f^\\circ (\\text{CO}_{(g)}) \u003d -110.5 \\, \\text{kJ/mol}$\n    *   $\\Delta H_f^\\circ (\\text{CO}_{2(g)}) \u003d -393.5 \\, \\text{kJ/mol}$\n\n2.  **Naloga:** Pri sežigu 1.0 g propana ($C_3H_8$) v kalorimetru se je temperatura vode povečala za 7.5 K. Toplotna kapaciteta celotnega kalorimetra (vključno z vodo) je 9.8 kJ/K. Izračunajte sežigno entalpijo propana v kJ/mol. (Molska masa $C_3H_8 \\approx 44.1$ g/mol).\n\n3.  **Izziv (Povezovanje znanja):** Ocenite reakcijsko entalpijo za hidrogeniranje etena v etan, $C_2H_4 + H_2 \\rightarrow C_2H_6$, z uporabo povprečnih veznih entalpij. Primerjajte svojo oceno s standardno reakcijsko entalpijo, izračunano iz tvorbenih entalpij.\n    *   **Podatki (Vezne entalpije v kJ/mol):** C\u003dC: 614, C-C: 348, C-H: 413, H-H: 436.\n    *   **Podatki ($\\Delta H_f^\\circ$ v kJ/mol):** $\\Delta H_f^\\circ(C_2H_4) \u003d +52.3$, $\\Delta H_f^\\circ(C_2H_6) \u003d -84.7$.\n    *   **Namig:** Spomnite se, katere vezi se prekinejo (reaktanti) in katere nastanejo (produkti). Narišite si strukture molekul! Zakaj se rezultata razlikujeta?",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 4229,
+      "parts": [{
+        "text": "# [[Termokemija in Entalpija]]\n\n## [[Informacije o Reakciji]]\n\nInform"
+      }, {
+        "text": "acijo o energijskih spremembah med kemijsko reakcijo lahko dobimo na dva glavna nač"
+      }, {
+        "text": "ina: s termokemijskimi enačbami in z entalpijskimi diagrami.\n\n###"
+      }, {
+        "text": " [[Termokemijska Enačba]]\n\nTo je standardna kemijska enačba, ki pa vključuje tudi"
+      }, {
+        "text": " podatek o spremembi entalpije ($\\Delta H$).\n\n**Primer razpada vode:**\n$$\n\\"
+      }, {
+        "text": "text{H}_2\\text{O}_{(g)} \\rightarrow \\text{H}_{2(g)} + \\frac{"
+      }, {
+        "text": "1}{2}\\text{O}_{2(g)} \\quad \\Delta H \u003d +286 \\, \\text{kJ"
+      }, {
+        "text": "}\n$$\n*   **Pozitiven predznak $\\Delta H$** pomeni, da je reakcija **"
+      }, {
+        "text": "endotermna**. Sistem (reaktanti) je moral prejeti energijo (toploto) iz okolice"
+      }, {
+        "text": ", da je reakcija potekla.\n*   Agregatna stanja (g, l, s,"
+      }, {
+        "text": " aq) so **obvezna**, saj je vrednost $\\Delta H$ odvisna od njih.\n\n**Primer"
+      }, {
+        "text": " sinteze vode (obratna reakcija):**\n$$\n\\text{H}_{2(g)} +"
+      }, {
+        "text": " \\frac{1}{2}\\text{O}_{2(g)} \\rightarrow \\text{H}_2\\text{"
+      }, {
+        "text": "O}_{(g)} \\quad \\Delta H \u003d -286 \\, \\text{kJ}\n$$\n*"
+      }, {
+        "text": "   **Negativen predznak $\\Delta H$** pomeni, da je reakcija **eksotermna**."
+      }, {
+        "text": " Sistem je med reakcijo sprostil energijo (toploto) v okolico.\n\n\u003e #### **"
+      }, {
+        "text": "Note to Self: Logika Predznaka**\n\u003e Ko obrnemo smer kemijske reakcije, se sprem"
+      }, {
+        "text": "eni tudi predznak $\\Delta H$. To je logična posledica **prvega zakona termodinamike ("
+      }, {
+        "text": "zakon o ohranitvi energije)**. Če je za razpad molekule potrebna določena količina"
+      }, {
+        "text": " energije, se mora natanko enaka količina energije sprostiti, ko ista molekula nastane iz element"
+      }, {
+        "text": "ov. Energija ne more izginiti ali nastati iz nič.\n\n### [[Entalpijski Diagram]]\n\nTo je graf"
+      }, {
+        "text": "ični prikaz energijskih nivojev reaktantov in produktov.\n\n*   **y-os:**"
+      }, {
+        "text": " Predstavlja entalpijo ($H$). Višje na osi pomeni višjo energijo.\n*   **"
+      }, {
+        "text": "x-os:** Predstavlja potek reakcije.\n\n**Primer sinteze in razpada vode:**\n\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Setting up the plot\nfig, ax \u003d plt"
+      }, {
+        "text": ".subplots(figsize\u003d(10, 7))\n\n# Energy levels\nreactants_level \u003d 0\nproducts_gas"
+      }, {
+        "text": "_level \u003d -241.8  # Corrected value for H2O(g) formation\nproducts_liquid"
+      }, {
+        "text": "_level \u003d -286.0 # Value for H2O(l) formation\n\n# Reactants\nax."
+      }, {
+        "text": "hlines(reactants_level, 0, 1, colors\u003d\u0027blue\u0027, linestyles\u003d\u0027solid\u0027, label\u003d\u0027Re"
+      }, {
+        "text": "aktanti (H₂ + ½O₂)\u0027)\nax.text(0.5, reactants_level + "
+      }, {
+        "text": "10, \u0027H₂(g) + ½O₂(g)\u0027, ha\u003d\u0027center\u0027, fontsize\u003d12, color\u003d\u0027blue\u0027)"
+      }, {
+        "text": "\n\n# Products (Gas)\nax.hlines(products_gas_level, 1.5, "
+      }, {
+        "text": "2.5, colors\u003d\u0027red\u0027, linestyles\u003d\u0027solid\u0027, label\u003d\u0027Produkt (H₂O(g))\u0027)\nax"
+      }, {
+        "text": ".text(2.0, products_gas_level + 10, \u0027H₂O(g)\u0027, ha\u003d\u0027center"
+      }, {
+        "text": "\u0027, fontsize\u003d12, color\u003d\u0027red\u0027)\n\n# Products (Liquid)\nax.hlines(products_"
+      }, {
+        "text": "liquid_level, 1.5, 2.5, colors\u003d\u0027purple\u0027, linestyles\u003d\u0027solid\u0027,"
+      }, {
+        "text": " label\u003d\u0027Produkt (H₂O(l))\u0027)\nax.text(2.0, products_liquid_"
+      }, {
+        "text": "level - 20, \u0027H₂O(l)\u0027, ha\u003d\u0027center\u0027, fontsize\u003d12, color\u003d\u0027"
+      }, {
+        "text": "purple\u0027)\n\n\n# Arrows and Labels\n# Exothermic reaction (gas formation)\nax.arrow(1, reactants"
+      }, {
+        "text": "_level, 0, products_gas_level - reactants_level + 5,\n         head_width"
+      }, {
+        "text": "\u003d0.05, head_length\u003d10, fc\u003d\u0027black\u0027, ec\u003d\u0027black\u0027)\nax.text(1"
+      }, {
+        "text": ".1, (reactants_level + products_gas_level) / 2, \u0027Eksotermno"
+      }, {
+        "text": "\\nΔH \u003d -241.8 kJ\u0027, va\u003d\u0027center\u0027, ha\u003d\u0027left\u0027, fontsize\u003d11"
+      }, {
+        "text": ")\n\n# Endothermic reaction (gas decomposition)\nax.arrow(1.6, products_gas_level, "
+      }, {
+        "text": "0, reactants_level - products_gas_level - 5,\n         head_width\u003d0.0"
+      }, {
+        "text": "5, head_length\u003d10, fc\u003d\u0027gray\u0027, ec\u003d\u0027gray\u0027)\nax.text(1.7"
+      }, {
+        "text": ", (reactants_level + products_gas_level) / 2, \u0027Endotermno\\nΔH"
+      }, {
+        "text": " \u003d +241.8 kJ\u0027, va\u003d\u0027center\u0027, ha\u003d\u0027left\u0027, fontsize\u003d11, color\u003d\u0027"
+      }, {
+        "text": "gray\u0027)\n\n\n# Condensation\nax.arrow(2.4, products_gas_level, 0, products_"
+      }, {
+        "text": "liquid_level - products_gas_level + 5,\n         head_width\u003d0.05,"
+      }, {
+        "text": " head_length\u003d5, fc\u003d\u0027green\u0027, ec\u003d\u0027green\u0027)\nax.text(2.5, ("
+      }, {
+        "text": "products_gas_level + products_liquid_level) / 2, \u0027Kondenzacija\\nΔ"
+      }, {
+        "text": "H \u003d -44.2 kJ\u0027, va\u003d\u0027center\u0027, ha\u003d\u0027left\u0027, fontsize\u003d10, color\u003d\u0027green\u0027)"
+      }, {
+        "text": "\n\n\n# Plot settings\nax.set_xlim(0, 3.5)\nax.set_ylim("
+      }, {
+        "text": "products_liquid_level - 40, reactants_level + 50)\nax.set_ylabel"
+      }, {
+        "text": "(\u0027Entalpija (H) [kJ]\u0027, fontsize\u003d12)\nax.set_xticks([])\nax."
+      }, {
+        "text": "set_title(\u0027Entalpijski Diagram za Sintezo Vode\u0027, fontsize\u003d14)\nax.spines"
+      }, {
+        "text": "[\u0027top\u0027].set_visible(False)\nax.spines[\u0027right\u0027].set_visible(False)\n"
+      }, {
+        "text": "ax.spines[\u0027bottom\u0027].set_visible(False)\nax.get_yaxis().set_ticks([])\n"
+      }, {
+        "text": "ax.grid(axis\u003d\u0027y\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.7)\n\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "*   **Puščica navzdol:** Eksotermna reakcija (energija se sprošča).\n"
+      }, {
+        "text": "*   **Puščica navzgor:** Endotermna reakcija (energija se porablja).\n\n##"
+      }, {
+        "text": " [[Entalpije Faznih Prehodov]]\n\nSpremembe agregatnega stanja so prav tako povez"
+      }, {
+        "text": "ane z energijskimi spremembami.\n\n*   **Taljenje (trdno → tekoče):**"
+      }, {
+        "text": " Endotermno. `[[entalpija taljenja]]` ($\\Delta H_{fus}$).\n*   **Iz"
+      }, {
+        "text": "parevanje (tekoče → plinasto):** Endotermno. `[[entalpija izparevanja]]` ($\\Delta H_{vap}$).\n*   **Kondenzacija (plinasto → tekoče):** Eks"
+      }, {
+        "text": "otermno.\n*   **Zmrzovanje (tekoče → trdno):** Eksotermno"
+      }, {
+        "text": ".\n\n**Primer: Segrevanje ledu v paro**\n\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt\nimport numpy"
+      }, {
+        "text": " as np\n\n# Heat values (qualitative)\nheat1 \u003d np.linspace(0, 20)\n"
+      }, {
+        "text": "heat_fus \u003d 20\nheat2 \u003d np.linspace(20, 70)\nheat"
+      }, {
+        "text": "_vap \u003d 70\nheat3 \u003d np.linspace(70, 90)\n\n# Temperature values\n"
+      }, {
+        "text": "temp1 \u003d np.linspace(-20, 0, len(heat1))\ntemp_fus \u003d np"
+      }, {
+        "text": ".full_like(np.linspace(0, 15), 0)\nheat_fus_range"
+      }, {
+        "text": " \u003d np.linspace(heat1[-1], heat1[-1] + 15)\ntemp2 \u003d np.linspace"
+      }, {
+        "text": "(0, 100, len(heat2))\ntemp_vap \u003d np.full_like(np."
+      }, {
+        "text": "linspace(0, 25), 100)\nheat_vap_range \u003d np.linspace(heat2[-1], heat2[-1] + 25)\ntemp3 \u003d np.linspace(100, 12"
+      }, {
+        "text": "0, len(heat3))\n\n# Plotting\nfig, ax \u003d plt.subplots(figsize\u003d(10, 6"
+      }, {
+        "text": "))\n\nax.plot(heat1, temp1, label\u003d\u0027Segrevanje ledu\u0027)\nax.plot"
+      }, {
+        "text": "(heat_fus_range, temp_fus, label\u003d\u0027Taljenje (Melting)\u0027, color\u003d\u0027red\u0027)\nax"
+      }, {
+        "text": ".plot(heat2, temp2, label\u003d\u0027Segrevanje vode\u0027)\nax.plot(heat_vap"
+      }, {
+        "text": "_range, temp_vap, label\u003d\u0027Izparevanje (Boiling)\u0027, color\u003d\u0027green\u0027)\nax.plot(heat"
+      }, {
+        "text": "3, temp3, label\u003d\u0027Segrevanje pare\u0027)\n\n# Annotations\nax.text(10, -"
+      }, {
+        "text": "10, \u0027Led (s)\u0027, ha\u003d\u0027center\u0027)\nax.text(27.5, 5, \u0027Tal"
+      }, {
+        "text": "jenje\u0027, ha\u003d\u0027center\u0027, color\u003d\u0027red\u0027)\nax.text(45, 50, \u0027Voda (l"
+      }, {
+        "text": ")\u0027, ha\u003d\u0027center\u0027)\nax.text(82.5, 105, \u0027Vrenje\u0027, ha\u003d\u0027"
+      }, {
+        "text": "center\u0027, color\u003d\u0027green\u0027)\nax.text(85, 115, \u0027Para (g)\u0027, ha"
+      }, {
+        "text": "\u003d\u0027center\u0027)\n\n# Axis and Title\nax.set_xlabel(\u0027Absorbirana Toplota (Q)"
+      }, {
+        "text": " [kJ]\u0027, fontsize\u003d12)\nax.set_ylabel(\u0027Temperatura (T) [°C]\u0027, fontsize\u003d"
+      }, {
+        "text": "12)\nax.set_title(\u0027Krivulja Segrevanja Vode\u0027, fontsize\u003d14)\n"
+      }, {
+        "text": "ax.grid(True, linestyle\u003d\u0027--\u0027, alpha\u003d0.6)\nax.legend()\n\nplt.show()"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\u003e #### **Kritična Analiza: Pomen platojev**\n\u003e Vodoravni deli"
+      }, {
+        "text": " grafa (platoji) predstavljajo fazne prehode. Čeprav sistemu nenehno dov"
+      }, {
+        "text": "ajamo toploto, se temperatura ne spreminja. Vsa dovedena energija se porabi za pre"
+      }, {
+        "text": "kinitev medmolekulskih vezi (npr. vodikovih vezi v ledu ali vodi), ne pa"
+      }, {
+        "text": " za povečanje kinetične energije molekul (kar bi se kazalo kot dvig temperature). To je ključnega"
+      }, {
+        "text": " pomena za razumevanje, da toplota in temperatura nista ista stvar.\n\n## [[Hessov Zakon]]\n\n**Sprememba entalpije za celotno reakcijo je enaka vsoti sprem"
+      }, {
+        "text": "emb entalpij posameznih korakov, ne glede na pot, po kateri reakcija poteka.**"
+      }, {
+        "text": " To pomeni, da je entalpija **funkcija stanja**.\n\n$$\n\\Delta H_{reakcije"
+      }, {
+        "text": "}^\\circ \u003d \\sum \\Delta H_{tvorbena}^\\circ (\\text{produkti}) - \\sum \\Delta H"
+      }, {
+        "text": "_{tvorbena}^\\circ (\\text{reaktanti})\n$$\n\n\u003e #### **Kritična Anal"
+      }, {
+        "text": "iza: Zakaj je Hessov zakon uporaben?**\n\u003e Mnogih reakcij ni mogoče iz"
+      }, {
+        "text": "vesti v laboratoriju pod čistimi pogoji. Na primer, pri nepopolnem gorenju ogljika v ogl"
+      }, {
+        "text": "jikov monoksid ($C + \\frac{1}{2}O_2 \\rightarrow CO$) vedno nastane"
+      }, {
+        "text": " tudi nekaj $CO_2$. Zato je direktno merjenje $\\Delta H$ za to reakcijo zelo težko"
+      }, {
+        "text": ".\n\u003e Hessov zakon nam omogoča, da to vrednost **izračunamo** s pomoč"
+      }, {
+        "text": "jo reakcij, ki jih **lahko** izmerimo:\n\u003e 1. Popolno goren"
+      }, {
+        "text": "je ogljika: $C_{(s)} + O_{2(g)} \\rightarrow CO_{2(g"
+      }, {
+        "text": ")}$  ($\\Delta H_1$)\n\u003e 2. Gorenje ogljikovega monoksida: $CO"
+      }, {
+        "text": "_{(g)} + \\frac{1}{2}O_{2(g)} \\rightarrow CO_{2(g"
+      }, {
+        "text": ")}$ ($\\Delta H_2$)\n\u003e\n\u003e Ker želimo reakcijo $C \\rightarrow CO$, lahko drugo"
+      }, {
+        "text": " enačbo obrnemo in seštejemo:\n\u003e $$\n\u003e C_{(s)} + O_{2("
+      }, {
+        "text": "g)} \\rightarrow CO_{2(g)} \\quad (\\Delta H_1)\n\u003e $$\n\u003e $$\n"
+      }, {
+        "text": "\u003e CO_{2(g)} \\rightarrow CO_{(g)} + \\frac{1}{2}O_{2("
+      }, {
+        "text": "g)} \\quad (-\\Delta H_2)\n\u003e $$\n\u003e $$\n\u003e \\text{------------------------------------------"
+      }, {
+        "text": "}\n\u003e $$\n\u003e $$\n\u003e C_{(s)} + \\frac{1}{2}O_{2("
+      }, {
+        "text": "g)} \\rightarrow CO_{(g)} \\quad \\Delta H_{reakcije} \u003d \\Delta H_1 -"
+      }, {
+        "text": " \\Delta H_2\n\u003e $$\n\u003e S tem smo zaobšli eksperimentalno težavo.\n\n## [[Tipi Entalpijskih Spremem]]\n\n### [[Vezne Entalpije]]\nEnergija, potrebna za pre"
+      }, {
+        "text": "kinitev 1 mola določene vezi v plinastem stanju.\n*   **Prekinitev"
+      }, {
+        "text": " vezi:** Vedno endotermna (zahteva energijo).\n*   **Nastanek vezi:** Vedno eksoterm"
+      }, {
+        "text": "na (sprošča energijo).\n\n**Primer: Razpad metana ($CH_4$)**\n$$\n\\text"
+      }, {
+        "text": "{CH}_4 \\rightarrow \\text{C} + 4\\text{H} \\quad \\Delta H"
+      }, {
+        "text": " \u003d +1664 \\, \\text{kJ/mol}\n$$\n\u003e #### **Warning: Povprečna vs"
+      }, {
+        "text": ". specifična vezna entalpija**\n\u003e Energija, potrebna za prekinitev prve C-H"
+      }, {
+        "text": " vezi v metanu ($CH_4 \\rightarrow CH_3 + H$), ni enaka energiji za prekin"
+      }, {
+        "text": "itev druge ($CH_3 \\rightarrow CH_2 + H$). Kemično okolje vpliva na mo"
+      }, {
+        "text": "č vezi. Vrednosti, ki jih najdemo v tabelah, so običajno **povprečne vezne entalpije"
+      }, {
+        "text": "**, izračunane iz velikega števila različnih molekul, in so zato približek. V naš"
+      }, {
+        "text": "em primeru bi bila povprečna C-H vezna entalpija $1664 / 4 \u003d"
+      }, {
+        "text": " 416$ kJ/mol.\n\n### [[Drugi Tipi Entalpij]]\n*   **[[Tvorbena Entalpija]] ($\\Delta H_f^\\circ$):** Sprememba entalpije,"
+      }, {
+        "text": " ko 1 mol snovi nastane iz svojih elementov v njihovih standardnih stanjih.\n*   **[[Sežigna Entalpija]] ($\\Delta H_c^\\circ$):** Sproščena toplota, ko "
+      }, {
+        "text": "1 mol snovi popolnoma zgori v kisiku pod standardnimi pogoji.\n*   **[[Disociacijska Entalpija]]:** Energija, potrebna za razpad molekule na dva radikala (npr."
+      }, {
+        "text": " $Cl_2 \\rightarrow 2Cl\\cdot$).\n*   **[[Atomizacijska Entalpija]]:**"
+      }, {
+        "text": " Energija, potrebna za nastanek 1 mola plinastih atomov iz elementa v standardnem stanju ("
+      }, {
+        "text": "npr. $\\frac{1}{2}Cl_2 \\rightarrow Cl_{(g)}$).\n*   **[[Sublimacijska Entalpija]]:** Energija za prehod snovi direktno iz trdnega v plin"
+      }, {
+        "text": "asto stanje (npr. $Na_{(s)} \\rightarrow Na_{(g)}$).\n*   **[[Ionizacijska Entalpija]]:** Energija, potrebna za odstranitev elektrona iz 1 mola pl"
+      }, {
+        "text": "inastih atomov ali ionov.\n*   **[[Elektronska Afiniteta]]:** Energijska"
+      }, {
+        "text": " sprememba, ko 1 mol plinastih atomov sprejme elektron.\n\n---\n### **Conceptual Strengthening"
+      }, {
+        "text": " Tasks**\n\n1.  **Naloga:** Izračunajte standardno reakcijsko entalpijo za reak"
+      }, {
+        "text": "cijo:\n    $$\n    2\\text{CO}_{(g)} + \\text{O}_{2(g)}"
+      }, {
+        "text": " \\rightarrow 2\\text{CO}_{2(g)}\n    $$\n    Uporabite naslednje standardne tvor"
+      }, {
+        "text": "bene entalpije ($\\Delta H_f^\\circ$):\n    *   $\\Delta H_f^\\circ"
+      }, {
+        "text": " (\\text{CO}_{(g)}) \u003d -110.5 \\, \\text{kJ/mol}$\n    *   $\\"
+      }, {
+        "text": "Delta H_f^\\circ (\\text{CO}_{2(g)}) \u003d -393.5 \\, \\"
+      }, {
+        "text": "text{kJ/mol}$\n\n2.  **Naloga:** Pri sežigu 1.0 g propana"
+      }, {
+        "text": " ($C_3H_8$) v kalorimetru se je temperatura vode povečala za 7.5"
+      }, {
+        "text": " K. Toplotna kapaciteta celotnega kalorimetra (vključno z vodo) je 9"
+      }, {
+        "text": ".8 kJ/K. Izračunajte sežigno entalpijo propana v kJ/mol. (Molska"
+      }, {
+        "text": " masa $C_3H_8 \\approx 44.1$ g/mol).\n\n3.  **Izz"
+      }, {
+        "text": "iv (Povezovanje znanja):** Ocenite reakcijsko entalpijo za hidrogeniranje et"
+      }, {
+        "text": "ena v etan, $C_2H_4 + H_2 \\rightarrow C_2H_6$, z"
+      }, {
+        "text": " uporabo povprečnih veznih entalpij. Primerjajte svojo oceno s standardno reakcijsko entalp"
+      }, {
+        "text": "ijo, izračunano iz tvorbenih entalpij.\n    *   **Podatki (V"
+      }, {
+        "text": "ezne entalpije v kJ/mol):** C\u003dC: 614, C-C: 3"
+      }, {
+        "text": "48, C-H: 413, H-H: 436.\n    *   "
+      }, {
+        "text": "**Podatki ($\\Delta H_f^\\circ$ v kJ/mol):** $\\Delta H_f^\\circ("
+      }, {
+        "text": "C_2H_4) \u003d +52.3$, $\\Delta H_f^\\circ(C_2H"
+      }, {
+        "text": "_6) \u003d -84.7$.\n    *   **Namig:** Spomnite se, katere vezi"
+      }, {
+        "text": " se prekinejo (reaktanti) in katere nastanejo (produkti). Narišite si"
+      }, {
+        "text": " strukture molekul! Zakaj se rezultata razlikujeta?"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

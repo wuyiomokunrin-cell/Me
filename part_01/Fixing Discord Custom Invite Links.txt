@@ -1,0 +1,128 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3.1-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "thinkingLevel": "THINKING_HIGH",
+    "enableImageSearch": false,
+    "enableGoogleMaps": false,
+    "enableAgentThinkingSummariesControl": false,
+    "enableAgentVisualizationControl": false,
+    "enableAgentCollaborativePlanningControl": false
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1AufalE-B6xzEnBr5jQAiDjnRnEgoOg4K"
+      },
+      "role": "user",
+      "tokenCount": 1089,
+      "createTime": "2026-07-09T16:32:03.068Z"
+    }, {
+      "text": "what, i just enabled it no work :D\n",
+      "role": "user",
+      "tokenCount": 12,
+      "createTime": "2026-07-09T16:32:03.068Z"
+    }, {
+      "text": "**Investigating the Discord Issue**\n\nI\u0027m zeroing in on the core problem: an invalid or expired Discord invite link. The image confirms this, focusing specifically on the custom invite link configuration. I\u0027m noting the context presented by the setup the user provided. This points toward the custom invite link settings as the primary area of focus. My immediate concern is the link\u0027s validity and the user\u0027s settings.\n\n\n**Analyzing the User\u0027s Issue**\n\nI\u0027m now considering the scenario where the user just activated their vanity URL (`discord.gg/bpm`) and is now facing an error. Potential causes are emerging. I\u0027m focusing on whether the Discord backend is facing a propagation delay, if the vanity URL, despite seeming available, may be blacklisted, or if there\u0027s a problem involving the user\u0027s server status. The banned user scenario, although less likely, must still be considered.\n\n\n**Identifying Potential Causes**\n\nI\u0027m now zeroing in on further likely causes for the broken invite link. My thoughts have expanded beyond the immediate error to consider the user\u0027s situation. I\u0027m focusing on the server limit and the user\u0027s server setup, which may include the crucial *at least one public channel* requirement. I am also investigating whether caching issues may be a factor, or if server invites have been paused.\n\n\n**Outlining a Response Strategy**\n\nI\u0027m now outlining a response. First, I\u0027ll directly address the screenshot and highlight the \"at least one public text channel\" requirement, as it\u0027s the most likely issue. Next, I\u0027ll suggest a brief pause for propagation. Then, I\u0027ll propose testing in a different environment to rule out caching or server limit problems. Checking server settings for paused invites follows. Finally, I\u0027ll remind the user to save changes, and mention the server limit briefly.\n\n\n",
+      "role": "model",
+      "tokenCount": 1085,
+      "isThought": true,
+      "parts": [{
+        "text": "**Investigating the Discord Issue**\n\nI\u0027m zeroing in on the core problem: an invalid or expired Discord invite link. The image confirms this, focusing specifically on the custom invite link configuration. I\u0027m noting the context presented by the setup the user provided. This points toward the custom invite link settings as the primary area of focus. My immediate concern is the link\u0027s validity and the user\u0027s settings.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the User\u0027s Issue**\n\nI\u0027m now considering the scenario where the user just activated their vanity URL (`discord.gg/bpm`) and is now facing an error. Potential causes are emerging. I\u0027m focusing on whether the Discord backend is facing a propagation delay, if the vanity URL, despite seeming available, may be blacklisted, or if there\u0027s a problem involving the user\u0027s server status. The banned user scenario, although less likely, must still be considered.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Identifying Potential Causes**\n\nI\u0027m now zeroing in on further likely causes for the broken invite link. My thoughts have expanded beyond the immediate error to consider the user\u0027s situation. I\u0027m focusing on the server limit and the user\u0027s server setup, which may include the crucial *at least one public channel* requirement. I am also investigating whether caching issues may be a factor, or if server invites have been paused.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining a Response Strategy**\n\nI\u0027m now outlining a response. First, I\u0027ll directly address the screenshot and highlight the \"at least one public text channel\" requirement, as it\u0027s the most likely issue. Next, I\u0027ll suggest a brief pause for propagation. Then, I\u0027ll propose testing in a different environment to rule out caching or server limit problems. Checking server settings for paused invites follows. Finally, I\u0027ll remind the user to save changes, and mention the server limit briefly.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-07-09T16:32:03.069Z"
+    }, {
+      "text": "That is incredibly frustrating! Based on the screenshot, it looks like you just set your custom vanity link to `discord.gg/bpm`, but Discord is immediately rejecting it. \n\nHere are the most common reasons this happens right after setting it up and how to fix them:\n\n**1. The Missing \"Public\" Channel (Most Likely)**\nRead the faint gray text right above where you typed your link in the screenshot: *\"you\u0027ll need at least one text channel that is open to all server members.\"*\nIf your server is locked down and the `@everyone` role doesn\u0027t have permission to \"View Channel\" and \"Read Messages\" in at least *one* text channel, Discord has nowhere to drop new members. Because of this, it will treat the custom invite link as invalid.\n*   **Fix:** Check your channel permissions. Make sure there is at least one general or welcome channel where the `@everyone` role can view it.\n\n**2. Discord Needs a Refresh (Client Glitch)**\nSometimes the Discord app caches data and doesn\u0027t realize the link is active yet, even though the server-side accepted it.\n*   **Fix:** Press **Ctrl + R** (or Cmd + R on Mac) to completely refresh your Discord app, then click the link again.\n\n**3. Test it in Incognito Mode**\nSometimes the error message \"Invalid or Expired\" is actually a generic error for *you*, not the link itself. For example, if you are already in 100 servers (or 200 with Nitro), Discord will tell you the link is invalid when you try to use it.\n*   **Fix:** Open a private/incognito browser window and paste `https://discord.gg/bpm` into the URL bar. If you see the server invite card pop up asking you to log in, **the link actually works fine**, and the issue is just with your specific account trying to click it. \n\n**4. Invites are Paused**\nCheck if your server has invites paused globally. \n*   **Fix:** Go to **Server Settings \u003e Invites** and make sure the \"Pause Invites\" button isn\u0027t toggled on. \n\n**5. The \"Ghost\" Save**\nSometimes Discord glitches and shows the text at the bottom (\"This server is now accessible to everyone at...\"), but it didn\u0027t *actually* save to the backend. \n*   **Fix:** Click the **\"Remove Custom Invite Link\"** button, refresh Discord, and try claiming `bpm` again. Make sure you hit the green **Save Changes** popup that usually appears at the very bottom of the screen.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 561,
+      "parts": [{
+        "text": "That is incredibly frustrating! Based on the screenshot, it looks"
+      }, {
+        "text": " like you just set your custom vanity link to `discord.gg/bpm`, but Discord is immediately rejecting it. \n\nHere"
+      }, {
+        "text": " are the most common reasons this happens right after setting it up and how to fix them:\n\n**1. The Missing \"Public\" Channel ("
+      }, {
+        "text": "Most Likely)**\nRead the faint gray text right above where you typed your link in the screenshot: *\"you\u0027ll need"
+      }, {
+        "text": " at least one text channel that is open to all server members.\"*\nIf your server is locked down and the `@everyone` role doesn\u0027"
+      }, {
+        "text": "t have permission to \"View Channel\" and \"Read Messages\" in at least *one* text channel, Discord has nowhere to"
+      }, {
+        "text": " drop new members. Because of this, it will treat the custom invite link as invalid.\n*   **Fix:** Check"
+      }, {
+        "text": " your channel permissions. Make sure there is at least one general or welcome channel where the `@everyone` role can view it"
+      }, {
+        "text": ".\n\n**2. Discord Needs a Refresh (Client Glitch)**\nSometimes the Discord app caches data and doesn\u0027t realize"
+      }, {
+        "text": " the link is active yet, even though the server-side accepted it.\n*   **Fix:** Press **Ctrl +"
+      }, {
+        "text": " R** (or Cmd + R on Mac) to completely refresh your Discord app, then click the link again.\n\n**"
+      }, {
+        "text": "3. Test it in Incognito Mode**\nSometimes the error message \"Invalid or Expired\" is actually a generic error for *you"
+      }, {
+        "text": "*, not the link itself. For example, if you are already in 100 servers (or 200"
+      }, {
+        "text": " with Nitro), Discord will tell you the link is invalid when you try to use it.\n*   **Fix:** Open a private/"
+      }, {
+        "text": "incognito browser window and paste `https://discord.gg/bpm` into the URL bar. If you see the server invite"
+      }, {
+        "text": " card pop up asking you to log in, **the link actually works fine**, and the issue is just with your specific account"
+      }, {
+        "text": " trying to click it. \n\n**4. Invites are Paused**\nCheck if your server has invites paused globally. \n"
+      }, {
+        "text": "*   **Fix:** Go to **Server Settings \u003e Invites** and make sure the \"Pause Invites\" button"
+      }, {
+        "text": " isn\u0027t toggled on. \n\n**5. The \"Ghost\" Save**\nSometimes Discord glitches and shows"
+      }, {
+        "text": " the text at the bottom (\"This server is now accessible to everyone at...\"), but it didn\u0027t *actually* save to the backend"
+      }, {
+        "text": ". \n*   **Fix:** Click the **\"Remove Custom Invite Link\"** button, refresh Discord, and try"
+      }, {
+        "text": " claiming `bpm` again. Make sure you hit the green **Save Changes** popup that usually appears at the very bottom of the screen."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-07-09T16:32:15.294Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

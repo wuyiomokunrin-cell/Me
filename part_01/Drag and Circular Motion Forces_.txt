@@ -1,0 +1,303 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ code blocks rather than explicit ```()``` mention. \n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1oAkHMfqvGDexAzFDOyXofdyUmurcSUYl"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1dNFcAMnCdAN1jGZArKMvwQrk1Rlr7wEm"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "189omIeM3Ty_db3_XSumqdD2VwzuHK2UN"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1nXY8vbTeQ3PvDGYgl_8lbQCP6yok32j2"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1WMAgd0bNlEGiOJBPxC1KpY05N8pRWMjF"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1jiNxqKVyx08OXGOiatef325HVO0UTBQ7"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1EdntyUBm4vRusL4naLwnAO3RfAvqORTQ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1ub6GvongBU573RbhXrF61t0hY6hOQe90"
+      },
+      "role": "user",
+      "tokenCount": 74420
+    }, {
+      "driveAudio": {
+        "id": "16VrIc-S6-BqXvXXkiCmWuqSUrY41DD-r"
+      },
+      "role": "user",
+      "tokenCount": 88502
+    }, {
+      "driveAudio": {
+        "id": "1LyKmfMMBgPET65kjTwCzSaGXaQX9W2Hz"
+      },
+      "role": "user",
+      "tokenCount": 94761
+    }, {
+      "text": "**Deciphering the Data**\n\nI\u0027m now fully immersed in the user\u0027s request. First, I\u0027ll transcribe the crucial physics lecture concepts from the Slovenian audio. Next, I\u0027ll correlate the handwritten notes, focusing on the key equations and diagrams, and match those with the lecture audio. The ultimate goal is to generate a summary that integrates both sources.\n\n\n**Integrating the Resources**\n\nNow, I\u0027m integrating the audio transcript with the handwritten notes. I\u0027m focusing on key equations and diagrams from the notes and mapping them to corresponding lecture concepts. The goal is to create a complete Markdown note that seamlessly blends both sources. I\u0027ll maintain the original structure - theory, problems, and solution methods - and ensure accurate LaTeX formatting for all formulas.\n\n\n**Defining the Process**\n\nMy focus has shifted to the granular details of the user\u0027s request.  I\u0027m breaking down the audio and the handwritten notes, aligning key concepts like drag force and circular motion. I\u0027m prioritizing accuracy in the LaTeX formatting and planning how to insert the critical analysis sections. This means I will provide justification for formulas and steps. I will also incorporate Obsidian\u0027s features, like Wikilinks and structural protocol. The aim is to make everything clear, accurate, and ready to be used by the user.\n\n\n**Structuring the Content**\n\nI\u0027ve outlined the detailed steps for processing the user\u0027s request. First, I\u0027ll transcribe the crucial physics lecture audio, ensuring accurate representation of concepts. Then, I\u0027ll carefully analyze the handwritten notes, matching equations and diagrams to the lecture audio. The next step is to synthesize the information into a well-structured Markdown note for Obsidian, incorporating key elements like LaTeX formulas, visualizations, and dedicated sections for critical analysis. I\u0027m focusing on providing clear explanations, including justifications for every formula and step, and adhering to Obsidian\u0027s organizational features like wikilinks. The goal is to generate a comprehensive and user-friendly resource for the user, tailored to their academic needs.\n\n\n**Refining the Approach**\n\nNow I\u0027m delving deeper into the user\u0027s request.  I\u0027ve sketched a plan to transcribe the audio and correlate it with the handwritten notes. I\u0027ll translate the key physics concepts like drag force and circular motion.  The goal is to structure the information as a coherent Markdown note for Obsidian, including proper LaTeX formatting and visualizations. I\u0027ll add critical analysis sections and ensure that every formula and step is thoroughly justified. I will also incorporate Obsidian\u0027s features, such as wikilinks.\n\n\n**Summarizing the Analysis**\n\nI\u0027m now fully immersed in the data, carefully processing the provided lecture content and handwritten notes. My work entails transcribing, correlating, structuring, and enriching the information. All the formulas must be in LaTeX format, and I\u0027ll add critical analysis and wikilinks where appropriate. The initial analysis of the images is complete, and I\u0027m ready to continue.\n\n\n**Analyzing the Data**\n\nI\u0027ve completed a preliminary analysis of the provided lecture audio and handwritten notes. I\u0027ve transcribed key physics concepts, including drag force, circular motion, and center of mass, and linked them with the images. I\u0027m building a markdown structure that organizes the information for easier access, and I am ready to delve further.\n\n\n**Formalizing the Structure**\n\nI\u0027m now implementing the detailed structure for the Markdown note. I\u0027m transcribing the lecture content and correlating it with the images, ensuring correct equation formatting using LaTeX. Each section on drag force, circular motion, and center of mass will be meticulously organized.  I\u0027m also preparing for the critical analysis section, where I\u0027ll justify every formula and step.\n\n\n**Organizing the Information**\n\nI\u0027m now fully immersed in the details of translating and structuring the data. I\u0027ve finished sketching out the structure for the Markdown note, including all headers, sub-headers, and wikilinks. I\u0027m prioritizing accuracy in formula formatting and the addition of critical analysis sections.\n\n\n**Building the Framework**\n\nI\u0027ve completed the initial structure and incorporated the crucial physics concepts, including drag force, circular motion, and center of mass, within the Markdown framework. Now, I\u0027m focusing on adding formulas in LaTeX format and incorporating visualization placeholders. I\u0027ll maintain the Slovenian language to match the source material and include the critical analysis and explanation sections.\n\n\n",
+      "role": "model",
+      "tokenCount": 2776,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Deciphering the Data**\n\nI\u0027m now fully immersed in the user\u0027s request. First, I\u0027ll transcribe the crucial physics lecture concepts from the Slovenian audio. Next, I\u0027ll correlate the handwritten notes, focusing on the key equations and diagrams, and match those with the lecture audio. The ultimate goal is to generate a summary that integrates both sources.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating the Resources**\n\nNow, I\u0027m integrating the audio transcript with the handwritten notes. I\u0027m focusing on key equations and diagrams from the notes and mapping them to corresponding lecture concepts. The goal is to create a complete Markdown note that seamlessly blends both sources. I\u0027ll maintain the original structure - theory, problems, and solution methods - and ensure accurate LaTeX formatting for all formulas.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Process**\n\nMy focus has shifted to the granular details of the user\u0027s request.  I\u0027m breaking down the audio and the handwritten notes, aligning key concepts like drag force and circular motion. I\u0027m prioritizing accuracy in the LaTeX formatting and planning how to insert the critical analysis sections. This means I will provide justification for formulas and steps. I will also incorporate Obsidian\u0027s features, like Wikilinks and structural protocol. The aim is to make everything clear, accurate, and ready to be used by the user.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Content**\n\nI\u0027ve outlined the detailed steps for processing the user\u0027s request. First, I\u0027ll transcribe the crucial physics lecture audio, ensuring accurate representation of concepts. Then, I\u0027ll carefully analyze the handwritten notes, matching equations and diagrams to the lecture audio. The next step is to synthesize the information into a well-structured Markdown note for Obsidian, incorporating key elements like LaTeX formulas, visualizations, and dedicated sections for critical analysis. I\u0027m focusing on providing clear explanations, including justifications for every formula and step, and adhering to Obsidian\u0027s organizational features like wikilinks. The goal is to generate a comprehensive and user-friendly resource for the user, tailored to their academic needs.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Approach**\n\nNow I\u0027m delving deeper into the user\u0027s request.  I\u0027ve sketched a plan to transcribe the audio and correlate it with the handwritten notes. I\u0027ll translate the key physics concepts like drag force and circular motion.  The goal is to structure the information as a coherent Markdown note for Obsidian, including proper LaTeX formatting and visualizations. I\u0027ll add critical analysis sections and ensure that every formula and step is thoroughly justified. I will also incorporate Obsidian\u0027s features, such as wikilinks.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing the Analysis**\n\nI\u0027m now fully immersed in the data, carefully processing the provided lecture content and handwritten notes. My work entails transcribing, correlating, structuring, and enriching the information. All the formulas must be in LaTeX format, and I\u0027ll add critical analysis and wikilinks where appropriate. The initial analysis of the images is complete, and I\u0027m ready to continue.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Data**\n\nI\u0027ve completed a preliminary analysis of the provided lecture audio and handwritten notes. I\u0027ve transcribed key physics concepts, including drag force, circular motion, and center of mass, and linked them with the images. I\u0027m building a markdown structure that organizes the information for easier access, and I am ready to delve further.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Formalizing the Structure**\n\nI\u0027m now implementing the detailed structure for the Markdown note. I\u0027m transcribing the lecture content and correlating it with the images, ensuring correct equation formatting using LaTeX. Each section on drag force, circular motion, and center of mass will be meticulously organized.  I\u0027m also preparing for the critical analysis section, where I\u0027ll justify every formula and step.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Information**\n\nI\u0027m now fully immersed in the details of translating and structuring the data. I\u0027ve finished sketching out the structure for the Markdown note, including all headers, sub-headers, and wikilinks. I\u0027m prioritizing accuracy in formula formatting and the addition of critical analysis sections.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Building the Framework**\n\nI\u0027ve completed the initial structure and incorporated the crucial physics concepts, including drag force, circular motion, and center of mass, within the Markdown framework. Now, I\u0027m focusing on adding formulas in LaTeX format and incorporating visualization placeholders. I\u0027ll maintain the Slovenian language to match the source material and include the critical analysis and explanation sections.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# Gibanje Sistema Teles in Togo Telo\n\n## [[Sila Upora]]\nSila upora deluje na telo, ki se giblje skozi fluid (tekočino ali plin) in je usmerjena nasprotno od smeri gibanja.\n\n$$ F_u \u003d \\frac{1}{2} C S \\rho v^2 $$\n\nKjer je:\n-   `C`: koeficient upora (odvisen od oblike telesa)\n-   `S`: presek telesa (ploščina pravokotne projekcije na ravnino, ki je pravokotna na smer gibanja)\n-   `ρ`: gostota fluida\n-   `v`: hitrost telesa glede na fluid\n\n### [[Terminalna Hitrost]]\nKo telo pada, nanj delujeta sila teže `Fg` navzdol in sila upora `Fu` navzgor. Telo pospešuje, dokler se sili ne izenačita. Takrat je rezultanta sil enaka nič, pospešek je nič, in telo doseže konstantno, **končno** ali **terminalno hitrost**.\n\n$$ F_u \u003d F_g $$\n$$ \\frac{1}{2} C S \\rho v^2 \u003d mg $$\n$$ v_{končna} \u003d \\sqrt{\\frac{2mg}{CS\\rho}} $$\n\n**Note to Self:** Analiza odvisnosti končne hitrosti:\n-   Če se telo poveča, bi se po `√h`, kjer `h` predstavlja karakteristično dolžino telesa, odvisnost končne hitrosti spreminjala, če gostota telesa ostane enaka.\n-   Masa `m` je sorazmerna z volumnom (`~h^3`), presek `S` pa s ploščino (`~h^2`). Torej je `v ∝ sqrt(h^3 / h^2) \u003d sqrt(h)`. Večje živali (podobne oblike) imajo višjo končno hitrost pri padanju.\n\n---\n\n## [[Sile pri Kroženju]]\n\n### [[Enakomerno Kroženje]]\nPri enakomernem kroženju je kotna hitrost `ω` konstantna. Edina sila, ki deluje proti središču kroženja, je **radialna** ali **centripetalna sila**.\n\n$$ F_r \u003d m a_r \u003d m \\omega^2 r \u003d m \\frac{v^2}{r} $$\n\n### [[Enakomerno Pospešeno Kroženje]]\nČe se spreminja velikost hitrosti, imamo poleg radialnega pospeška še **tangencialni pospešek** `a_t`. Posledično imamo dve komponenti sile:\n-   **[[Radialna Sila (Fr)]]:** Spreminja smer hitrosti. $$ F_r \u003d m a_r \u003d m \\omega^2 r $$\n-   **[[Tangencialna Sila (Ft)]]:** Spreminja velikost hitrosti (kotno hitrost). $$ F_t \u003d m a_t \u003d m \\alpha r $$\nCelotna sila je vektorska vsota obeh: $$ \\vec{F} \u003d \\vec{F_r} + \\vec{F_t} $$\n\n---\n\n## [[Gibanje Težišča]]\n### [[Sistem Točkastih Teles]]\nGibanje kompleksnega sistema teles lahko poenostavimo z opazovanjem gibanja ene same točke - **težišča** sistema. Vsota vseh **zunanjih** sil na sistem je enaka celotni masi sistema, pomnoženi s pospeškom težišča.\n\n$$ \\sum \\vec{F}_{zunanje} \u003d m_{skupna} \\cdot \\vec{a}^* $$\n\n**Memorialization:** Predavatelj je poudaril, da ta enačba izgleda identično drugemu Newtonovemu zakonu za eno samo točkasto telo. To je ključna poenostavitev pri obravnavi sistemov.\n\n**Kritična Analiza:** Notranje sile med telesi v sistemu se po tretjem Newtonovem zakonu vedno pojavljajo v parih nasprotno enakih sil (`F_12 \u003d -F_21`). Ko seštejemo sile za celoten sistem, se te notranje sile medsebojno izničijo, zato v končni enačbi ostanejo le zunanje sile.\n\nPoložaj (`r*`), hitrost (`v*`) in pospešek (`a*`) težišča so definirani kot **uteženo povprečje** ustreznih količin posameznih teles, kjer je utež razmerje mase posameznega telesa glede na skupno maso.\n\n-   **[[Položaj Težišča]]:**\n    $$ \\vec{r}^* \u003d \\frac{\\sum m_i \\vec{r}_i}{\\sum m_i} \u003d \\frac{m_1\\vec{r}_1 + m_2\\vec{r}_2 + ...}{m_1+m_2+...} $$\n\n-   **[[Hitrost Težišča]]:**\n    $$ \\vec{v}^* \u003d \\frac{d\\vec{r}^*}{dt} \u003d \\frac{\\sum m_i \\vec{v}_i}{\\sum m_i} $$\n\n-   **[[Pospešek Težišča]]:**\n    $$ \\vec{a}^* \u003d \\frac{d\\vec{v}^*}{dt} \u003d \\frac{\\sum m_i \\vec{a}_i}{\\sum m_i} $$\n\n### [[Togo Telo (Zvezna Porazdelitev Mase)]]\nZa togo telo, kjer je masa porazdeljena zvezno, vsoto (Σ) zamenjamo z integralom po celotni masi telesa. `dm` predstavlja infinitezimalno majhen del mase.\n\n$$ \\vec{r}^* \u003d \\frac{1}{m} \\int \\vec{r} \\, dm $$\n\n---\n\n## [[Izreki za Kroženje (Dinamika Vrtenja)]]\n\n### [[Navor]]\nNavor je vektorska količina, ki povzroča ali spreminja vrtenje telesa. Je rotacijski ekvivalent sile. Definiran je kot vektorski produkt ročice `r` (vektor od osi vrtenja do prijemališča sile) in sile `F`.\n\n$$ \\vec{M} \u003d \\vec{r} \\times \\vec{F} $$\nVelikost navora je:\n$$ |\\vec{M}| \u003d |\\vec{r}| |\\vec{F}| \\sin(\\phi) $$\nkjer je `φ` kot med vektorjema `r` in `F`.\n\n### [[Vztrajnostni Moment]]\nVztrajnostni moment `J` je mera za vztrajnost telesa pri vrtenju. Je rotacijski ekvivalent mase. Za vrtenje velja rotacijska analogija drugega Newtonovega zakona:\n\n$$ \\vec{M} \u003d J \\cdot \\vec{\\alpha} $$\n\n-   **[[Točkasto Telo]]:** Vztrajnostni moment točkastega telesa z maso `m`, ki kroži na razdalji `r` od osi:\n    $$ J_T \u003d m r^2 $$\n    Enota: `[kg m^2]`\n\n-   **[[Togo Telo]]:** Za togo telo seštejemo (integriramo) prispevke vseh delcev mase `dm` na razdalji `r` od osi vrtenja.\n    $$ J \u003d \\int r^2 \\, dm $$\n\n---\n\n## [[Zbirka Nalog]]\n1.  **Končno Nihalo:** Telo z maso `m` je obešeno na vrvici in kroži v vodoravni ravnini s kotno hitrostjo `ω`. Kakšna je višina `h` (navpična razdalja od vpetja do ravnine kroženja)?\n2.  **Težišče Dveh Teles:** Dve masi, `m1` in `m2`, sta na razdalji 1 m. Kje je njuno težišče `x*`, če `m1` postavimo v koordinatno izhodišče (`x\u003d0`)?\n3.  **Težišče Trikotnika:** Tri enake mase `m` so postavljene v oglišča enakostraničnega trikotnika s stranico `a`. Določi koordinate težišča `(x*, y*)`, če eno maso postavimo v izhodišče, drugo pa na točko `(a, 0)`.\n4.  **Težišče Homogene Palice:** Z uporabo integrala izračunaj težišče tanke homogene palice z dolžino `L` in maso `m`.\n5.  **Vztrajnostni Moment Palice:** Izračunaj vztrajnostni moment tanke homogene palice (dolžina `L`, masa `m`), ki se vrti okoli osi, ki je pravokotna na palico in gre skozi en njen konec.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 2104,
+      "parts": [{
+        "text": "# Gibanje Sistema Teles in Togo Telo\n\n## [[Sila Upora]]\nSila upora deluje na telo"
+      }, {
+        "text": ", ki se giblje skozi fluid (tekočino ali plin) in je usmerjena nasprotno od s"
+      }, {
+        "text": "meri gibanja.\n\n$$ F_u \u003d \\frac{1}{2} C S \\rho v^2"
+      }, {
+        "text": " $$\n\nKjer je:\n-   `C`: koeficient upora (odvisen od oblike telesa)"
+      }, {
+        "text": "\n-   `S`: presek telesa (ploščina pravokotne projekcije na ravnino,"
+      }, {
+        "text": " ki je pravokotna na smer gibanja)\n-   `ρ`: gostota fluida\n-   `v"
+      }, {
+        "text": "`: hitrost telesa glede na fluid\n\n### [[Terminalna Hitrost]]\nKo telo pada, nanj deluj"
+      }, {
+        "text": "eta sila teže `Fg` navzdol in sila upora `Fu` navzgor. Telo pospeš"
+      }, {
+        "text": "uje, dokler se sili ne izenačita. Takrat je rezultanta sil enaka nič, pospešek je"
+      }, {
+        "text": " nič, in telo doseže konstantno, **končno** ali **terminalno hitrost**.\n\n$$ F_u \u003d F"
+      }, {
+        "text": "_g $$\n$$ \\frac{1}{2} C S \\rho v^2 \u003d mg $$\n$$ v"
+      }, {
+        "text": "_{končna} \u003d \\sqrt{\\frac{2mg}{CS\\rho}} $$\n\n**Note to Self:** Anal"
+      }, {
+        "text": "iza odvisnosti končne hitrosti:\n-   Če se telo poveča, bi se po "
+      }, {
+        "text": "`√h`, kjer `h` predstavlja karakteristično dolžino telesa, odvisnost končne hitrosti"
+      }, {
+        "text": " spreminjala, če gostota telesa ostane enaka.\n-   Masa `m` je sor"
+      }, {
+        "text": "azmerna z volumnom (`~h^3`), presek `S` pa s ploščino (`~"
+      }, {
+        "text": "h^2`). Torej je `v ∝ sqrt(h^3 / h^2) \u003d sqrt(h)"
+      }, {
+        "text": "`. Večje živali (podobne oblike) imajo višjo končno hitrost pri padanju.\n\n"
+      }, {
+        "text": "---\n\n## [[Sile pri Kroženju]]\n\n### [[Enakomerno Kroženje]]\nPri"
+      }, {
+        "text": " enakomernem kroženju je kotna hitrost `ω` konstantna. Edina sila, ki deluje"
+      }, {
+        "text": " proti središču kroženja, je **radialna** ali **centripetalna sila**.\n\n$$ F_"
+      }, {
+        "text": "r \u003d m a_r \u003d m \\omega^2 r \u003d m \\frac{v^2}{r}"
+      }, {
+        "text": " $$\n\n### [[Enakomerno Pospešeno Kroženje]]\nČe se spreminja velik"
+      }, {
+        "text": "ost hitrosti, imamo poleg radialnega pospeška še **tangencialni pospešek** "
+      }, {
+        "text": "`a_t`. Posledično imamo dve komponenti sile:\n-   **[[Radialna Sila (Fr)]]:** Spreminja smer hitrosti. $$ F_r \u003d m a_r \u003d m \\omega^2"
+      }, {
+        "text": " r $$\n-   **[[Tangencialna Sila (Ft)]]:** Spreminja velikost hitrosti"
+      }, {
+        "text": " (kotno hitrost). $$ F_t \u003d m a_t \u003d m \\alpha r $$\nCelotna sila je"
+      }, {
+        "text": " vektorska vsota obeh: $$ \\vec{F} \u003d \\vec{F_r} + \\"
+      }, {
+        "text": "vec{F_t} $$\n\n---\n\n## [[Gibanje Težišča]]\n### [[Sistem Točkastih Teles]]\nGibanje kompleksnega sistema teles lahko poenostavimo z opazovanjem gib"
+      }, {
+        "text": "anja ene same točke - **težišča** sistema. Vsota vseh **zunanjih** sil na"
+      }, {
+        "text": " sistem je enaka celotni masi sistema, pomnoženi s pospeškom težišča.\n\n$$"
+      }, {
+        "text": " \\sum \\vec{F}_{zunanje} \u003d m_{skupna} \\cdot \\vec{a}^*"
+      }, {
+        "text": " $$\n\n**Memorialization:** Predavatelj je poudaril, da ta enačba izgleda identično drug"
+      }, {
+        "text": "emu Newtonovemu zakonu za eno samo točkasto telo. To je ključna poenostavitev"
+      }, {
+        "text": " pri obravnavi sistemov.\n\n**Kritična Analiza:** Notranje sile med telesi v sistemu se"
+      }, {
+        "text": " po tretjem Newtonovem zakonu vedno pojavljajo v parih nasprotno enakih sil (`F_1"
+      }, {
+        "text": "2 \u003d -F_21`). Ko seštejemo sile za celoten sistem, se te notranje sile"
+      }, {
+        "text": " medsebojno izničijo, zato v končni enačbi ostanejo le zunanje sile."
+      }, {
+        "text": "\n\nPoložaj (`r*`), hitrost (`v*`) in pospešek (`a*`) teži"
+      }, {
+        "text": "šča so definirani kot **uteženo povprečje** ustreznih količin posamezn"
+      }, {
+        "text": "ih teles, kjer je utež razmerje mase posameznega telesa glede na skupno mas"
+      }, {
+        "text": "o.\n\n-   **[[Položaj Težišča]]:**\n    $$ \\vec{r"
+      }, {
+        "text": "}^* \u003d \\frac{\\sum m_i \\vec{r}_i}{\\sum m_i} \u003d \\frac"
+      }, {
+        "text": "{m_1\\vec{r}_1 + m_2\\vec{r}_2 + ...}{m_"
+      }, {
+        "text": "1+m_2+...} $$\n\n-   **[[Hitrost Težišča]]:**\n    $$"
+      }, {
+        "text": " \\vec{v}^* \u003d \\frac{d\\vec{r}^*}{dt} \u003d \\frac{\\sum m_i"
+      }, {
+        "text": " \\vec{v}_i}{\\sum m_i} $$\n\n-   **[[Pospešek Težišča]]:"
+      }, {
+        "text": "**\n    $$ \\vec{a}^* \u003d \\frac{d\\vec{v}^*}{dt} \u003d \\"
+      }, {
+        "text": "frac{\\sum m_i \\vec{a}_i}{\\sum m_i} $$\n\n### [[Togo Telo (Zvezna Porazdelitev Mase)]]\nZa togo telo, kjer je masa porazdeljena z"
+      }, {
+        "text": "vezno, vsoto (Σ) zamenjamo z integralom po celotni masi telesa. "
+      }, {
+        "text": "`dm` predstavlja infinitezimalno majhen del mase.\n\n$$ \\vec{r}^* \u003d \\frac{1}{m"
+      }, {
+        "text": "} \\int \\vec{r} \\, dm $$\n\n---\n\n## [[Izreki za Kroženje (Dinamika Vrtenja)]]\n\n### [[Navor]]\nNavor je vektorska količina, ki pov"
+      }, {
+        "text": "zroča ali spreminja vrtenje telesa. Je rotacijski ekvivalent sile. Definiran je kot vekt"
+      }, {
+        "text": "orski produkt ročice `r` (vektor od osi vrtenja do prijemališča sile"
+      }, {
+        "text": ") in sile `F`.\n\n$$ \\vec{M} \u003d \\vec{r} \\times \\vec{F} $$"
+      }, {
+        "text": "\nVelikost navora je:\n$$ |\\vec{M}| \u003d |\\vec{r}| |\\vec"
+      }, {
+        "text": "{F}| \\sin(\\phi) $$\nkjer je `φ` kot med vektorjema `r"
+      }, {
+        "text": "` in `F`.\n\n### [[Vztrajnostni Moment]]\nVztrajnostni moment `J` je mera"
+      }, {
+        "text": " za vztrajnost telesa pri vrtenju. Je rotacijski ekvivalent mase. Za vrtenje vel"
+      }, {
+        "text": "ja rotacijska analogija drugega Newtonovega zakona:\n\n$$ \\vec{M} \u003d J \\cdot \\vec"
+      }, {
+        "text": "{\\alpha} $$\n\n-   **[[Točkasto Telo]]:** Vztrajnostni moment točkaste"
+      }, {
+        "text": "ga telesa z maso `m`, ki kroži na razdalji `r` od osi:\n    $$ J"
+      }, {
+        "text": "_T \u003d m r^2 $$\n    Enota: `[kg m^2]`\n\n-   **"
+      }, {
+        "text": "[[Togo Telo]]:** Za togo telo seštejemo (integriramo) prispevke v"
+      }, {
+        "text": "seh delcev mase `dm` na razdalji `r` od osi vrtenja.\n    $$ J"
+      }, {
+        "text": " \u003d \\int r^2 \\, dm $$\n\n---\n\n## [[Zbirka Nalog]]\n1.  **Kon"
+      }, {
+        "text": "čno Nihalo:** Telo z maso `m` je obešeno na vrvici in kroži v"
+      }, {
+        "text": " vodoravni ravnini s kotno hitrostjo `ω`. Kakšna je višina `h"
+      }, {
+        "text": "` (navpična razdalja od vpetja do ravnine kroženja)?\n2.  **Te"
+      }, {
+        "text": "žišče Dveh Teles:** Dve masi, `m1` in `m2`, sta na raz"
+      }, {
+        "text": "dalji 1 m. Kje je njuno težišče `x*`, če `m1` postav"
+      }, {
+        "text": "imo v koordinatno izhodišče (`x\u003d0`)?\n3.  **Težišče T"
+      }, {
+        "text": "rikotnika:** Tri enake mase `m` so postavljene v oglišča enakostraničnega trikot"
+      }, {
+        "text": "nika s stranico `a`. Določi koordinate težišča `(x*, y*)`, če en"
+      }, {
+        "text": "o maso postavimo v izhodišče, drugo pa na točko `(a, 0)"
+      }, {
+        "text": "`.\n4.  **Težišče Homogene Palice:** Z uporabo integrala izračunaj te"
+      }, {
+        "text": "žišče tanke homogene palice z dolžino `L` in maso `m`.\n5.  "
+      }, {
+        "text": "**Vztrajnostni Moment Palice:** Izračunaj vztrajnostni moment tanke homogene palice ("
+      }, {
+        "text": "dolžina `L`, masa `m`), ki se vrti okoli osi, ki je pravokotna"
+      }, {
+        "text": " na palico in gre skozi en njen konec."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

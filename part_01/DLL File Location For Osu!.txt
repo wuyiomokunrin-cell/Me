@@ -1,0 +1,172 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": true,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "https://github.com/EVAST9919/touhosu/releases?page\u003d1 \nwhere do i put the dll file in my osu!lazer file system?",
+      "role": "user",
+      "tokenCount": 41
+    }, {
+      "text": "**Pinpointing DLL Location**\n\nI\u0027m currently investigating the \"touhosu\" GitHub repository to understand the project\u0027s structure and potential release artifacts. My goal is to determine the appropriate location for the DLL file within the osu!lazer file system, which may require checking documentation and installation guides. This initial assessment will inform the precise file system pathway.\n\n\n**Analyzing Installation Steps**\n\nI\u0027ve been digging into the installation process for custom rulesets in osu!lazer, specifically focusing on \"touhosu.\" The information I\u0027m getting from GitHub, YouTube, and Reddit is consistent: it\u0027s all pointing to straightforward steps.\n\n\n**Clarifying DLL Placement**\n\nI\u0027m now certain about the DLL file placement. It goes directly into the `rulesets` directory within the osu!lazer data folder, regardless of the OS. I\u0027ve broken down the steps, including how to locate the folder directly from within the game\u0027s settings. I need to make a note about that GitHub release, since custom rulesets can sometimes cause issues.\n\n\n**Updating Ruleset Information**\n\nI\u0027m solidifying the steps now. I\u0027m noting the importance of version compatibility between the game and the ruleset DLL. I will be sure to mention prebuilt binaries, and I\u0027m organizing the final response into a clear, step-by-step guide. I\u0027ll include instructions for finding the `rulesets` folder directly from the game settings, plus the direct file paths for all operating systems. I\u0027m double-checking the accuracy of those paths as well.\n\n\n**Confirming Folder Location**\n\nI\u0027m now focusing on the folder naming conventions and potential points of confusion. I\u0027ve re-verified that the correct directory for osu!lazer is usually named \"osu\" in AppData/Roaming, even though the game is lazer. The \"Open osu! folder\" button is definitely the most reliable method for users to find the correct location, avoiding any stable/lazer confusion.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Pinpointing DLL Location**\n\nI\u0027m currently investigating the \"touhosu\" GitHub repository to understand the project\u0027s structure and potential release artifacts. My goal is to determine the appropriate location for the DLL file within the osu!lazer file system, which may require checking documentation and installation guides. This initial assessment will inform the precise file system pathway.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Installation Steps**\n\nI\u0027ve been digging into the installation process for custom rulesets in osu!lazer, specifically focusing on \"touhosu.\" The information I\u0027m getting from GitHub, YouTube, and Reddit is consistent: it\u0027s all pointing to straightforward steps.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Clarifying DLL Placement**\n\nI\u0027m now certain about the DLL file placement. It goes directly into the `rulesets` directory within the osu!lazer data folder, regardless of the OS. I\u0027ve broken down the steps, including how to locate the folder directly from within the game\u0027s settings. I need to make a note about that GitHub release, since custom rulesets can sometimes cause issues.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Updating Ruleset Information**\n\nI\u0027m solidifying the steps now. I\u0027m noting the importance of version compatibility between the game and the ruleset DLL. I will be sure to mention prebuilt binaries, and I\u0027m organizing the final response into a clear, step-by-step guide. I\u0027ll include instructions for finding the `rulesets` folder directly from the game settings, plus the direct file paths for all operating systems. I\u0027m double-checking the accuracy of those paths as well.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Confirming Folder Location**\n\nI\u0027m now focusing on the folder naming conventions and potential points of confusion. I\u0027ve re-verified that the correct directory for osu!lazer is usually named \"osu\" in AppData/Roaming, even though the game is lazer. The \"Open osu! folder\" button is definitely the most reliable method for users to find the correct location, avoiding any stable/lazer confusion.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "You need to place the `.dll` file into the **`rulesets`** folder inside your osu!lazer data directory.\n\nHere is the easiest way to do it:\n\n1.  **Open osu!lazer.**\n2.  Open the **Settings** (press `Ctrl` + `O` or click the gear icon).\n3.  In the **General** tab, click the button that says **Open osu! folder**.\n4.  In the folder that opens, look for a sub-folder named **`rulesets`**.\n    *   *If this folder does not exist, create a new folder and name it `rulesets`.*\n5.  **Paste the `osu.Game.Rulesets.Touhosu.dll` file** into this `rulesets` folder.\n6.  **Restart osu!lazer.**\n\nAfter restarting, you should see \"Touhosu\" appear in the ruleset/mode selection menu at the top of the screen.\n\n### Alternative Manual Paths\nIf you cannot open the game, you can navigate to the folder directly using your file explorer:\n\n*   **Windows:** `%AppData%\\osu\\rulesets`\n*   **macOS / Linux:** `~/.local/share/osu/rulesets`\n\n**Note:** If you are on Windows and the ruleset doesn\u0027t appear after restarting, right-click the `.dll` file, go to **Properties**, check **Unblock** at the bottom, and click OK.",
+      "role": "model",
+      "grounding": {
+        "corroborationSegments": [{
+          "index": 102,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE8dMCIOrIl4Mpzxo0dGO5VRF84FSJBu2sQ6Vj0NZYB98evsNOrr4gtGpyHMwRGkjgii7R8XUqzPbMjzDnDdwHWByGJrBfLWjrQKv5PsBZs6tyvfaCYvs1-sA7fn1nEoQ%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 102,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQF8beogN5S1TMJlmc_cczExbWmTIqiEMLc63R0dIwuJw81yHrSnMFOjDUBzWbIiUYA3A5CsDrpMR1aGUkZ7mCjt5i40MYVpxOlyNL42ojPe4_227y3fYBxAQu6moy7UWw%3D%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 102,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGmTkSWteKKTrrn2rYChykQav8kkEv3PPEwI6tESe-4EAoNw609uCFprJF75cdiX4cAPZDVN_fOdkxix6yZtdsX4Chv5QnGlxdofaJkaV0VeoVD-2cFy8cqT-bVRv_CBumP",
+          "footnoteNumber": 3
+        }, {
+          "index": 300,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGmTkSWteKKTrrn2rYChykQav8kkEv3PPEwI6tESe-4EAoNw609uCFprJF75cdiX4cAPZDVN_fOdkxix6yZtdsX4Chv5QnGlxdofaJkaV0VeoVD-2cFy8cqT-bVRv_CBumP",
+          "footnoteNumber": 3
+        }, {
+          "index": 860,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE8dMCIOrIl4Mpzxo0dGO5VRF84FSJBu2sQ6Vj0NZYB98evsNOrr4gtGpyHMwRGkjgii7R8XUqzPbMjzDnDdwHWByGJrBfLWjrQKv5PsBZs6tyvfaCYvs1-sA7fn1nEoQ%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 860,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQF8beogN5S1TMJlmc_cczExbWmTIqiEMLc63R0dIwuJw81yHrSnMFOjDUBzWbIiUYA3A5CsDrpMR1aGUkZ7mCjt5i40MYVpxOlyNL42ojPe4_227y3fYBxAQu6moy7UWw%3D%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 860,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGmTkSWteKKTrrn2rYChykQav8kkEv3PPEwI6tESe-4EAoNw609uCFprJF75cdiX4cAPZDVN_fOdkxix6yZtdsX4Chv5QnGlxdofaJkaV0VeoVD-2cFy8cqT-bVRv_CBumP",
+          "footnoteNumber": 3
+        }, {
+          "index": 860,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHjmG6qgH7sQKeEVqEUcK2EnceQVae3zOmDqFELSqjFv8d46F8yvFaCCL2FgSzNa3od879TrcfwHJSyn4eIenNmFCzvd_SSNI4jxgezPa-FsMEYiiWuv0XQfLVgaUrYPPx-FUKx4hohddHyYGEgD7KhsqJ-kyn2vQUmGb8BeFss2JvGT8dSTOk9vkXs",
+          "footnoteNumber": 4
+        }, {
+          "index": 860,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5PYx9te8hHB1mHJ2WkraFoEdw0u4Lbq0bAfsK2PuTorBInSjbomf3sb-BGxG8s9tpecumYhcF5K-2p3gUMmpkmMi6suiTUdsUflzZOZkzdcmPf7tKi6UKSFMLQg12Xqw37bOQxd4%3D",
+          "footnoteNumber": 5
+        }, {
+          "index": 913,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE8dMCIOrIl4Mpzxo0dGO5VRF84FSJBu2sQ6Vj0NZYB98evsNOrr4gtGpyHMwRGkjgii7R8XUqzPbMjzDnDdwHWByGJrBfLWjrQKv5PsBZs6tyvfaCYvs1-sA7fn1nEoQ%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 913,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQF8beogN5S1TMJlmc_cczExbWmTIqiEMLc63R0dIwuJw81yHrSnMFOjDUBzWbIiUYA3A5CsDrpMR1aGUkZ7mCjt5i40MYVpxOlyNL42ojPe4_227y3fYBxAQu6moy7UWw%3D%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 913,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHjmG6qgH7sQKeEVqEUcK2EnceQVae3zOmDqFELSqjFv8d46F8yvFaCCL2FgSzNa3od879TrcfwHJSyn4eIenNmFCzvd_SSNI4jxgezPa-FsMEYiiWuv0XQfLVgaUrYPPx-FUKx4hohddHyYGEgD7KhsqJ-kyn2vQUmGb8BeFss2JvGT8dSTOk9vkXs",
+          "footnoteNumber": 4
+        }],
+        "webSearchQueries": ["how to install custom rulesets osu lazer", "github touhosu release installation instructions", "touhosu osu lazer dll location"],
+        "groundingSources": [{
+          "referenceNumber": 1,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE8dMCIOrIl4Mpzxo0dGO5VRF84FSJBu2sQ6Vj0NZYB98evsNOrr4gtGpyHMwRGkjgii7R8XUqzPbMjzDnDdwHWByGJrBfLWjrQKv5PsBZs6tyvfaCYvs1-sA7fn1nEoQ%3D%3D",
+          "title": "github.com"
+        }, {
+          "referenceNumber": 2,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQF8beogN5S1TMJlmc_cczExbWmTIqiEMLc63R0dIwuJw81yHrSnMFOjDUBzWbIiUYA3A5CsDrpMR1aGUkZ7mCjt5i40MYVpxOlyNL42ojPe4_227y3fYBxAQu6moy7UWw%3D%3D",
+          "title": "github.com"
+        }, {
+          "referenceNumber": 3,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGmTkSWteKKTrrn2rYChykQav8kkEv3PPEwI6tESe-4EAoNw609uCFprJF75cdiX4cAPZDVN_fOdkxix6yZtdsX4Chv5QnGlxdofaJkaV0VeoVD-2cFy8cqT-bVRv_CBumP",
+          "title": "rulesets.info"
+        }, {
+          "referenceNumber": 4,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHjmG6qgH7sQKeEVqEUcK2EnceQVae3zOmDqFELSqjFv8d46F8yvFaCCL2FgSzNa3od879TrcfwHJSyn4eIenNmFCzvd_SSNI4jxgezPa-FsMEYiiWuv0XQfLVgaUrYPPx-FUKx4hohddHyYGEgD7KhsqJ-kyn2vQUmGb8BeFss2JvGT8dSTOk9vkXs",
+          "title": "reddit.com"
+        }, {
+          "referenceNumber": 5,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQG5PYx9te8hHB1mHJ2WkraFoEdw0u4Lbq0bAfsK2PuTorBInSjbomf3sb-BGxG8s9tpecumYhcF5K-2p3gUMmpkmMi6suiTUdsUflzZOZkzdcmPf7tKi6UKSFMLQg12Xqw37bOQxd4%3D",
+          "title": "youtube.com"
+        }]
+      },
+      "finishReason": "STOP",
+      "tokenCount": 320,
+      "parts": [{
+        "text": "You need to place the `.dll` file into the **`rulesets`** folder inside your osu!lazer data directory.\n\nHere is the easiest way to do it"
+      }, {
+        "text": ":\n\n1.  **Open osu!lazer.**\n2.  Open the **Settings** (press "
+      }, {
+        "text": "`Ctrl` + `O` or click the gear icon).\n3.  In the **General** tab, click"
+      }, {
+        "text": " the button that says **Open osu! folder**.\n4.  In the folder that opens, look for a sub-"
+      }, {
+        "text": "folder named **`rulesets`**.\n    *   *If this folder does not exist, create a new folder and"
+      }, {
+        "text": " name it `rulesets`.*\n5.  **Paste the `osu.Game.Rulesets.Touhosu."
+      }, {
+        "text": "dll` file** into this `rulesets` folder.\n6.  **Restart osu!lazer.**\n\nAfter"
+      }, {
+        "text": " restarting, you should see \"Touhosu\" appear in the ruleset/mode selection menu at the top of the screen."
+      }, {
+        "text": "\n\n### Alternative Manual Paths\nIf you cannot open the game, you can navigate to the folder directly using your file explorer:\n\n"
+      }, {
+        "text": "*   **Windows:** `%AppData%\\osu\\rulesets`\n*   **macOS / Linux:** `~/.local/"
+      }, {
+        "text": "share/osu/rulesets`\n\n**Note:** If you are on Windows and the ruleset doesn\u0027t appear after"
+      }, {
+        "text": " restarting, right-click the `.dll` file, go to **Properties**, check **Unblock** at the bottom,"
+      }, {
+        "text": " and click OK."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

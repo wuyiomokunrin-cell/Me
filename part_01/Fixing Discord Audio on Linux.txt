@@ -1,0 +1,139 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3.7-flash",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "googleSearch": {
+    },
+    "thinkingLevel": "THINKING_MEDIUM",
+    "enableImageSearch": false,
+    "enableGoogleMaps": false,
+    "enableAgentThinkingSummariesControl": false,
+    "enableAgentVisualizationControl": false,
+    "enableAgentCollaborativePlanningControl": false,
+    "environmentMode": "new",
+    "enableWordTimestamps": false,
+    "enableSpeakerDiarization": false,
+    "enablePolishedTranscript": false
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1UUDWc136udU8ebzurJp4wWFoSH2QkrZr"
+      },
+      "role": "user",
+      "tokenCount": 1074,
+      "createTime": "2026-08-26T09:59:40.144Z"
+    }, {
+      "driveImage": {
+        "id": "1KUUEr9Ol_KYjVHB05GlneBWAtwMG8kQk"
+      },
+      "role": "user",
+      "tokenCount": 1086,
+      "createTime": "2026-08-26T09:59:40.144Z"
+    }, {
+      "driveImage": {
+        "id": "119U02JsX13G-6NB9iaOiHa1HlG1vyNqg"
+      },
+      "role": "user",
+      "tokenCount": 1086,
+      "createTime": "2026-08-26T09:59:40.144Z"
+    }, {
+      "text": "my discord aint getting any volume to choose form ",
+      "role": "user",
+      "tokenCount": 12,
+      "createTime": "2026-08-26T09:59:40.144Z"
+    }, {
+      "text": "**Analyzing Audio Settings**\n\nOkay, I\u0027m currently focused on dissecting these audio settings within Discord. Specifically, the \"System Default\" selections for both microphone and speaker are under scrutiny. This could indicate a potential configuration bottleneck, but I need to investigate further to determine the implications.\n\n\n**Investigating Audio Routing**\n\nI\u0027m now digging into the audio routing within the Linux environment, particularly focusing on why Discord only shows \"System Default.\" The user\u0027s observation, \"Discord aint getting any volume to choose form,\" highlights a clear disconnect between the system\u0027s recognized devices (\"HyperX Cloud III Pro\" for both input and output in KDE settings) and Discord\u0027s lack of access. This begs a deeper look into the interplay between PipeWire/PulseAudio, Discord\u0027s build (Flatpak or otherwise), and the desktop environment (KDE Plasma).\n\n\n\n**Clarifying Linux Audio Paths**\n\nI\u0027m now clarifying the common reasons for Discord\u0027s limited audio device visibility on Linux, especially with KDE. A frequent culprit is Flatpak sandboxing, blocking audio access unless explicitly permitted (either via Flatseal or the command line). Another factor is the nature of Discord\u0027s WebRTC implementation, often displaying only \"System Default\" on Linux. I\u0027ll need to confirm if these known conditions are the core issue.\n\n\n",
+      "role": "model",
+      "tokenCount": 783,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "parts": [{
+        "text": "**Analyzing Audio Settings**\n\nOkay, I\u0027m currently focused on dissecting these audio settings within Discord. Specifically, the \"System Default\" selections for both microphone and speaker are under scrutiny. This could indicate a potential configuration bottleneck, but I need to investigate further to determine the implications.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Investigating Audio Routing**\n\nI\u0027m now digging into the audio routing within the Linux environment, particularly focusing on why Discord only shows \"System Default.\" The user\u0027s observation, \"Discord aint getting any volume to choose form,\" highlights a clear disconnect between the system\u0027s recognized devices (\"HyperX Cloud III Pro\" for both input and output in KDE settings) and Discord\u0027s lack of access. This begs a deeper look into the interplay between PipeWire/PulseAudio, Discord\u0027s build (Flatpak or otherwise), and the desktop environment (KDE Plasma).\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Clarifying Linux Audio Paths**\n\nI\u0027m now clarifying the common reasons for Discord\u0027s limited audio device visibility on Linux, especially with KDE. A frequent culprit is Flatpak sandboxing, blocking audio access unless explicitly permitted (either via Flatseal or the command line). Another factor is the nature of Discord\u0027s WebRTC implementation, often displaying only \"System Default\" on Linux. I\u0027ll need to confirm if these known conditions are the core issue.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-08-26T09:59:40.144Z"
+    }, {
+      "text": "This happens frequently on Linux (KDE Plasma) with Discord. In many cases, Discord\u0027s WebRTC layer on Linux only lists **\"System Default\"** instead of individual hardware names, or it is running in a sandbox (like Flatpak) that restricts device enumeration.\n\n---\n\n### 1. Discord routes through your system\u0027s \"Default\" device\nSince Discord is set to **System Default**, it will automatically use the device selected with the blue radio dot in your KDE audio settings (which is already set to **HyperX Cloud III Pro** in your screenshots).\n\nTo make sure audio is actively routing properly:\n1. In Discord, click **Mic Test** (or join a voice channel).\n2. Open your system\u0027s **Audio Volume** window (the window in your 2nd/3rd screenshots).\n3. Click the **Applications** tab at the top.\n4. Locate **Discord** while the mic test is active, and ensure its input and output streams are assigned to your **HyperX Cloud III Pro**.\n\n---\n\n### 2. If you are using Discord via Flatpak (Most Common Issue)\nIf Discord was installed through Flatpak/Discover, sandbox permissions might be blocking direct audio device enumeration:\n\n* **Fix via Terminal:** Run the following command to ensure Discord has full PulseAudio/PipeWire socket access:\n  ```bash\n  flatpak override --user --socket\u003dpulseaudio com.discordapp.Discord\n  ```\n* **Fix via GUI:** Open **Flatseal** (if installed), select **Discord**, scroll down to **Sockets**, and make sure **PulseAudio / Sound** is enabled.\n* Restart Discord afterward.\n\n---\n\n### 3. Reset Discord Voice Settings\n1. In Discord, go to **User Settings** $\\rightarrow$ **Voice \u0026 Video**.\n2. Scroll all the way to the bottom and click **Reset Voice Settings**.\n3. Turn off **\"Automatically Determine Input Sensitivity\"** to see if the yellow/green input bar picks up your microphone levels during testing.\n4. If available under *Advanced*, try changing the **Audio Subsystem** between **Standard** and **Legacy**.\n\n---\n\n### 4. Alternative for Linux (Vesktop / WebCord)\nThe official Discord Linux client uses an outdated Electron framework that has long-standing audio device and screensharing bugs on Linux. If you want proper PipeWire device detection, screensharing with audio, and lower resource usage, consider using **Vesktop** (available directly in the KDE Discover Software Center).",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 536,
+      "parts": [{
+        "text": "This happens frequently on Linux (KDE Plasma) with Discord. In many cases, Discord\u0027s WebRTC layer on Linux only"
+      }, {
+        "text": " lists **\"System Default\"** instead of individual hardware names, or it is running in a sandbox (like Flatpak) that restricts device enumeration"
+      }, {
+        "text": ".\n\n---\n\n### 1. Discord routes through your system\u0027s \"Default\" device\nSince Discord is set to **System Default**, it will"
+      }, {
+        "text": " automatically use the device selected with the blue radio dot in your KDE audio settings (which is already set to **HyperX Cloud III Pro**"
+      }, {
+        "text": " in your screenshots).\n\nTo make sure audio is actively routing properly:\n1. In Discord, click **Mic Test** (or join"
+      }, {
+        "text": " a voice channel).\n2. Open your system\u0027s **Audio Volume** window (the window in your 2nd/"
+      }, {
+        "text": "3rd screenshots).\n3. Click the **Applications** tab at the top.\n4. Locate **Discord** while"
+      }, {
+        "text": " the mic test is active, and ensure its input and output streams are assigned to your **HyperX Cloud III Pro**.\n\n---\n\n### 2. If you"
+      }, {
+        "text": " are using Discord via Flatpak (Most Common Issue)\nIf Discord was installed through Flatpak/Discover, sandbox permissions might be blocking direct"
+      }, {
+        "text": " audio device enumeration:\n\n* **Fix via Terminal:** Run the following command to ensure Discord has full PulseAudio/PipeWire socket access:\n  ```bash\n  flatpak override --user"
+      }, {
+        "text": " --socket\u003dpulseaudio com.discordapp.Discord\n  ```\n* **Fix via GUI:** Open **Flatseal** (if"
+      }, {
+        "text": " installed), select **Discord**, scroll down to **Sockets**, and make sure **PulseAudio / Sound** is enabled.\n"
+      }, {
+        "text": "* Restart Discord afterward.\n\n---\n\n### 3. Reset Discord Voice Settings\n1. In Discord, go to **User"
+      }, {
+        "text": " Settings** $\\rightarrow$ **Voice \u0026 Video**.\n2. Scroll all the way to the bottom and click **Reset Voice Settings**."
+      }, {
+        "text": "\n3. Turn off **\"Automatically Determine Input Sensitivity\"** to see if the yellow/green input bar picks up your"
+      }, {
+        "text": " microphone levels during testing.\n4. If available under *Advanced*, try changing the **Audio Subsystem** between **Standard** and **Legacy**."
+      }, {
+        "text": "\n\n---\n\n### 4. Alternative for Linux (Vesktop / WebCord)\nThe official Discord Linux client uses"
+      }, {
+        "text": " an outdated Electron framework that has long-standing audio device and screensharing bugs on Linux. If you want proper Pipe"
+      }, {
+        "text": "Wire device detection, screensharing with audio, and lower resource usage, consider using **Vesktop** (available directly"
+      }, {
+        "text": " in the KDE Discover Software Center)."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-08-26T09:59:46.537Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

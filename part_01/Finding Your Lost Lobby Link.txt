@@ -1,0 +1,118 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3.1-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH",
+    "enableImageSearch": false,
+    "enableGoogleMaps": false
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "text": "I went out of the osu! multi and exited osu, I played qualifiers and want to know how I stand, where else can I get that lobby link?",
+      "role": "user",
+      "tokenCount": 33,
+      "createTime": "2026-03-21T10:50:13.987Z"
+    }, {
+      "text": "**Pinpointing The Lobby**\n\nOkay, I\u0027ve got it. I\u0027m focusing on the user\u0027s need to find the multiplayer lobby link after exiting osu!. I\u0027m currently looking at osu! multiplayer mechanics to see where the link might be stored or accessible outside the game client. I\u0027m thinking about alternative access points.\n\n\n**Locating The Link**\n\nI\u0027m now thinking the lobby link will be accessible via multiple paths. It looks like the osu! website does store lobby information, although it\u0027s not the most obvious place. I\u0027m also considering the potential for local chat logs, which could include the lobby link. Tournament organizers on Discord servers are also great sources for match links.\n\n\n**Exploring Alternative Pathways**\n\nOkay, I\u0027m now exploring additional pathways beyond the osu! client and website. I\u0027ve realized that the user\u0027s \"Recent Plays\" on their osu! profile *might* contain qualifier maps, depending on ranking and scoring. Also, browser history is definitely a potential avenue. Plus, teammates can be a source, as can a tournament\u0027s spreadsheet. I\u0027m building a list of likely access points.\n\n\n**Analyzing Chat Logs**\n\nI\u0027m now focusing on chat logs as the most reliable technical solution. I\u0027ve narrowed the path to the osu! chat folder, specifically looking for files named `#mp_...` which should contain the lobby link or match ID. The path is typically within the AppData folder, although installation can be variable. I\u0027m noting the importance of chat logging being enabled.",
+      "role": "model",
+      "tokenCount": 981,
+      "isThought": true,
+      "parts": [{
+        "text": "**Pinpointing The Lobby**\n\nOkay, I\u0027ve got it. I\u0027m focusing on the user\u0027s need to find the multiplayer lobby link after exiting osu!. I\u0027m currently looking at osu! multiplayer mechanics to see where the link might be stored or accessible outside the game client. I\u0027m thinking about alternative access points.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Locating The Link**\n\nI\u0027m now thinking the lobby link will be accessible via multiple paths. It looks like the osu! website does store lobby information, although it\u0027s not the most obvious place. I\u0027m also considering the potential for local chat logs, which could include the lobby link. Tournament organizers on Discord servers are also great sources for match links.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Exploring Alternative Pathways**\n\nOkay, I\u0027m now exploring additional pathways beyond the osu! client and website. I\u0027ve realized that the user\u0027s \"Recent Plays\" on their osu! profile *might* contain qualifier maps, depending on ranking and scoring. Also, browser history is definitely a potential avenue. Plus, teammates can be a source, as can a tournament\u0027s spreadsheet. I\u0027m building a list of likely access points.",
+        "thought": true
+      }, {
+        "text": "\n\n\n**Analyzing Chat Logs**\n\nI\u0027m now focusing on chat logs as the most reliable technical solution. I\u0027ve narrowed the path to the osu! chat folder, specifically looking for files named `#mp_...` which should contain the lobby link or match ID. The path is typically within the AppData folder, although installation can be variable. I\u0027m noting the importance of chat logging being enabled.",
+        "thought": true
+      }],
+      "createTime": "2026-03-21T10:50:13.987Z"
+    }, {
+      "text": "\n\n\nIf you\u0027ve exited osu! and lost the in-game multiplayer chat tab, don\u0027t worry! There are a few different ways you can retrieve your qualifier lobby link:\n\n**1. The Tournament Spreadsheet or Discord (Easiest)**\nAlmost all osu! tournaments use a master Google Spreadsheet to track schedules and scores. \n* Check the **\"Qualifiers\"** or **\"Schedule\"** tab on the tournament\u0027s spreadsheet. Referees usually paste the MP link right next to your team\u0027s name or lobby number as soon as the lobby finishes.\n* Alternatively, check the tournament\u0027s Discord server. Referees often drop the MP links in channels like `#qualifier-results`, `#lobby-links`, or `#referee-logs`.\n\n**2. Your Local osu! Chat Logs**\nIf you have chat logging enabled in your osu! settings (which is turned on by default for many players), your PC saved the lobby chat.\n* Open your osu! installation folder (usually located at `C:\\Users\\YourUsername\\AppData\\Local\\osu!`).\n* Open the **`Chat`** folder.\n* Look for a text file named something like **`#mp_12345678.txt`** (sort by \"Date modified\" to find the most recent one).\n* The number in that file name is your match ID! Just copy the numbers and put them at the end of this URL: `https://osu.ppy.sh/mp/YOUR_MATCH_ID`\n\n**3. Check Your Browser History**\nIf you or the referee dropped the link in the chat during the lobby and you clicked it even once to look at the scores between maps, it will be saved in your web browser\u0027s history. Just open your browser history (Ctrl+H or Cmd+H) and search for `osu.ppy.sh/mp/` or `osu.ppy.sh/community/matches/`.\n\n**4. Ask Your Referee or Teammates**\nIf you still can\u0027t find it, the quickest way is to just DM the referee who hosted your lobby on Discord or in-game, or ask one of the other players/teammates who were in the same lobby as you. They can pull it from their own history in seconds.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 484,
+      "parts": [{
+        "text": "\n\n\nIf you\u0027ve exited osu! and lost the in-game multiplayer"
+      }, {
+        "text": " chat tab, don\u0027t worry! There are a few different ways you can retrieve your qualifier lobby link:\n\n**1."
+      }, {
+        "text": " The Tournament Spreadsheet or Discord (Easiest)**\nAlmost all osu! tournaments use a master Google Spreadsheet to track schedules and scores"
+      }, {
+        "text": ". \n* Check the **\"Qualifiers\"** or **\"Schedule\"** tab on the tournament\u0027s"
+      }, {
+        "text": " spreadsheet. Referees usually paste the MP link right next to your team\u0027s name or lobby number as soon as the"
+      }, {
+        "text": " lobby finishes.\n* Alternatively, check the tournament\u0027s Discord server. Referees often drop the MP links in channels"
+      }, {
+        "text": " like `#qualifier-results`, `#lobby-links`, or `#referee-logs`.\n\n**2. Your"
+      }, {
+        "text": " Local osu! Chat Logs**\nIf you have chat logging enabled in your osu! settings (which is turned on by default for"
+      }, {
+        "text": " many players), your PC saved the lobby chat.\n* Open your osu! installation folder (usually located at `C:\\"
+      }, {
+        "text": "Users\\YourUsername\\AppData\\Local\\osu!`).\n* Open the **`Chat`** folder.\n* Look"
+      }, {
+        "text": " for a text file named something like **`#mp_12345678.txt`**"
+      }, {
+        "text": " (sort by \"Date modified\" to find the most recent one).\n* The number in that file name is your"
+      }, {
+        "text": " match ID! Just copy the numbers and put them at the end of this URL: `https://osu.ppy.sh"
+      }, {
+        "text": "/mp/YOUR_MATCH_ID`\n\n**3. Check Your Browser History**\nIf you or the referee dropped"
+      }, {
+        "text": " the link in the chat during the lobby and you clicked it even once to look at the scores between maps, it will"
+      }, {
+        "text": " be saved in your web browser\u0027s history. Just open your browser history (Ctrl+H or Cmd+H)"
+      }, {
+        "text": " and search for `osu.ppy.sh/mp/` or `osu.ppy.sh/community/matches"
+      }, {
+        "text": "/`.\n\n**4. Ask Your Referee or Teammates**\nIf you still can\u0027t find it, the"
+      }, {
+        "text": " quickest way is to just DM the referee who hosted your lobby on Discord or in-game, or ask one of the"
+      }, {
+        "text": " other players/teammates who were in the same lobby as you. They can pull it from their own history in"
+      }, {
+        "text": " seconds."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-03-21T10:50:24.705Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

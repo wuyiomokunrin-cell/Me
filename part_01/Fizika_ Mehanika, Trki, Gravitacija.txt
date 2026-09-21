@@ -1,0 +1,539 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1jniW_6VRMAJqo_jfpzL0_H4XJnTEtnIZ"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1X_l59NndSjZ8TIvEUgEbPHPOg7fkXGA4"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1gbRJjo1Av9YiYyY9AJOVLohU2kDtvR-U"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "13O7E6MlzFdVPg1HIMCZL3U4xii0SSx2A"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1id16kj1BL7uXeedtAtgdouCvQU6mLQex"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1nUKX789Ko4i55ACtpcE_H_AN73F6sYyr"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveAudio": {
+        "id": "12myugBS_QexRlW8UiRFNzR3tDopcmp02"
+      },
+      "role": "user",
+      "tokenCount": 80120
+    }, {
+      "driveAudio": {
+        "id": "1uZ_ZLCec_2FPS7NHL7ODlny1Ezp30HEK"
+      },
+      "role": "user",
+      "tokenCount": 82254
+    }, {
+      "driveAudio": {
+        "id": "1rn7_piAAFl0lADf3mFaMOt6axB1GqQ4h"
+      },
+      "role": "user",
+      "tokenCount": 94283
+    }, {
+      "text": "**Considering Note Structure**\n\nI\u0027m currently breaking down the request: nine images of Slovenian physics notes. The context screams university-level classical mechanics. My immediate goal is a well-structured Obsidian note system. Now, I\u0027m focusing on how best to organize and represent the information.\n\n\n**Structuring Information Flow**\n\nI\u0027ve got a framework in place.  I\u0027m aiming for a comprehensive, analytical Markdown system in Obsidian, built for reverse-engineering and critical examination of formulas, so I\u0027m thinking of incorporating LaTeX for the mathematical components. The goal is to provide a comprehensive, critical analysis that helps to justify, warn, and clarify aspects of the notes.  The images will dictate the chronology and I\u0027ll keep the language Slovenian, as the original instructions dictated. The initial analysis of the first image has begun, focussing on potential and kinetic energy, work and freefall.\n\n\n**Mapping Equilibrium States**\n\nI\u0027m now diving into the potential energy diagrams in the second image. The note is focusing on the behavior of objects at equilibrium. I\u0027ve begun mapping out how to represent stable, unstable and indifferent scenarios within my Markdown system. The analysis includes first and second derivatives of potential energy to solidify an analytical approach to determining these different states.\n\n\n**Detailing Collisions \u0026 Gravity**\n\nI\u0027m now focusing on images 4-6, which are detailing inelastic and 2D collisions, the ballistic pendulum, Kepler\u0027s Laws, and gravity.  I\u0027m structuring the notes in a way that emphasizes the underlying principles and relationships. This includes equations for inelastic collisions, the derivation of Kepler\u0027s 3rd law from gravitational force, and the use of the integral form of gravitational force for continuous mass distributions.\n\n\n**Analyzing Gravitational Force**\n\nI\u0027m currently delving into the final three images. Image 7 presents a derivation of gravitational force between a point mass and a differential mass element. Images 8 and 9 focus on gravitational fields, particularly inside and outside spherical shells and spheres. Image 8 also suggests a derivation, possibly for tidal forces or, more likely, a deeper dive into the gravitational field. I\u0027m focusing on deriving expressions for these concepts and integrating them with equations from prior images. I will organize the content of these images, starting with the seventh, in the filename that I have already planned, and add these final concepts to my existing draft.\n\n\n**Incorporating Loop Analysis**\n\nI\u0027m now integrating the detailed analysis of the loop-the-loop, the first example. I\u0027m focusing on the distinction between sliding and rolling, referencing the moment of inertia for the sphere. The energy conservation and force balance equations are being developed. I\u0027m also ensuring the gradient relationship between force and potential energy is accurately represented.\n\n\n**Describing Collision Details**\n\nI\u0027m presently focusing on the Ballistic Pendulum section and the associated warning about energy conservation misuse. I\u0027m noting the vital distinction and the classic student mistake to avoid, which is to use energy during the collision, not momentum. I\u0027m also ensuring the vector form of gravity is present, alongside the superposition principle, and the integrals. I\u0027m now transitioning to ensuring all LaTeX components are formatted correctly, and wikilinks are incorporated.\n\n\n**Revising Formula Presentation**\n\nI\u0027m now revising the presentation of key formulas. I\u0027ve re-examined several derivations. I noticed that for the loop-the-loop, the rolling sphere\u0027s moment of inertia, $J^*$, is correctly expressed as $\\frac{2}{5}mr^2$. The general formulas for $v_1\u0027$ and $v_2\u0027$ after collision are standard, and I will highlight them. I need to explicitly state why a step was taken, such as \"Zakaj odvod? Ker iščemo ekstrem potenciala.\" The orthogonality of $\\vec{v_1\u0027}$ and $\\vec{v_2\u0027}$ in the 2D collisions section, illustrated by $\\vec{v_1\u0027} \\cdot \\vec{v_2\u0027} \u003d 0$, should be clearly highlighted, as well.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Considering Note Structure**\n\nI\u0027m currently breaking down the request: nine images of Slovenian physics notes. The context screams university-level classical mechanics. My immediate goal is a well-structured Obsidian note system. Now, I\u0027m focusing on how best to organize and represent the information.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Information Flow**\n\nI\u0027ve got a framework in place.  I\u0027m aiming for a comprehensive, analytical Markdown system in Obsidian, built for reverse-engineering and critical examination of formulas, so I\u0027m thinking of incorporating LaTeX for the mathematical components. The goal is to provide a comprehensive, critical analysis that helps to justify, warn, and clarify aspects of the notes.  The images will dictate the chronology and I\u0027ll keep the language Slovenian, as the original instructions dictated. The initial analysis of the first image has begun, focussing on potential and kinetic energy, work and freefall.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping Equilibrium States**\n\nI\u0027m now diving into the potential energy diagrams in the second image. The note is focusing on the behavior of objects at equilibrium. I\u0027ve begun mapping out how to represent stable, unstable and indifferent scenarios within my Markdown system. The analysis includes first and second derivatives of potential energy to solidify an analytical approach to determining these different states.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Detailing Collisions \u0026 Gravity**\n\nI\u0027m now focusing on images 4-6, which are detailing inelastic and 2D collisions, the ballistic pendulum, Kepler\u0027s Laws, and gravity.  I\u0027m structuring the notes in a way that emphasizes the underlying principles and relationships. This includes equations for inelastic collisions, the derivation of Kepler\u0027s 3rd law from gravitational force, and the use of the integral form of gravitational force for continuous mass distributions.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Gravitational Force**\n\nI\u0027m currently delving into the final three images. Image 7 presents a derivation of gravitational force between a point mass and a differential mass element. Images 8 and 9 focus on gravitational fields, particularly inside and outside spherical shells and spheres. Image 8 also suggests a derivation, possibly for tidal forces or, more likely, a deeper dive into the gravitational field. I\u0027m focusing on deriving expressions for these concepts and integrating them with equations from prior images. I will organize the content of these images, starting with the seventh, in the filename that I have already planned, and add these final concepts to my existing draft.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Incorporating Loop Analysis**\n\nI\u0027m now integrating the detailed analysis of the loop-the-loop, the first example. I\u0027m focusing on the distinction between sliding and rolling, referencing the moment of inertia for the sphere. The energy conservation and force balance equations are being developed. I\u0027m also ensuring the gradient relationship between force and potential energy is accurately represented.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Describing Collision Details**\n\nI\u0027m presently focusing on the Ballistic Pendulum section and the associated warning about energy conservation misuse. I\u0027m noting the vital distinction and the classic student mistake to avoid, which is to use energy during the collision, not momentum. I\u0027m also ensuring the vector form of gravity is present, alongside the superposition principle, and the integrals. I\u0027m now transitioning to ensuring all LaTeX components are formatted correctly, and wikilinks are incorporated.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Revising Formula Presentation**\n\nI\u0027m now revising the presentation of key formulas. I\u0027ve re-examined several derivations. I noticed that for the loop-the-loop, the rolling sphere\u0027s moment of inertia, $J^*$, is correctly expressed as $\\frac{2}{5}mr^2$. The general formulas for $v_1\u0027$ and $v_2\u0027$ after collision are standard, and I will highlight them. I need to explicitly state why a step was taken, such as \"Zakaj odvod? Ker iščemo ekstrem potenciala.\" The orthogonality of $\\vec{v_1\u0027}$ and $\\vec{v_2\u0027}$ in the 2D collisions section, illustrated by $\\vec{v_1\u0027} \\cdot \\vec{v_2\u0027} \u003d 0$, should be clearly highlighted, as well.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Tukaj je strukturiran, analitičen in za Obsidian optimiziran zapis tvojih zapiskov. Vsebina je organizirana logično glede na tok predavanj (energija $\\to$ trki $\\to$ gravitacija) in vključuje kritične razlage ter opozorila pri pogostih napakah.\n\nJezik je slovenščina, skladno z zapiski.\n\n***\n\n# Predavanja: Mehanika - Energija, Trki in Gravitacija\n\n**Datum:** [[2025-11-20]]\n**Predmet:** [[Fizika]] / [[Klasična mehanika]]\n**Ključne besede:** #energija #trki #gravitacija #kepler #gibalna_količina\n\n---\n\n## 1. Energijski zakon in Gibanje po klančini\n\nTa del obravnava pretvorbo potencialne energije v kinetično in pogoje za gibanje telesa po zanki (loop-the-loop).\n\n### 1.1 Prosti pad in drsenje\nPri preprostem prostem padu ali drsenju (brez trenja) velja ohranitev mehanske energije ($W_m \u003d W_m\u0027$):\n$$ mgh \u003d \\frac{1}{2}mv^2 \\Rightarrow v \u003d \\sqrt{2gh} $$\n\n### 1.2 Gibanje po zanki (Loop-the-loop)\nTu nastopi ključna razlika med **drsenjem** (točkasto telo) in **kotaljenjem** (togo telo).\n\n#### Pogoj za ohranitev stika s podlago\nV najvišji točki zanke (točka $T$) na telo delujeta teža ($F_g$) in sila podlage ($F_n$) v smeri središča kroženja. Da telo ne pade, mora biti sila podlage $F_n \\ge 0$.\nEnačba gibanja v radialni smeri:\n$$ F_n + F_g \u003d m a_r \u003d m \\frac{v^2}{R} $$\nMejni pogoj ($F_n \u003d 0$):\n$$ mg \u003d m \\frac{v^{*2}}{R} \\Rightarrow v^{*2} \u003d R \\cdot g $$\n\u003e **Analitična opomba:** To je kritična hitrost $v^*$, ki jo mora telo imeti *na vrhu* zanke, da ne pade.\n\n#### Primer: Kotaljenje (Krogla)\nPri kotaljenju se energija deli na translacijsko in rotacijsko kinetično energijo.\n$$ W_k \u003d \\frac{1}{2}mv^2 + \\frac{1}{2}J\\omega^2 $$\nZ upoštevanjem zveze $\\omega \u003d v/r$ in vztrajnostnega momenta za polno kroglo $J^* \u003d \\frac{2}{5}mr^2$:\n$$ W_k \u003d \\frac{1}{2}mv^2 \\left( 1 + \\frac{J^*}{mr^2} \\right) \u003d \\frac{1}{2}mv^2 \\left( 1 + \\frac{2}{5} \\right) \u003d \\frac{7}{10}mv^2 $$\n\n**Izračun potrebne višine $h$:**\nZapišemo energijski zakon med začetno točko in vrhom zanke (višina $2R$):\n$$ mgh \u003d m g (2R) + W_k^* $$\n$$ mgh \u003d 2mgR + \\frac{1}{2}mv^{*2}\\left(1 + \\frac{2}{5}\\right) $$\nVstavimo kritično hitrost $v^{*2} \u003d Rg$:\n$$ h \u003d 2R + \\frac{1}{2}R(1.4) \u003d 2.7R \u003d \\frac{27}{10}R $$\n*(Opomba: V zapiskih je izpeljava za splošno razmerje $R_f$, kjer pride do faktorja $10/7$ za $R$, kar se ujema z zgornjim, če obrnemo enačbo za h).*\n\n---\n\n## 2. Potencialna energija in Sila\n\nPovezava med potencialno energijo $W_p$ in silo $\\vec{F}$ je fundamentalna: sila je negativni gradient potencialne energije.\n\n$$ \\vec{F} \u003d - \\nabla W_p \u003d - \\left( \\frac{\\partial W_p}{\\partial x}, \\frac{\\partial W_p}{\\partial y}, \\frac{\\partial W_p}{\\partial z} \\right) $$\nV eni dimenziji: $F_x \u003d - \\frac{dW_p}{dx}$.\n\n### 2.1 Graf potencialne energije in ravnovesne lege\nOpazujemo graf $W_p(x)$.\n*   **Ravnovesna lega:** Kjer je sila enaka 0, torej $\\frac{dW_p}{dx} \u003d 0$ (ekstrem funkcije).\n*   **Stabilno ravnovesje (Potencialna jama):** Minimum energije. $\\frac{d^2W_p}{dx^2} \u003e 0$. Če telo premaknemo, ga sila vrne nazaj.\n*   **Labilno ravnovesje (Vrh hriba):** Maksimum energije. $\\frac{d^2W_p}{dx^2} \u003c 0$. Če telo premaknemo, sila deluje v smeri odmika (telo pade).\n*   **Indiferentno ravnovesje:** Potencial je konstanten.\n\n---\n\n## 3. Trki (Collisions)\n\nPri trkih vedno velja [[Izrek o ohranitvi gibalne količine]]:\n$$ \\vec{G} \u003d \\vec{G}\u0027 \\Rightarrow m_1\\vec{v_1} + m_2\\vec{v_2} \u003d m_1\\vec{v_1}\u0027 + m_2\\vec{v_2}\u0027 $$\n\n### 3.1 Popolnoma prožni trk (Elastic)\nOhranja se tudi kinetična energija: $\\sum W_k \u003d \\sum W_k\u0027$.\nZa 1D trk dveh teles dobimo sistem enačb, ki vodi do rešitve za hitrosti po trku ($v_1\u0027$, $v_2\u0027$).\n\n\u003e **Tutorjev namig (Reševanje):** Namesto kvadriranja enačb za energijo je pogosto lažje uporabiti enačbo relativne hitrosti za prožne trke: $v_1 - v_2 \u003d -(v_1\u0027 - v_2\u0027)$.\n\n**Posebni primeri:**\n1.  **Enaki masi ($m_1 \u003d m_2$):** Telesi si izmenjata hitrosti. Če $v_2\u003d0$, se prvo ustavi, drugo pa odleti z $v_1$.\n2.  **Zid ($m_2 \\gg m_1$):** Če se lahka kroglica zaleti v težko steno, se odbije z nasprotno hitrostjo $-v_1$.\n\n### 3.2 Neprožni trk (Inelastic)\nKinetična energija se ne ohranja ($\\Delta W_k \\neq 0$), del se pretvori v notranjo energijo/deformacijo ($A_n$).\n**Popolnoma neprožni trk:** Telesi se sprimeta in gibljeta skupaj s hitrostjo $V$.\n$$ V \u003d \\frac{m_1v_1 + m_2v_2}{m_1 + m_2} $$\n\n### 3.3 Trk v 2D\nPri poševnem trku moramo ohranitev gibalne količine zapisati vektorsko (komponenta x in y posebej).\n*   **Zanimivost:** Pri prožnem trku dveh enakih mas, kjer ena miruje, je kot med hitrostma po trku vedno **90 stopinj** ($\\vec{v_1\u0027} \\cdot \\vec{v_2\u0027} \u003d 0$).\n    *   *Dokaz:* Iz ohranitve energije ($v_1^2 \u003d v_1\u0027^2 + v_2\u0027^2$) in kvadriranja ohranitve gibalne količine ($\\vec{v_1} \u003d \\vec{v_1\u0027} + \\vec{v_2\u0027}$) sledi $2\\vec{v_1\u0027}\\vec{v_2\u0027} \u003d 0$.\n\n---\n\n## 4. Balistično nihalo\n\nKlasičen primer kombinacije neprožnega trka in ohranitve energije.\n1.  **Faza 1 (Trk):** Izstrelek ($m$) prileti v klado ($M$). Uporabi **ohranitev gibalne količine**.\n    $$ m v_0 \u003d (m+M)V_{skupna} $$\n2.  **Faza 2 (Nihaj):** Skupni sistem zaniha do višine $h$. Uporabi **ohranitev energije**.\n    $$ \\frac{1}{2}(m+M)V_{skupna}^2 \u003d (m+M)gh $$\n\n\u003e **OPOZORILO:** Nikoli ne uporabljaj ohranitve energije direktno od začetka do konca (izstrelek -\u003e višina). Energija se pri trku izgubi!\n\n$$ v_0 \u003d \\frac{m+M}{m}\\sqrt{2gh} $$\n\n---\n\n## 5. Gravitacija in Keplerjevi zakoni\n\n### 5.1 Keplerjevi zakoni\n1.  **1. zakon:** Planeti se gibljejo po elipsah, Sonce je v gorišču.\n2.  **2. zakon (Ploščinski):** Zveznica Sonce-planet v enakih časih opiše enake ploščine ($dS/dt \u003d const$).\n    *   *Fizikalno ozadje:* To je posledica ohranitve vrtilne količine ($\\vec{\\Gamma}$), ker je gravitacija centralna sila (navor je 0).\n    *   Formula: $\\frac{dS}{dt} \u003d \\frac{1}{2}\\frac{|\\vec{\\Gamma}|}{m}$.\n3.  **3. zakon:** Razmerje med kubom velike polosi in kvadratom obhodnega časa je konstantno.\n    $$ \\frac{r^3}{t_0^2} \u003d k \u003d \\frac{G M_s}{4\\pi^2} $$\n\n### 5.2 Newtonov gravitacijski zakon\nSila med dvema točkastima masama:\n$$ \\vec{F_g} \u003d -G \\frac{m_1 m_2}{r^2} \\hat{e}_r $$\n(Znak minus pomeni, da je sila privlačna).\n\n**Izpeljava 3. Keplerjevega zakona (za kroženje):**\nIzenačimo gravitacijsko in centripetalno silo:\n$$ G \\frac{M m}{r^2} \u003d m \\omega^2 r \u003d m \\left(\\frac{2\\pi}{t_0}\\right)^2 r $$\nS preureditvijo dobimo zvezo za $r^3/t_0^2$.\n\n### 5.3 Gravitacija razporejene snovi (Integral)\nČe telo ni točkasto, uporabimo načelo superpozicije (seštevanje sil) v integralski obliki:\n$$ \\vec{F_g} \u003d \\int G \\frac{m_0 \\, dm}{|\\vec{r} - \\vec{r}_0|^3} (\\vec{r} - \\vec{r}_0) $$\nKjer je $dm$ diferencial mase telesa.\n\n**Ključni primeri (Gauss za gravitacijo - implicitno):**\n1.  **Znotraj votle krogle:** Gravitacijska sila je 0.\n2.  **Zunaj homogene krogle:** Gravitacijska sila je enaka, kot da bi bila vsa masa zbrana v središču.\n\n---\n\n## Kritična vprašanja za ponavljanje (Self-Check)\n\n1.  [[Zanka]]: Zakaj mora biti hitrost na vrhu zanke večja, če se krogla kotali, kot če drsi? (Odgovor: del energije gre v rotacijo, zato potrebujemo večjo začetno $W_p$).\n2.  [[Trki]]: Kdaj smemo pri trkih uporabiti ohranitev energije? (Samo pri prožnih).\n3.  [[Gravitacija]]: Kako se spreminja gravitacijski pospešek, ko se premikamo od središča Zemlje navzven? (Linearno narašča do površja, nato pada s kvadratom razdalje).",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 2920,
+      "parts": [{
+        "text": "Tukaj je strukturiran, analitičen in za Obsidian optimiziran zapis tvojih zapiskov. Vsebina je organizirana logično glede na tok predavanj (energija $\\to$ trki $\\to$ gravit"
+      }, {
+        "text": "acija) in vključuje kritične razlage ter opozorila pri pogostih napakah.\n\nJ"
+      }, {
+        "text": "ezik je slovenščina, skladno z zapiski.\n\n***\n\n# Predavanja: Mehanika -"
+      }, {
+        "text": " Energija, Trki in Gravitacija\n\n**Datum:** [[2025-11-20]]\n**Pred"
+      }, {
+        "text": "met:** [[Fizika]] / [[Klasična mehanika]]\n**Ključne besede:** #"
+      }, {
+        "text": "energija #trki #gravitacija #kepler #gibalna_količina\n\n---\n\n## 1. Energ"
+      }, {
+        "text": "ijski zakon in Gibanje po klančini\n\nTa del obravnava pretvorbo potencialne energije v kinetično in"
+      }, {
+        "text": " pogoje za gibanje telesa po zanki (loop-the-loop).\n\n### 1.1 Pro"
+      }, {
+        "text": "sti pad in drsenje\nPri preprostem prostem padu ali drsenju (brez trenja) velja o"
+      }, {
+        "text": "hranitev mehanske energije ($W_m \u003d W_m\u0027$):\n$$ mgh \u003d \\frac{1}{2}mv^2"
+      }, {
+        "text": " \\Rightarrow v \u003d \\sqrt{2gh} $$\n\n### 1.2 Gibanje po zanki (Loop"
+      }, {
+        "text": "-the-loop)\nTu nastopi ključna razlika med **drsenjem** (točk"
+      }, {
+        "text": "asto telo) in **kotaljenjem** (togo telo).\n\n#### Pogoj za ohranitev stika s pod"
+      }, {
+        "text": "lago\nV najvišji točki zanke (točka $T$) na telo delujeta te"
+      }, {
+        "text": "ža ($F_g$) in sila podlage ($F_n$) v smeri središča kroženja. Da"
+      }, {
+        "text": " telo ne pade, mora biti sila podlage $F_n \\ge 0$.\nEnačba gibanja v"
+      }, {
+        "text": " radialni smeri:\n$$ F_n + F_g \u003d m a_r \u003d m \\frac{v^2"
+      }, {
+        "text": "}{R} $$\nMejni pogoj ($F_n \u003d 0$):\n$$ mg \u003d m \\frac{v^{*"
+      }, {
+        "text": "2}}{R} \\Rightarrow v^{*2} \u003d R \\cdot g $$\n\u003e **Analitična opomba:** To je krit"
+      }, {
+        "text": "ična hitrost $v^*$, ki jo mora telo imeti *na vrhu* zanke, da ne pade.\n\n#### Primer:"
+      }, {
+        "text": " Kotaljenje (Krogla)\nPri kotaljenju se energija deli na translacijsko in rotacijsko kinetično energijo."
+      }, {
+        "text": "\n$$ W_k \u003d \\frac{1}{2}mv^2 + \\frac{1}{2}"
+      }, {
+        "text": "J\\omega^2 $$\nZ upoštevanjem zveze $\\omega \u003d v/r$ in vztrajnost"
+      }, {
+        "text": "nega momenta za polno kroglo $J^* \u003d \\frac{2}{5}mr^2$:\n"
+      }, {
+        "text": "$$ W_k \u003d \\frac{1}{2}mv^2 \\left( 1 + \\frac{J^*}{"
+      }, {
+        "text": "mr^2} \\right) \u003d \\frac{1}{2}mv^2 \\left( 1 +"
+      }, {
+        "text": " \\frac{2}{5} \\right) \u003d \\frac{7}{10}mv^2 $$\n\n"
+      }, {
+        "text": "**Izračun potrebne višine $h$:**\nZapišemo energijski zakon med začetno to"
+      }, {
+        "text": "čko in vrhom zanke (višina $2R$):\n$$ mgh \u003d m g (2R) + W"
+      }, {
+        "text": "_k^* $$\n$$ mgh \u003d 2mgR + \\frac{1}{2}mv^{*2}\\left(1 + \\"
+      }, {
+        "text": "frac{2}{5}\\right) $$\nVstavimo kritično hitrost $v^{*2} \u003d Rg$:\n$$ h"
+      }, {
+        "text": " \u003d 2R + \\frac{1}{2}R(1.4) \u003d 2.7R \u003d"
+      }, {
+        "text": " \\frac{27}{10}R $$\n*(Opomba: V zapiskih je izpeljava"
+      }, {
+        "text": " za splošno razmerje $R_f$, kjer pride do faktorja $10/7$ za $"
+      }, {
+        "text": "R$, kar se ujema z zgornjim, če obrnemo enačbo za h).*\n\n---\n\n## 2."
+      }, {
+        "text": " Potencialna energija in Sila\n\nPovezava med potencialno energijo $W_p$ in silo $\\"
+      }, {
+        "text": "vec{F}$ je fundamentalna: sila je negativni gradient potencialne energije.\n\n$$ \\vec{F} \u003d -"
+      }, {
+        "text": " \\nabla W_p \u003d - \\left( \\frac{\\partial W_p}{\\partial x}, \\frac{\\"
+      }, {
+        "text": "partial W_p}{\\partial y}, \\frac{\\partial W_p}{\\partial z} \\right) $$\n"
+      }, {
+        "text": "V eni dimenziji: $F_x \u003d - \\frac{dW_p}{dx}$.\n\n###"
+      }, {
+        "text": " 2.1 Graf potencialne energije in ravnovesne lege\nOpazujemo graf $W_p(x)$.\n*"
+      }, {
+        "text": "   **Ravnovesna lega:** Kjer je sila enaka 0, torej $\\frac{dW_p}{dx}"
+      }, {
+        "text": " \u003d 0$ (ekstrem funkcije).\n*   **Stabilno ravnovesje (Potencialna jama):** Minimum"
+      }, {
+        "text": " energije. $\\frac{d^2W_p}{dx^2} \u003e 0$. Če telo premaknemo, ga"
+      }, {
+        "text": " sila vrne nazaj.\n*   **Labilno ravnovesje (Vrh hriba):** Maks"
+      }, {
+        "text": "imum energije. $\\frac{d^2W_p}{dx^2} \u003c 0$. Če telo prem"
+      }, {
+        "text": "aknemo, sila deluje v smeri odmika (telo pade).\n*   **Indiferentno ravnovesje:**"
+      }, {
+        "text": " Potencial je konstanten.\n\n---\n\n## 3. Trki (Collisions)\n\nPri trkih vedno"
+      }, {
+        "text": " velja [[Izrek o ohranitvi gibalne količine]]:\n$$ \\vec{G} \u003d \\vec{G}\u0027 \\"
+      }, {
+        "text": "Rightarrow m_1\\vec{v_1} + m_2\\vec{v_2} \u003d m"
+      }, {
+        "text": "_1\\vec{v_1}\u0027 + m_2\\vec{v_2}\u0027 $$\n\n### "
+      }, {
+        "text": "3.1 Popolnoma prožni trk (Elastic)\nOhranja se tudi kinetična energija:"
+      }, {
+        "text": " $\\sum W_k \u003d \\sum W_k\u0027$.\nZa 1D trk dveh teles dobimo sistem"
+      }, {
+        "text": " enačb, ki vodi do rešitve za hitrosti po trku ($v_1\u0027$, $v_2\u0027$).\n\n\u003e"
+      }, {
+        "text": " **Tutorjev namig (Reševanje):** Namesto kvadriranja enačb za energijo je pogosto la"
+      }, {
+        "text": "žje uporabiti enačbo relativne hitrosti za prožne trke: $v_1 - v_2 \u003d -(v_1"
+      }, {
+        "text": "\u0027 - v_2\u0027)$.\n\n**Posebni primeri:**\n1.  **Enaki masi ($m_1 \u003d m"
+      }, {
+        "text": "_2$):** Telesi si izmenjata hitrosti. Če $v_2\u003d0$, se"
+      }, {
+        "text": " prvo ustavi, drugo pa odleti z $v_1$.\n2.  **Zid ($m_2"
+      }, {
+        "text": " \\gg m_1$):** Če se lahka kroglica zaleti v težko steno, se odbije z nas"
+      }, {
+        "text": "protno hitrostjo $-v_1$.\n\n### 3.2 Neprožni trk (Inelastic)"
+      }, {
+        "text": "\nKinetična energija se ne ohranja ($\\Delta W_k \\neq 0$), del se"
+      }, {
+        "text": " pretvori v notranjo energijo/deformacijo ($A_n$).\n**Popolnoma nepro"
+      }, {
+        "text": "žni trk:** Telesi se sprimeta in gibljeta skupaj s hitrostjo $V$.\n$$ V"
+      }, {
+        "text": " \u003d \\frac{m_1v_1 + m_2v_2}{m_1 + m_2} $$\n\n### "
+      }, {
+        "text": "3.3 Trk v 2D\nPri poševnem trku moramo ohranitev gibalne količine zapisati"
+      }, {
+        "text": " vektorsko (komponenta x in y posebej).\n*   **Zanimivost:** Pri prožnem trku d"
+      }, {
+        "text": "veh enakih mas, kjer ena miruje, je kot med hitrostma po trku vedno **90 stop"
+      }, {
+        "text": "inj** ($\\vec{v_1\u0027} \\cdot \\vec{v_2\u0027} \u003d 0$).\n    "
+      }, {
+        "text": "*   *Dokaz:* Iz ohranitve energije ($v_1^2 \u003d v_1\u0027^2 + v_2"
+      }, {
+        "text": "\u0027^2$) in kvadriranja ohranitve gibalne količine ($\\vec{v_1} \u003d \\vec{v_1\u0027}"
+      }, {
+        "text": " + \\vec{v_2\u0027}$) sledi $2\\vec{v_1\u0027}\\vec{v_2\u0027} \u003d 0"
+      }, {
+        "text": "$.\n\n---\n\n## 4. Balistično nihalo\n\nKlasičen primer kombinacije neprožnega trka in ohran"
+      }, {
+        "text": "itve energije.\n1.  **Faza 1 (Trk):** Izstrelek ($m$) pri"
+      }, {
+        "text": "leti v klado ($M$). Uporabi **ohranitev gibalne količine**.\n    $$ m v_0 \u003d ("
+      }, {
+        "text": "m+M)V_{skupna} $$\n2.  **Faza 2 (Nihaj"
+      }, {
+        "text": "):** Skupni sistem zaniha do višine $h$. Uporabi **ohranitev energije**.\n    $$ \\"
+      }, {
+        "text": "frac{1}{2}(m+M)V_{skupna}^2 \u003d (m+M)gh"
+      }, {
+        "text": " $$\n\n\u003e **OPOZORILO:** Nikoli ne uporabljaj ohranitve energije direktno od zač"
+      }, {
+        "text": "etka do konca (izstrelek -\u003e višina). Energija se pri trku izgubi!\n\n$$ v_0"
+      }, {
+        "text": " \u003d \\frac{m+M}{m}\\sqrt{2gh} $$\n\n---\n\n## 5. Gravitacija"
+      }, {
+        "text": " in Keplerjevi zakoni\n\n### 5.1 Keplerjevi zakoni\n1.  **1. zakon:** Plan"
+      }, {
+        "text": "eti se gibljejo po elipsah, Sonce je v gorišču.\n2.  **2. zakon (Plošč"
+      }, {
+        "text": "inski):** Zveznica Sonce-planet v enakih časih opiše enake ploščine ($dS/dt \u003d"
+      }, {
+        "text": " const$).\n    *   *Fizikalno ozadje:* To je posledica ohranitve vrt"
+      }, {
+        "text": "ilne količine ($\\vec{\\Gamma}$), ker je gravitacija centralna sila (navor je 0).\n    *"
+      }, {
+        "text": "   Formula: $\\frac{dS}{dt} \u003d \\frac{1}{2}\\frac{|\\vec{\\Gamma}|}{m}$.\n3."
+      }, {
+        "text": "  **3. zakon:** Razmerje med kubom velike polosi in kvadratom obhodnega časa je konstantno.\n"
+      }, {
+        "text": "    $$ \\frac{r^3}{t_0^2} \u003d k \u003d \\frac{G M_"
+      }, {
+        "text": "s}{4\\pi^2} $$\n\n### 5.2 Newtonov gravitacijski zakon\nSila med dvema to"
+      }, {
+        "text": "čkastima masama:\n$$ \\vec{F_g} \u003d -G \\frac{m_1 m_2}{r"
+      }, {
+        "text": "^2} \\hat{e}_r $$\n(Znak minus pomeni, da je sila privlačna).\n\n**Iz"
+      }, {
+        "text": "peljava 3. Keplerjevega zakona (za kroženje):**\nIzenačimo gravitacijsko in"
+      }, {
+        "text": " centripetalno silo:\n$$ G \\frac{M m}{r^2} \u003d m \\omega^2 r \u003d"
+      }, {
+        "text": " m \\left(\\frac{2\\pi}{t_0}\\right)^2 r $$\nS preureditvijo dob"
+      }, {
+        "text": "imo zvezo za $r^3/t_0^2$.\n\n### 5.3 Gravitacija"
+      }, {
+        "text": " razporejene snovi (Integral)\nČe telo ni točkasto, uporabimo načelo superpozicije ("
+      }, {
+        "text": "seštevanje sil) v integralski obliki:\n$$ \\vec{F_g} \u003d \\int G \\frac{m_0 \\,"
+      }, {
+        "text": " dm}{|\\vec{r} - \\vec{r}_0|^3} (\\vec{r} - \\vec{"
+      }, {
+        "text": "r}_0) $$\nKjer je $dm$ diferencial mase telesa.\n\n**Ključni prim"
+      }, {
+        "text": "eri (Gauss za gravitacijo - implicitno):**\n1.  **Znotraj votle kro"
+      }, {
+        "text": "gle:** Gravitacijska sila je 0.\n2.  **Zunaj homogene krogle:** Gravitacijska sila"
+      }, {
+        "text": " je enaka, kot da bi bila vsa masa zbrana v središču.\n\n---\n\n## Krit"
+      }, {
+        "text": "ična vprašanja za ponavljanje (Self-Check)\n\n1.  [[Zanka]]: Zakaj mora biti hit"
+      }, {
+        "text": "rost na vrhu zanke večja, če se krogla kotali, kot če drsi? (Odgovor: del"
+      }, {
+        "text": " energije gre v rotacijo, zato potrebujemo večjo začetno $W_p$).\n2.  [[Trki"
+      }, {
+        "text": "]]: Kdaj smemo pri trkih uporabiti ohranitev energije? (Samo pri prožnih).\n3.  [["
+      }, {
+        "text": "Gravitacija]]: Kako se spreminja gravitacijski pospešek, ko se premikamo od središča Zemlje nav"
+      }, {
+        "text": "zven? (Linearno narašča do površja, nato pada s kvadratom razdalje)."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }, {
+      "text": "1. ce bi drsela ne bi rabila zgubiti energije za spreminjanje vrtilne kolicine, kar za kotaljenje je potrebno.\n2. pri trkih smemo uporavljati ohranitev energije, ko predpostavimo da pri trkov ni izgube energije oz. translacija trka je 100%.\n3. S kvadratom radija razdalja pada sila teze od drugega telesa na prvo.",
+      "role": "user",
+      "tokenCount": 99
+    }, {
+      "text": "**Considering Energy Conservation**\n\nI\u0027m currently investigating how energy conservation influences the scenario. The user\u0027s input suggests they believe no energy is lost if angular momentum remains constant. I\u0027m unpacking this concept to analyze its validity within the broader context of the physics involved. My current thought is centered on how this idea aligns with the physical principles.\n\n\n**Examining Collision Efficiency**\n\nI\u0027m now focusing on collisions, specifically the implications of elastic collisions. The user correctly points out we can apply energy conservation if we assume no energy is lost. This suggests perfect energy transfer during impacts. I\u0027m considering scenarios where this assumption might hold, like idealized collisions. I\u0027m also remembering that the force of gravity weakens with distance from the center of a mass.\n\n\n**Addressing User Input**\n\nI\u0027m now integrating the user\u0027s feedback, specifically their oversight regarding the gravitational force within a celestial body. I\u0027m focusing on clarifying that the gravitational force doesn\u0027t linearly increase throughout, and the importance of addressing specific nuances of the problem to prevent confusion. I\u0027m also planning to refine and correct previous responses as needed, particularly concerning the internal structure of the planet.\n\n\n**Developing Experiment Concepts**\n\nI\u0027m now formulating response drafts, with an encouraging tone, targeting the \"valjasta plošča\" experiment. I need to clarify energy transformations from potential to kinetic energy. I\u0027m focusing on the \"popolnoma prožni trk\" and the radial gravitational force dependence. I\u0027m building on the user\u0027s input, including exploring equilibrium positions on curved tracks for rolling bodies and how the center of mass affects potential energy.\n\n\n**Integrating Gravitational Principles**\n\nI\u0027m presently integrating the transcript\u0027s insights on gravitation. I\u0027m focusing on the vector formulation of gravitational force, $\\vec{F} \u003d -G \\frac{m_1 m_2}{|\\vec{r}|^3} \\vec{r}$, and the superposition principle expressed as an integral, $\\vec{F} \u003d \\int d\\vec{F}$. This is crucial for handling continuous mass distributions, like the user\u0027s example of a particle near a rod. I\u0027m also planning to build a comprehensive note in Obsidian with dedicated sections for feedback, a \"rolling in a potential well\" example, the vector description of gravitation, and the reduced-mass concept.\n\n\n**Addressing Inhomogeneity Concerns**\n\nI\u0027m now zeroing in on the loaded cylinder experiment, specifically focusing on the inhomogeneous mass distribution. This requires revising my understanding of its behavior on a curved surface. The lecturer\u0027s \"trick\" with the offset center of mass is crucial. I\u0027m noting the potential for oscillation or non-intuitive equilibrium positions. I\u0027m also planning to build a \"Vajo/Demo\" note regarding it. Furthermore, I must clarify the gravitational behavior inside a homogeneous sphere, as the user\u0027s statement about distance dependence requires more precision.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Considering Energy Conservation**\n\nI\u0027m currently investigating how energy conservation influences the scenario. The user\u0027s input suggests they believe no energy is lost if angular momentum remains constant. I\u0027m unpacking this concept to analyze its validity within the broader context of the physics involved. My current thought is centered on how this idea aligns with the physical principles.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Examining Collision Efficiency**\n\nI\u0027m now focusing on collisions, specifically the implications of elastic collisions. The user correctly points out we can apply energy conservation if we assume no energy is lost. This suggests perfect energy transfer during impacts. I\u0027m considering scenarios where this assumption might hold, like idealized collisions. I\u0027m also remembering that the force of gravity weakens with distance from the center of a mass.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Addressing User Input**\n\nI\u0027m now integrating the user\u0027s feedback, specifically their oversight regarding the gravitational force within a celestial body. I\u0027m focusing on clarifying that the gravitational force doesn\u0027t linearly increase throughout, and the importance of addressing specific nuances of the problem to prevent confusion. I\u0027m also planning to refine and correct previous responses as needed, particularly concerning the internal structure of the planet.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Experiment Concepts**\n\nI\u0027m now formulating response drafts, with an encouraging tone, targeting the \"valjasta plošča\" experiment. I need to clarify energy transformations from potential to kinetic energy. I\u0027m focusing on the \"popolnoma prožni trk\" and the radial gravitational force dependence. I\u0027m building on the user\u0027s input, including exploring equilibrium positions on curved tracks for rolling bodies and how the center of mass affects potential energy.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Gravitational Principles**\n\nI\u0027m presently integrating the transcript\u0027s insights on gravitation. I\u0027m focusing on the vector formulation of gravitational force, $\\vec{F} \u003d -G \\frac{m_1 m_2}{|\\vec{r}|^3} \\vec{r}$, and the superposition principle expressed as an integral, $\\vec{F} \u003d \\int d\\vec{F}$. This is crucial for handling continuous mass distributions, like the user\u0027s example of a particle near a rod. I\u0027m also planning to build a comprehensive note in Obsidian with dedicated sections for feedback, a \"rolling in a potential well\" example, the vector description of gravitation, and the reduced-mass concept.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Addressing Inhomogeneity Concerns**\n\nI\u0027m now zeroing in on the loaded cylinder experiment, specifically focusing on the inhomogeneous mass distribution. This requires revising my understanding of its behavior on a curved surface. The lecturer\u0027s \"trick\" with the offset center of mass is crucial. I\u0027m noting the potential for oscillation or non-intuitive equilibrium positions. I\u0027m also planning to build a \"Vajo/Demo\" note regarding it. Furthermore, I must clarify the gravitational behavior inside a homogeneous sphere, as the user\u0027s statement about distance dependence requires more precision.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Odlično razmišljanje! Tvoji odgovori kažejo dobro razumevanje konceptov. Imam le nekaj majhnih, a pomembnih dopolnitev (tutorski popravki), preden nadaljujeva s podrobnostmi iz transkripta, ki niso bile v celoti zajete v ročnih zapiskih.\n\n### Tutorski pregled tvojih odgovorov:\n\n1.  **Kotaljenje vs. Drsenje:**\n    *   **Tvoj odgovor:** \"...ne bi rabila zgubiti energije za spreminjanje vrtilne kolicine...\"\n    *   **Popravek/Precizacija:** Beseda \"izguba\" je tu lahko zavajajoča. Energija se ne izgubi (kot pri trenju), ampak se **pretvori** (investira) v rotacijsko kinetično energijo. Ker moramo del začetne potencialne energije \"plačati\" za vrtenje ($W_{rot} \u003d \\frac{1}{2}J\\omega^2$), nam ostane manj za translacijsko hitrost.\n    *   *Ključ:* $W_p \u003d W_{trans} + W_{rot}$ (pri kotaljenju) vs. $W_p \u003d W_{trans}$ (pri drsenju).\n\n2.  **Trki:**\n    *   **Tvoj odgovor:** Pravilen. To velja za **popolnoma prožne trke**. Pri realnih trkih (makroskopskih) skoraj vedno pride do deformacij in segrevanja, zato energija ni povsem ohranjena, razen na atomskem nivoju ali pri idealiziranih nalogah.\n\n3.  **Gravitacija (Znotraj vs. Zunaj):**\n    *   **Tvoj odgovor:** \"S kvadratom radija razdalja pada...\"\n    *   **OPOZORILO (Izpitna past):** To velja samo **ZUNAJ** telesa ($r \u003e R$).\n    *   **ZNOTRAJ** homogene krogle (npr. če vrtamo tunel proti središču Zemlje) sila **linearno narašča** z oddaljenostjo od središča ($F \\propto r$). V samem središču je sila 0.\n    *   *Graf:* Od 0 do $R$ je premica navzgor, od $R$ naprej pa hiperbola ($1/r^2$) navzdol.\n\n---\n\nSpodaj je nadaljevanje zapiskov, ki vključuje specifike iz **transkripta** (predvsem tisti del o \"triku\" z valjem in podrobnejši vektorski zapis gravitacije), ki dopolnjujejo tvoje ročne zapiske.\n\n# Dodatek k predavanjem: Posebni primeri in Vektorska analiza\n\n## 6. Demo poskus: Kotaljenje nehomogenega valja\n*(Iz transkripta: \"Valjasta plošča... na prvi pogled izgleda homogen valj, ampak je utež na eno stran.\")*\n\nTo je klasičen primer, kako **položaj težišča** vpliva na stabilnost in potencialno energijo.\n*   **Situacija:** Imamo valj, ki ima težišče izmaknjeno iz geometrijskega središča (ekscentrična utež).\n*   **Fizika:** Ko valj položimo na klančino ali ukrivljeno podlago, se ne bo nujno odpeljal na dno.\n*   **Ravnovesna lega:** Dosežena je takrat, ko je **potencialna energija sistema minimalna**.\n    *   Če je težišče dovolj nizko (zaradi uteži), se lahko valj ustavi \"na klančini\", ker bi premik navzdol (geometrijsko) dejansko dvignil težišče (energetsko).\n*   **Nauk:** Pri telesih, ki niso točkasta, vedno gledamo pot **težišča**, ne pot geometrijskega središča.\n\n---\n\n## 7. Gravitacija: Natančen vektorski zapis\n\nV ročnih zapiskih je formula poenostavljena. Za resno računanje (sploh v 3D ali z integralom) potrebujemo polno vektorsko obliko.\n\n### 7.1 Sila med točkastima masama\nNaj bosta telesi na položajih $\\vec{r}_1$ in $\\vec{r}_2$. Sila na telo 1 zaradi telesa 2 ($\\vec{F}_{12}$):\n\n$$ \\vec{F}_{12} \u003d G \\frac{m_1 m_2}{|\\vec{r}_2 - \\vec{r}_1|^3} (\\vec{r}_2 - \\vec{r}_1) $$\n\n*   **Zakaj na tretjo potenco ($^3$)?**\n    *   Zgoraj imamo vektor razlike $(\\vec{r}_2 - \\vec{r}_1)$, ki ima dolžino $r$.\n    *   Da dobimo odvisnost $1/r^2$, moramo spodaj deliti z $r^3$, saj se en $r$ zgoraj in en spodaj pokrajšata: $\\frac{\\vec{r}}{r^3} \u003d \\frac{r \\cdot \\hat{e}_r}{r^3} \u003d \\frac{\\hat{e}_r}{r^2}$.\n\n### 7.2 Gravitacija porazdeljene snovi (Integral)\nČe imamo telo, ki ni točka (npr. asteroid nepravilne oblike), moramo sešteti (integrirati) prispevke vseh majhnih delčkov mase $dm$.\n\nSila na točkasto maso $m_0$ na položaju $\\vec{r}_0$ zaradi telesa z maso $M$:\n$$ \\vec{F} \u003d \\int_{telo} G \\frac{m_0 \\, dm}{|\\vec{r} - \\vec{r}_0|^3} (\\vec{r} - \\vec{r}_0) $$\nKjer je $\\vec{r}$ položaj delčka $dm$.\n\n\u003e **Postopek reševanja:**\n\u003e 1.  Določi koordinatni sistem.\n\u003e 2.  Zapiši vektor $\\vec{r} - \\vec{r}_0$ (od točke, kjer merimo silo, do delčka mase).\n\u003e 3.  Zapiši $dm$ s pomočjo gostote ($\\rho$): $dm \u003d \\rho \\, dV$ (ali $\\rho \\, dx$ pri palici).\n\u003e 4.  Integriraj po volumnu/dolžini telesa.\n\n---\n\n## 8. Problem dveh teles (Two-Body Problem)\n\nPri gravitaciji se obe telesi gibljeta okoli skupnega težišča. Sonce *ni* pri miru, ampak pleše okoli skupnega centra z Zemljo (čeprav zelo malo).\n\n### Reducirana masa ($\\mu$)\nEnačbo gibanja za relativno razdaljo $\\vec{r} \u003d \\vec{r}_1 - \\vec{r}_2$ lahko zapišemo, kot da gre za eno samo telo z **reducirano maso** $\\mu$:\n\n$$ \\frac{1}{\\mu} \u003d \\frac{1}{m_1} + \\frac{1}{m_2} \\Rightarrow \\mu \u003d \\frac{m_1 m_2}{m_1 + m_2} $$\n\nTo nam omogoči, da problem dveh teles prevedemo na problem enega telesa v potencialnem polju.\n*   Če je $m_1 \\gg m_2$ (Sonce \u003e\u003e Zemlja), potem je $\\mu \\approx m_2$ (masa Zemlje), kar pojasni, zakaj običajno zanemarimo gibanje Sonca.\n\n---\n\n## Povzetek formul za \"Cheat Sheet\"\n\n| Pojav | Formula / Pogoj |\n| :--- | :--- |\n| **Kritična hitrost v zanki** | $v^* \u003d \\sqrt{Rg}$ |\n| **Višina za kotaljenje po zanki** | $h \u003d 2.7 R$ (za polno kroglo) |\n| **Trk (Popolnoma prožni)** | $W_k \u003d const$, $\\vec{G} \u003d const$ |\n| **Trk (Popolnoma neprožni)** | $v_{skupna} \u003d \\frac{m_1v_1 + m_2v_2}{m_1+m_2}$ |\n| **Gravitacijska sila (vektor)** | $\\vec{F} \u003d -G \\frac{m_1 m_2}{r^3} \\vec{r}$ |\n| **3. Keplerjev zakon** | $\\frac{r^3}{t_0^2} \u003d \\frac{G M}{4\\pi^2}$ |",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 2040,
+      "parts": [{
+        "text": "Odlično razmišljanje! Tvoji odgovori kažejo dobro razumevanje konceptov. Imam le nekaj majhnih,"
+      }, {
+        "text": " a pomembnih dopolnitev (tutorski popravki), preden nadaljujeva s podrobnostmi iz trans"
+      }, {
+        "text": "kripta, ki niso bile v celoti zajete v ročnih zapiskih.\n\n### Tutorski preg"
+      }, {
+        "text": "led tvojih odgovorov:\n\n1.  **Kotaljenje vs. Drsenje:**\n    *   **"
+      }, {
+        "text": "Tvoj odgovor:** \"...ne bi rabila zgubiti energije za spreminjanje vrtilne kolicine...\"\n    "
+      }, {
+        "text": "*   **Popravek/Precizacija:** Beseda \"izguba\" je tu lahko zavajajoča. Energija se ne"
+      }, {
+        "text": " izgubi (kot pri trenju), ampak se **pretvori** (investira) v rotacijsko kinet"
+      }, {
+        "text": "ično energijo. Ker moramo del začetne potencialne energije \"plačati\" za vrtenje ($W_{rot"
+      }, {
+        "text": "} \u003d \\frac{1}{2}J\\omega^2$), nam ostane manj za translacijsko hit"
+      }, {
+        "text": "rost.\n    *   *Ključ:* $W_p \u003d W_{trans} + W_{rot}$ ("
+      }, {
+        "text": "pri kotaljenju) vs. $W_p \u003d W_{trans}$ (pri drsenju).\n\n2.  **Trki"
+      }, {
+        "text": ":**\n    *   **Tvoj odgovor:** Pravilen. To velja za **popolnoma prožne trke**. Pri"
+      }, {
+        "text": " realnih trkih (makroskopskih) skoraj vedno pride do deformacij in segrevanja, zato energija ni pov"
+      }, {
+        "text": "sem ohranjena, razen na atomskem nivoju ali pri idealiziranih nalogah.\n\n3.  **"
+      }, {
+        "text": "Gravitacija (Znotraj vs. Zunaj):**\n    *   **Tvoj odgovor:** \""
+      }, {
+        "text": "S kvadratom radija razdalja pada...\"\n    *   **OPOZORILO (Izpitna past):"
+      }, {
+        "text": "** To velja samo **ZUNAJ** telesa ($r \u003e R$).\n    *   **ZNOTRAJ** homogene"
+      }, {
+        "text": " krogle (npr. če vrtamo tunel proti središču Zemlje) sila **linearno narašča** z"
+      }, {
+        "text": " oddaljenostjo od središča ($F \\propto r$). V samem središču je sila 0"
+      }, {
+        "text": ".\n    *   *Graf:* Od 0 do $R$ je premica navzgor, od $R$ nap"
+      }, {
+        "text": "rej pa hiperbola ($1/r^2$) navzdol.\n\n---\n\nSpodaj je nadaljevanje zap"
+      }, {
+        "text": "iskov, ki vključuje specifike iz **transkripta** (predvsem tisti del o \""
+      }, {
+        "text": "triku\" z valjem in podrobnejši vektorski zapis gravitacije), ki dopolnjujejo tvoje ročne zapiske"
+      }, {
+        "text": ".\n\n# Dodatek k predavanjem: Posebni primeri in Vektorska analiza\n\n## 6. Demo"
+      }, {
+        "text": " poskus: Kotaljenje nehomogenega valja\n*(Iz transkripta: \"Valjasta plošča..."
+      }, {
+        "text": " na prvi pogled izgleda homogen valj, ampak je utež na eno stran.\")*\n\nTo je klasi"
+      }, {
+        "text": "čen primer, kako **položaj težišča** vpliva na stabilnost in potencialno energijo.\n*   "
+      }, {
+        "text": "**Situacija:** Imamo valj, ki ima težišče izmaknjeno iz geometrijskega središča (ek"
+      }, {
+        "text": "scentrična utež).\n*   **Fizika:** Ko valj položimo na klančino"
+      }, {
+        "text": " ali ukrivljeno podlago, se ne bo nujno odpeljal na dno.\n*"
+      }, {
+        "text": "   **Ravnovesna lega:** Dosežena je takrat, ko je **potencialna energija sistema minimalna**.\n    *"
+      }, {
+        "text": "   Če je težišče dovolj nizko (zaradi uteži), se lahko valj ustavi \""
+      }, {
+        "text": "na klančini\", ker bi premik navzdol (geometrijsko) dejansko dvignil težišče (ener"
+      }, {
+        "text": "getsko).\n*   **Nauk:** Pri telesih, ki niso točkasta, vedno gledamo pot **težišča"
+      }, {
+        "text": "**, ne pot geometrijskega središča.\n\n---\n\n## 7. Gravitacija: Natančen"
+      }, {
+        "text": " vektorski zapis\n\nV ročnih zapiskih je formula poenostavljena. Za resno računanje (spl"
+      }, {
+        "text": "oh v 3D ali z integralom) potrebujemo polno vektorsko obliko.\n\n### 7.1 S"
+      }, {
+        "text": "ila med točkastima masama\nNaj bosta telesi na položajih $\\vec{r}_1$ in $\\vec{r}_"
+      }, {
+        "text": "2$. Sila na telo 1 zaradi telesa 2 ($\\vec{F}_{12}$):\n\n$$ \\vec{F}_{"
+      }, {
+        "text": "12} \u003d G \\frac{m_1 m_2}{|\\vec{r}_2 - \\vec{r}_1|^"
+      }, {
+        "text": "3} (\\vec{r}_2 - \\vec{r}_1) $$\n\n*   **Zakaj na"
+      }, {
+        "text": " tretjo potenco ($^3$)?**\n    *   Zgoraj imamo vektor razlike $(\\vec{r}_2 - \\"
+      }, {
+        "text": "vec{r}_1)$, ki ima dolžino $r$.\n    *   Da dobimo odvisnost $1/r^2"
+      }, {
+        "text": "$, moramo spodaj deliti z $r^3$, saj se en $r$ zgoraj in en"
+      }, {
+        "text": " spodaj pokrajšata: $\\frac{\\vec{r}}{r^3} \u003d \\frac{r \\"
+      }, {
+        "text": "cdot \\hat{e}_r}{r^3} \u003d \\frac{\\hat{e}_r}{r^"
+      }, {
+        "text": "2}$.\n\n### 7.2 Gravitacija porazdeljene snovi (Integral)\nČe im"
+      }, {
+        "text": "amo telo, ki ni točka (npr. asteroid nepravilne oblike), moramo sešteti ("
+      }, {
+        "text": "integrirati) prispevke vseh majhnih delčkov mase $dm$.\n\nSila na to"
+      }, {
+        "text": "čkasto maso $m_0$ na položaju $\\vec{r}_0$ zaradi telesa z maso $M"
+      }, {
+        "text": "$:\n$$ \\vec{F} \u003d \\int_{telo} G \\frac{m_0 \\, dm}{|\\vec{r}"
+      }, {
+        "text": " - \\vec{r}_0|^3} (\\vec{r} - \\vec{r}_0) $$"
+      }, {
+        "text": "\nKjer je $\\vec{r}$ položaj delčka $dm$.\n\n\u003e **Postopek reševanja:**\n\u003e 1."
+      }, {
+        "text": "  Določi koordinatni sistem.\n\u003e 2.  Zapiši vektor $\\vec{r} - \\vec"
+      }, {
+        "text": "{r}_0$ (od točke, kjer merimo silo, do delčka mase).\n\u003e 3.  Zapi"
+      }, {
+        "text": "ši $dm$ s pomočjo gostote ($\\rho$): $dm \u003d \\rho \\, dV$ (ali $\\"
+      }, {
+        "text": "rho \\, dx$ pri palici).\n\u003e 4.  Integriraj po volumnu/dolžini teles"
+      }, {
+        "text": "a.\n\n---\n\n## 8. Problem dveh teles (Two-Body Problem)\n\nPri gravitaciji se"
+      }, {
+        "text": " obe telesi gibljeta okoli skupnega težišča. Sonce *ni* pri miru,"
+      }, {
+        "text": " ampak pleše okoli skupnega centra z Zemljo (čeprav zelo malo).\n\n### Reducirana masa ($\\mu$)\nE"
+      }, {
+        "text": "načbo gibanja za relativno razdaljo $\\vec{r} \u003d \\vec{r}_1 - \\vec{r"
+      }, {
+        "text": "}_2$ lahko zapišemo, kot da gre za eno samo telo z **reducirano maso**"
+      }, {
+        "text": " $\\mu$:\n\n$$ \\frac{1}{\\mu} \u003d \\frac{1}{m_1} + \\frac{1}{m_2"
+      }, {
+        "text": "} \\Rightarrow \\mu \u003d \\frac{m_1 m_2}{m_1 + m_2} $$\n\nTo"
+      }, {
+        "text": " nam omogoči, da problem dveh teles prevedemo na problem enega telesa v potencialnem polju.\n*   "
+      }, {
+        "text": "Če je $m_1 \\gg m_2$ (Sonce \u003e\u003e Zemlja), potem je $\\mu \\approx m_2"
+      }, {
+        "text": "$ (masa Zemlje), kar pojasni, zakaj običajno zanemarimo gibanje Sonca.\n\n---\n\n##"
+      }, {
+        "text": " Povzetek formul za \"Cheat Sheet\"\n\n| Pojav | Formula / Pogoj |\n| :--- | :--- |\n| **Krit"
+      }, {
+        "text": "ična hitrost v zanki** | $v^* \u003d \\sqrt{Rg}$ |\n| **Višina za"
+      }, {
+        "text": " kotaljenje po zanki** | $h \u003d 2.7 R$ (za polno kroglo) |\n"
+      }, {
+        "text": "| **Trk (Popolnoma prožni)** | $W_k \u003d const$, $\\vec{G} \u003d const$ |"
+      }, {
+        "text": "\n| **Trk (Popolnoma neprožni)** | $v_{skupna} \u003d \\frac{m_1"
+      }, {
+        "text": "v_1 + m_2v_2}{m_1+m_2}$ |\n| **Grav"
+      }, {
+        "text": "itacijska sila (vektor)** | $\\vec{F} \u003d -G \\frac{m_1 m_2}{"
+      }, {
+        "text": "r^3} \\vec{r}$ |\n| **3. Keplerjev zakon** | $\\frac{r"
+      }, {
+        "text": "^3}{t_0^2} \u003d \\frac{G M}{4\\pi^2}$ |"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

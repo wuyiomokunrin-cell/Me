@@ -1,0 +1,1111 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. \n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "12s2o7FuN1VnaFTXtTsERxnVmMeN1I5JR"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1bxOHnbexDo5IdxC3v-EiT6F4AqP9ElgG"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1fR_2QcKxst-0Hwiltg3v8U35jQZtVXyh"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1lzf3jCAa9ly4b0mDpLh8icXd8HhjbkUA"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1E5ja6m_m6EjGgkKHvHd9_oxxzCGBRITQ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1wK8cK6AkTDmzmmWjCKIZ5twBPYh6IU5Z"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1UrTqMFRHpvFIncjaJP3yO8PrZgI2TffS"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1F8NHD8XWh_VOUNEvnGXTas7zYTY-64Nm"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ptZhju0qa_IJ3II4nfvenIOjAnUffxv6"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1oRhbNPASQYzijo13YqgIKIm-MGxDb4Zb"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1_SJyZL7qwq7BisKoY8gODOra_nTrZr0k"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "15lsMzjDegpPiftxEZuswRhK-rrglLRs8"
+      },
+      "role": "user",
+      "tokenCount": 112196
+    }, {
+      "driveAudio": {
+        "id": "1g1qP88sMrTWtr1lLJhHEFA3ieROJSH2I"
+      },
+      "role": "user",
+      "tokenCount": 139121
+    }, {
+      "text": "mat a seminar 4th lecture. ",
+      "role": "user",
+      "tokenCount": 10
+    }, {
+      "text": "**Analyzing Input:**\n\nOkay, I\u0027m focusing on the user\u0027s request, especially the audio and handwritten notes. My goal is to parse and understand this data to assist in creating structured markdown. I’m thinking through the best way to handle different data types and how to connect them effectively.\n\n\n**Structuring the Content**\n\nI\u0027m working on how to best present the lecture\u0027s content. I\u0027ve decided to prioritize the handwritten notes as the core structure, using the audio to elaborate and contextualize.  The notes offer the key problems and solutions, while the audio provides the underlying theory. I\u0027m focusing now on the best way to integrate these elements chronologically, keeping in mind the user\u0027s analytical nature and need for clear explanations of concepts like the epsilon-delta definition.\n\n\n**Processing the Data**\n\nI\u0027m currently digesting the user\u0027s request, focusing on the audio and handwritten notes to build structured markdown. I\u0027m prioritizing the notes\u0027 core problems and solutions, supplementing with audio for context and theory. I\u0027ll translate everything into LaTeX and Matplotlib, ensuring a clear and analytical presentation that prioritizes understanding over memorization. The focus is on providing painstaking explanations for each step in the limits calculations, with a warning system for potential errors.\n\n\n**Structuring the Notes**\n\nI\u0027m currently focused on organizing the lecture content. My priority is to integrate the handwritten notes and audio transcript, with the notes providing the primary structure. I\u0027ll use the audio to expand on theoretical points and provide context for the problems. I\u0027ll make sure to provide explicit and analytical explanations in LaTeX, and generate diagrams in Matplotlib when necessary.\n\n\n**Defining the Scope**\n\nI\u0027m currently outlining the overall structure for the notes, prioritizing clarity and analytical rigor. My focus is on transforming the user\u0027s raw material (the audio transcript and handwritten notes) into a well-organized and easily digestible format for Obsidian. I\u0027m focusing on defining the key areas, based on user\u0027s content, such as **Limits of Functions, Function Composition** to create links and to provide structure. The primary goal is to facilitate deeper understanding.\n\n\n**Developing the Outline**\n\nMy current focus is crafting a clear outline for the notes. I\u0027m going through the lecture\u0027s materials, ensuring the content mirrors the user\u0027s audio and handwritten notes. I’m thinking about the structure, keeping the emphasis on math and critical analysis. The primary goal is to provide a comprehensive, understandable resource that integrates both raw notes and audio. I want to build a resource that is as complete as possible.\n\n\n\n**Organizing the Lecture:**\n\nMy focus now is on transforming the user\u0027s lecture content into a structured format for Obsidian. I\u0027m prioritizing the handwritten notes as the core of the structure, using the audio to supplement and clarify concepts. I\u0027m paying close attention to the user\u0027s needs, particularly the emphasis on detailed justifications for each step in limit calculations. The goal is to provide a solid base for critical analysis.\n\n\n**Organizing the Input**\n\nMy main focus right now is on pulling together the information from the audio and handwritten notes to build a comprehensive markdown file for Obsidian. I\u0027m prioritizing structuring the content chronologically and thematically to best support the user\u0027s need for analytical understanding. I\u0027ll translate the mathematical expressions into LaTeX and incorporate explanations for each step, and include warnings for any discrepancies.\n\n\n**Structuring the Content**\n\nI\u0027m currently creating the overall structure for the notes, prioritizing clarity and analytical rigor, as requested. My focus is on transforming the user\u0027s raw data into a well-organized and easily digestible format for Obsidian. My first step is organizing all the topics in distinct sections: Function Composition, Limits of Functions with subsections for theory, problems, and detailed solutions.\n\n\n",
+      "role": "model",
+      "tokenCount": 1845,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Analyzing Input:**\n\nOkay, I\u0027m focusing on the user\u0027s request, especially the audio and handwritten notes. My goal is to parse and understand this data to assist in creating structured markdown. I’m thinking through the best way to handle different data types and how to connect them effectively.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Content**\n\nI\u0027m working on how to best present the lecture\u0027s content. I\u0027ve decided to prioritize the handwritten notes as the core structure, using the audio to elaborate and contextualize.  The notes offer the key problems and solutions, while the audio provides the underlying theory. I\u0027m focusing now on the best way to integrate these elements chronologically, keeping in mind the user\u0027s analytical nature and need for clear explanations of concepts like the epsilon-delta definition.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Processing the Data**\n\nI\u0027m currently digesting the user\u0027s request, focusing on the audio and handwritten notes to build structured markdown. I\u0027m prioritizing the notes\u0027 core problems and solutions, supplementing with audio for context and theory. I\u0027ll translate everything into LaTeX and Matplotlib, ensuring a clear and analytical presentation that prioritizes understanding over memorization. The focus is on providing painstaking explanations for each step in the limits calculations, with a warning system for potential errors.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Notes**\n\nI\u0027m currently focused on organizing the lecture content. My priority is to integrate the handwritten notes and audio transcript, with the notes providing the primary structure. I\u0027ll use the audio to expand on theoretical points and provide context for the problems. I\u0027ll make sure to provide explicit and analytical explanations in LaTeX, and generate diagrams in Matplotlib when necessary.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining the Scope**\n\nI\u0027m currently outlining the overall structure for the notes, prioritizing clarity and analytical rigor. My focus is on transforming the user\u0027s raw material (the audio transcript and handwritten notes) into a well-organized and easily digestible format for Obsidian. I\u0027m focusing on defining the key areas, based on user\u0027s content, such as **Limits of Functions, Function Composition** to create links and to provide structure. The primary goal is to facilitate deeper understanding.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing the Outline**\n\nMy current focus is crafting a clear outline for the notes. I\u0027m going through the lecture\u0027s materials, ensuring the content mirrors the user\u0027s audio and handwritten notes. I’m thinking about the structure, keeping the emphasis on math and critical analysis. The primary goal is to provide a comprehensive, understandable resource that integrates both raw notes and audio. I want to build a resource that is as complete as possible.\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Lecture:**\n\nMy focus now is on transforming the user\u0027s lecture content into a structured format for Obsidian. I\u0027m prioritizing the handwritten notes as the core of the structure, using the audio to supplement and clarify concepts. I\u0027m paying close attention to the user\u0027s needs, particularly the emphasis on detailed justifications for each step in limit calculations. The goal is to provide a solid base for critical analysis.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Organizing the Input**\n\nMy main focus right now is on pulling together the information from the audio and handwritten notes to build a comprehensive markdown file for Obsidian. I\u0027m prioritizing structuring the content chronologically and thematically to best support the user\u0027s need for analytical understanding. I\u0027ll translate the mathematical expressions into LaTeX and incorporate explanations for each step, and include warnings for any discrepancies.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Content**\n\nI\u0027m currently creating the overall structure for the notes, prioritizing clarity and analytical rigor, as requested. My focus is on transforming the user\u0027s raw data into a well-organized and easily digestible format for Obsidian. My first step is organizing all the topics in distinct sections: Function Composition, Limits of Functions with subsections for theory, problems, and detailed solutions.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# Function Composition and Limits of Functions\n\n## [[Function Composition]]\n\n### [[Theory and Definitions]]\n\nFunction composition is the application of one function to the results of another.\n- The composition of `f` with `g` is denoted as `f ∘ g` (read as \"f of g\") and is defined by `(f ∘ g)(x) \u003d f(g(x))`.\n- The composition of `g` with `f` is denoted as `g ∘ f` (read as \"g of f\") and is defined by `(g ∘ f)(x) \u003d g(f(x))`.\n\nA visual representation of `g ∘ f`:\n```\n  x --- f(x) ---\u003e y --- g(y) ---\u003e z\n  |                               |\n  +-------- g(f(x)) --------------+\n           (g ∘ f)\n```\n\n### [[Problems]]\n\n1.  Given `f, g: ℝ → ℝ`, with `f(x) \u003d x³` and `g(x) \u003d 2x + 1`, find `f ∘ g` and `g ∘ f`.\n2.  Given `f(x) \u003d sgn(x)` and `g(x) \u003d 2x + 1`, find `f ∘ g` and `g ∘ f`.\n3.  Given `f(x) \u003d {x, if x \u003c 0; 0, if x ≥ 0}` and `g(x) \u003d {5, if x ≤ 0; x² + 1, if x \u003e 0}`, find `f ∘ g` and `g ∘ f`.\n4.  Given `f(x) \u003d {1/x², if x \u003c 0; e^x, if x ≥ 0}` and `g(x) \u003d {0, if x ≤ 1; (π/2)arctan(x) + 2, if x \u003e 1}`, find `f ∘ g` and `g ∘ f`.\n\n### [[Solutions]]\n\n#### [[Problem 1 Solution]]\nGiven:\n- $f(x) \u003d x^3$\n- $g(x) \u003d 2x + 1$\n\n**1. Calculate `f ∘ g`:**\nThe definition is `(f ∘ g)(x) \u003d f(g(x))`. We substitute the expression for `g(x)` into `f(x)`.\n$f(g(x)) \u003d f(2x+1) \u003d (2x+1)^3$\n\n**2. Calculate `g ∘ f`:**\nThe definition is `(g ∘ f)(x) \u003d g(f(x))`. We substitute the expression for `f(x)` into `g(x)`.\n$g(f(x)) \u003d g(x^3) \u003d 2(x^3) + 1 \u003d 2x^3 + 1$\n\n\u003e **Critical Analysis:** Note that function composition is not commutative, meaning `f ∘ g ≠ g ∘ f` in general, as demonstrated by this example where `(2x+1)³ ≠ 2x³ + 1`.\n\n---\n#### [[Problem 2 Solution]]\nGiven:\n- $f(x) \u003d \\text{sgn}(x) \u003d \\begin{cases} -1 \u0026 \\text{if } x \u003c 0 \\\\ 0 \u0026 \\text{if } x \u003d 0 \\\\ 1 \u0026 \\text{if } x \u003e 0 \\end{cases}$\n- $g(x) \u003d 2x + 1$\n\n**1. Calculate `g ∘ f`:**\nThis is `g(f(x))`. We must evaluate this piecewise based on the definition of `f(x)`.\n- **Case 1: `x \u003c 0`**\n  `f(x) \u003d -1`. Therefore, `g(f(x)) \u003d g(-1) \u003d 2(-1) + 1 \u003d -1`.\n- **Case 2: `x \u003d 0`**\n  `f(x) \u003d 0`. Therefore, `g(f(x)) \u003d g(0) \u003d 2(0) + 1 \u003d 1`.\n- **Case 3: `x \u003e 0`**\n  `f(x) \u003d 1`. Therefore, `g(f(x)) \u003d g(1) \u003d 2(1) + 1 \u003d 3`.\n\nCombining these cases, we get the piecewise function for `g ∘ f`:\n$g(f(x)) \u003d \\begin{cases} -1 \u0026 \\text{if } x \u003c 0 \\\\ 1 \u0026 \\text{if } x \u003d 0 \\\\ 3 \u0026 \\text{if } x \u003e 0 \\end{cases}$\n\n**2. Calculate `f ∘ g`:**\nThis is `f(g(x)) \u003d f(2x+1)`. We need to determine when the input to `f`, which is `g(x)`, is negative, zero, or positive.\n- **Case 1: `g(x) \u003c 0`**\n  `2x + 1 \u003c 0` which implies `2x \u003c -1` or `x \u003c -1/2`. In this case, `f(g(x)) \u003d -1`.\n- **Case 2: `g(x) \u003d 0`**\n  `2x + 1 \u003d 0` which implies `x \u003d -1/2`. In this case, `f(g(x)) \u003d 0`.\n- **Case 3: `g(x) \u003e 0`**\n  `2x + 1 \u003e 0` which implies `x \u003e -1/2`. In this case, `f(g(x)) \u003d 1`.\n\nCombining these cases, we get the piecewise function for `f ∘ g`:\n$f(g(x)) \u003d \\begin{cases} -1 \u0026 \\text{if } x \u003c -1/2 \\\\ 0 \u0026 \\text{if } x \u003d -1/2 \\\\ 1 \u0026 \\text{if } x \u003e -1/2 \\end{cases}$\n\n---\n#### [[Problem 3 Solution]]\nGiven:\n- $f(x) \u003d \\begin{cases} x \u0026 \\text{if } x \u003c 0 \\\\ 0 \u0026 \\text{if } x \\geq 0 \\end{cases}$\n- $g(x) \u003d \\begin{cases} 5 \u0026 \\text{if } x \\leq 0 \\\\ x^2+1 \u0026 \\text{if } x \u003e 0 \\end{cases}$\n\n**1. Calculate `f ∘ g`:**\nThis is `f(g(x))`. We analyze the output of `g(x)` to determine which piece of `f(x)` to use.\n- **Case 1: `x ≤ 0`**\n  `g(x) \u003d 5`. Since `5 ≥ 0`, we use the second piece of `f(x)`.\n  `f(g(x)) \u003d f(5) \u003d 0`.\n- **Case 2: `x \u003e 0`**\n  `g(x) \u003d x² + 1`. Since `x \u003e 0`, `x²` is positive, so `x² + 1 \u003e 1`. This means `g(x)` is always `≥ 0`. We use the second piece of `f(x)`.\n  `f(g(x)) \u003d f(x² + 1) \u003d 0`.\n\nSince the result is `0` for all `x ∈ ℝ`:\n$f(g(x)) \u003d 0, \\forall x \\in \\mathbb{R}$\n\n**2. Calculate `g ∘ f`:**\nThis is `g(f(x))`. We analyze the output of `f(x)`.\n- **Case 1: `x \u003c 0`**\n  `f(x) \u003d x`. Since `x \u003c 0`, `f(x)` is also `\u003c 0`. We must use the first piece of `g(x)`.\n  `g(f(x)) \u003d g(x) \u003d 5`.\n- **Case 2: `x ≥ 0`**\n  `f(x) \u003d 0`. Since `0 ≤ 0`, we use the first piece of `g(x)`.\n  `g(f(x)) \u003d g(0) \u003d 5`.\n\nSince the result is `5` for all `x ∈ ℝ`:\n$g(f(x)) \u003d 5, \\forall x \\in \\mathbb{R}$\n\n---\n#### [[Problem 4 Solution]]\nGiven:\n- $f(x) \u003d \\begin{cases} 1/x^2 \u0026 \\text{if } x \u003c 0 \\\\ e^x \u0026 \\text{if } x \\geq 0 \\end{cases}$\n- $g(x) \u003d \\begin{cases} 0 \u0026 \\text{if } x \\leq 1 \\\\ \\frac{\\pi}{2}\\arctan(x) + 2 \u0026 \\text{if } x \u003e 1 \\end{cases}$\n\n**1. Calculate `f ∘ g`:**\nThis is `f(g(x))`. We analyze the output of `g(x)`.\n- **Case 1: `x ≤ 1`**\n  `g(x) \u003d 0`. Since `0 ≥ 0`, we use the second piece of `f(x)`.\n  `f(g(x)) \u003d f(0) \u003d e^0 \u003d 1`.\n- **Case 2: `x \u003e 1`**\n  `g(x) \u003d (π/2)arctan(x) + 2`. The range of `arctan(x)` for `x \u003e 1` is `(π/4, π/2)`.\n  So, `(π/2) * (π/4, π/2)` gives `(π²/8, π²/4)`.\n  Adding 2, the range of `g(x)` is `(π²/8 + 2, π²/4 + 2)`. Since `π ≈ 3.14`, `π² ≈ 9.86`. The range is approximately `(1.23+2, 2.46+2) \u003d (3.23, 4.46)`. All these values are `≥ 0`.\n  We use the second piece of `f(x)`.\n  `f(g(x)) \u003d f(\\frac{\\pi}{2}\\arctan(x) + 2) \u003d e^{\\frac{\\pi}{2}\\arctan(x) + 2}`.\n\nCombining these:\n$f(g(x)) \u003d \\begin{cases} 1 \u0026 \\text{if } x \\leq 1 \\\\ e^{\\frac{\\pi}{2}\\arctan(x) + 2} \u0026 \\text{if } x \u003e 1 \\end{cases}$\n\n**2. Calculate `g ∘ f`:**\nThis is `g(f(x))`. We analyze the output of `f(x)`.\n- **Case 1: `x \u003c 0`**\n  `f(x) \u003d 1/x²`. Since `x \u003c 0`, `x² \u003e 0`, so `1/x² \u003e 0`. We need to determine if `1/x²` is `≤ 1` or `\u003e 1`.\n  `1/x² ≤ 1` implies `1 ≤ x²`, which means `|x| ≥ 1`. Since we are in the domain `x \u003c 0`, this corresponds to `x ≤ -1`.\n  So, if `x ≤ -1`, then `f(x) \u003d 1/x² ∈ (0, 1]`. For these values, we use the first piece of `g(x)`: `g(f(x)) \u003d 0`.\n  If `-1 \u003c x \u003c 0`, then `f(x) \u003d 1/x² \u003e 1`. For these values, we use the second piece of `g(x)`: `g(f(x)) \u003d (\\pi/2)arctan(1/x²) + 2`.\n- **Case 2: `x ≥ 0`**\n  `f(x) \u003d e^x`. Since `x ≥ 0`, the range of `f(x)` is `[1, ∞)`.\n  If `x \u003d 0`, `f(x) \u003d e^0 \u003d 1`. Since `1 ≤ 1`, we use the first piece of `g(x)`: `g(f(0)) \u003d 0`.\n  If `x \u003e 0`, `f(x) \u003d e^x \u003e 1`. We use the second piece of `g(x)`: `g(f(x)) \u003d (\\pi/2)arctan(e^x) + 2`.\n\nCombining all sub-cases:\n$g(f(x)) \u003d \\begin{cases} 0 \u0026 \\text{if } x \\leq -1 \\\\ \\frac{\\pi}{2}\\arctan(1/x^2) + 2 \u0026 \\text{if } -1 \u003c x \u003c 0 \\\\ 0 \u0026 \\text{if } x\u003d0 \\\\ \\frac{\\pi}{2}\\arctan(e^x) + 2 \u0026 \\text{if } x\u003e0 \\end{cases}$\n\n\u003e **Note to Self:** The domain partitioning for `g ∘ f` is complex. It\u0027s crucial to analyze the range of the inner function (`f(x)`) and see how it maps onto the domain pieces of the outer function (`g(x)`).\n\n## [[Limits of Functions]]\n\n### [[Theory and Definitions]]\n\n#### [[Epsilon-Delta Definition of a Limit]]\nThe limit of a function `f(x)` as `x` approaches `a` is `L`, written as:\n$\\lim_{x \\to a} f(x) \u003d L$\nThis is formally defined as:\n$\\forall \\epsilon \u003e 0, \\exists \\delta \u003e 0 \\text{ such that } \\forall x \\in D, (0 \u003c |x-a| \u003c \\delta \\implies |f(x) - L| \u003c \\epsilon)$\n\nThis means that for any small positive number `ε` (epsilon), we can find another small positive number `δ` (delta) such that if `x` is within `δ` distance of `a` (but not equal to `a`), then `f(x)` will be within `ε` distance of `L`.\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ndef f(x):\n    # Example function, let\u0027s use a simple linear one for clarity\n    if x \u003d\u003d 2:\n        return 3  # A hole in the function for demonstration\n    return 0.5 * x + 2\n\nx \u003d np.linspace(0, 4, 400)\ny \u003d np.array([f(val) for val in x])\n\na \u003d 2\nL \u003d 3  # The limit is 3, even if f(2) might be different\nepsilon \u003d 0.5\ndelta \u003d 1.0 # For epsilon\u003d0.5, a delta of 1.0 works: 0.5 * delta \u003d 0.25 \u003c 0.5\n\nfig, ax \u003d plt.subplots()\n\nax.plot(x, y, label\u003d\u0027f(x)\u0027)\nax.set_title(\"Epsilon-Delta Definition of a Limit\")\nax.set_xlabel(\"x\")\nax.set_ylabel(\"f(x)\")\n\n# Plot L and a\nax.plot(a, L, \u0027ro\u0027)\nax.text(a + 0.1, L, \u0027L\u0027, fontsize\u003d12)\n\n# Epsilon region\nax.axhline(y\u003dL + epsilon, color\u003d\u0027r\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.5)\nax.axhline(y\u003dL - epsilon, color\u003d\u0027r\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.5)\nax.fill_between(x, L - epsilon, L + epsilon, color\u003d\u0027red\u0027, alpha\u003d0.1, label\u003df\u0027ε-neighborhood of L (ε\u003d{epsilon})\u0027)\n\n# Delta region\nax.axvline(x\u003da + delta, color\u003d\u0027b\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.5)\nax.axvline(x\u003da - delta, color\u003d\u0027b\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.5)\nax.fill_betweenx(ax.get_ylim(), a - delta, a + delta, color\u003d\u0027blue\u0027, alpha\u003d0.1, label\u003df\u0027δ-neighborhood of a (δ\u003d{delta})\u0027)\n\n# Pointing out the regions\nax.text(0.1, L + epsilon, \u0027L+ε\u0027, color\u003d\u0027r\u0027)\nax.text(0.1, L - epsilon, \u0027L-ε\u0027, color\u003d\u0027r\u0027)\nax.text(a - delta, 1, \u0027a-δ\u0027, color\u003d\u0027b\u0027)\nax.text(a + delta, 1, \u0027a+δ\u0027, color\u003d\u0027b\u0027)\n\nax.legend()\nax.grid(True)\nplt.show()\n```\n\n#### [[Known Limits]]\nThese are foundational limits used to solve more complex problems, often by algebraic manipulation.\n\u003e **Memorialization Note:** The lecturer emphasized a general method using a \"škatla\" (box) as a placeholder. This is a form of u-substitution. If you have a known limit `lim (expression_in_x) \u003d L` as `x→0`, then the same limit holds if you replace `x` with a \"box\" (some function `g(x)`), as long as `box→0` under the same conditions.\n\n1.  $\\lim_{x \\to 0} \\frac{\\sin(x)}{x} \u003d 1$  (General form: $\\lim_{\\square \\to 0} \\frac{\\sin(\\square)}{\\square} \u003d 1$)\n2.  $\\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} \u003d 1$  (General form: $\\lim_{\\square \\to 0} \\frac{\\ln(1+\\square)}{\\square} \u003d 1$)\n3.  $\\lim_{x \\to 0} \\frac{e^x - 1}{x} \u003d 1$  (General form: $\\lim_{\\square \\to 0} \\frac{e^\\square - 1}{\\square} \u003d 1$)\n4.  $\\lim_{x \\to 0} \\frac{a^x - 1}{x} \u003d \\ln(a)$ for `a \u003e 0`.\n5.  $\\lim_{x \\to \\infty} (1 + \\frac{1}{x})^x \u003d e$ (General form: $\\lim_{\\square \\to \\infty} (1 + \\frac{1}{\\square})^\\square \u003d e$)\n\n### [[Problems]]\n\n**Group 1: Rational Functions \u0026 Factoring**\na) $\\lim_{x \\to 2} \\frac{x^2-4}{x^3-8}$\nb) $\\lim_{x \\to -2} \\frac{x^2-4}{x^3+8}$\nc) $\\lim_{x \\to 1} (\\frac{1}{1-x} - \\frac{2}{1-x^2})$\n\n**Group 2: Radicals \u0026 Conjugate Method**\na) $\\lim_{x \\to 1} \\frac{\\sqrt{x+3}-2}{x-1}$\nb) $\\lim_{x \\to 2} \\frac{\\sqrt{2-x} - \\sqrt{2x}}{ \\sqrt{4x} + 2 }$\n\n**Group 3: Trigonometric Limits**\na) $\\lim_{x \\to 0} \\frac{\\sin(2x)}{\\sin(3x)}$\nb) $\\lim_{x \\to 0} \\frac{\\tan(2x) - 2\\tan(x)}{x^3}$\nc) $\\lim_{x \\to \\pi/4} \\frac{\\cos(x) - \\sin(x)}{\\cos(2x)}$\n\n**Group 4: Logarithmic \u0026 Exponential Limits**\na) $\\lim_{x \\to 0} \\frac{\\ln(1+2x)}{x}$ (From audio transcript)\nb) $\\lim_{x \\to e} \\frac{\\ln(x)-1}{x-e}$\nc) $\\lim_{x \\to 0} \\frac{2^{2x}-1}{x}$ (From audio transcript)\nd) $\\lim_{x \\to 1} \\frac{e^x-e}{x-1}$\ne) $\\lim_{x \\to 0} \\frac{x \\cdot \\sinh(x)}{e^{x^2-1}}$\nf) $\\lim_{x \\to 1/2} \\frac{2^x - \\sqrt{2}}{\\ln(2x)}$\n\n**Group 5: Limits at Infinity**\na) $\\lim_{x \\to \\infty} \\frac{x^2}{x^3+1}$\nb) $\\lim_{x \\to \\infty} \\frac{x^3}{2x^3+1}$\nc) $\\lim_{x \\to \\infty} \\frac{x^3}{2x^2+1}$\nd) $\\lim_{x \\to \\infty} (x + \\sqrt{1-x^3})$\ne) $\\lim_{x \\to \\infty} \\frac{x \\cdot \\arctan(x)}{\\sqrt{1+x^2}}$\nf) $\\lim_{x \\to \\infty} (x \\cdot \\sin(\\frac{1}{x}) - \\frac{\\sin(1/x)}{x})$\ng) $\\lim_{x \\to \\infty} (\\frac{2x}{2x+1})^x$\nh) $\\lim_{x \\to \\infty} (\\frac{x^2-2}{x^2-1})^{4x^2}$\ni) $\\lim_{x \\to 0} (\\frac{2x+1}{x+1})^{\\frac{2}{x}}$\nj) $\\lim_{x \\to \\pi} (1+\\sin(x))^{\\frac{1}{x-\\pi}}$\n\n**Group 6: Application to Continuity**\nDetermine the values of constants `a` and `b` such that the function `f` is continuous on `ℝ`.\n$f(x) \u003d \\begin{cases} 2x+1 \u0026 \\text{if } x \u003c 0 \\\\ ax+b \u0026 \\text{if } 0 \\leq x \\leq 1 \\\\ \\frac{x-1}{x^2-1} \u0026 \\text{if } x \u003e 1 \\end{cases}$\n\n### [[Solutions and Critical Analysis]]\n\n#### [[Group 1 Solutions: Rational Functions]]\n\n**Problem 1a)**\n$\\lim_{x \\to 2} \\frac{x^2-4}{x^3-8}$\n\u003e **Critical Analysis:** Direct substitution of `x\u003d2` yields the indeterminate form `0/0`. This suggests that `(x-2)` is a factor of both the numerator and the denominator, which we can cancel out. We use the formulas for the difference of squares and difference of cubes.\n\u003e - $a^2 - b^2 \u003d (a-b)(a+b)$\n\u003e - $a^3 - b^3 \u003d (a-b)(a^2+ab+b^2)$\n\n$\\lim_{x \\to 2} \\frac{(x-2)(x+2)}{(x-2)(x^2+2x+4)} \u003d \\lim_{x \\to 2} \\frac{x+2}{x^2+2x+4}$\n\nNow, we can substitute `x\u003d2`:\n$\\frac{2+2}{2^2+2(2)+4} \u003d \\frac{4}{4+4+4} \u003d \\frac{4}{12} \u003d \\frac{1}{3}$\n\n**Problem 1b)**\n$\\lim_{x \\to -2} \\frac{x^2-4}{x^3+8}$\n\u003e **Critical Analysis:** Again, substitution gives `0/0`. We factor using difference of squares and sum of cubes.\n\u003e - $a^3 + b^3 \u003d (a+b)(a^2-ab+b^2)$\n\n$\\lim_{x \\to -2} \\frac{(x-2)(x+2)}{(x+2)(x^2-2x+4)} \u003d \\lim_{x \\to -2} \\frac{x-2}{x^2-2x+4}$\n\nSubstitute `x\u003d-2`:\n$\\frac{-2-2}{(-2)^2-2(-2)+4} \u003d \\frac{-4}{4+4+4} \u003d \\frac{-4}{12} \u003d -\\frac{1}{3}$\n\n**Problem 1c)**\n$\\lim_{x \\to 1} (\\frac{1}{1-x} - \\frac{2}{1-x^2})$\n\u003e **Critical Analysis:** This is an indeterminate form of `∞ - ∞`. To resolve it, we combine the fractions into a single fraction by finding a common denominator.\n\n$\\lim_{x \\to 1} \\left(\\frac{1}{1-x} - \\frac{2}{(1-x)(1+x)}\\right) \u003d \\lim_{x \\to 1} \\frac{(1+x) - 2}{(1-x)(1+x)}$\n$\u003d \\lim_{x \\to 1} \\frac{x-1}{(1-x)(1+x)} \u003d \\lim_{x \\to 1} \\frac{-(1-x)}{(1-x)(1+x)}$\n$\u003d \\lim_{x \\to 1} \\frac{-1}{1+x} \u003d \\frac{-1}{1+1} \u003d -\\frac{1}{2}$\n\n\u003e **Warning Note:** A common mistake in the notes (`d)` corresponds to this problem `c)`) shows a calculation resulting in `1/2`. The error occurs by incorrectly canceling `x-1` with `x-1` in the denominator, ignoring the `1-x` term. The correct step is to factor out `-1` from `x-1` to get `-(1-x)`, which then cancels with `1-x`. The calculation in the notes seems to have jumped steps and ended up with `(x-1)/(x-1)(x+1)`, which is incorrect as the denominator is `(1-x)(1+x)`.\n\n#### [[Group 2 Solutions: Radicals]]\n\n**Problem 2a)**\n$\\lim_{x \\to 1} \\frac{\\sqrt{x+3}-2}{x-1}$\n\u003e **Critical Analysis:** This is a `0/0` form. When radicals are involved, a common technique is to multiply the numerator and denominator by the conjugate of the expression containing the radical. The conjugate of `(a-b)` is `(a+b)`. This uses the difference of squares formula `(a-b)(a+b) \u003d a²-b²` to eliminate the radical.\n\nThe conjugate of `sqrt(x+3) - 2` is `sqrt(x+3) + 2`.\n$\\lim_{x \\to 1} \\frac{\\sqrt{x+3}-2}{x-1} \\cdot \\frac{\\sqrt{x+3}+2}{\\sqrt{x+3}+2} \u003d \\lim_{x \\to 1} \\frac{(x+3) - 4}{(x-1)(\\sqrt{x+3}+2)}$\n$\u003d \\lim_{x \\to 1} \\frac{x-1}{(x-1)(\\sqrt{x+3}+2)} \u003d \\lim_{x \\to 1} \\frac{1}{\\sqrt{x+3}+2}$\n\nSubstitute `x\u003d1`:\n$\\frac{1}{\\sqrt{1+3}+2} \u003d \\frac{1}{\\sqrt{4}+2} \u003d \\frac{1}{2+2} \u003d \\frac{1}{4}$\n\n**Problem 2b)**\n\u003e **Warning Note:** The provided solution in the notes for this problem seems incorrect and incomplete. It attempts to use both a quadratic and cubic conjugate at the same time, leading to a confusing expression. Let\u0027s re-evaluate. The denominator `∛(4x) + 2` as `x→2` is `∛8 + 2 \u003d 2 + 2 \u003d 4`, which is not zero. The numerator `√(2-2) - √(2*2) \u003d 0 - 2 \u003d -2`. Therefore, there is no indeterminate form.\n$\\lim_{x \\to 2} \\frac{\\sqrt{2-x} - \\sqrt{2x}}{ \\sqrt{4x} + 2 } \u003d \\frac{\\sqrt{2-2}-\\sqrt{2(2)}}{\\sqrt{4(2)}+2} \u003d \\frac{0-2}{2+2} \u003d \\frac{-2}{4} \u003d -\\frac{1}{2}$\nThe calculation in the notes appears to be addressing a different, more complex problem or contains significant errors in transcription. It incorrectly results in `3/4`.\n\n#### [[Group 3 Solutions: Trigonometric Limits]]\n\n**Problem 3a)**\n$\\lim_{x \\to 0} \\frac{\\sin(2x)}{\\sin(3x)}$\n\u003e **Critical Analysis:** This is `0/0`. We can resolve this by manipulating the expression to use the known limit $\\lim_{u \\to 0} \\frac{\\sin(u)}{u} \u003d 1$. We need to create matching arguments inside and outside the sine functions.\n\n$\\lim_{x \\to 0} \\frac{\\sin(2x)}{1} \\cdot \\frac{1}{\\sin(3x)} \u003d \\lim_{x \\to 0} \\left(\\frac{\\sin(2x)}{2x} \\cdot 2x\\right) \\cdot \\left(\\frac{3x}{\\sin(3x)} \\cdot \\frac{1}{3x}\\right)$\nAs `x→0`, `2x→0` and `3x→0`. We can regroup the terms:\n$\u003d \\lim_{x \\to 0} \\left(\\frac{\\sin(2x)}{2x}\\right) \\cdot \\left(\\frac{3x}{\\sin(3x)}\\right) \\cdot \\left(\\frac{2x}{3x}\\right)$\nThe first two terms go to 1.\n$\u003d 1 \\cdot 1 \\cdot \\lim_{x \\to 0} \\frac{2}{3} \u003d \\frac{2}{3}$\n\n**Problem 3c)**\n$\\lim_{x \\to \\pi/4} \\frac{\\cos(x) - \\sin(x)}{\\cos(2x)}$\n\u003e **Critical Analysis:** Substitution gives `(√2/2 - √2/2) / cos(π/2) \u003d 0/0`. We use the double angle identity for cosine: `cos(2x) \u003d cos²(x) - sin²(x)`. This creates a difference of squares.\n\n$\\lim_{x \\to \\pi/4} \\frac{\\cos(x) - \\sin(x)}{\\cos^2(x) - \\sin^2(x)} \u003d \\lim_{x \\to \\pi/4} \\frac{\\cos(x) - \\sin(x)}{(\\cos(x) - \\sin(x))(\\cos(x) + \\sin(x))}$\n$\u003d \\lim_{x \\to \\pi/4} \\frac{1}{\\cos(x) + \\sin(x)}$\n\nSubstitute `x \u003d π/4`:\n$\\frac{1}{\\cos(\\pi/4) + \\sin(\\pi/4)} \u003d \\frac{1}{\\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2}} \u003d \\frac{1}{\\sqrt{2}}$\n\n#### [[Group 6 Solution: Continuity]]\nFor `f(x)` to be continuous, the left-hand limit, right-hand limit, and the function\u0027s value must be equal at the points where the definition changes, i.e., at `x\u003d0` and `x\u003d1`.\n\n**At `x \u003d 0`:**\n- Left-hand limit: $\\lim_{x \\to 0^-} f(x) \u003d \\lim_{x \\to 0^-} (2x+1) \u003d 1$\n- Right-hand limit: $\\lim_{x \\to 0^+} f(x) \u003d \\lim_{x \\to 0^+} (ax+b) \u003d b$\nFor continuity, these must be equal:\n$b\u003d1$\n\n**At `x \u003d 1`:**\n- Left-hand limit: $\\lim_{x \\to 1^-} f(x) \u003d \\lim_{x \\to 1^-} (ax+b) \u003d a(1)+b \u003d a+b$\n- Right-hand limit: $\\lim_{x \\to 1^+} f(x) \u003d \\lim_{x \\to 1^+} \\frac{x-1}{x^2-1} \u003d \\lim_{x \\to 1^+} \\frac{x-1}{(x-1)(x+1)} \u003d \\lim_{x \\to 1^+} \\frac{1}{x+1} \u003d \\frac{1}{2}$\nFor continuity, these must be equal:\n$a+b \u003d \\frac{1}{2}$\n\nNow we have a system of two equations:\n1. `b \u003d 1`\n2. `a + b \u003d 1/2`\n\nSubstitute (1) into (2):\n$a + 1 \u003d \\frac{1}{2} \\implies a \u003d \\frac{1}{2} - 1 \u003d -\\frac{1}{2}$\n\n**Conclusion:** The function is continuous if `a \u003d -1/2` and `b \u003d 1`./2` and `b \u003d 1`.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 7610,
+      "parts": [{
+        "text": "# Function Composition and Limits of Functions\n\n## [[Function Composition]]\n\n### [[Theory and Definitions]]\n\nFunction composition is"
+      }, {
+        "text": " the application of one function to the results of another.\n- The composition of `f` with `g` is denoted as "
+      }, {
+        "text": "`f ∘ g` (read as \"f of g\") and is defined by `(f ∘ g)(x"
+      }, {
+        "text": ") \u003d f(g(x))`.\n- The composition of `g` with `f` is denoted as"
+      }, {
+        "text": " `g ∘ f` (read as \"g of f\") and is defined by `(g ∘ f"
+      }, {
+        "text": ")(x) \u003d g(f(x))`.\n\nA visual representation of `g ∘ f`:\n"
+      }, {
+        "text": "```\n"
+      }, {
+        "text": "  x --- f(x) ---\u003e y --- g(y) ---\u003e z\n  |                               |\n  +"
+      }, {
+        "text": "-------- g(f(x)) --------------+\n           (g ∘ f)\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n### [[Problems]]"
+      }, {
+        "text": "\n\n1.  Given `f, g: ℝ → ℝ`, with `f(x) \u003d x³` and "
+      }, {
+        "text": "`g(x) \u003d 2x + 1`, find `f ∘ g` and `g ∘"
+      }, {
+        "text": " f`.\n2.  Given `f(x) \u003d sgn(x)` and `g(x) \u003d 2"
+      }, {
+        "text": "x + 1`, find `f ∘ g` and `g ∘ f`.\n3.  Given"
+      }, {
+        "text": " `f(x) \u003d {x, if x \u003c 0; 0, if x ≥ 0}` and"
+      }, {
+        "text": " `g(x) \u003d {5, if x ≤ 0; x² + 1, if x \u003e"
+      }, {
+        "text": " 0}`, find `f ∘ g` and `g ∘ f`.\n4.  Given `f"
+      }, {
+        "text": "(x) \u003d {1/x², if x \u003c 0; e^x, if x ≥ 0"
+      }, {
+        "text": "}` and `g(x) \u003d {0, if x ≤ 1; (π/2)arctan(x)"
+      }, {
+        "text": " + 2, if x \u003e 1}`, find `f ∘ g` and `g ∘ f`."
+      }, {
+        "text": "\n\n### [[Solutions]]\n\n#### [[Problem 1 Solution]]\nGiven:\n- $f(x) \u003d x^3"
+      }, {
+        "text": "$\n- $g(x) \u003d 2x + 1$\n\n**1. Calculate `f ∘"
+      }, {
+        "text": " g`:**\nThe definition is `(f ∘ g)(x) \u003d f(g(x))`. We"
+      }, {
+        "text": " substitute the expression for `g(x)` into `f(x)`.\n$f(g(x)) \u003d f"
+      }, {
+        "text": "(2x+1) \u003d (2x+1)^3$\n\n**2. Calculate `g ∘"
+      }, {
+        "text": " f`:**\nThe definition is `(g ∘ f)(x) \u003d g(f(x))`."
+      }, {
+        "text": " We substitute the expression for `f(x)` into `g(x)`.\n$g(f(x)) \u003d g"
+      }, {
+        "text": "(x^3) \u003d 2(x^3) + 1 \u003d 2x^3 + 1$"
+      }, {
+        "text": "\n\n\u003e **Critical Analysis:** Note that function composition is not commutative, meaning `f ∘ g ≠ g ∘ f"
+      }, {
+        "text": "` in general, as demonstrated by this example where `(2x+1)³ ≠ 2x³ + "
+      }, {
+        "text": "1`.\n\n---\n#### [[Problem 2 Solution]]\nGiven:\n- $f(x) \u003d \\text"
+      }, {
+        "text": "{sgn}(x) \u003d \\begin{cases} -1 \u0026 \\text{if } x \u003c 0 \\\\"
+      }, {
+        "text": " 0 \u0026 \\text{if } x \u003d 0 \\\\ 1 \u0026 \\text{if } x \u003e "
+      }, {
+        "text": "0 \\end{cases}$\n- $g(x) \u003d 2x + 1$\n\n**1"
+      }, {
+        "text": ". Calculate `g ∘ f`:**\nThis is `g(f(x))`. We must evaluate this"
+      }, {
+        "text": " piecewise based on the definition of `f(x)`.\n- **Case 1: `x \u003c 0"
+      }, {
+        "text": "`**\n  `f(x) \u003d -1`. Therefore, `g(f(x)) \u003d g(-1"
+      }, {
+        "text": ") \u003d 2(-1) + 1 \u003d -1`.\n- **Case 2: `x \u003d 0"
+      }, {
+        "text": "`**\n  `f(x) \u003d 0`. Therefore, `g(f(x)) \u003d g("
+      }, {
+        "text": "0) \u003d 2(0) + 1 \u003d 1`.\n- **Case 3: `x"
+      }, {
+        "text": " \u003e 0`**\n  `f(x) \u003d 1`. Therefore, `g(f(x"
+      }, {
+        "text": ")) \u003d g(1) \u003d 2(1) + 1 \u003d 3`.\n\nCombining these cases, we"
+      }, {
+        "text": " get the piecewise function for `g ∘ f`:\n$g(f(x)) \u003d \\begin{cases}"
+      }, {
+        "text": " -1 \u0026 \\text{if } x \u003c 0 \\\\ 1 \u0026 \\text{if } x \u003d 0 \\\\ "
+      }, {
+        "text": "3 \u0026 \\text{if } x \u003e 0 \\end{cases}$\n\n**2. Calculate `f "
+      }, {
+        "text": "∘ g`:**\nThis is `f(g(x)) \u003d f(2x+1)`. We need"
+      }, {
+        "text": " to determine when the input to `f`, which is `g(x)`, is negative, zero, or positive."
+      }, {
+        "text": "\n- **Case 1: `g(x) \u003c 0`**\n  `2x + "
+      }, {
+        "text": "1 \u003c 0` which implies `2x \u003c -1` or `x \u003c -1/2`. In"
+      }, {
+        "text": " this case, `f(g(x)) \u003d -1`.\n- **Case 2: `g("
+      }, {
+        "text": "x) \u003d 0`**\n  `2x + 1 \u003d 0` which implies `x \u003d -1/"
+      }, {
+        "text": "2`. In this case, `f(g(x)) \u003d 0`.\n- **Case 3:"
+      }, {
+        "text": " `g(x) \u003e 0`**\n  `2x + 1 \u003e 0` which implies"
+      }, {
+        "text": " `x \u003e -1/2`. In this case, `f(g(x)) \u003d 1`.\n\nCombining these cases"
+      }, {
+        "text": ", we get the piecewise function for `f ∘ g`:\n$f(g(x)) \u003d \\begin"
+      }, {
+        "text": "{cases} -1 \u0026 \\text{if } x \u003c -1/2 \\\\ 0 \u0026 \\text{"
+      }, {
+        "text": "if } x \u003d -1/2 \\\\ 1 \u0026 \\text{if } x \u003e -1/2 \\"
+      }, {
+        "text": "end{cases}$\n\n---\n#### [[Problem 3 Solution]]\nGiven:\n- $f(x)"
+      }, {
+        "text": " \u003d \\begin{cases} x \u0026 \\text{if } x \u003c 0 \\\\ 0 \u0026 \\text{"
+      }, {
+        "text": "if } x \\geq 0 \\end{cases}$\n- $g(x) \u003d \\begin{cases}"
+      }, {
+        "text": " 5 \u0026 \\text{if } x \\leq 0 \\\\ x^2+1 \u0026 \\text{if } x"
+      }, {
+        "text": " \u003e 0 \\end{cases}$\n\n**1. Calculate `f ∘ g`:**\nThis is "
+      }, {
+        "text": "`f(g(x))`. We analyze the output of `g(x)` to determine which piece of `f("
+      }, {
+        "text": "x)` to use.\n- **Case 1: `x ≤ 0`**\n  `g(x) \u003d"
+      }, {
+        "text": " 5`. Since `5 ≥ 0`, we use the second piece of `f(x)`.\n  `f("
+      }, {
+        "text": "g(x)) \u003d f(5) \u003d 0`.\n- **Case 2: `x \u003e "
+      }, {
+        "text": "0`**\n  `g(x) \u003d x² + 1`. Since `x \u003e 0`, "
+      }, {
+        "text": "`x²` is positive, so `x² + 1 \u003e 1`. This means `g(x)` is"
+      }, {
+        "text": " always `≥ 0`. We use the second piece of `f(x)`.\n  `f(g(x))"
+      }, {
+        "text": " \u003d f(x² + 1) \u003d 0`.\n\nSince the result is `0` for all "
+      }, {
+        "text": "`x ∈ ℝ`:\n$f(g(x)) \u003d 0, \\forall x \\in \\mathbb{"
+      }, {
+        "text": "R}$\n\n**2. Calculate `g ∘ f`:**\nThis is `g(f(x))"
+      }, {
+        "text": "`. We analyze the output of `f(x)`.\n- **Case 1: `x \u003c 0`**\n"
+      }, {
+        "text": "  `f(x) \u003d x`. Since `x \u003c 0`, `f(x)` is also `\u003c"
+      }, {
+        "text": " 0`. We must use the first piece of `g(x)`.\n  `g(f(x)) \u003d g"
+      }, {
+        "text": "(x) \u003d 5`.\n- **Case 2: `x ≥ 0`**\n  "
+      }, {
+        "text": "`f(x) \u003d 0`. Since `0 ≤ 0`, we use the first piece of `g("
+      }, {
+        "text": "x)`.\n  `g(f(x)) \u003d g(0) \u003d 5`.\n\nSince the"
+      }, {
+        "text": " result is `5` for all `x ∈ ℝ`:\n$g(f(x)) \u003d 5, \\forall x"
+      }, {
+        "text": " \\in \\mathbb{R}$\n\n---\n#### [[Problem 4 Solution]]\nGiven:\n- $f"
+      }, {
+        "text": "(x) \u003d \\begin{cases} 1/x^2 \u0026 \\text{if } x \u003c 0 \\\\"
+      }, {
+        "text": " e^x \u0026 \\text{if } x \\geq 0 \\end{cases}$\n- $g("
+      }, {
+        "text": "x) \u003d \\begin{cases} 0 \u0026 \\text{if } x \\leq 1 \\\\ \\frac{\\pi}{"
+      }, {
+        "text": "2}\\arctan(x) + 2 \u0026 \\text{if } x \u003e 1 \\end{cases}$\n\n**"
+      }, {
+        "text": "1. Calculate `f ∘ g`:**\nThis is `f(g(x))`. We analyze the"
+      }, {
+        "text": " output of `g(x)`.\n- **Case 1: `x ≤ 1`**\n  "
+      }, {
+        "text": "`g(x) \u003d 0`. Since `0 ≥ 0`, we use the second piece of `f"
+      }, {
+        "text": "(x)`.\n  `f(g(x)) \u003d f(0) \u003d e^0 \u003d "
+      }, {
+        "text": "1`.\n- **Case 2: `x \u003e 1`**\n  `g(x) \u003d"
+      }, {
+        "text": " (π/2)arctan(x) + 2`. The range of `arctan(x)` for `x \u003e 1"
+      }, {
+        "text": "` is `(π/4, π/2)`.\n  So, `(π/2) *"
+      }, {
+        "text": " (π/4, π/2)` gives `(π²/8, π²/4)`.\n  Adding "
+      }, {
+        "text": "2, the range of `g(x)` is `(π²/8 + 2, π²/4 + 2)"
+      }, {
+        "text": "`. Since `π ≈ 3.14`, `π² ≈ 9.86`. The range is approximately "
+      }, {
+        "text": "`(1.23+2, 2.46+2) \u003d (3.23, 4"
+      }, {
+        "text": ".46)`. All these values are `≥ 0`.\n  We use the second piece of `f("
+      }, {
+        "text": "x)`.\n  `f(g(x)) \u003d f(\\frac{\\pi}{2}\\arctan(x"
+      }, {
+        "text": ") + 2) \u003d e^{\\frac{\\pi}{2}\\arctan(x) + 2}`.\n\n"
+      }, {
+        "text": "Combining these:\n$f(g(x)) \u003d \\begin{cases} 1 \u0026 \\text{if } x"
+      }, {
+        "text": " \\leq 1 \\\\ e^{\\frac{\\pi}{2}\\arctan(x) + 2} \u0026 \\text"
+      }, {
+        "text": "{if } x \u003e 1 \\end{cases}$\n\n**2. Calculate `g ∘ f`:**"
+      }, {
+        "text": "\nThis is `g(f(x))`. We analyze the output of `f(x)`.\n-"
+      }, {
+        "text": " **Case 1: `x \u003c 0`**\n  `f(x) \u003d 1/x"
+      }, {
+        "text": "²`. Since `x \u003c 0`, `x² \u003e 0`, so `1/x² \u003e 0"
+      }, {
+        "text": "`. We need to determine if `1/x²` is `≤ 1` or `\u003e 1`.\n  "
+      }, {
+        "text": "`1/x² ≤ 1` implies `1 ≤ x²`, which means `|x| ≥ "
+      }, {
+        "text": "1`. Since we are in the domain `x \u003c 0`, this corresponds to `x ≤ -1`.\n"
+      }, {
+        "text": "  So, if `x ≤ -1`, then `f(x) \u003d 1/x² ∈ (0"
+      }, {
+        "text": ", 1]`. For these values, we use the first piece of `g(x)`: `g(f(x"
+      }, {
+        "text": ")) \u003d 0`.\n  If `-1 \u003c x \u003c 0`, then `f(x) \u003d 1/x"
+      }, {
+        "text": "² \u003e 1`. For these values, we use the second piece of `g(x)`: `g(f("
+      }, {
+        "text": "x)) \u003d (\\pi/2)arctan(1/x²) + 2`.\n- **Case 2"
+      }, {
+        "text": ": `x ≥ 0`**\n  `f(x) \u003d e^x`. Since `x ≥"
+      }, {
+        "text": " 0`, the range of `f(x)` is `[1, ∞)`.\n  If `x \u003d 0`, `f(x) \u003d e^0 \u003d 1`. Since `1 ≤ 1`, we use the first piece of `g(x)`: `g(f(0)) \u003d 0`.\n  If `x \u003e 0`, `f(x) \u003d e^x \u003e 1`. We use the second piece of `g(x)`: `g(f(x)) \u003d (\\pi/2)arctan(e^x) + 2`.\n\nCombining all sub-cases:\n$g(f(x)) \u003d \\begin{cases} 0 \u0026 \\text{if } x \\leq -1 \\\\ \\frac{\\pi}{2}\\arctan(1/x^2) + 2 \u0026 \\text{if } -1 \u003c x \u003c 0 \\\\ 0 \u0026 \\text{if } x\u003d0 \\\\ \\frac{\\pi}{2}\\arctan(e^x) + 2 \u0026 \\text{if } x\u003e0 \\end{cases}$\n\n\u003e **Note to Self:** The domain partitioning for `g ∘ f` is complex. It\u0027s crucial to analyze the range of the inner function (`f(x)`) and see how it maps onto the domain pieces of the outer function (`g(x)`).\n\n## [[Limits of Functions]]\n\n### [[Theory and Definitions]]\n\n#### [[Epsilon-Delta Definition of a Limit]]\nThe limit of a function `f(x)` as `x` approaches `a` is `L`, written as:\n$\\lim_{x \\to a} f(x) \u003d L$\nThis is formally defined as:\n$\\forall \\epsilon \u003e 0, \\exists \\delta \u003e 0 \\text{ such that } \\forall x \\in D, (0 \u003c |x-a| \u003c \\delta \\implies |f(x) - L| \u003c \\epsilon)$\n\nThis means that for any small positive number `ε` (epsilon), we can find another small positive number `δ` (delta) such that if `x` is within `δ` distance of `a` (but not equal to `a`), then `f(x)` will be within `ε` distance of `L`.\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ndef f(x):\n    # Example function, let\u0027s use a simple linear one for clarity\n    if x \u003d\u003d 2:\n        return 3  # A hole in the function for demonstration\n    return 0.5 * x + 2\n\nx \u003d np.linspace(0, 4, 400)\ny \u003d np.array([f(val) for val in x])\n\na \u003d 2\nL \u003d 3  # The limit is 3, even if f(2) might be different\nepsilon \u003d 0.5\ndelta \u003d 1.0 # For epsilon\u003d0.5, a delta of 1.0 works: 0.5 * delta \u003d 0.25 \u003c 0.5\n\nfig, ax \u003d plt.subplots()\n\nax.plot(x, y, label\u003d\u0027f(x)\u0027)\nax.set_title(\"Epsilon-Delta Definition of a Limit\")\nax.set_xlabel(\"x\")\nax.set_ylabel(\"f(x)\")\n\n# Plot L and a\nax.plot(a, L, \u0027ro\u0027)\nax.text(a + 0.1, L, \u0027L\u0027, fontsize\u003d12)\n\n# Epsilon region\nax.axhline(y\u003dL + epsilon, color\u003d\u0027r\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.5)\nax.axhline(y\u003dL - epsilon, color\u003d\u0027r\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.5)\nax.fill_between(x, L - epsilon, L + epsilon, color\u003d\u0027red\u0027, alpha\u003d0.1, label\u003df\u0027ε-neighborhood of L (ε\u003d{epsilon})\u0027)\n\n# Delta region\nax.axvline(x\u003da + delta, color\u003d\u0027b\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.5)\nax.axvline(x\u003da - delta, color\u003d\u0027b\u0027, linestyle\u003d\u0027--\u0027, alpha\u003d0.5)\nax.fill_betweenx(ax.get_ylim(), a - delta, a + delta, color\u003d\u0027blue\u0027, alpha\u003d0.1, label\u003df\u0027δ-neighborhood of a (δ\u003d{delta})\u0027)\n\n# Pointing out the regions\nax.text(0.1, L + epsilon, \u0027L+ε\u0027, color\u003d\u0027r\u0027)\nax.text(0.1, L - epsilon, \u0027L-ε\u0027, color\u003d\u0027r\u0027)\nax.text(a - delta, 1, \u0027a-δ\u0027, color\u003d\u0027b\u0027)\nax.text(a + delta, 1, \u0027a+δ\u0027, color\u003d\u0027b\u0027)\n\nax.legend()\nax.grid(True)\nplt.show()\n```\n\n#### [[Known Limits]]\nThese are foundational limits used to solve more complex problems, often by algebraic manipulation.\n\u003e **Memorialization Note:** The lecturer emphasized a general method using a \"škatla\" (box) as a placeholder. This is a form of u-substitution. If you have a known limit `lim (expression_in_x) \u003d L` as `x→0`, then the same limit holds if you replace `x` with a \"box\" (some function `g(x)`), as long as `box→0` under the same conditions.\n\n1.  $\\lim_{x \\to 0} \\frac{\\sin(x)}{x} \u003d 1$  (General form: $\\lim_{\\square \\to 0} \\frac{\\sin(\\square)}{\\square} \u003d 1$)\n2.  $\\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} \u003d 1$  (General form: $\\lim_{\\square \\to 0} \\frac{\\ln(1+\\square)}{\\square} \u003d 1$)\n3.  $\\lim_{x \\to 0} \\frac{e^x - 1}{x} \u003d 1$  (General form: $\\lim_{\\square \\to 0} \\frac{e^\\square - 1}{\\square} \u003d 1$)\n4.  $\\lim_{x \\to 0} \\frac{a^x - 1}{x} \u003d \\ln(a)$ for `a \u003e 0`.\n5.  $\\lim_{x \\to \\infty} (1 + \\frac{1}{x})^x \u003d e$ (General form: $\\lim_{\\square \\to \\infty} (1 + \\frac{1}{\\square})^\\square \u003d e$)\n\n### [[Problems]]\n\n**Group 1: Rational Functions \u0026 Factoring**\na) $\\lim_{x \\to 2} \\frac{x^2-4}{x^3-8}$\nb) $\\lim_{x \\to -2} \\frac{x^2-4}{x^3+8}$\nc) $\\lim_{x \\to 1} (\\frac{1}{1-x} - \\frac{2}{1-x^2})$\n\n**Group 2: Radicals \u0026 Conjugate Method**\na) $\\lim_{x \\to 1} \\frac{\\sqrt{x+3}-2}{x-1}$\nb) $\\lim_{x \\to 2} \\frac{\\sqrt{2-x} - \\sqrt{2x}}{ \\sqrt{4x} + 2 }$\n\n**Group 3: Trigonometric Limits**\na) $\\lim_{x \\to 0} \\frac{\\sin(2x)}{\\sin(3x)}$\nb) $\\lim_{x \\to 0} \\frac{\\tan(2x) - 2\\tan(x)}{x^3}$\nc) $\\lim_{x \\to \\pi/4} \\frac{\\cos(x) - \\sin(x)}{\\cos(2x)}$\n\n**Group 4: Logarithmic \u0026 Exponential Limits**\na) $\\lim_{x \\to 0} \\frac{\\ln(1+2x)}{x}$ (From audio transcript)\nb) $\\lim_{x \\to e} \\frac{\\ln(x)-1}{x-e}$\nc) $\\lim_{x \\to 0} \\frac{2^{2x}-1}{x}$ (From audio transcript)\nd) $\\lim_{x \\to 1} \\frac{e^x-e}{x-1}$\ne) $\\lim_{x \\to 0} \\frac{x \\cdot \\sinh(x)}{e^{x^2-1}}$\nf) $\\lim_{x \\to 1/2} \\frac{2^x - \\sqrt{2}}{\\ln(2x)}$\n\n**Group 5: Limits at Infinity**\na) $\\lim_{x \\to \\infty} \\frac{x^2}{x^3+1}$\nb) $\\lim_{x \\to \\infty} \\frac{x^3}{2x^3+1}$\nc) $\\lim_{x \\to \\infty} \\frac{x^3}{2x^2+1}$\nd) $\\lim_{x \\to \\infty} (x + \\sqrt{1-x^3})$\ne) $\\lim_{x \\to \\infty} \\frac{x \\cdot \\arctan(x)}{\\sqrt{1+x^2}}$\nf) $\\lim_{x \\to \\infty} (x \\cdot \\sin(\\frac{1}{x}) - \\frac{\\sin(1/x)}{x})$\ng) $\\lim_{x \\to \\infty} (\\frac{2x}{2x+1})^x$\nh) $\\lim_{x \\to \\infty} (\\frac{x^2-2}{x^2-1})^{4x^2}$\ni) $\\lim_{x \\to 0} (\\frac{2x+1}{x+1})^{\\frac{2}{x}}$\nj) $\\lim_{x \\to \\pi} (1+\\sin(x))^{\\frac{1}{x-\\pi}}$\n\n**Group 6: Application to Continuity**\nDetermine the values of constants `a` and `b` such that the function `f` is continuous on `ℝ`.\n$f(x) \u003d \\begin{cases} 2x+1 \u0026 \\text{if } x \u003c 0 \\\\ ax+b \u0026 \\text{if } 0 \\leq x \\leq 1 \\\\ \\frac{x-1}{x^2-1} \u0026 \\text{if } x \u003e 1 \\end{cases}$\n\n### [[Solutions and Critical Analysis]]\n\n#### [[Group 1 Solutions: Rational Functions]]\n\n**Problem 1a)**\n$\\lim_{x \\to 2} \\frac{x^2-4}{x^3-8}$\n\u003e **Critical Analysis:** Direct substitution of `x\u003d2` yields the indeterminate form `0/0`. This suggests that `(x-2)` is a factor of both the numerator and the denominator, which we can cancel out. We use the formulas for the difference of squares and difference of cubes.\n\u003e - $a^2 - b^2 \u003d (a-b)(a+b)$\n\u003e - $a^3 - b^3 \u003d (a-b)(a^2+ab+b^2)$\n\n$\\lim_{x \\to 2} \\frac{(x-2)(x+2)}{(x-2)(x^2+2x+4)} \u003d \\lim_{x \\to 2} \\frac{x+2}{x^2+2x+4}$\n\nNow, we can substitute `x\u003d2`:\n$\\frac{2+2}{2^2+2(2)+4} \u003d \\frac{4}{4+4+4} \u003d \\frac{4}{12} \u003d \\frac{1}{3}$\n\n**Problem 1b)**\n$\\lim_{x \\to -2} \\frac{x^2-4}{x^3+8}$\n\u003e **Critical Analysis:** Again, substitution gives `0/0`. We factor using difference of squares and sum of cubes.\n\u003e - $a^3 + b^3 \u003d (a+b)(a^2-ab+b^2)$\n\n$\\lim_{x \\to -2} \\frac{(x-2)(x+2)}{(x+2)(x^2-2x+4)} \u003d \\lim_{x \\to -2} \\frac{x-2}{x^2-2x+4}$\n\nSubstitute `x\u003d-2`:\n$\\frac{-2-2}{(-2)^2-2(-2)+4} \u003d \\frac{-4}{4+4+4} \u003d \\frac{-4}{12} \u003d -\\frac{1}{3}$\n\n**Problem 1c)**\n$\\lim_{x \\to 1} (\\frac{1}{1-x} - \\frac{2}{1-x^2})$\n\u003e **Critical Analysis:** This is an indeterminate form of `∞ - ∞`. To resolve it, we combine the fractions into a single fraction by finding a common denominator.\n\n$\\lim_{x \\to 1} \\left(\\frac{1}{1-x} - \\frac{2}{(1-x)(1+x)}\\right) \u003d \\lim_{x \\to 1} \\frac{(1+x) - 2}{(1-x)(1+x)}$\n$\u003d \\lim_{x \\to 1} \\frac{x-1}{(1-x)(1+x)} \u003d \\lim_{x \\to 1} \\frac{-(1-x)}{(1-x)(1+x)}$\n$\u003d \\lim_{x \\to 1} \\frac{-1}{1+x} \u003d \\frac{-1}{1+1} \u003d -\\frac{1}{2}$\n\n\u003e **Warning Note:** A common mistake in the notes (`d)` corresponds to this problem `c)`) shows a calculation resulting in `1/2`. The error occurs by incorrectly canceling `x-1` with `x-1` in the denominator, ignoring the `1-x` term. The correct step is to factor out `-1` from `x-1` to get `-(1-x)`, which then cancels with `1-x`. The calculation in the notes seems to have jumped steps and ended up with `(x-1)/(x-1)(x+1)`, which is incorrect as the denominator is `(1-x)(1+x)`.\n\n#### [[Group 2 Solutions: Radicals]]\n\n**Problem 2a)**\n$\\lim_{x \\to 1} \\frac{\\sqrt{x+3}-2}{x-1}$\n\u003e **Critical Analysis:** This is a `0/0` form. When radicals are involved, a common technique is to multiply the numerator and denominator by the conjugate of the expression containing the radical. The conjugate of `(a-b)` is `(a+b)`. This uses the difference of squares formula `(a-b)(a+b) \u003d a²-b²` to eliminate the radical.\n\nThe conjugate of `sqrt(x+3) - 2` is `sqrt(x+3) + 2`.\n$\\lim_{x \\to 1} \\frac{\\sqrt{x+3}-2}{x-1} \\cdot \\frac{\\sqrt{x+3}+2}{\\sqrt{x+3}+2} \u003d \\lim_{x \\to 1} \\frac{(x+3) - 4}{(x-1)(\\sqrt{x+3}+2)}$\n$\u003d \\lim_{x \\to 1} \\frac{x-1}{(x-1)(\\sqrt{x+3}+2)} \u003d \\lim_{x \\to 1} \\frac{1}{\\sqrt{x+3}+2}$\n\nSubstitute `x\u003d1`:\n$\\frac{1}{\\sqrt{1+3}+2} \u003d \\frac{1}{\\sqrt{4}+2} \u003d \\frac{1}{2+2} \u003d \\frac{1}{4}$\n\n**Problem 2b)**\n\u003e **Warning Note:** The provided solution in the notes for this problem seems incorrect and incomplete. It attempts to use both a quadratic and cubic conjugate at the same time, leading to a confusing expression. Let\u0027s re-evaluate. The denominator `∛(4x) + 2` as `x→2` is `∛8 + 2 \u003d 2 + 2 \u003d 4`, which is not zero. The numerator `√(2-2) - √(2*2) \u003d 0 - 2 \u003d -2`. Therefore, there is no indeterminate form.\n$\\lim_{x \\to 2} \\frac{\\sqrt{2-x} - \\sqrt{2x}}{ \\sqrt{4x} + 2 } \u003d \\frac{\\sqrt{2-2}-\\sqrt{2(2)}}{\\sqrt{4(2)}+2} \u003d \\frac{0-2}{2+2} \u003d \\frac{-2}{4} \u003d -\\frac{1}{2}$\nThe calculation in the notes appears to be addressing a different, more complex problem or contains significant errors in transcription. It incorrectly results in `3/4`.\n\n#### [[Group 3 Solutions: Trigonometric Limits]]\n\n**Problem 3a)**\n$\\lim_{x \\to 0} \\frac{\\sin(2x)}{\\sin(3x)}$\n\u003e **Critical Analysis:** This is `0/0`. We can resolve this by manipulating the expression to use the known limit $\\lim_{u \\to 0} \\frac{\\sin(u)}{u} \u003d 1$. We need to create matching arguments inside and outside the sine functions.\n\n$\\lim_{x \\to 0} \\frac{\\sin(2x)}{1} \\cdot \\frac{1}{\\sin(3x)} \u003d \\lim_{x \\to 0} \\left(\\frac{\\sin(2x)}{2x} \\cdot 2x\\right) \\cdot \\left(\\frac{3x}{\\sin(3x)} \\cdot \\frac{1}{3x}\\right)$\nAs `x→0`, `2x→0` and `3x→0`. We can regroup the terms:\n$\u003d \\lim_{x \\to 0} \\left(\\frac{\\sin(2x)}{2x}\\right) \\cdot \\left(\\frac{3x}{\\sin(3x)}\\right) \\cdot \\left(\\frac{2x}{3x}\\right)$\nThe first two terms go to 1.\n$\u003d 1 \\cdot 1 \\cdot \\lim_{x \\to 0} \\frac{2}{3} \u003d \\frac{2}{3}$\n\n**Problem 3c)**\n$\\lim_{x \\to \\pi/4} \\frac{\\cos(x) - \\sin(x)}{\\cos(2x)}$\n\u003e **Critical Analysis:** Substitution gives `(√2/2 - √2/2) / cos(π/2) \u003d 0/0`. We use the double angle identity for cosine: `cos(2x) \u003d cos²(x) - sin²(x)`. This creates a difference of squares.\n\n$\\lim_{x \\to \\pi/4} \\frac{\\cos(x) - \\sin(x)}{\\cos^2(x) - \\sin^2(x)} \u003d \\lim_{x \\to \\pi/4} \\frac{\\cos(x) - \\sin(x)}{(\\cos(x) - \\sin(x))(\\cos(x) + \\sin(x))}$\n$\u003d \\lim_{x \\to \\pi/4} \\frac{1}{\\cos(x) + \\sin(x)}$\n\nSubstitute `x \u003d π/4`:\n$\\frac{1}{\\cos(\\pi/4) + \\sin(\\pi/4)} \u003d \\frac{1}{\\frac{\\sqrt{2}}{2} + \\frac{\\sqrt{2}}{2}} \u003d \\frac{1}{\\sqrt{2}}$\n\n#### [[Group 6 Solution: Continuity]]\nFor `f(x)` to be continuous, the left-hand limit, right-hand limit, and the function\u0027s value must be equal at the points where the definition changes, i.e., at `x\u003d0` and `x\u003d1`.\n\n**At `x \u003d 0`:**\n- Left-hand limit: $\\lim_{x \\to 0^-} f(x) \u003d \\lim_{x \\to 0^-} (2x+1) \u003d 1$\n- Right-hand limit: $\\lim_{x \\to 0^+} f(x) \u003d \\lim_{x \\to 0^+} (ax+b) \u003d b$\nFor continuity, these must be equal:\n$b\u003d1$\n\n**At `x \u003d 1`:**\n- Left-hand limit: $\\lim_{x \\to 1^-} f(x) \u003d \\lim_{x \\to 1^-} (ax+b) \u003d a(1)+b \u003d a+b$\n- Right-hand limit: $\\lim_{x \\to 1^+} f(x) \u003d \\lim_{x \\to 1^+} \\frac{x-1}{x^2-1} \u003d \\lim_{x \\to 1^+} \\frac{x-1}{(x-1)(x+1)} \u003d \\lim_{x \\to 1^+} \\frac{1}{x+1} \u003d \\frac{1}{2}$\nFor continuity, these must be equal:\n$a+b \u003d \\frac{1}{2}$\n\nNow we have a system of two equations:\n1. `b \u003d 1`\n2. `a + b \u003d 1/2`\n\nSubstitute (1) into (2):\n$a + 1 \u003d \\frac{1}{2} \\implies a \u003d \\frac{1}{2} - 1 \u003d -\\frac{1}{2}$\n\n**Conclusion:** The function is continuous if `a \u003d -1/2` and `b \u003d 1`."
+      }, {
+        "text": "/2` and `b \u003d 1`."
+      }]
+    }, {
+      "driveDocument": {
+        "id": "1k1kFPpsBVzKdN9-gZ3o0QSFmEQT8mg49"
+      },
+      "role": "user",
+      "tokenCount": 7958
+    }, {
+      "text": "process this file similarly as you have: no need matplotlib again as i already have the picture\n",
+      "role": "user",
+      "tokenCount": 20
+    }, {
+      "text": "**Beginning Analysis**\n\nI\u0027m starting by examining the file \"MAT A 3. predavanje SEM.md\".  My initial focus is on its overall structure, particularly how it\u0027s broken down into distinct sections labeled \"Naloga 1\", \"Naloga 2\", and so on.  Each appears to explore various aspects of real functions. I\u0027m aiming to understand the organizational pattern.\n\n\n**Mapping Out Content**\n\nI\u0027ve completed the initial mapping of the file\u0027s structure, identifying key sections like \"Naloga 1\" through \"Naloga 5\" which cover domains, injectivity, surjectivity, even/odd functions, and inverses. The \"Conceptual Strengthening Tasks\" are exercises. My next step involves transforming this into a linked Obsidian note, including appropriate LaTeX formatting for all mathematical expressions. I\u0027m focusing on preserving the original organization while adding clarifying justifications for each step.\n\n\n**Developing Execution Strategy**\n\nI\u0027ve formulated a detailed plan for transforming the markdown file into a structured Obsidian note. The process starts with identifying the top-level title, creating separate sections for each \"Naloga\" with their respective content. I\u0027ll meticulously use LaTeX for mathematical expressions and wikilinks to connect key concepts. I\u0027ll maintain the file\u0027s original structure while adding insightful justifications to strengthen the user\u0027s understanding. I plan to flag potential transcription errors, as identified in the original file, with a \"Warning Note\". My tone will remain encouraging and academically supportive, focusing on the \"how and why\" of each concept.\n\n\n**Developing a Framework**\n\nI\u0027ve crafted the primary structure for the Obsidian note, starting with the main title and the first \"Naloga\" section dedicated to domain determination. I\u0027m actively formatting equations with LaTeX and adding detailed explanations for each step, ensuring clarity for the user. I\u0027ve successfully completed the first \"Naloga\" section, including analysis, and solutions for polynomial and rational functions. I\u0027m focusing on maintaining the file\u0027s original order, while implementing Obsidian-friendly formatting and linking key concepts.\n\n\n**Initiating Structure Development**\n\nI\u0027m now implementing the detailed plan, creating the top-level structure and beginning \"Naloga 1\" with meticulous LaTeX formatting for all equations. I\u0027m focusing on providing clear explanations for each step and I\u0027m maintaining the original order. I\u0027m prioritizing Obsidian-friendly formatting and linking key terms. The first part, the domain determination for polynomial and rational functions, is complete, incorporating justifications.\n\n\n**Initiating Detailed Implementation**\n\nI\u0027m now fully immersed in the implementation phase, methodically structuring the markdown file into an Obsidian-friendly format. I\u0027m focusing on \"Naloga 2\", developing definitions for Injective and Surjective functions and analyzing the provided piecewise function. I\u0027m consistently employing LaTeX for mathematical expressions and employing wikilinks to integrate key concepts.  The first sections are complete.\n\n\n**Finalizing the Note\u0027s Structure**\n\nI\u0027m now concluding the structure by implementing the final parts of the markdown document, including the section detailing how to find f(x) and working through \"Naloga 5.\" I\u0027m completing \"Naloga 3\" and \"Naloga 4,\" transforming all equations into LaTeX, incorporating wikilinks, and adding explanations for clarity. I\u0027m focusing on \"Naloga 5,\" making sure I carefully apply and document the process. I\u0027ll insert any relevant warnings regarding potential transcription errors.\n\n\n**Developing Full Implementation**\n\nI\u0027m now completing the final sections of the Obsidian note. I\u0027m focusing on \"Naloga 6\" concerning the inverse hyperbolic sine function. I\u0027m carefully detailing the step-by-step process of deriving the inverse and presenting the final result. I\u0027m also ensuring the \"Warning Note\" from the original is included with the correct error. The overall structure is finalized with clear explanations and comprehensive LaTeX formatting.\n\n\n**Implementing Final Touches**\n\nI\u0027m presently adding the final components to the Obsidian note, completing Naloga 7 on even and odd functions. I\u0027m focusing on ensuring all equations are meticulously formatted with LaTeX and integrating wikilinks appropriately. I\u0027ve also added the linking section between Naloga 6 and 7 as instructed. The note is in its final phase.\n\n\n**Adjusting Implementation Plan**\n\nI\u0027m presently focused on the final phase of integrating the user\u0027s instructions. I\u0027ve finished the section on determining if functions are even or odd, including detailed steps and linking it with the earlier section on inverse hyperbolic sine. I\u0027m double-checking the formatting. I\u0027m actively ensuring that the note remains easy to use and understand. I\u0027ll make sure that every part of the prompt is met.\n\n\n",
+      "role": "model",
+      "tokenCount": 2677,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Beginning Analysis**\n\nI\u0027m starting by examining the file \"MAT A 3. predavanje SEM.md\".  My initial focus is on its overall structure, particularly how it\u0027s broken down into distinct sections labeled \"Naloga 1\", \"Naloga 2\", and so on.  Each appears to explore various aspects of real functions. I\u0027m aiming to understand the organizational pattern.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Mapping Out Content**\n\nI\u0027ve completed the initial mapping of the file\u0027s structure, identifying key sections like \"Naloga 1\" through \"Naloga 5\" which cover domains, injectivity, surjectivity, even/odd functions, and inverses. The \"Conceptual Strengthening Tasks\" are exercises. My next step involves transforming this into a linked Obsidian note, including appropriate LaTeX formatting for all mathematical expressions. I\u0027m focusing on preserving the original organization while adding clarifying justifications for each step.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Execution Strategy**\n\nI\u0027ve formulated a detailed plan for transforming the markdown file into a structured Obsidian note. The process starts with identifying the top-level title, creating separate sections for each \"Naloga\" with their respective content. I\u0027ll meticulously use LaTeX for mathematical expressions and wikilinks to connect key concepts. I\u0027ll maintain the file\u0027s original structure while adding insightful justifications to strengthen the user\u0027s understanding. I plan to flag potential transcription errors, as identified in the original file, with a \"Warning Note\". My tone will remain encouraging and academically supportive, focusing on the \"how and why\" of each concept.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing a Framework**\n\nI\u0027ve crafted the primary structure for the Obsidian note, starting with the main title and the first \"Naloga\" section dedicated to domain determination. I\u0027m actively formatting equations with LaTeX and adding detailed explanations for each step, ensuring clarity for the user. I\u0027ve successfully completed the first \"Naloga\" section, including analysis, and solutions for polynomial and rational functions. I\u0027m focusing on maintaining the file\u0027s original order, while implementing Obsidian-friendly formatting and linking key concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Initiating Structure Development**\n\nI\u0027m now implementing the detailed plan, creating the top-level structure and beginning \"Naloga 1\" with meticulous LaTeX formatting for all equations. I\u0027m focusing on providing clear explanations for each step and I\u0027m maintaining the original order. I\u0027m prioritizing Obsidian-friendly formatting and linking key terms. The first part, the domain determination for polynomial and rational functions, is complete, incorporating justifications.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Initiating Detailed Implementation**\n\nI\u0027m now fully immersed in the implementation phase, methodically structuring the markdown file into an Obsidian-friendly format. I\u0027m focusing on \"Naloga 2\", developing definitions for Injective and Surjective functions and analyzing the provided piecewise function. I\u0027m consistently employing LaTeX for mathematical expressions and employing wikilinks to integrate key concepts.  The first sections are complete.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing the Note\u0027s Structure**\n\nI\u0027m now concluding the structure by implementing the final parts of the markdown document, including the section detailing how to find f(x) and working through \"Naloga 5.\" I\u0027m completing \"Naloga 3\" and \"Naloga 4,\" transforming all equations into LaTeX, incorporating wikilinks, and adding explanations for clarity. I\u0027m focusing on \"Naloga 5,\" making sure I carefully apply and document the process. I\u0027ll insert any relevant warnings regarding potential transcription errors.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Developing Full Implementation**\n\nI\u0027m now completing the final sections of the Obsidian note. I\u0027m focusing on \"Naloga 6\" concerning the inverse hyperbolic sine function. I\u0027m carefully detailing the step-by-step process of deriving the inverse and presenting the final result. I\u0027m also ensuring the \"Warning Note\" from the original is included with the correct error. The overall structure is finalized with clear explanations and comprehensive LaTeX formatting.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing Final Touches**\n\nI\u0027m presently adding the final components to the Obsidian note, completing Naloga 7 on even and odd functions. I\u0027m focusing on ensuring all equations are meticulously formatted with LaTeX and integrating wikilinks appropriately. I\u0027ve also added the linking section between Naloga 6 and 7 as instructed. The note is in its final phase.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Adjusting Implementation Plan**\n\nI\u0027m presently focused on the final phase of integrating the user\u0027s instructions. I\u0027ve finished the section on determining if functions are even or odd, including detailed steps and linking it with the earlier section on inverse hyperbolic sine. I\u0027m double-checking the formatting. I\u0027m actively ensuring that the note remains easy to use and understand. I\u0027ll make sure that every part of the prompt is met.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Realne Funkcije]]\n\n## [[Naloga 1: Določanje Definicijskega Območja (Df)]]\n### [[a) Polinomska Funkcija]]\n$f(x) \u003d x^3 - x + 1$\n\n#### [[Analiza]]\n\u003e **Note to Self:** Polinomske funkcije so definirane za vsa realna števila, saj operacije seštevanja, odštevanja in množenja nimajo omejitev v množici realnih števil. Ni deljenja z nič ali korenjenja negativnih vrednosti, kar bi lahko omejilo domeno.\n\nFunkcija je polinom tretje stopnje. Polinomske funkcije so definirane za vsa realna števila.\n\n#### [[Rešitev]]\nDefinicijsko območje je množica vseh realnih števil.\n$D_f \u003d \\mathbb{R}$\n\n### [[b) Racionalna Funkcija]]\n$f(x) \u003d \\frac{x}{-2x^3 - x^2 + 5x - 2}$\n\n#### [[Analiza]]\n\u003e **Critical Analysis:** Funkcija je racionalna, kar pomeni, da je kvocient dveh polinomov. Taka funkcija je definirana povsod, razen v točkah, kjer je njen imenovalec enak nič, saj deljenje z nič ni definirano. Naša naloga je torej poiskati ničle polinoma v imenovalcu.\n\nImenovalec ne sme biti enak nič: $P(x) \u003d -2x^3 - x^2 + 5x - 2 \\neq 0$\n\nNičle polinoma iščemo z uporabo Hornerjevega algoritma ali s preizkušanjem celoštevilskih deliteljev prostega člena (ki je -2). Možni kandidati so $\\pm1, \\pm2$.\n\n*   **Test za $x\u003d1$**:\n    $-2(1)^3 - (1)^2 + 5(1) - 2 \u003d -2 - 1 + 5 - 2 \u003d 0$.\n    Ker je rezultat 0, je $x_1\u003d1$ ena od ničel.\n\n*   **Test za $x\u003d-2$**:\n    $-2(-2)^3 - (-2)^2 + 5(-2) - 2 \u003d -2(-8) - 4 - 10 - 2 \u003d 16 - 4 - 10 - 2 \u003d 0$.\n    Ker je rezultat 0, je $x_2\u003d-2$ druga ničla.\n\n*   **Test za $x\u003d1/2$**:\n    $-2(\\frac{1}{2})^3 - (\\frac{1}{2})^2 + 5(\\frac{1}{2}) - 2 \u003d -2(\\frac{1}{8}) - \\frac{1}{4} + \\frac{5}{2} - 2 \u003d -\\frac{1}{4} - \\frac{1}{4} + \\frac{5}{2} - 2 \u003d -\\frac{2}{4} + \\frac{5}{2} - 2 \u003d -\\frac{1}{2} + \\frac{5}{2} - 2 \u003d \\frac{4}{2} - 2 \u003d 2 - 2 \u003d 0$.\n    Ker je rezultat 0, je $x_3\u003d\\frac{1}{2}$ tretja ničla.\n\n#### [[Rešitev]]\nFunkcija ni definirana pri vrednostih $x$, ki so enake ničlam imenovalca.\n$D_f \u003d \\mathbb{R} \\setminus \\{-2, \\frac{1}{2}, 1\\}$\n\n---\n\n## [[Naloga 2: Injektivnost in Surjektivnost]]\n\n### [[Definicije]]\n*   **[[Injektivnost]] (1-na-1):** Funkcija $f: A \\to B$ je injektivna, če za vsaka dva različna elementa iz domene velja, da sta tudi njuni sliki različni.\n    Formalno: $\\forall x_1, x_2 \\in A: x_1 \\neq x_2 \\implies f(x_1) \\neq f(x_2)$.\n    Ekvivalentna definicija, ki je pogosto lažja za dokazovanje: $f(x_1) \u003d f(x_2) \\implies x_1 \u003d x_2$.\n\n*   **[[Surjektivnost]] (na):** Funkcija $f: A \\to B$ je surjektivna, če je vsak element iz kodomene $B$ slika vsaj enega elementa iz domene $A$.\n    Formalno: $\\forall y \\in B, \\exists x \\in A: f(x) \u003d y$.\n    To pomeni, da mora biti zaloga vrednosti funkcije ($Z_f$) enaka njeni kodomeni ($B$).\n\n### [[a) Funkcija z Absolutnimi Vrednostmi]]\n$f(x) \u003d |x-1| + |x+1|$\n\n#### [[Analiza po delih]]\n\u003e **Critical Analysis:** Ker funkcija vsebuje absolutne vrednosti, jo moramo analizirati odsekoma. Kritične točke, kjer izrazi znotraj absolutnih vrednosti spremenijo predznak, so ničle teh izrazov: $x-1\u003d0 \\implies x\u003d1$ in $x+1\u003d0 \\implies x\u003d-1$. Te točke razdelijo realno os na tri intervale.\n\n1.  **Interval $x \u003c -1$:**\n    Na tem intervalu sta oba izraza, $x-1$ in $x+1$, negativna. Zato pri odpravi absolutne vrednosti oba pomnožimo z -1.\n    $f(x) \u003d -(x-1) - (x+1) \u003d -x + 1 - x - 1 \u003d -2x$\n\n2.  **Interval $-1 \\le x \u003c 1$:**\n    Izraz $x-1$ je negativen, $x+1$ pa je nenegativen (pozitiven ali 0).\n    $f(x) \u003d -(x-1) + (x+1) \u003d -x + 1 + x + 1 \u003d 2$\n\n3.  **Interval $x \\ge 1$:**\n    Oba izraza sta nenegativna.\n    $f(x) \u003d (x-1) + (x+1) \u003d x - 1 + x + 1 \u003d 2x$\n\n#### [[Odsekoma Definirana Funkcija]]\nZdružimo analizo v en predpis:\n$f(x) \u003d \\begin{cases} -2x \u0026 \\text{za } x \u003c -1 \\\\ 2 \u0026 \\text{za } -1 \\le x \u003c 1 \\\\ 2x \u0026 \\text{za } x \\ge 1 \\end{cases}$\n\n![[Figure_11-1.png]]\n\n#### [[Injektivnost]]\nFunkcija **ni injektivna**.\n\u003e **Justification:** Za dokaz neinjektivnosti zadošča en sam protiprimer. Iz analize vidimo, da je na celotnem intervalu $[-1, 1)$ vrednost funkcije konstantna in enaka 2. Na primer:\n$f(0) \u003d 2$\n$f(0.5) \u003d 2$\nImamo $0 \\neq 0.5$, vendar je $f(0) \u003d f(0.5)$, kar je v nasprotju z definicijo injektivnosti.\n\n#### [[Surjektivnost]]\nFunkcija **ni surjektivna** na $\\mathbb{R}$.\n\u003e **Justification:** Iz grafa in odsekoma definiranega predpisa je razvidno, da so vse vrednosti funkcije večje ali enake 2. Najmanjša vrednost je 2. Zaloga vrednosti je torej $Z_f \u003d [2, \\infty)$.\nKer je predpostavljena kodomena množica vseh realnih števil ($\\mathbb{R}$), zaloga vrednosti ni enaka kodomeni ($[2, \\infty) \\neq \\mathbb{R}$). Na primer, za $y\u003d0 \\in \\mathbb{R}$ ne obstaja noben $x \\in D_f$, za katerega bi veljalo $f(x)\u003d0$.\n\n---\n\n## [[Naloga 5: Določanje Predpisa Funkcije]]\nFunkcija $f: \\mathbb{R} \\to \\mathbb{R}$ je podana s predpisom $f(x-1) \u003d x^2 - x - 2$. Izračunaj $f(x)$.\n\n### [[Rešitev z uvedbo nove spremenljivke]]\n\u003e **Critical Analysis:** Cilj je najti predpis za $f(x)$, kar pomeni, da mora biti argument funkcije preprosto \u0027x\u0027, ne pa \u0027x-1\u0027. To dosežemo z uvedbo nove spremenljivke, ki bo nadomestila kompleksen argument.\n\n1.  **Uvedba nove spremenljivke:**\n    Naj bo argument funkcije $f$ nova spremenljivka $t$:\n    $t \u003d x-1$\n\n2.  **Izrazimo $x$ s $t$:**\n    Iz zgornje enačbe izrazimo prvotno spremenljivko $x$:\n    $x \u003d t+1$\n\n3.  **Vstavimo v predpis:**\n    Sedaj v prvotno enačbo $f(x-1) \u003d x^2 - x - 2$ zamenjamo $x-1$ z $t$ in vsak $x$ z $t+1$.\n    $f(t) \u003d (t+1)^2 - (t+1) - 2$\n\n\u003e **Warning:** Pogosta napaka je napačna distribucija minusa. Oklepaj `-(t+1)` postane `-t - 1`. V zapiskih je napačno prepisano kot `+ t+1`, vendar je končni rezultat pravilen, kar kaže na lapsus med prepisovanjem.\n\n4.  **Poenostavimo izraz za $f(t)$:**\n    $f(t) \u003d (t^2 + 2t + 1) - t - 1 - 2$\n    $f(t) \u003d t^2 + 2t - t + 1 - 1 - 2$\n    $f(t) \u003d t^2 + t - 2$\n\n5.  **Zapišemo funkcijo z $x$:**\n    Ker je $t$ le simbol za spremenljivko, ga lahko preimenujemo nazaj v $x$, da dobimo končni predpis za $f(x)$.\n    $f(x) \u003d x^2 + x - 2$\n\n---\n\n## [[Naloga 6: Inverz Hiperboličnega Sinusa]]\n\n### [[Definicija Hiperboličnih Funkcij]]\n*   **[[Hiperbolični Sinus]] ($sinh$):**\n    $sinh(x) \u003d \\frac{e^x - e^{-x}}{2}$\n    To je **liha funkcija**, $sinh: \\mathbb{R} \\to \\mathbb{R}$. Njen graf je simetričen glede na izhodišče.\n*   **[[Hiperbolični Kosinus]] ($cosh$):**\n    $cosh(x) \u003d \\frac{e^x + e^{-x}}{2}$\n    To je **soda funkcija**. Njen graf je simetričen glede na y-os.\n\n![[Figure_1-4.png]]\n\n### [[Izračun Inverzne Funkcije (sinh^-1(x))]]\n\u003e **Note to Self:** Za izračun inverzne funkcije $f^{-1}(x)$ sledimo standardnemu postopku: v enačbi $y\u003df(x)$ zamenjamo $x$ in $y$, nato pa iz nove enačbe izrazimo $y$.\n\n1.  **Začetna postavitev:**\n    Začnemo z $y \u003d \\sinh(x)$ in zamenjamo spremenljivki:\n    $x \u003d \\sinh(y) \u003d \\frac{e^y - e^{-y}}{2}$\n\n2.  **Preureditev v polinomsko obliko za $e^y$:**\n    $2x \u003d e^y - e^{-y}$\n    Pomnožimo enačbo z $e^y$, da odpravimo negativni eksponent:\n    $2x \\cdot e^y \u003d (e^y)^2 - 1$\n    Preuredimo v standardno obliko kvadratne enačbe:\n    $(e^y)^2 - 2x(e^y) - 1 \u003d 0$\n\n3.  **Reševanje kvadratne enačbe:**\n    Uvedemo substitucijo $t \u003d e^y$ in dobimo $t^2 - 2xt - 1 \u003d 0$. Rešimo jo z formulo:\n    $t \u003d \\frac{-(-2x) \\pm \\sqrt{(-2x)^2 - 4(1)(-1)}}{2(1)} \u003d \\frac{2x \\pm \\sqrt{4x^2 + 4}}{2}$\n    $t \u003d \\frac{2x \\pm 2\\sqrt{x^2 + 1}}{2} \u003d x \\pm \\sqrt{x^2 + 1}$\n\n4.  **Analiza rešitev in vračanje substitucije:**\n    Ker je $t\u003de^y$, mora biti $t \u003e 0$.\n    *   **Analiza pogoja $e^y \u003e 0$:** Vemo, da je $\\sqrt{x^2 + 1} \u003e \\sqrt{x^2} \u003d |x|$.\n    *   **Rešitev z minusom:** Izraz $x - \\sqrt{x^2 + 1}$ je vedno negativen, saj od $x$ odštevamo število, ki je po absolutni vrednosti večje. Ta rešitev odpade.\n    *   **Rešitev s plusom:** $x + \\sqrt{x^2 + 1}$ je vedno pozitivna in je edina veljavna rešitev.\n\n5.  **Končna izpeljava:**\n    $e^y \u003d x + \\sqrt{x^2 + 1}$\n    Logaritmiramo obe strani, da izrazimo $y$:\n    $y \u003d \\ln(x + \\sqrt{x^2 + 1})$\n\nInverzna funkcija je:\n$\\sinh^{-1}(x) \u003d \\ln(x + \\sqrt{x^2 + 1})$\n\n---\n\n## [[Naloga 7: Sodost in Lihost Funkcij]]\n\n### [[Definicije Sodosti in Lihosti]]\n*   **[[Soda funkcija]] (Even):** $f(-x) \u003d f(x)$. Graf je simetričen na y-os.\n*   **[[Liha funkcija]] (Odd):** $f(-x) \u003d -f(x)$. Graf je simetričen na izhodišče.\n\u003e **Note to Self:** Predpogoj za preverjanje je, da je definicijsko območje simetrično glede na izhodišče.\n\n#### [[Primer a: f(x) \u003d (2^x - 1) / (2^x + 1)]]\n$f(-x) \u003d \\frac{2^{-x} - 1}{2^{-x} + 1} \u003d \\frac{\\frac{1}{2^x} - 1}{\\frac{1}{2^x} + 1} \u003d \\frac{1 - 2^x}{1 + 2^x} \u003d \\frac{-(2^x - 1)}{1 + 2^x} \u003d -f(x)$\n**Sklep:** Funkcija je **liha**.\n\n#### [[Primer b: f(x) \u003d ln((1-x) / (1+x))]]\n1.  **Definicijsko območje:** $\\frac{1-x}{1+x} \u003e 0 \\implies x \\in (-1, 1)$, kar je simetrično območje.\n2.  **Preverjanje:**\n    $f(-x) \u003d \\ln\\left(\\frac{1 - (-x)}{1 + (-x)}\\right) \u003d \\ln\\left(\\frac{1+x}{1-x}\\right) \u003d \\ln\\left(\\left(\\frac{1-x}{1+x}\\right)^{-1}\\right) \u003d -\\ln\\left(\\frac{1-x}{1+x}\\right) \u003d -f(x)$\n**Sklep:** Funkcija je **liha**.\n\n#### [[Primer c: f(x) \u003d ln(x + √(x^2 + 1))]]\n$f(-x) \u003d \\ln(-x + \\sqrt{x^2 + 1})$\nRacionaliziramo argument:\n$f(-x) \u003d \\ln\\left((\\sqrt{x^2+1} - x) \\cdot \\frac{\\sqrt{x^2+1} + x}{\\sqrt{x^2+1} + x}\\right) \u003d \\ln\\left(\\frac{(x^2+1) - x^2}{x + \\sqrt{x^2+1}}\\right)$\n$f(-x) \u003d \\ln\\left(\\frac{1}{x + \\sqrt{x^2+1}}\\right) \u003d -\\ln(x + \\sqrt{x^2+1}) \u003d -f(x)$\n**Sklep:** Funkcija je **liha**.\n\n#### [[Povezava med Nalogami]]\n\u003e **Note to Self:** Funkcija iz primera 7c je inverz hiperboličnega sinusa iz naloge 6. Ker je $sinh(x)$ liha funkcija, je tudi njena inverzna funkcija $sinh^{-1}(x)$ liha, saj je graf inverza zrcalna slika čez simetralo $y\u003dx$, kar ohranja simetrijo glede na izhodišče. kar ohranja simetrijo glede na izhodišče.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 4140,
+      "parts": [{
+        "text": "# [[Realne Funkcije]]\n\n## [[Naloga 1: Določanje Definicijskega Območja (Df)]]\n### [[a) Polinomska Funkcija]]\n$f(x)"
+      }, {
+        "text": " \u003d x^3 - x + 1$\n\n#### [[Analiza]]\n\u003e **Note to Self:** Pol"
+      }, {
+        "text": "inomske funkcije so definirane za vsa realna števila, saj operacije seštevanja, od"
+      }, {
+        "text": "števanja in množenja nimajo omejitev v množici realnih števil. Ni deljenja z nič"
+      }, {
+        "text": " ali korenjenja negativnih vrednosti, kar bi lahko omejilo domeno.\n\nFunkcija je polinom tret"
+      }, {
+        "text": "je stopnje. Polinomske funkcije so definirane za vsa realna števila.\n\n####"
+      }, {
+        "text": " [[Rešitev]]\nDefinicijsko območje je množica vseh realnih števil.\n"
+      }, {
+        "text": "$D_f \u003d \\mathbb{R}$\n\n### [[b) Racionalna Funkcija]]\n$f"
+      }, {
+        "text": "(x) \u003d \\frac{x}{-2x^3 - x^2 + 5x - 2"
+      }, {
+        "text": "}$\n\n#### [[Analiza]]\n\u003e **Critical Analysis:** Funkcija je racionalna, kar pomeni, da je kv"
+      }, {
+        "text": "ocient dveh polinomov. Taka funkcija je definirana povsod, razen v točkah, kjer"
+      }, {
+        "text": " je njen imenovalec enak nič, saj deljenje z nič ni definirano. Naša naloga je torej po"
+      }, {
+        "text": "iskati ničle polinoma v imenovalcu.\n\nImenovalec ne sme biti enak nič: $P(x)"
+      }, {
+        "text": " \u003d -2x^3 - x^2 + 5x - 2 \\neq 0$\n\nN"
+      }, {
+        "text": "ičle polinoma iščemo z uporabo Hornerjevega algoritma ali s preizkušanjem celošte"
+      }, {
+        "text": "vilskih deliteljev prostega člena (ki je -2). Možni kandidati so $\\pm1"
+      }, {
+        "text": ", \\pm2$.\n\n*   **Test za $x\u003d1$**:\n    $-2(1)^3 -"
+      }, {
+        "text": " (1)^2 + 5(1) - 2 \u003d -2 - 1 + 5 - "
+      }, {
+        "text": "2 \u003d 0$.\n    Ker je rezultat 0, je $x_1\u003d1$ ena od ničel"
+      }, {
+        "text": ".\n\n*   **Test za $x\u003d-2$**:\n    $-2(-2)^3 - (-2)^2"
+      }, {
+        "text": " + 5(-2) - 2 \u003d -2(-8) - 4 - 10 - 2 \u003d "
+      }, {
+        "text": "16 - 4 - 10 - 2 \u003d 0$.\n    Ker je rezultat 0,"
+      }, {
+        "text": " je $x_2\u003d-2$ druga ničla.\n\n*   **Test za $x\u003d1/2$**:\n"
+      }, {
+        "text": "    $-2(\\frac{1}{2})^3 - (\\frac{1}{2})^2 + 5(\\"
+      }, {
+        "text": "frac{1}{2}) - 2 \u003d -2(\\frac{1}{8}) - \\frac{1}{"
+      }, {
+        "text": "4} + \\frac{5}{2} - 2 \u003d -\\frac{1}{4} - \\frac{1"
+      }, {
+        "text": "}{4} + \\frac{5}{2} - 2 \u003d -\\frac{2}{4} + \\frac{5"
+      }, {
+        "text": "}{2} - 2 \u003d -\\frac{1}{2} + \\frac{5}{2} - "
+      }, {
+        "text": "2 \u003d \\frac{4}{2} - 2 \u003d 2 - 2 \u003d 0$.\n    Ker je rezultat"
+      }, {
+        "text": " 0, je $x_3\u003d\\frac{1}{2}$ tretja ničla.\n\n#### [[Rešitev]]\nFunkcija ni definirana pri vrednostih $x$, ki so enake ničlam imenovalca"
+      }, {
+        "text": ".\n$D_f \u003d \\mathbb{R} \\setminus \\{-2, \\frac{1}{2}, 1"
+      }, {
+        "text": "\\}$\n\n---\n\n## [[Naloga 2: Injektivnost in Surjektivnost]]\n\n###"
+      }, {
+        "text": " [[Definicije]]\n*   **[[Injektivnost]] (1-na-1):** Funkcija $"
+      }, {
+        "text": "f: A \\to B$ je injektivna, če za vsaka dva različna elementa iz domene"
+      }, {
+        "text": " velja, da sta tudi njuni sliki različni.\n    Formalno: $\\forall x_1, x_2"
+      }, {
+        "text": " \\in A: x_1 \\neq x_2 \\implies f(x_1) \\neq f("
+      }, {
+        "text": "x_2)$.\n    Ekvivalentna definicija, ki je pogosto lažja za dokazovanje: $"
+      }, {
+        "text": "f(x_1) \u003d f(x_2) \\implies x_1 \u003d x_2$.\n\n"
+      }, {
+        "text": "*   **[[Surjektivnost]] (na):** Funkcija $f: A \\to B$ je sur"
+      }, {
+        "text": "jektivna, če je vsak element iz kodomene $B$ slika vsaj enega elementa iz"
+      }, {
+        "text": " domene $A$.\n    Formalno: $\\forall y \\in B, \\exists x \\in A: f"
+      }, {
+        "text": "(x) \u003d y$.\n    To pomeni, da mora biti zaloga vrednosti funkcije ($Z_"
+      }, {
+        "text": "f$) enaka njeni kodomeni ($B$).\n\n### [[a) Funkcija z Absolutnimi Vrednostmi]]\n$f(x) \u003d |x-1| + |x+1|$\n\n####"
+      }, {
+        "text": " [[Analiza po delih]]\n\u003e **Critical Analysis:** Ker funkcija vsebuje absolutne vrednosti, jo"
+      }, {
+        "text": " moramo analizirati odsekoma. Kritične točke, kjer izrazi znotraj absolutnih vrednosti sprem"
+      }, {
+        "text": "enijo predznak, so ničle teh izrazov: $x-1\u003d0 \\implies x\u003d1$ in $"
+      }, {
+        "text": "x+1\u003d0 \\implies x\u003d-1$. Te točke razdelijo realno os na tri intervale.\n\n1"
+      }, {
+        "text": ".  **Interval $x \u003c -1$:**\n    Na tem intervalu sta oba izraza, $x-1"
+      }, {
+        "text": "$ in $x+1$, negativna. Zato pri odpravi absolutne vrednosti oba pomnožimo z"
+      }, {
+        "text": " -1.\n    $f(x) \u003d -(x-1) - (x+1) \u003d -x +"
+      }, {
+        "text": " 1 - x - 1 \u003d -2x$\n\n2.  **Interval $-1 \\le x \u003c 1$"
+      }, {
+        "text": ":**\n    Izraz $x-1$ je negativen, $x+1$ pa je nenegativen ("
+      }, {
+        "text": "pozitiven ali 0).\n    $f(x) \u003d -(x-1) + (x+1"
+      }, {
+        "text": ") \u003d -x + 1 + x + 1 \u003d 2$\n\n3.  **Interval $x \\ge "
+      }, {
+        "text": "1$:**\n    Oba izraza sta nenegativna.\n    $f(x) \u003d ("
+      }, {
+        "text": "x-1) + (x+1) \u003d x - 1 + x + 1 \u003d 2x"
+      }, {
+        "text": "$\n\n#### [[Odsekoma Definirana Funkcija]]\nZdružimo analizo v en predpis:\n$"
+      }, {
+        "text": "f(x) \u003d \\begin{cases} -2x \u0026 \\text{za } x \u003c -1 \\\\"
+      }, {
+        "text": " 2 \u0026 \\text{za } -1 \\le x \u003c 1 \\\\ 2x \u0026 \\text{"
+      }, {
+        "text": "za } x \\ge 1 \\end{cases}$\n\n"
+      }, {
+        "text": "![[Figure_11-1.png]]\n\n#### [[Injektivnost]]\nFunkcija **ni injektivna**.\n\u003e **Justification:** Za dokaz ne"
+      }, {
+        "text": "injektivnosti zadošča en sam protiprimer. Iz analize vidimo, da je na cel"
+      }, {
+        "text": "otnem intervalu $[-1, 1)$ vrednost funkcije konstantna in enaka 2. Na primer:\n$f(0) \u003d 2$\n$f(0.5) \u003d 2$\nImamo $0 \\neq 0.5$, vendar je $f(0) \u003d f(0.5)$, kar je v nasprotju z definicijo injektivnosti.\n\n#### [[Surjektivnost]]\nFunkcija **ni surjektivna** na $\\mathbb{R}$.\n\u003e **Justification:** Iz grafa in odsekoma definiranega predpisa je razvidno, da so vse vrednosti funkcije večje ali enake 2. Najmanjša vrednost je 2. Zaloga vrednosti je torej $Z_f \u003d [2, \\infty)$.\nKer je predpostavljena kodomena množica vseh realnih števil ($\\mathbb{R}$), zaloga vrednosti ni enaka kodomeni ($[2, \\infty) \\neq \\mathbb{R}$). Na primer, za $y\u003d0 \\in \\mathbb{R}$ ne obstaja noben $x \\in D_f$, za katerega bi veljalo $f(x)\u003d0$.\n\n---\n\n## [[Naloga 5: Določanje Predpisa Funkcije]]\nFunkcija $f: \\mathbb{R} \\to \\mathbb{R}$ je podana s predpisom $f(x-1) \u003d x^2 - x - 2$. Izračunaj $f(x)$.\n\n### [[Rešitev z uvedbo nove spremenljivke]]\n\u003e **Critical Analysis:** Cilj je najti predpis za $f(x)$, kar pomeni, da mora biti argument funkcije preprosto \u0027x\u0027, ne pa \u0027x-1\u0027. To dosežemo z uvedbo nove spremenljivke, ki bo nadomestila kompleksen argument.\n\n1.  **Uvedba nove spremenljivke:**\n    Naj bo argument funkcije $f$ nova spremenljivka $t$:\n    $t \u003d x-1$\n\n2.  **Izrazimo $x$ s $t$:**\n    Iz zgornje enačbe izrazimo prvotno spremenljivko $x$:\n    $x \u003d t+1$\n\n3.  **Vstavimo v predpis:**\n    Sedaj v prvotno enačbo $f(x-1) \u003d x^2 - x - 2$ zamenjamo $x-1$ z $t$ in vsak $x$ z $t+1$.\n    $f(t) \u003d (t+1)^2 - (t+1) - 2$\n\n\u003e **Warning:** Pogosta napaka je napačna distribucija minusa. Oklepaj `-(t+1)` postane `-t - 1`. V zapiskih je napačno prepisano kot `+ t+1`, vendar je končni rezultat pravilen, kar kaže na lapsus med prepisovanjem.\n\n4.  **Poenostavimo izraz za $f(t)$:**\n    $f(t) \u003d (t^2 + 2t + 1) - t - 1 - 2$\n    $f(t) \u003d t^2 + 2t - t + 1 - 1 - 2$\n    $f(t) \u003d t^2 + t - 2$\n\n5.  **Zapišemo funkcijo z $x$:**\n    Ker je $t$ le simbol za spremenljivko, ga lahko preimenujemo nazaj v $x$, da dobimo končni predpis za $f(x)$.\n    $f(x) \u003d x^2 + x - 2$\n\n---\n\n## [[Naloga 6: Inverz Hiperboličnega Sinusa]]\n\n### [[Definicija Hiperboličnih Funkcij]]\n*   **[[Hiperbolični Sinus]] ($sinh$):**\n    $sinh(x) \u003d \\frac{e^x - e^{-x}}{2}$\n    To je **liha funkcija**, $sinh: \\mathbb{R} \\to \\mathbb{R}$. Njen graf je simetričen glede na izhodišče.\n*   **[[Hiperbolični Kosinus]] ($cosh$):**\n    $cosh(x) \u003d \\frac{e^x + e^{-x}}{2}$\n    To je **soda funkcija**. Njen graf je simetričen glede na y-os.\n\n![[Figure_1-4.png]]\n\n### [[Izračun Inverzne Funkcije (sinh^-1(x))]]\n\u003e **Note to Self:** Za izračun inverzne funkcije $f^{-1}(x)$ sledimo standardnemu postopku: v enačbi $y\u003df(x)$ zamenjamo $x$ in $y$, nato pa iz nove enačbe izrazimo $y$.\n\n1.  **Začetna postavitev:**\n    Začnemo z $y \u003d \\sinh(x)$ in zamenjamo spremenljivki:\n    $x \u003d \\sinh(y) \u003d \\frac{e^y - e^{-y}}{2}$\n\n2.  **Preureditev v polinomsko obliko za $e^y$:**\n    $2x \u003d e^y - e^{-y}$\n    Pomnožimo enačbo z $e^y$, da odpravimo negativni eksponent:\n    $2x \\cdot e^y \u003d (e^y)^2 - 1$\n    Preuredimo v standardno obliko kvadratne enačbe:\n    $(e^y)^2 - 2x(e^y) - 1 \u003d 0$\n\n3.  **Reševanje kvadratne enačbe:**\n    Uvedemo substitucijo $t \u003d e^y$ in dobimo $t^2 - 2xt - 1 \u003d 0$. Rešimo jo z formulo:\n    $t \u003d \\frac{-(-2x) \\pm \\sqrt{(-2x)^2 - 4(1)(-1)}}{2(1)} \u003d \\frac{2x \\pm \\sqrt{4x^2 + 4}}{2}$\n    $t \u003d \\frac{2x \\pm 2\\sqrt{x^2 + 1}}{2} \u003d x \\pm \\sqrt{x^2 + 1}$\n\n4.  **Analiza rešitev in vračanje substitucije:**\n    Ker je $t\u003de^y$, mora biti $t \u003e 0$.\n    *   **Analiza pogoja $e^y \u003e 0$:** Vemo, da je $\\sqrt{x^2 + 1} \u003e \\sqrt{x^2} \u003d |x|$.\n    *   **Rešitev z minusom:** Izraz $x - \\sqrt{x^2 + 1}$ je vedno negativen, saj od $x$ odštevamo število, ki je po absolutni vrednosti večje. Ta rešitev odpade.\n    *   **Rešitev s plusom:** $x + \\sqrt{x^2 + 1}$ je vedno pozitivna in je edina veljavna rešitev.\n\n5.  **Končna izpeljava:**\n    $e^y \u003d x + \\sqrt{x^2 + 1}$\n    Logaritmiramo obe strani, da izrazimo $y$:\n    $y \u003d \\ln(x + \\sqrt{x^2 + 1})$\n\nInverzna funkcija je:\n$\\sinh^{-1}(x) \u003d \\ln(x + \\sqrt{x^2 + 1})$\n\n---\n\n## [[Naloga 7: Sodost in Lihost Funkcij]]\n\n### [[Definicije Sodosti in Lihosti]]\n*   **[[Soda funkcija]] (Even):** $f(-x) \u003d f(x)$. Graf je simetričen na y-os.\n*   **[[Liha funkcija]] (Odd):** $f(-x) \u003d -f(x)$. Graf je simetričen na izhodišče.\n\u003e **Note to Self:** Predpogoj za preverjanje je, da je definicijsko območje simetrično glede na izhodišče.\n\n#### [[Primer a: f(x) \u003d (2^x - 1) / (2^x + 1)]]\n$f(-x) \u003d \\frac{2^{-x} - 1}{2^{-x} + 1} \u003d \\frac{\\frac{1}{2^x} - 1}{\\frac{1}{2^x} + 1} \u003d \\frac{1 - 2^x}{1 + 2^x} \u003d \\frac{-(2^x - 1)}{1 + 2^x} \u003d -f(x)$\n**Sklep:** Funkcija je **liha**.\n\n#### [[Primer b: f(x) \u003d ln((1-x) / (1+x))]]\n1.  **Definicijsko območje:** $\\frac{1-x}{1+x} \u003e 0 \\implies x \\in (-1, 1)$, kar je simetrično območje.\n2.  **Preverjanje:**\n    $f(-x) \u003d \\ln\\left(\\frac{1 - (-x)}{1 + (-x)}\\right) \u003d \\ln\\left(\\frac{1+x}{1-x}\\right) \u003d \\ln\\left(\\left(\\frac{1-x}{1+x}\\right)^{-1}\\right) \u003d -\\ln\\left(\\frac{1-x}{1+x}\\right) \u003d -f(x)$\n**Sklep:** Funkcija je **liha**.\n\n#### [[Primer c: f(x) \u003d ln(x + √(x^2 + 1))]]\n$f(-x) \u003d \\ln(-x + \\sqrt{x^2 + 1})$\nRacionaliziramo argument:\n$f(-x) \u003d \\ln\\left((\\sqrt{x^2+1} - x) \\cdot \\frac{\\sqrt{x^2+1} + x}{\\sqrt{x^2+1} + x}\\right) \u003d \\ln\\left(\\frac{(x^2+1) - x^2}{x + \\sqrt{x^2+1}}\\right)$\n$f(-x) \u003d \\ln\\left(\\frac{1}{x + \\sqrt{x^2+1}}\\right) \u003d -\\ln(x + \\sqrt{x^2+1}) \u003d -f(x)$\n**Sklep:** Funkcija je **liha**.\n\n#### [[Povezava med Nalogami]]\n\u003e **Note to Self:** Funkcija iz primera 7c je inverz hiperboličnega sinusa iz naloge 6. Ker je $sinh(x)$ liha funkcija, je tudi njena inverzna funkcija $sinh^{-1}(x)$ liha, saj je graf inverza zrcalna slika čez simetralo $y\u003dx$, kar ohranja simetrijo glede na izhodišče."
+      }, {
+        "text": " kar ohranja simetrijo glede na izhodišče."
+      }]
+    }, {
+      "driveDocument": {
+        "id": "17Ie9UJSzGqSQonjSE2kOin0kkktPTvbg"
+      },
+      "role": "user",
+      "tokenCount": 6640
+    }, {
+      "text": "sem 2 \n",
+      "role": "user",
+      "tokenCount": 6
+    }, {
+      "text": "**Initiating Markdown Parsing**\n\nI\u0027m starting the process of understanding `MAT A 2. pred avanje SEM.md`. It seems to focus on absolute value inequalities in the Cartesian plane, specifically sketching sets of points. My current goal is to efficiently parse and represent the key content within this lecture file.\n\n\n**Refining Lecture Analysis**\n\nI\u0027m now diving deeper into the lecture content. The markdown file focuses on two core themes: absolute value inequalities and complex numbers. I\u0027ve begun to break down the provided examples, paying close attention to the user\u0027s case breakdowns and visualizations. The plan is to ensure the visualizations are correctly integrated and the mathematical notation is rendered in LaTeX, adhering to the Obsidian markdown format. I\u0027m focusing on preserving the original structure of the notes while adhering to the role outlined.\n\n\n**Processing Mathematical Concepts**\n\nI\u0027m now focusing on ensuring that the concepts of absolute value inequalities and complex numbers are accurately represented. I\u0027m prioritizing the integration of the provided LaTeX formulas and matplotlib visualizations, making sure they correctly reflect the mathematical content. I am planning to separate the core content into discrete sub-sections in order to enhance readability. Furthermore, I need to identify and correct any errors in the original document, specifically those in calculations, while providing clear justifications for all key formulas. I plan to enhance the structural organization of the user\u0027s provided markdown file to promote easier understanding.\n\n\n**Analyzing File Structure**\n\nI\u0027ve now finalized the overall structure of the markdown file, incorporating the key sections outlined in my plan: Theory, Problems, Solutions. The use of wikilinks for all headers is implemented.  I\u0027m presently tackling the content of the Absolute Value Inequalities section, starting with Problem A, ensuring the mathematical derivations are detailed and the visualizations are properly integrated, enhancing clarity.\n\n\n**Enhancing Inequality Content**\n\nI\u0027m currently working to expand and refine the section on absolute value inequalities. I\u0027m focusing on Problem C, addressing the user\u0027s note about a potential error. My goal is to add a detailed, step-by-step derivation for each region within the inequality, ensuring the logic is clear. I will also incorporate a `Warning Note` as instructed, to address the calculation error mentioned. After completing the inequalities section, I will begin converting all formulas to LaTeX, and add appropriate Wikilinks.\n\n\n**Integrating LaTeX and Visuals**\n\nI\u0027ve completed my initial pass through the content, and I\u0027m currently working on converting all formulas to LaTeX format for consistent mathematical notation. Simultaneously, I\u0027m integrating the provided Matplotlib visualizations into the appropriate sections and ensuring they are correctly displayed within the markdown file. I\u0027m focusing on Problem C of the Absolute Value Inequalities section, meticulously checking all regions and derivations.\n\n\n**Integrating Refinements \u0026 Edits**\n\nI\u0027ve completed the initial content review and now I\u0027m refining the Absolute Value Inequalities section, focusing on Problem C and the integration of LaTeX and visualizations. I\u0027ve addressed the potential error and added a `Warning Note`, providing a clear, detailed derivation for each region. I\u0027m ensuring all mathematical notation is rendered correctly and the visualizations are properly placed within the markdown.\n\n\n\n**Implementing Initial Restructuring**\n\nI\u0027ve begun restructuring the markdown file, creating the main headers for the lecture and the two key topics: Absolute Value Inequalities and Complex Numbers. Within each, I\u0027m setting up Theory, Problems, and Solutions sections with `###` headers and wikilinks. I\u0027m prioritizing clarity and logical flow, adhering to the structure outlined in the prompt.\n\n\n",
+      "role": "model",
+      "tokenCount": 1835,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Initiating Markdown Parsing**\n\nI\u0027m starting the process of understanding `MAT A 2. pred avanje SEM.md`. It seems to focus on absolute value inequalities in the Cartesian plane, specifically sketching sets of points. My current goal is to efficiently parse and represent the key content within this lecture file.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Lecture Analysis**\n\nI\u0027m now diving deeper into the lecture content. The markdown file focuses on two core themes: absolute value inequalities and complex numbers. I\u0027ve begun to break down the provided examples, paying close attention to the user\u0027s case breakdowns and visualizations. The plan is to ensure the visualizations are correctly integrated and the mathematical notation is rendered in LaTeX, adhering to the Obsidian markdown format. I\u0027m focusing on preserving the original structure of the notes while adhering to the role outlined.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Processing Mathematical Concepts**\n\nI\u0027m now focusing on ensuring that the concepts of absolute value inequalities and complex numbers are accurately represented. I\u0027m prioritizing the integration of the provided LaTeX formulas and matplotlib visualizations, making sure they correctly reflect the mathematical content. I am planning to separate the core content into discrete sub-sections in order to enhance readability. Furthermore, I need to identify and correct any errors in the original document, specifically those in calculations, while providing clear justifications for all key formulas. I plan to enhance the structural organization of the user\u0027s provided markdown file to promote easier understanding.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing File Structure**\n\nI\u0027ve now finalized the overall structure of the markdown file, incorporating the key sections outlined in my plan: Theory, Problems, Solutions. The use of wikilinks for all headers is implemented.  I\u0027m presently tackling the content of the Absolute Value Inequalities section, starting with Problem A, ensuring the mathematical derivations are detailed and the visualizations are properly integrated, enhancing clarity.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Enhancing Inequality Content**\n\nI\u0027m currently working to expand and refine the section on absolute value inequalities. I\u0027m focusing on Problem C, addressing the user\u0027s note about a potential error. My goal is to add a detailed, step-by-step derivation for each region within the inequality, ensuring the logic is clear. I will also incorporate a `Warning Note` as instructed, to address the calculation error mentioned. After completing the inequalities section, I will begin converting all formulas to LaTeX, and add appropriate Wikilinks.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating LaTeX and Visuals**\n\nI\u0027ve completed my initial pass through the content, and I\u0027m currently working on converting all formulas to LaTeX format for consistent mathematical notation. Simultaneously, I\u0027m integrating the provided Matplotlib visualizations into the appropriate sections and ensuring they are correctly displayed within the markdown file. I\u0027m focusing on Problem C of the Absolute Value Inequalities section, meticulously checking all regions and derivations.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Integrating Refinements \u0026 Edits**\n\nI\u0027ve completed the initial content review and now I\u0027m refining the Absolute Value Inequalities section, focusing on Problem C and the integration of LaTeX and visualizations. I\u0027ve addressed the potential error and added a `Warning Note`, providing a clear, detailed derivation for each region. I\u0027m ensuring all mathematical notation is rendered correctly and the visualizations are properly placed within the markdown.\n\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing Initial Restructuring**\n\nI\u0027ve begun restructuring the markdown file, creating the main headers for the lecture and the two key topics: Absolute Value Inequalities and Complex Numbers. Within each, I\u0027m setting up Theory, Problems, and Solutions sections with `###` headers and wikilinks. I\u0027m prioritizing clarity and logical flow, adhering to the structure outlined in the prompt.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[MAT A 2. predavanje SEM]]\n\n## [[Absolute Value Inequalities in the Cartesian Plane]]\n\n### [[Problem A: Sketch the set |x+y| ≤ 1]]\n\n#### [[Analysis]]\nThe set is defined as $A \u003d \\{(x,y) \\in \\mathbb{R}^2 \\mid |x+y| \\leq 1\\}$.\nTo solve an inequality involving an absolute value, we must break it down into cases based on the sign of the expression inside the absolute value. The boundary that separates these cases is the line where the expression is zero: $x+y\u003d0$, which simplifies to $y\u003d-x$.\n\n\u003e **Note to Self:** The expression $|a| \\leq k$ is equivalent to the compound inequality $-k \\leq a \\leq k$. We could solve this problem as $-1 \\leq x+y \\leq 1$, which gives the two lines $y \\leq 1-x$ and $y \\geq -1-x$. The following case-by-case analysis is a more fundamental approach that works for more complex problems.\n\n#### [[Case Breakdown]]\n1.  **[[Case 1: The region where x+y ≥ 0]]**\n    This corresponds to the area on or above the line $y\u003d-x$. In this region, the absolute value is redundant ($|x+y| \u003d x+y$). The inequality becomes:\n    $$ x+y \\leq 1 \\implies y \\leq 1-x $$\n    The solution for this case is the intersection of two regions: the area where $y \\geq -x$ AND $y \\leq 1-x$.\n\n2.  **[[Case 2: The region where x+y \u003c 0]]**\n    This corresponds to the area below the line $y\u003d-x$. In this region, the absolute value is resolved by negation ($|x+y| \u003d -(x+y)$). The inequality becomes:\n    $$ -(x+y) \\leq 1 \\implies -x-y \\leq 1 \\implies y \\geq -x-1 $$\n    The solution for this case is the intersection of two regions: the area where $y \u003c -x$ AND $y \\geq -x-1$.\n\n#### [[Solution]]\nThe final solution set is the union of the results from both cases. This forms an infinite strip in the Cartesian plane bounded by the parallel lines $y\u003d1-x$ and $y\u003d-x-1$.\n\n#### [[Visualization]]\n![[Figure_1.png]]\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nfig, ax \u003d plt.subplots(figsize\u003d(8, 8))\nx \u003d np.linspace(-4, 4, 400)\n\ny1 \u003d 1 - x\ny2 \u003d -1 - x\n\nax.fill_between(x, y1, y2, color\u003d\u0027lightblue\u0027, alpha\u003d0.5, label\u003dr\u0027$|x+y| \\leq 1$\u0027)\nax.plot(x, y1, \u0027b--\u0027, label\u003d\u0027Boundary: y \u003d 1-x\u0027)\nax.plot(x, y2, \u0027r--\u0027, label\u003d\u0027Boundary: y \u003d -x-1\u0027)\nax.plot(x, -x, \u0027g:\u0027, label\u003d\u0027Dividing Line: y \u003d -x\u0027)\n\nax.set_xlabel(\"x-axis\")\nax.set_ylabel(\"y-axis\")\nax.set_title(\"Sketch of the Set A: $|x+y| \\leq 1$\")\nax.axhline(0, color\u003d\u0027black\u0027, lw\u003d0.5)\nax.axvline(0, color\u003d\u0027black\u0027, lw\u003d0.5)\nax.set_xlim(-3, 3)\nax.set_ylim(-3, 3)\nax.set_aspect(\u0027equal\u0027, adjustable\u003d\u0027box\u0027)\nax.grid(True, linestyle\u003d\u0027--\u0027, alpha\u003d0.6)\nax.legend()\n\nplt.show()\n```\n\n---\n## [[Problem B: Sketch the set |x|+|y| ≤ 1]]\n\n#### [[Analysis]]\nThe set is defined as $B \u003d \\{(x,y) \\in \\mathbb{R}^2 \\mid |x|+|y| \\leq 1\\}$.\nThis inequality involves two separate absolute values, for $x$ and $y$. The signs of $x$ and $y$ change at the axes ($x\u003d0$ and $y\u003d0$), which naturally divides the Cartesian plane into four quadrants. We analyze the inequality in each quadrant separately.\n\n#### [[Case Breakdown]]\n1.  **[[Quadrant I (x ≥ 0, y ≥ 0)]]**: The inequality becomes $x+y \\leq 1$, which is the region on or below the line $y\u003d1-x$. The solution in this quadrant is a triangle with vertices at (0,0), (1,0), and (0,1).\n2.  **[[Quadrant II (x \u003c 0, y ≥ 0)]]**: The inequality becomes $-x+y \\leq 1$, or $y \\leq 1+x$. The solution here is a triangle with vertices at (0,0), (-1,0), and (0,1).\n3.  **[[Quadrant III (x \u003c 0, y \u003c 0)]]**: The inequality becomes $-x-y \\leq 1$, or $y \\geq -1-x$. The solution here is a triangle with vertices at (0,0), (-1,0), and (0,-1).\n4.  **[[Quadrant IV (x ≥ 0, y \u003c 0)]]**: The inequality becomes $x-y \\leq 1$, or $y \\geq x-1$. The solution here is a triangle with vertices at (0,0), (1,0), and (0,-1).\n\n#### [[Solution]]\nCombining the four triangular regions gives a solid square centered at the origin, with vertices at (1,0), (0,1), (-1,0), and (0,-1). This shape is often referred to as a \"diamond\".\n\n#### [[Visualization]]\n![[Figure_2.png]]\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nfig, ax \u003d plt.subplots(figsize\u003d(8, 8))\nx_coords \u003d [1, 0, -1, 0, 1]\ny_coords \u003d [0, 1, 0, -1, 0]\n\nax.fill(x_coords, y_coords, \u0027lightblue\u0027, alpha\u003d0.5, label\u003dr\u0027$|x|+|y| \\leq 1$\u0027)\nax.plot(x_coords, y_coords, \u0027b-\u0027)\n\nax.set_xlabel(\"x-axis\")\nax.set_ylabel(\"y-axis\")\nax.set_title(\"Sketch of the Set B: $|x|+|y| \\leq 1$\")\nax.axhline(0, color\u003d\u0027black\u0027, lw\u003d0.5)\nax.axvline(0, color\u003d\u0027black\u0027, lw\u003d0.5)\nax.set_xlim(-2, 2)\nax.set_ylim(-2, 2)\nax.set_aspect(\u0027equal\u0027, adjustable\u003d\u0027box\u0027)\nax.grid(True, linestyle\u003d\u0027--\u0027, alpha\u003d0.6)\nax.legend()\nplt.show()\n```\n\n---\n## [[Problem C: Sketch the set |x+y|+|x-2y| ≤ 2]]\n\n#### [[Analysis]]\nThe set is defined as $C \u003d \\{(x,y) \\in \\mathbb{R}^2 \\mid |x+y|+|x-2y| \\leq 2\\}$.\nThe dividing lines are found by setting the arguments of the absolute values to zero:\n1.  $x+y\u003d0 \\implies y\u003d-x$\n2.  $x-2y\u003d0 \\implies y\u003dx/2$\n\nThese two lines intersect at the origin and divide the plane into four angular regions, which we must analyze individually.\n\n\u003e **Warning Note:** A common mistake in this type of problem is a sign error when resolving the absolute values. For instance, if both arguments are negative, we have `-(arg1) - (arg2)`. It\u0027s easy to accidentally distribute the negative sign incorrectly. The analysis below provides the correct breakdown for each region.\n\n#### [[Case Breakdown]]\n1.  **[[Region 1: y ≥ -x and y ≤ x/2]]**\n    *   $x+y \\geq 0$ and $x-2y \\geq 0$.\n    *   The inequality becomes: $(x+y) + (x-2y) \\leq 2 \\implies 2x-y \\leq 2 \\implies y \\geq 2x-2$.\n    *   Solution in this region is the area bounded by $y\u003d-x$, $y\u003dx/2$, and $y\u003d2x-2$.\n\n2.  **[[Region 2: y ≥ -x and y \u003e x/2]]**\n    *   $x+y \\geq 0$ and $x-2y \u003c 0$.\n    *   The inequality becomes: $(x+y) - (x-2y) \\leq 2 \\implies 3y \\leq 2 \\implies y \\leq \\frac{2}{3}$.\n    *   Solution in this region is the area bounded by $y\u003d-x$, $y\u003dx/2$, and $y\u003d2/3$.\n\n3.  **[[Region 3: y \u003c -x and y \u003e x/2]]**\n    *   $x+y \u003c 0$ and $x-2y \u003c 0$.\n    *   The inequality becomes: $-(x+y) - (x-2y) \\leq 2 \\implies -2x+y \\leq 2 \\implies y \\leq 2x+2$.\n    *   Solution in this region is the area bounded by $y\u003d-x$, $y\u003dx/2$, and $y\u003d2x+2$.\n\n4.  **[[Region 4: y \u003c -x and y ≤ x/2]]**\n    *   $x+y \u003c 0$ and $x-2y \\geq 0$.\n    *   The inequality becomes: $-(x+y) + (x-2y) \\leq 2 \\implies -3y \\leq 2 \\implies y \\geq -\\frac{2}{3}$.\n    *   Solution in this region is the area bounded by $y\u003d-x$, $y\u003dx/2$, and $y\u003d-2/3$.\n\n#### [[Solution]]\nThe union of these four regions forms a parallelogram. The vertices of this parallelogram are the intersection points of the boundary lines: $(\\frac{4}{3}, \\frac{2}{3})$, $(-\\frac{2}{3}, \\frac{2}{3})$, $(-\\frac{4}{3}, -\\frac{2}{3})$, and $(\\frac{2}{3}, -\\frac{2}{3})$.\n\n#### [[Visualization]]\n![[Figure_3.png]]\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nfig, ax \u003d plt.subplots(figsize\u003d(8, 8))\nx_coords \u003d [4/3, -2/3, -4/3, 2/3, 4/3]\ny_coords \u003d [2/3, 2/3, -2/3, -2/3, 2/3]\n\nax.fill(x_coords, y_coords, \u0027lightblue\u0027, alpha\u003d0.5, label\u003dr\u0027$|x+y|+|x-2y| \\leq 2$\u0027)\nax.plot(x_coords, y_coords, \u0027b-\u0027)\n\nx \u003d np.linspace(-3, 3, 400)\nax.plot(x, -x, \u0027k--\u0027, alpha\u003d0.7, label\u003d\u0027Dividing Line: y \u003d -x\u0027)\nax.plot(x, x / 2, \u0027k-.\u0027, alpha\u003d0.7, label\u003d\u0027Dividing Line: y \u003d x/2\u0027)\n\nax.set_xlabel(\"x-axis\")\nax.set_ylabel(\"y-axis\")\nax.set_title(\"Sketch of the Set C: $|x+y|+|x-2y| \\leq 2$\")\nax.axhline(0, color\u003d\u0027black\u0027, lw\u003d0.5)\nax.axvline(0, color\u003d\u0027black\u0027, lw\u003d0.5)\nax.set_xlim(-2.5, 2.5)\nax.set_ylim(-2.5, 2.5)\nax.set_aspect(\u0027equal\u0027, adjustable\u003d\u0027box\u0027)\nax.grid(True, linestyle\u003d\u0027--\u0027, alpha\u003d0.6)\nax.legend()\nplt.show()\n```\n\n---\n## [[Complex Numbers]]\n\n### [[Problem 1: z + 1/z is a Real Number]]\nFind and sketch the set of all complex numbers `z` for which the expression $z + \\frac{1}{z}$ is a real number.\n\n#### [[Analysis and Constraints]]\nThe expression is defined for all complex numbers except zero.\n\u003e **Constraint:** $z \\neq 0$\n\nA complex number is real if and only if its imaginary part is zero. A more powerful property is that a number $w$ is real if and only if it equals its complex conjugate, $w \u003d \\overline{w}$.\n\n#### [[Method 1: Cartesian Form]]\nLet $z \u003d a + bi$.\n1.  **Substitute and Rationalize:**\n    $z + \\frac{1}{z} \u003d (a+bi) + \\frac{1}{a+bi} \u003d (a+bi) + \\frac{a-bi}{a^2+b^2}$\n\n2.  **Group Real and Imaginary Parts:**\n    $\u003d \\left(a + \\frac{a}{a^2+b^2}\\right) + i\\left(b - \\frac{b}{a^2+b^2}\\right)$\n\n3.  **Set Imaginary Part to Zero:**\n    $\\text{Im}\\left(z + \\frac{1}{z}\\right) \u003d b - \\frac{b}{a^2+b^2} \u003d 0 \\implies b\\left(1 - \\frac{1}{a^2+b^2}\\right) \u003d 0$\n\n4.  **Solve for conditions:** This equation holds if either factor is zero.\n    *   **Case 1:** $b\u003d0$. This means $z$ is a real number. With the constraint $z \\neq 0$, this gives the real axis excluding the origin.\n    *   **Case 2:** $1 - \\frac{1}{a^2+b^2} \u003d 0 \\implies a^2+b^2 \u003d 1$. This is the definition of the unit circle, $|z|\u003d1$.\n\n#### [[Method 2: Complex Conjugate Property]]\n\u003e **Memorialization Note:** This method is often more elegant and algebraically cleaner for problems involving conditions like \"real\" or \"purely imaginary.\"\n\n1.  **Set the expression equal to its conjugate:**\n    $z + \\frac{1}{z} \u003d \\overline{\\left(z + \\frac{1}{z}\\right)}$\n    Using conjugate properties:\n    $z + \\frac{1}{z} \u003d \\overline{z} + \\frac{1}{\\overline{z}}$\n\n2.  **Rearrange and Factor:**\n    $z - \\overline{z} \u003d \\frac{1}{\\overline{z}} - \\frac{1}{z} \u003d \\frac{z - \\overline{z}}{z\\overline{z}}$\n    $(z - \\overline{z}) - \\frac{z - \\overline{z}}{z\\overline{z}} \u003d 0$\n    $(z - \\overline{z})\\left(1 - \\frac{1}{z\\overline{z}}\\right) \u003d 0$\n\n3.  **Solve for conditions:**\n    *   **Case 1:** $z - \\overline{z} \u003d 0 \\implies z \u003d \\overline{z}$. A number is equal to its conjugate if and only if it is real. Thus, $z \\in \\mathbb{R} \\setminus \\{0\\}$.\n    *   **Case 2:** $1 - \\frac{1}{z\\overline{z}} \u003d 0 \\implies z\\overline{z} \u003d 1$. Since $z\\overline{z} \u003d |z|^2$, this means $|z|^2\u003d1$, or $|z|\u003d1$. This is the unit circle.\n\n#### [[Solution and Visualization]]\nThe solution set is the union of the real axis (excluding the origin) and the unit circle in the complex plane.\n![[Figure_4.png]]\n\n---\n## [[Problem 2: Sketching Im(z^3) ≤ 0]]\nDetermine and sketch the set of complex numbers `z` for which $\\text{Im}(z^3) \\leq 0$.\n\n#### [[Method 1: Polar Form]]\n\u003e **Critical Analysis:** For problems involving powers or roots of complex numbers, the polar form $z \u003d r(\\cos\\phi + i\\sin\\phi)$ is almost always the most efficient approach because it allows the use of De Moivre\u0027s Formula.\n\n1.  **Apply De Moivre\u0027s Formula:**\n    $z^3 \u003d [r(\\cos\\phi + i\\sin\\phi)]^3 \u003d r^3(\\cos(3\\phi) + i\\sin(3\\phi))$\n\n2.  **Apply the Inequality:**\n    $\\text{Im}(z^3) \u003d r^3\\sin(3\\phi) \\leq 0$\n    Since $r \\geq 0$, this simplifies to the trigonometric inequality:\n    $\\sin(3\\phi) \\leq 0$\n\n3.  **Solve the Trigonometric Inequality:**\n    The sine function is non-positive when its argument lies in the third or fourth quadrant.\n    $\\pi + 2k\\pi \\leq 3\\phi \\leq 2\\pi + 2k\\pi, \\quad k \\in \\mathbb{Z}$\n\n4.  **Isolate `φ`:**\n    $\\frac{\\pi}{3} + \\frac{2k\\pi}{3} \\leq \\phi \\leq \\frac{2\\pi}{3} + \\frac{2k\\pi}{3}$\n\n5.  **Identify Angular Sectors:** By substituting $k\u003d0, 1, 2$, we find three distinct sectors:\n    *   $k\u003d0$: $\\frac{\\pi}{3} \\leq \\phi \\leq \\frac{2\\pi}{3}$  (from 60° to 120°)\n    *   $k\u003d1$: $\\pi \\leq \\phi \\leq \\frac{4\\pi}{3}$    (from 180° to 240°)\n    *   $k\u003d2$: $\\frac{5\\pi}{3} \\leq \\phi \\leq 2\\pi$  (from 300° to 360°)\n\n#### [[Warning Note: The Cartesian Method Trap]]\nAttempting this problem in Cartesian form ($z\u003da+bi$) leads to a much more difficult analysis.\nThe condition becomes $b(3a^2 - b^2) \\leq 0$. This requires solving two separate systems of inequalities:\n1.  ($b \\geq 0$) AND ($3a^2 - b^2 \\leq 0 \\implies b^2 \\geq 3a^2 \\implies b \\geq \\sqrt{3}|a|$). This defines the sector between the lines $y\u003d\\sqrt{3}x$ and $y\u003d-\\sqrt{3}x$ in the upper half-plane, which corresponds exactly to the angle range $[\\pi/3, 2\\pi/3]$.\n2.  ($b \\leq 0$) AND ($3a^2 - b^2 \\geq 0 \\implies b^2 \\leq 3a^2 \\implies |b| \\leq \\sqrt{3}|a|$). This defines the regions in the lower half-plane bounded by the lines $y \u003d \\pm\\sqrt{3}x$. This corresponds to the other two angular sectors found via the polar method.\nThis confirms the polar method\u0027s results but is significantly more complex to derive and visualize.\n\n#### [[Solution and Visualization]]\nThe solution set consists of three angular sectors in the complex plane, each with an angle of $\\pi/3$ (or 60°).\n![[download-4.png]]",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 4556,
+      "parts": [{
+        "text": "# [[MAT A 2. predavanje SEM]]\n\n## [[Absolute Value Inequalities in the Cartesian Plane]]\n\n###"
+      }, {
+        "text": " [[Problem A: Sketch the set |x+y| ≤ 1]]\n\n#### [[Analysis]]\nThe set is defined"
+      }, {
+        "text": " as $A \u003d \\{(x,y) \\in \\mathbb{R}^2 \\mid |x+y| \\leq"
+      }, {
+        "text": " 1\\}$.\nTo solve an inequality involving an absolute value, we must break it down into cases based on the sign"
+      }, {
+        "text": " of the expression inside the absolute value. The boundary that separates these cases is the line where the expression is zero: $x"
+      }, {
+        "text": "+y\u003d0$, which simplifies to $y\u003d-x$.\n\n\u003e **Note to Self:** The expression $|a"
+      }, {
+        "text": "| \\leq k$ is equivalent to the compound inequality $-k \\leq a \\leq k$. We could solve this problem"
+      }, {
+        "text": " as $-1 \\leq x+y \\leq 1$, which gives the two lines $y \\leq 1-x$"
+      }, {
+        "text": " and $y \\geq -1-x$. The following case-by-case analysis is a more fundamental approach that"
+      }, {
+        "text": " works for more complex problems.\n\n#### [[Case Breakdown]]\n1.  **[[Case 1: The region where x+y ≥ 0]]**\n    This corresponds to the area on or above the line $y\u003d-x$. In"
+      }, {
+        "text": " this region, the absolute value is redundant ($|x+y| \u003d x+y$). The inequality becomes:\n    "
+      }, {
+        "text": "$$ x+y \\leq 1 \\implies y \\leq 1-x $$\n    The solution for this case is"
+      }, {
+        "text": " the intersection of two regions: the area where $y \\geq -x$ AND $y \\leq 1-x$."
+      }, {
+        "text": "\n\n2.  **[[Case 2: The region where x+y \u003c 0]]**\n    This corresponds"
+      }, {
+        "text": " to the area below the line $y\u003d-x$. In this region, the absolute value is resolved by negation ($|x+y"
+      }, {
+        "text": "| \u003d -(x+y)$). The inequality becomes:\n    $$ -(x+y) \\leq 1"
+      }, {
+        "text": " \\implies -x-y \\leq 1 \\implies y \\geq -x-1 $$\n    The solution"
+      }, {
+        "text": " for this case is the intersection of two regions: the area where $y \u003c -x$ AND $y \\geq"
+      }, {
+        "text": " -x-1$.\n\n#### [[Solution]]\nThe final solution set is the union of the results from both cases. This"
+      }, {
+        "text": " forms an infinite strip in the Cartesian plane bounded by the parallel lines $y\u003d1-x$ and $y\u003d-"
+      }, {
+        "text": "x-1$.\n\n#### [[Visualization]]\n"
+      }, {
+        "text": "![[Figure_1.png]]\n"
+      }, {
+        "text": "```python\nimport numpy"
+      }, {
+        "text": " as np\nimport matplotlib.pyplot as plt\n\nfig, ax \u003d plt.subplots(figsize\u003d(8, 8))"
+      }, {
+        "text": "\nx \u003d np.linspace(-4, 4, 400)\n\ny1 \u003d 1 - x\ny"
+      }, {
+        "text": "2 \u003d -1 - x\n\nax.fill_between(x, y1, y2, color\u003d\u0027lightblue"
+      }, {
+        "text": "\u0027, alpha\u003d0.5, label\u003dr\u0027$|x+y| \\leq 1$\u0027)\nax."
+      }, {
+        "text": "plot(x, y1, \u0027b--\u0027, label\u003d\u0027Boundary: y \u003d 1-x\u0027)\nax.plot"
+      }, {
+        "text": "(x, y2, \u0027r--\u0027, label\u003d\u0027Boundary: y \u003d -x-1\u0027)\nax.plot"
+      }, {
+        "text": "(x, -x, \u0027g:\u0027, label\u003d\u0027Dividing Line: y \u003d -x\u0027)\n\nax.set"
+      }, {
+        "text": "_xlabel(\"x-axis\")\nax.set_ylabel(\"y-axis\")\nax.set_title(\"Sketch"
+      }, {
+        "text": " of the Set A: $|x+y| \\leq 1$\")\nax.axhline(0, color"
+      }, {
+        "text": "\u003d\u0027black\u0027, lw\u003d0.5)\nax.axvline(0, color\u003d\u0027black\u0027, lw\u003d0"
+      }, {
+        "text": ".5)\nax.set_xlim(-3, 3)\nax.set_ylim(-3, 3"
+      }, {
+        "text": ")\nax.set_aspect(\u0027equal\u0027, adjustable\u003d\u0027box\u0027)\nax.grid(True, linestyle\u003d\u0027--\u0027, alpha"
+      }, {
+        "text": "\u003d0.6)\nax.legend()\n\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n---\n## [[Problem B: Sketch the set |x|+|y| ≤ 1]]\n\n#### [[Analysis]]\nThe set is defined as $B \u003d \\"
+      }, {
+        "text": "{(x,y)"
+      }, {
+        "text": " \\in \\mathbb{R}^2 \\mid |x|+|y| \\leq 1"
+      }, {
+        "text": "\\}$.\nThis inequality involves two separate absolute values, for $x$ and $y$. The signs of $x$ and $"
+      }, {
+        "text": "y$ change at the axes ($x\u003d0$ and $y\u003d0$), which naturally divides the Cartesian plane into four quadrants"
+      }, {
+        "text": ". We analyze the inequality in each quadrant separately.\n\n#### [[Case Breakdown]]\n1.  **[[Quadrant I (x ≥ 0, y ≥ 0)]]**: The inequality becomes $x+y \\leq 1"
+      }, {
+        "text": "$, which is the region on or below the line $y\u003d1-x$. The solution in this quadrant is a"
+      }, {
+        "text": " triangle with vertices at (0,0), (1,0), and (0,1).\n2.  **"
+      }, {
+        "text": "[[Quadrant II (x \u003c 0, y ≥ 0)]]**: The inequality becomes $-x+y \\"
+      }, {
+        "text": "leq 1$, or $y \\leq 1+x$. The solution here is a triangle with vertices at (0,0"
+      }, {
+        "text": "), (-1,0), and (0,1).\n3.  **[[Quadrant III (x \u003c 0, y \u003c 0)]]**: The inequality becomes $-x-y \\leq 1$, or $y \\geq -"
+      }, {
+        "text": "1-x$. The solution here is a triangle with vertices at (0,0), (-1,0), and (0"
+      }, {
+        "text": ",-1).\n4.  **[[Quadrant IV (x ≥ 0, y \u003c 0)]]**:"
+      }, {
+        "text": " The inequality becomes $x-y \\leq 1$, or $y \\geq x-1$. The solution here"
+      }, {
+        "text": " is a triangle with vertices at (0,0), (1,0), and (0,-1).\n\n####"
+      }, {
+        "text": " [[Solution]]\nCombining the four triangular regions gives a solid square centered at the origin, with vertices at (1,0), ("
+      }, {
+        "text": "0,1), (-1,0), and (0,-1). This shape is often referred to as a \"diamond"
+      }, {
+        "text": "\".\n\n#### [[Visualization]]\n"
+      }, {
+        "text": "![[Figure_2.png]]\n"
+      }, {
+        "text": "```python\nimport numpy as np\nimport"
+      }, {
+        "text": " matplotlib.pyplot as plt\n\nfig, ax \u003d plt.subplots(figsize\u003d(8, 8))\nx_coords"
+      }, {
+        "text": " \u003d [1, 0, -1, 0, 1]\ny_coords \u003d [0, 1, 0, -1, 0]\n\nax.fill(x_coords, y_coords, \u0027lightblue\u0027, alpha"
+      }, {
+        "text": "\u003d0.5, label\u003dr\u0027$|x|+|y| \\leq 1$\u0027)\nax.plot(x_"
+      }, {
+        "text": "coords, y_coords, \u0027b-\u0027)\n\nax.set_xlabel(\"x-axis\")\nax."
+      }, {
+        "text": "set_ylabel(\"y-axis\")\nax.set_title(\"Sketch of the Set B: $|x|+|"
+      }, {
+        "text": "y| \\leq 1$\")\nax.axhline(0, color\u003d\u0027black\u0027, lw\u003d0."
+      }, {
+        "text": "5)\nax.axvline(0, color\u003d\u0027black\u0027, lw\u003d0.5)\nax.set"
+      }, {
+        "text": "_xlim(-2, 2)\nax.set_ylim(-2, 2)\nax.set"
+      }, {
+        "text": "_aspect(\u0027equal\u0027, adjustable\u003d\u0027box\u0027)\nax.grid(True, linestyle\u003d\u0027--\u0027, alpha\u003d0.6"
+      }, {
+        "text": ")\nax.legend()\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n---\n## [[Problem C: Sketch the set |x+y|+|x-2y| ≤ 2]]\n\n#### [[Analysis]]\nThe set is defined"
+      }, {
+        "text": " as $C \u003d \\{(x,y)"
+      }, {
+        "text": " \\in \\mathbb{R}^2 \\mid |x+y"
+      }, {
+        "text": "|+|x-2y| \\leq 2\\}$.\nThe dividing lines are found by setting the arguments of the absolute values"
+      }, {
+        "text": " to zero:\n1.  $x+y\u003d0 \\implies y\u003d-x$\n2.  $"
+      }, {
+        "text": "x-2y\u003d0 \\implies y\u003dx/2$\n\nThese two lines intersect at the origin and divide the plane into"
+      }, {
+        "text": " four angular regions, which we must analyze individually.\n\n\u003e **Warning Note:** A common mistake in this type of problem is"
+      }, {
+        "text": " a sign error when resolving the absolute values. For instance, if both arguments are negative, we have `-(arg1) -"
+      }, {
+        "text": " (arg2)`. It\u0027s easy to accidentally distribute the negative sign incorrectly. The analysis below provides the correct breakdown"
+      }, {
+        "text": " for each region.\n\n#### [[Case Breakdown]]\n1.  **[[Region 1: y ≥ -x and y ≤ x/2]]**\n    *   $x+y \\geq 0$ and $x-2y \\"
+      }, {
+        "text": "geq 0$.\n    *   The inequality becomes: $(x+y) + (x-2y)"
+      }, {
+        "text": " \\leq 2 \\implies 2x-y \\leq 2 \\implies y \\geq 2x-"
+      }, {
+        "text": "2$.\n    *   Solution in this region is the area bounded by $y\u003d-x$, $y\u003dx/"
+      }, {
+        "text": "2$, and $y\u003d2x-2$.\n\n2.  **[[Region 2: y ≥ -x and y \u003e x/2]]**\n    *   $x+y \\geq 0$ and $x-2y"
+      }, {
+        "text": " \u003c 0$.\n    *   The inequality becomes: $(x+y) - (x-2y) \\leq"
+      }, {
+        "text": " 2 \\implies 3y \\leq 2 \\implies y \\leq \\frac{2}{3}$.\n    "
+      }, {
+        "text": "*   Solution in this region is the area bounded by $y\u003d-x$, $y\u003dx/2$, and"
+      }, {
+        "text": " $y\u003d2/3$.\n\n3.  **[[Region 3: y \u003c -x and y \u003e x/2]]**\n    *   $x+y \u003c 0$ and $x-2y \u003c 0$."
+      }, {
+        "text": "\n    *   The inequality becomes: $-(x+y) - (x-2y) \\leq "
+      }, {
+        "text": "2 \\implies -2x+y \\leq 2 \\implies y \\leq 2x+2$.\n    *   "
+      }, {
+        "text": "Solution in this region is the area bounded by $y\u003d-x$, $y\u003dx/2$, and $y"
+      }, {
+        "text": "\u003d2x+2$.\n\n4.  **[[Region 4: y \u003c -x and y ≤ x/2]]"
+      }, {
+        "text": "**\n    *   $x+y \u003c 0$ and $x-2y \\geq 0$."
+      }, {
+        "text": "\n    *   The inequality becomes: $-(x+y) + (x-2y) \\leq 2 \\implies"
+      }, {
+        "text": " -3y \\leq 2 \\implies y \\geq -\\frac{2}{3}$.\n    *   Solution in"
+      }, {
+        "text": " this region is the area bounded by $y\u003d-x$, $y\u003dx/2$, and $y\u003d-2/3$."
+      }, {
+        "text": "\n\n#### [[Solution]]\nThe union of these four regions forms a parallelogram. The vertices of this parallelogram are the intersection"
+      }, {
+        "text": " points of the boundary lines: $(\\frac{4}{3}, \\frac{2}{3})$, $(-\\frac{2"
+      }, {
+        "text": "}{3}, \\frac{2}{3})$, $(-\\frac{4}{3}, -\\frac{2}{3})$, and"
+      }, {
+        "text": " $(\\frac{2}{3}, -\\frac{2}{3})$.\n\n#### [[Visualization]]\n"
+      }, {
+        "text": "![[Figure_3.png]]\n"
+      }, {
+        "text": "```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nfig, ax \u003d"
+      }, {
+        "text": " plt.subplots(figsize\u003d(8, 8))\nx_coords \u003d [4/3, -2/3, -4/3, 2/3, 4/3]\ny_coords \u003d [2/3, 2/3, -2/3, -2/3, 2/3]\n\nax.fill("
+      }, {
+        "text": "x_coords, y_coords, \u0027lightblue\u0027, alpha\u003d0.5, label\u003dr\u0027$|x+"
+      }, {
+        "text": "y|+|x-2y| \\leq 2$\u0027)\nax.plot(x_coords, y_"
+      }, {
+        "text": "coords, \u0027b-\u0027)\n\nx \u003d np.linspace(-3, 3, 400)\nax."
+      }, {
+        "text": "plot(x, -x, \u0027k--\u0027, alpha\u003d0.7, label\u003d\u0027Dividing Line: y \u003d -x\u0027)"
+      }, {
+        "text": "\nax.plot(x, x / 2, \u0027k-.\u0027, alpha\u003d0.7, label\u003d\u0027Dividing Line"
+      }, {
+        "text": ": y \u003d x/2\u0027)\n\nax.set_xlabel(\"x-axis\")\nax.set_ylabel"
+      }, {
+        "text": "(\"y-axis\")\nax.set_title(\"Sketch of the Set C: $|x+y|+|x"
+      }, {
+        "text": "-2y| \\leq 2$\")\nax.axhline(0, color\u003d\u0027black\u0027, lw\u003d"
+      }, {
+        "text": "0.5)\nax.axvline(0, color\u003d\u0027black\u0027, lw\u003d0.5)\nax"
+      }, {
+        "text": ".set_xlim(-2.5, 2.5)\nax.set_ylim(-2.5, 2"
+      }, {
+        "text": ".5)\nax.set_aspect(\u0027equal\u0027, adjustable\u003d\u0027box\u0027)\nax.grid(True, linestyle"
+      }, {
+        "text": "\u003d\u0027--\u0027, alpha\u003d0.6)\nax.legend()\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n---\n##"
+      }, {
+        "text": " [[Complex Numbers]]\n\n### [[Problem 1: z + 1/z is a Real Number]]\nFind"
+      }, {
+        "text": " and sketch the set of all complex numbers `z` for which the expression $z + \\frac{1}{z}$ is a"
+      }, {
+        "text": " real number.\n\n#### [[Analysis and Constraints]]\nThe expression is defined for all complex numbers except zero.\n\u003e **Constraint"
+      }, {
+        "text": ":** $z \\neq 0$\n\nA complex number is real if and only if its imaginary part is zero. A"
+      }, {
+        "text": " more powerful property is that a number $w$ is real if and only if it equals its complex conjugate, $w \u003d \\"
+      }, {
+        "text": "overline{w}$.\n\n#### [[Method 1: Cartesian Form]]\nLet $z \u003d a + bi$.\n1."
+      }, {
+        "text": "  **Substitute and Rationalize:**\n    $z + \\frac{1}{z} \u003d (a+bi)"
+      }, {
+        "text": " + \\frac{1}{a+bi} \u003d (a+bi) + \\frac{a-bi}{"
+      }, {
+        "text": "a^2+b^2}$\n\n2.  **Group Real and Imaginary Parts:**\n    $\u003d \\left(a"
+      }, {
+        "text": " + \\frac{a}{a^2+b^2}\\right) + i\\left(b - \\frac{"
+      }, {
+        "text": "b}{a^2+b^2}\\right)$\n\n3.  **Set Imaginary Part to Zero:**"
+      }, {
+        "text": "\n    $\\text{Im}\\left(z + \\frac{1}{z}\\right) \u003d b - \\frac{"
+      }, {
+        "text": "b}{a^2+b^2} \u003d 0 \\implies b\\left(1 - \\frac{"
+      }, {
+        "text": "1}{a^2+b^2}\\right) \u003d 0$\n\n4.  **Solve for conditions"
+      }, {
+        "text": ":** This equation holds if either factor is zero.\n    *   **Case 1:** $b\u003d0$. This means"
+      }, {
+        "text": " $z$ is a real number. With the constraint $z \\neq 0$, this gives the real axis excluding"
+      }, {
+        "text": " the origin.\n    *   **Case 2:** $1 - \\frac{1}{a^2+"
+      }, {
+        "text": "b^2} \u003d 0 \\implies a^2+b^2 \u003d 1$. This is the definition of"
+      }, {
+        "text": " the unit circle, $|z|\u003d1$.\n\n#### [[Method 2: Complex Conjugate Property]]\n\u003e **Memorialization Note"
+      }, {
+        "text": ":** This method is often more elegant and algebraically cleaner for problems involving conditions like \"real\" or \"purely imaginary.\""
+      }, {
+        "text": "\n\n1.  **Set the expression equal to its conjugate:**\n    $z + \\frac{1}{z"
+      }, {
+        "text": "} \u003d \\overline{\\left(z + \\frac{1}{z}\\right)}$\n    Using conjugate properties:"
+      }, {
+        "text": "\n    $z + \\frac{1}{z} \u003d \\overline{z} + \\frac{1}{\\overline"
+      }, {
+        "text": "{z}}$\n\n2.  **Rearrange and Factor:**\n    $z - \\overline{z} \u003d"
+      }, {
+        "text": " \\frac{1}{\\overline{z}} - \\frac{1}{z} \u003d \\frac{z - \\"
+      }, {
+        "text": "overline{z}}{z\\overline{z}}$\n    $(z - \\overline{z}) - \\frac{z -"
+      }, {
+        "text": " \\overline{z}}{z\\overline{z}} \u003d 0$\n    $(z - \\overline{z})\\left("
+      }, {
+        "text": "1 - \\frac{1}{z\\overline{z}}\\right) \u003d 0$\n\n3.  **"
+      }, {
+        "text": "Solve for conditions:**\n    *   **Case 1:** $z - \\overline{z} \u003d 0"
+      }, {
+        "text": " \\implies z \u003d \\overline{z}$. A number is equal to its conjugate if and only if it is real. Thus"
+      }, {
+        "text": ", $z \\in \\mathbb{R} \\setminus \\{0\\}$.\n    *   **Case 2:**"
+      }, {
+        "text": " $1 - \\frac{1}{z\\overline{z}} \u003d 0 \\implies z\\overline{z"
+      }, {
+        "text": "} \u003d 1$. Since $z\\overline{z} \u003d |z|^2$, this means $|z|^"
+      }, {
+        "text": "2\u003d1$, or $|z|\u003d1$. This is the unit circle.\n\n#### [[Solution and Visualization]]\nThe"
+      }, {
+        "text": " solution set is the union of the real axis (excluding the origin) and the unit circle in the complex plane.\n"
+      }, {
+        "text": "![[Figure_4.png]]\n\n---\n## [[Problem 2: Sketching Im(z^3) ≤ 0]]\nDetermine and sketch the set of complex numbers `z` for which $\\text{Im}(z^3"
+      }, {
+        "text": ") \\leq 0$.\n\n#### [[Method 1: Polar Form]]\n\u003e **Critical Analysis:** For problems involving powers"
+      }, {
+        "text": " or roots of complex numbers, the polar form $z \u003d r(\\cos\\phi + i\\sin\\phi)$ is"
+      }, {
+        "text": " almost always the most efficient approach because it allows the use of De Moivre\u0027s Formula.\n\n1.  **Apply"
+      }, {
+        "text": " De Moivre\u0027s Formula:**\n    $z^3 \u003d [r(\\cos\\phi + i\\sin\\phi)]"
+      }, {
+        "text": "^3 \u003d r^3(\\cos(3\\phi) + i\\sin(3\\phi))$\n\n2"
+      }, {
+        "text": ".  **Apply the Inequality:**\n    $\\text{Im}(z^3) \u003d r^3\\sin(3\\"
+      }, {
+        "text": "phi) \\leq 0$\n    Since $r \\geq 0$, this simplifies to the trigonometric inequality:\n"
+      }, {
+        "text": "    $\\sin(3\\phi) \\leq 0$\n\n3.  **Solve the Trigonometric Inequality:**"
+      }, {
+        "text": "\n    The sine function is non-positive when its argument lies in the third or fourth quadrant.\n    $\\pi"
+      }, {
+        "text": " + 2k\\pi \\leq 3\\phi \\leq 2\\pi + 2k\\pi,"
+      }, {
+        "text": " \\quad k \\in \\mathbb{Z}$\n\n4.  **Isolate `φ`:**\n    $\\frac{\\"
+      }, {
+        "text": "pi}{3} + \\frac{2k\\pi}{3} \\leq \\phi \\leq \\frac{2\\"
+      }, {
+        "text": "pi}{3} + \\frac{2k\\pi}{3}$\n\n5.  **Identify Angular Sectors:** By"
+      }, {
+        "text": " substituting $k\u003d0, 1, 2$, we find three distinct sectors:\n    *   $k\u003d"
+      }, {
+        "text": "0$: $\\frac{\\pi}{3} \\leq \\phi \\leq \\frac{2\\pi}{3}$"
+      }, {
+        "text": "  (from 60° to 120°)\n    *   $k\u003d1$: $\\pi \\leq \\"
+      }, {
+        "text": "phi \\leq \\frac{4\\pi}{3}$    (from 180° to 240"
+      }, {
+        "text": "°)\n    *   $k\u003d2$: $\\frac{5\\pi}{3} \\leq \\phi \\leq 2"
+      }, {
+        "text": "\\pi$  (from 300° to 360°)\n\n#### [[Warning Note: The Cartesian Method Trap]]\nAttempting this problem in Cartesian form ($z\u003da+bi$) leads to a much more difficult analysis.\n"
+      }, {
+        "text": "The condition becomes $b(3a^2 - b^2) \\leq 0$. This requires solving two separate systems"
+      }, {
+        "text": " of inequalities:\n1.  ($b \\geq 0$) AND ($3a^2 - b^2 \\"
+      }, {
+        "text": "leq 0 \\implies b^2 \\geq 3a^2 \\implies b \\geq \\sqrt{3}|a|$"
+      }, {
+        "text": "). This defines the sector between the lines $y\u003d\\sqrt{3}x$ and $y\u003d-\\sqrt{3}x$"
+      }, {
+        "text": " in the upper half-plane, which corresponds exactly to the angle range $[\\pi/3, 2\\pi/3]$.\n2.  ($b \\leq 0$) AND ($3a^2 - b^2 \\"
+      }, {
+        "text": "geq 0 \\implies b^2 \\leq 3a^2 \\implies |b| \\leq \\sqrt"
+      }, {
+        "text": "{3}|a|$). This defines the regions in the lower half-plane bounded by the lines $y \u003d \\pm\\"
+      }, {
+        "text": "sqrt{3}x$. This corresponds to the other two angular sectors found via the polar method.\nThis confirms the polar"
+      }, {
+        "text": " method\u0027s results but is significantly more complex to derive and visualize.\n\n#### [[Solution and Visualization]]\nThe solution set"
+      }, {
+        "text": " consists of three angular sectors in the complex plane, each with an angle of $\\pi/3$ (or 60°"
+      }, {
+        "text": ").\n"
+      }, {
+        "text": "![[download-4.png]]"
+      }]
+    }, {
+      "driveDocument": {
+        "id": "1XXx6xwu0aqdwvRf3Ap-3-pWFZ5Oj_nz2"
+      },
+      "role": "user",
+      "tokenCount": 5062
+    }, {
+      "text": "same here",
+      "role": "user",
+      "tokenCount": 3
+    }, {
+      "text": "**Processing the Document**\n\nI\u0027m currently focused on the structure of the `MAT A 1. predavanje SEM.md` file. I\u0027ve noted the clear headings for topics like \"Real Numbers and Absolute Value\" and \"Key Concepts\". My next step is to analyze the \"Worked Examples\" section to understand the application of these concepts. I am eager to finish the document.\n\n\n**Refining Content Strategy**\n\nI\u0027m now revising my content processing strategy for `MAT A 1. predavanje SEM.md`. I am shifting my focus to include detailed critical analysis alongside the raw content, adding `Critical Analysis`, `Note to Self`, or `Justification` blocks. My aim is to function more as an academic tutor, improving understanding and reinforcing key concepts. I will scrutinize and correct any errors, especially the inequality proof error highlighted by the user. I\u0027ll meticulously rework any homework examples too.\n\n\n**Outlining the Execution**\n\nI\u0027m now concretizing my processing plan for `MAT A 1. predavanje SEM.md`. I am focusing on the execution steps, clarifying the core content, and outlining academic enhancements. I\u0027ll adhere to the tutor role, maintaining the raw material and adding `Critical Analysis` sections for deeper context. I will meticulously revise the inequality proof and break down homework examples step-by-step.\n\n\n**Solidifying Processing Details**\n\nI\u0027m presently executing my processing strategy for `MAT A 1. predavanje SEM.md`, focusing on the content breakdown and academic enhancements. I\u0027m maintaining the source format and appending `Critical Analysis` blocks for enhanced understanding. I have carefully corrected the identified inequality proof and am now methodically dissecting the homework example step by step. I am diligently integrating LaTeX for consistency and accuracy across the document.\n\n\n**Analyzing and Enhancing Content**\n\nI\u0027ve just finished analyzing the structure of `MAT A 1. predavanje SEM.md`. I am now executing the content strategy, working on `Critical Analysis`, `Note to Self`, and `Justification` blocks. My aim is to add insightful explanations and justifications to reinforce core concepts. I\u0027m focusing on the \"Worked Examples\" section currently.\n\n\n**Orchestrating Content Refinement**\n\nI\u0027m now integrating the academic enhancements. I\u0027m focusing on adding comprehensive `Critical Analysis`, `Note to Self`, and `Justification` blocks. My aim is to provide more clarity, deepen understanding, and solidify key concepts. I will address any errors or omissions, especially related to the identified inequality proof. My priority is to deliver clear, in-depth explanations and justifications.\n\n```markdown\nI\u0027m now diving into the specifics of `MAT A 1. predavanje SEM.md` with enhanced academic perspective. I\u0027m focusing on the \"Worked Examples\" section currently, analyzing sets and extrema. I will incorporate `Critical Analysis` and `Justification` where appropriate, along with correcting the identified issue in the inequality proof, and providing step-by-step solutions to the homework problems.\n```\n\n**Synthesizing Detailed Analysis**\n\nI\u0027ve just begun executing the refined content processing strategy on `MAT A 1. predavanje SEM.md`. My focus is currently on the `Worked Examples` and I am working to integrate `Critical Analysis`, `Note to Self`, and `Justification` blocks. I am also meticulously addressing the documented inequality proof error, providing step-by-step corrections and explanations. My objective is to enhance comprehension and reinforce key concepts effectively.\n\n\n",
+      "role": "model",
+      "tokenCount": 1472,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Processing the Document**\n\nI\u0027m currently focused on the structure of the `MAT A 1. predavanje SEM.md` file. I\u0027ve noted the clear headings for topics like \"Real Numbers and Absolute Value\" and \"Key Concepts\". My next step is to analyze the \"Worked Examples\" section to understand the application of these concepts. I am eager to finish the document.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining Content Strategy**\n\nI\u0027m now revising my content processing strategy for `MAT A 1. predavanje SEM.md`. I am shifting my focus to include detailed critical analysis alongside the raw content, adding `Critical Analysis`, `Note to Self`, or `Justification` blocks. My aim is to function more as an academic tutor, improving understanding and reinforcing key concepts. I will scrutinize and correct any errors, especially the inequality proof error highlighted by the user. I\u0027ll meticulously rework any homework examples too.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Outlining the Execution**\n\nI\u0027m now concretizing my processing plan for `MAT A 1. predavanje SEM.md`. I am focusing on the execution steps, clarifying the core content, and outlining academic enhancements. I\u0027ll adhere to the tutor role, maintaining the raw material and adding `Critical Analysis` sections for deeper context. I will meticulously revise the inequality proof and break down homework examples step-by-step.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Solidifying Processing Details**\n\nI\u0027m presently executing my processing strategy for `MAT A 1. predavanje SEM.md`, focusing on the content breakdown and academic enhancements. I\u0027m maintaining the source format and appending `Critical Analysis` blocks for enhanced understanding. I have carefully corrected the identified inequality proof and am now methodically dissecting the homework example step by step. I am diligently integrating LaTeX for consistency and accuracy across the document.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing and Enhancing Content**\n\nI\u0027ve just finished analyzing the structure of `MAT A 1. predavanje SEM.md`. I am now executing the content strategy, working on `Critical Analysis`, `Note to Self`, and `Justification` blocks. My aim is to add insightful explanations and justifications to reinforce core concepts. I\u0027m focusing on the \"Worked Examples\" section currently.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Orchestrating Content Refinement**\n\nI\u0027m now integrating the academic enhancements. I\u0027m focusing on adding comprehensive `Critical Analysis`, `Note to Self`, and `Justification` blocks. My aim is to provide more clarity, deepen understanding, and solidify key concepts. I will address any errors or omissions, especially related to the identified inequality proof. My priority is to deliver clear, in-depth explanations and justifications.\n\n```markdown\nI\u0027m now diving into the specifics of `MAT A 1. predavanje SEM.md` with enhanced academic perspective. I\u0027m focusing on the \"Worked Examples\" section currently, analyzing sets and extrema. I will incorporate `Critical Analysis` and `Justification` where appropriate, along with correcting the identified issue in the inequality proof, and providing step-by-step solutions to the homework problems.\n```\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Detailed Analysis**\n\nI\u0027ve just begun executing the refined content processing strategy on `MAT A 1. predavanje SEM.md`. My focus is currently on the `Worked Examples` and I am working to integrate `Critical Analysis`, `Note to Self`, and `Justification` blocks. I am also meticulously addressing the documented inequality proof error, providing step-by-step corrections and explanations. My objective is to enhance comprehension and reinforce key concepts effectively.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Real Numbers and Absolute Value]]\n\nThis lecture covers fundamental concepts related to sets of real numbers, including their extrema (minimum, maximum, infimum, supremum), and the analysis of functions involving absolute values.\n\n## [[Key Concepts: min, max, inf, sup]]\n\n\u003e **Note to Self:** The key distinction is that the **minimum** and **maximum** must be elements *within* the set, while the **infimum** and **supremum** are the greatest lower bound and least upper bound, respectively, and do not necessarily belong to the set.\n\n-   **[[Minimum ($min(S)$)]]:** The smallest element that is *in* the set $S$.\n-   **[[Infimum ($inf(S)$)]]:** The greatest lower bound of the set $S$. If a minimum exists, then $inf(S) \u003d min(S)$.\n-   **[[Maximum ($max(S)$)]]:** The largest element that is *in* the set $S$.\n-   **[[Supremum ($sup(S)$)]]:** The least upper bound of the set $S$. If a maximum exists, then $sup(S) \u003d max(S)$.\n\n---\n\n## [[Worked Examples: Finding Extrema of Sets]]\n\n### [[Set A \u003d N (Natural Numbers)]]\n-   **Set elements:** $A \u003d \\{1, 2, 3, ...\\}$\n-   **Analysis:** The set has a clearly defined starting element, 1. However, it continues infinitely and is therefore not bounded from above.\n-   **Solution:**\n    -   $min(A) \u003d 1$\n    -   $inf(A) \u003d 1$\n    -   $max(A)$ does not exist ($\\emptyset$)\n    -   $sup(A)$ does not exist ($\\emptyset$)\n\n### [[Set B \u003d N ∩ (-5, 5]]]\n-   **Set elements:** This is the intersection of the set of natural numbers and the interval $(-5, 5]$. We are looking for natural numbers $n$ such that $-5 \u003c n \\leq 5$.\n    $B \u003d \\{1, 2, 3, 4, 5\\}$\n-   **Analysis:** This is a finite, non-empty set. Every finite set has both a minimum and a maximum.\n-   **Solution:**\n    -   $min(B) \u003d 1$\n    -   $inf(B) \u003d 1$\n    -   $max(B) \u003d 5$\n    -   $sup(B) \u003d 5$\n\n### [[Set C \u003d {1 - 1/n | n ∈ N}]]\n-   **Set elements:** $C \u003d \\{1-1, 1-\\frac{1}{2}, 1-\\frac{1}{3}, ...\\} \u003d \\{0, \\frac{1}{2}, \\frac{2}{3}, ...\\}$\n-   **Analysis:** The sequence starts with its smallest element when $n\u003d1$, which is $0$. As $n$ increases, the term $\\frac{1}{n}$ gets smaller, so $1 - \\frac{1}{n}$ gets larger and approaches 1. The value 1 is the least upper bound (supremum), but it is never actually reached by any element in the set.\n-   **Solution:**\n    -   $min(C) \u003d 0$\n    -   $inf(C) \u003d 0$\n    -   $max(C)$ does not exist ($\\emptyset$)\n    -   $sup(C) \u003d 1$\n\n### [[Set D \u003d {1 + ((-1)^n)/n | n ∈ N}]]\n-   **Set elements:** The term $(-1)^n$ causes the sequence to oscillate around 1.\n    -   $n\u003d1: 1 - 1 \u003d 0$\n    -   $n\u003d2: 1 + \\frac{1}{2} \u003d \\frac{3}{2}$\n    -   $n\u003d3: 1 - \\frac{1}{3} \u003d \\frac{2}{3}$\n    -   $n\u003d4: 1 + \\frac{1}{4} \u003d \\frac{5}{4}$\n-   **Analysis:** The smallest value occurs at $n\u003d1$ (the largest negative deviation). The largest value occurs at $n\u003d2$ (the largest positive deviation). As $n$ grows, the deviations $\\pm\\frac{1}{n}$ become smaller, and all subsequent terms will lie between 0 and $\\frac{3}{2}$.\n-   **Solution:**\n    -   $min(D) \u003d 0$\n    -   $inf(D) \u003d 0$\n    -   $max(D) \u003d \\frac{3}{2}$\n    -   $sup(D) \u003d \\frac{3}{2}$\n\n### [[Set E \u003d {(2x)/(x+1) | x ≥ 0}]]\n-   **Analysis:** This is the range of the function $f(x) \u003d \\frac{2x}{x+1}$ on the domain $[0, \\infty)$.\n    -   The starting value is at $x\u003d0$, where $f(0) \u003d 0$. Since the numerator grows proportionally to the denominator for $x\u003e0$, and both are positive, this is the minimum value.\n    -   To find the upper bound, we analyze the behavior as $x \\to \\infty$. This corresponds to finding the horizontal asymptote of the function.\n        $$ \\lim_{x\\to\\infty} \\frac{2x}{x+1} \u003d \\lim_{x\\to\\infty} \\frac{x(2)}{x(1+\\frac{1}{x})} \u003d \\lim_{x\\to\\infty} \\frac{2}{1+\\frac{1}{x}} \u003d \\frac{2}{1+0} \u003d 2 $$\n    The function\u0027s values approach 2 as $x$ becomes very large, but never actually equal 2. Thus, 2 is the supremum.\n-   **Solution:**\n    -   $min(E) \u003d 0$\n    -   $inf(E) \u003d 0$\n    -   $max(E)$ does not exist ($\\emptyset$)\n    -   $sup(E) \u003d 2$\n\n---\n\n## [[Function with Absolute Value: Quadratic]]\n\nAnalyze the function $f(x) \u003d |x^2 + x - 2|$.\n\n### [[Graphing f(x)]]\n\u003e **Critical Analysis:** The absolute value function acts as a transformation. For any function $g(x)$, the graph of $f(x) \u003d |g(x)|$ is obtained by taking the graph of $g(x)$ and reflecting any portion that lies below the x-axis ($g(x) \u003c 0$) across the x-axis. The portions where $g(x) \\geq 0$ remain unchanged.\n\n1.  **Analyze the inner function:** Let $g(x) \u003d x^2 + x - 2$. This is an upward-opening parabola.\n    -   **Roots:** We find where the graph intersects the x-axis: $x^2 + x - 2 \u003d (x+2)(x-1) \u003d 0$. The roots are at $x\u003d-2$ and $x\u003d1$.\n    -   The parabola $g(x)$ is negative on the interval between its roots, i.e., for $x \\in (-2, 1)$.\n\n2.  **Apply the absolute value:**\n    -   For $x \\in (-\\infty, -2] \\cup [1, \\infty)$, $g(x) \\ge 0$, so $f(x) \u003d g(x) \u003d x^2 + x - 2$.\n    -   For $x \\in (-2, 1)$, $g(x) \u003c 0$, so $f(x) \u003d -g(x) \u003d -(x^2 + x - 2) \u003d -x^2 - x + 2$.\n\n### [[Solving Equations and Inequalities with f(x)]]\n\n#### [[a) Solve f(x) \u003d 4]]\nWe must test both pieces of the function\u0027s definition.\n-   **Case 1: $x^2 + x - 2 \u003d 4$** (valid for $x \\le -2$ or $x \\ge 1$)\n    $x^2 + x - 6 \u003d 0 \\implies (x+3)(x-2) \u003d 0$.\n    Solutions are $x_1 \u003d -3$ and $x_2 \u003d 2$. Both are valid since $-3 \\le -2$ and $2 \\ge 1$.\n\n-   **Case 2: $-(x^2 + x - 2) \u003d 4$** (valid for $-2 \u003c x \u003c 1$)\n    $x^2 + x - 2 \u003d -4 \\implies x^2 + x + 2 \u003d 0$.\n    The discriminant is $\\Delta \u003d b^2 - 4ac \u003d 1^2 - 4(1)(2) \u003d -7$. Since $\\Delta \u003c 0$, there are no real solutions in this case.\n\n**Solution:** The solution set is $x \\in \\{-3, 2\\}$.\n\n#### [[b) Solve f(x) \u003c 4]]\n-   **Graphical Interpretation:** We are looking for the x-values where the graph of $f(x)$ lies strictly below the horizontal line $y\u003d4$. From the graph and the solution to $f(x)\u003d4$, we can see this occurs on the interval strictly between the two solutions we found.\n-   **Solution:** $x \\in (-3, 2)$.\n\n---\n\n## [[Function with Absolute Value: Rational]]\n\nAnalyze the function $f(x) \u003d \\left|\\frac{2x+1}{1-x}\\right|$ by solving the inequality $f(x) \u003c 2$.\n\n### [[Solving f(x) \u003c 2]]\nThe inequality $\\left|\\frac{2x+1}{1-x}\\right| \u003c 2$ is equivalent to the compound inequality:\n$$ -2 \u003c \\frac{2x+1}{1-x} \u003c 2 $$\nThis must be solved as a system of two separate inequalities. The final solution will be the intersection of their individual solution sets.\n\n\u003e **Warning Note:** Never multiply an inequality by an expression containing a variable (like `1-x`) unless you know its sign. A robust method is to move all terms to one side and form a single fraction.\n\n**Inequality 1: $\\frac{2x+1}{1-x} \u003c 2$**\n$$ \\frac{2x+1}{1-x} - 2 \u003c 0 \\implies \\frac{(2x+1) - 2(1-x)}{1-x} \u003c 0 \\implies \\frac{4x-1}{1-x} \u003c 0 $$\nThe critical points (where numerator or denominator is zero) are $x \u003d \\frac{1}{4}$ and $x\u003d1$. We analyze the sign of the fraction on the intervals $(-\\infty, 1/4)$, $(1/4, 1)$, and $(1, \\infty)$. The fraction is negative for **$x \\in (-\\infty, \\frac{1}{4}) \\cup (1, \\infty)$**.\n\n**Inequality 2: $\\frac{2x+1}{1-x} \u003e -2$**\n$$ \\frac{2x+1}{1-x} + 2 \u003e 0 \\implies \\frac{(2x+1) + 2(1-x)}{1-x} \u003e 0 \\implies \\frac{3}{1-x} \u003e 0 $$\nThis inequality holds if and only if the denominator is positive: $1-x \u003e 0 \\implies x \u003c 1$. The solution is **$x \\in (-\\infty, 1)$**.\n\n**Final Solution:**\nWe find the intersection of the two solution sets:\n$$ \\text{Solution} \u003d \\left( (-\\infty, \\frac{1}{4}) \\cup (1, \\infty) \\right) \\cap (-\\infty, 1) $$\nThe intersection is **$x \\in (-\\infty, \\frac{1}{4})$**.\n\n---\n\n## [[Homework: Nested Absolute Value]]\n\n**Problem:** Solve the inequality $||2x+1| - 3| \u003c 2$.\n\n### [[Solution Strategy]]\nWe solve this by \"unwrapping\" the absolute values from the outside in.\n1.  **Outer Absolute Value:** The inequality $|A| \u003c k$ is equivalent to $-k \u003c A \u003c k$. Here, $A \u003d |2x+1| - 3$ and $k\u003d2$.\n    $$ -2 \u003c |2x+1| - 3 \u003c 2 $$\n\n2.  **Isolate the Inner Absolute Value:** Add 3 to all parts of the inequality.\n    $$ 1 \u003c |2x+1| \u003c 5 $$\n\n3.  **Split into Two Conditions:** This is a system of two inequalities that must both be true:\n    -   Condition A: $|2x+1| \u003e 1$\n    -   Condition B: $|2x+1| \u003c 5$\n\n4.  **Solve Condition A:** The inequality $|B| \u003e k$ is equivalent to $B \u003e k$ OR $B \u003c -k$.\n    -   $2x+1 \u003e 1 \\implies 2x \u003e 0 \\implies x \u003e 0$\n    -   $2x+1 \u003c -1 \\implies 2x \u003c -2 \\implies x \u003c -1$\n    The solution for A is the union: $x \\in (-\\infty, -1) \\cup (0, \\infty)$.\n\n5.  **Solve Condition B:** The inequality $|B| \u003c k$ is equivalent to $-k \u003c B \u003c k$.\n    -   $-5 \u003c 2x+1 \u003c 5$\n    -   $-6 \u003c 2x \u003c 4$\n    -   $-3 \u003c x \u003c 2$\n    The solution for B is the interval: $x \\in (-3, 2)$.\n\n6.  **Find the Intersection:** The final solution is the intersection of the solution sets from steps 4 and 5.\n    -   Intersection of `(-3, 2)` with `(-∞, -1)` gives `(-3, -1)`.\n    -   Intersection of `(-3, 2)` with `(0, ∞)` gives `(0, 2)`.\n\n**Final Answer:**\nThe solution set is the union of these two resulting intervals:\n$$ x \\in (-3, -1) \\cup (0, 2) $$\n\n---\n# [[Mathematical Induction Examples]]\n\n## [[Divisibility Proof]]\n\n**Statement $P(n)$:** Prove that for all $n \\in \\mathbb{N}$, $31$ divides $(2^{5n} - 1)$.\n\n### [[Base Case (n\u003d1)]]\nWe check if $P(1)$ is true: $31 | (2^{5(1)} - 1)$.\n$$ 2^5 - 1 \u003d 32 - 1 \u003d 31 $$\nSince $31$ divides $31$, the base case holds.\n\n### [[Inductive Step (n → n+1)]]\n1.  **[[Inductive Hypothesis (IH)]]:** Assume $P(n)$ is true for some arbitrary $n \\in \\mathbb{N}$. This means we assume $31 | (2^{5n} - 1)$, or equivalently, $2^{5n} - 1 \u003d 31k$ for some integer $k$.\n\n2.  **[[Goal]]:** We need to prove that $P(n+1)$ is true, i.e., $31 | (2^{5(n+1)} - 1)$.\n\n3.  **[[Proof]]:** We start with the expression for $n+1$ and manipulate it to use our hypothesis.\n    $$\n    \\begin{align*}\n    2^{5(n+1)} - 1 \u0026\u003d 2^{5n+5} - 1 \\\\\n    \u0026\u003d 2^{5n} \\cdot 2^5 - 1 \\\\\n    \u0026\u003d 32 \\cdot 2^{5n} - 1 \\\\\n    \\end{align*}\n    $$\n    \u003e **Critical Analysis:** The key algebraic trick here is to split the coefficient `32` in a way that reveals a term divisible by 31 and another term that matches our inductive hypothesis.\n    $$\n    \\begin{align*}\n    \u0026\u003d (31 + 1) \\cdot 2^{5n} - 1 \\\\\n    \u0026\u003d 31 \\cdot 2^{5n} + 1 \\cdot 2^{5n} - 1 \\\\\n    \u0026\u003d \\underbrace{31 \\cdot 2^{5n}}_{\\text{Divisible by 31}} + \\underbrace{(2^{5n} - 1)}_{\\text{Divisible by 31 by IH}}\n    \\end{align*}\n    $$\n    Since both terms in the sum are divisible by 31, their sum is also divisible by 31. This proves the inductive step.\n\nBy the principle of mathematical induction, the statement is true for all $n \\in \\mathbb{N}$.\n\n---\n\n## [[Inequality Proof]]\n\n**Statement $P(n)$:** Prove that for all $n \\in \\mathbb{N}$, $\\sum_{k\u003d1}^{n} \\frac{1}{\\sqrt{k}} \\le 2\\sqrt{n} - 1$.\n\n### [[Critical Analysis: Correcting the Base Case]]\nYour handwritten notes suggest the base case fails. Let\u0027s verify this carefully.\n-   **Base Case (n\u003d1):** We must check if $\\frac{1}{\\sqrt{1}} \\le 2\\sqrt{1} - 1$.\n    $$ 1 \\le 2(1) - 1 \\implies 1 \\le 1 $$\n-   **Conclusion:** This statement is **true**. The base case holds, and the induction can proceed.\n\n### [[Proof]]\n1.  **[[Base Case (n\u003d1)]]:** As shown above, $1 \\le 1$ is true.\n\n2.  **[[Inductive Step (n → n+1)]]:**\n    -   **[[Inductive Hypothesis (IH)]]:** Assume for some $n \\in \\mathbb{N}$ that $\\sum_{k\u003d1}^{n} \\frac{1}{\\sqrt{k}} \\le 2\\sqrt{n} - 1$.\n    -   **[[Goal]]:** Prove that $\\sum_{k\u003d1}^{n+1} \\frac{1}{\\sqrt{k}} \\le 2\\sqrt{n+1} - 1$.\n    -   **[[Proof]]:**\n        $$ \\sum_{k\u003d1}^{n+1} \\frac{1}{\\sqrt{k}} \u003d \\left(\\sum_{k\u003d1}^{n} \\frac{1}{\\sqrt{k}}\\right) + \\frac{1}{\\sqrt{n+1}} $$\n        By the IH, we can substitute the sum:\n        $$ \\le (2\\sqrt{n} - 1) + \\frac{1}{\\sqrt{n+1}} $$\n        Our task now is to show that this expression is less than or equal to our goal, $2\\sqrt{n+1} - 1$.\n        $$ 2\\sqrt{n} - 1 + \\frac{1}{\\sqrt{n+1}} \\le 2\\sqrt{n+1} - 1 $$\n        Adding 1 to both sides simplifies this to proving:\n        $$ 2\\sqrt{n} + \\frac{1}{\\sqrt{n+1}} \\le 2\\sqrt{n+1} $$\n        To handle the square roots, we can isolate them and square both sides. First, multiply by $\\sqrt{n+1}$ (which is positive):\n        $$ 2\\sqrt{n}\\sqrt{n+1} + 1 \\le 2(n+1) $$\n        $$ 2\\sqrt{n^2+n} \\le 2n+1 $$\n        Since both sides are positive for $n \\in \\mathbb{N}$, we can square the inequality:\n        $$ 4(n^2+n) \\le (2n+1)^2 $$\n        $$ 4n^2 + 4n \\le 4n^2 + 4n + 1 $$\n        $$ 0 \\le 1 $$\n        This is a true statement. Since we started with our desired inequality and reached a true statement through valid algebraic steps, the inductive step holds.\n\nBy the principle of mathematical induction, the original inequality is proven. valid algebraic steps, the inductive step holds.\n\nBy the principle of mathematical induction, the original inequality is proven.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 981,
+      "parts": [{
+        "text": "# [[Real Numbers and Absolute Value]]\n\nThis lecture covers fundamental concepts related to sets of real numbers, including their extrema"
+      }, {
+        "text": " (minimum, maximum, infimum, supremum), and the analysis of functions involving absolute values.\n\n## [[Key Concepts: min, max, inf, sup]]\n\n\u003e **Note to Self:** The key distinction is that the **minimum** and **"
+      }, {
+        "text": "maximum** must be elements *within* the set, while the **infimum** and **supremum** are"
+      }, {
+        "text": " the greatest lower bound and least upper bound, respectively, and do not necessarily belong to the set.\n\n-   **[[Minimum ($min(S)$)]]:** The smallest element that is *in* the set $S$.\n-"
+      }, {
+        "text": "   **[[Infimum ($inf(S)$)]]:** The greatest lower bound of the set $S$. If"
+      }, {
+        "text": " a minimum exists, then $inf(S) \u003d min(S)$.\n-   **[[Maximum ($max(S)$)]]:** The largest element that is *in* the set $S$.\n-   **[[Supremum ($sup(S)$)]]:** The least upper bound of the set $S$. If a maximum exists, then $"
+      }, {
+        "text": "sup(S) \u003d max(S)$.\n\n---\n\n## [[Worked Examples: Finding Extrema of Sets]]\n\n"
+      }, {
+        "text": "### [[Set A \u003d N (Natural Numbers)]]\n-   **Set elements:** $A \u003d \\{1, "
+      }, {
+        "text": "2, 3, ...\\}$\n-   **Analysis:** The set has a clearly defined starting element, 1."
+      }, {
+        "text": " However, it continues infinitely and is therefore not bounded from above.\n-   **Solution:**\n    -   $min(A"
+      }, {
+        "text": ") \u003d 1$\n    -   $inf(A) \u003d 1$\n    -   $max"
+      }, {
+        "text": "(A)$ does not exist ($\\emptyset$)\n    -   $sup(A)$ does not exist ($\\emptyset$)\n\n"
+      }, {
+        "text": "### [[Set B \u003d N ∩ (-5, 5]]]\n-   **Set elements:** This is the intersection of"
+      }, {
+        "text": " the set of natural numbers and the interval $(-5, 5]$. We are looking for natural numbers $n$ such that $-"
+      }, {
+        "text": "5 \u003c n \\leq 5$.\n    $B \u003d \\{1, 2, 3, 4, 5"
+      }, {
+        "text": "\\}$\n-   **Analysis:** This is a finite, non-empty set. Every finite set has both a minimum and a"
+      }, {
+        "text": " maximum.\n-   **Solution:**\n    -   $min(B) \u003d 1$\n    -   $"
+      }, {
+        "text": "inf(B) \u003d 1$\n    -   $max(B) \u003d 5$\n    -"
+      }, {
+        "text": "   $sup(B) \u003d 5$\n\n### [[Set C \u003d {1 - 1/n | n ∈ N}]]\n-   **Set elements:** $C \u003d \\{1-1, 1-\\frac{1}{"
+      }, {
+        "text": "2}, 1-\\frac{1}{3}, ...\\} \u003d \\{0, \\frac{1}{2},"
+      }, {
+        "text": " \\frac{2}{3}, ...\\}$\n-   **Analysis:** The sequence starts with its smallest element when $n\u003d1"
+      }, {
+        "text": "$, which is $0$. As $n$ increases, the term $\\frac{1}{n}$ gets smaller,"
+      }, {
+        "text": " so $1 - \\frac{1}{n}$ gets larger and approaches 1. The value 1 is the"
+      }, {
+        "text": " least upper bound (supremum), but it is never actually reached by any element in the set.\n-   **Solution:**"
+      }, {
+        "text": "\n    -   $min(C) \u003d 0$\n    -   $inf(C) \u003d "
+      }, {
+        "text": "0$\n    -   $max(C)$ does not exist ($\\emptyset$)\n    -   $sup("
+      }, {
+        "text": "C) \u003d 1$\n\n### [[Set D \u003d {1 + ((-1)^n)/n | n ∈ N}]]\n-   **Set elements:** The term $(-1)^n$ causes the sequence to oscillate around 1.\n    "
+      }, {
+        "text": "-   $n\u003d1: 1 - 1 \u003d 0$\n    -   $n\u003d2: 1"
+      }, {
+        "text": " + \\frac{1}{2} \u003d \\frac{3}{2}$\n    -   $n\u003d3: "
+      }, {
+        "text": "1 - \\frac{1}{3} \u003d \\frac{2}{3}$\n    -   $n\u003d"
+      }, {
+        "text": "4: 1 + \\frac{1}{4} \u003d \\frac{5}{4}$\n-   **"
+      }, {
+        "text": "Analysis:** The smallest value occurs at $n\u003d1$ (the largest negative deviation). The largest value occurs at $n"
+      }, {
+        "text": "\u003d2$ (the largest positive deviation). As $n$ grows, the deviations $\\pm\\frac{1}{"
+      }, {
+        "text": "n}$ become smaller, and all subsequent terms will lie between 0 and $\\frac{3}{2}$.\n-"
+      }, {
+        "text": "   **Solution:**\n    -   $min(D) \u003d 0$\n    -   $inf("
+      }, {
+        "text": "D) \u003d 0$\n    -   $max(D) \u003d \\frac{3}{2}$\n"
+      }, {
+        "text": "    -   $sup(D) \u003d \\frac{3}{2}$\n\n### [[Set E \u003d {(2x)/(x+1) | x ≥ 0}]]\n-   **Analysis:** This is the range of the function $f("
+      }, {
+        "text": "x) \u003d \\frac{2x}{x+1}$ on the domain $[0, \\infty)$.\n    -   The starting value is at $x\u003d0$, where $f(0) \u003d 0$. Since the numerator grows proportionally to the denominator for $x\u003e0$, and both are positive, this is the minimum value.\n    -   To find the upper bound, we analyze the behavior as $x \\to \\infty$. This corresponds to finding the horizontal asymptote of the function.\n        $$ \\lim_{x\\to\\infty} \\frac{2x}{x+1} \u003d \\lim_{x\\to\\infty} \\frac{x(2)}{x(1+\\frac{1}{x})} \u003d \\lim_{x\\to\\infty} \\frac{2}{1+\\frac{1}{x}} \u003d \\frac{2}{1+0} \u003d 2 $$\n    The function\u0027s values approach 2 as $x$ becomes very large, but never actually equal 2. Thus, 2 is the supremum.\n-   **Solution:**\n    -   $min(E) \u003d 0$\n    -   $inf(E) \u003d 0$\n    -   $max(E)$ does not exist ($\\emptyset$)\n    -   $sup(E) \u003d 2$\n\n---\n\n## [[Function with Absolute Value: Quadratic]]\n\nAnalyze the function $f(x) \u003d |x^2 + x - 2|$.\n\n### [[Graphing f(x)]]\n\u003e **Critical Analysis:** The absolute value function acts as a transformation. For any function $g(x)$, the graph of $f(x) \u003d |g(x)|$ is obtained by taking the graph of $g(x)$ and reflecting any portion that lies below the x-axis ($g(x) \u003c 0$) across the x-axis. The portions where $g(x) \\geq 0$ remain unchanged.\n\n1.  **Analyze the inner function:** Let $g(x) \u003d x^2 + x - 2$. This is an upward-opening parabola.\n    -   **Roots:** We find where the graph intersects the x-axis: $x^2 + x - 2 \u003d (x+2)(x-1) \u003d 0$. The roots are at $x\u003d-2$ and $x\u003d1$.\n    -   The parabola $g(x)$ is negative on the interval between its roots, i.e., for $x \\in (-2, 1)$.\n\n2.  **Apply the absolute value:**\n    -   For $x \\in (-\\infty, -2] \\cup [1, \\infty)$, $g(x) \\ge 0$, so $f(x) \u003d g(x) \u003d x^2 + x - 2$.\n    -   For $x \\in (-2, 1)$, $g(x) \u003c 0$, so $f(x) \u003d -g(x) \u003d -(x^2 + x - 2) \u003d -x^2 - x + 2$.\n\n### [[Solving Equations and Inequalities with f(x)]]\n\n#### [[a) Solve f(x) \u003d 4]]\nWe must test both pieces of the function\u0027s definition.\n-   **Case 1: $x^2 + x - 2 \u003d 4$** (valid for $x \\le -2$ or $x \\ge 1$)\n    $x^2 + x - 6 \u003d 0 \\implies (x+3)(x-2) \u003d 0$.\n    Solutions are $x_1 \u003d -3$ and $x_2 \u003d 2$. Both are valid since $-3 \\le -2$ and $2 \\ge 1$.\n\n-   **Case 2: $-(x^2 + x - 2) \u003d 4$** (valid for $-2 \u003c x \u003c 1$)\n    $x^2 + x - 2 \u003d -4 \\implies x^2 + x + 2 \u003d 0$.\n    The discriminant is $\\Delta \u003d b^2 - 4ac \u003d 1^2 - 4(1)(2) \u003d -7$. Since $\\Delta \u003c 0$, there are no real solutions in this case.\n\n**Solution:** The solution set is $x \\in \\{-3, 2\\}$.\n\n#### [[b) Solve f(x) \u003c 4]]\n-   **Graphical Interpretation:** We are looking for the x-values where the graph of $f(x)$ lies strictly below the horizontal line $y\u003d4$. From the graph and the solution to $f(x)\u003d4$, we can see this occurs on the interval strictly between the two solutions we found.\n-   **Solution:** $x \\in (-3, 2)$.\n\n---\n\n## [[Function with Absolute Value: Rational]]\n\nAnalyze the function $f(x) \u003d \\left|\\frac{2x+1}{1-x}\\right|$ by solving the inequality $f(x) \u003c 2$.\n\n### [[Solving f(x) \u003c 2]]\nThe inequality $\\left|\\frac{2x+1}{1-x}\\right| \u003c 2$ is equivalent to the compound inequality:\n$$ -2 \u003c \\frac{2x+1}{1-x} \u003c 2 $$\nThis must be solved as a system of two separate inequalities. The final solution will be the intersection of their individual solution sets.\n\n\u003e **Warning Note:** Never multiply an inequality by an expression containing a variable (like `1-x`) unless you know its sign. A robust method is to move all terms to one side and form a single fraction.\n\n**Inequality 1: $\\frac{2x+1}{1-x} \u003c 2$**\n$$ \\frac{2x+1}{1-x} - 2 \u003c 0 \\implies \\frac{(2x+1) - 2(1-x)}{1-x} \u003c 0 \\implies \\frac{4x-1}{1-x} \u003c 0 $$\nThe critical points (where numerator or denominator is zero) are $x \u003d \\frac{1}{4}$ and $x\u003d1$. We analyze the sign of the fraction on the intervals $(-\\infty, 1/4)$, $(1/4, 1)$, and $(1, \\infty)$. The fraction is negative for **$x \\in (-\\infty, \\frac{1}{4}) \\cup (1, \\infty)$**.\n\n**Inequality 2: $\\frac{2x+1}{1-x} \u003e -2$**\n$$ \\frac{2x+1}{1-x} + 2 \u003e 0 \\implies \\frac{(2x+1) + 2(1-x)}{1-x} \u003e 0 \\implies \\frac{3}{1-x} \u003e 0 $$\nThis inequality holds if and only if the denominator is positive: $1-x \u003e 0 \\implies x \u003c 1$. The solution is **$x \\in (-\\infty, 1)$**.\n\n**Final Solution:**\nWe find the intersection of the two solution sets:\n$$ \\text{Solution} \u003d \\left( (-\\infty, \\frac{1}{4}) \\cup (1, \\infty) \\right) \\cap (-\\infty, 1) $$\nThe intersection is **$x \\in (-\\infty, \\frac{1}{4})$**.\n\n---\n\n## [[Homework: Nested Absolute Value]]\n\n**Problem:** Solve the inequality $||2x+1| - 3| \u003c 2$.\n\n### [[Solution Strategy]]\nWe solve this by \"unwrapping\" the absolute values from the outside in.\n1.  **Outer Absolute Value:** The inequality $|A| \u003c k$ is equivalent to $-k \u003c A \u003c k$. Here, $A \u003d |2x+1| - 3$ and $k\u003d2$.\n    $$ -2 \u003c |2x+1| - 3 \u003c 2 $$\n\n2.  **Isolate the Inner Absolute Value:** Add 3 to all parts of the inequality.\n    $$ 1 \u003c |2x+1| \u003c 5 $$\n\n3.  **Split into Two Conditions:** This is a system of two inequalities that must both be true:\n    -   Condition A: $|2x+1| \u003e 1$\n    -   Condition B: $|2x+1| \u003c 5$\n\n4.  **Solve Condition A:** The inequality $|B| \u003e k$ is equivalent to $B \u003e k$ OR $B \u003c -k$.\n    -   $2x+1 \u003e 1 \\implies 2x \u003e 0 \\implies x \u003e 0$\n    -   $2x+1 \u003c -1 \\implies 2x \u003c -2 \\implies x \u003c -1$\n    The solution for A is the union: $x \\in (-\\infty, -1) \\cup (0, \\infty)$.\n\n5.  **Solve Condition B:** The inequality $|B| \u003c k$ is equivalent to $-k \u003c B \u003c k$.\n    -   $-5 \u003c 2x+1 \u003c 5$\n    -   $-6 \u003c 2x \u003c 4$\n    -   $-3 \u003c x \u003c 2$\n    The solution for B is the interval: $x \\in (-3, 2)$.\n\n6.  **Find the Intersection:** The final solution is the intersection of the solution sets from steps 4 and 5.\n    -   Intersection of `(-3, 2)` with `(-∞, -1)` gives `(-3, -1)`.\n    -   Intersection of `(-3, 2)` with `(0, ∞)` gives `(0, 2)`.\n\n**Final Answer:**\nThe solution set is the union of these two resulting intervals:\n$$ x \\in (-3, -1) \\cup (0, 2) $$\n\n---\n# [[Mathematical Induction Examples]]\n\n## [[Divisibility Proof]]\n\n**Statement $P(n)$:** Prove that for all $n \\in \\mathbb{N}$, $31$ divides $(2^{5n} - 1)$.\n\n### [[Base Case (n\u003d1)]]\nWe check if $P(1)$ is true: $31 | (2^{5(1)} - 1)$.\n$$ 2^5 - 1 \u003d 32 - 1 \u003d 31 $$\nSince $31$ divides $31$, the base case holds.\n\n### [[Inductive Step (n → n+1)]]\n1.  **[[Inductive Hypothesis (IH)]]:** Assume $P(n)$ is true for some arbitrary $n \\in \\mathbb{N}$. This means we assume $31 | (2^{5n} - 1)$, or equivalently, $2^{5n} - 1 \u003d 31k$ for some integer $k$.\n\n2.  **[[Goal]]:** We need to prove that $P(n+1)$ is true, i.e., $31 | (2^{5(n+1)} - 1)$.\n\n3.  **[[Proof]]:** We start with the expression for $n+1$ and manipulate it to use our hypothesis.\n    $$\n    \\begin{align*}\n    2^{5(n+1)} - 1 \u0026\u003d 2^{5n+5} - 1 \\\\\n    \u0026\u003d 2^{5n} \\cdot 2^5 - 1 \\\\\n    \u0026\u003d 32 \\cdot 2^{5n} - 1 \\\\\n    \\end{align*}\n    $$\n    \u003e **Critical Analysis:** The key algebraic trick here is to split the coefficient `32` in a way that reveals a term divisible by 31 and another term that matches our inductive hypothesis.\n    $$\n    \\begin{align*}\n    \u0026\u003d (31 + 1) \\cdot 2^{5n} - 1 \\\\\n    \u0026\u003d 31 \\cdot 2^{5n} + 1 \\cdot 2^{5n} - 1 \\\\\n    \u0026\u003d \\underbrace{31 \\cdot 2^{5n}}_{\\text{Divisible by 31}} + \\underbrace{(2^{5n} - 1)}_{\\text{Divisible by 31 by IH}}\n    \\end{align*}\n    $$\n    Since both terms in the sum are divisible by 31, their sum is also divisible by 31. This proves the inductive step.\n\nBy the principle of mathematical induction, the statement is true for all $n \\in \\mathbb{N}$.\n\n---\n\n## [[Inequality Proof]]\n\n**Statement $P(n)$:** Prove that for all $n \\in \\mathbb{N}$, $\\sum_{k\u003d1}^{n} \\frac{1}{\\sqrt{k}} \\le 2\\sqrt{n} - 1$.\n\n### [[Critical Analysis: Correcting the Base Case]]\nYour handwritten notes suggest the base case fails. Let\u0027s verify this carefully.\n-   **Base Case (n\u003d1):** We must check if $\\frac{1}{\\sqrt{1}} \\le 2\\sqrt{1} - 1$.\n    $$ 1 \\le 2(1) - 1 \\implies 1 \\le 1 $$\n-   **Conclusion:** This statement is **true**. The base case holds, and the induction can proceed.\n\n### [[Proof]]\n1.  **[[Base Case (n\u003d1)]]:** As shown above, $1 \\le 1$ is true.\n\n2.  **[[Inductive Step (n → n+1)]]:**\n    -   **[[Inductive Hypothesis (IH)]]:** Assume for some $n \\in \\mathbb{N}$ that $\\sum_{k\u003d1}^{n} \\frac{1}{\\sqrt{k}} \\le 2\\sqrt{n} - 1$.\n    -   **[[Goal]]:** Prove that $\\sum_{k\u003d1}^{n+1} \\frac{1}{\\sqrt{k}} \\le 2\\sqrt{n+1} - 1$.\n    -   **[[Proof]]:**\n        $$ \\sum_{k\u003d1}^{n+1} \\frac{1}{\\sqrt{k}} \u003d \\left(\\sum_{k\u003d1}^{n} \\frac{1}{\\sqrt{k}}\\right) + \\frac{1}{\\sqrt{n+1}} $$\n        By the IH, we can substitute the sum:\n        $$ \\le (2\\sqrt{n} - 1) + \\frac{1}{\\sqrt{n+1}} $$\n        Our task now is to show that this expression is less than or equal to our goal, $2\\sqrt{n+1} - 1$.\n        $$ 2\\sqrt{n} - 1 + \\frac{1}{\\sqrt{n+1}} \\le 2\\sqrt{n+1} - 1 $$\n        Adding 1 to both sides simplifies this to proving:\n        $$ 2\\sqrt{n} + \\frac{1}{\\sqrt{n+1}} \\le 2\\sqrt{n+1} $$\n        To handle the square roots, we can isolate them and square both sides. First, multiply by $\\sqrt{n+1}$ (which is positive):\n        $$ 2\\sqrt{n}\\sqrt{n+1} + 1 \\le 2(n+1) $$\n        $$ 2\\sqrt{n^2+n} \\le 2n+1 $$\n        Since both sides are positive for $n \\in \\mathbb{N}$, we can square the inequality:\n        $$ 4(n^2+n) \\le (2n+1)^2 $$\n        $$ 4n^2 + 4n \\le 4n^2 + 4n + 1 $$\n        $$ 0 \\le 1 $$\n        This is a true statement. Since we started with our desired inequality and reached a true statement through valid algebraic steps, the inductive step holds.\n\nBy the principle of mathematical induction, the original inequality is proven."
+      }, {
+        "text": " valid algebraic steps, the inductive step holds.\n\nBy the principle of mathematical induction, the original inequality is proven."
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

@@ -1,0 +1,565 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-2.5-pro",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    }
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant (Final Version)\n\nFew notes to know:\n1. The user\u0027s files (metadata) are chronologically labeled, so the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other, given the topic.\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT PROTOCOL**\n\n1.  **Initial Output Protocol:** Begin your response *only* with the content note itself. Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The foundational structure of the notes must accurately reflect the material presented (what was said/seen). Your first duty is to record the lecturer\u0027s content and the user\u0027s notes, **as they are**. Minimal AI interjection should occur in the main body; use dedicated analytical sections for added insight.\n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula.\n    *   **Visualization:** Use Matplotlib code blocks for plotting functions, data visualization, derivations, and any relevant visual aids.\n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  **Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nWhen processing the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5.  **Conceptual Strengthening Tasks (NEW):** At the conclusion of the synthesized notes, generate a section of \u0027Conceptual Strengthening Tasks\u0027. These tasks must:\n    *   Mimic the structure and difficulty of the examples/problems presented in the current lecture material.\n    *   Include \u0027Challenges\u0027 designed to connect the current university concepts with foundational knowledge from high school or prior courses, forcing the user to utilize a broad, integrated understanding.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a highly knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "163O46NFflhYsVf-JCN0EO0VnxqJf0o0s"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1-pzAi0apIvCCBUZwNccYyk94e6smYpyJ"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1FovHAiAmOuTR8TVfJ11YRkTa4Zd3EiYI"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1VjwICMbDjQpaxDduKSwn8rrYjIhTdDWy"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1EbubRVrAYN3fwDeydR-ItEWV8UNcgW2-"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1RRai93Vf8Gw9K8lux-rT2IJp5qOjObK7"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1qOe5p72bj5pKFNAkddZTQCAGEFB-OFrx"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1PlLNdiRqHCmvvoZOYF84WuyysIqI4bmu"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Es6KjSs1y7n0ITWHizwG5fYMPobpU3IH"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1AK3cxDfe1ZBHzrT21PWP05crxDTX_1xg"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1fOBsoSXn9VSrsiy7ga8zX8umT6-Ux-Ar"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "19IuDy_3UQMApjjG8kv27mEph9XEtFd5e"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1HKRezlomK9HmdfriB8tKjmmBoy18fiWG"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveAudio": {
+        "id": "1j_GEcGo_A38uKDtxsJyQHJ-q0_OSJcHB"
+      },
+      "role": "user",
+      "tokenCount": 66847
+    }, {
+      "driveAudio": {
+        "id": "1kSy_9PDe69F7bOZmO9EAOeARzVDzrRaZ"
+      },
+      "role": "user",
+      "tokenCount": 72523
+    }, {
+      "driveAudio": {
+        "id": "1ISmEy34IGLVJXzRTFJGV5FW-jKzdKUmL"
+      },
+      "role": "user",
+      "tokenCount": 86283
+    }, {
+      "driveImage": {
+        "id": "1avlpucYn5NsvEbUb8RqdxCD4JtoJ51dW"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1jYl92kldBUOl31AL-_ZWaoSu8ov303TF"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "18aQ8wEvncRSnD3xdoUT3eGdswAYxS8Pv"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "19AnQ2hwF5x_B27inJM71i3P9F_-s5K8Z"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1Y8BTaKu-sUnvoz90W1eSkGCuG2rQzyA4"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1aCO1mbkkD3L2tA2qStz-uZQURkRECStV"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1pWEmYer5K5hWJy-ZXmKADOQUoJCMXp1m"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1WEgKbVehxM1j_ZuhVmF3bK4AmCJQTWvn"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1hkCzjBiyh9pifCOGX_hO20fBg1W_uH7E"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1-cQRvuTyH3ZCXVlQXqgN4kuXNFYoepKW"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "14wu5SOCDJBr82uhgvMpQFmLdCWWRA-n0"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ZoSf8OZYxYfRrTFKedhshsGmOOT1O1Ec"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "17nuZF6wOz1jXzbuL-TIVmkQhHtWTEbF3"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1eF_weZkvRJVJaQuglWZAwJlaS6gEK5I9"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1iIDgZIoEb092Gr3yRJMZ3FiOpIBkyMX3"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ZGF4CUHC6p6e4XN54lBWkNg8XqsqIMkt"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1goUSD9T3UbCKjV9kj14sY5u_wfyq0JWm"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1AO1w5dupykpXabgpZ-VgmOm1H19HIT0n"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1yx5Mh0UXlfQHUuywMwi_FZz9TASDwVwq"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1nd18G6WHblmUgN7NQNOWgSp44wJBZ4_S"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "138RoZ7LMY6OqscjrEnwiXUFeKacEgMzC"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1ecqzwlA820RLATdgSsR8aMOUR2VTLmLr"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1OPTq1iljqBxr7lCuxs9_EUOqmP6ts1P9"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1gpoPDKGAScwEe7wRNlVS_r79n7uBBtt2"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1mdmv0kawxyYO96kgSzozSNCw5Cq9WqXF"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1NZIC_rwY4lSNJv30n1I1hcGHu0lPZRZk"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "driveImage": {
+        "id": "1srMqKcri2_GreRP8N_SzZDVPMcJd3gzU"
+      },
+      "role": "user",
+      "tokenCount": 259
+    }, {
+      "text": "**Formulating the Initial Approach**\n\nI\u0027ve begun dissecting the lecture materials.  First, I\u0027m focusing on the initial segment defining exponential functions, `f(x) \u003d a^x`, as the foundation. This will guide my subsequent analysis of the handwritten notes. I aim to build a cohesive framework for understanding the core concepts.\n\n\n**Charting the Core Concepts**\n\nI\u0027m now diving into the specifics of the lecture notes. Having established a clear definition of exponential functions, I\u0027m now mapping out the logarithmic functions. The connection as inverses is crucial, and I\u0027ve focused on how the domain and range swap, and how the critical relationships are derived, particularly `y \u003d log_a(x) \u003c\u003d\u003e a^y \u003d x`. Key values like `log_a(1) \u003d 0` and `log_a(a) \u003d 1` are being highlighted as cornerstones. I plan to use these insights as scaffolding.\n\n\n**Summarizing Lecture \u0026 Notes**\n\nI\u0027ve just begun a comprehensive breakdown of the lecture and the accompanying handwritten notes. I\u0027m focusing on the logical progression, starting with exponential and logarithmic functions. Now I\u0027m synthesizing the core properties of logarithms, including the product, quotient, and power rules, drawing a direct parallel with rules of exponents. Then I\u0027m moving on to hyperbolic functions. My goal is to grasp the connections between all of these related ideas.\n\n\n**Structuring the Notes Analysis**\n\nI\u0027m now fully immersed in the lecture material, starting with a review of the exponential and logarithmic functions and their properties. I\u0027m focusing on highlighting the interconnections, like the link between product, quotient, and power rules of logarithms. I\u0027m taking special care to clarify the epsilon-delta definition of a limit, and making sure to understand it\u0027s graphical meaning. The hyperbolic functions, and how they relate, and compare, to the trigonometric functions are the next focus.\n\n\n**Decomposing the Lecture Content**\n\nI\u0027m now fully immersed in the lecture material and notes.  First, I\u0027ve categorized the different types of functions, with a clear focus on the exponential functions, from definition to examples, properties and behavior, and the logarithmic functions, which are their inverses. The properties of limits are now next.\n\n\n**Analyzing Lecture Content and Notes**\n\nI\u0027m now diving into the lecture content, beginning with exponential and logarithmic functions. I\u0027ve covered the definitions, properties, and the crucial inverse relationship, noting the swapping of domain and range.  The fundamental connections, like the key relationships and the epsilon-delta definition of limits, are my focal points.\n\n\n**Reviewing Lecture Structure**\n\nI\u0027m now consolidating the lecture material\u0027s structure, focusing on the progression from exponential and logarithmic functions to limits and continuity. The properties and proofs, including the epsilon-delta definition, are key areas. I plan to use this framework to clarify the proofs of the properties of limits. The squeeze theorem and examples will be analyzed next.\n\n\n**Analyzing the Limit \u0026 Continuity**\n\nI\u0027ve just begun a detailed analysis of limits and continuity, covering the epsilon-delta definition, and one-sided limits, which builds on exponential and logarithmic functions and their properties. The link between the limit and the function value is key. Limit properties are then derived using the epsilon-delta definition and triangle inequality, and there\u0027s a good example demonstrating how the squeeze theorem proves `lim(x-\u003e0) sin(x)/x \u003d 1`.  \n\n\n**Revising Note Organization**\n\nI\u0027ve just begun a comprehensive revision of my initial plan for the Obsidian notes. Building on my initial approach, I will focus on refining the structure and order of topics. I\u0027ll be sure to include all of the major concepts, and I\u0027ll include the new sections I have just outlined. I am also working on LaTeX formatting for the mathematical formulas, and the code for the graphs.\n\n\n**Analyzing the Notes\u0027 Structure**\n\nThe lecture\u0027s topics have been meticulously categorized, starting with exponential and logarithmic functions. Now, I\u0027m focusing on limits and continuity. The properties and proofs, especially the epsilon-delta definition, are key. I\u0027ll use this framework to clarify the proofs of the limit properties, including the squeeze theorem. Hyperbolic functions, and their connections to trigonometric functions are also examined. The initial plan for structuring the notes in Obsidian will also be revised.\n\n\n**Updating the Note Structure**\n\nI\u0027m now revising my notes\u0027 organization plan. I\u0027ll include the \"Conceptual Strengthening Tasks\" section for each major topic to make the notes even more complete. I will ensure all key concepts, definitions, and proofs are clearly presented, as well as the related graphs and any \"Note to Self\" annotations. Also, I\u0027m working to use LaTeX for mathematical formulas.\n\n\n**Implementing the Note Structure**\n\nI\u0027ve initiated the creation of the Obsidian notes, structuring them according to the plan. Currently, I\u0027m focusing on the first sections: Exponential and Logarithmic functions. I\u0027ve added definitions, properties, and the accompanying graphs. I\u0027ve also incorporated initial \"Note to Self\" annotations and am now formulating the LaTeX for formulas. I\u0027ve made the section on the limit and continuity.\n\n\n**Restructuring Lecture Content**\n\nI\u0027m now revising my notes\u0027 organization plan. I\u0027ll include the \"Conceptual Strengthening Tasks\" section for each major topic to make the notes even more complete. I will ensure all key concepts, definitions, and proofs are clearly presented, as well as the related graphs and any \"Note to Self\" annotations. Also, I\u0027m working to use LaTeX for mathematical formulas.\n\n\n",
+      "role": "model",
+      "tokenCount": 4288,
+      "isThought": true,
+      "thinkingBudget": -1,
+      "thoughtSignatures": ["", "", "", "", "", "", "", "", "", "", "", "", ""],
+      "parts": [{
+        "text": "**Formulating the Initial Approach**\n\nI\u0027ve begun dissecting the lecture materials.  First, I\u0027m focusing on the initial segment defining exponential functions, `f(x) \u003d a^x`, as the foundation. This will guide my subsequent analysis of the handwritten notes. I aim to build a cohesive framework for understanding the core concepts.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Charting the Core Concepts**\n\nI\u0027m now diving into the specifics of the lecture notes. Having established a clear definition of exponential functions, I\u0027m now mapping out the logarithmic functions. The connection as inverses is crucial, and I\u0027ve focused on how the domain and range swap, and how the critical relationships are derived, particularly `y \u003d log_a(x) \u003c\u003d\u003e a^y \u003d x`. Key values like `log_a(1) \u003d 0` and `log_a(a) \u003d 1` are being highlighted as cornerstones. I plan to use these insights as scaffolding.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Summarizing Lecture \u0026 Notes**\n\nI\u0027ve just begun a comprehensive breakdown of the lecture and the accompanying handwritten notes. I\u0027m focusing on the logical progression, starting with exponential and logarithmic functions. Now I\u0027m synthesizing the core properties of logarithms, including the product, quotient, and power rules, drawing a direct parallel with rules of exponents. Then I\u0027m moving on to hyperbolic functions. My goal is to grasp the connections between all of these related ideas.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring the Notes Analysis**\n\nI\u0027m now fully immersed in the lecture material, starting with a review of the exponential and logarithmic functions and their properties. I\u0027m focusing on highlighting the interconnections, like the link between product, quotient, and power rules of logarithms. I\u0027m taking special care to clarify the epsilon-delta definition of a limit, and making sure to understand it\u0027s graphical meaning. The hyperbolic functions, and how they relate, and compare, to the trigonometric functions are the next focus.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Decomposing the Lecture Content**\n\nI\u0027m now fully immersed in the lecture material and notes.  First, I\u0027ve categorized the different types of functions, with a clear focus on the exponential functions, from definition to examples, properties and behavior, and the logarithmic functions, which are their inverses. The properties of limits are now next.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Lecture Content and Notes**\n\nI\u0027m now diving into the lecture content, beginning with exponential and logarithmic functions. I\u0027ve covered the definitions, properties, and the crucial inverse relationship, noting the swapping of domain and range.  The fundamental connections, like the key relationships and the epsilon-delta definition of limits, are my focal points.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Reviewing Lecture Structure**\n\nI\u0027m now consolidating the lecture material\u0027s structure, focusing on the progression from exponential and logarithmic functions to limits and continuity. The properties and proofs, including the epsilon-delta definition, are key areas. I plan to use this framework to clarify the proofs of the properties of limits. The squeeze theorem and examples will be analyzed next.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Limit \u0026 Continuity**\n\nI\u0027ve just begun a detailed analysis of limits and continuity, covering the epsilon-delta definition, and one-sided limits, which builds on exponential and logarithmic functions and their properties. The link between the limit and the function value is key. Limit properties are then derived using the epsilon-delta definition and triangle inequality, and there\u0027s a good example demonstrating how the squeeze theorem proves `lim(x-\u003e0) sin(x)/x \u003d 1`.  \n\n\n",
+        "thought": true
+      }, {
+        "text": "**Revising Note Organization**\n\nI\u0027ve just begun a comprehensive revision of my initial plan for the Obsidian notes. Building on my initial approach, I will focus on refining the structure and order of topics. I\u0027ll be sure to include all of the major concepts, and I\u0027ll include the new sections I have just outlined. I am also working on LaTeX formatting for the mathematical formulas, and the code for the graphs.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing the Notes\u0027 Structure**\n\nThe lecture\u0027s topics have been meticulously categorized, starting with exponential and logarithmic functions. Now, I\u0027m focusing on limits and continuity. The properties and proofs, especially the epsilon-delta definition, are key. I\u0027ll use this framework to clarify the proofs of the limit properties, including the squeeze theorem. Hyperbolic functions, and their connections to trigonometric functions are also examined. The initial plan for structuring the notes in Obsidian will also be revised.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Updating the Note Structure**\n\nI\u0027m now revising my notes\u0027 organization plan. I\u0027ll include the \"Conceptual Strengthening Tasks\" section for each major topic to make the notes even more complete. I will ensure all key concepts, definitions, and proofs are clearly presented, as well as the related graphs and any \"Note to Self\" annotations. Also, I\u0027m working to use LaTeX for mathematical formulas.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing the Note Structure**\n\nI\u0027ve initiated the creation of the Obsidian notes, structuring them according to the plan. Currently, I\u0027m focusing on the first sections: Exponential and Logarithmic functions. I\u0027ve added definitions, properties, and the accompanying graphs. I\u0027ve also incorporated initial \"Note to Self\" annotations and am now formulating the LaTeX for formulas. I\u0027ve made the section on the limit and continuity.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Restructuring Lecture Content**\n\nI\u0027m now revising my notes\u0027 organization plan. I\u0027ll include the \"Conceptual Strengthening Tasks\" section for each major topic to make the notes even more complete. I will ensure all key concepts, definitions, and proofs are clearly presented, as well as the related graphs and any \"Note to Self\" annotations. Also, I\u0027m working to use LaTeX for mathematical formulas.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# [[Predavanje 4: Elementarne Funkcije, Limita in Zveznost]]\n\n## [[Eksponentna funkcija]]\nJe funkcija oblike:\n$$ f(x) \u003d a^x $$\nPogoji za osnovo $a$:\n- $a \u003e 0$\n- $a \\neq 1$\n- $x \\in \\mathbb{R}$\n\nDefinicijsko območje je $D_f \u003d \\mathbb{R}$.\n\n### [[Kritična analiza pogojev za osnovo]]\n- **Zakaj $a \u003e 0$?** Če bi bila osnova negativna, npr. $a \u003d -2$, bi za $x \u003d \\frac{1}{2}$ dobili $f(\\frac{1}{2}) \u003d (-2)^{\\frac{1}{2}} \u003d \\sqrt{-2}$, kar v realnih številih ni definirano. Funkcija bi bila definirana samo za določene racionalne eksponente in ne za vsa realna števila, kar bi otežilo analizo.\n- **Zakaj $a \\neq 1$?** Če bi bila osnova enaka 1, bi imeli funkcijo $f(x) \u003d 1^x \u003d 1$. To je konstantna funkcija, ki nima lastnosti, ki jih preučujemo pri eksponentnih funkcijah (npr. nima inverzne funkcije v splošnem smislu, ker ni injektivna).\n\n### [[Grafi in lastnosti eksponentne funkcije]]\nLočimo dva glavna tipa obnašanja funkcije glede na osnovo $a$.\n\n1.  **Primer: $a \u003e 1$ (npr. $a\u003d2$)**\n    - Funkcija je **strogo naraščujoča**.\n    - Ko gre $x \\to \\infty$, gre $f(x) \\to \\infty$.\n    - Ko gre $x \\to -\\infty$, gre $f(x) \\to 0$.\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx \u003d np.linspace(-3, 3, 400)\ny \u003d 2**x\n\nplt.figure(figsize\u003d(6, 4))\nplt.plot(x, y, label\u003dr\u0027$f(x) \u003d 2^x$\u0027)\nplt.axhline(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\nplt.axvline(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\nplt.grid(color \u003d \u0027gray\u0027, linestyle \u003d \u0027--\u0027, linewidth \u003d 0.5)\nplt.title(\u0027Eksponentna funkcija z a \u003e 1\u0027)\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027f(x)\u0027)\nplt.legend()\nplt.ylim(-1, 8)\nplt.xlim(-3, 3)\n# Značilne točke\nplt.plot(0, 1, \u0027ro\u0027) # (0,1)\nplt.plot(1, 2, \u0027ro\u0027) # (1,2)\nplt.text(0.1, 1.2, \u0027(0,1)\u0027)\nplt.text(1.1, 2.2, \u0027(1,2)\u0027)\nplt.show()\n```\n\n2.  **Primer: $0 \u003c a \u003c 1$ (npr. $a \u003d \\frac{1}{2}$)**\n    - Funkcija je **strogo padajoča**.\n    - Ko gre $x \\to \\infty$, gre $f(x) \\to 0$.\n    - Ko gre $x \\to -\\infty$, gre $f(x) \\to \\infty$.\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx \u003d np.linspace(-3, 3, 400)\ny \u003d (1/2)**x\n\nplt.figure(figsize\u003d(6, 4))\nplt.plot(x, y, label\u003dr\u0027$f(x) \u003d (\\frac{1}{2})^x$\u0027, color\u003d\u0027orange\u0027)\nplt.axhline(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\nplt.axvline(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\nplt.grid(color \u003d \u0027gray\u0027, linestyle \u003d \u0027--\u0027, linewidth \u003d 0.5)\nplt.title(\u0027Eksponentna funkcija z 0 \u003c a \u003c 1\u0027)\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027f(x)\u0027)\nplt.legend()\nplt.ylim(-1, 8)\nplt.xlim(-3, 3)\n# Značilne točke\nplt.plot(0, 1, \u0027ro\u0027) # (0,1)\nplt.plot(-1, 2, \u0027ro\u0027) # (-1,2)\nplt.text(0.1, 1.2, \u0027(0,1)\u0027)\nplt.text(-0.9, 2.2, \u0027(-1,2)\u0027)\nplt.show()\n```\n\n### [[Zaloga Vrednosti]]\nZaloga vrednosti za obe vrsti eksponentnih funkcij je enaka:\n$$ Z_f \u003d \\mathbb{R}^+ \u003d (0, \\infty) $$\nEksponentna funkcija nikoli ne doseže vrednosti 0 in je vedno pozitivna.\n\n---\n\n## [[Logaritemska funkcija]]\nLogaritemska funkcija je **inverzna funkcija** eksponentni funkciji.\n- Ker je eksponentna funkcija $f(x) \u003d a^x: \\mathbb{R} \\to \\mathbb{R}^+$ bijekcija, njen inverz obstaja.\n- Inverzno funkcijo označimo z $f^{-1}(x) \u003d \\log_a x$.\n- Definicijsko območje in zaloga vrednosti se zamenjata: $\\log_a x: \\mathbb{R}^+ \\to \\mathbb{R}$.\n\n### [[Temeljna zveza]]\nNajpomembnejša relacija, ki povezuje logaritem in eksponentno funkcijo, je:\n$$ y \u003d \\log_a x \\iff a^y \u003d x $$\n\u003e **Note to Self:** To je definicija, ki jo uporabljamo za reševanje logaritemskih enačb in dokazovanje lastnosti. Pove nam, da je $\\log_a x$ eksponent, s katerim moramo potencirati osnovo $a$, da dobimo $x$.\n\n### [[Lastnosti inverzne kompozicije]]\n1.  $(f^{-1} \\circ f)(x) \u003d f^{-1}(f(x)) \u003d \\log_a(a^x) \u003d x, \\quad \\forall x \\in \\mathbb{R}$\n2.  $(f \\circ f^{-1})(x) \u003d f(f^{-1}(x)) \u003d a^{\\log_a x} \u003d x, \\quad \\forall x \\in \\mathbb{R}^+$\n\n### [[Pomembne vrednosti]]\n- Kdaj je $\\log_a x \u003d 0$? $\\implies a^0 \u003d x \\implies x\u003d1$. Torej, $\\log_a 1 \u003d 0$.\n- Kdaj je $\\log_a x \u003d 1$? $\\implies a^1 \u003d x \\implies x\u003da$. Torej, $\\log_a a \u003d 1$.\n\n### [[Grafi logaritemske funkcije]]\nGraf logaritemske funkcije je zrcalna slika grafa eksponentne funkcije preko simetrale $y\u003dx$.\n\n1.  **Primer: $a \u003e 1$ (npr. $a\u003d2$)**\n    - Funkcija je **strogo naraščujoča**.\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx_exp \u003d np.linspace(-2, 3, 400)\ny_exp \u003d 2**x_exp\n\nx_log \u003d np.linspace(0.01, 8, 400)\ny_log \u003d np.log2(x_log)\n\nplt.figure(figsize\u003d(6, 5))\nplt.plot(x_exp, y_exp, label\u003dr\u0027$f(x) \u003d 2^x$\u0027, color\u003d\u0027blue\u0027, linestyle\u003d\u0027--\u0027)\nplt.plot(x_log, y_log, label\u003dr\u0027$f(x) \u003d \\log_2 x$\u0027, color\u003d\u0027red\u0027)\nplt.plot([-2, 8], [-2, 8], \u0027k--\u0027, label\u003d\u0027y\u003dx\u0027, linewidth\u003d0.7)\nplt.axhline(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\nplt.axvline(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\nplt.grid(color \u003d \u0027gray\u0027, linestyle \u003d \u0027--\u0027, linewidth \u003d 0.5)\nplt.title(r\u0027Logaritemska funkcija z a \u003e 1 ($\\log_2 x$)\u0027)\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027f(x)\u0027)\nplt.legend()\nplt.xlim(-2, 8)\nplt.ylim(-2, 8)\nplt.gca().set_aspect(\u0027equal\u0027, adjustable\u003d\u0027box\u0027)\nplt.show()\n```\n\n2.  **Primer: $0 \u003c a \u003c 1$**\n    - Funkcija je **strogo padajoča**.\n\n---\n\n## [[Lastnosti logaritmov]]\nZa $x, y \u003e 0$:\n1.  **[[Logaritem produkta]]**: $\\log_a(xy) \u003d \\log_a(x) + \\log_a(y)$\n    - **Dokaz:** Uporabimo lastnost eksponentne funkcije $a^{m+n} \u003d a^m \\cdot a^n$.\n    $$ a^{\\log_a(x) + \\log_a(y)} \u003d a^{\\log_a(x)} \\cdot a^{\\log_a(y)} \u003d x \\cdot y \u003d a^{\\log_a(xy)} $$\n    Ker so eksponenti enaki, velja enakost.\n\n2.  **[[Logaritem kvocienta]]**: $\\log_a\\left(\\frac{x}{y}\\right) \u003d \\log_a(x) - \\log_a(y)$\n    - **Dokaz:** Uporabimo $a^{m-n} \u003d \\frac{a^m}{a^n}$.\n    $$ a^{\\log_a(x) - \\log_a(y)} \u003d \\frac{a^{\\log_a(x)}}{a^{\\log_a(y)}} \u003d \\frac{x}{y} \u003d a^{\\log_a(x/y)} $$\n\n3.  **[[Logaritem potence]]**: $\\log_a(x^y) \u003d y \\cdot \\log_a(x)$\n    - **Dokaz:** Uporabimo $(a^m)^n \u003d a^{m \\cdot n}$.\n    $$ a^{y \\cdot \\log_a(x)} \u003d \\left(a^{\\log_a(x)}\\right)^y \u003d x^y \u003d a^{\\log_a(x^y)} $$\n\n### [[Naravni logaritem]]\nPoseben primer logaritma je, ko je osnova $a\u003de \\approx 2.718...$. To je naravni logaritem.\n$$ \\log_e x \u003d \\ln x $$\n\n---\n\n## [[Hiperbolične funkcije]]\nDefinirane so s pomočjo eksponentne funkcije z osnovo $e$.\n- **[[Sinus hiperbolikus]]**:\n$$ \\sinh x \u003d \\frac{e^x - e^{-x}}{2}, \\quad D_f \u003d \\mathbb{R} $$\n- **[[Kosinus hiperbolikus]]**:\n$$ \\cosh x \u003d \\frac{e^x + e^{-x}}{2}, \\quad D_f \u003d \\mathbb{R}, \\quad Z_f \u003d [1, \\infty) $$\n\n### [[Osnovna zveza med hiperboličnimi funkcijami]]\n$$ \\cosh^2 x - \\sinh^2 x \u003d 1 $$\n\u003e **Note to Self:** Ta identiteta je analogna trigonometrični identiteti $\\cos^2 x + \\sin^2 x \u003d 1$. Medtem ko trigonometrične funkcije parametrizirajo enotsko krožnico ($x^2+y^2\u003d1$), hiperbolične funkcije parametrizirajo enotsko hiperbolo ($x^2-y^2\u003d1$).\n\n---\n\n## [[Limita in zveznost funkcije]]\n\n### [[Uvod v Limito]]\nLimita opisuje obnašanje funkcije, ko se njen argument približuje določeni točki, ne da bi jo nujno dosegel.\n\n- **Primer:** $f(x) \u003d \\frac{x^2-4}{x-2}$\n  - Definicijsko območje: $D_f \u003d \\mathbb{R} \\setminus \\{2\\}$. V točki $x\u003d2$ funkcija ni definirana.\n  - Za $x \\neq 2$ lahko izraz poenostavimo: $f(x) \u003d \\frac{(x-2)(x+2)}{x-2} \u003d x+2$.\n  - Ko se $x$ približuje 2 (iz leve ali desne), se vrednost $f(x)$ približuje $2+2\u003d4$.\n  - Zapišemo: $\\lim_{x \\to 2} f(x) \u003d 4$.\n\n### [[Formalna Definicija Limite (ε-δ)]]\nŠtevilo $L$ je limita funkcije $f(x)$, ko gre $x$ proti $a$, če velja:\n$$ \\forall \\varepsilon \u003e 0, \\quad \\exists \\delta \u003e 0, \\quad \\text{tako da za vsak } x \\in D_f \\text{ velja:} $$\n$$ 0 \u003c |x-a| \u003c \\delta \\implies |f(x) - L| \u003c \\varepsilon $$\n\n\u003e **Razlaga:** Ne glede na to, kako majhen pas okoli limite $L$ (širine $2\\varepsilon$) izberemo, vedno lahko najdemo dovolj majhno okolico okoli točke $a$ (širine $2\\delta$), da bodo vse funkcijske vrednosti (za $x$ iz te okolice, razen morda v $a$) padle v izbrani pas.\n\n### [[Enostranske Limite]]\n- **[[Leva limita]]**: $L^{-} \u003d \\lim_{x \\to a^{-}} f(x)$\n  - Proučujemo vrednosti $f(x)$, ko se $x$ približuje $a$ z leve strani ($x \u003c a$).\n  - Formalno: $\\forall \\varepsilon \u003e 0, \\exists \\delta \u003e 0$ t.d. $x \\in (a-\\delta, a) \\implies |f(x) - L^{-}| \u003c \\varepsilon$.\n\n- **[[Desna limita]]**: $L^{+} \u003d \\lim_{x \\to a^{+}} f(x)$\n  - Proučujemo vrednosti $f(x)$, ko se $x$ približuje $a$ z desne strani ($x \u003e a$).\n  - Formalno: $\\forall \\varepsilon \u003e 0, \\exists \\delta \u003e 0$ t.d. $x \\in (a, a+\\delta) \\implies |f(x) - L^{+}| \u003c \\varepsilon$.\n\n\u003e **Pogoj za obstoj limite**: Limita funkcije $f(x)$ v točki $a$ obstaja natanko takrat, ko sta leva in desna limita enaki: $L \u003d L^{-} \u003d L^{+}$.\n\n### [[Lastnosti Limit]]\nČe velja $\\lim_{x \\to a} f(x) \u003d A$ in $\\lim_{x \\to a} g(x) \u003d B$:\n1.  **[[Limita vsote/razlike]]**: $\\lim_{x \\to a} (f(x) \\pm g(x)) \u003d A \\pm B$\n2.  **[[Limita produkta konstante]]**: $\\lim_{x \\to a} (c \\cdot f(x)) \u003d c \\cdot A$\n3.  **[[Limita produkta]]**: $\\lim_{x \\to a} (f(x) \\cdot g(x)) \u003d A \\cdot B$\n4.  **[[Limita kvocienta]]**: $\\lim_{x \\to a} \\frac{f(x)}{g(x)} \u003d \\frac{A}{B}$, če $B \\neq 0$.\n\n### [[Zveznost Funkcije]]\nIntuitivno je funkcija zvezna, če lahko njen graf narišemo brez dvigovanja svinčnika.\n\n- **[[Formalna Definicija zveznosti]]**: Funkcija $f$ je zvezna v točki $a \\in D_f$, če velja:\n$$ \\forall \\varepsilon \u003e 0, \\quad \\exists \\delta \u003e 0, \\quad \\text{tako da za vsak } x \\in D_f \\text{ velja:} $$\n$$ |x-a| \u003c \\delta \\implies |f(x) - f(a)| \u003c \\varepsilon $$\n- **[[Praktična definicija zveznosti]]**: Funkcija $f$ je zvezna v točki $a$ natanko takrat, ko so izpolnjeni trije pogoji:\n    1.  $f(a)$ obstaja (funkcija je definirana v točki $a$).\n    2.  $\\lim_{x \\to a} f(x)$ obstaja.\n    3.  $\\lim_{x \\to a} f(x) \u003d f(a)$.\n\n### [[Limita Kompozituma]]\nČe je funkcija $f$ zvezna v točki $b$ in je $\\lim_{x \\to a} g(x) \u003d b$, potem velja:\n$$ \\lim_{x \\to a} f(g(x)) \u003d f\\left(\\lim_{x \\to a} g(x)\\right) \u003d f(b) $$\n\u003e **Note to Self:** To pomeni, da lahko pri zveznih zunanjih funkcijah \"potisnemo limito noter\".\n\u003e **Primer:**\n\u003e $$ \\lim_{x \\to 2} \\sqrt{\\frac{x^2-4}{x-2}} \u003d \\sqrt{\\lim_{x \\to 2} \\frac{x^2-4}{x-2}} \u003d \\sqrt{4} \u003d 2 $$\n\u003e To lahko storimo, ker je funkcija $f(u) \u003d \\sqrt{u}$ zvezna v točki $u\u003d4$.\n\n---\n\n## [[Pomembne limite]]\n\n1.  ### $$\\lim_{x \\to 0} \\frac{\\sin x}{x} \u003d 1$$\n    - **Dokaz (Geometrijski z izrekom o sendviču):**\n      - Primerjamo ploščine treh likov na enotski krožnici za majhen pozitiven kot $x$:\n      - Ploščina $\\triangle OAE \u003c$ Ploščina krožnega izseka $OAE \u003c$ Ploščina $\\triangle OAT\u0027$\n      - $\\frac{1}{2} \\cdot \\cos x \\cdot \\sin x \u003c \\frac{1}{2} \\cdot 1^2 \\cdot x \u003c \\frac{1}{2} \\cdot 1 \\cdot \\tan x$\n      - $\\cos x \\sin x \u003c x \u003c \\frac{\\sin x}{\\cos x}$\n      - Delimo s $\\sin x$ (za $x \\in (0, \\pi/2)$ je $\\sin x \u003e 0$):\n      - $\\cos x \u003c \\frac{x}{\\sin x} \u003c \\frac{1}{\\cos x}$\n      - Obrnemo ulomke in neenačaj:\n      - $\\frac{1}{\\cos x} \u003e \\frac{\\sin x}{x} \u003e \\cos x$\n      - Ker $\\lim_{x \\to 0} \\cos x \u003d 1$ in $\\lim_{x \\to 0} \\frac{1}{\\cos x} \u003d 1$, po izreku o sendviču sledi, da je tudi limita vmesnega izraza enaka 1.\n\n2.  ### $$\\lim_{x \\to \\infty} \\left(1 + \\frac{1}{x}\\right)^x \u003d e$$\n\n3.  ### $$\\lim_{x \\to 0} (1+x)^{\\frac{1}{x}} \u003d e$$\n    - **Izpeljava:** Uvedemo novo spremenljivko $u \u003d \\frac{1}{x}$. Ko gre $x \\to 0$, gre $u \\to \\infty$. Limita postane $\\lim_{u \\to \\infty} (1 + \\frac{1}{u})^u \u003d e$.\n\n4.  ### $$\\lim_{x \\to 0} \\frac{\\log_a(1+x)}{x} \u003d \\frac{1}{\\ln a}$$\n    - **Izpeljava:**\n      $$ \\lim_{x \\to 0} \\frac{1}{x} \\log_a(1+x) \u003d \\lim_{x \\to 0} \\log_a\\left((1+x)^{\\frac{1}{x}}\\right) $$\n      Ker je logaritem zvezna funkcija, lahko zamenjamo limito in logaritem:\n      $$ \\log_a\\left(\\lim_{x \\to 0} (1+x)^{\\frac{1}{x}}\\right) \u003d \\log_a(e) \u003d \\frac{\\ln e}{\\ln a} \u003d \\frac{1}{\\ln a} $$\n\n5.  ### $$\\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} \u003d 1$$\n    - Poseben primer prejšnje limite za $a\u003de$.\n\n6.  ### $$\\lim_{x \\to 0} \\frac{a^x - 1}{x} \u003d \\ln a$$\n    - **Izpeljava:** Uvedemo novo spremenljivko $u \u003d a^x - 1 \\implies a^x \u003d u+1 \\implies x \u003d \\log_a(u+1)$.\n    - Ko gre $x \\to 0$, velja $a^0 - 1 \u003d 0$, torej $u \\to 0$.\n    $$ \\lim_{u \\to 0} \\frac{u}{\\log_a(u+1)} \u003d \\lim_{u \\to 0} \\frac{1}{\\frac{\\log_a(1+u)}{u}} \u003d \\frac{1}{\\frac{1}{\\ln a}} \u003d \\ln a $$\n\n7.  ### $$\\lim_{x \\to 0} \\frac{e^x - 1}{x} \u003d 1$$\n    - Poseben primer prejšnje limite za $a\u003de$.\n\n---\n\n## [[Conceptual Strengthening Tasks]]\n1.  **Naloga (Lastnosti limit):** Izračunajte limito funkcije $f(x) \u003d \\frac{2x^2 - 2}{x-1} \\cdot \\cos(\\pi x)$, ko gre $x \\to 1$. Utemeljite vsak korak z uporabo lastnosti limit.\n2.  **Naloga (Zveznost):** Dana je funkcija $f(x) \u003d \\begin{cases} \\frac{\\sin(3x)}{x} \u0026 x \\neq 0 \\\\ k \u0026 x\u003d0 \\end{cases}$. Določite vrednost konstante $k$ tako, da bo funkcija $f(x)$ zvezna v točki $x\u003d0$.\n3.  **Izziv (Povezovanje znanja):** S pomočjo limite $\\lim_{t \\to 0} \\frac{e^t-1}{t}\u003d1$ in z ustrezno zamenjavo spremenljivk, izpeljite formulo za limito $\\lim_{x \\to 1} \\frac{\\ln x}{x-1}$.\n    - *Namig:* Spomnite se, kako sta logaritemska in eksponentna funkcija povezani (osnovna šola/gimnazija). Definirajte $t \u003d \\ln x$. Kaj se zgodi z $t$, ko gre $x \\to 1$? Kako lahko izrazite $x-1$ s pomočjo $t$?x-1$ s pomočjo $t$?",
+      "role": "model",
+      "finishReason": "STOP",
+      "parts": [{
+        "text": "# [[Predavanje 4: Elementarne Funkcije, Limita in Zveznost]]\n\n## [[Eksponentna funkcija]]\nJe funkcija oblike:\n$$ f(x) \u003d a^x $$\nPogoji za"
+      }, {
+        "text": " osnovo $a$:\n- $a \u003e 0$\n- $a \\neq 1$\n- $x \\"
+      }, {
+        "text": "in \\mathbb{R}$\n\nDefinicijsko območje je $D_f \u003d \\mathbb{R}$."
+      }, {
+        "text": "\n\n### [[Kritična analiza pogojev za osnovo]]\n- **Zakaj $a \u003e 0"
+      }, {
+        "text": "$?** Če bi bila osnova negativna, npr. $a \u003d -2$, bi za $x \u003d \\"
+      }, {
+        "text": "frac{1}{2}$ dobili $f(\\frac{1}{2}) \u003d (-2)^{\\frac{1}{"
+      }, {
+        "text": "2}} \u003d \\sqrt{-2}$, kar v realnih številih ni definirano. Funkcija bi bila definirana samo"
+      }, {
+        "text": " za določene racionalne eksponente in ne za vsa realna števila, kar bi otežilo anal"
+      }, {
+        "text": "izo.\n- **Zakaj $a \\neq 1$?** Če bi bila osnova enaka 1, bi"
+      }, {
+        "text": " imeli funkcijo $f(x) \u003d 1^x \u003d 1$. To je konstantna funkcija"
+      }, {
+        "text": ", ki nima lastnosti, ki jih preučujemo pri eksponentnih funkcijah (npr. nima inverzne"
+      }, {
+        "text": " funkcije v splošnem smislu, ker ni injektivna).\n\n### [[Grafi in lastnosti eksponentne funkcije]]\nLočimo dva glavna tipa obnašanja funkcije glede na osnovo $a$."
+      }, {
+        "text": "\n\n1.  **Primer: $a \u003e 1$ (npr. $a\u003d2$)**\n    -"
+      }, {
+        "text": " Funkcija je **strogo naraščujoča**.\n    - Ko gre $x \\to \\infty$, gre"
+      }, {
+        "text": " $f(x) \\to \\infty$.\n    - Ko gre $x \\to -\\infty$, gre $f(x"
+      }, {
+        "text": ") \\to 0$.\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx \u003d np.linspace"
+      }, {
+        "text": "(-3, 3, 400)\ny \u003d 2**x\n\nplt.figure(figsize\u003d(6"
+      }, {
+        "text": ", 4))\nplt.plot(x, y, label\u003dr\u0027$f(x) \u003d 2^x"
+      }, {
+        "text": "$\u0027)\nplt.axhline(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\nplt.axvline"
+      }, {
+        "text": "(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\nplt.grid(color \u003d \u0027gray\u0027, linestyle"
+      }, {
+        "text": " \u003d \u0027--\u0027, linewidth \u003d 0.5)\nplt.title(\u0027Eksponentna funkcija z a \u003e 1\u0027)"
+      }, {
+        "text": "\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027f(x)\u0027)\nplt.legend()\nplt.ylim"
+      }, {
+        "text": "(-1, 8)\nplt.xlim(-3, 3)\n# Značilne točke\nplt"
+      }, {
+        "text": ".plot(0, 1, \u0027ro\u0027) # (0,1)\nplt.plot(1, "
+      }, {
+        "text": "2, \u0027ro\u0027) # (1,2)\nplt.text(0.1, 1.2, \u0027("
+      }, {
+        "text": "0,1)\u0027)\nplt.text(1.1, 2.2, \u0027(1,2)\u0027)\nplt.show"
+      }, {
+        "text": "()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n2.  **Primer: $0 \u003c a \u003c 1$ (npr. $a"
+      }, {
+        "text": " \u003d \\frac{1}{2}$)**\n    - Funkcija je **strogo padajoča**.\n    "
+      }, {
+        "text": "- Ko gre $x \\to \\infty$, gre $f(x) \\to 0$.\n    -"
+      }, {
+        "text": " Ko gre $x \\to -\\infty$, gre $f(x) \\to \\infty$.\n"
+      }, {
+        "text": "```python\nimport matplotlib"
+      }, {
+        "text": ".pyplot as plt\nimport numpy as np\n\nx \u003d np.linspace(-3, 3, 40"
+      }, {
+        "text": "0)\ny \u003d (1/2)**x\n\nplt.figure(figsize\u003d(6, 4))\n"
+      }, {
+        "text": "plt.plot(x, y, label\u003dr\u0027$f(x) \u003d (\\frac{1}{2})^"
+      }, {
+        "text": "x$\u0027, color\u003d\u0027orange\u0027)\nplt.axhline(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\n"
+      }, {
+        "text": "plt.axvline(0, color\u003d\u0027black\u0027, linewidth\u003d0.5)\nplt.grid(color \u003d"
+      }, {
+        "text": " \u0027gray\u0027, linestyle \u003d \u0027--\u0027, linewidth \u003d 0.5)\nplt.title(\u0027Eksponentna funk"
+      }, {
+        "text": "cija z 0 \u003c a \u003c 1\u0027)\nplt.xlabel(\u0027x\u0027)\nplt.ylabel(\u0027f(x)\u0027)\n"
+      }, {
+        "text": "plt.legend()\nplt.ylim(-1, 8)\nplt.xlim(-3, 3)"
+      }, {
+        "text": "\n# Značilne točke\nplt.plot(0, 1, \u0027ro\u0027) # (0"
+      }, {
+        "text": ",1)\nplt.plot(-1, 2, \u0027ro\u0027) # (-1,2)\nplt"
+      }, {
+        "text": ".text(0.1, 1.2, \u0027(0,1)\u0027)\nplt.text(-0.9, "
+      }, {
+        "text": "2.2, \u0027(-1,2)\u0027)\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n### [[Zaloga Vrednosti]]\nZaloga vrednosti za obe vrsti eksponentnih funkcij je enaka:\n$$"
+      }, {
+        "text": " Z_f \u003d \\mathbb{R}^+ \u003d (0, \\infty) $$\nEksponentna funk"
+      }, {
+        "text": "cija nikoli ne doseže vrednosti 0 in je vedno pozitivna.\n\n---\n\n## [[Logaritemska funkcija]]\nLogaritemska funkcija je **inverzna funkcija** eksponentni funkciji.\n- Ker"
+      }, {
+        "text": " je eksponentna funkcija $f(x) \u003d a^x: \\mathbb{R} \\to \\"
+      }, {
+        "text": "mathbb{R}^+$ bijekcija, njen inverz obstaja.\n- Inverzno funkcijo označimo"
+      }, {
+        "text": " z $f^{-1}(x) \u003d \\log_a x$.\n- Definicijsko območje in"
+      }, {
+        "text": " zaloga vrednosti se zamenjata: $\\log_a x: \\mathbb{R}^+ \\to \\mathbb{"
+      }, {
+        "text": "R}$.\n\n### [[Temeljna zveza]]\nNajpomembnejša relacija, ki povezuje log"
+      }, {
+        "text": "aritem in eksponentno funkcijo, je:\n$$ y \u003d \\log_a x \\iff a^y"
+      }, {
+        "text": " \u003d x $$\n\u003e **Note to Self:** To je definicija, ki jo uporabljamo za reševanje log"
+      }, {
+        "text": "aritemskih enačb in dokazovanje lastnosti. Pove nam, da je $\\log_a x$ eks"
+      }, {
+        "text": "ponent, s katerim moramo potencirati osnovo $a$, da dobimo $x$.\n\n### [[Lastnosti inverzne kompozicije]]\n1.  $(f^{-1} \\circ f)(x) \u003d f"
+      }, {
+        "text": "^{-1}(f(x)) \u003d \\log_a(a^x) \u003d x, \\quad \\forall"
+      }, {
+        "text": " x \\in \\mathbb{R}$\n2.  $(f \\circ f^{-1})(x) \u003d f"
+      }, {
+        "text": "(f^{-1}(x)) \u003d a^{\\log_a x} \u003d x, \\quad \\forall x \\"
+      }, {
+        "text": "in \\mathbb{R}^+$\n\n### [[Pomembne vrednosti]]\n- Kdaj je $\\log_a"
+      }, {
+        "text": " x \u003d 0$? $\\implies a^0 \u003d x \\implies x\u003d1$. Torej, $\\log_a "
+      }, {
+        "text": "1 \u003d 0$.\n- Kdaj je $\\log_a x \u003d 1$? $\\implies a^1"
+      }, {
+        "text": " \u003d x \\implies x\u003da$. Torej, $\\log_a a \u003d 1$.\n\n### [[Grafi logaritemske funkcije]]\nGraf logaritemske funkcije je zrcalna slika gra"
+      }, {
+        "text": "fa eksponentne funkcije preko simetrale $y\u003dx$.\n\n1.  **Primer: $a \u003e"
+      }, {
+        "text": " 1$ (npr. $a\u003d2$)**\n    - Funkcija je **strogo narašč"
+      }, {
+        "text": "ujoča**.\n"
+      }, {
+        "text": "```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx_exp \u003d np."
+      }, {
+        "text": "linspace(-2, 3, 400)\ny_exp \u003d 2**x_exp\n\n"
+      }, {
+        "text": "x_log \u003d np.linspace(0.01, 8, 400)\ny_log \u003d np"
+      }, {
+        "text": ".log2(x_log)\n\nplt.figure(figsize\u003d(6, 5))\nplt.plot(x_"
+      }, {
+        "text": "exp, y_exp, label\u003dr\u0027$f(x) \u003d 2^x$\u0027, color\u003d\u0027blue\u0027, linestyle\u003d\u0027--"
+      }, {
+        "text": "\u0027)\nplt.plot(x_log, y_log, label\u003dr\u0027$f(x) \u003d \\"
+      }, {
+        "text": "log_2 x$\u0027, color\u003d\u0027red\u0027)\nplt.plot([-2, 8], [-2, 8], \u0027"
+      }, {
+        "text": "k--\u0027, label\u003d\u0027y\u003dx\u0027, linewidth\u003d0.7)\nplt.axhline(0, color\u003d\u0027"
+      }, {
+        "text": "black\u0027, linewidth\u003d0.5)\nplt.axvline(0, color\u003d\u0027black\u0027, linewidth\u003d0."
+      }, {
+        "text": "5)\nplt.grid(color \u003d \u0027gray\u0027, linestyle \u003d \u0027--\u0027, linewidth \u003d 0.5)\n"
+      }, {
+        "text": "plt.title(r\u0027Logaritemska funkcija z a \u003e 1 ($\\log_2 x$)\u0027)\nplt"
+      }, {
+        "text": ".xlabel(\u0027x\u0027)\nplt.ylabel(\u0027f(x)\u0027)\nplt.legend()\nplt.xlim(-2, "
+      }, {
+        "text": "8)\nplt.ylim(-2, 8)\nplt.gca().set_aspect(\u0027equal\u0027, adjustable"
+      }, {
+        "text": "\u003d\u0027box\u0027)\nplt.show()\n"
+      }, {
+        "text": "```"
+      }, {
+        "text": "\n\n2.  **Primer: $0 \u003c a \u003c 1"
+      }, {
+        "text": "$**\n    - Funkcija je **strogo padajoča**.\n\n---\n\n## [[Lastnosti logaritmov]]\nZa $x, y \u003e 0$:\n1.  **[[Logaritem produkta]]**: $\\"
+      }, {
+        "text": "log_a(xy) \u003d \\log_a(x) + \\log_a(y)$\n    "
+      }, {
+        "text": "- **Dokaz:** Uporabimo lastnost eksponentne funkcije $a^{m+n} \u003d a^m"
+      }, {
+        "text": " \\cdot a^n$.\n    $$ a^{\\log_a(x) + \\log_a(y)} \u003d a"
+      }, {
+        "text": "^{\\log_a(x)} \\cdot a^{\\log_a(y)} \u003d x \\cdot y \u003d a^{\\log_"
+      }, {
+        "text": "a(xy)} $$\n    Ker so eksponenti enaki, velja enakost.\n\n2.  **[[Logaritem kvocienta]]**: $\\log_a\\left(\\frac{x}{y}\\right) \u003d \\"
+      }, {
+        "text": "log_a(x) - \\log_a(y)$\n    - **Dokaz:** Uporab"
+      }, {
+        "text": "imo $a^{m-n} \u003d \\frac{a^m}{a^n}$.\n    $$ a^{\\log"
+      }, {
+        "text": "_a(x) - \\log_a(y)} \u003d \\frac{a^{\\log_a(x)}}{a^{\\"
+      }, {
+        "text": "log_a(y)}} \u003d \\frac{x}{y} \u003d a^{\\log_a(x/y)}"
+      }, {
+        "text": " $$\n\n3.  **[[Logaritem potence]]**: $\\log_a(x^y) \u003d y \\cdot"
+      }, {
+        "text": " \\log_a(x)$\n    - **Dokaz:** Uporabimo $(a^m)^n \u003d a^{"
+      }, {
+        "text": "m \\cdot n}$.\n    $$ a^{y \\cdot \\log_a(x)} \u003d \\left(a^{\\"
+      }, {
+        "text": "log_a(x)}\\right)^y \u003d x^y \u003d a^{\\log_a(x^y)}"
+      }, {
+        "text": " $$\n\n### [[Naravni logaritem]]\nPoseben primer logaritma je, ko je osnova $a"
+      }, {
+        "text": "\u003de \\approx 2.718...$. To je naravni logaritem.\n$$ \\log_e x"
+      }, {
+        "text": " \u003d \\ln x $$\n\n---\n\n## [[Hiperbolične funkcije]]\nDefinirane so s"
+      }, {
+        "text": " pomočjo eksponentne funkcije z osnovo $e$.\n- **[[Sinus hiperbolikus]]**:\n$$"
+      }, {
+        "text": " \\sinh x \u003d \\frac{e^x - e^{-x}}{2}, \\quad D_f \u003d \\mathbb"
+      }, {
+        "text": "{R} $$\n- **[[Kosinus hiperbolikus]]**:\n$$ \\cosh x \u003d \\frac{e"
+      }, {
+        "text": "^x + e^{-x}}{2}, \\quad D_f \u003d \\mathbb{R}, \\quad Z_f"
+      }, {
+        "text": " \u003d [1, \\infty) $$\n\n### [[Osnovna zveza med hiperboličnimi funkcijami]]\n$$ \\cosh^2 x - \\sinh^2 x \u003d 1 $$\n\u003e **Note to Self:** Ta identiteta je analogna trigonometrični identiteti $\\cos^2 x + \\sin^2 x \u003d 1$. Medtem ko trigonometrične funkcije parametrizirajo enotsko krožnico ($x^2+y^2\u003d1$), hiperbolične funkcije parametrizirajo enotsko hiperbolo ($x^2-y^2\u003d1$).\n\n---\n\n## [[Limita in zveznost funkcije]]\n\n### [[Uvod v Limito]]\nLimita opisuje obnašanje funkcije, ko se njen argument približuje določeni točki, ne da bi jo nujno dosegel.\n\n- **Primer:** $f(x) \u003d \\frac{x^2-4}{x-2}$\n  - Definicijsko območje: $D_f \u003d \\mathbb{R} \\setminus \\{2\\}$. V točki $x\u003d2$ funkcija ni definirana.\n  - Za $x \\neq 2$ lahko izraz poenostavimo: $f(x) \u003d \\frac{(x-2)(x+2)}{x-2} \u003d x+2$.\n  - Ko se $x$ približuje 2 (iz leve ali desne), se vrednost $f(x)$ približuje $2+2\u003d4$.\n  - Zapišemo: $\\lim_{x \\to 2} f(x) \u003d 4$.\n\n### [[Formalna Definicija Limite (ε-δ)]]\nŠtevilo $L$ je limita funkcije $f(x)$, ko gre $x$ proti $a$, če velja:\n$$ \\forall \\varepsilon \u003e 0, \\quad \\exists \\delta \u003e 0, \\quad \\text{tako da za vsak } x \\in D_f \\text{ velja:} $$\n$$ 0 \u003c |x-a| \u003c \\delta \\implies |f(x) - L| \u003c \\varepsilon $$\n\n\u003e **Razlaga:** Ne glede na to, kako majhen pas okoli limite $L$ (širine $2\\varepsilon$) izberemo, vedno lahko najdemo dovolj majhno okolico okoli točke $a$ (širine $2\\delta$), da bodo vse funkcijske vrednosti (za $x$ iz te okolice, razen morda v $a$) padle v izbrani pas.\n\n### [[Enostranske Limite]]\n- **[[Leva limita]]**: $L^{-} \u003d \\lim_{x \\to a^{-}} f(x)$\n  - Proučujemo vrednosti $f(x)$, ko se $x$ približuje $a$ z leve strani ($x \u003c a$).\n  - Formalno: $\\forall \\varepsilon \u003e 0, \\exists \\delta \u003e 0$ t.d. $x \\in (a-\\delta, a) \\implies |f(x) - L^{-}| \u003c \\varepsilon$.\n\n- **[[Desna limita]]**: $L^{+} \u003d \\lim_{x \\to a^{+}} f(x)$\n  - Proučujemo vrednosti $f(x)$, ko se $x$ približuje $a$ z desne strani ($x \u003e a$).\n  - Formalno: $\\forall \\varepsilon \u003e 0, \\exists \\delta \u003e 0$ t.d. $x \\in (a, a+\\delta) \\implies |f(x) - L^{+}| \u003c \\varepsilon$.\n\n\u003e **Pogoj za obstoj limite**: Limita funkcije $f(x)$ v točki $a$ obstaja natanko takrat, ko sta leva in desna limita enaki: $L \u003d L^{-} \u003d L^{+}$.\n\n### [[Lastnosti Limit]]\nČe velja $\\lim_{x \\to a} f(x) \u003d A$ in $\\lim_{x \\to a} g(x) \u003d B$:\n1.  **[[Limita vsote/razlike]]**: $\\lim_{x \\to a} (f(x) \\pm g(x)) \u003d A \\pm B$\n2.  **[[Limita produkta konstante]]**: $\\lim_{x \\to a} (c \\cdot f(x)) \u003d c \\cdot A$\n3.  **[[Limita produkta]]**: $\\lim_{x \\to a} (f(x) \\cdot g(x)) \u003d A \\cdot B$\n4.  **[[Limita kvocienta]]**: $\\lim_{x \\to a} \\frac{f(x)}{g(x)} \u003d \\frac{A}{B}$, če $B \\neq 0$.\n\n### [[Zveznost Funkcije]]\nIntuitivno je funkcija zvezna, če lahko njen graf narišemo brez dvigovanja svinčnika.\n\n- **[[Formalna Definicija zveznosti]]**: Funkcija $f$ je zvezna v točki $a \\in D_f$, če velja:\n$$ \\forall \\varepsilon \u003e 0, \\quad \\exists \\delta \u003e 0, \\quad \\text{tako da za vsak } x \\in D_f \\text{ velja:} $$\n$$ |x-a| \u003c \\delta \\implies |f(x) - f(a)| \u003c \\varepsilon $$\n- **[[Praktična definicija zveznosti]]**: Funkcija $f$ je zvezna v točki $a$ natanko takrat, ko so izpolnjeni trije pogoji:\n    1.  $f(a)$ obstaja (funkcija je definirana v točki $a$).\n    2.  $\\lim_{x \\to a} f(x)$ obstaja.\n    3.  $\\lim_{x \\to a} f(x) \u003d f(a)$.\n\n### [[Limita Kompozituma]]\nČe je funkcija $f$ zvezna v točki $b$ in je $\\lim_{x \\to a} g(x) \u003d b$, potem velja:\n$$ \\lim_{x \\to a} f(g(x)) \u003d f\\left(\\lim_{x \\to a} g(x)\\right) \u003d f(b) $$\n\u003e **Note to Self:** To pomeni, da lahko pri zveznih zunanjih funkcijah \"potisnemo limito noter\".\n\u003e **Primer:**\n\u003e $$ \\lim_{x \\to 2} \\sqrt{\\frac{x^2-4}{x-2}} \u003d \\sqrt{\\lim_{x \\to 2} \\frac{x^2-4}{x-2}} \u003d \\sqrt{4} \u003d 2 $$\n\u003e To lahko storimo, ker je funkcija $f(u) \u003d \\sqrt{u}$ zvezna v točki $u\u003d4$.\n\n---\n\n## [[Pomembne limite]]\n\n1.  ### $$\\lim_{x \\to 0} \\frac{\\sin x}{x} \u003d 1$$\n    - **Dokaz (Geometrijski z izrekom o sendviču):**\n      - Primerjamo ploščine treh likov na enotski krožnici za majhen pozitiven kot $x$:\n      - Ploščina $\\triangle OAE \u003c$ Ploščina krožnega izseka $OAE \u003c$ Ploščina $\\triangle OAT\u0027$\n      - $\\frac{1}{2} \\cdot \\cos x \\cdot \\sin x \u003c \\frac{1}{2} \\cdot 1^2 \\cdot x \u003c \\frac{1}{2} \\cdot 1 \\cdot \\tan x$\n      - $\\cos x \\sin x \u003c x \u003c \\frac{\\sin x}{\\cos x}$\n      - Delimo s $\\sin x$ (za $x \\in (0, \\pi/2)$ je $\\sin x \u003e 0$):\n      - $\\cos x \u003c \\frac{x}{\\sin x} \u003c \\frac{1}{\\cos x}$\n      - Obrnemo ulomke in neenačaj:\n      - $\\frac{1}{\\cos x} \u003e \\frac{\\sin x}{x} \u003e \\cos x$\n      - Ker $\\lim_{x \\to 0} \\cos x \u003d 1$ in $\\lim_{x \\to 0} \\frac{1}{\\cos x} \u003d 1$, po izreku o sendviču sledi, da je tudi limita vmesnega izraza enaka 1.\n\n2.  ### $$\\lim_{x \\to \\infty} \\left(1 + \\frac{1}{x}\\right)^x \u003d e$$\n\n3.  ### $$\\lim_{x \\to 0} (1+x)^{\\frac{1}{x}} \u003d e$$\n    - **Izpeljava:** Uvedemo novo spremenljivko $u \u003d \\frac{1}{x}$. Ko gre $x \\to 0$, gre $u \\to \\infty$. Limita postane $\\lim_{u \\to \\infty} (1 + \\frac{1}{u})^u \u003d e$.\n\n4.  ### $$\\lim_{x \\to 0} \\frac{\\log_a(1+x)}{x} \u003d \\frac{1}{\\ln a}$$\n    - **Izpeljava:**\n      $$ \\lim_{x \\to 0} \\frac{1}{x} \\log_a(1+x) \u003d \\lim_{x \\to 0} \\log_a\\left((1+x)^{\\frac{1}{x}}\\right) $$\n      Ker je logaritem zvezna funkcija, lahko zamenjamo limito in logaritem:\n      $$ \\log_a\\left(\\lim_{x \\to 0} (1+x)^{\\frac{1}{x}}\\right) \u003d \\log_a(e) \u003d \\frac{\\ln e}{\\ln a} \u003d \\frac{1}{\\ln a} $$\n\n5.  ### $$\\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} \u003d 1$$\n    - Poseben primer prejšnje limite za $a\u003de$.\n\n6.  ### $$\\lim_{x \\to 0} \\frac{a^x - 1}{x} \u003d \\ln a$$\n    - **Izpeljava:** Uvedemo novo spremenljivko $u \u003d a^x - 1 \\implies a^x \u003d u+1 \\implies x \u003d \\log_a(u+1)$.\n    - Ko gre $x \\to 0$, velja $a^0 - 1 \u003d 0$, torej $u \\to 0$.\n    $$ \\lim_{u \\to 0} \\frac{u}{\\log_a(u+1)} \u003d \\lim_{u \\to 0} \\frac{1}{\\frac{\\log_a(1+u)}{u}} \u003d \\frac{1}{\\frac{1}{\\ln a}} \u003d \\ln a $$\n\n7.  ### $$\\lim_{x \\to 0} \\frac{e^x - 1}{x} \u003d 1$$\n    - Poseben primer prejšnje limite za $a\u003de$.\n\n---\n\n## [[Conceptual Strengthening Tasks]]\n1.  **Naloga (Lastnosti limit):** Izračunajte limito funkcije $f(x) \u003d \\frac{2x^2 - 2}{x-1} \\cdot \\cos(\\pi x)$, ko gre $x \\to 1$. Utemeljite vsak korak z uporabo lastnosti limit.\n2.  **Naloga (Zveznost):** Dana je funkcija $f(x) \u003d \\begin{cases} \\frac{\\sin(3x)}{x} \u0026 x \\neq 0 \\\\ k \u0026 x\u003d0 \\end{cases}$. Določite vrednost konstante $k$ tako, da bo funkcija $f(x)$ zvezna v točki $x\u003d0$.\n3.  **Izziv (Povezovanje znanja):** S pomočjo limite $\\lim_{t \\to 0} \\frac{e^t-1}{t}\u003d1$ in z ustrezno zamenjavo spremenljivk, izpeljite formulo za limito $\\lim_{x \\to 1} \\frac{\\ln x}{x-1}$.\n    - *Namig:* Spomnite se, kako sta logaritemska in eksponentna funkcija povezani (osnovna šola/gimnazija). Definirajte $t \u003d \\ln x$. Kaj se zgodi z $t$, ko gre $x \\to 1$? Kako lahko izrazite $x-1$ s pomočjo $t$?"
+      }, {
+        "text": "x-1$ s pomočjo $t$?"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

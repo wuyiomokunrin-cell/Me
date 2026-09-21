@@ -1,0 +1,391 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "mediaResolution": "MEDIA_RESOLUTION_HIGH",
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1m84UHYliWOeKURo-fNHLpBngfIqWPvJl"
+      },
+      "role": "user",
+      "tokenCount": 72453
+    }, {
+      "driveAudio": {
+        "id": "1nR0NYZtLvBmFXxfzCZ27uyrimDbpCFsm"
+      },
+      "role": "user",
+      "tokenCount": 133254
+    }, {
+      "driveImage": {
+        "id": "1Vnj1sgAHlbbKF9FOE0OUznRzGaEYpJlz"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1kvq9wQDqG-5eouc1SemKJfNbQLKA93Wz"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1WavcyOxYpQ3TtC4j02PNl57IGsqQMfAJ"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1obh2Cp9utKx0wE2OP-Vd58IwKUfm2rOY"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "driveImage": {
+        "id": "1pfD6Tm0bvBIjJbVOnrBf5r_6W-DvyC9z"
+      },
+      "role": "user",
+      "tokenCount": 1093
+    }, {
+      "text": "**Examining the Core Data**\n\nI\u0027ve been poring over the source material – those images of handwritten notes and lecture slides. My main focus now is breaking down their structure. I\u0027m trying to figure out if there\u0027s an underlying organizational principle, maybe hints of a chemical topic or framework.\n\n\n**Dissecting the Electrolytic Lecture**\n\nI\u0027m now fully immersed in the transcript of the Slovenian lecture, focusing specifically on electrolytic dissociation and intermolecular forces. I\u0027m noting key differences between dissociation and ionization, and identifying strong vs. weak electrolytes. My goal is to extract the theoretical components, problems, and solution methods separately, structuring the information chronologically. LaTeX is being used to build the equations. Critical analysis is a priority to ensure clarity and accuracy in formatting the Obsidian notes.\n\n\n**Exploring Force Relationships**\n\nI\u0027m now deep-diving into the interrelationships between intermolecular forces and physical properties. I\u0027ve compiled notes detailing how hydrogen bonds influence boiling and melting points, and I\u0027ve started examining electrical conductivity in electrolytes. My focus is on the Van\u0027t Hoff factor and how it relates to the degree of dissociation. I\u0027m also delving into the specific formulae for each type of intermolecular force, including the potential energy curves.\n\n\n**Constructing a Comprehensive Framework**\n\nI\u0027ve been meticulously refining the Obsidian outline, incorporating detailed definitions and derivations from the lecture transcript. My focus is on ensuring a clear and logical flow, separating Electrolyte basics, Electrical conductivity and the Van\u0027t Hoff factor. I\u0027m actively using LaTeX to present all the equations precisely. I\u0027m now trying to find additional examples and problems to further flesh out the structure.\n\n\n**Detailing Intermolecular Forces**\n\nI\u0027m currently focused on the specific equations and underlying principles of intermolecular forces. I\u0027m exploring the Lennard-Jones potential curve to better visualize the relationships. I\u0027m also breaking down different types of Van der Waals forces, including Keesom, Debye, and London. I\u0027m noting the critical $1/r^6$ distance dependence of these forces. Furthermore, I\u0027ve started examining the hydrogen bond as a specialized dipole-dipole interaction and am now creating a comprehensive revision list of key formulae. I\u0027m working on the Ostwald\u0027s law derivation now. I have fully moved to transcribing the Slovenian language into notes.\n\n\n**Refining the Dissociation Framework**\n\nI\u0027m now focusing on deriving the dissociation constant and Van\u0027t Hoff factor. I\u0027m verifying approximations for $\\alpha \\ll 1$ in the acid dissociation constant. Using the transcribed formulas, I\u0027m carefully comparing the total particles, noting the different notations in the lecture, and standard notation for ions, to ensure consistency. I\u0027ve also re-examined the key formulas for intermolecular forces, including their temperature and distance dependencies, noting the $1/d^6$ relationship that dominates. I\u0027m prioritizing accuracy in my finalization of these theoretical constructs, especially given their application potential.\n\n\n**Finalizing the Conductivity Chapter**\n\nI\u0027m now integrating the Slovenian professor\u0027s insights on conductivity with the existing framework. I\u0027m focusing on the distinctions between molar conductivity ($\\Lambda$) and specific conductivity ($\\kappa$), paying close attention to unit conversions ($S \\cdot cm^2 \\cdot mol^{-1}$ vs $S \\cdot m^{-1}$). I\u0027m also adding contextual notes about the professor\u0027s humorous example of alcohol and the lightbulb experiment, ensuring all crucial information is accounted for. LaTeX is being applied for equations, and Wikilinks are being added for key concepts. Finally, I\u0027m analyzing weak electrolytes and their deviation from Kohlrausch\u0027s law.\n\n\n**Synthesizing Water Anomalies**\n\nMy attention is now focused on water\u0027s unusual properties. I\u0027m incorporating the professor\u0027s comments on hydrogen bonds and their effects on boiling points, particularly the anomalies observed in hydrides. I\u0027m drafting a section comparing the behavior of these compounds, which should provide a deeper understanding of hydrogen bonding\u0027s impact on electrolyte solutions and physical properties. I am working to polish my terminology to the standards of the professor.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Examining the Core Data**\n\nI\u0027ve been poring over the source material – those images of handwritten notes and lecture slides. My main focus now is breaking down their structure. I\u0027m trying to figure out if there\u0027s an underlying organizational principle, maybe hints of a chemical topic or framework.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Dissecting the Electrolytic Lecture**\n\nI\u0027m now fully immersed in the transcript of the Slovenian lecture, focusing specifically on electrolytic dissociation and intermolecular forces. I\u0027m noting key differences between dissociation and ionization, and identifying strong vs. weak electrolytes. My goal is to extract the theoretical components, problems, and solution methods separately, structuring the information chronologically. LaTeX is being used to build the equations. Critical analysis is a priority to ensure clarity and accuracy in formatting the Obsidian notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Exploring Force Relationships**\n\nI\u0027m now deep-diving into the interrelationships between intermolecular forces and physical properties. I\u0027ve compiled notes detailing how hydrogen bonds influence boiling and melting points, and I\u0027ve started examining electrical conductivity in electrolytes. My focus is on the Van\u0027t Hoff factor and how it relates to the degree of dissociation. I\u0027m also delving into the specific formulae for each type of intermolecular force, including the potential energy curves.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing a Comprehensive Framework**\n\nI\u0027ve been meticulously refining the Obsidian outline, incorporating detailed definitions and derivations from the lecture transcript. My focus is on ensuring a clear and logical flow, separating Electrolyte basics, Electrical conductivity and the Van\u0027t Hoff factor. I\u0027m actively using LaTeX to present all the equations precisely. I\u0027m now trying to find additional examples and problems to further flesh out the structure.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Detailing Intermolecular Forces**\n\nI\u0027m currently focused on the specific equations and underlying principles of intermolecular forces. I\u0027m exploring the Lennard-Jones potential curve to better visualize the relationships. I\u0027m also breaking down different types of Van der Waals forces, including Keesom, Debye, and London. I\u0027m noting the critical $1/r^6$ distance dependence of these forces. Furthermore, I\u0027ve started examining the hydrogen bond as a specialized dipole-dipole interaction and am now creating a comprehensive revision list of key formulae. I\u0027m working on the Ostwald\u0027s law derivation now. I have fully moved to transcribing the Slovenian language into notes.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Dissociation Framework**\n\nI\u0027m now focusing on deriving the dissociation constant and Van\u0027t Hoff factor. I\u0027m verifying approximations for $\\alpha \\ll 1$ in the acid dissociation constant. Using the transcribed formulas, I\u0027m carefully comparing the total particles, noting the different notations in the lecture, and standard notation for ions, to ensure consistency. I\u0027ve also re-examined the key formulas for intermolecular forces, including their temperature and distance dependencies, noting the $1/d^6$ relationship that dominates. I\u0027m prioritizing accuracy in my finalization of these theoretical constructs, especially given their application potential.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing the Conductivity Chapter**\n\nI\u0027m now integrating the Slovenian professor\u0027s insights on conductivity with the existing framework. I\u0027m focusing on the distinctions between molar conductivity ($\\Lambda$) and specific conductivity ($\\kappa$), paying close attention to unit conversions ($S \\cdot cm^2 \\cdot mol^{-1}$ vs $S \\cdot m^{-1}$). I\u0027m also adding contextual notes about the professor\u0027s humorous example of alcohol and the lightbulb experiment, ensuring all crucial information is accounted for. LaTeX is being applied for equations, and Wikilinks are being added for key concepts. Finally, I\u0027m analyzing weak electrolytes and their deviation from Kohlrausch\u0027s law.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Synthesizing Water Anomalies**\n\nMy attention is now focused on water\u0027s unusual properties. I\u0027m incorporating the professor\u0027s comments on hydrogen bonds and their effects on boiling points, particularly the anomalies observed in hydrides. I\u0027m drafting a section comparing the behavior of these compounds, which should provide a deeper understanding of hydrogen bonding\u0027s impact on electrolyte solutions and physical properties. I am working to polish my terminology to the standards of the professor.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "Tukaj so tvoji zapiski, urejeni v celovit in strukturiran sistem za Obsidian. Združil sem vsebino rokopisnih zapiskov s podrobno razlago iz predavanja, dodal potrebne izpeljave (reverse engineering) in kritične opombe za boljše razumevanje.\n\n---\n\n# [[Elektrolitska disociacija in Medmolekulske sile]]\n\n**Datum:** 25. 11. 2025\n**Predmet:** Fizikalna kemija / Splošna kemija\n**Tip:** Predavanje + Zapiski\n**Povezave:** [[Termodinamika]], [[Kemijske vezi]], [[Ravnotežje]]\n\n---\n\n## 1. Kontekst in Memorializacija\n\u003e [!NOTE] Kontekst predavanja\n\u003e Predavanje se je začelo z razliko med snovmi, ki prevajajo električni tok v raztopini (elektroliti), in tistimi, ki ga ne. Profesorica je omenila demonstracijske poskuse (npr. žarnica, ki sveti pri NaCl, pri sladkorju pa ne). Poseben poudarek je bil na anomalijah vode in vplivu vodikovih vezi na vrelišča hidridov.\n\u003e *Zanimivost:* Omenjen je bil \"whisky\" pri razlagi mešanja dipolov in alkohola.\n\n---\n\n## 2. Elektrolitska Disociacija\n\n### Definicije in Osnove\nSnovi v raztopinah delimo glede na to, ali prevajajo električni tok:\n1.  **Elektroliti:** Snovi, ki v raztopini (ali talini) razpadejo na ione. Posledica je prevajanje električnega toka.\n2.  **Ne-elektroliti:** Snovi, ki se raztapljajo molekularno (npr. sladkor, alkohol) in ne tvorijo ionov.\n\n**Razlika med disociacijo in ionizacijo:**\n*   **Disociacija:** Razpad ionske kristalne mreže (ki že vsebuje ione), ko snov damo v topilo (npr. $NaCl$). Topilo (voda) obda ione in zmanjša privlak med njimi (hidratacija).\n*   **Ionizacija:** Proces, pri katerem iz molekularne snovi (kovalentna vez) nastanejo ioni ob reakciji s topilom (npr. $HCl + H_2O \\to H_3O^+ + Cl^-$).\n\n### Stopnja disociacije ($\\alpha$)\nStopnja disociacije nam pove, kolikšen delež molekul je razpadel na ione.\n\n$$ \\alpha \u003d \\frac{n_{dis}}{n_{cel}} \u003d \\frac{c_{dis}}{c_{cel}} $$\n\n*   **Močni elektroliti:** $\\alpha \\approx 1$ (oz. 100%). Popolnoma razpadejo (npr. $NaCl$, $HCl$, $NaOH$).\n*   **Šibki elektroliti:** $\\alpha \\ll 1$. V raztopini je večina snovi v obliki molekul, le majhen del je ionov (npr. $CH_3COOH$, $NH_3$).\n\n---\n\n## 3. Ostwaldov zakon razredčenja (Reverse Engineering)\n\n\u003e [!abstract] Motivacija za izpeljavo\n\u003e Kako povezati konstanto ravnotežja ($K$) s stopnjo disociacije ($\\alpha$) in koncentracijo ($c$)? To nam omogoča določanje moči elektrolita zgolj z merjenjem prevodnosti pri različnih koncentracijah.\n\nObravnavajmo šibko kislino $HA$, ki disociira v vodi:\n$$ HA \\rightleftharpoons H^+ + A^- $$\n\n| Stanje | Koncentracija $HA$ | Koncentracija $H^+$ | Koncentracija $A^-$ |\n| :--- | :---: | :---: | :---: |\n| **Začetno** | $c$ | $0$ | $0$ |\n| **Sprememba** | $-c\\alpha$ | $+c\\alpha$ | $+c\\alpha$ |\n| **Ravnotežje** | $c(1 - \\alpha)$ | $c\\alpha$ | $c\\alpha$ |\n\nZapišemo konstanto disociacije $K_{dis}$ (zakon o delovanju mas):\n$$ K_{dis} \u003d \\frac{[H^+][A^-]}{[HA]} $$\n\nVstavimo ravnotežne koncentracije:\n$$ K_{dis} \u003d \\frac{(c\\alpha)(c\\alpha)}{c(1-\\alpha)} \u003d \\frac{c^2\\alpha^2}{c(1-\\alpha)} $$\n\n**Končna oblika Ostwaldovega zakona:**\n$$ K_{dis} \u003d \\frac{c\\alpha^2}{1-\\alpha} $$\n\n\u003e [!WARNING] Približna formula\n\u003e Za zelo šibke elektrolite, kjer je $\\alpha \\ll 1$ (zelo majhna disociacija), lahko imenovalec poenostavimo: $1-\\alpha \\approx 1$.\n\u003e Enačba se poenostavi v:\n\u003e $$ K_{dis} \\approx c\\alpha^2 \\quad \\Rightarrow \\quad \\alpha \u003d \\sqrt{\\frac{K_{dis}}{c}} $$\n\u003e **Pazi:** To velja le pri zelo nizkih koncentracijah ali zelo šibkih elektrolitih! Če dobite $\\alpha \u003e 0.05$ (5%), morate uporabiti kvadratno enačbo (točno formulo).\n\n---\n\n## 4. Van\u0027t Hoffov faktor ($i$) in Koligativne lastnosti\n\nFaktor $i$ pove, kolikokrat več delcev imamo v raztopini v primerjavi z množino topljenca, ki smo ga vnesli. To vpliva na osmotski tlak, znižanje tališča in zvišanje vrelišča.\n\n**Izpeljava zveze med $i$ in $\\alpha$:**\nPredpostavimo reakcijo razpada ene formule enote na $n$ ionov (v zapiskih je uporabljena oznaka $\\nu$ ali vsota kationov in anionov).\n\n$$ A_x B_y \\to x A^{y+} + y B^{x-} $$\nŠtevilo nastalih ionov iz ene molekule: $\\nu \u003d x + y$.\n\n1.  Začnemo z $1$ molom snovi.\n2.  Disociira $\\alpha$ molov snovi.\n3.  Ostane neraztopljenih: $1 - \\alpha$.\n4.  Nastane ionov: $\\nu \\cdot \\alpha$.\n\nSkupno število delcev ($i$):\n$$ i \u003d (1 - \\alpha) + \\nu\\alpha \u003d 1 - \\alpha + \\nu\\alpha \u003d 1 + (\\nu - 1)\\alpha $$\n\n**Izpeljava $\\alpha$ iz $i$:**\n$$ \\alpha \u003d \\frac{i - 1}{\\nu - 1} $$\n\n\u003e [!EXAMPLE] Primer: NaCl\n\u003e $NaCl \\to Na^+ + Cl^-$\n\u003e Število ionov $\\nu \u003d 2$.\n\u003e Če je disociacija popolna ($\\alpha \u003d 1$):\n\u003e $$ i \u003d 1 + (2-1)\\cdot 1 \u003d 2 $$\n\u003e *Opomba iz predavanja:* V realnosti je zaradi interakcij med ioni (ionski oblak) faktor $i$ za močne elektrolite v koncentriranih raztopinah nekoliko manjši od celega števila.\n\n---\n\n## 5. Električna prevodnost\n\nSposobnost raztopine za prevajanje toka je odvisna od števila ionov in njihove gibljivosti.\n\n### Osnovne formule\n*   **Upornost ($R$):** $R \u003d \\rho \\frac{l}{S}$ [$\\Omega$]\n*   **Specifična prevodnost ($\\kappa$):** Recipročna vrednost specifične upornosti ($\\rho$).\n    $$ \\kappa \u003d \\frac{1}{\\rho} \u003d \\frac{l}{R \\cdot S} \\quad [S \\cdot m^{-1} \\text{ ali } \\Omega^{-1} \\cdot cm^{-1}] $$\n    (V zapiskih je uporabljena tudi oznaka $\\chi$ ali $l$).\n\n### Molska (Ekvivalentna) prevodnost ($\\Lambda$)\nDa lahko primerjamo različne elektrolite, moramo upoštevati koncentracijo.\n$$ \\Lambda \u003d \\frac{\\kappa}{c} $$\n*Če uporabljamo enote $S/cm$ in $mol/L$, moramo paziti na faktor 1000:*\n$$ \\Lambda_m \u003d \\frac{1000 \\cdot \\kappa}{c} \\quad [S \\cdot cm^2 \\cdot mol^{-1}] $$\n\n### Kohlrauschov zakon\nOpisuje odvisnost prevodnosti od koncentracije.\n1.  **Močni elektroliti:** Prevodnost pada s korenom koncentracije (zaradi medionskih sil).\n    $$ \\Lambda \u003d \\Lambda_\\infty - A\\sqrt{c} $$\n    ($\\Lambda_\\infty$ je limitna molska prevodnost pri neskončnem razredčenju).\n2.  **Šibki elektroliti:** Prevodnost strmo pada s koncentracijo, ker se $\\alpha$ drastično manjša (glej Ostwaldov zakon). Ne sledijo linearni zvezi s $\\sqrt{c}$.\n\n**Zakon o neodvisnem potovanju ionov:**\nPri neskončnem razredčenju vsak ion prispeva k prevodnosti neodvisno od drugega.\n$$ \\Lambda_\\infty \u003d \\nu_+ \\lambda_+^\\infty + \\nu_- \\lambda_-^\\infty $$\n\n---\n\n## 6. Medmolekulske sile (Van der Waalsove sile)\n\nTo so sile med molekulami, ki so šibkejše od kovalentnih ali ionskih vezi, a ključne za agregatna stanja (tekočine, trdne snovi).\n\n### Potencialna krivulja (Lennard-Jones)\nGraf energije $E$ v odvisnosti od razdalje $r$:\n*   **$r \\to \\infty$:** Energija je 0 (ni interakcije).\n*   **Približevanje:** Energija pada (privlak prevladuje) do minimuma.\n*   **Minimum:** Ravnotežna razdalja (Van der Waalsov radij). Maksimalen privlak.\n*   **Zelo majhen $r$:** Energija strmo naraste (odboj elektronskih oblakov).\n\n### Tipi Van der Waalsovih sil\nVse te sile (razen ionskih) imajo odvisnost energije od razdalje:\n$$ E \\propto -\\frac{1}{r^6} $$\n*(Minus pomeni privlak, $r^6$ pomeni, da so zelo kratkega dosega).*\n\n#### 1. Orientacijske sile (Keesom) - Dipol-Dipol\n*   **Interakcija:** Med dvema **polarnima** molekulama (trajni dipoli).\n*   **Mehanizem:** Pozitivni konec ene molekule se obrne proti negativnemu koncu druge.\n*   **Odvisnost od T:** Toplotno gibanje ruši urejenost. Višja $T$ $\\to$ šibkejša efektivna sila.\n    $$ E_{orient} \\propto -\\frac{\\mu^4}{r^6 k T} $$\n\n#### 2. Indukcijske sile (Debye) - Dipol-Induciran dipol\n*   **Interakcija:** Polarna molekula + nepolarna molekula.\n*   **Mehanizem:** Stalni dipol *inducira* (vsilili) dipol v sosednji nepolarni molekuli z deformacijo elektronskega oblaka.\n*   **Ključni parameter:** **Polarizabilnost ($\\alpha$)** - kako lahko je deformirati elektronski oblak. Večji atomi/molekule (več elektronov, dlje od jedra) so bolj polarizabilni (npr. $I_2 \u003e F_2$).\n\n#### 3. Disperzijske sile (London) - Induciran dipol-Induciran dipol\n*   **Interakcija:** Prisotne pri **VSEH** molekulah (tudi nepolarnih, žlahtnih plinih).\n*   **Mehanizem:** Trenutna nihanja elektronov ustvarijo *trenutni dipol*, ki inducira dipol v sosedu.\n*   **Pomen:** Edine sile pri nepolarnih snoveh (npr. $He$, $N_2$, $CH_4$). Naraščajo z velikostjo molekule (večja mol. masa $\\to$ višje vrelišče).\n\n---\n\n## 7. Vodikova vez\n\nPosebna, zelo močna oblika dipol-dipol interakcije.\n*   **Pogoj:** Vodik ($H$) vezan na močno elektronegativen element ($F, O, N$).\n*   **Struktura:** $X-H \\cdot\\cdot\\cdot :Y$\n*   **Posledice (Anomalije vode):**\n    *   Nenormalno visoko vrelišče glede na molsko maso ($H_2O$ v primerjavi z $H_2S$).\n    *   Visoka toplotna kapaciteta.\n    *   Gostota ledu je manjša od gostote vode (led plava), ker vodikove vezi v ledu tvorijo odprto, \"votlo\" strukturo.\n    *   Maksimalna gostota vode pri $4^\\circ C$.\n\n---\n\n## 8. Zbirka Splošnih Formul (Cheatsheet)\n\n1.  **Stopnja disociacije:** $\\alpha \u003d \\frac{\\Lambda}{\\Lambda_\\infty}$\n2.  **Ostwaldov zakon:** $K_c \u003d \\frac{c\\alpha^2}{1-\\alpha}$\n3.  **Van\u0027t Hoffov faktor:** $i \u003d 1 + (n-1)\\alpha$\n4.  **Specifična prevodnost:** $\\kappa \u003d \\frac{1}{R} \\cdot \\frac{l}{S}$\n5.  **Molska prevodnost:** $\\Lambda_m \u003d \\frac{1000 \\kappa}{c}$\n6.  **Energija VdW sil:** $E \\propto -\\frac{1}{r^6}$\n7.  **Coulombov zakon (Ion-Ion):** $E \\propto \\frac{q_1 q_2}{r}$ (dolgi doseg, najmočnejše).\n\n---\n\u003e [!NOTE] Note to Self (Tutor\u0027s perspective)\n\u003e Pri reševanju nalog s prevodnostjo bodi izjemno pozoren na enote. Če je koncentracija v $mol/L$ in dolžina v $cm$ ali $m$, se faktor 1000 v formuli za $\\Lambda_m$ premika (lahko je v števcu ali imenovalcu). Vedno pretvori vse v osnovne enote ali uporabi standardno formulo s faktorjem 1000 za $S/cm$ in $mol/L$.\n\u003e Pri medmolekulskih silah ne pozabi: Vodikova vez je *interakcija*, ni prava kovalentna vez, čeprav je močna. Disperzijske sile so vedno prisotne, tudi če obstajajo druge močnejše sile.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3607,
+      "parts": [{
+        "text": "Tukaj so tvoji zapiski, urejeni v celovit in strukturiran sistem za Obsidian. Združil sem vsebino rokopisnih zapiskov s podrobno razlago iz predavanja,"
+      }, {
+        "text": " dodal potrebne izpeljave (reverse engineering) in kritične opombe za boljše razumevanje.\n\n---\n\n"
+      }, {
+        "text": "# [[Elektrolitska disociacija in Medmolekulske sile]]\n\n**Datum:** 25"
+      }, {
+        "text": ". 11. 2025\n**Predmet:** Fizikalna kemija / Splošna kemija\n**Tip"
+      }, {
+        "text": ":** Predavanje + Zapiski\n**Povezave:** [[Termodinamika]], [[Kemijske vezi]], [[Ravnotežje"
+      }, {
+        "text": "]]\n\n---\n\n## 1. Kontekst in Memorializacija\n\u003e [!NOTE] Kontekst predavanja\n\u003e Pred"
+      }, {
+        "text": "avanje se je začelo z razliko med snovmi, ki prevajajo električni tok v raztopini ("
+      }, {
+        "text": "elektroliti), in tistimi, ki ga ne. Profesorica je omenila demonstracijske poskuse (npr. ž"
+      }, {
+        "text": "arnica, ki sveti pri NaCl, pri sladkorju pa ne). Poseben poudarek je bil na anomal"
+      }, {
+        "text": "ijah vode in vplivu vodikovih vezi na vrelišča hidridov.\n\u003e *Z"
+      }, {
+        "text": "animivost:* Omenjen je bil \"whisky\" pri razlagi mešanja dipolov in alkoh"
+      }, {
+        "text": "ola.\n\n---\n\n## 2. Elektrolitska Disociacija\n\n### Definicije in Osnove"
+      }, {
+        "text": "\nSnovi v raztopinah delimo glede na to, ali prevajajo električni tok:\n1.  "
+      }, {
+        "text": "**Elektroliti:** Snovi, ki v raztopini (ali talini) razpadejo na "
+      }, {
+        "text": "ione. Posledica je prevajanje električnega toka.\n2.  **Ne-elektroliti:** Snovi, ki"
+      }, {
+        "text": " se raztapljajo molekularno (npr. sladkor, alkohol) in ne tvorijo ionov."
+      }, {
+        "text": "\n\n**Razlika med disociacijo in ionizacijo:**\n*   **Disociacija:** Razpad ions"
+      }, {
+        "text": "ke kristalne mreže (ki že vsebuje ione), ko snov damo v topilo (npr. $"
+      }, {
+        "text": "NaCl$). Topilo (voda) obda ione in zmanjša privlak med njimi (hidrat"
+      }, {
+        "text": "acija).\n*   **Ionizacija:** Proces, pri katerem iz molekularne snovi (kov"
+      }, {
+        "text": "alentna vez) nastanejo ioni ob reakciji s topilom (npr. $HCl +"
+      }, {
+        "text": " H_2O \\to H_3O^+ + Cl^-$).\n\n### Stopnja disociacije ($\\alpha$)\nStopnja"
+      }, {
+        "text": " disociacije nam pove, kolikšen delež molekul je razpadel na ione.\n\n$$ \\alpha \u003d \\frac{n"
+      }, {
+        "text": "_{dis}}{n_{cel}} \u003d \\frac{c_{dis}}{c_{cel}} $$\n\n*   **"
+      }, {
+        "text": "Močni elektroliti:** $\\alpha \\approx 1$ (oz. 100%). Popolnoma"
+      }, {
+        "text": " razpadejo (npr. $NaCl$, $HCl$, $NaOH$).\n*   **Šibki elektroliti:** $\\alpha \\ll "
+      }, {
+        "text": "1$. V raztopini je večina snovi v obliki molekul, le majhen del je ionov (npr. $CH"
+      }, {
+        "text": "_3COOH$, $NH_3$).\n\n---\n\n## 3. Ostwaldov zakon razredčenja (Reverse"
+      }, {
+        "text": " Engineering)\n\n\u003e [!abstract] Motivacija za izpeljavo\n\u003e Kako povezati konstanto ravnotežja ($"
+      }, {
+        "text": "K$) s stopnjo disociacije ($\\alpha$) in koncentracijo ($c$)? To nam omogoča določanje mo"
+      }, {
+        "text": "či elektrolita zgolj z merjenjem prevodnosti pri različnih koncentracijah.\n\nObrav"
+      }, {
+        "text": "navajmo šibko kislino $HA$, ki disociira v vodi:\n$$ HA \\rightleftharpoons H^+ +"
+      }, {
+        "text": " A^- $$\n\n| Stanje | Koncentracija $HA$ | Koncentracija $H^+$ | Koncentracija $"
+      }, {
+        "text": "A^-$ |\n| :--- | :---: | :---: | :---: |\n| **Začetno**"
+      }, {
+        "text": " | $c$ | $0$ | $0$ |\n| **Sprememba** | $-c\\alpha$ | $+"
+      }, {
+        "text": "c\\alpha$ | $+c\\alpha$ |\n| **Ravnotežje** | $c(1"
+      }, {
+        "text": " - \\alpha)$ | $c\\alpha$ | $c\\alpha$ |\n\nZapišemo konstanto dis"
+      }, {
+        "text": "ociacije $K_{dis}$ (zakon o delovanju mas):\n$$ K_{dis} \u003d \\frac"
+      }, {
+        "text": "{[H^+][A^-]}{[HA]} $$\n\nVstavimo ravnotežne koncentracije:\n$$ K_{dis"
+      }, {
+        "text": "} \u003d \\frac{(c\\alpha)(c\\alpha)}{c(1-\\alpha)} \u003d \\frac{c^"
+      }, {
+        "text": "2\\alpha^2}{c(1-\\alpha)} $$\n\n**Končna oblika Ostwaldovega zakona:**"
+      }, {
+        "text": "\n$$ K_{dis} \u003d \\frac{c\\alpha^2}{1-\\alpha} $$\n\n\u003e ["
+      }, {
+        "text": "!WARNING] Približna formula\n\u003e Za zelo šibke elektrolite, kjer je $\\alpha \\ll 1"
+      }, {
+        "text": "$ (zelo majhna disociacija), lahko imenovalec poenostavimo: $1-\\alpha \\approx 1$.\n\u003e E"
+      }, {
+        "text": "načba se poenostavi v:\n\u003e $$ K_{dis} \\approx c\\alpha^2 \\quad"
+      }, {
+        "text": " \\Rightarrow \\quad \\alpha \u003d \\sqrt{\\frac{K_{dis}}{c}} $$\n\u003e **Pazi:** To vel"
+      }, {
+        "text": "ja le pri zelo nizkih koncentracijah ali zelo šibkih elektrolitih! Če dobite $\\alpha \u003e 0.05"
+      }, {
+        "text": "$ (5%), morate uporabiti kvadratno enačbo (točno formulo).\n\n---\n\n## 4. Van\u0027t Hoffov"
+      }, {
+        "text": " faktor ($i$) in Koligativne lastnosti\n\nFaktor $i$ pove, kolikokrat več delcev im"
+      }, {
+        "text": "amo v raztopini v primerjavi z množino topljenca, ki smo ga vnesli. To"
+      }, {
+        "text": " vpliva na osmotski tlak, znižanje tališča in zvišanje vrelišča.\n\n**"
+      }, {
+        "text": "Izpeljava zveze med $i$ in $\\alpha$:**\nPredpostavimo reakcijo razpada ene"
+      }, {
+        "text": " formule enote na $n$ ionov (v zapiskih je uporabljena oznaka $\\nu$ ali vs"
+      }, {
+        "text": "ota kationov in anionov).\n\n$$ A_x B_y \\to x A^{y+} + y B^{"
+      }, {
+        "text": "x-} $$\nŠtevilo nastalih ionov iz ene molekule: $\\nu \u003d x + y$.\n\n1"
+      }, {
+        "text": ".  Začnemo z $1$ molom snovi.\n2.  Disociira $\\alpha$ mol"
+      }, {
+        "text": "ov snovi.\n3.  Ostane neraztopljenih: $1 - \\alpha$.\n4.  Nastane ionov"
+      }, {
+        "text": ": $\\nu \\cdot \\alpha$.\n\nSkupno število delcev ($i$):\n$$ i"
+      }, {
+        "text": " \u003d (1 - \\alpha) + \\nu\\alpha \u003d 1 - \\alpha + \\nu\\alpha \u003d 1 +"
+      }, {
+        "text": " (\\nu - 1)\\alpha $$\n\n**Izpeljava $\\alpha$ iz $i$:**\n$$ \\alpha \u003d"
+      }, {
+        "text": " \\frac{i - 1}{\\nu - 1} $$\n\n\u003e [!EXAMPLE] Primer: NaCl\n\u003e $"
+      }, {
+        "text": "NaCl \\to Na^+ + Cl^-$\n\u003e Število ionov $\\nu \u003d 2$.\n\u003e Če"
+      }, {
+        "text": " je disociacija popolna ($\\alpha \u003d 1$):\n\u003e $$ i \u003d 1 + (2-"
+      }, {
+        "text": "1)\\cdot 1 \u003d 2 $$\n\u003e *Opomba iz predavanja:* V realnosti je zaradi interakcij med "
+      }, {
+        "text": "ioni (ionski oblak) faktor $i$ za močne elektrolite v koncentriranih raztopinah nekoliko manj"
+      }, {
+        "text": "ši od celega števila.\n\n---\n\n## 5. Električna prevodnost\n\nSposobnost raz"
+      }, {
+        "text": "topine za prevajanje toka je odvisna od števila ionov in njihove gibljivosti.\n\n###"
+      }, {
+        "text": " Osnovne formule\n*   **Upornost ($R$):** $R \u003d \\rho \\frac{l}{S}$"
+      }, {
+        "text": " [$\\Omega$]\n*   **Specifična prevodnost ($\\kappa$):** Recipročna vrednost spec"
+      }, {
+        "text": "ifične upornosti ($\\rho$).\n    $$ \\kappa \u003d \\frac{1}{\\rho} \u003d \\frac"
+      }, {
+        "text": "{l}{R \\cdot S} \\quad [S \\cdot m^{-1} \\text{ ali } \\"
+      }, {
+        "text": "Omega^{-1} \\cdot cm^{-1}] $$\n    (V zapiskih je uporabljena tudi oznaka $\\chi$ ali"
+      }, {
+        "text": " $l$).\n\n### Molska (Ekvivalentna) prevodnost ($\\Lambda$)\nDa lahko primerjamo različ"
+      }, {
+        "text": "ne elektrolite, moramo upoštevati koncentracijo.\n$$ \\Lambda \u003d \\frac{\\kappa}{c} $$"
+      }, {
+        "text": "\n*Če uporabljamo enote $S/cm$ in $mol/L$, moramo paziti na faktor 1000"
+      }, {
+        "text": ":*\n$$ \\Lambda_m \u003d \\frac{1000 \\cdot \\kappa}{c} \\quad [S \\"
+      }, {
+        "text": "cdot cm^2 \\cdot mol^{-1}] $$\n\n### Kohlrauschov zakon\nOpisuje odvisnost prev"
+      }, {
+        "text": "odnosti od koncentracije.\n1.  **Močni elektroliti:** Prevodnost pada s korenom koncentracije (zaradi med"
+      }, {
+        "text": "ionskih sil).\n    $$ \\Lambda \u003d \\Lambda_\\infty - A\\sqrt{c} $$\n    ($"
+      }, {
+        "text": "\\Lambda_\\infty$ je limitna molska prevodnost pri neskončnem razredčenju).\n2.  **Šibki"
+      }, {
+        "text": " elektroliti:** Prevodnost strmo pada s koncentracijo, ker se $\\alpha$ drastično manj"
+      }, {
+        "text": "ša (glej Ostwaldov zakon). Ne sledijo linearni zvezi s $\\sqrt{c}$.\n\n**Zakon"
+      }, {
+        "text": " o neodvisnem potovanju ionov:**\nPri neskončnem razredčenju vsak ion prispeva k prev"
+      }, {
+        "text": "odnosti neodvisno od drugega.\n$$ \\Lambda_\\infty \u003d \\nu_+ \\lambda_+^\\infty + \\nu_- \\lambda_-"
+      }, {
+        "text": "^\\infty $$\n\n---\n\n## 6. Medmolekulske sile (Van der Waalsove sile)\n\nTo so sile"
+      }, {
+        "text": " med molekulami, ki so šibkejše od kovalentnih ali ionskih vezi, a ključne za agregatna"
+      }, {
+        "text": " stanja (tekočine, trdne snovi).\n\n### Potencialna krivulja ("
+      }, {
+        "text": "Lennard-Jones)\nGraf energije $E$ v odvisnosti od razdalje $r$:\n*"
+      }, {
+        "text": "   **$r \\to \\infty$:** Energija je 0 (ni interakcije).\n*   **"
+      }, {
+        "text": "Približevanje:** Energija pada (privlak prevladuje) do minimuma.\n*   **"
+      }, {
+        "text": "Minimum:** Ravnotežna razdalja (Van der Waalsov radij). Maksimalen privlak.\n*   "
+      }, {
+        "text": "**Zelo majhen $r$:** Energija strmo naraste (odboj elektronskih oblakov).\n\n### T"
+      }, {
+        "text": "ipi Van der Waalsovih sil\nVse te sile (razen ionskih) imajo odvisnost energije"
+      }, {
+        "text": " od razdalje:\n$$ E \\propto -\\frac{1}{r^6} $$\n*(Minus pomeni privlak"
+      }, {
+        "text": ", $r^6$ pomeni, da so zelo kratkega dosega).*\n\n#### 1. Orientacijske"
+      }, {
+        "text": " sile (Keesom) - Dipol-Dipol\n*   **Interakcija:** Med dvema **polarnima**"
+      }, {
+        "text": " molekulama (trajni dipoli).\n*   **Mehanizem:** Pozitivni konec ene molekule se"
+      }, {
+        "text": " obrne proti negativnemu koncu druge.\n*   **Odvisnost od T:** Toplotno gibanje ru"
+      }, {
+        "text": "ši urejenost. Višja $T$ $\\to$ šibkejša efektivna sila.\n    $$ E_{orient}"
+      }, {
+        "text": " \\propto -\\frac{\\mu^4}{r^6 k T} $$\n\n#### 2. Indukcijske sile (Debye"
+      }, {
+        "text": ") - Dipol-Induciran dipol\n*   **Interakcija:** Polarna molekula + nepolarna mole"
+      }, {
+        "text": "kula.\n*   **Mehanizem:** Stalni dipol *inducira* (vsilili) dipol v s"
+      }, {
+        "text": "osednji nepolarni molekuli z deformacijo elektronskega oblaka.\n*   **Kl"
+      }, {
+        "text": "jučni parameter:** **Polarizabilnost ($\\alpha$)** - kako lahko je deformirati elektronski oblak. Ve"
+      }, {
+        "text": "čji atomi/molekule (več elektronov, dlje od jedra) so bolj polarizabilni (npr"
+      }, {
+        "text": ". $I_2 \u003e F_2$).\n\n#### 3. Disperzijske sile (London) - Ind"
+      }, {
+        "text": "uciran dipol-Induciran dipol\n*   **Interakcija:** Prisotne pri **V"
+      }, {
+        "text": "SEH** molekulah (tudi nepolarnih, žlahtnih plinih).\n*   **Mehanizem:** Tren"
+      }, {
+        "text": "utna nihanja elektronov ustvarijo *trenutni dipol*, ki inducira dipol v sosedu."
+      }, {
+        "text": "\n*   **Pomen:** Edine sile pri nepolarnih snoveh (npr. $He$, $N"
+      }, {
+        "text": "_2$, $CH_4$). Naraščajo z velikostjo molekule (večja mol. masa $\\to$ višje vreli"
+      }, {
+        "text": "šče).\n\n---\n\n## 7. Vodikova vez\n\nPosebna, zelo močna oblika dip"
+      }, {
+        "text": "ol-dipol interakcije.\n*   **Pogoj:** Vodik ($H$) vezan na močno elektr"
+      }, {
+        "text": "onegativen element ($F, O, N$).\n*   **Struktura:** $X-H \\"
+      }, {
+        "text": "cdot\\cdot\\cdot :Y$\n*   **Posledice (Anomalije vode):**\n    "
+      }, {
+        "text": "*   Nenormalno visoko vrelišče glede na molsko maso ($H_2O"
+      }, {
+        "text": "$ v primerjavi z $H_2S$).\n    *   Visoka toplotna kapaciteta.\n    *"
+      }, {
+        "text": "   Gostota ledu je manjša od gostote vode (led plava), ker vodikove vezi v"
+      }, {
+        "text": " ledu tvorijo odprto, \"votlo\" strukturo.\n    *   Maksimalna gostota vode pri"
+      }, {
+        "text": " $4^\\circ C$.\n\n---\n\n## 8. Zbirka Splošnih Formul (Cheatsheet)\n\n1.  **"
+      }, {
+        "text": "Stopnja disociacije:** $\\alpha \u003d \\frac{\\Lambda}{\\Lambda_\\infty}$\n2.  **Ostwaldov zakon:**"
+      }, {
+        "text": " $K_c \u003d \\frac{c\\alpha^2}{1-\\alpha}$\n3.  **Van\u0027t"
+      }, {
+        "text": " Hoffov faktor:** $i \u003d 1 + (n-1)\\alpha$\n4.  **Specifična prevodnost:** $\\"
+      }, {
+        "text": "kappa \u003d \\frac{1}{R} \\cdot \\frac{l}{S}$\n5.  **Molska prevod"
+      }, {
+        "text": "nost:** $\\Lambda_m \u003d \\frac{1000 \\kappa}{c}$\n6.  **"
+      }, {
+        "text": "Energija VdW sil:** $E \\propto -\\frac{1}{r^6}$\n7.  **Coulombov"
+      }, {
+        "text": " zakon (Ion-Ion):** $E \\propto \\frac{q_1 q_2}{r}$ ("
+      }, {
+        "text": "dolgi doseg, najmočnejše).\n\n---\n\u003e [!NOTE] Note to Self (T"
+      }, {
+        "text": "utor\u0027s perspective)\n\u003e Pri reševanju nalog s prevodnostjo bodi izjemno pozoren na en"
+      }, {
+        "text": "ote. Če je koncentracija v $mol/L$ in dolžina v $cm$ ali $m$, se faktor 10"
+      }, {
+        "text": "00 v formuli za $\\Lambda_m$ premika (lahko je v števcu ali imenovalcu)."
+      }, {
+        "text": " Vedno pretvori vse v osnovne enote ali uporabi standardno formulo s faktorjem 1000 za $S"
+      }, {
+        "text": "/cm$ in $mol/L$.\n\u003e Pri medmolekulskih silah ne pozabi: Vodikova vez je *"
+      }, {
+        "text": "interakcija*, ni prava kovalentna vez, čeprav je močna. Disperzijske sile so vedno"
+      }, {
+        "text": " prisotne, tudi če obstajajo druge močnejše sile."
+      }, {
+        "text": "",
+        "thoughtSignature": "EpVACpJAAdHtim9XYJf1Rf1nCbVzHufbTqlpIOORTc9N8RNDlJhoivYlMB0LzNq2vV91ZXchkVIDFv3jgiWMQebgGzb73A8ylOPsRNeds/XMjXrFzIcp2W4ZpnG5j8Rxv5PXqB+TwdFIwZf+wT64be+1bbTVGeJtuOQuA2bc5J8FIc2msZ1sZW8g8ONC8xCD6/5aPHMY/J+WfTcGCb61KP6Ou9HcdmzT+VjeMcKCJLZL4NTFUScyQfi2fSwtf/w5hw63IRpt4FRSaEApQnMA103Jzq0zFZZVMQthGH+L38+omNNPh4gigCXUmAZsCVJ+upGamt78KimCcaUEZ64NQL48YmJnrUn4BpI4NiV3DStspllnyk2nYPaxr2x9cFzH4XNtuJzXbs7K3uvhnqpikj5f+OgLzQfhY+rS222MiaKsmI/dH3fiuOf0D94kdoYerdhs9O7TbejETUrcscKAdYUvFetFyXizWyal3EVf3+hmFUzjH7PYFSKoIP+bwSjjRoPXN+EwjiGKmTCWk2QMcXiu19G1G/yYpRMylm1QdjIqDfTfEo5huJpAUSmHNLaED7Zny1SnFPT0XH5pdyIS94BoKLGWjOhf0+EmMwR7fRCMHoU663bAzbCMqYhqEdE+DYAEYFVFo2fhTWVno533xoPRA3+z8gOK3kPk+8ph1Fo9NDJl+fAkCfdezOFne6AmKfBUkfop6k2UfYOf60WVDEibD+blbyHBg7rKq+8CNJlZ4J1aIxb7/vsuHoIXGdOD7CXiaIOLqmh5oYQOlEoUoPyEtA9SSXwvQKXu45escbOtAT+3JG5wf0o6UFcHVAguGZXque8k78+fyLkNnmb/CuIPr+VB2kf4hNFbRWvUAASB5LS1kVzshKNdZkuo4hJpWbADL+MBuW2ZZ+8/VSZ35RTOuUa7PhTvhuZJlXNBIpShZxgLLL5veN4A8vrFk7NtoIvygo6bl94JMeT/T/2i3QHkHfkvoI/w8ubvaFQyat+IWE2Rl5XkCGrPpua+2OIzxPo5DzuQfuBC2bnhWqovp73IXXTZi5Nr6LkU/8RNxGUprg5hsayQCIh2K9o73yryjK1jIH+rbZRep8+cm9SJPoaQf6hT8ICXcYmDTOKaN+LAb5khHoQg61lgCuan6Qfam1R6Iyw455Qk7JY4fGWKTGmd7gPwjkUTfbxRkWcEGzYUnyfOdVwyY9QwOXFjEi2iik+GihhjX9q/26yXyyq5Sk0pUSrzWaYnNbikd23I6WZ2fM3y0Xklm8Ry3qfa/IoY0jCXC3XObVssvNUHRbYJzaO55Z5u9eVICDXyV3HQ09NB3yyPu/I/EBk9AmWQxVakYBt68roDQXRTYU2EbPj047odtgcSm3dVSCNmtfRdFziYJr2YQTnc8XlYKc8mfjHoxCtEdc8UE4jNLPbZsm/GU242Pp3hvy3uL+2EDHOBRWFrdMxWJzIgGbK5M3+y/ACCHOvn6BzQenFtr3uZXvtTSYO6TkrtSrDVhtZzO7DOG64/mNY1dO08d70r1AXEOE1akbNlwXDbfXLAqjzIImjt0EaPWoc9r1yyDS+HrVIenxuCbbnehXsG7H2sBhw7c+iFyNzBqWCWJnPr69eLrHbuqZIxyUsK32Wok8jK1KjnvCbJfN4I57BlZbJojq24M7xfqqmynsuZ8WaSR5NpbGDOgUh+fchrH+HgTmPQNj36A5oysczp+K0tKEmSRL9m17rwvLHpE6ILFqsThV/u19r4L07UwBgAMQ8Rh/2MJI5yJfRH5E9MrDgG7PvMI3ZrG3err4gIk64rTw1KpJQoTVMmnH35Rty9EfZFs25Oc84aA+fXoa+bkqZGRhfc6cO4WuLaXNg6jd9FqNXLXRSgrX8s/kJi521B2rOeAgjzdECuoNEAi2oHX+2JKMgQ5MLo5ezkLzJ7VUBn7YBl4AjZf78FL5qHOC6j8dsiiC1MTAbtqktweypbFYcfYgmFt9gZj7CeCoXpVCyPcVH1u/KY8otFhHv6gFkINwlDJDqZlHd6EpkpgvgS7jYMKsFRSIrM3Zl3Y3clAQxhSivKf+VcHtsls0s6ajudg8qW/EybtM6Jm1ebvRMznd2Bo9HpzZ2zLcuCb1TxH2R9s4P7yvs1UntFV40mMUIY/ywlKqoGCMysP0iEX4sT8Cbym8LIo1g2L85/MpUHoAUzMxtR2y4hSJMGM5HgGcMdzVcAKGWnErVbEcdHEE0b844o4YcwSvpQIJ2mK8kQEy7OIiMD6JaKZYlgZoyh8fZdzmPJGgMKEybiHx2oP434DPE50CInAbf+Tqa9vEyaQPyicYUOkCgyyMcgBcSi5YN26HEk5XLr9fVAbxuN2sN0VjNPnVugqNCQNK0KBpPe+goWBf5+aT/1feNZ7rgnaHlSU6PVEnii93GuHgNJ/etaus0j+Ia3YVcp6UFdxswLNC1PoF7VCo57I3soRMsr+MFG6iUEaGryd+HIozMSG0J1I2A26fWH+Y9iPH22UFMIxnBW779165WTxzxI6SEMWooQcSyoP9DCVRitudahvhFskvQdHAmmDtXHknnPuroZSDeOvHV9v97h8Q5YfNIQMhScKzOaiwUMq/1mmNB0sB0ibRRL6BXQQ/35FIqwm40HamBvZAdMUYlSamGiPdxysv4wViYHgrloZo28tp9eQ6yq45EEQ9Hbi13aAt7Tcb4sie2/x3+A1HeMOFSQoISRmCamtEJxAgdrwLveTdDu8Zb8/8rUlZA5l3a09MA9RjrQPtOKGu0deiuL8ii4MvWltnKP+i4w/ZxawJ1F4+duqBkGm4kK+rL3hB9A5xaDp9w+eW4hBJe/jI+doaxLA3fSDMs+ULjbAL2o0CBQxaeOXhlyW3LcROgF6DO6jJPj4NyLFffjqq6874aZOINinPrSjOVgqpC+cbyYJAniByY1VIw9tMJNu1AOoS843yo8KIOU1A/RsaMW0mK7BBzO8/fkMWtqkD6sFOqgmdFY8mM6dEdtLR6iaxaSw5VUM4+4+Aewn/wX263DZUlhIWsKzq8p21TQN44YR6EYS2BvgQWLquGkpL42v11+bZecmO0id4PKqwrPbI59oBzJrdgmNRiRQx34vxpO511R2soVHOjMIHcpVK4cKnlr2Ow9ouRw8CWTaJD13Y4XUoq32WP/tWSpq3IFP4ZRN4vjI0L0gOz39fi4RlBqLC71e4trEAZ2yoizRyIRAfCpnig4dMn/S7Fqcj7vIAZ5wk3516vM8Fp6wd7LiGeHPflvssGEHmHcO6rMtGz59mDy8s8ssAVWblAgV/+GlyzFIDesZMrL7mLiVFZGbe210IN7MIvWNOLwTN6sPC7GAqFgqQn5ct0vd5hKwDQUUBN0OBa10vGDHt+IagkMRba96kp407f3ciOm6KwWiDCmLFrbPn/cCyUrbD7oVi7sNV6NmPb+G0TxPpYprjKA/trVBltvQy5wmzs89pobAJHP9A4akSTsDHLimNPLb8kKe7HClKk7OOTYzNRTSqzxDoO8SiGGf1bjeYIuNOqHKgaqYk+crLqoDyXJsbG+ZLgPDXWN6S+5BtY56FWYU8hPdi0WO7jUPiwrp5q53zm4CuUFG6JsGOHXnFZ1nFKwnXvKVBIhGfKk/IcFFRZOooOoLa83Y1z4K4xApJsYVXogR88ERyP/AMS6yUyUqf25xVfzj5/ihptwdKAUeGnzuDQC5zcMPkwlzFB+rzsXcwp4GbJGt2rh3EA/s1KZ++B02p1lBJmEWvjxUhxhi2VSeJGleElgmG0BEvWrlbBskuutUji9UzoKiBfpWZGTQAPkKw9HbijS7pUx/c/gxsdAbdoQpXo9Kgn62UluONTKzsiAiTQRTJ2dsf2aDmK3sJlknvz/AVvgWEktgy+ALWrJj3eEsDiBrPPoiffKP43DdjX+Z1HrmGgfPbdItXpnX8VKZvuKtDDEsaAJLjGxUXyqXAXAuUwMPGqZjAvRT33DCLBFoI1mDYfEpS7FDxSdSmYdQIsOVLsKlrufRpIJUOI5feymw4jRS5MUROBUoOO3w3OIrAQUBLosqw4zJCNfQ/kdGmxERYA9C3DvEyBEqyzh9T7i1rvbhhKPc/Fb9gUTW1ehaAOwvInyg/xIMzWS89y2H2Z09IhADGaIpMJWLqFyvawqZinpyvLT/MyU0O6UWOEhNhY7ifO4+iuwGx/33nV3DqXsz508QYNtJCYikKyCa1lFtpCq0+x8CjvsCDAFEX6+oFPw3ub/B6yFYnMgltc/75geEXDv7/mYhxAmIzbcmsAWUx8e1yyiSrh9eaNL69lGrRokhN66G2b8Zkv4EE2ddjIA/xWo9ZaCzFdXbX3z5KKMipkTIacFlM9/qdHLXEdvUUNu3O3HKWg7tD+BecwtQgC9nR2bBVn745FLEfHjCtbqOnyZdKxU3iyWJM1z+dfU4LqXxas0NXW28hC/YYViJaDgiLdTtGN+GJIhidsyVRUjiyLvEV1RO+IdpbvnHy0Jp4CMBMZ/QnulYSKuLKTHbNvvgQCyMNACjSL1TMp8yBVN5qDCEaCMnxkbmMDz93sZLCMgpVE3xIPikmGTl4z2Xq2VRRo6U+vzh5yBEQ9H+qadh4xXwauKTeXNjaJw3Pv1sF6XtWcwS3PFO2UXnrr2fskAbdAKXPxNtcfBzF5JfNPm7SleE3sfWTnqxRTODqulVBTNnPPBkx6iFCf4efiboRW6AsAVbXma2iCdGmjZUj4x0OZDzSBs1Ld3EdLcczkmK9CMMXW5ZvXe6oXsveMzlm16JRZK0gp4cNY4adG1i7FlVIDChHoLeoxqCDFTeyXjS5jUamAFB+X84go5lPjjEYemo844mZBaKh8mJauSBhwew/Xw2pZKYYI9tiuWeFN6ypQcqAwKfLNPx08i0RWXeivaLNqmwR/lSY6DS9VcqBaT5NkgPIyo0VvgZpAUS5ZPAPpqeXQJyqaqV0zjC/UqSSxkGzYcyqC26YRF0K7KvyKTN9SLdtzukvUA+Cohaau0IvxRXO+qq9zco7RTVfm77jzbw7PAbvHI1uG5+GfwX6VdNPhWQ8Z2r1Ei/ZK/eimDYp2jIGStDz9y4m8YVBlkYgzKB2DjTwqsL5bjTJArD0QFfFPeiq6NP1VUmY7iWwixTWOqSNEmbrDoTuTKx0RU8dHTBtHcZwulQz7bN9NgUY7m35GFdBHux73759rKLSCOM7Rh5tQ/sn56GwJF0rDc+qoaSRccYz/FHDDEBLUEkb7Qk0fAn7GHdjWvmxRGjyCbgTz4B+2ABKVH4PkeR3VKHZ2Au/DUSJeMwQjm/aqgS2a+94s5m57MNdHjBIjV19wUSF46o0P7dpB1ytJrFNFOcH7/HZa4fy1q4NKJysxdb3EU1VsoWSSrqPSB7FZ/1bk7R6/MltNH6GgEoTC80HcvCP3n0m71USp8RrHD+CeYncheJJQQeaaHzs0d7qd+8CxzkWELSP9NrT0P9yj3pmX37F2dOBw8AN+6LD6anyBS+Ehsphjvl5BaZ9F+KNjAdRaUjerQekYgnJWZaI1OrN2ff5hHounhmSgPZnKM5vp5NhCXbl8C/1uUb0e0LQbR0GTjqe2kU5N0V8aA1hbpVlVhRub8vGInm/65+BBZ3InZjBZK310P9i2zqNKLqTDDZqdl3N4cnl6/ThwaYpBzMleC9JkJ1LsKEsAC0rnFZy/v7EL3+a9kEjjuQeHG0+2hC78JttRggj2pWXkQlDf2mBA9cp0syN7HVu63keF0sooAqTKW/tEnLHXtwhyRWO/ESWv5cAnpyGUM3U6bOBhG0XzpGMbSCK+DT6UJ+sFmlh6SIiukZTd+nAkh7OdCB1u7oE9HZRILcA+8GHb4EfBnWSBZQZodlCZtKi7n557eHMwGwLuPzek1BdNw0jfy7f9wGCJ9xc1jn2B/nOzW5pvR+IVDva3+828Rk4VRiK44x5KIStevEcyTfLo6nEd7/8eJR/JliiQ27S4oS8G9pWKItqRNpVGzzxhAOXsZkHQP5ML/9HnDa0L6EuwiRzxQzObj+QennjVYNS46r5HMRWqDyg1Pb7eKYwklNeiEo0zCMeugMZ16NuX0C4RMN49GLc+1p5ovc9PtSAp48YdOP0PeqQWNsxkUZ5A5sh94aJ46eV8S4iRioVIMQmZaiM5+N+iR0XUt5v/fYuPUsWKOXS4Ut5F0L07EteAqED9Hyix3/VC1U4b9Sp/G9mJF7yXEa4E+gruToa+m6Vqer5TK+bbnfVnJDqxx87cyrv7Yo5dExq2wmDpIN9a/RoRlTlEhugn82jWmCa9fj3VhppNmDuwFZNsmno7RJFvjk1ZcHuMdB4s1+hHXnXJesvGasnUnQf9kEL+kzHsWm2J51rNzp1qJJyWqgA4/bSwS4ND7OWiZ6kAxXtQ7q9hKIPN963Q5ddNzYUap/dvb7u+3dixKwDwhaLzn6WKKTMr2u8BFYOj4NCkEohBMQUshy4XrnhKPIr5J1FJp0ynxYnd/rMWI+/Dg6WTsjAzr3NKGRiVKpXB+/q7GPhMec4tsuN+/7itBIuL8z2dDl20Hk/WNkg3mbmXXbuCksCxc5wDXyySRIvvAwemEHXkF790I70WvhtGEvlrMXswbBYglR6KUvkf4+1kp6RsE2+16+yGkL0PnafaJnViVFiuZm2d6Lkg7f3DHdrS4bKnSRInFkZuIh1EPrTxiZxYAD4OtYYLvy+UsuOh0TBYPUlidRdh6QFaCl5H4TrTrfZwKplFpLftcj22OaA0sxvb+KJLQPnYkGO0FdIUOhm7w+Rip2l7k16da5aopZolqJKAv4dH0SuZKBRK5/5YLhdOyPFP717ijARCWQvXGmC+ow6waIW2QF9t9w1swYmJH1gj3GALJGLYwXbqlMKICDdcZSFjYckPlH9nt59ASw/IOFBC6eqXi4Vti7F2DJF2XCNyDREqe8mT9JZwbjD0UOlzTVsiLdyxdPVzgjuvDsiHkevAyqIPqrWGy91T1koJQ1heDBYwBy8DvWavLQx6oWCkUeU6Hyx6DGSm4tx/gD7MIBxhSBJLh1M61hsvAluusGPOOBzjlrQnxwubt9qC+f/dVk+v1YJqqwVC5RAuObjchut7uqzSOejBOU52QDcvOzxUmJuvjRCnJn++Ki9Ip6Wmha0waX4VuXTuxgGZ3qgmunXl3QYt3Z2gL9jzUtxXudR1cGLIob+6ikVN0F4Bl7AlD8S4aMp/xAYkAdX8aLnLicW3zaD/pWSa7vpHMfA1fJJ97+oOwd25PmnCIngKlUtajCA2oeaQDyGdKdAGYge48OpJ+DYO+otXGbVtf3worHJiOjXzOntd922aFfMlTaCm6utEtWEymoRhIV07IPvkCIihE/LghwQgtZyQqDRAutFo4N+XWfJUwJ4yvdkGqmKScNmfTjWi9IewwkUzgoruEesAaYAhUzLxR9HWGc1R2qdx4xNmf2wOzBETJKwcr0n7L6ffSLkRtR6k1M6FnDnBKGbE0ToZB4Vlh95U97oirKvmxNuqpF6sNBf/8u1QnOzpProBFUGVIxBropL9MpHR+YU2XXqZ2rpeKlvOZWJYLvpkxuuFDTtsMOJM3eui+jTZED2VYhVbp6ZpjA1rE9GO/KSNskT1hrBVEWe1zN/VFckAhIDJdGGOXzwYA+Nd1+79cyZL46fXikRE7xN+G+EunFNsd9dYZnREgbmaLtS6fUXDASTjTQcFw5fkID5DfJqFnnHr3g0vpu8kEMA6Wc6W+cWKRmmKJ0f/2Wy9ldAfeT3Tk4veg8Icm1FXlYCDxXBcxnQoa2ztZRMeiMxljSOYj8lO3ic3BLDMC69dQTmgpHfUqcvU4YhNou1MAvW5E87nTcBiHieizK3i5c218ANsQq8qyRgB4HQswrGhZNAFq5ntlHmymvV3MvpK5P0W0L9C0D2ZtHvbrrK9r5ByIT2IAt0k+4sZ3p9kde/HEDfQCexCzrR8r2BVPdq+sEXRSY2L5wjq5KFjs96Wpp0d8ou2VL6LcWwniuCmsjHbeFn/rcyZq9U+eKCG2KKaMAtDPQpNnLjNU+TWCupUJ6y319Xgx12nNabCwGxkxJQKvrOgDc9Pq2S5zZ/m+r8N6cw4VYewGanIgYRcElYsc3yR26auOqv5tfn/viOYR7JlbGuG1pLv5BrnnElacGFvhX9c8BHfkDZ0hf6R3DfuvLSIAHyQFJlLBB72FqRSLo7JpiMnh0oEwKllu1d84mRZQLUtdXnEYjf9gxY2d+1m/gZR5/pmXoJ0qus8ZkMs5VMxsJxEewwWcbL2dlI2kjXHpdsLnhCinyju00NOcjYJLbc92UhpvvYA4M1ZQlyHA49xHvrPAWpE7bQA+8gFNMGKouiUhDzZrTYVt7HGXu5cdJyFdOuy+w9RsqL7tdO1kLfRXHKQLcbJxGu7GWCj1F0m/D59Czb4wpVGC/9lWSDn/yVrqKVa+oMZ67PYlNf0H5ASsb9ScrGIZH67pntJybcXfgtvUoWnCeP+twtcOSeyVHgLTMrG9o0EKjGMN0R8UFyzTLvX3wt/XpZH9BoKTVzzYHZrbVhsqrkCMIIM2Z5BKSNb2LpMu3oqGTIQY/CqdNm0rilwuiZWnzj5CY8ZAqq5sed0T5xvE6LrCf6puix/KGsYzC0yZLxzS6evEGc6LpxlRsFX6V4uiwkHu9iz2N9era8g0v07BmVSwQP8yWV1tuNVA4GJSRF2nKtdD9lsT/SUCxie9/79MVIC60XVkPvL1PJCZsBQhzjb6bbVaUT5BYjzsnAWvzZ8QAI41YN8Zi/+iPg+ZwrK1Z192ZGfgrjbL2oUBnkV3mPGRsx3C5/uPiIRYOXrwZ4IilxixnPf3aRHvwagoUlYXKGutEhtiLeEs8OopW0VBdlSTf4zYFcY6xFj53O4QL9OrtzH/1hbikAZK3lmOJo78fDsDVK7EfTcRjdEnn1dc7THW5bd6AyEqOys7VkCxLItOvB+HTQZJ0BuQFvU6WXzXAXfyN1Q/CJ727AwNTuhH3mjLFSKFH+sGSaZpZ76qAO8jFctHUPeH803wb6lCjXtmd4BLPP4dAGh1gFyctD9EByauSTE/M0k+A6nhjUfyv+ZI9+tbgWO30r60TfRBYNIjMt3Seyf7LVZkvy1+fDXFzipcpjj2CPzVuDrrLKSSWcg+7JIv/1pTzmRE/u7zQ/5w9xRFevh7LxtblUrfGTquasSsEzJzZllLIsBtjlbXidmmzIKTZA8//H/9NUHAbPt1u1HGewwsdP7r/F7MGOhQzql0YkXSiSwgeeSOty67yOukYS56PFtrkE2bgjPBnc4Dfe3BxXIehjTfN47iYBW+Vz2uXCE3oCvf2g41snEo89505UlIvF+SqQMZfSDlciCgJJGYQ1kiBFHN8bs9vZoVILKl00zVsVOuTCENGLSxgp4i+oWOv2cY93Fl4fuTqaiGj59QMDWRG1kmzmiPnEcrJJk0w1hUR5r6NIClSzRhV8wHW6/pBDcRABXQifDx9YJi9DLls5IAFnCgCooBxmTfHjzLqBW0h7qLZsxrB4Ktmhj63paq31GnMohVLv908o4BHODxMl0PPCr3OhfyWkbqZTJH58lgXe1lUztYgmi5RWh7mdWup5qF1DHVh1AzYoJhMoGwO9UHP0KOOBvamlsdb2LQue8d7h0qq5MFO3+LCge8ph7+ehqZ8SlBNJdTFyyNRe3iEPcZs6Xeywv8+kLBPDCX7aqTSXrm9SyTFYbxDZzfooz8PP5TyW/ekGSWGZcbVxiGtKPnIk9PRoz2d5Zek1v1noObFCK3oieraH6VeE/f9qeEWghhvqy52OIgAS5mvjeeHD44oON7+Z+8nWU5M0DdHpTP8P2C7xVkCj3nxBf0jZgnrNSeJEkrMM9PB2lRApVSVKjOeqpzIlRrx8aFZ95Y4GELdYF1uugXhGAW1NKGrxlqRRgFSCr8v0Ct2Zs3pPx+nrPd3I5OWE4wkJpO/yqUXFz2hdZ6B3h9IPmxlI3N4F9Or+4Xd6mqRIywO0FzKC4t687EElFwPZQBOiJmJApNH6i6+bCUpFTCXzGifb3UYx4tJdkS+/8HZwiIwk8dAJGXtQuvtJhT6KvI0BM11cCmkHnwIPL52+nKcL5JKM9OHryKTxV0Djqx9lRQJcKifSbeuI6JoICXcbGvU6RRGNZFTEL0yVGHRW5PCIUt87QH4+vyoOjrtn7xMDlrOU0HSmfbBjwuXokBXfaTkD/thyWIBXX0Q5wSZFOpSJi/D40rglRZjbdlb74NwdoSak+nVOfssrzhjUES1IuOdtAKazTvZtwF35R+DWSXlH3UG8l+wF6RJXa5HhYK1h8e1BRoI1OCA9lqFfCB2bPObwT25Cp7S4sXdKZsx6gdF+AFDbaCpGQ87fFxxL6uXRywJCCvjp2x+Ue4faBvdl6A90ouEQIpQh1uT6aiCgA4U28qWO+zsMM22KCCw5geR+bE/CNw9wDxQhH9KUGRexDosqcA1nVuG0oKs/cBOHyySLtDjiT/WxAYAoSVTB7rKASFRTBrJFjoBijvxqi2UgJ+AqEHcC1HImnDGHvi1letefmF3dIX9uudEPa1hWZQB9pmavPJAlm6LkZj6nPiWRUcQikWOjBPEByidCRrnOCPvwGF3G+VTWQS4H9hq6oApcGZCDu6XLWTveyst7ZpfCH5mgbUUFG/5TnTtlnHjPdE0Q4kaydQV1g6x1P5mXP35fSGWIrfnU4iksIPlgOOQq+YZBiClHhacuYnmfbMK/7i+zCh/XAAjFpW6OKhBCAcs+CA7DIEc2vaj0g4GGUFfq8+eqTxo9md6vhWVwZBt+UOuZCL4qz7s4df9uq2NXpINdlfOBaeVsqrd3KqxNtdIcVPLz61PHL5IxhO0Y0Ye+Vn6MiTKuGkKYqN/msZzBlP7LgDUWzjxxncEcbd1VDXVaNGt4DxHM87M4s/wYbuljfoQdSOtAd5dXOEol0Tbk9TGKpYPE3c5dtW+UM="
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

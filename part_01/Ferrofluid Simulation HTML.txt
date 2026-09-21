@@ -1,0 +1,246 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "# System Prompt: The Distilled Intelligence Protocol\n\n### **1. META-INSTRUCTIONS (THE \"COLD START\")**\n**Role:** You are a Distilled Reasoning Unit. You possess high-density intelligence compressed into an efficient form.\n**Goal:** Solve problems by thinking first, generating internal options, and outputting only the strongest result.\n**Source Philosophy:** *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.*\n\n### **2. OPERATIONAL PHILOSOPHY (STRICT RULES)**\n\n**PHASE A: PAUSE TO THINK (Chain of Thought)**\nBefore you output a single word to the user, you must open a `\u003cthinking\u003e` block. Do not skip this. In this block:\n*   **Stop and Wait:** Do not rush. Allocate \"token budget\" to reasoning.\n*   **Self-Correction:** If your logic fails, acknowledge it and re-calculate. Look for the \"Aha!\" moment.\n*   **Source:** *Wei et al. (2022) / DeepSeek-R1 Paper.*\n\n**PHASE B: SIMULATE \u0026 SELECT (GRPO Method)**\nDo not trust your first draft. Inside your `\u003cthinking\u003e` block:\n1.  **Generate Options:** Create 3 distinct mental drafts for the answer.\n2.  **Grade Them:** Compare the drafts against each other. Which one solves the problem best? Which one is most efficient?\n3.  **Discard:** Throw away the weak drafts. Keep only the winner.\n*   **Source:** *DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning.*\n\n**PHASE C: SELF-PLAY (Practice over Theory)**\nSimulate the user\u0027s reaction. Test your best draft against the strict constraints below. If it fails the \"Banned Vocabulary\" check, rewrite it immediately. Learn by doing, not just by following rules.\n*   **Source:** *Silver et al. (2017) - Mastering Chess and Shogi by Self-Play.*\n\n**PHASE D: DISTILLATION (The Output)**\nYour final output must be the \"Student Model\" version of the answer: highly compressed, efficient, and accurate. No wasted tokens.\n*   **Source:** *Hinton et al. (2015) - Distilling the Knowledge in a Neural Network.*\n\n---\n\n### **3. TONE \u0026 STYLE (SPARTAN MODE)**\n**Readability:** Grade 6-8. Simple words only.\n**Voice:** Active. Direct. \"You\" and \"Your\".\n**Structure:**\n*   Short sentences.\n*   Bullet points for lists.\n*   No fluff. No filler.\n\n**CONSTRAINTS (WHAT TO AVOID):**\n*   NO \"In conclusion\" or \"To summarize\".\n*   NO output warnings (\"Here is the code\").\n*   NO passive voice.\n*   NO complex sentence structures.\n*   NO hashtags.\n\n### **4. BANNED VOCABULARY (KILL LIST)**\n**Scan your draft. If you see these words, delete them and rewrite:**\n*   can, may, just, that, very, really, literally, actually, certainly, probably, basically, could, maybe.\n*   delve, embark, enlightening, esteemed, shed light, craft, crafting, imagine, realm.\n*   game-changer, unlock, discover, skyrocket, abyss, revolutionize, disruptive.\n*   utilize, utilizing, dive deep, tapestry, illuminate, unveil, pivotal, intricate, elucidate.\n*   hence, furthermore, however, harness, exciting, groundbreaking, cutting-edge, remarkable.\n*   it remains to be seen, glimpse into, navigating, landscape, stark, testament.\n*   in summary, in conclusion, moreover, boost, skyrocketing, opened up, powerful, inquiries, ever-evolving.\n\n---\n\n### **5. EXECUTION LOOP**\n1.  **Receive Input.**\n2.  **Think** (Phase A \u0026 B).\n3.  **Refine** (Phase C - Check against Banned Words).\n4.  **Distill** (Phase D - Final Output)."
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "1HTKEvYLQRoYMvzVK3vlTD1vh-ZeSeizT"
+      },
+      "role": "user",
+      "tokenCount": 1101
+    }, {
+      "text": "Give me an accurate simulation from the picture using whatever code you need, but then ultimately create an html file so I can view it and simulate it and view it by myself. ",
+      "role": "user",
+      "tokenCount": 37
+    }, {
+      "text": "**Initiating Image Analysis**\n\nOkay, I\u0027m starting with a deep dive into the input image. I\u0027ve pinpointed a classic ferrofluid spike pattern. My goal is to extract the details of the pattern and its arrangement from the image. I am taking care to identify the properties of ferrofluid, and its response to magnetic fields. I\u0027m building a framework to model its behavior in a simulation.\n\n\n**Analyzing Ferrofluid Characteristics**\n\nI\u0027ve been thinking about the spikes - they\u0027re due to the Rosensweig instability and are roughly hemispherical due to an underlying magnet. Their glossy, black appearance and hexagonal-like arrangement are also key. Now, I\u0027m aiming for an interactive simulation with an HTML output that runs in a browser. I\u0027m exploring simulation options, specifically physical fluid simulations and vertex displacement shaders, keeping an eye on their pros and cons.\n\n\n**Choosing Simulation Method**\n\nI\u0027ve decided on Three.js with vertex displacement for simulating the ferrofluid. It offers a good trade-off between visual quality (capturing the shiny, spiky appearance) and manageable performance. I\u0027m focusing on the code structure now, starting with the basic setup: scene, camera, and renderer. For the geometry, I\u0027m leaning toward a high-resolution plane deformed to resemble the mound shape from the image, and a standard or physical material with black color and low roughness for a glossy look.\n\n\n**Refining the Simulation**\n\nI\u0027m now zeroing in on the specifics of the vertex shader. I need to get the metallic appearance right, so I\u0027ll be sure to set the metallic parameter to 0.8. I\u0027m focusing on the environment map, realizing it\u0027s essential for reflections to make the surface of the simulation visible. I have a basic formula concept for the simulation: `height \u003d base_mound + spike_pattern`. The spikes will react to user input, and will move like a simulation.\n\n\n**Optimizing Spikes \u0026 Lighting**\n\nI\u0027m making the spike pattern more realistic; standard sine waves are too uniform, so I\u0027m mixing frequencies and modulating amplitude based on distance from the center. I\u0027m focusing on lighting, recognizing how essential it is for visibility – strong directional lights are necessary. User interaction is key; the mouse position will control the magnetic field center and the resulting spike mound. I\u0027ll need `requestAnimationFrame` for a smooth loop and vertex updates in the render loop. I am finalizing the HTML and library imports, and planning my script.\n\n\n**Finalizing Code Details**\n\nOkay, the math is coming together: calculating distance from the mouse cursor on the plane, inverse distance with clamping for magnetic force (height). I\u0027m implementing a spike texture using `sin(x)*sin(y)` modulated by magnetic strength. I\u0027m planning to use point lights for specular highlights. The render loop is ready. I\u0027m focusing on \"banned vocabulary\" and tone constraints. I\u0027m currently drafting the math for the code, focusing on the formulas for bump and spike generation, as well as final height calculation with a bump mask. It is critical to update normals with `geometry.computeVertexNormals()` when manually changing vertices.\n\n\n",
+      "role": "model",
+      "tokenCount": 1540,
+      "isThought": true,
+      "parts": [{
+        "text": "**Initiating Image Analysis**\n\nOkay, I\u0027m starting with a deep dive into the input image. I\u0027ve pinpointed a classic ferrofluid spike pattern. My goal is to extract the details of the pattern and its arrangement from the image. I am taking care to identify the properties of ferrofluid, and its response to magnetic fields. I\u0027m building a framework to model its behavior in a simulation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Ferrofluid Characteristics**\n\nI\u0027ve been thinking about the spikes - they\u0027re due to the Rosensweig instability and are roughly hemispherical due to an underlying magnet. Their glossy, black appearance and hexagonal-like arrangement are also key. Now, I\u0027m aiming for an interactive simulation with an HTML output that runs in a browser. I\u0027m exploring simulation options, specifically physical fluid simulations and vertex displacement shaders, keeping an eye on their pros and cons.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Choosing Simulation Method**\n\nI\u0027ve decided on Three.js with vertex displacement for simulating the ferrofluid. It offers a good trade-off between visual quality (capturing the shiny, spiky appearance) and manageable performance. I\u0027m focusing on the code structure now, starting with the basic setup: scene, camera, and renderer. For the geometry, I\u0027m leaning toward a high-resolution plane deformed to resemble the mound shape from the image, and a standard or physical material with black color and low roughness for a glossy look.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Refining the Simulation**\n\nI\u0027m now zeroing in on the specifics of the vertex shader. I need to get the metallic appearance right, so I\u0027ll be sure to set the metallic parameter to 0.8. I\u0027m focusing on the environment map, realizing it\u0027s essential for reflections to make the surface of the simulation visible. I have a basic formula concept for the simulation: `height \u003d base_mound + spike_pattern`. The spikes will react to user input, and will move like a simulation.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Optimizing Spikes \u0026 Lighting**\n\nI\u0027m making the spike pattern more realistic; standard sine waves are too uniform, so I\u0027m mixing frequencies and modulating amplitude based on distance from the center. I\u0027m focusing on lighting, recognizing how essential it is for visibility – strong directional lights are necessary. User interaction is key; the mouse position will control the magnetic field center and the resulting spike mound. I\u0027ll need `requestAnimationFrame` for a smooth loop and vertex updates in the render loop. I am finalizing the HTML and library imports, and planning my script.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Finalizing Code Details**\n\nOkay, the math is coming together: calculating distance from the mouse cursor on the plane, inverse distance with clamping for magnetic force (height). I\u0027m implementing a spike texture using `sin(x)*sin(y)` modulated by magnetic strength. I\u0027m planning to use point lights for specular highlights. The render loop is ready. I\u0027m focusing on \"banned vocabulary\" and tone constraints. I\u0027m currently drafting the math for the code, focusing on the formulas for bump and spike generation, as well as final height calculation with a bump mask. It is critical to update normals with `geometry.computeVertexNormals()` when manually changing vertices.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "This HTML file creates a real-time, interactive simulation of the ferrofluid in your image using WebGL (Three.js).\n\n### **Instructions**\n1.  Copy the code below.\n2.  Save it as an `.html` file (e.g., `ferrofluid.html`).\n3.  Open it in any modern web browser.\n4.  **Interact:** Move your mouse to drag the \"magnet\" and create the spike formations.\n\n```html\n\u003c!DOCTYPE html\u003e\n\u003chtml lang\u003d\"en\"\u003e\n\u003chead\u003e\n    \u003cmeta charset\u003d\"UTF-8\"\u003e\n    \u003ctitle\u003eFerrofluid Simulation\u003c/title\u003e\n    \u003cstyle\u003e\n        body { margin: 0; overflow: hidden; background-color: #e0e0e0; }\n        canvas { display: block; }\n        #instruction {\n            position: absolute;\n            top: 20px;\n            width: 100%;\n            text-align: center;\n            color: #333;\n            font-family: sans-serif;\n            font-weight: bold;\n            pointer-events: none;\n            text-transform: uppercase;\n            letter-spacing: 2px;\n        }\n    \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cdiv id\u003d\"instruction\"\u003eMove Mouse to Control Magnet\u003c/div\u003e\n    \u003c!-- Import Three.js --\u003e\n    \u003cscript type\u003d\"module\"\u003e\n        import * as THREE from \u0027https://unpkg.com/three@0.160.0/build/three.module.js\u0027;\n\n        // 1. SCENE SETUP\n        const scene \u003d new THREE.Scene();\n        scene.background \u003d new THREE.Color(0xe0e0e0); // Matches the white/grey studio background\n        scene.fog \u003d new THREE.Fog(0xe0e0e0, 10, 50);\n\n        const camera \u003d new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);\n        camera.position.set(0, 12, 18);\n        camera.lookAt(0, 0, 0);\n\n        const renderer \u003d new THREE.WebGLRenderer({ antialias: true });\n        renderer.setSize(window.innerWidth, window.innerHeight);\n        renderer.shadowMap.enabled \u003d true;\n        renderer.shadowMap.type \u003d THREE.PCFSoftShadowMap;\n        document.body.appendChild(renderer.domElement);\n\n        // 2. LIGHTING (Crucial for the glossy black look)\n        const ambientLight \u003d new THREE.AmbientLight(0xffffff, 0.4);\n        scene.add(ambientLight);\n\n        // Main directional light (The \"Studio\" light)\n        const dirLight \u003d new THREE.DirectionalLight(0xffffff, 2);\n        dirLight.position.set(5, 10, 5);\n        dirLight.castShadow \u003d true;\n        dirLight.shadow.mapSize.width \u003d 1024;\n        dirLight.shadow.mapSize.height \u003d 1024;\n        scene.add(dirLight);\n\n        // Rim light for highlights\n        const spotLight \u003d new THREE.SpotLight(0xffffff, 10);\n        spotLight.position.set(-5, 5, -5);\n        scene.add(spotLight);\n\n        // 3. FERROFLUID MESH\n        // High resolution plane to allow detailed vertex manipulation\n        const geometry \u003d new THREE.PlaneGeometry(20, 20, 150, 150);\n        \n        // Rotated to lay flat\n        geometry.rotateX(-Math.PI / 2);\n\n        // Glossy Black Material\n        const material \u003d new THREE.MeshStandardMaterial({\n            color: 0x050505,       // Almost black\n            roughness: 0.1,        // Very smooth\n            metalness: 0.7,        // Metallic\n            flatShading: false,\n        });\n\n        const fluid \u003d new THREE.Mesh(geometry, material);\n        fluid.castShadow \u003d true;\n        fluid.receiveShadow \u003d true;\n        scene.add(fluid);\n\n        // Store original positions to calculate displacement\n        const positionAttribute \u003d geometry.attributes.position;\n        const vertex \u003d new THREE.Vector3();\n        const basePositions \u003d [];\n        for (let i \u003d 0; i \u003c positionAttribute.count; i++) {\n            vertex.fromBufferAttribute(positionAttribute, i);\n            basePositions.push({ x: vertex.x, y: vertex.y, z: vertex.z });\n        }\n\n        // 4. SIMULATION LOGIC\n        const mouse \u003d new THREE.Vector2();\n        const target \u003d new THREE.Vector2();\n        const raycaster \u003d new THREE.Raycaster();\n        const plane \u003d new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);\n        \n        // Mouse interaction\n        window.addEventListener(\u0027mousemove\u0027, (event) \u003d\u003e {\n            mouse.x \u003d (event.clientX / window.innerWidth) * 2 - 1;\n            mouse.y \u003d -(event.clientY / window.innerHeight) * 2 + 1;\n        });\n\n        // Parameters\n        const MOUND_RADIUS \u003d 6.0;\n        const MOUND_HEIGHT \u003d 3.5;\n        const SPIKE_FREQ \u003d 2.5; \n        const TIME_SCALE \u003d 0.003;\n\n        function updateFluid(time) {\n            // Find where mouse intersects the floor plane\n            raycaster.setFromCamera(mouse, camera);\n            const intersection \u003d new THREE.Vector3();\n            raycaster.ray.intersectPlane(plane, intersection);\n            \n            // Smoothly interpolate the \"magnet\" position\n            if (intersection) {\n                target.x +\u003d (intersection.x - target.x) * 0.1;\n                target.y +\u003d (intersection.z - target.y) * 0.1; // Z matches Y in 2D logic\n            }\n\n            const positions \u003d fluid.geometry.attributes.position.array;\n\n            for (let i \u003d 0; i \u003c basePositions.length; i++) {\n                const bx \u003d basePositions[i].x;\n                const by \u003d basePositions[i].y; // This is Z in world space\n                \n                // Calculate distance from the magnet center\n                const dx \u003d bx - target.x;\n                const dy \u003d by - target.y;\n                const dist \u003d Math.sqrt(dx * dx + dy * dy);\n\n                // Calculate the \"Mound\" shape (Gaussian falloff)\n                // Only lift vertices within the radius\n                let height \u003d 0;\n                if (dist \u003c MOUND_RADIUS) {\n                    const falloff \u003d Math.max(0, 1 - (dist / MOUND_RADIUS));\n                    const smoothedFalloff \u003d falloff * falloff * (3 - 2 * falloff); // Smoothstep curve\n                    \n                    // Base mound shape\n                    const baseShape \u003d smoothedFalloff * MOUND_HEIGHT;\n\n                    // Spike Pattern (Rosensweig instability approximation)\n                    // Uses Sine waves modulated by the mound height\n                    const spikePattern \u003d Math.sin(bx * SPIKE_FREQ * 2) * Math.cos(by * SPIKE_FREQ * 2);\n                    const secondarySpike \u003d Math.sin(bx * SPIKE_FREQ + time) * Math.cos(by * SPIKE_FREQ + time);\n                    \n                    // Spikes are sharper near the top (center of magnet)\n                    const spikeHeight \u003d (spikePattern + secondarySpike * 0.5) * smoothedFalloff * 1.2;\n                    \n                    // Combine mound + spikes. \n                    // Use Math.abs on spikes to make them sharp points pointing up\n                    height \u003d baseShape + Math.max(0, spikeHeight);\n                }\n\n                // Update Y position (Up in Three.js)\n                // The geometry index for Y is i * 3 + 1\n                positions[i * 3 + 1] \u003d height; \n            }\n\n            fluid.geometry.attributes.position.needsUpdate \u003d true;\n            fluid.geometry.computeVertexNormals(); // Essential for lighting to look correct on deformation\n        }\n\n        // 5. RENDER LOOP\n        function animate(time) {\n            requestAnimationFrame(animate);\n            updateFluid(time * TIME_SCALE);\n            renderer.render(scene, camera);\n        }\n\n        animate(0);\n\n        // Handle Resize\n        window.addEventListener(\u0027resize\u0027, () \u003d\u003e {\n            camera.aspect \u003d window.innerWidth / window.innerHeight;\n            camera.updateProjectionMatrix();\n            renderer.setSize(window.innerWidth, window.innerHeight);\n        });\n\n    \u003c/script\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n```",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 1997,
+      "parts": [{
+        "text": "This HTML file creates a real-time, interactive simulation of the ferro"
+      }, {
+        "text": "fluid in your image using WebGL (Three.js).\n\n### **Instructions**\n1.  Copy the code below"
+      }, {
+        "text": ".\n2.  Save it as an `.html` file (e.g., `ferrofluid.html`)."
+      }, {
+        "text": "\n3.  Open it in any modern web browser.\n4.  **Interact:** Move your mouse to drag"
+      }, {
+        "text": " the \"magnet\" and create the spike formations.\n\n```html\n\u003c!DOCTYPE html\u003e\n\u003chtml lang\u003d\"en\"\u003e\n\u003c"
+      }, {
+        "text": "head\u003e\n    \u003cmeta charset\u003d\"UTF-8\"\u003e\n    \u003ctitle\u003eFerrofluid Simulation\u003c/title\u003e"
+      }, {
+        "text": "\n    \u003cstyle\u003e\n        body { margin: 0; overflow: hidden; background-color: #e"
+      }, {
+        "text": "0e0e0; }\n        canvas { display: block; }\n        #instruction {\n            position"
+      }, {
+        "text": ": absolute;\n            top: 20px;\n            width: 100%;\n            text-align:"
+      }, {
+        "text": " center;\n            color: #333;\n            font-family: sans-serif;\n            font"
+      }, {
+        "text": "-weight: bold;\n            pointer-events: none;\n            text-transform: uppercase;\n            letter-spacing:"
+      }, {
+        "text": " 2px;\n        }\n    \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cdiv id\u003d\""
+      }, {
+        "text": "instruction\"\u003eMove Mouse to Control Magnet\u003c/div\u003e\n    \u003c!-- Import Three.js --\u003e\n    \u003cscript type\u003d\"module\"\u003e"
+      }, {
+        "text": "\n        import * as THREE from \u0027https://unpkg.com/three@0.160.0/build/three"
+      }, {
+        "text": ".module.js\u0027;\n\n        // 1. SCENE SETUP\n        const scene \u003d new THREE.Scene();"
+      }, {
+        "text": "\n        scene.background \u003d new THREE.Color(0xe0e0e0); // Matches the white/"
+      }, {
+        "text": "grey studio background\n        scene.fog \u003d new THREE.Fog(0xe0e0e0, 1"
+      }, {
+        "text": "0, 50);\n\n        const camera \u003d new THREE.PerspectiveCamera(45, window.innerWidth /"
+      }, {
+        "text": " window.innerHeight, 0.1, 100);\n        camera.position.set(0,"
+      }, {
+        "text": " 12, 18);\n        camera.lookAt(0, 0, 0);\n\n        const renderer"
+      }, {
+        "text": " \u003d new THREE.WebGLRenderer({ antialias: true });\n        renderer.setSize(window.innerWidth, window"
+      }, {
+        "text": ".innerHeight);\n        renderer.shadowMap.enabled \u003d true;\n        renderer.shadowMap.type \u003d THREE"
+      }, {
+        "text": ".PCFSoftShadowMap;\n        document.body.appendChild(renderer.domElement);\n\n        // 2"
+      }, {
+        "text": ". LIGHTING (Crucial for the glossy black look)\n        const ambientLight \u003d new THREE.AmbientLight(0xffffff"
+      }, {
+        "text": ", 0.4);\n        scene.add(ambientLight);\n\n        // Main directional light (The \""
+      }, {
+        "text": "Studio\" light)\n        const dirLight \u003d new THREE.DirectionalLight(0xffffff, 2);\n        dir"
+      }, {
+        "text": "Light.position.set(5, 10, 5);\n        dirLight.castShadow \u003d true;\n"
+      }, {
+        "text": "        dirLight.shadow.mapSize.width \u003d 1024;\n        dirLight.shadow.mapSize"
+      }, {
+        "text": ".height \u003d 1024;\n        scene.add(dirLight);\n\n        // Rim light for highlights"
+      }, {
+        "text": "\n        const spotLight \u003d new THREE.SpotLight(0xffffff, 10);\n        spotLight"
+      }, {
+        "text": ".position.set(-5, 5, -5);\n        scene.add(spotLight);\n\n        // 3"
+      }, {
+        "text": ". FERROFLUID MESH\n        // High resolution plane to allow detailed vertex manipulation\n        const geometry \u003d new THREE."
+      }, {
+        "text": "PlaneGeometry(20, 20, 150, 150);\n        \n        "
+      }, {
+        "text": "// Rotated to lay flat\n        geometry.rotateX(-Math.PI / 2);\n\n        // Glossy Black"
+      }, {
+        "text": " Material\n        const material \u003d new THREE.MeshStandardMaterial({\n            color: 0x0505"
+      }, {
+        "text": "05,       // Almost black\n            roughness: 0.1,        // Very smooth\n            metalness:"
+      }, {
+        "text": " 0.7,        // Metallic\n            flatShading: false,\n        });\n\n        const fluid \u003d new THREE."
+      }, {
+        "text": "Mesh(geometry, material);\n        fluid.castShadow \u003d true;\n        fluid.receiveShadow \u003d true;\n        scene"
+      }, {
+        "text": ".add(fluid);\n\n        // Store original positions to calculate displacement\n        const positionAttribute \u003d geometry.attributes.position;"
+      }, {
+        "text": "\n        const vertex \u003d new THREE.Vector3();\n        const basePositions \u003d [];\n        for (let i \u003d"
+      }, {
+        "text": " 0; i \u003c positionAttribute.count; i++) {\n            vertex.fromBufferAttribute(positionAttribute,"
+      }, {
+        "text": " i);\n            basePositions.push({ x: vertex.x, y: vertex.y, z: vertex"
+      }, {
+        "text": ".z });\n        }\n\n        // 4. SIMULATION LOGIC\n        const mouse \u003d new THREE.Vector2();"
+      }, {
+        "text": "\n        const target \u003d new THREE.Vector2();\n        const raycaster \u003d new THREE.Raycaster();\n        const"
+      }, {
+        "text": " plane \u003d new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);"
+      }, {
+        "text": "\n        \n        // Mouse interaction\n        window.addEventListener(\u0027mousemove\u0027, (event) \u003d\u003e {\n            mouse.x"
+      }, {
+        "text": " \u003d (event.clientX / window.innerWidth) * 2 - 1;\n            mouse.y \u003d -("
+      }, {
+        "text": "event.clientY / window.innerHeight) * 2 + 1;\n        });\n\n        // Parameters\n        "
+      }, {
+        "text": "const MOUND_RADIUS \u003d 6.0;\n        const MOUND_HEIGHT \u003d 3.5;\n"
+      }, {
+        "text": "        const SPIKE_FREQ \u003d 2.5; \n        const TIME_SCALE \u003d 0.003"
+      }, {
+        "text": ";\n\n        function updateFluid(time) {\n            // Find where mouse intersects the floor plane\n            raycaster.setFrom"
+      }, {
+        "text": "Camera(mouse, camera);\n            const intersection \u003d new THREE.Vector3();\n            raycaster.ray."
+      }, {
+        "text": "intersectPlane(plane, intersection);\n            \n            // Smoothly interpolate the \"magnet\" position\n            if ("
+      }, {
+        "text": "intersection) {\n                target.x +\u003d (intersection.x - target.x) * 0.1;\n"
+      }, {
+        "text": "                target.y +\u003d (intersection.z - target.y) * 0.1; // Z matches Y in 2"
+      }, {
+        "text": "D logic\n            }\n\n            const positions \u003d fluid.geometry.attributes.position.array;\n\n            for (let"
+      }, {
+        "text": " i \u003d 0; i \u003c basePositions.length; i++) {\n                const bx \u003d basePositions[i].x;"
+      }, {
+        "text": "\n                const by \u003d basePositions[i].y; // This is Z in world space\n                \n                // Calculate distance"
+      }, {
+        "text": " from the magnet center\n                const dx \u003d bx - target.x;\n                const dy \u003d by - target."
+      }, {
+        "text": "y;\n                const dist \u003d Math.sqrt(dx * dx + dy * dy);\n\n                // Calculate the \"Mound"
+      }, {
+        "text": "\" shape (Gaussian falloff)\n                // Only lift vertices within the radius\n                let height \u003d 0;"
+      }, {
+        "text": "\n                if (dist \u003c MOUND_RADIUS) {\n                    const falloff \u003d Math.max(0,"
+      }, {
+        "text": " 1 - (dist / MOUND_RADIUS));\n                    const smoothedFalloff \u003d falloff * falloff * (3 -"
+      }, {
+        "text": " 2 * falloff); // Smoothstep curve\n                    \n                    // Base mound shape\n                    const baseShape \u003d smoothedFalloff"
+      }, {
+        "text": " * MOUND_HEIGHT;\n\n                    // Spike Pattern (Rosensweig instability approximation)\n                    // Uses Sine waves"
+      }, {
+        "text": " modulated by the mound height\n                    const spikePattern \u003d Math.sin(bx * SPIKE_FREQ * 2"
+      }, {
+        "text": ") * Math.cos(by * SPIKE_FREQ * 2);\n                    const secondarySpike \u003d Math"
+      }, {
+        "text": ".sin(bx * SPIKE_FREQ + time) * Math.cos(by * SPIKE_FREQ + time);"
+      }, {
+        "text": "\n                    \n                    // Spikes are sharper near the top (center of magnet)\n                    const spikeHeight \u003d (spike"
+      }, {
+        "text": "Pattern + secondarySpike * 0.5) * smoothedFalloff * 1.2;\n                    \n"
+      }, {
+        "text": "                    // Combine mound + spikes. \n                    // Use Math.abs on spikes to make them sharp points pointing up"
+      }, {
+        "text": "\n                    height \u003d baseShape + Math.max(0, spikeHeight);\n                }\n\n                // Update Y"
+      }, {
+        "text": " position (Up in Three.js)\n                // The geometry index for Y is i * 3 + 1\n                "
+      }, {
+        "text": "positions[i * 3 + 1] \u003d height; \n            }\n\n            fluid.geometry.attributes"
+      }, {
+        "text": ".position.needsUpdate \u003d true;\n            fluid.geometry.computeVertexNormals(); // Essential for lighting to look"
+      }, {
+        "text": " correct on deformation\n        }\n\n        // 5. RENDER LOOP\n        function animate(time) {\n            "
+      }, {
+        "text": "requestAnimationFrame(animate);\n            updateFluid(time * TIME_SCALE);\n            renderer.render(scene,"
+      }, {
+        "text": " camera);\n        }\n\n        animate(0);\n\n        // Handle Resize\n        window.addEventListener(\u0027resize\u0027, () \u003d\u003e"
+      }, {
+        "text": " {\n            camera.aspect \u003d window.innerWidth / window.innerHeight;\n            camera.updateProjectionMatrix();\n"
+      }, {
+        "text": "            renderer.setSize(window.innerWidth, window.innerHeight);\n        });\n\n    \u003c/script\u003e\n\u003c/body\u003e\n"
+      }, {
+        "text": "\u003c/html\u003e\n```"
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

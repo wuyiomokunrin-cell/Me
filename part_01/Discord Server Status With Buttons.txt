@@ -1,0 +1,213 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-flash-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH",
+    "enableImageSearch": false
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "17cEjt7r5fedAGxUWw0cpePFYx0Ha0CKw"
+      },
+      "role": "user",
+      "tokenCount": 1108,
+      "createTime": "2026-03-12T16:14:19.286Z"
+    }, {
+      "text": "i wantot make a discohook message in this style. ",
+      "role": "user",
+      "tokenCount": 14,
+      "createTime": "2026-03-12T16:14:19.286Z"
+    }, {
+      "text": "**Investigating Discohook Design**\n\nI\u0027m currently searching for existing Discohook embed templates, specifically related to Minecraft server status and Discord. I\u0027m hoping to find inspiration and best practices for design. Further, I am looking at how to create custom icons and the button layouts, particularly the desired blue \"Join Game Server\" button style. I\u0027m also planning to investigate the specific fields I\u0027ll need to use.\n\n\n**Discovering Embed Creation**\n\nI\u0027ve learned that Discohook itself won\u0027t directly create buttons when sent through a webhook. Seems like I need to integrate a separate bot, perhaps \"Discohook Utils\" or a similar \"Embed Generator,\" to get those interactive buttons working as desired.\n\n\n**Analyzing Embed Elements**\n\nI\u0027m now focusing on replicating the visual elements. I\u0027ve realized inline fields are perfect for the two-column layout. The header can use the \"Author\" or \"Title\" sections. Also, I see how to replicate the \"Join\" button. I am trying to figure out how to match the exact *rounded corners* and *inner spacing* in an embed, but the look is restricted to standard Discord features.\n\n\n**Constructing JSON Snippet**\n\nOkay, I\u0027m now zeroing in on the JSON construction. The plan is solidified: I\u0027m focusing on crafting a Discohook JSON snippet. I\u0027ll utilize the \"author\" section for the server name and version, the thumbnail for the Minecraft icon, and inline fields for the 2x2 grid data. I need to remember to note that a separate \"Discohook Utils\" type integration is needed for the \"Join\" button functionality. The user will be able to copy the JSON directly for their use.\n\n\n",
+      "role": "model",
+      "tokenCount": 749,
+      "isThought": true,
+      "parts": [{
+        "text": "**Investigating Discohook Design**\n\nI\u0027m currently searching for existing Discohook embed templates, specifically related to Minecraft server status and Discord. I\u0027m hoping to find inspiration and best practices for design. Further, I am looking at how to create custom icons and the button layouts, particularly the desired blue \"Join Game Server\" button style. I\u0027m also planning to investigate the specific fields I\u0027ll need to use.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Discovering Embed Creation**\n\nI\u0027ve learned that Discohook itself won\u0027t directly create buttons when sent through a webhook. Seems like I need to integrate a separate bot, perhaps \"Discohook Utils\" or a similar \"Embed Generator,\" to get those interactive buttons working as desired.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Embed Elements**\n\nI\u0027m now focusing on replicating the visual elements. I\u0027ve realized inline fields are perfect for the two-column layout. The header can use the \"Author\" or \"Title\" sections. Also, I see how to replicate the \"Join\" button. I am trying to figure out how to match the exact *rounded corners* and *inner spacing* in an embed, but the look is restricted to standard Discord features.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing JSON Snippet**\n\nOkay, I\u0027m now zeroing in on the JSON construction. The plan is solidified: I\u0027m focusing on crafting a Discohook JSON snippet. I\u0027ll utilize the \"author\" section for the server name and version, the thumbnail for the Minecraft icon, and inline fields for the 2x2 grid data. I need to remember to note that a separate \"Discohook Utils\" type integration is needed for the \"Join\" button functionality. The user will be able to copy the JSON directly for their use.\n\n\n",
+        "thought": true
+      }],
+      "createTime": "2026-03-12T16:14:19.286Z"
+    }, {
+      "text": "To recreate this \"Minecraft Server Status\" style in Discord using Discohook, you will need to use an **Embed** with **Inline Fields**.\n\nSince standard webhooks do not support interactive buttons (like the \"Join Game Server\" button), you will need to use a bot alongside Discohook (like **Discohook Utils**) to add that final button.\n\n### Step 1: The Embed Layout (JSON)\nCopy the code below and paste it into the **JSON Data** field at the bottom of the [Discohook](https://discohook.org) website.\n\n```json\n{\n  \"embeds\": [\n    {\n      \"title\": \"Логово Фармил\",\n      \"description\": \"Minecraft • Paper 1.21.11\",\n      \"color\": 3887319,\n      \"thumbnail\": {\n        \"url\": \"https://i.imgur.com/e87b7pS.png\" \n      },\n      \"fields\": [\n        {\n          \"name\": \"Players Online\",\n          \"value\": \"0 / 5\",\n          \"inline\": true\n        },\n        {\n          \"name\": \"Server IP\",\n          \"value\": \"51.38.155.237:26938\",\n          \"inline\": true\n        },\n        {\n          \"name\": \"Server Status\",\n          \"value\": \"🟢 Online\",\n          \"inline\": true\n        },\n        {\n          \"name\": \"Server Location\",\n          \"value\": \"Poland\",\n          \"inline\": true\n        }\n      ]\n    }\n  ]\n}\n```\n*(Note: Replace the thumbnail URL with a link to your server\u0027s icon if you have one.)*\n\n### Step 2: How to Set it Up in Discohook\n1.  **Webhook URL:** At the top of Discohook, paste your Discord channel\u0027s Webhook URL (find this in Channel Settings \u003e Integrations \u003e Webhooks).\n2.  **Color:** Click the sidebar of the embed in the preview and change the color to a dark gray or a custom hex like `#3B414D` to match the image.\n3.  **Inline Fields:** If you want to add more stats, ensure the \"Inline\" toggle is **ON** for each field. This is what makes them sit side-by-side in a 2x2 grid.\n\n### Step 3: Adding the \"Join\" Button\nDiscord webhooks cannot send buttons by themselves. To get the blue \"Join Game Server\" button:\n1.  Invite the **Discohook Utils** bot to your server.\n2.  Send your embed from the website first.\n3.  In your Discord channel, use the command: \n    `/buttons add message_id:YOUR_MESSAGE_ID style:Link label:Join Game Server url:https://your-server-link.com`\n4.  The bot will then attach the blue button to the bottom of your message.\n\n### Styling Tips to Match the Image:\n*   **Icons:** Use custom Discord emojis in the \"Value\" section (e.g., `:poland:` for the location) to make it look more interactive.\n*   **Formatting:** Use **Bold** text for the values (e.g., `**51.38.155.237:26938**`) to make the important information stand out.\n*   **Author Section:** If you want the server name to look smaller like a header, move \"Логово Фармил\" into the **Author Name** section instead of the **Title**.",
+      "role": "model",
+      "grounding": {
+        "corroborationSegments": [{
+          "index": 1354,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGfLY0bMbJ8BWYncciHJ9od1yY0BR3KhtkQLFSP11Ex-s1hUZHUAQlQjYbetTT6_C0JCRkpkd81VMhIRanKZZymAOliQ88n62IopFOfzaB4SiyxLAMioLh_UR7HAH35csWwOFALbGXxbDZOMQQvwzmjsBnSxBze9q6x-k1dyN8y2e_Tqowfdki5qXA5woC0olzva7MJaBfjkhIK4yEviwGiQQ%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 1354,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQF365Yp3fN15FzXoOWTGrOat9D54LFAMrwRc_RDGQoXqDRKpCJABaZm6Ij82ym4lPcDce_4jTgoz4KseEPtS7lrCbgzrLrEpr8bUFwQ4a36rFWxChsZeRHeDoFSMA4BygBohjqlXA%3D%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 1354,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFYBgLyTC4PyC1IfeOxsM9qaSRq0RpElBGgftOpH1cVhTTDYWOOzySdocCZdFGSLx1-xb1OTZR_oWDCRu8BdreAKmrc16s5J45xSwXIWfWupz225EPhBHT_10DcjIWkv8LAKcb7qg%3D%3D",
+          "footnoteNumber": 3
+        }, {
+          "index": 1354,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGirk0IqJhS_KZFygKC9xau0eAhvF6rxsBptVfoADKb0jfIUknstiDGcKhqy5bIigwyZJy6WByfpEPa1eDMDZLCP2aP5swhv9n8Yf28zhgGQiXRyFZ8OzilEgOEIgRz_qwhVuUMAQ%3D%3D",
+          "footnoteNumber": 4
+        }, {
+          "index": 1354,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEPoQZiMjA9rr2O--C_0EcIIQnWQibr4JBCIyCBhK4LZejLN18ePlbT4-RDHZn4WSAvB60w20GtVZawgXS_-MYTi1QUNbUDd0WIwH8sVFrYATza9plv1lOI7lWmBrzuylVPtH9lKg%3D%3D",
+          "footnoteNumber": 5
+        }, {
+          "index": 1500,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQH-88t1Cxz89a_f1dxM7g7zsrvGf2GcgxZvDZvE-1YgUshx3iaGmFLiXxhF6Yu7J__GGCxl924_Ztv-4OxbirZI6Ccgp7EhVeYtsrJxKps37BTblC_keHKiFznaBBqg8zaoAb4tnqMnkEK2LoXwQdAlRA%3D%3D",
+          "footnoteNumber": 6
+        }, {
+          "index": 1999,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGirk0IqJhS_KZFygKC9xau0eAhvF6rxsBptVfoADKb0jfIUknstiDGcKhqy5bIigwyZJy6WByfpEPa1eDMDZLCP2aP5swhv9n8Yf28zhgGQiXRyFZ8OzilEgOEIgRz_qwhVuUMAQ%3D%3D",
+          "footnoteNumber": 4
+        }, {
+          "index": 1999,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQECahMh4Mz6bQxRZ9ZQQ1881znDVhxOMKs9rGXg6Mr1DD7isyBGo9XcbG4LMmhMp7fcCq4Y-aRU1PKf4xUwx1xeAJaPNPvtVXMiTbIgvWGObW-oe33jKjn8XVW0TeHixtCF90fA3g%3D%3D",
+          "footnoteNumber": 7
+        }],
+        "webSearchQueries": ["how to make a button in Discohook discord embed", "Discord embed custom fields layout Discohook", "Discohook Minecraft server status embed template", "Minecraft server status embed design ideas discohook"],
+        "groundingSources": [{
+          "referenceNumber": 1,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGfLY0bMbJ8BWYncciHJ9od1yY0BR3KhtkQLFSP11Ex-s1hUZHUAQlQjYbetTT6_C0JCRkpkd81VMhIRanKZZymAOliQ88n62IopFOfzaB4SiyxLAMioLh_UR7HAH35csWwOFALbGXxbDZOMQQvwzmjsBnSxBze9q6x-k1dyN8y2e_Tqowfdki5qXA5woC0olzva7MJaBfjkhIK4yEviwGiQQ%3D%3D",
+          "title": "medium.com"
+        }, {
+          "referenceNumber": 2,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQF365Yp3fN15FzXoOWTGrOat9D54LFAMrwRc_RDGQoXqDRKpCJABaZm6Ij82ym4lPcDce_4jTgoz4KseEPtS7lrCbgzrLrEpr8bUFwQ4a36rFWxChsZeRHeDoFSMA4BygBohjqlXA%3D%3D",
+          "title": "youtube.com"
+        }, {
+          "referenceNumber": 3,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFYBgLyTC4PyC1IfeOxsM9qaSRq0RpElBGgftOpH1cVhTTDYWOOzySdocCZdFGSLx1-xb1OTZR_oWDCRu8BdreAKmrc16s5J45xSwXIWfWupz225EPhBHT_10DcjIWkv8LAKcb7qg%3D%3D",
+          "title": "youtube.com"
+        }, {
+          "referenceNumber": 4,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGirk0IqJhS_KZFygKC9xau0eAhvF6rxsBptVfoADKb0jfIUknstiDGcKhqy5bIigwyZJy6WByfpEPa1eDMDZLCP2aP5swhv9n8Yf28zhgGQiXRyFZ8OzilEgOEIgRz_qwhVuUMAQ%3D%3D",
+          "title": "youtube.com"
+        }, {
+          "referenceNumber": 5,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEPoQZiMjA9rr2O--C_0EcIIQnWQibr4JBCIyCBhK4LZejLN18ePlbT4-RDHZn4WSAvB60w20GtVZawgXS_-MYTi1QUNbUDd0WIwH8sVFrYATza9plv1lOI7lWmBrzuylVPtH9lKg%3D%3D",
+          "title": "whop.com"
+        }, {
+          "referenceNumber": 6,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQH-88t1Cxz89a_f1dxM7g7zsrvGf2GcgxZvDZvE-1YgUshx3iaGmFLiXxhF6Yu7J__GGCxl924_Ztv-4OxbirZI6Ccgp7EhVeYtsrJxKps37BTblC_keHKiFznaBBqg8zaoAb4tnqMnkEK2LoXwQdAlRA%3D%3D",
+          "title": "spigotmc.org"
+        }, {
+          "referenceNumber": 7,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQECahMh4Mz6bQxRZ9ZQQ1881znDVhxOMKs9rGXg6Mr1DD7isyBGo9XcbG4LMmhMp7fcCq4Y-aRU1PKf4xUwx1xeAJaPNPvtVXMiTbIgvWGObW-oe33jKjn8XVW0TeHixtCF90fA3g%3D%3D",
+          "title": "youtube.com"
+        }]
+      },
+      "finishReason": "STOP",
+      "tokenCount": 800,
+      "parts": [{
+        "text": "To recreate this \"Minecraft Server Status\" style in Discord using Discohook"
+      }, {
+        "text": ", you will need to use an **Embed** with **Inline Fields**.\n\nSince standard webhooks do not support interactive"
+      }, {
+        "text": " buttons (like the \"Join Game Server\" button), you will need to use a bot alongside Discohook (like **Discohook Utils"
+      }, {
+        "text": "**) to add that final button.\n\n### Step 1: The Embed Layout (JSON)\nCopy the code below and paste it"
+      }, {
+        "text": " into the **JSON Data** field at the bottom of the [Discohook](https://discohook.org) website.\n\n"
+      }, {
+        "text": "```json\n{\n  \"embeds\": [\n    {\n      \"title\": \"Логово Фар"
+      }, {
+        "text": "мил\",\n      \"description\": \"Minecraft • Paper 1.21.11\",\n      \""
+      }, {
+        "text": "color\": 3887319,\n      \"thumbnail\": {\n        \"url\": \"https://"
+      }, {
+        "text": "i.imgur.com/e87b7pS.png\" \n      },\n      \"fields\":"
+      }, {
+        "text": " [\n        {\n          \"name\": \"Players Online\",\n          \"value\": \"0 / 5\","
+      }, {
+        "text": "\n          \"inline\": true\n        },\n        {\n          \"name\": \"Server IP\",\n          \""
+      }, {
+        "text": "value\": \"51.38.155.237:26938\",\n"
+      }, {
+        "text": "          \"inline\": true\n        },\n        {\n          \"name\": \"Server Status\",\n          \"value"
+      }, {
+        "text": "\": \"🟢 Online\",\n          \"inline\": true\n        },\n        {\n          \"name\": \"Server"
+      }, {
+        "text": " Location\",\n          \"value\": \"Poland\",\n          \"inline\": true\n        }\n      ]\n    "
+      }, {
+        "text": "}\n  ]\n}\n```\n*(Note: Replace the thumbnail URL with a link to your server\u0027s icon if"
+      }, {
+        "text": " you have one.)*\n\n### Step 2: How to Set it Up in Discohook\n1.  **"
+      }, {
+        "text": "Webhook URL:** At the top of Discohook, paste your Discord channel\u0027s Webhook URL (find this in Channel"
+      }, {
+        "text": " Settings \u003e Integrations \u003e Webhooks).\n2.  **Color:** Click the sidebar of the embed in the preview and"
+      }, {
+        "text": " change the color to a dark gray or a custom hex like `#3B414D` to match the image"
+      }, {
+        "text": ".\n3.  **Inline Fields:** If you want to add more stats, ensure the \"Inline\" toggle is **"
+      }, {
+        "text": "ON** for each field. This is what makes them sit side-by-side in a 2x2 grid."
+      }, {
+        "text": "\n\n### Step 3: Adding the \"Join\" Button\nDiscord webhooks cannot send buttons by themselves. To get"
+      }, {
+        "text": " the blue \"Join Game Server\" button:\n1.  Invite the **Discohook Utils** bot to your server."
+      }, {
+        "text": "\n2.  Send your embed from the website first.\n3.  In your Discord channel, use the command"
+      }, {
+        "text": ": \n    `/buttons add message_id:YOUR_MESSAGE_ID style:Link label:Join Game Server url:https"
+      }, {
+        "text": "://your-server-link.com`\n4.  The bot will then attach the blue button to the bottom of"
+      }, {
+        "text": " your message.\n\n### Styling Tips to Match the Image:\n*   **Icons:** Use custom Discord emojis in the \""
+      }, {
+        "text": "Value\" section (e.g., `:poland:` for the location) to make it look more interactive.\n*   "
+      }, {
+        "text": "**Formatting:** Use **Bold** text for the values (e.g., `**51.38.155"
+      }, {
+        "text": ".237:26938**`) to make the important information stand out.\n*   **Author"
+      }, {
+        "text": " Section:** If you want the server name to look smaller like a header, move \"Логово Фармил\""
+      }, {
+        "text": " into the **Author Name** section instead of the **Title**."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }],
+      "createTime": "2026-03-12T16:14:30.668Z"
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "thinkingBudget": -1,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveImage": {
+        "id": "13tgPXtRK4NYDh8hNEpZvk9qfIEQ3te0s"
+      },
+      "role": "user",
+      "tokenCount": 1101
+    }, {
+      "text": "how do i turn this on my personal computer?",
+      "role": "user",
+      "tokenCount": 11
+    }, {
+      "text": "**Interpreting Screenshot Indicators**\n\nI\u0027m currently focused on the screenshot and the user\u0027s need to enable clipboard features. The \"managed by your organization\" message presents a challenge. I need to figure out if Group Policy or other organizational controls are involved. I\u0027ll need to explore potential restrictions and figure out if workarounds are necessary, given the apparent constraints.\n\n\n**Analyzing Sync Barriers**\n\nI\u0027ve homed in on the \"Manage\" button related to the Microsoft account not syncing, which seems central to clipboard functionality across devices. The grayed-out \"Clipboard history\" toggle reinforces the restriction, with \"Off\" as the current status. The bottom message about the organization\u0027s policy confirms the root issue, and now I\u0027m thinking of why a *personal* PC might be showing this.\n\n\n**Investigating Possible Configurations**\n\nI\u0027m now considering that the user or someone else might have messed with Group Policy or the registry. The user\u0027s Windows edition is another factor; it could be Pro, where Group Policy is available, or Home, where registry hacks are the main option. My thoughts now turn to concrete actions the user can take, such as checking for and disconnecting work/school accounts. Also, I\u0027ll provide the user with registry edits to enable the feature. Finally, I\u0027m noting specific registry keys to change or delete to address the organization policy restrictions.\n\n\n**Implementing Policy Adjustments**\n\nI\u0027m now detailing Group Policy adjustments for Pro/Enterprise editions, navigating to the specific settings for clipboard history and synchronization. I\u0027ll need to specify setting these to \"Not Configured\" or \"Enabled.\" I\u0027ve also clarified the solution involving the \"Manage\" button to resolve the Microsoft account sync error, which is key. Moreover, I\u0027m thinking about the most likely solution which involves removing any work or school accounts from the device. Finally, I\u0027ve got to ensure the user is directed to the right registry keys in the event of a home edition machine, or if the policy is stubborn.\n\n\n**Investigating Configuration Methods**\n\nI\u0027ve zeroed in on the Group Policy Editor (gpedit.msc) as the primary avenue for resolving the \"Managed by your organization\" issue, especially for Windows Pro/Enterprise users. The path is: Computer Configuration \u003e Administrative Templates. Further steps will follow, once I review the context of the settings that are available under Administrative Templates, as I\u0027m sure there are a few available choices to make.\n\n\n**Exploring Registry \u0026 Account Solutions**\n\nI\u0027m now diving into the Registry Editor (regedit) approach, focusing on `HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System` and the values `AllowClipboardHistory` and `AllowCrossDeviceClipboard`. I\u0027ll also check the user context registry path. Additionally, I\u0027m turning my attention to the Work/School account connection, since it\u0027s a common factor in these cases, and verifying the Microsoft account\u0027s sync status as well.\n\n\n",
+      "role": "model",
+      "tokenCount": 1012,
+      "isThought": true,
+      "parts": [{
+        "text": "**Interpreting Screenshot Indicators**\n\nI\u0027m currently focused on the screenshot and the user\u0027s need to enable clipboard features. The \"managed by your organization\" message presents a challenge. I need to figure out if Group Policy or other organizational controls are involved. I\u0027ll need to explore potential restrictions and figure out if workarounds are necessary, given the apparent constraints.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Sync Barriers**\n\nI\u0027ve homed in on the \"Manage\" button related to the Microsoft account not syncing, which seems central to clipboard functionality across devices. The grayed-out \"Clipboard history\" toggle reinforces the restriction, with \"Off\" as the current status. The bottom message about the organization\u0027s policy confirms the root issue, and now I\u0027m thinking of why a *personal* PC might be showing this.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Investigating Possible Configurations**\n\nI\u0027m now considering that the user or someone else might have messed with Group Policy or the registry. The user\u0027s Windows edition is another factor; it could be Pro, where Group Policy is available, or Home, where registry hacks are the main option. My thoughts now turn to concrete actions the user can take, such as checking for and disconnecting work/school accounts. Also, I\u0027ll provide the user with registry edits to enable the feature. Finally, I\u0027m noting specific registry keys to change or delete to address the organization policy restrictions.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Implementing Policy Adjustments**\n\nI\u0027m now detailing Group Policy adjustments for Pro/Enterprise editions, navigating to the specific settings for clipboard history and synchronization. I\u0027ll need to specify setting these to \"Not Configured\" or \"Enabled.\" I\u0027ve also clarified the solution involving the \"Manage\" button to resolve the Microsoft account sync error, which is key. Moreover, I\u0027m thinking about the most likely solution which involves removing any work or school accounts from the device. Finally, I\u0027ve got to ensure the user is directed to the right registry keys in the event of a home edition machine, or if the policy is stubborn.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Investigating Configuration Methods**\n\nI\u0027ve zeroed in on the Group Policy Editor (gpedit.msc) as the primary avenue for resolving the \"Managed by your organization\" issue, especially for Windows Pro/Enterprise users. The path is: Computer Configuration \u003e Administrative Templates. Further steps will follow, once I review the context of the settings that are available under Administrative Templates, as I\u0027m sure there are a few available choices to make.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Exploring Registry \u0026 Account Solutions**\n\nI\u0027m now diving into the Registry Editor (regedit) approach, focusing on `HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System` and the values `AllowClipboardHistory` and `AllowCrossDeviceClipboard`. I\u0027ll also check the user context registry path. Additionally, I\u0027m turning my attention to the Work/School account connection, since it\u0027s a common factor in these cases, and verifying the Microsoft account\u0027s sync status as well.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "The message **\"Some of these settings are managed by your organisation\"** usually means a policy has been applied to your computer that blocks this feature. On a personal computer, this often happens if you signed into a work/school email account, or if you used a \"privacy\" tool (like O\u0026O ShutUp10) that disables telemetry features.\n\nHere is how to unlock and turn on these settings, ordered from the easiest solution to the more technical ones.\n\n### 1. Check for Work or School Accounts (Most Common Cause)\nIf you signed into Office or Mail with a work or school account, Windows might have applied their security policies to your personal device.\n1.  Open **Settings** \u003e **Accounts** \u003e **Access work or school**.\n2.  If you see an email address there that you don\u0027t strictly need for signing into Windows itself (like a school email), click it and select **Disconnect**.\n3.  Restart your computer and check if the message is gone.\n\n### 2. Fix the Sync Issue (Yellow Warning)\nYour screenshot shows a yellow warning: *\"Your Microsoft account isn\u0027t syncing with Windows.\"*\n1.  Click the **Manage** button in that yellow box.\n2.  You will likely need to re-enter your password or verify your identity.\n3.  Once verified, the \"Sync across devices\" option should become available (unless it is still blocked by the policy below).\n\n### 3. Remove the Restriction via Registry (Works for Home \u0026 Pro)\nIf the above didn\u0027t work, you need to manually remove the \"policy\" that is blocking the clipboard.\n1.  Press **Windows Key + R** on your keyboard.\n2.  Type `regedit` and press **Enter**. Click **Yes** if asked for permission.\n3.  Navigate to this folder path using the left sidebar:\n    `HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System`\n4.  On the right side, look for a file named **AllowClipboardHistory**.\n    *   **If it exists:** Double-click it and change the \"Value data\" to `1`.\n    *   **Alternatively:** You can simply right-click it and **Delete** it.\n5.  *(Optional for Sync)* Look for **AllowCrossDeviceClipboard** in the same folder and delete it or set it to `1`.\n6.  **Restart your computer.**\n\n### 4. Enable via Group Policy (Windows Pro Only)\nIf you have Windows 10/11 **Pro** edition, you can use the Group Policy Editor:\n1.  Press **Windows Key + R**, type `gpedit.msc`, and press Enter.\n2.  Go to: **Computer Configuration** \u003e **Administrative Templates** \u003e **System** \u003e **OS Policies**.\n3.  On the right, find **Allow Clipboard History**.\n4.  Double-click it and set it to **Enabled** (or \"Not Configured\").\n5.  Click **Apply** and **OK**.\n6.  Restart your PC.\n\nAfter doing this, the \"Managed by your organisation\" message should disappear, and you will be able to toggle the switch to **On**.",
+      "role": "model",
+      "grounding": {
+        "corroborationSegments": [{
+          "index": 156,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFd7FnCX3NRwD14ZUjeXx9AiBXM0RPZv0KteZyQN38UJX8UFMCG_wKQYqfoBBWxZg1nea0MDA4yrtYsVUvhTZmUM8b_jGj_iz7Y8PZ3sZJ81cA3aFXzh0Jqv2gNyNmo1xhM7zYOdCxlrHg8J1KjbaXe1LkdxkO9lXlv5LVd3mVE2nixlENrr1AH2aKLn1kiWu62jitLejpL_-wa92y2td7OPeYNGw%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 1540,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE68EcRJ0Q5Gn-Pe7DRht6QAqGu17ZLPkeXbagPEtZPbaBDudrJfZsIOglSmmEqPvZfz404EBd1DXbKFaS8RDGiTyZG8WdYtwl68T-W0CCYHMHJJ2zAqUGqedqutyYaacqbI6hSuyS3lk9PwS46U7pGnED1HW67l2wwOXqhJR3Wj93jh0ZxC64KXqmXFY6Q7ZMGtELQ02A4_V598FDi4rDMKg%3D%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 1580,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFd7FnCX3NRwD14ZUjeXx9AiBXM0RPZv0KteZyQN38UJX8UFMCG_wKQYqfoBBWxZg1nea0MDA4yrtYsVUvhTZmUM8b_jGj_iz7Y8PZ3sZJ81cA3aFXzh0Jqv2gNyNmo1xhM7zYOdCxlrHg8J1KjbaXe1LkdxkO9lXlv5LVd3mVE2nixlENrr1AH2aKLn1kiWu62jitLejpL_-wa92y2td7OPeYNGw%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 1580,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGKScmo1WlyowhOV4YfYkkxiH-k0bBYq8fweIzlmx-9ElFvBzKK6CUE-CUkqBrulFFu4mlTWKwdxNbdvelXs023UQUgn8yDSEIB8se6USez8Q8bnHkbMZ_UHfx3jkqHYW6yOwDFCnLzPvT9TXZpoHwivN0N1aSEaZy6U-h7gzxeDANisoVsyMgD",
+          "footnoteNumber": 3
+        }, {
+          "index": 1580,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHLr5m_dXQd8EKg9PR6rV77aZOxUbMwsRsoMJn15H1h6ViwqMhBz_d1gpe9omFnKT0o_8IkQiSArex2WsZb4qthsn-mgt4gpyXVAhNuUWhydtt6XmjYbltGSppOMfJ4ZW5fme9gcU8%3D",
+          "footnoteNumber": 4
+        }, {
+          "index": 1619,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEu9_0K0OjEE0mrVuDfEglS81fGSBkS7mWknYq8vvTvzzYGhCPK8U4yjBYV3Mi7RvGUhIgVSIEeh0ttYe1EYlLIl2hsTDhjK1zMWwEifBR_d4hpwFhiejrF1shhu314SRsGNF4SMmk%3D",
+          "footnoteNumber": 5
+        }, {
+          "index": 1744,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHn2q9gcj57ftkw10FBBcVBLUh6DunRoXtweFMB18Sxe8WOuOqAjsAhHhK8GbrrekjHHBPOT31c1mNlP7a3MgBBkVfmtmwaS3CFcPyJe81_7_N6Kf4mnfi729B-ySVbB-wLdBRHDM6t9vzsJMEuz1B4Qmc4P7spu7XnRte9cMLtSMcieyOEcxGOm0ut4x1Id87X3kWT7uJ6LEiTV7M%3D",
+          "footnoteNumber": 6
+        }, {
+          "index": 1894,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGKScmo1WlyowhOV4YfYkkxiH-k0bBYq8fweIzlmx-9ElFvBzKK6CUE-CUkqBrulFFu4mlTWKwdxNbdvelXs023UQUgn8yDSEIB8se6USez8Q8bnHkbMZ_UHfx3jkqHYW6yOwDFCnLzPvT9TXZpoHwivN0N1aSEaZy6U-h7gzxeDANisoVsyMgD",
+          "footnoteNumber": 3
+        }, {
+          "index": 1894,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHn2q9gcj57ftkw10FBBcVBLUh6DunRoXtweFMB18Sxe8WOuOqAjsAhHhK8GbrrekjHHBPOT31c1mNlP7a3MgBBkVfmtmwaS3CFcPyJe81_7_N6Kf4mnfi729B-ySVbB-wLdBRHDM6t9vzsJMEuz1B4Qmc4P7spu7XnRte9cMLtSMcieyOEcxGOm0ut4x1Id87X3kWT7uJ6LEiTV7M%3D",
+          "footnoteNumber": 6
+        }, {
+          "index": 2315,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE68EcRJ0Q5Gn-Pe7DRht6QAqGu17ZLPkeXbagPEtZPbaBDudrJfZsIOglSmmEqPvZfz404EBd1DXbKFaS8RDGiTyZG8WdYtwl68T-W0CCYHMHJJ2zAqUGqedqutyYaacqbI6hSuyS3lk9PwS46U7pGnED1HW67l2wwOXqhJR3Wj93jh0ZxC64KXqmXFY6Q7ZMGtELQ02A4_V598FDi4rDMKg%3D%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 2315,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGKScmo1WlyowhOV4YfYkkxiH-k0bBYq8fweIzlmx-9ElFvBzKK6CUE-CUkqBrulFFu4mlTWKwdxNbdvelXs023UQUgn8yDSEIB8se6USez8Q8bnHkbMZ_UHfx3jkqHYW6yOwDFCnLzPvT9TXZpoHwivN0N1aSEaZy6U-h7gzxeDANisoVsyMgD",
+          "footnoteNumber": 3
+        }, {
+          "index": 2416,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGKScmo1WlyowhOV4YfYkkxiH-k0bBYq8fweIzlmx-9ElFvBzKK6CUE-CUkqBrulFFu4mlTWKwdxNbdvelXs023UQUgn8yDSEIB8se6USez8Q8bnHkbMZ_UHfx3jkqHYW6yOwDFCnLzPvT9TXZpoHwivN0N1aSEaZy6U-h7gzxeDANisoVsyMgD",
+          "footnoteNumber": 3
+        }, {
+          "index": 2416,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHLr5m_dXQd8EKg9PR6rV77aZOxUbMwsRsoMJn15H1h6ViwqMhBz_d1gpe9omFnKT0o_8IkQiSArex2WsZb4qthsn-mgt4gpyXVAhNuUWhydtt6XmjYbltGSppOMfJ4ZW5fme9gcU8%3D",
+          "footnoteNumber": 4
+        }, {
+          "index": 2416,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEC0uT8L1CQk-npVQssqrjkyPjW5kCI8MKMwg9tvcX-S3wOCjstCBRFAP4q-grYIPxNNpwdwzsHpS5Y8wsjpvpn3VW5ATUUDoepqVC3Rr2Kd3goAtI3slveCbxtYCOcbwe2n-j9s6TocQVWoGRR5P7vYgk_WgOaDLThHn0HlsvXdfKD1sbjiBPkSH0b",
+          "footnoteNumber": 7
+        }, {
+          "index": 2416,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFYb4ctpKHNHJkL_LrPE3NOcton9wgq8KQYFtAIoL8qbLhsSq__0nNY8-QRM_iH7KuvOYYUI6rPLe5PfRojqd5jC8iWvIG5BNPSajmcI-fnRrSIGJQKoZXvl9k-cC2I8n6VPSvDRiE%3D",
+          "footnoteNumber": 8
+        }, {
+          "index": 2416,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQERRY_Cj72uqI-2XOl_FoyYnYC8D3PjwznxVWoEWrucasG4xni2yaKVmPUPKtu8Yq9qLKUUCr2RMTQUT2grNdxWWtaFC5ojtOSq36vlCK-Uts-GGV2fl5X6oFrgU1vQ_fIG3MSoLfHiPXYvswpC6etOUH_6JTQGoNFe3JuUA0AKcjk945q0x4SfcnIyEhR_BfFFPL-DpzYldU0QQzSEHkl4c504KiReXFA%3D",
+          "footnoteNumber": 9
+        }, {
+          "index": 2416,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHuwOz9EXkTd15DIyTtegUHDvOXr0RUxl_MxdQdlvTiJk3KSj_Tri84OTAY-P9tj_MquPLUo3im05t_dT3uSYZkAWZTE0_WtJtn0IwRyD3zy-YTU-x2KOUAbwOrGAF4qs1FROK0mUo%3D",
+          "footnoteNumber": 10
+        }, {
+          "index": 2468,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFd7FnCX3NRwD14ZUjeXx9AiBXM0RPZv0KteZyQN38UJX8UFMCG_wKQYqfoBBWxZg1nea0MDA4yrtYsVUvhTZmUM8b_jGj_iz7Y8PZ3sZJ81cA3aFXzh0Jqv2gNyNmo1xhM7zYOdCxlrHg8J1KjbaXe1LkdxkO9lXlv5LVd3mVE2nixlENrr1AH2aKLn1kiWu62jitLejpL_-wa92y2td7OPeYNGw%3D%3D",
+          "footnoteNumber": 1
+        }, {
+          "index": 2468,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE68EcRJ0Q5Gn-Pe7DRht6QAqGu17ZLPkeXbagPEtZPbaBDudrJfZsIOglSmmEqPvZfz404EBd1DXbKFaS8RDGiTyZG8WdYtwl68T-W0CCYHMHJJ2zAqUGqedqutyYaacqbI6hSuyS3lk9PwS46U7pGnED1HW67l2wwOXqhJR3Wj93jh0ZxC64KXqmXFY6Q7ZMGtELQ02A4_V598FDi4rDMKg%3D%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 2468,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHLr5m_dXQd8EKg9PR6rV77aZOxUbMwsRsoMJn15H1h6ViwqMhBz_d1gpe9omFnKT0o_8IkQiSArex2WsZb4qthsn-mgt4gpyXVAhNuUWhydtt6XmjYbltGSppOMfJ4ZW5fme9gcU8%3D",
+          "footnoteNumber": 4
+        }, {
+          "index": 2468,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEC0uT8L1CQk-npVQssqrjkyPjW5kCI8MKMwg9tvcX-S3wOCjstCBRFAP4q-grYIPxNNpwdwzsHpS5Y8wsjpvpn3VW5ATUUDoepqVC3Rr2Kd3goAtI3slveCbxtYCOcbwe2n-j9s6TocQVWoGRR5P7vYgk_WgOaDLThHn0HlsvXdfKD1sbjiBPkSH0b",
+          "footnoteNumber": 7
+        }, {
+          "index": 2468,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQERRY_Cj72uqI-2XOl_FoyYnYC8D3PjwznxVWoEWrucasG4xni2yaKVmPUPKtu8Yq9qLKUUCr2RMTQUT2grNdxWWtaFC5ojtOSq36vlCK-Uts-GGV2fl5X6oFrgU1vQ_fIG3MSoLfHiPXYvswpC6etOUH_6JTQGoNFe3JuUA0AKcjk945q0x4SfcnIyEhR_BfFFPL-DpzYldU0QQzSEHkl4c504KiReXFA%3D",
+          "footnoteNumber": 9
+        }, {
+          "index": 2468,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHuwOz9EXkTd15DIyTtegUHDvOXr0RUxl_MxdQdlvTiJk3KSj_Tri84OTAY-P9tj_MquPLUo3im05t_dT3uSYZkAWZTE0_WtJtn0IwRyD3zy-YTU-x2KOUAbwOrGAF4qs1FROK0mUo%3D",
+          "footnoteNumber": 10
+        }, {
+          "index": 2569,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE68EcRJ0Q5Gn-Pe7DRht6QAqGu17ZLPkeXbagPEtZPbaBDudrJfZsIOglSmmEqPvZfz404EBd1DXbKFaS8RDGiTyZG8WdYtwl68T-W0CCYHMHJJ2zAqUGqedqutyYaacqbI6hSuyS3lk9PwS46U7pGnED1HW67l2wwOXqhJR3Wj93jh0ZxC64KXqmXFY6Q7ZMGtELQ02A4_V598FDi4rDMKg%3D%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 2569,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHuwOz9EXkTd15DIyTtegUHDvOXr0RUxl_MxdQdlvTiJk3KSj_Tri84OTAY-P9tj_MquPLUo3im05t_dT3uSYZkAWZTE0_WtJtn0IwRyD3zy-YTU-x2KOUAbwOrGAF4qs1FROK0mUo%3D",
+          "footnoteNumber": 10
+        }, {
+          "index": 2590,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE68EcRJ0Q5Gn-Pe7DRht6QAqGu17ZLPkeXbagPEtZPbaBDudrJfZsIOglSmmEqPvZfz404EBd1DXbKFaS8RDGiTyZG8WdYtwl68T-W0CCYHMHJJ2zAqUGqedqutyYaacqbI6hSuyS3lk9PwS46U7pGnED1HW67l2wwOXqhJR3Wj93jh0ZxC64KXqmXFY6Q7ZMGtELQ02A4_V598FDi4rDMKg%3D%3D",
+          "footnoteNumber": 2
+        }, {
+          "index": 2590,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGKScmo1WlyowhOV4YfYkkxiH-k0bBYq8fweIzlmx-9ElFvBzKK6CUE-CUkqBrulFFu4mlTWKwdxNbdvelXs023UQUgn8yDSEIB8se6USez8Q8bnHkbMZ_UHfx3jkqHYW6yOwDFCnLzPvT9TXZpoHwivN0N1aSEaZy6U-h7gzxeDANisoVsyMgD",
+          "footnoteNumber": 3
+        }, {
+          "index": 2590,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHn2q9gcj57ftkw10FBBcVBLUh6DunRoXtweFMB18Sxe8WOuOqAjsAhHhK8GbrrekjHHBPOT31c1mNlP7a3MgBBkVfmtmwaS3CFcPyJe81_7_N6Kf4mnfi729B-ySVbB-wLdBRHDM6t9vzsJMEuz1B4Qmc4P7spu7XnRte9cMLtSMcieyOEcxGOm0ut4x1Id87X3kWT7uJ6LEiTV7M%3D",
+          "footnoteNumber": 6
+        }, {
+          "index": 2590,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFYb4ctpKHNHJkL_LrPE3NOcton9wgq8KQYFtAIoL8qbLhsSq__0nNY8-QRM_iH7KuvOYYUI6rPLe5PfRojqd5jC8iWvIG5BNPSajmcI-fnRrSIGJQKoZXvl9k-cC2I8n6VPSvDRiE%3D",
+          "footnoteNumber": 8
+        }],
+        "webSearchQueries": ["windows 11 clipboard history greyed out managed by organization", "Some of these settings are managed by your organisation clipboard history fix", "enable clipboard history managed by organization personal computer registry"],
+        "groundingSources": [{
+          "referenceNumber": 1,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFd7FnCX3NRwD14ZUjeXx9AiBXM0RPZv0KteZyQN38UJX8UFMCG_wKQYqfoBBWxZg1nea0MDA4yrtYsVUvhTZmUM8b_jGj_iz7Y8PZ3sZJ81cA3aFXzh0Jqv2gNyNmo1xhM7zYOdCxlrHg8J1KjbaXe1LkdxkO9lXlv5LVd3mVE2nixlENrr1AH2aKLn1kiWu62jitLejpL_-wa92y2td7OPeYNGw%3D%3D",
+          "title": "koskila.net"
+        }, {
+          "referenceNumber": 2,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQE68EcRJ0Q5Gn-Pe7DRht6QAqGu17ZLPkeXbagPEtZPbaBDudrJfZsIOglSmmEqPvZfz404EBd1DXbKFaS8RDGiTyZG8WdYtwl68T-W0CCYHMHJJ2zAqUGqedqutyYaacqbI6hSuyS3lk9PwS46U7pGnED1HW67l2wwOXqhJR3Wj93jh0ZxC64KXqmXFY6Q7ZMGtELQ02A4_V598FDi4rDMKg%3D%3D",
+          "title": "fortect.com"
+        }, {
+          "referenceNumber": 3,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQGKScmo1WlyowhOV4YfYkkxiH-k0bBYq8fweIzlmx-9ElFvBzKK6CUE-CUkqBrulFFu4mlTWKwdxNbdvelXs023UQUgn8yDSEIB8se6USez8Q8bnHkbMZ_UHfx3jkqHYW6yOwDFCnLzPvT9TXZpoHwivN0N1aSEaZy6U-h7gzxeDANisoVsyMgD",
+          "title": "ninjaone.com"
+        }, {
+          "referenceNumber": 4,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHLr5m_dXQd8EKg9PR6rV77aZOxUbMwsRsoMJn15H1h6ViwqMhBz_d1gpe9omFnKT0o_8IkQiSArex2WsZb4qthsn-mgt4gpyXVAhNuUWhydtt6XmjYbltGSppOMfJ4ZW5fme9gcU8%3D",
+          "title": "youtube.com"
+        }, {
+          "referenceNumber": 5,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEu9_0K0OjEE0mrVuDfEglS81fGSBkS7mWknYq8vvTvzzYGhCPK8U4yjBYV3Mi7RvGUhIgVSIEeh0ttYe1EYlLIl2hsTDhjK1zMWwEifBR_d4hpwFhiejrF1shhu314SRsGNF4SMmk%3D",
+          "title": "youtube.com"
+        }, {
+          "referenceNumber": 6,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHn2q9gcj57ftkw10FBBcVBLUh6DunRoXtweFMB18Sxe8WOuOqAjsAhHhK8GbrrekjHHBPOT31c1mNlP7a3MgBBkVfmtmwaS3CFcPyJe81_7_N6Kf4mnfi729B-ySVbB-wLdBRHDM6t9vzsJMEuz1B4Qmc4P7spu7XnRte9cMLtSMcieyOEcxGOm0ut4x1Id87X3kWT7uJ6LEiTV7M%3D",
+          "title": "microsoft.com"
+        }, {
+          "referenceNumber": 7,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQEC0uT8L1CQk-npVQssqrjkyPjW5kCI8MKMwg9tvcX-S3wOCjstCBRFAP4q-grYIPxNNpwdwzsHpS5Y8wsjpvpn3VW5ATUUDoepqVC3Rr2Kd3goAtI3slveCbxtYCOcbwe2n-j9s6TocQVWoGRR5P7vYgk_WgOaDLThHn0HlsvXdfKD1sbjiBPkSH0b",
+          "title": "superuser.com"
+        }, {
+          "referenceNumber": 8,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQFYb4ctpKHNHJkL_LrPE3NOcton9wgq8KQYFtAIoL8qbLhsSq__0nNY8-QRM_iH7KuvOYYUI6rPLe5PfRojqd5jC8iWvIG5BNPSajmcI-fnRrSIGJQKoZXvl9k-cC2I8n6VPSvDRiE%3D",
+          "title": "youtube.com"
+        }, {
+          "referenceNumber": 9,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQERRY_Cj72uqI-2XOl_FoyYnYC8D3PjwznxVWoEWrucasG4xni2yaKVmPUPKtu8Yq9qLKUUCr2RMTQUT2grNdxWWtaFC5ojtOSq36vlCK-Uts-GGV2fl5X6oFrgU1vQ_fIG3MSoLfHiPXYvswpC6etOUH_6JTQGoNFe3JuUA0AKcjk945q0x4SfcnIyEhR_BfFFPL-DpzYldU0QQzSEHkl4c504KiReXFA%3D",
+          "title": "microsoft.com"
+        }, {
+          "referenceNumber": 10,
+          "uri": "https://www.google.com/url?sa\u003dE\u0026q\u003dhttps%3A%2F%2Fvertexaisearch.cloud.google.com%2Fgrounding-api-redirect%2FAUZIYQHuwOz9EXkTd15DIyTtegUHDvOXr0RUxl_MxdQdlvTiJk3KSj_Tri84OTAY-P9tj_MquPLUo3im05t_dT3uSYZkAWZTE0_WtJtn0IwRyD3zy-YTU-x2KOUAbwOrGAF4qs1FROK0mUo%3D",
+          "title": "youtube.com"
+        }]
+      },
+      "finishReason": "STOP",
+      "tokenCount": 691,
+      "parts": [{
+        "text": "The message **\"Some of these settings are managed by your organisation\"** usually means a policy"
+      }, {
+        "text": " has been applied to your computer that blocks this feature. On a personal computer, this often happens if you signed into a work/"
+      }, {
+        "text": "school email account, or if you used a \"privacy\" tool (like O\u0026O ShutUp10) that disables"
+      }, {
+        "text": " telemetry features.\n\nHere is how to unlock and turn on these settings, ordered from the easiest solution to the more technical"
+      }, {
+        "text": " ones.\n\n### 1. Check for Work or School Accounts (Most Common Cause)\nIf you signed into Office"
+      }, {
+        "text": " or Mail with a work or school account, Windows might have applied their security policies to your personal device.\n1.  Open"
+      }, {
+        "text": " **Settings** \u003e **Accounts** \u003e **Access work or school**.\n2.  If you see an email address"
+      }, {
+        "text": " there that you don\u0027t strictly need for signing into Windows itself (like a school email), click it and select **"
+      }, {
+        "text": "Disconnect**.\n3.  Restart your computer and check if the message is gone.\n\n### 2. Fix the Sync"
+      }, {
+        "text": " Issue (Yellow Warning)\nYour screenshot shows a yellow warning: *\"Your Microsoft account isn\u0027t syncing with Windows.\"*\n"
+      }, {
+        "text": "1.  Click the **Manage** button in that yellow box.\n2.  You will likely need to re-enter"
+      }, {
+        "text": " your password or verify your identity.\n3.  Once verified, the \"Sync across devices\" option should become available (unless"
+      }, {
+        "text": " it is still blocked by the policy below).\n\n### 3. Remove the Restriction via Registry (Works for Home \u0026"
+      }, {
+        "text": " Pro)\nIf the above didn\u0027t work, you need to manually remove the \"policy\" that is blocking the clipboard"
+      }, {
+        "text": ".\n1.  Press **Windows Key + R** on your keyboard.\n2.  Type `regedit"
+      }, {
+        "text": "` and press **Enter**. Click **Yes** if asked for permission.\n3.  Navigate to this folder path"
+      }, {
+        "text": " using the left sidebar:\n    `HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System`\n4"
+      }, {
+        "text": ".  On the right side, look for a file named **AllowClipboardHistory**.\n    *   **If it"
+      }, {
+        "text": " exists:** Double-click it and change the \"Value data\" to `1`.\n    *   **Alternatively:** You can simply"
+      }, {
+        "text": " right-click it and **Delete** it.\n5.  *(Optional for Sync)* Look for **AllowCrossDevice"
+      }, {
+        "text": "Clipboard** in the same folder and delete it or set it to `1`.\n6.  **Restart your computer"
+      }, {
+        "text": ".**\n\n### 4. Enable via Group Policy (Windows Pro Only)\nIf you have Windows 10/11"
+      }, {
+        "text": " **Pro** edition, you can use the Group Policy Editor:\n1.  Press **Windows Key + R**,"
+      }, {
+        "text": " type `gpedit.msc`, and press Enter.\n2.  Go to: **Computer Configuration** \u003e **Administrative Templates"
+      }, {
+        "text": "** \u003e **System** \u003e **OS Policies**.\n3.  On the right, find **Allow Clipboard History**.\n4"
+      }, {
+        "text": ".  Double-click it and set it to **Enabled** (or \"Not Configured\").\n5.  "
+      }, {
+        "text": "Click **Apply** and **OK**.\n6.  Restart your PC.\n\nAfter doing this, the \"Managed"
+      }, {
+        "text": " by your organisation\" message should disappear, and you will be able to toggle the switch to **On**."
+      }, {
+        "text": "",
+        "thoughtSignature": "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"
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}

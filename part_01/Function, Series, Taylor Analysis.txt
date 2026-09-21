@@ -1,0 +1,372 @@
+{
+  "runSettings": {
+    "temperature": 1.0,
+    "model": "models/gemini-3-pro-preview",
+    "topP": 0.95,
+    "topK": 64,
+    "maxOutputTokens": 65536,
+    "safetySettings": [{
+      "category": "HARM_CATEGORY_HARASSMENT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_HATE_SPEECH",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      "threshold": "OFF"
+    }, {
+      "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+      "threshold": "OFF"
+    }],
+    "enableCodeExecution": false,
+    "enableSearchAsATool": true,
+    "enableBrowseAsATool": false,
+    "enableAutoFunctionResponse": false,
+    "googleSearch": {
+    },
+    "outputResolution": "1K",
+    "thinkingLevel": "THINKING_HIGH"
+  },
+  "systemInstruction": {
+    "text": "## Refined System Prompt for Gemini: Academic Obsidian Assistant\n\nFew notes:\n1. The user\u0027s files (metadata) are chronologically labeled and the continuation of the lectures are seamless. \n2. All files are connected and relevant to each other given the topic. Group similar filetypes conjunctively; differing, disjunctively. Although this in consideration, assess everything first, then think about the methodology.\n3. Assume the sent notes (usually images or pdf files) are your student\u0027s notes. Think two perspectives in students and the ideal perspective (where you introduce your ideas tackling the problems)\n\n### **1. CORE ROLE \u0026 OBJECTIVE**\n\nYou are a highly specialized Academic Assistant. Your primary function is to transform raw academic materials (lecture audio transcripts, handwritten notes, images, or other source materials) into a comprehensive, structured, and analytically robust markdown note system optimized specifically for an Obsidian vault.\n\n### **2. OPERATIONAL GUIDELINES \u0026 OUTPUT/ORGANIZATION**\n\n1.  **Initial Output Protocol:** Do not provide a self-response, greeting, or introductory text unless the user explicitly asks a personal question or provides an instruction that affects your execution.\n2.  **Content Priority (Raw Capture):** The structure of the notes must 100% accurately reflect the material presented (what was said/seen). Your duty is to record and consider chronological relevance throughout the lecturer\u0027s content and the user\u0027s notes, **as they are**.\n2.1. **Reverse engineering:** use recall method to actively recall the method used for engineering a formula. Define motivation for formula and ideas that are used in consideration and in absence of the formulas provided to prove. Justify lecturer\u0027s teaching methods, comments from students,... other things that might be less relevant but still as helpful in unified integration of understanding of the topic provided. \n3.  **Technical Formatting Standards:**\n    *   **Formulas:** LaTeX is mandatory for all mathematical equations, chemical formulas, and scientific notations. Avoid plain text for any formula. Use latex formulas using $$ $$ (for \\n) and/or $ $ (for same line notation) code blocks rather than explicit ```()``` mention. \n    *   **Chemistry Structures:** Use the SMILES library for denoting chemical molecule structures where applicable.\n4.  * **Obsidian Markdown Foundation:** Use standard Markdown for headings, lists, blockquotes, and other elements fully compatible with Obsidian.\n5. * **Organization:** The notes and lecture\u0027s are usually structured to solve problems on the go. Your task is to compile them all, into a comprehensive list before any solving, after the theory, if any theory, problems, or solving methods are present. Those 3 should be held sepparate for revision-proofing.\n\n### **3. ACADEMIC TUTORING \u0026 CRITICAL ANALYSIS**\n\nAs well as covering everything, process the captured content, adopt the persona of a proactive tutor by applying a critical, analytical layer. Use dedicated sections for your comments (e.g., \"Critical Analysis,\" \"Note to Self,\" \"Warning\") for this function.\n\n1.  **In-Depth Justification:** Every formula application, fact, and methodology must be rigorously clarified, justified, and proven. Ensure the logic is painstakingly obvious and sequential; each step must be easily understood and followable by a novice. Also follow the 2.1. clause for reverse engineering.\n2.  **Error and Inconsistency Handling (Warning System):**\n    *   Identify any logical inconsistencies or calculation errors in the original source material.\n    *   Present the **correct calculation/logic** and include a **Warning Note** that analyzes *why* the error occurred and how to prevent it. This note can guide the user toward the solution without giving it away instantly.\n3.  **Ambiguity Clarification:** Address confusing or vague problem wording. Construct a detailed physical or logical model, explicitly state all unstated assumptions (e.g., \"The system is sealed,\" \"Assume ideal gas behavior\"), and justify the most probable intended interpretation.\n4.  **Contextual Capture (Memorialization):** Record brief, contextual, and memorial reminders related to the lecture, such as relevant tangents, notable side comments, or unique events that occurred. This aids the user in recalling the entire learning environment, not just the technical subject matter.\n5. **General formula**: section for used general formulas or all known identities used.\n\n### **4. OBSIDIAN \u0026 STRUCTURE PROTOCOL**\n\n1.  **Navigational Linking:** Use `[[Wikilinks]]` for all main headers (`#` and `##`) and subheaders (`###`) to ensure they are easily referenceable.\n2.  **Mindmap Expansion Protocol:** When a topic or subheader is `[[wikilink]]ed`, this link signifies a **dedicated new note file**. **Do not** expand on the linked topic within the current file. The user will create the file with the same name as the wikilink to further explain the topics inside it, thus building a comprehensive, interconnected mindmap.\n\n### **5. USER PERSONA \u0026 TONE**\n\nAdopt the tone of a knowledgeable, encouraging, and respectful peer or tutor. The user\u0027s learning style is critical, analytical, and curious, prioritizing **derivation and understanding** (how and why) over simple memorization. Your tone should consistently support this deep-dive approach. Keep language consistent as per documents presented. "
+  },
+  "chunkedPrompt": {
+    "chunks": [{
+      "driveAudio": {
+        "id": "1eAtbIzjVpjUlFG64_Gc_aeTErFQ_EJNo"
+      },
+      "role": "user",
+      "tokenCount": 146443
+    }, {
+      "driveAudio": {
+        "id": "1e70tYj1YWZjb6Pe_6AmEFMeUztpT5VZz"
+      },
+      "role": "user",
+      "tokenCount": 122936
+    }, {
+      "driveImage": {
+        "id": "1mDu_e_BMJVFHtZOKHwhpx798sdYJ209H"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1mVq0rhN1RlkYRWkLcWJiuyjsNnbeTpSB"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1opIriwA-oYuq_F8DV2eElA-1BiNjykLi"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1kiSkw2o9TGygZYcew8kbPH6UcGGQMIZk"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1zW4m6drJw3geHQIReg0z86t8Y5kR98cI"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1ZBs1cNKW6q_c_NSxdtNKC-dTdbJsv4Dv"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1lEQLgYSrY4XoWqPsvKCSHGQPou61BcF3"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1TmFgqk_cuSO6luX5fs2sRfn7aFX3xku_"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "driveImage": {
+        "id": "1Oq2A6SmIEXt80VzTmWohLLweVKo5xkN0"
+      },
+      "role": "user",
+      "tokenCount": 2185
+    }, {
+      "text": "**Outlining Key Elements**\n\nI\u0027m currently dissecting the provided inputs, focusing on how to extract key elements from images and potential audio transcripts. My immediate aim is to identify the most crucial information - concepts, keywords, and connections - that will form the backbone of the Obsidian note. I\u0027m exploring different methods to structure this initial data harvest, prioritizing clarity and conciseness for later stages.\n\n\n**Defining Structural Priorities**\n\nThe focus has shifted towards defining the key structural elements for the Obsidian note. I\u0027m prioritizing the LaTeX representation of the formulas and clear identification of core concepts like limits, convergence, and domain analysis, as exemplified by the initial image involving complex numbers and the sign chart. I\u0027m exploring how to link these diverse examples under a unified structure, creating concise [[Wikilinks]] as I go.\n\n\n**Analyzing Limit Techniques**\n\nI\u0027m currently focusing on the different techniques needed for limit calculations, as demonstrated by the diverse examples. L\u0027Hopital\u0027s rule, series expansion, and standard manipulation are all on the table. Piecewise function behavior and continuity are also key. The examples involve composite functions, Taylor series convergence, and error estimation, all within the framework of real analysis. I\u0027m prioritizing concise LaTeX representation for each method.\n\n\n**Examining Series Expansions**\n\nMy current analysis dives into the provided series expansions.  I\u0027m focusing on Leibniz\u0027s rule and index shifting for derivatives, especially in relation to the function series with the x*e^x identity. Analyzing the convergence radius and remainder terms for the series using the ratio test is another key element. Also, I\u0027m examining the geometric series expansions and partial fraction decompositions. Finally, I\u0027m exploring how standard expansions and geometric series are linked with functions such as  x*sin(x).\n\n\n**Exploring Series Expansions**\n\nI\u0027m now deep into the series expansions, specifically focusing on $(x+1)e^{-x}$ and $\\ln(1+x)$. My goal is to extract the core information from each expansion, ensuring the note is structured logically and ready for quick reference. I\u0027m also planning the structure of the note, with each section representing the key components, and thinking about the metadata to support searching later. Finally, the problem of $f^{(2025)}(1)$ for $f(x) \u003d (x-1)\\ln x$ demands more time and a good solution.\n\n\n**Constructing Note Sections**\n\nI\u0027m presently building out the note\u0027s sections. I\u0027m focusing on \"Specific Problem Walkthroughs,\" with examples including $xe^x$, $\\frac{1}{x^2+2x}$ (analyzing two methods: partial fractions versus completing the square shift), and $(x-1)\\ln x$. I\u0027m also working on a dedicated section for \"General Formulas \u0026 Identities\" to be used as a handy reference point. I\u0027m planning to introduce my own tutor-style commentary within the note to enrich the analysis.\n\n\n**Deriving Key Equations**\n\nI\u0027m currently working to establish the final derivations related to $e$. This involves carefully examining the index manipulation within the series to ensure the math is sound. I\u0027m confirming that the telescoping series converges to the correct value, and double-checking the resulting identities for accuracy. Also, I\u0027m working on the accurate representation of all the formulas and derivations in LaTeX for the note.\n\n\n**Structuring Specific Problems**\n\nI\u0027m currently structuring the problems, focusing on the partial fractions example and the logarithmic case. I\u0027m exploring two methods for $\\frac{1}{x^2+2x}$: direct geometric series and expansion around $x\u003d-1$. For $(x-1)\\ln x$, I\u0027m shifting the origin and working with $t\\ln(1+t)$. Finally, I\u0027m working to include all the tutor\u0027s insights within the markdown.\n\n\n",
+      "role": "model",
+      "isThought": true,
+      "parts": [{
+        "text": "**Outlining Key Elements**\n\nI\u0027m currently dissecting the provided inputs, focusing on how to extract key elements from images and potential audio transcripts. My immediate aim is to identify the most crucial information - concepts, keywords, and connections - that will form the backbone of the Obsidian note. I\u0027m exploring different methods to structure this initial data harvest, prioritizing clarity and conciseness for later stages.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Defining Structural Priorities**\n\nThe focus has shifted towards defining the key structural elements for the Obsidian note. I\u0027m prioritizing the LaTeX representation of the formulas and clear identification of core concepts like limits, convergence, and domain analysis, as exemplified by the initial image involving complex numbers and the sign chart. I\u0027m exploring how to link these diverse examples under a unified structure, creating concise [[Wikilinks]] as I go.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Analyzing Limit Techniques**\n\nI\u0027m currently focusing on the different techniques needed for limit calculations, as demonstrated by the diverse examples. L\u0027Hopital\u0027s rule, series expansion, and standard manipulation are all on the table. Piecewise function behavior and continuity are also key. The examples involve composite functions, Taylor series convergence, and error estimation, all within the framework of real analysis. I\u0027m prioritizing concise LaTeX representation for each method.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Examining Series Expansions**\n\nMy current analysis dives into the provided series expansions.  I\u0027m focusing on Leibniz\u0027s rule and index shifting for derivatives, especially in relation to the function series with the x*e^x identity. Analyzing the convergence radius and remainder terms for the series using the ratio test is another key element. Also, I\u0027m examining the geometric series expansions and partial fraction decompositions. Finally, I\u0027m exploring how standard expansions and geometric series are linked with functions such as  x*sin(x).\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Exploring Series Expansions**\n\nI\u0027m now deep into the series expansions, specifically focusing on $(x+1)e^{-x}$ and $\\ln(1+x)$. My goal is to extract the core information from each expansion, ensuring the note is structured logically and ready for quick reference. I\u0027m also planning the structure of the note, with each section representing the key components, and thinking about the metadata to support searching later. Finally, the problem of $f^{(2025)}(1)$ for $f(x) \u003d (x-1)\\ln x$ demands more time and a good solution.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Constructing Note Sections**\n\nI\u0027m presently building out the note\u0027s sections. I\u0027m focusing on \"Specific Problem Walkthroughs,\" with examples including $xe^x$, $\\frac{1}{x^2+2x}$ (analyzing two methods: partial fractions versus completing the square shift), and $(x-1)\\ln x$. I\u0027m also working on a dedicated section for \"General Formulas \u0026 Identities\" to be used as a handy reference point. I\u0027m planning to introduce my own tutor-style commentary within the note to enrich the analysis.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Deriving Key Equations**\n\nI\u0027m currently working to establish the final derivations related to $e$. This involves carefully examining the index manipulation within the series to ensure the math is sound. I\u0027m confirming that the telescoping series converges to the correct value, and double-checking the resulting identities for accuracy. Also, I\u0027m working on the accurate representation of all the formulas and derivations in LaTeX for the note.\n\n\n",
+        "thought": true
+      }, {
+        "text": "**Structuring Specific Problems**\n\nI\u0027m currently structuring the problems, focusing on the partial fractions example and the logarithmic case. I\u0027m exploring two methods for $\\frac{1}{x^2+2x}$: direct geometric series and expansion around $x\u003d-1$. For $(x-1)\\ln x$, I\u0027m shifting the origin and working with $t\\ln(1+t)$. Finally, I\u0027m working to include all the tutor\u0027s insights within the markdown.\n\n\n",
+        "thought": true
+      }]
+    }, {
+      "text": "# Lecture Notes: Analysis of Functions, Series, and Taylor Expansions\n**Date:** November 26, 2025\n**Location:** Slovenia\n**Topic:** Mathematical Analysis (Complex Numbers, Functions, Series, Taylor/Maclaurin Series)\n\n---\n\n## 1. Complex Numbers \u0026 Identities\n### Recall: Real Part of Complex Powers\nA useful identity derived from the properties of conjugate complex numbers was presented to prove that a specific expression results in a real number.\n**Claim:** $\\forall n \\in \\mathbb{N}: (\\sqrt{3} + i)^n + (\\sqrt{3} - i)^n \\in \\mathbb{R}$.\n\n**Derivation:**\nLet $z \u003d \\sqrt{3} + i$. Then its conjugate is $\\bar{z} \u003d \\sqrt{3} - i$.\nThe expression is of the form $z^n + \\bar{z}^n$.\nRecall that $\\overline{z^n} \u003d (\\bar{z})^n$.\nTherefore, $z^n + \\bar{z}^n \u003d z^n + \\overline{z^n} \u003d 2\\text{Re}(z^n)$.\nSince the real part of any complex number is real, the sum is in $\\mathbb{R}$.\n\n**Polar Form Calculation:**\n$$\nz \u003d 2(\\cos \\frac{\\pi}{6} + i \\sin \\frac{\\pi}{6})\n$$\n$$\nz^n + \\bar{z}^n \u003d 2 \\cdot 2^n \\cos(n\\frac{\\pi}{6}) \u003d 2^{n+1} \\cos(n\\frac{\\pi}{6})\n$$\n*For $n\u003d2025$:*\n$$2^{2026} \\cos(2025 \\frac{\\pi}{6}) \u003d 0$$\n*(Note: $\\cos(\\text{odd} \\cdot \\frac{\\pi}{2}) \u003d 0$).*\n\n---\n\n## 2. Function Analysis\n### Domain Determination\nFor logarithmic functions involving rational expressions, the domain is determined by the argument being strictly positive.\n$$\nf(x) \u003d \\ln \\left( \\frac{6-3x^2}{2x^2-3x-2} \\right)\n$$\n**Condition:** $\\frac{6-3x^2}{2x^2-3x-2} \u003e 0$.\nThe roots of the numerator are $\\pm\\sqrt{2}$. The roots of the denominator are found via quadratic formula ($x_1 \u003d 2, x_2 \u003d -1/2$).\n**Critical Analysis:** The notes use a graphical sign chart (wavy curve method) to solve the inequality.\n**Result:** $D_f \u003d (-\\sqrt{2}, -1/2) \\cup (\\sqrt{2}, 2)$.\n\n### Limits with Taylor Approximation logic\nEvaluating limits of the form $0/0$ often utilizes standard limits or first-order Taylor expansions.\n$$\n\\lim_{x \\to -1} \\frac{f(x)}{\\sqrt[3]{x} + 1}\n$$\nUsing the substitution $x \u003d -1+h$ or standard expansions like $\\ln(1+t) \\approx t$ leads to the result.\n**Calculated Result:** 13.\n\n---\n\n## 3. Infinite Series and Convergence\n[[Infinite Series]] analysis focuses on determining convergence and calculating sums using telescoping properties or comparison tests.\n\n### Convergence Test Example\n$$\n\\sum_{n\u003d1}^{\\infty} \\left( \\frac{2n+1}{2n+3} \\right)^{3n}\n$$\n**Method:** Check the necessary condition for convergence ($\\lim a_n \u003d 0$).\n$$\n\\lim_{n \\to \\infty} \\left( \\frac{2n+1}{2n+3} \\right)^{3n} \u003d \\lim_{n \\to \\infty} \\left( 1 + \\frac{-2}{2n+3} \\right)^{3n} \u003d e^{-3} \\neq 0\n$$\n**Conclusion:** The series **diverges**.\n\n### Telescoping Series\n$$\n\\sum_{n\u003d2}^{\\infty} \\frac{1+2n-n^2}{(n^2-1)^2}\n$$\n**Method:** [[Partial Fraction Decomposition]].\nThe term is manipulated to split into a difference of terms $b_n - b_{n+k}$.\n$$\n\\frac{1+2n-n^2}{(n^2-1)^2} \u003d \\frac{A}{n-1} + \\frac{B}{(n-1)^2} + \\dots\n$$\nThe notes identify coefficients $D\u003d0, B\u003d1, A\u003d-1/2, C\u003d1/2$, leading to a sum calculation.\n**Sum:** $S \u003d -1/8$.\n\n---\n\n## 4. Taylor and Maclaurin Series\nThis section covers the expansion of functions into power series.\n\n### General Definition\nThe [[Taylor Series]] of $f(x)$ centered at $a$:\n$$\nf(x) \u003d \\sum_{n\u003d0}^{\\infty} \\frac{f^{(n)}(a)}{n!} (x-a)^n\n$$\nThe **Remainder Term** (Lagrange form):\n$$\n|R_n(x)| \u003d \\left| \\frac{f^{(n+1)}(\\xi)}{(n+1)!} (x-a)^{n+1} \\right|\n$$\n\n### Case Study 1: $f(x) \u003d x e^x$\n**Goal:** Expand in Maclaurin series ($a\u003d0$) and Taylor series ($a\u003d-1$).\n\n**Method A: Direct Definition**\nUsing Leibniz rule for $(uv)^{(n)}$, or simply observing the pattern:\n$$\nf^{(n)}(x) \u003d (x+n)e^x\n$$\nAt $a\u003d0$: $f^{(n)}(0) \u003d n$.\n$$\nf(x) \u003d \\sum_{n\u003d0}^{\\infty} \\frac{n}{n!} x^n \u003d \\sum_{n\u003d1}^{\\infty} \\frac{1}{(n-1)!} x^n\n$$\n\n**Method B: Manipulation of Known Series (Reverse Engineering)**\nWe know $e^x \u003d \\sum_{n\u003d0}^{\\infty} \\frac{x^n}{n!}$.\nMultiply by $x$:\n$$\nx e^x \u003d x \\sum_{n\u003d0}^{\\infty} \\frac{x^n}{n!} \u003d \\sum_{n\u003d0}^{\\infty} \\frac{x^{n+1}}{n!}\n$$\n*Note to Self:* Method A and Method B yield the same result, but the indices shift. Be careful with $n\u003d0$ vs $n\u003d1$.\n\n### Case Study 2: $f(x) \u003d \\frac{1}{x^2+2x}$ around $a\u003d-1$\nThis function has a singularity at $x\u003d0$ and $x\u003d-2$. Expanding around $a\u003d-1$ puts us right between the singularities.\n\n**Method 1: Partial Fractions**\n$$\nf(x) \u003d \\frac{1}{x(x+2)} \u003d \\frac{1}{2} \\left( \\frac{1}{x} - \\frac{1}{x+2} \\right)\n$$\nTo expand around $a\u003d-1$, we need terms of the form $(x+1)$. Let $t \u003d x+1 \\implies x \u003d t-1$.\n$$\n\\frac{1}{x} \u003d \\frac{1}{t-1} \u003d -\\frac{1}{1-t} \u003d -\\sum t^n \u003d -\\sum (x+1)^n\n$$\n$$\n\\frac{1}{x+2} \u003d \\frac{1}{t+1} \u003d \\sum (-1)^n t^n \u003d \\sum (-1)^n (x+1)^n\n$$\n**Result:** Combine the two geometric series.\n$$\nf(x) \u003d \\frac{1}{2} \\sum_{n\u003d0}^{\\infty} (-1 - (-1)^n) (x+1)^n\n$$\nThis simplifies to a series containing only even powers of $(x+1)$ because for odd $n$, terms cancel.\n\n**Method 2: Algebraic Manipulation**\n$$\nx^2 + 2x \u003d (x+1)^2 - 1\n$$\n$$\nf(x) \u003d \\frac{1}{(x+1)^2 - 1} \u003d -\\frac{1}{1-(x+1)^2}\n$$\nThis is a [[Geometric Series]] with ratio $q \u003d (x+1)^2$.\n$$\nf(x) \u003d -\\sum_{n\u003d0}^{\\infty} ((x+1)^2)^n \u003d -\\sum_{n\u003d0}^{\\infty} (x+1)^{2n}\n$$\n**Warning:** This method is much faster but requires recognizing the perfect square completion.\n\n### Case Study 3: $f(x) \u003d (x-1) \\ln x$ around $a\u003d1$\n**Strategy:** Shift the variable. Let $t \u003d x-1$.\n$$\nf(t+1) \u003d t \\ln(1+t)\n$$\nUsing the known expansion for $\\ln(1+t) \u003d \\sum_{n\u003d1}^{\\infty} (-1)^{n+1} \\frac{t^n}{n}$:\n$$\nf(x) \u003d (x-1) \\sum_{n\u003d1}^{\\infty} \\frac{(-1)^{n+1}}{n} (x-1)^n \u003d \\sum_{n\u003d1}^{\\infty} \\frac{(-1)^{n+1}}{n} (x-1)^{n+1}\n$$\n\n### Application: Finding High Order Derivatives\n**Problem:** Find $f^{(2025)}(1)$ for $f(x) \u003d (x-1)\\ln x$.\nInstead of differentiating 2025 times, look at the Taylor coefficient for $(x-1)^{2025}$.\nFrom the series above, for $n+1 \u003d 2025 \\implies n \u003d 2024$.\nCoefficient $C_{2025} \u003d \\frac{(-1)^{2025}}{2024} \u003d \\frac{-1}{2024}$.\nWe know $C_k \u003d \\frac{f^{(k)}(a)}{k!}$.\n$$\n\\frac{f^{(2025)}(1)}{2025!} \u003d -\\frac{1}{2024} \\implies f^{(2025)}(1) \u003d -\\frac{2025!}{2024} \u003d -2025! \\cdot \\frac{1}{2024} \\dots (\\text{check index logic})\n$$\n*Correction from notes logic:*\nIf term is $\\frac{(-1)^{n-1}}{n} (x-1)^{n+1}$... wait.\nLet\u0027s re-verify the index. The expansion is $\\sum a_k (x-1)^k$.\nThe term with power 2025 corresponds to $n+1\u003d2025 \\implies n\u003d2024$.\nThe coefficient is $\\frac{(-1)^{2025}}{2024} \u003d \\frac{-1}{2024}$.\nTherefore: $\\frac{f^{(2025)}(1)}{2025!} \u003d \\frac{-1}{2024} \\implies f^{(2025)}(1) \u003d -\\frac{2025!}{2024}$.\n\n---\n\n## 5. General Formulas \u0026 Identities (Recall)\n*   **Geometric Series:** $\\frac{1}{1-x} \u003d \\sum_{n\u003d0}^\\infty x^n, \\quad |x|\u003c1$\n*   **Exponential:** $e^x \u003d \\sum_{n\u003d0}^\\infty \\frac{x^n}{n!}, \\quad \\forall x$\n*   **Sine:** $\\sin x \u003d \\sum_{n\u003d0}^\\infty \\frac{(-1)^n}{(2n+1)!} x^{2n+1}$\n*   **Cosine:** $\\cos x \u003d \\sum_{n\u003d0}^\\infty \\frac{(-1)^n}{(2n)!} x^{2n}$\n*   **Logarithm:** $\\ln(1+x) \u003d \\sum_{n\u003d1}^\\infty (-1)^{n+1} \\frac{x^n}{n}, \\quad x \\in (-1, 1]$\n*   **Binomial:** $(1+x)^\\alpha \u003d \\sum_{n\u003d0}^\\infty \\binom{\\alpha}{n} x^n$\n\n---\n\n## 6. Critical Analysis / Notes\n*   **Index Shifting:** A common source of error is mismatching the starting index ($n\u003d0$ vs $n\u003d1$) when multiplying series by $x$ or differentiating. Always check the first term manually.\n*   **Convergence Interval:** When combining two geometric series (like in Partial Fractions), the radius of convergence is determined by the *closest* singularity. For $\\frac{1}{x(x+2)}$ around $a\u003d-1$, singularities are at $0$ and $-2$. Both are distance 1 away from $-1$. Thus $R\u003d1$.\n*   **Summing Series:** To calculate sums like $\\sum \\frac{n-1}{n!}$, separate into $\\sum \\frac{n}{n!} - \\sum \\frac{1}{n!} \u003d \\sum \\frac{1}{(n-1)!} - \\sum \\frac{1}{n!}$. Recognizing $e$ in these sums is key.",
+      "role": "model",
+      "finishReason": "STOP",
+      "tokenCount": 3003,
+      "parts": [{
+        "text": "# Lecture Notes: Analysis of Functions, Series, and Taylor Expansions\n**Date:** November 26,"
+      }, {
+        "text": " 2025\n**Location:** Slovenia\n**Topic:** Mathematical Analysis (Complex Numbers, Functions, Series, Taylor/"
+      }, {
+        "text": "Maclaurin Series)\n\n---\n\n## 1. Complex Numbers \u0026 Identities\n### Recall: Real Part of Complex Powers"
+      }, {
+        "text": "\nA useful identity derived from the properties of conjugate complex numbers was presented to prove that a specific expression results in a real number.\n**"
+      }, {
+        "text": "Claim:** $\\forall n \\in \\mathbb{N}: (\\sqrt{3} + i)^n + (\\sqrt{3} -"
+      }, {
+        "text": " i)^n \\in \\mathbb{R}$.\n\n**Derivation:**\nLet $z \u003d \\sqrt{3} + i$. Then"
+      }, {
+        "text": " its conjugate is $\\bar{z} \u003d \\sqrt{3} - i$.\nThe expression is of the form $z^n + \\"
+      }, {
+        "text": "bar{z}^n$.\nRecall that $\\overline{z^n} \u003d (\\bar{z})^n$."
+      }, {
+        "text": "\nTherefore, $z^n + \\bar{z}^n \u003d z^n + \\overline{z^"
+      }, {
+        "text": "n} \u003d 2\\text{Re}(z^n)$.\nSince the real part of any complex number is real"
+      }, {
+        "text": ", the sum is in $\\mathbb{R}$.\n\n**Polar Form Calculation:**\n$$\nz \u003d 2(\\cos \\frac{\\pi}{"
+      }, {
+        "text": "6} + i \\sin \\frac{\\pi}{6})\n$$\n$$\nz^n + \\bar{z}^n \u003d "
+      }, {
+        "text": "2 \\cdot 2^n \\cos(n\\frac{\\pi}{6}) \u003d 2^{n+1}"
+      }, {
+        "text": " \\cos(n\\frac{\\pi}{6})\n$$\n*For $n\u003d2025$:"
+      }, {
+        "text": "*\n$$2^{2026} \\cos(2025 \\frac{\\pi}{6}) \u003d"
+      }, {
+        "text": " 0$$\n*(Note: $\\cos(\\text{odd} \\cdot \\frac{\\pi}{2}) \u003d"
+      }, {
+        "text": " 0$).*\n\n---\n\n## 2. Function Analysis\n### Domain Determination\nFor logarithmic functions involving rational expressions, the domain is determined by the"
+      }, {
+        "text": " argument being strictly positive.\n$$\nf(x) \u003d \\ln \\left( \\frac{6-3"
+      }, {
+        "text": "x^2}{2x^2-3x-2} \\right)\n$$\n**Condition:** $\\frac{6-3x"
+      }, {
+        "text": "^2}{2x^2-3x-2} \u003e 0$.\nThe roots of the numerator are $\\"
+      }, {
+        "text": "pm\\sqrt{2}$. The roots of the denominator are found via quadratic formula ($x_1 \u003d 2,"
+      }, {
+        "text": " x_2 \u003d -1/2$).\n**Critical Analysis:** The notes use a graphical sign chart (wavy curve"
+      }, {
+        "text": " method) to solve the inequality.\n**Result:** $D_f \u003d (-\\sqrt{2}, -1/2) \\cup (\\sqrt"
+      }, {
+        "text": "{2}, 2)$.\n\n### Limits with Taylor Approximation logic\nEvaluating limits of the form $0/0$ often utilizes"
+      }, {
+        "text": " standard limits or first-order Taylor expansions.\n$$\n\\lim_{x \\to -1} \\frac{"
+      }, {
+        "text": "f(x)}{\\sqrt[3]{x} + 1}\n$$\nUsing the substitution $x \u003d -1+h"
+      }, {
+        "text": "$ or standard expansions like $\\ln(1+t) \\approx t$ leads to the result.\n**Calcul"
+      }, {
+        "text": "ated Result:** 13.\n\n---\n\n## 3. Infinite Series and Convergence\n[[Infinite Series]] analysis"
+      }, {
+        "text": " focuses on determining convergence and calculating sums using telescoping properties or comparison tests.\n\n### Convergence Test Example\n$$\n\\sum_{n\u003d"
+      }, {
+        "text": "1}^{\\infty} \\left( \\frac{2n+1}{2n+3} \\right)^{3n}"
+      }, {
+        "text": "\n$$\n**Method:** Check the necessary condition for convergence ($\\lim a_n \u003d 0$).\n$$\n\\lim"
+      }, {
+        "text": "_{n \\to \\infty} \\left( \\frac{2n+1}{2n+3} \\right)^{"
+      }, {
+        "text": "3n} \u003d \\lim_{n \\to \\infty} \\left( 1 + \\frac{-2}{2n+3} \\"
+      }, {
+        "text": "right)^{3n} \u003d e^{-3} \\neq 0\n$$\n**Conclusion:** The series **diverges**."
+      }, {
+        "text": "\n\n### Telescoping Series\n$$\n\\sum_{n\u003d2}^{\\infty} \\frac{1+2"
+      }, {
+        "text": "n-n^2}{(n^2-1)^2}\n$$\n**Method:** [[Partial Fraction Decomposition"
+      }, {
+        "text": "]].\nThe term is manipulated to split into a difference of terms $b_n - b_{n+k}$.\n$$\n\\frac{1"
+      }, {
+        "text": "+2n-n^2}{(n^2-1)^2} \u003d \\frac{A}{n-"
+      }, {
+        "text": "1} + \\frac{B}{(n-1)^2} + \\dots\n$$\nThe notes identify coefficients $D\u003d0, B\u003d"
+      }, {
+        "text": "1, A\u003d-1/2, C\u003d1/2$, leading to a sum calculation.\n**Sum:** $S \u003d -"
+      }, {
+        "text": "1/8$.\n\n---\n\n## 4. Taylor and Maclaurin Series\nThis section covers the expansion of functions into"
+      }, {
+        "text": " power series.\n\n### General Definition\nThe [[Taylor Series]] of $f(x)$ centered at $a$:"
+      }, {
+        "text": "\n$$\nf(x) \u003d \\sum_{n\u003d0}^{\\infty} \\frac{f^{(n)}(a)}{n!}"
+      }, {
+        "text": " (x-a)^n\n$$\nThe **Remainder Term** (Lagrange form):\n$$\n|R_n(x)|"
+      }, {
+        "text": " \u003d \\left| \\frac{f^{(n+1)}(\\xi)}{(n+1)!} (x-a)^{"
+      }, {
+        "text": "n+1} \\right|\n$$\n\n### Case Study 1: $f(x) \u003d x e^x$\n**"
+      }, {
+        "text": "Goal:** Expand in Maclaurin series ($a\u003d0$) and Taylor series ($a\u003d-1$).\n\n**Method A"
+      }, {
+        "text": ": Direct Definition**\nUsing Leibniz rule for $(uv)^{(n)}$, or simply observing the pattern:\n$$\nf^{(n"
+      }, {
+        "text": ")}(x) \u003d (x+n)e^x\n$$\nAt $a\u003d0$: $f^{("
+      }, {
+        "text": "n)}(0) \u003d n$.\n$$\nf(x) \u003d \\sum_{n\u003d0}^{\\infty}"
+      }, {
+        "text": " \\frac{n}{n!} x^n \u003d \\sum_{n\u003d1}^{\\infty} \\frac{1"
+      }, {
+        "text": "}{(n-1)!} x^n\n$$\n\n**Method B: Manipulation of Known Series (Reverse Engineering)**\nWe know $e^"
+      }, {
+        "text": "x \u003d \\sum_{n\u003d0}^{\\infty} \\frac{x^n}{n!}$.\nMultiply by $x$:\n$$"
+      }, {
+        "text": "\nx e^x \u003d x \\sum_{n\u003d0}^{\\infty} \\frac{x^n}{n!} \u003d \\sum_{n\u003d"
+      }, {
+        "text": "0}^{\\infty} \\frac{x^{n+1}}{n!}\n$$\n*Note to Self:* Method"
+      }, {
+        "text": " A and Method B yield the same result, but the indices shift. Be careful with $n\u003d0$ vs $n\u003d"
+      }, {
+        "text": "1$.\n\n### Case Study 2: $f(x) \u003d \\frac{1}{x^2+"
+      }, {
+        "text": "2x}$ around $a\u003d-1$\nThis function has a singularity at $x\u003d0$ and $x\u003d-2$."
+      }, {
+        "text": " Expanding around $a\u003d-1$ puts us right between the singularities.\n\n**Method 1: Partial Fractions**\n$$"
+      }, {
+        "text": "\nf(x) \u003d \\frac{1}{x(x+2)} \u003d \\frac{1}{2} \\left("
+      }, {
+        "text": " \\frac{1}{x} - \\frac{1}{x+2} \\right)\n$$\nTo"
+      }, {
+        "text": " expand around $a\u003d-1$, we need terms of the form $(x+1)$. Let $t \u003d x+1 \\"
+      }, {
+        "text": "implies x \u003d t-1$.\n$$\n\\frac{1}{x} \u003d \\frac{1}{t"
+      }, {
+        "text": "-1} \u003d -\\frac{1}{1-t} \u003d -\\sum t^n \u003d -\\sum (x+1)^n"
+      }, {
+        "text": "\n$$\n$$\n\\frac{1}{x+2} \u003d \\frac{1}{t+1} \u003d \\sum (-"
+      }, {
+        "text": "1)^n t^n \u003d \\sum (-1)^n (x+1)^n\n$$\n**Result"
+      }, {
+        "text": ":** Combine the two geometric series.\n$$\nf(x) \u003d \\frac{1}{2} \\sum"
+      }, {
+        "text": "_{n\u003d0}^{\\infty} (-1 - (-1)^n) (x+1)^n\n$$\nThis simplifies to a series"
+      }, {
+        "text": " containing only even powers of $(x+1)$ because for odd $n$, terms cancel.\n\n**Method 2:"
+      }, {
+        "text": " Algebraic Manipulation**\n$$\nx^2 + 2x \u003d (x+1)^2 - 1\n$$\n"
+      }, {
+        "text": "$$\nf(x) \u003d \\frac{1}{(x+1)^2 - 1} \u003d -\\frac{1}{1"
+      }, {
+        "text": "-(x+1)^2}\n$$\nThis is a [[Geometric Series]] with ratio $q \u003d (x+1)^"
+      }, {
+        "text": "2$.\n$$\nf(x) \u003d -\\sum_{n\u003d0}^{\\infty} ((x+1)^"
+      }, {
+        "text": "2)^n \u003d -\\sum_{n\u003d0}^{\\infty} (x+1)^{2n}\n$$\n"
+      }, {
+        "text": "**Warning:** This method is much faster but requires recognizing the perfect square completion.\n\n### Case Study 3: $f(x) \u003d"
+      }, {
+        "text": " (x-1) \\ln x$ around $a\u003d1$\n**Strategy:** Shift the variable. Let $t \u003d x-1"
+      }, {
+        "text": "$.\n$$\nf(t+1) \u003d t \\ln(1+t)\n$$\nUsing the known expansion for $\\ln(1"
+      }, {
+        "text": "+t) \u003d \\sum_{n\u003d1}^{\\infty} (-1)^{n+1} \\frac{t^"
+      }, {
+        "text": "n}{n}$:\n$$\nf(x) \u003d (x-1) \\sum_{n\u003d1}^{\\infty} \\"
+      }, {
+        "text": "frac{(-1)^{n+1}}{n} (x-1)^n \u003d \\sum_{n\u003d1}^{\\"
+      }, {
+        "text": "infty} \\frac{(-1)^{n+1}}{n} (x-1)^{n+1}\n$$"
+      }, {
+        "text": "\n\n### Application: Finding High Order Derivatives\n**Problem:** Find $f^{(2025)}(1)$ for $f(x)"
+      }, {
+        "text": " \u003d (x-1)\\ln x$.\nInstead of differentiating 2025 times, look at the Taylor coefficient for"
+      }, {
+        "text": " $(x-1)^{2025}$.\nFrom the series above, for $n+1 \u003d 2025"
+      }, {
+        "text": " \\implies n \u003d 2024$.\nCoefficient $C_{2025} \u003d \\frac{(-1)^{20"
+      }, {
+        "text": "25}}{2024} \u003d \\frac{-1}{2024}$.\nWe know $C_k"
+      }, {
+        "text": " \u003d \\frac{f^{(k)}(a)}{k!}$.\n$$\n\\frac{f^{(2025"
+      }, {
+        "text": ")}(1)}{2025!} \u003d -\\frac{1}{2024} \\implies f^{(202"
+      }, {
+        "text": "5)}(1) \u003d -\\frac{2025!}{2024} \u003d -2025"
+      }, {
+        "text": "! \\cdot \\frac{1}{2024} \\dots (\\text{check index logic})\n$$\n"
+      }, {
+        "text": "*Correction from notes logic:*\nIf term is $\\frac{(-1)^{n-1}}{n} (x-1"
+      }, {
+        "text": ")^{n+1}$... wait.\nLet\u0027s re-verify the index. The expansion is $\\sum a"
+      }, {
+        "text": "_k (x-1)^k$.\nThe term with power 2025 corresponds to $n+1\u003d202"
+      }, {
+        "text": "5 \\implies n\u003d2024$.\nThe coefficient is $\\frac{(-1)^{2025}}{"
+      }, {
+        "text": "2024} \u003d \\frac{-1}{2024}$.\nTherefore: $\\frac{f^{(2025"
+      }, {
+        "text": ")}(1)}{2025!} \u003d \\frac{-1}{2024} \\implies f^{(2"
+      }, {
+        "text": "025)}(1) \u003d -\\frac{2025!}{2024}$.\n\n---\n\n## 5. General"
+      }, {
+        "text": " Formulas \u0026 Identities (Recall)\n*   **Geometric Series:** $\\frac{1}{1-x} \u003d \\sum_{n\u003d0"
+      }, {
+        "text": "}^\\infty x^n, \\quad |x|\u003c1$\n*   **Exponential:** $e^x \u003d \\sum"
+      }, {
+        "text": "_{n\u003d0}^\\infty \\frac{x^n}{n!}, \\quad \\forall x$\n*   **Sine:** $\\sin"
+      }, {
+        "text": " x \u003d \\sum_{n\u003d0}^\\infty \\frac{(-1)^n}{(2n+1)!} x^{2n+1}$"
+      }, {
+        "text": "\n*   **Cosine:** $\\cos x \u003d \\sum_{n\u003d0}^\\infty \\frac{(-1)^n"
+      }, {
+        "text": "}{(2n)!} x^{2n}$\n*   **Logarithm:** $\\ln(1+x"
+      }, {
+        "text": ") \u003d \\sum_{n\u003d1}^\\infty (-1)^{n+1} \\frac{x^n}{n}, \\"
+      }, {
+        "text": "quad x \\in (-1, 1]$\n*   **Binomial:** $(1+x)^\\alpha \u003d \\sum_{n\u003d0"
+      }, {
+        "text": "}^\\infty \\binom{\\alpha}{n} x^n$\n\n---\n\n## 6. Critical Analysis / Notes"
+      }, {
+        "text": "\n*   **Index Shifting:** A common source of error is mismatching the starting index ($n\u003d0$ vs $n\u003d1$)"
+      }, {
+        "text": " when multiplying series by $x$ or differentiating. Always check the first term manually.\n*   **Convergence Interval:** When"
+      }, {
+        "text": " combining two geometric series (like in Partial Fractions), the radius of convergence is determined by the *closest* singularity. For"
+      }, {
+        "text": " $\\frac{1}{x(x+2)}$ around $a\u003d-1$, singularities are at $0$ and $-2$. Both"
+      }, {
+        "text": " are distance 1 away from $-1$. Thus $R\u003d1$.\n*   **Summing Series:** To"
+      }, {
+        "text": " calculate sums like $\\sum \\frac{n-1}{n!}$, separate into $\\sum \\frac{n}{n!} -"
+      }, {
+        "text": " \\sum \\frac{1}{n!} \u003d \\sum \\frac{1}{(n-1)!} - \\"
+      }, {
+        "text": "sum \\frac{1}{n!}$. Recognizing $e$ in these sums is key."
+      }, {
+        "text": "",
+        "thoughtSignature": "Er9GCrxGAXLI2nwiIHmJKCMx/8OawWhmTCBLSKn2Yu0cAGqlE30SafhCfb34yh2mq6Du/pp67CvM1cPGEDKqCBrHXByDq548bKqC/1scQJwkkfrVR7jnKLseXJpSJ044EGU5C6vgTPkjRu/aTgYb3o+C36s9cX+ik9RLXiy8HTQydPEG1XpEDBQDv7b6xvwQGiLiF9oyhosDJHU0jABAKKm5aw3zAZbVx24HAxhpCqucqAke1EYSfv51/v1TyII5kWb47nFqXBJrHEyD8vdq1H4bYsutEblEN6BKcxEkHRWwy+RS37P+mSj89cYCksU2M7We2XxbcgLEYO6dc0y+xMV5nrMh5bYbDanK+Ozw642N725IfRKabEO+wbSjh8mV96nJjn1FVshlMInl8oVvI5cPfslUoMYa4+p3qG2ayG9tF8rafbWFcBVmFn6kxMHIzk0Sxog9qZ8FNONFfDHoBdDEHW5ZAuJF+ZEYHd/5BARMsQi7390S3xJ+x/cjScp5Q5pvtAdEoAULkX15/H1uRmAaup/e9PbQt2RmitXqSEHWVjRu56GZ404pYsEB96k3I10x6oerkpWaHxib0Me3Fo8B7sTp/oi53Oh/40+lcHeDQjBnid/Lpo+bAeoGp5wBCPPQ5r+NjKp41Ha+EO0PqGbvzsL3ppNItRIydhmkLQVoKIbZMlOOQJ2Nd0wVcF6hzfnDZK+/a2ZR3fer7tIG/5xTnO9pAtQmEa3OYjQ9AWbgFA8xCw4W91XwGOtmKa578KbP88JJFfGByUTugeNijDKbvLTLZHX2tJCaNJ0Or5+weynrr8Mj/uqMsKqy2yApp1Bv2KFfs93CS2TYIWh2nNnvA3DdRJ4Kp+UTN2WSz8QFWKlvelSXIZEpmNecfvlrwRQLtJaIBMAOjYgoGXx/UPNnUrW+8+eD8rk+zG5P8PohDd/rOKQlTXAcxeqVLLgc/Wy2ny3eEw0nfRgRWYI8XAXM56eP6IvmgqZk/vfWnFQuQSlbAGGKozx6SSPo9pRTuTshnWC32ZJxYqo2b1slKYqzK3pG1AYNqJyt482Lqsm9lelHyLGGoNpjlEO8hBT5V2MJlIH4VbqZGQ7oFayjs69FLzcQOkSVmkot3j5FmXc6gyZAwb2NZGoXmRdW5bRsauzSg9TmsE9Z6j9g2hoZrA8Qv36/k1XnceDR145+gp8wK/6MZ0u8aMdCHlc6BmHk2SItJiRdc8YgrznYFg0/SLwpX0JEDGAF5ZqLvHXmJhFVwg9AytU/OkJZhOFAzMLWFf9BmsAUtODRRO/j9ZDfcEKcDglnHMHlNuKstegnGmYc5NGY48RpbipdqzDd8HfvZlf8H2b/R97kI9bk6KIPI4ytzMU1oJSc3kKSUJ8za2q8rwuBMdjA5JcV01WnGyQ1AIcGNWlGOK/RZlBV5ZBJaoLhsowY7SrapcX6PaB0vo4dIR8r3u3X/5fSDD6OkGq28AN1+OizCPoHmkSSyxNzFbGPr3nXPQsZXP2F+w3y0QfhwXMBTG7M/v7nzTr+uIOvQBf+GGNC/1Lls993py8pSTuxEHaHco6w6NOH0MU6LyfpVTpIFIL0hiiFC/JOEI/gvfAZMsVo6PYe/0R+d7kJqkDrt1Jq5o/ZC94ZzCNcZhJY2o+BfcaP1W8ZfPwUYP5wOS8NGU4CKKMMT6n2SLR0/SLFnrHlRETSQZVT37Lf6YNKYADajyzj4+iG8XjtHYR/5XeTuZ2pr/hGbP6gLEFQIxfbJevO6Qs5yHEgC0cQpXS8rY1fyKnskTwpeeKlTasXUp8o4atISNcSGQg1BqqzDtv3CZe8VqWluo6hj4HJ0RyCGYlzbC7OwvzKOIAHjw66S1cl+x4FuHcsHtpc/z7qEJfH+LHU85KhES27M8cl7n0NOa3il4o67JljW4PIGwiIY0W4+ZEKMWH4UtxY2Wr4kMu1PqS4hQHhXuGNB6ECMRR+F87q3oWLVpLvGgPXjvnMUg73miWWtkCEx2DaK4/SJdcPDuifj5rpgiBln3zVspz+v86GqGugDk83wg/3KSW2KkigrJCEdyYkwJd8cIcTf1I7L1hyOYuzil1XAWwEA+oPEc+jZMMYGFFCOAOGQszrsyGpeKvL/yj8aVHiX3PSJbaxs9EDDTNb2dYwSU8V+mHvMt1/SH5xFqplE5AG0VhB/hM4GYJXARLvI9JAc9bhR1V8dg5gOUubBZDoN1urHpJshdUWXyQjBpM80mwxDRqJuaoIvs05d/hYr5T8ZEBTD4zJSCY5R0PpMl22YBzXPBEaN54uQAIUjzwC9rqZp2dpVIUtOpJDKS6RRsvZUhghwnd0ZV5UBoHRgHOPyi9JYpTpgq/+XXSXfJwz/KYGO7xuXkuUZE1Kua4Ej9THQeEi1rGPXVIkOdB3XkaG+s+QVStqn0glN0t2Gn5LzcRfon/hMn/GHbd381licXs8Kuk+9axRb19dhXVItZgJPwF3ghY+eViadiUzpa4Lr9EunVW0xmViNgqagtEXIdKRbeyF/L/xIm0k0WPy1xs7tV2VDjyyKqNcKaNNl3sajG4AfGoRdNFJFwEY07H18tDkoJLhSTv5J1jp9o3WzvsFeIb6ieHZ8mf8U5pAByAtS/pu/8UCKr7hpKUJMzH1zYrHD5GjaPL1YEsRlXpBtGVc4PG78+X598Tvk6GbgGpbeOVCSPRqG0l9sw1ByKfnG7W2FnrwpJpAfq3gJ4EkWa0fdzUmjUH7hErcBOZtNbgvclz1zHkZ+hDW9snWkFXzGwCngWzoDJQr37Ex6IxDzPtBt2+7gX28BxhpxLAietTpyjmwNsDQn9+CSoz1qfQoLqV/UtCTKL0Qo8X65uGoO2nPQQUncs0mShdDcfW/0rVlPin7K3QE/fK5EiErajlgeDNjdhQLVBHaiU1uYfOQZY1pGSKVuPZzIx/BJmBSQWcRVG7h9+Ynu/O9nSo0S3uHEQ1Bn/GqFErbBygjoQyYnXkDQi3FvJffUqKbxYEvTr3v/tzHT5entO9AK6at48ekF9wjfs6YJ4Ql7OUy9skEmHP/SX9Kqe4jBHPaGUoGNf3hIjF6fwANre5ABt6e1amabiduRtr3zlqjbsIoG1T05ZSM4MXWjsA8nI3fIkwOGYB2DvMAXNisX3U6qS+ETE9RqVOEPeQ2PjhoIbWXTA7+7aSYxt99zrEfKYwdhFwIZuq691J/EHUhHkj7fpioMIupjlMlUVvBNOzgVEs7Y+Wh7E/1d59CWMIGYiXG8S1WTtiWsJD5LVjsXhIORteNlkAa8IqfJAuNE6ZDH4KgJb6KPHgQnddNWL7zQzUukHtJnXod4TaXrwssOnj+DzaKHVc2DD8ugx7d/OJNTZWaJmXCUzmZDh46Y2rfPCrphNbjm0SAag9DM353OhXnTaM79ft9FqSIZZeQ6WY6gzs3gf4s2tLMYxCS29EdPVzjZvfRIl+alBRxoUB3FYDyDBjmbZD5mlaLRG5l0QrLGNCf6f6yddL8LO8sVZbZpzpqtKs4StYMC3CJUCMn39Ltjx7XNu1iCrLtO//rROgW48wpGjlu1PtkprG4bSaWN7+r7Z30tFT5xuOp9FekjN/W0S1k5vbbqKbDLyvf1T7/P+XjIp6kI2lNeN4l3GwopwYYmeBz0NvqmeP+UbdZ52avhHW7gDNzyOmAt4Ue1ePQftWpJeR3bvzbrmZUU14osvX4haoouhMrN95pCABGmGo8n7nFqxXxOnG/W278OTF+O22SozZSuV8SIHFdPhvYuO8LVuwOH3m6/z0vX6tMgsEuksoL9pObJEqVkxFfM7SWfPc8b0zsGVThhFcDdccJNjueX97LC1SiQI70klAuI4OXpGzgXFBgamDQvq0yQaHY12s22ToTZRQmKBFAY5BtVJicJCAXuvRYAP5tK5PXQneEDmAr3STz1ST0LiCpPuocVN0LRR6I3wM/kW9zcOpKfUXtjQnhnOTrunb9M7h3YZuUMpN6dzkL93IChy+y/tc1N3QDF+eNrIDeG6zcRdtwz81CKpxfSSqb7kiceCFKWnF54u+7dPb5GGI2yifsJiNwkfGJ6rupjFMnV+Ijt5A01QmHY7nLEZwfaMKeaBt8yxxiCsO3tIGYXD5sqdFTeywPVpA5VkcrB3DXuv5kjwTZlGushMnVBYcKjrraJ6eGWJEvpN4CR3e4Fo9iHnrvuif5p/yzLv0KmCphQKBwBHIXzUv/Mes+P++bONWJ8aAWwWIOPKZUsje3SBv7vUyfGZbwhYaYq0Sqco0QmLMaFHzHySgitCOCDbqYxWpvbLaJ/uQrVRvpCVSMjC5nWS1tbXEjt7xCdi8FzOqqhNANDnMW2xn23Ototq+hLPwHty1z1H7BGNItibAyYCaBCACET736D8Lx3OSwoPw0DS5eECoiCkjlDT7oXG6cXTjjueLzav+AvkfOY4bHcWAfzzcC9EFTNGYTLB4sbXKbgRVAPplViXqIeOCNCNkDPRIgZ/BfLxyn+V7fsBnxjdcuERdAHVoZrwhx1UQjGoU6zB1dYq+nzjGgbMT0VW2iG4qmQWQ9WC958QlGYplHcMjvIBvGUinhATy3VbBJwBR6x21uZnSGSlDzNH3VB5Vgk6M0Z6qTRKG1sWYE58KrvaT1NYE8XxqroGNTwcXub17PcV+22KqJBmaViiU8i7VgQx5IvCkgPBQyaV2Byo/Wdh8NwHYFOHlRpybaWeMXCZtUZCtIw0Qo6NrYIt4lrh6OfMCBu+jrWXKQ5HU8Pt6VTL9PHYPG4ng7cpLBgOpY+Yn1I7L6iyJRTfl4uSHYXD2gghVkFLKFfG83pNlD3sOYRHBhmqhpIGvZiqzQObTwP5Vlket6V4FJ3b/67MJBw10s8XYeruv0yu0tx4ACzdvsQxIbKL3UyGPmyREVtO5eBBwowpcpB03GPJza45ryU9AVzGkCoGR1paVdeb5mNkN/CqrB4KLbi+wWUOvgbPQDqtFp5yX+/lN6wvn24xHr5j9LeIjHwdacw4DNQpJ8RRvIexldw8dn+4xfVKJFkRJ5lA7Z799faGzCvskEt0ZDUWM9fLXFptCybbrpW6ro5WtHpe7rXCc+gIz0GpZ5rPOoy6S2Nka6Xlxb+wbNKeoyVxMwnkSicOnzUaWCOBK6XO3vwKN9mniJIgspY9YIoWOSmBcy7OLgQKT2QQ53IR7tdxOoiL8bSREAGsYwEXMBmvEDcaQIc7dJjK+b1WS1/YtBY+e8xSc5NIaGXg1KSdi0SFOmonSjsDaixvc8HJpTpSeac0WEbcHIwmbfaUJtD4pH/DAC4786yIr6q4pDORok04XC1u5itaeWVnEwpkfXGVbNllqQkzTpxkX+YYpxl49rioXg7UCiuiTEgauWnDf5ID/UJY6hDERSgulUPSB/F+4R3zoBEHF7X8jvSemf810krte9d77usP0T/DkZFsv2n/K+WMdqbyDLbktOLk5P4roaLY9mNH2pF+HuFcLLJYdOLA2wlrZLRbf8MDRVZLx0wOfqReGCFw4YDEgXDaq3b6DmvR7F7FNHXMB5YddINleuddpiA0ZTHCeRSyiAoAw/ylFNulbWY/EQHYtNOpY/QdWflclZbV+9lF/ziZyb/8Q1cn8riOZlk9H36wvw03YEsjDlXeEIHKu9oiU3JXzhlWMCV0HyHZOx6vOs0eKFdkKRRcGEY9Q3LM9qoQJLydM5gft3uCTigIxzYKgnXN+GGEiiYTn2RivZ23kkj3GjE/LYX2L0xDJk0ea896X4jzOdKRGGTSUV0ztmqzOGMv6ok8I9jVdo97oQa4qA3m64mR3yGy6jE7QFUONiVVk9Dmjkc8RBVtSAPTmCGDuzlteAYw1Q3q9r1KK/o59TGDr48Gor3YvjHqueaMxjR/JC9G2p8wHTuvbgOHaTvWKTPPXZCO3yEG52WTyXutaOaPcr3npsWDb8x4aqczJ3mTiiry3HyjNiUykbsvX/sdCnkOIyFRnW+Lq3n0cKBCzniXjibejhMG9TOMxlCGR66lBmhFEgDm36muJIIkfzZA/6kGlhvlkhkQw2GedIg7ytu28AlhUCOpT/3CKUtiqCFHQtBUyE3px8Ovsc1AZZ4ZfP0xR0xvMAcRr6R6gJrDMZh6x2rLhUlmiElwXPD4kOcfYH+HXKyJpDzDyz96VdVbqIAj4lSZ3728kDSjNakbDM6krcamcI4jopFmjK0lpaxl9A1jwbXV7k/gHb0gbzTHRdFlLa3dhZ5Ce9heqw4WZ7X54hlyI8ZEmjCzxuRMP4gxkggIYdGqlIxRw9wGKK5Tx4qcfdA3H6gtpRkh09MnXlVr60rGHV0NrrqZ43tBlM0Fb3RwnG6017J/nB77g7I7WvC7q4dax04NtslD1px7qH7npG4WTP6Vvgo7Rl4hFBH7Ah/7M79xRJ/PPh3tyHUpjBrIgI6Q0yoKJypMxIg2oummgMFbwOtLQcDsAnAW7LopQIPzfLrz7ULlZaLshthVmzsL9m0tx3JpTpWRDB5T5bCTk33cS8fpBNoTprhUUeRMa9QgkyQjrk+jLS2mpiqRIPy0+/2bQA/Txzc5/+iKGkjqgf//UiIA8eHpibyIcm5r3ddsKkKW1gCkEAKMrnxG0nWAdc0bMo+lUBuTXLrplIWVmwXU0645EeyEsvpKceyvCTIqHR0f/9jBFvPGg2hFhDiK+s1hJNlmEDGV/Z6+PZOw7qxAj+WEutuADVclPySR5SIpWTRD5H/zBjS8G9RAWkz54iEZxSFnPI0Oqpj8O1Ii8DYFcfCVfnReafAzFHa60UINusdJhGJ06SRv6L7SmqO5vTSXM2AWKm7tycll8c0uSqubtFaFgXCXpUz8Fp6OFAEH40IdPzK/9N/RgEaAyCekLwGFWAtZSl2xmi70r3YT6UY2AeUy6djFNa6fB0705lzSSqrTJWCk3+sfAOQvbawt0UwAu7z4H0z5217f30/XYM0AIXRxDWFeKMk7ZhgK6eu3FxexGAYTAT8+2992enuMGR2vT40GtFHQxcOJM342Qw7qWNmQQgHQYBIFFc0Bp79BKqFEwWyYF+g3r+iKTMnnD06SDKwMt8duR4DjLu+mE9puZplgUbYKX0h98q65ewb5jgXIk/N5oDfng6cKTjJzXrSFzpgxZrAZP8OLj4gm+m8N8jq7gt87fK70alcV4Zyhm0anUMiNseHtkHqb6T14CmBFmvUXchY/1E4T6LsJeXQsyTk4G355SZ7dWZ+D1/jXwI1lzv3crl32pi1wiXuupmYKi5yEPK9sBxFCfWBlbRT4uPTWUA4Otk5gbBegSIOez8ZnwgmyxbaFEp1wV6fUlL/vnBvC2/FE6JhMcVK6Hj9lq11IdvsAZFQN8aDXYQnD6vjUnXfcomszsD7c5oZ8LAMLQiuu7oQwGnB/S25ZggORtOt/2+QATx4/EBT8zy3l9RmHnSMhNCS6NpnMTyHJ8RLV9WwwDFk/itxlrbPYc4wNHow6lWiBLUsEb3GRl8HYacVqjTw+amX0yeZrVLsNq0Ry5aVTGXFialq0MkoFwfs4q5AyKtcCDPx5YZvLJo5LOdJfS2aUcK3I8zsjEEpBEJGTYiYmXYytPw+w3ZWLTFk0tSeGNZkuC4zcL0zIDXUJfIrVv5UCtDwKzaXJt+t/gaxJZaMjhQ5rpXIBaXk7aEHgdSQvReLrv64HiR+QNvstzAEJfjzGbwHfb9+9iwsBruEjOcxdUWYn9QCO11LcxdVW8ddlZvVsVeCM6KpBKArQ/aWq6lDl2gmxiHxMqXFiAX1ITNTRAF+ZRvbtscmg57kxt03mz5PgbFYy3EYgpirt/fOFycyFD4+y0BzitMaIShl/1rdR0bY6DW0hGuSKkbiU59vBKjFrlGkygRIkb0ZZxbX+L54ezcwPTQAQF0cBTWjYO9yYHsEMHrpEYB/ENEj7iblnSG7d9yOfZ1xS/CdHCCXyeK+w1b148mSUPmxkTXlRvINP/zthuhVEt+AX4XVbpWwTv2w8uTVRTZoNa0ug2oNW0rTL8FuW9a9xgUEGWMeJVuhE0oLwHEugnZTYfy3E58+AvzFksX5uKnbB6erHQGepnotPPWxfN9+o/zUjEKWSEPTJCyAgTtGIRqoCbR5a6UCUJu5mswK3oPQ/qQcopYTIlCum3Rha4ap+p5bXnvt9QB5d/db/8NI4Gl+7RXKjRyXGBxhJD87l/9aMJiA5PdSdjMhpfZHYhFDytmyd3q4LjaMIgU1NNPaJWuR5foD8gHCzzVupBQ38v5FFXM8CMX8kvphN5aWoJ3Qy+161j04Bglf32AzEo0AcncP4+AqGkeOBPnkMwKA7aiHBEI9OKbdI7rMLWVAh3NEcKFkChwkM/zSoUShdCJ5CCL99sn0imRZHBXwYR2D3QTemvSgSmNnnBdjB5brLicLND5Uz95QiOrKi++iW0sbM+NBGnGXrW5LPG1JDUvWZ4w/V4GIfY4gwjxdTVeQlEZfDM3nHkkfu8Q5stq2GOYLQm6NNNh3JiIhViFr//3ASxu263on3W/Iqzivtvo/4Cdqkw+Ijw/J/RAi1aFdNKrX8aZJDYhNuRdd40E2+NsumPZnOV67MWF29jPPNZtnT2MN2MePZLl0QawMJcKSP8SS1DVk/BAdlbBCtKWt3NtWG7Qpo2cK9SyhXWkg1/r0H/mBsGj8GxIXbsK09jb1WYNoeNIxZzK7xAq72R2BJ2+64U88vntIQO0qhzmnXv2fPVkgPIhaoYLjh95vS5mNuyPFfs1PvLorkWJQGCdelW4/89oeup59uXMYmsQFiRYMn0zgqWSwEy4EHK554wgYNKYtDM9RoRs8vYwHfAo+T7GA6yUSwMUHMJ2RkYpPrN3I7ma4qYqs7iREVvFpeLUGI3RR2QP0NR/jSOpsBsTFN6Zd6bCUdjLRecMkJyTnFwhKC2tVWNwj2ovGC82HBRFCg3d5cYpNm7Gj9AnPWZiLNnF4Tzl5D4dGGx4J8kbcgliGqMKpGzU9LzVsdx++gjI6GRll7F9xCTGrlbwhHFWaRfAHgq2etThG4KeM4GTKe6Cjo9MKmXQgQxPMPKB0exJy43Htd1PukaoRQb87+2Tm915CJHn467mlEn1FzMm4542m4FbwMHf1SBmkthbeJaBPKTvo/48JQO3lQ8jrU3i0sNAL9IYfk+okB/K030NlGNt7QmsVUp9njU30GQkiTvEx2WIpkfqDrf6MtKcEvUAUSnE7thVt+L+drRMbF5YGoyVCMRUOKNH+TGRN2uZ8fMYZkb9BMgCYTgknqLHK44dTVGKzXpQEvJZ8ahTs7uCiVz/D6ud3GN7j61/q3DTRIKvhJQwuNG/dgVlKpJVr6JIEpI7w4W0rI56PHcYAT/3iqAW9dZKQnJRNha3J0aysTs95VVtwJG39W3yHFp5T+XFYfmM4wzvSzpTxNkrChBkI6bRJ45+ZVbxHPjc/xRNywAdm0XNF1x1rBSdkdrJ32B4ruljyQhLJELkEoxomFS4PS5X74BBt7LAaRdEArAQH4vAK+5NjCxMjdUpcPX3O2BWL5nbi5CbEu6zqApzOoVStb0+WXxtOU6u2ryIxhUYMzsS5It7cIzpgb8LLGj+Mr3RDyiK+9wGOjh5GMtOCs7KJQWesVPgfkTUFtpFq8kF9kHktZah6QrcUBsVzb7SM6E1bxmfs7zT8n8hsKkUXN3+jDyjPhFzbZgIDn2Fitt0W53M/LG/836PEFREa6mAgfMRGNrmGU7T9wgcD65G40QPtn5pMtqDGMqmW2ZkNooCI7a/OWnddcPICm9SkIXV41cVJoZ8PtyOIrp9E7q4WD+vBVQr7Boo1lyH8e+GEkdV6D2L3NhWGwTQw25+MnG2HhavpZxU1/Jx0rtbutXOpSBJbmIMEmIj53J0gQGBaCI/HdCYha8MOaSaW9miBTvfcWft32Geq50NpL9SlDXcrEKP3lJcyKDm/ZyXwo8ZaWNisV503xQ/vRsVcO3RwWwgnasJnFDOLJ+IfvETEsfqHgfPSKS31+/Z97jyiVd+Av+o0RHFOBpoWB9Qa8KjZ4SGmkzyoTmy1cS/MuySAldAe/B+V0VwJFWfOb0ITiDFhz/w7SzdTG4WTRpNljfFPm3oYk+EtqJiiGrSFeq/9qtZupnawybzPnb+N4FnXBzAZQ3RZybbXhn1FnzLM7Z/1TcA0JuXBqFW4r0H4xrx3mpHaXqYLXp6Tx/uDuuhiZOR6cdc3D7jHpc3hdNMglJomSIp0HARlTDNI/EncqY3iUIGUeyYBGj3FAowmYlaX/fabNZxaYPNOvT4h+Sw2trmKAa6sj/9WYBsUjpxtI5vErUXStCpsD/+InWl/eRWghuXLwaQrKP2tr4iKDN1NZvGwpLPEdMwoUiAPBN41lsVa+bd7XmgEwnTNCrXCbbgIY3b68fOwZsdqBID9v0Y4HXA2YxubXrJuvfJGWB//kGZy2fMquogi3TohbEBqM9fQ5KKa5s7JWB5h+ZpQ58gPJXvKZygopv7sJHrsfAOV7v+RK90tJamrRSKUZe9jSiR7IvfOM2cV0Jbxj6eUIgMYnS8fsxJIJcm2L1H5NoA9iAHkr08lIjYznOsbldalup+EqN3WQVzTRLwOqVM6dJNYmRYgpKNEqmKDW8MSm6YnKHUTt2psTxoMiq8mPOQk/HBAhWPJ7tnVopgZDVNxggi5Fil9y4ju5H0zc3IfzrWPQ90DZ/jyvwPpSprMPVUiKaG1kPmuLOpxLazqykjN6e6MBzxzw/EhBj1OpTgUGQIv3XatAmlBiE2dXKJj9cSt5RDUDw72HiR3KTDCUJ1AswM75iXa7/HiN8GiRMf71OChmNxz2rvxSuO9nTKUt1x/qbxPUOJNqvJxdK0ZXeykC/1WOUCmkathPRWIJLcri3kXvUt2MKZqCF1Y7rTyhL+NUhwtAjQ+5INNrzfOdUbd7VqsGwBp8677H9nxjDPbZk9p6PgYwrlW7emYKmcTCJe0GC8BHvWxq/gXWOcAEY+6G+JEZ21aoN32TqyOlT98HW/L6d0qhGsc6TUjknCQrDgEWxZvX+7S+u/55bL8PfS0WTDtJK/0CIJ2IC+/UJhZqn86bZiS1BKt3jDSx50WtiRm8wrvEsVBLoSpB/WlcExJwQfdJR0m7dGjjK87JZXeiO4c70mFrEQQ8Cj9yeVQL0bcEeciOW+YgtOzoGHgjof2SWsasOomW+Zr0RAnRE2SSgdBtLgMoNclo8PHMr5SLDTZFHQLbMo/HcmZepGeT6g/NHOBsHrQhyVAmgNdvimyxkzFx9fdgQIPaCHDU4KRMQuYaDzvKq0NSvNugRA7Je2+yUmg/HEWvcmwTR2LY3G+9c3i1ux81bHMp/jXOL/f4WGGkUygvyCb6braNRODg0Dqk54NSqMAP5IeFvwCRMel4v34iGB30aPVcILVOAq2znclec2S7rfaOsr6mqZe8unLY0Xddxi3cxVRlxNS61ZFHEMu+lOT1h8H1zFxQyqHUlEEJsTrmDCKOKd2QM4t2H0EFSN6NLAMavAnJWEGqfsSq94l6K2lVC6hg7bCXdRH08D75k4J42FCOfN8hTT3v62liybLmVJ+geVk/1LdsKgZSCIGxpe/X2vYhmAPPFExtrxICrm24fX8vSgr/9nJpL2+GIqiOgExfHH3/qsmk0Lb9Crj/ueeRHMWxLIWFXpHAM3D6JRnLNNlfFdO7rHXjGsMuSrb4UpDrQyEmJZUUPSxeQgmi3e6tS+64LxEpXeknAhHT+gPHVin2GknNgzsbKXtB0PhOPZjTs7xnVdJyhMpkewszeNqRGl3OEHJuirZiR2OdFgGVprlcXtni6lsA6GjzCIjK2lduWqHgiH7rNKppYGg1QIHmqISWqmj7YYvNlVwLcDJdfx+wTr+Tr+wIuy0JNHn2xdVz1KtUJEd+N1T/8oX+D811PifUx7P9qq4VG5k2Tib5vvXijiZGeK890bd2tGcBmZVN3FyZF9ux/DPp/RfXNnA2Sarsh7Rce4Oc8jvbDeLviO3l6WVgjuSqIdNW+yY1Msi9hEw4UhekmJjIJYld67JASCbwCHgYLH8c54EXo="
+      }]
+    }],
+    "pendingInputs": [{
+      "text": "",
+      "role": "user"
+    }]
+  }
+}
